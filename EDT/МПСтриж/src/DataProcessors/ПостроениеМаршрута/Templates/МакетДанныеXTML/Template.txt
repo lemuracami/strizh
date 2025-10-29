@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Список задач с drag & drop</title>
+</head>
+<style>
+  
+
+.tasks__title {
+  /*margin: 50px 0 20px 0;
+  
+  //text-align: center;
+  //text-transform: uppercase;*/
+}
+
+.tasks__list {
+  /*margin: 0;
+  //padding: 0;*/
+  
+  list-style: none;
+}
+
+.tasks__item {
+  /*max-width: 250px;*/
+  margin-bottom: 10px;
+  padding: 5px;
+  
+  /*text-align: center;*/
+  border: 2px groove #b2d9d0;
+  /*border-radius: 10px;*/
+  cursor: move;
+  /*background-color: #dff2ef;*/
+
+  /*transition: background-color 0.5s;*/
+}
+.tasks__item_el{
+  display: inline;
+}
+
+.tasks__item:last-child {
+  margin-bottom: 0;
+}
+
+.selected {
+  opacity: 0.6;
+}
+
+</style>
+<script>
+  const listUI = {
+  _parentElement: null,
+  _onDrag: null,
+  _list: null,
+  _elements: null,
+  onDragOver: function (draggedElement, replacedElement) {
+    if(this._onDrag) this._onDrag(draggedElement, replacedElement);
+  },
+  getNextElement: function(cursorPosition, currentElement) {
+    const currentElementCoord = currentElement.getBoundingClientRect();
+    const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+
+    const nextElement = (cursorPosition < currentElementCenter) ?
+      currentElement :
+      currentElement.nextElementSibling;
+
+    return nextElement;
+  },
+  createHTML(){
+    let content = "<ul class='tasks__list'>";
+    if(this._elements && this._elements.length && this._elements.length > 0){
+      this._elements.forEach(function(item){
+        content += "<li class='tasks__item'>";
+        content += "<div class='tasks__item_el'>" + item.OrderId + "</div>";
+        content += "<div class='tasks__item_el'>" + item.Address + "</div>";
+        content += "<div class='tasks__item_el'>" + item.Interval + "</div>";
+      });
+      content += "</li>";
+    }
+    this._parentElement.innerHTML = content;
+  },
+  createInstance: function (parentElement, elements, onDrag) {
+    this._onDrag = onDrag;
+    this._elements = elements;
+    this._parentElement = parentElement;
+    
+    this.createHTML();
+
+    const tasksListElement = document.querySelector(`.tasks__list`);
+    const taskElements = tasksListElement.querySelectorAll(`.tasks__item`);
+
+    for (const task of taskElements) {
+      task.draggable = true;
+    }
+
+    tasksListElement.addEventListener(`dragstart`, (evt) => {
+      evt.target.classList.add(`selected`);
+    });
+
+    tasksListElement.addEventListener(`dragend`, (evt) => {
+      evt.target.classList.remove(`selected`);
+    });    
+
+    tasksListElement.addEventListener(`dragover`, (evt) => {
+      evt.preventDefault();
+
+      const activeElement = tasksListElement.querySelector(`.selected`);
+      const currentElement = evt.target;
+      const isMoveable = activeElement !== currentElement &&
+        currentElement.classList.contains(`tasks__item`);
+
+      if (!isMoveable) {
+        return;
+      }
+
+      const nextElement = this.getNextElement(evt.clientY, currentElement);
+
+      if (
+        nextElement &&
+        activeElement === nextElement.previousElementSibling ||
+        activeElement === nextElement
+      ) {
+        return;
+      }
+
+      tasksListElement.insertBefore(activeElement, nextElement);
+      this.onDragOver(nextElement, activeElement );
+    });
+  }
+}
+</script>
+<body>
+  <div class="container">
+    <section class="tasks">
+      <h1 class="tasks__title">To do list</h1>
+
+      <div id="ordersList"></div>
+
+      
+    </section>
+  </div>
+
+  <script>function message(first, second) {
+      //console.log("dragged" + first);
+      //console.log("replaced" + second);
+    }</script>
+  <script>
+    let items = [
+      { OrderId: 1234561, Address: "Москва, ул. Краснознаменская, д. 61", Interval: "11.00 - 20.00" },
+      { OrderId: 1234562, Address: "Москва, ул. Краснознаменская, д. 62", Interval: "11.00 - 20.00" },
+      { OrderId: 1234563, Address: "Москва, ул. Краснознаменская, д. 63", Interval: "11.00 - 20.00" }
+    ];
+    listUI.createInstance(document.getElementById("ordersList"), items, message);      
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="abbcdbbe-0cb3-423b-845b-73a71dc4b68b">
+  <producedTypes>
+    <selectionType typeId="440de899-18a1-4120-b68a-30642d27aa93" valueTypeId="ef03614c-e541-409b-bc12-27a478ddef51"/>
+    <listType typeId="6a00ff21-c6bc-495f-8e12-fa0fd5e0684e" valueTypeId="023997fe-5680-4066-a53e-47dd7cefc93b"/>
+    <managerType typeId="562cdd21-98d1-4c33-a6ad-4c94c91c07c1" valueTypeId="8e189d62-3d1c-4516-9237-30f575bd391a"/>
+    <recordSetType typeId="1f5e8327-6c3a-42c5-be75-4a8bee8b7de4" valueTypeId="621562e8-b2ec-446b-beb1-22ec2894b6b7"/>
+    <recordKeyType typeId="30fb75cb-f929-49b9-a362-d8b1ceb5bc9b" valueTypeId="ef2938ab-7ac5-4a58-afc3-985864eeb8b3"/>
+    <recordType typeId="af7abfda-ca04-4764-95e8-28ab659af431" valueTypeId="9678e8bb-a109-4351-8e90-4345aa0d6c0b"/>
+    <recordManagerType typeId="e768e809-e813-419c-9ac3-50b1db47ebba" valueTypeId="092e88c8-49e5-4f9d-b1a7-2017a548323a"/>
+  </producedTypes>
+  <name>УведомленияЭкипажу</name>
+  <synonym>
+    <key>ru</key>
+    <value>Уведомления экипажу</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="90e813db-c699-449f-a589-a9ca3aa5dbee">
+    <name>ДатаУведомления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата уведомления</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="390bad1f-9102-42bd-b902-1d0729870946">
+    <name>ТипУведомления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип уведомления</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыУведомленийЭкипажу</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="7b99e2b4-7ab7-4a9d-9640-f967ca6bc118">
+    <name>УведомлениеПоказано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уведомление показано</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="d5b7c8ea-7c62-47a6-a508-e1bf39f9c5c2">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Транспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
