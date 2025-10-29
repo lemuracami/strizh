@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Доставки</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидVip</dataPath>
+			<field>ВидVip</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидТарифаРасчетаЗП</dataPath>
+			<field>ВидТарифаРасчетаЗП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VIPДоставка</dataPath>
+			<field>VIPДоставка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Доставка</dataPath>
+			<field>Доставка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Транспорт</dataPath>
+			<field>Транспорт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЭкипажа</dataPath>
+			<field>ТипЭкипажа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаёмныйЭкипаж</dataPath>
+			<field>НаёмныйЭкипаж</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияДоставки</dataPath>
+			<field>КатегорияДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УчастникЭкипажа</dataPath>
+			<field>УчастникЭкипажа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Территориальность</dataPath>
+			<field>Территориальность</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидВыполненияДоставки</dataPath>
+			<field>ВидВыполненияДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизЛицо</dataPath>
+			<field>ФизЛицо</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДоставки</dataPath>
+			<field>ТипДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияЭкипажа</dataPath>
+			<field>КатегорияЭкипажа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Категория экипажа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подъём</dataPath>
+			<field>Подъём</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подъём</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РасчетЗарплатыОбороты.ФизЛицо,
+	РасчетЗарплатыОбороты.КатегорияДоставки.Родитель.Ссылка КАК КатегорияДоставки,
+	РасчетЗарплатыОбороты.Территориальность,
+	ВЫБОР
+		КОГДА РасчетЗарплатыОбороты.ТипЭкипажа = ЗНАЧЕНИЕ(Перечисление.ТипыТарифовРасчетаЗарплаты.ЭкипажПолный)
+				И РасчетЗарплатыОбороты.УчастникЭкипажа = ЗНАЧЕНИЕ(Перечисление.УчастникЭкипажа.Водитель)
+			ТОГДА "В2"
+		ИНАЧЕ ВЫБОР
+				КОГДА РасчетЗарплатыОбороты.ТипЭкипажа = ЗНАЧЕНИЕ(Перечисление.ТипыТарифовРасчетаЗарплаты.ЭкипажПолный)
+						И РасчетЗарплатыОбороты.УчастникЭкипажа = ЗНАЧЕНИЕ(Перечисление.УчастникЭкипажа.Экспедитор)
+					ТОГДА "Э2"
+				ИНАЧЕ ВЫБОР
+						КОГДА РасчетЗарплатыОбороты.ТипЭкипажа = ЗНАЧЕНИЕ(Перечисление.ТипыТарифовРасчетаЗарплаты.ЭкипажБезЭкспедитора)
+								И РасчетЗарплатыОбороты.УчастникЭкипажа = ЗНАЧЕНИЕ(Перечисление.УчастникЭкипажа.Водитель)
+							ТОГДА "В1"
+						ИНАЧЕ ВЫБОР
+								КОГДА РасчетЗарплатыОбороты.НаёмныйЭкипаж = ИСТИНА
+									ТОГДА "ВСМ"
+								ИНАЧЕ "--"
+							КОНЕЦ
+					КОНЕЦ
+			КОНЕЦ
+	КОНЕЦ КАК КатегорияЭкипажа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ РасчетЗарплатыОбороты.Доставка.Ссылка) КАК Количество,
+	СУММА(РасчетЗарплатыОбороты.СуммаОборот) КАК Сумма,
+	СУММА(РасчетЗарплатыОбороты.ПодъёмОборот) КАК Подъём
+ИЗ
+	РегистрНакопления.РасчетЗарплаты.Обороты КАК РасчетЗарплатыОбороты
+ГДЕ
+	РасчетЗарплатыОбороты.ТипДоставки = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+
+СГРУППИРОВАТЬ ПО
+	РасчетЗарплатыОбороты.Территориальность,
+	ВЫБОР
+		КОГДА РасчетЗарплатыОбороты.ТипЭкипажа = ЗНАЧЕНИЕ(Перечисление.ТипыТарифовРасчетаЗарплаты.ЭкипажПолный)
+				И РасчетЗарплатыОбороты.УчастникЭкипажа = ЗНАЧЕНИЕ(Перечисление.УчастникЭкипажа.Водитель)
+			ТОГДА "В2"
+		ИНАЧЕ ВЫБОР
+				КОГДА РасчетЗарплатыОбороты.ТипЭкипажа = ЗНАЧЕНИЕ(Перечисление.ТипыТарифовРасчетаЗарплаты.ЭкипажПолный)
+						И РасчетЗарплатыОбороты.УчастникЭкипажа = ЗНАЧЕНИЕ(Перечисление.УчастникЭкипажа.Экспедитор)
+					ТОГДА "Э2"
+				ИНАЧЕ ВЫБОР
+						КОГДА РасчетЗарплатыОбороты.ТипЭкипажа = ЗНАЧЕНИЕ(Перечисление.ТипыТарифовРасчетаЗарплаты.ЭкипажБезЭкспедитора)
+								И РасчетЗарплатыОбороты.УчастникЭкипажа = ЗНАЧЕНИЕ(Перечисление.УчастникЭкипажа.Водитель)
+							ТОГДА "В1"
+						ИНАЧЕ ВЫБОР
+								КОГДА РасчетЗарплатыОбороты.НаёмныйЭкипаж = ИСТИНА
+									ТОГДА "ВСМ"
+								ИНАЧЕ "--"
+							КОНЕЦ
+					КОНЕЦ
+			КОНЕЦ
+	КОНЕЦ,
+	РасчетЗарплатыОбороты.ФизЛицо,
+	РасчетЗарплатыОбороты.КатегорияДоставки.Родитель.Ссылка</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидVip</dataPath>
+			<field>ВидVip</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидТарифаРасчетаЗП</dataPath>
+			<field>ВидТарифаРасчетаЗП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VIPДоставка</dataPath>
+			<field>VIPДоставка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Доставка</dataPath>
+			<field>Доставка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Транспорт</dataPath>
+			<field>Транспорт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЭкипажа</dataPath>
+			<field>ТипЭкипажа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаёмныйЭкипаж</dataPath>
+			<field>НаёмныйЭкипаж</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияДоставки</dataPath>
+			<field>КатегорияДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОборот</dataPath>
+			<field>СуммаОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УчастникЭкипажа</dataPath>
+			<field>УчастникЭкипажа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Территориальность</dataPath>
+			<field>Территориальность</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидВыполненияДоставки</dataPath>
+			<field>ВидВыполненияДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизЛицо</dataPath>
+			<field>ФизЛицо</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДоставки</dataPath>
+			<field>ТипДоставки</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РасчетЗарплатыОбороты.ТипДоставки,
+	РасчетЗарплатыОбороты.ФизЛицо,
+	РасчетЗарплатыОбороты.СуммаОборот
+ИЗ
+	РегистрНакопления.РасчетЗарплаты.Обороты КАК РасчетЗарплатыОбороты
+ГДЕ
+	РасчетЗарплатыОбороты.ТипДоставки = ЗНАЧЕНИЕ(перечисление.ТипыЗаказов.Забор)</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ЗапросДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеализацияТерминал</dataPath>
+			<field>РеализацияТерминал</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РезультатДоставки</dataPath>
+			<field>РезультатДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗакрытиеЗаказов</dataPath>
+			<field>ЗакрытиеЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытие заказов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПринятаяСумма</dataPath>
+			<field>ПринятаяСумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНаличные</dataPath>
+			<field>СуммаНаличные</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма наличные</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаКУчету</dataPath>
+			<field>СуммаКУчету</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма к учету</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОплаты</dataPath>
+			<field>ТипОплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПризнакВозврата</dataPath>
+			<field>ПризнакВозврата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаТерминал</dataPath>
+			<field>СуммаТерминал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма терминал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Спецсчет</dataPath>
+			<field>Спецсчет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланВыгрузки</dataPath>
+			<field>ПланВыгрузки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>План выгрузки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ДанныеПоЗакрытию.ЗакрытиеЗаказов КАК ЗакрытиеЗаказов,
+	ДанныеПоЗакрытию.Реализация КАК Заказ,
+	ДанныеПоЗакрытию.ТипОплаты КАК ТипОплаты,
+	ДанныеПоЗакрытию.РезультатДоставки КАК РезультатДоставки,
+	ДанныеПоЗакрытию.Сумма КАК Сумма,
+	ДанныеПоЗакрытию.ПринятаяСумма КАК ПринятаяСумма,
+	ДанныеПоЗакрытию.СуммаКУчету КАК СуммаКУчету,
+	ДанныеПоЗакрытию.Партнер КАК Партнер,
+	ДанныеПоЗакрытию.РеализацияТерминал КАК РеализацияТерминал,
+	ДанныеПоЗакрытию.ПризнакВозврата КАК ПризнакВозврата,
+	ВЫБОР
+		КОГДА ДанныеПоЗакрытию.ТипОплаты = ЗНАЧЕНИЕ(Справочник.ТипыОплат.Наличные)
+			ТОГДА ДанныеПоЗакрытию.СуммаКУчету
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаНаличные,
+	ВЫБОР
+		КОГДА НЕ ДанныеПоЗакрытию.ТипОплаты = ЗНАЧЕНИЕ(Справочник.ТипыОплат.Наличные)
+			ТОГДА ДанныеПоЗакрытию.СуммаКУчету
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаТерминал,
+	ДанныеПоЗакрытию.Партнер.ОсновнойДоговорКонтрагента.Организация КАК Организация,
+	ПараметрыКонтрагентовСрезПоследних.Спецсчет КАК Спецсчет
+ПОМЕСТИТЬ ПредварительныеДанныеВыгрузки
+ИЗ
+	(ВЫБРАТЬ
+		ЗакрытиеЗаказовЗаказы.Ссылка КАК ЗакрытиеЗаказов,
+		ЗакрытиеЗаказовЗаказы.Реализация КАК Реализация,
+		ЗакрытиеЗаказовЗаказы.ТипОплаты КАК ТипОплаты,
+		ЗакрытиеЗаказовЗаказы.РезультатДоставки КАК РезультатДоставки,
+		ЗакрытиеЗаказовЗаказы.Сумма КАК Сумма,
+		ЗакрытиеЗаказовЗаказы.ПринятаяСумма КАК ПринятаяСумма,
+		ВЫБОР
+			КОГДА ЗакрытиеЗаказовЗаказы.ПринятаяСумма &lt; 0
+				ТОГДА ЗакрытиеЗаказовЗаказы.Сумма
+			ИНАЧЕ ВЫБОР
+					КОГДА ЗакрытиеЗаказовЗаказы.Сумма &lt;&gt; ЗакрытиеЗаказовЗаказы.ПринятаяСумма
+						ТОГДА ВЫБОР
+								КОГДА ЗакрытиеЗаказовЗаказы.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично)
+									ТОГДА ЗакрытиеЗаказовЗаказы.ПринятаяСумма
+								ИНАЧЕ ЗакрытиеЗаказовЗаказы.Сумма
+							КОНЕЦ
+					ИНАЧЕ ЗакрытиеЗаказовЗаказы.ПринятаяСумма
+				КОНЕЦ
+		КОНЕЦ КАК СуммаКУчету,
+		ВЫБОР
+			КОГДА НЕ ЗакрытиеЗаказовЗаказы.Реализация.ВладелецТовара.Родитель.ОсновнойМагазин = ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)
+				ТОГДА ЗакрытиеЗаказовЗаказы.Реализация.ВладелецТовара.Родитель.ОсновнойМагазин
+			ИНАЧЕ ЗакрытиеЗаказовЗаказы.Реализация.ВладелецТовара
+		КОНЕЦ КАК Партнер,
+		ЗакрытиеЗаказовЗаказы.Реализация.Терминал КАК РеализацияТерминал,
+		ЗакрытиеЗаказовЗаказы.ПризнакВозврата КАК ПризнакВозврата
+	ИЗ
+		Документ.ЗакрытиеЗаказов.Заказы КАК ЗакрытиеЗаказовЗаказы
+	ГДЕ
+		ЗакрытиеЗаказовЗаказы.Ссылка.ДатаЗакрытия МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+		И ЗакрытиеЗаказовЗаказы.Ссылка.Проведен
+		И (ЗакрытиеЗаказовЗаказы.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена)
+				ИЛИ ЗакрытиеЗаказовЗаказы.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично))
+		И НЕ(ЗакрытиеЗаказовЗаказы.ТипОплаты = ЗНАЧЕНИЕ(Справочник.ТипыОплат.ОплаченоВМагазине)
+					ИЛИ ЗакрытиеЗаказовЗаказы.ТипОплаты = ЗНАЧЕНИЕ(Справочник.ТипыОплат.БезналичныйРасчет))
+		И ЗакрытиеЗаказовЗаказы.Реализация ССЫЛКА Документ.РеализацияТоваровУслуг) КАК ДанныеПоЗакрытию
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыКонтрагентов.СрезПоследних(&amp;ДатаОкончания, ) КАК ПараметрыКонтрагентовСрезПоследних
+		ПО ДанныеПоЗакрытию.Партнер = ПараметрыКонтрагентовСрезПоследних.Контрагент
+ГДЕ
+	НЕ ДанныеПоЗакрытию.СуммаКУчету = 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПредварительныеДанныеВыгрузки.ЗакрытиеЗаказов КАК ЗакрытиеЗаказов,
+	ПредварительныеДанныеВыгрузки.Заказ КАК Заказ,
+	ПредварительныеДанныеВыгрузки.ТипОплаты КАК ТипОплаты,
+	ПредварительныеДанныеВыгрузки.РезультатДоставки КАК РезультатДоставки,
+	ПредварительныеДанныеВыгрузки.Сумма КАК Сумма,
+	ПредварительныеДанныеВыгрузки.ПринятаяСумма КАК ПринятаяСумма,
+	ПредварительныеДанныеВыгрузки.СуммаКУчету КАК СуммаКУчету,
+	ПредварительныеДанныеВыгрузки.Партнер КАК Партнер,
+	ПредварительныеДанныеВыгрузки.РеализацияТерминал КАК РеализацияТерминал,
+	ПредварительныеДанныеВыгрузки.ПризнакВозврата КАК ПризнакВозврата,
+	ПредварительныеДанныеВыгрузки.СуммаНаличные КАК СуммаНаличные,
+	ПредварительныеДанныеВыгрузки.СуммаТерминал КАК СуммаТерминал,
+	ПредварительныеДанныеВыгрузки.Организация КАК Организация,
+	ПредварительныеДанныеВыгрузки.Спецсчет КАК Спецсчет,
+	ПланыВыгрузкиДанныхВБухгалтерию.Ссылка КАК ПланВыгрузки
+ИЗ
+	ПредварительныеДанныеВыгрузки КАК ПредварительныеДанныеВыгрузки
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ПланыВыгрузкиДанныхВБухгалтерию КАК ПланыВыгрузкиДанныхВБухгалтерию
+		ПО ПредварительныеДанныеВыгрузки.Организация = ПланыВыгрузкиДанныхВБухгалтерию.Организация
+			И ПредварительныеДанныеВыгрузки.Спецсчет = ПланыВыгрузкиДанныхВБухгалтерию.Спецсчет
+			И (ПланыВыгрузкиДанныхВБухгалтерию.ПланАктивен)</query>
+	</dataSet>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодВыгрузки.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодВыгрузки.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодВыгрузки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период выгрузки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодВыгрузки</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Партнер</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Заказ</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Партнер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаКУчету</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаНаличные</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаТерминал</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Заказ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РезультатДоставки</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗакрытиеЗаказов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПринятаяСумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Организация</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Спецсчет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПланВыгрузки</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

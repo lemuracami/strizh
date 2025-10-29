@@ -1,0 +1,16 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://veeroute.com/assignPerformersToVehicles">
+	<objectType name="allocations">
+		<property xmlns:d3p1="http://veeroute.com/assignPerformersToVehicles" name="allocation" type="d3p1:allocation" upperBound="-1"/>
+	</objectType>
+	<objectType name="allocation">
+		<property name="performerName" type="xs:string" form="Attribute"/>
+		<property name="vehicleName" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="apiRequest">
+		<property name="sessionID" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/assignPerformersToVehicles" name="allocationsDetails" type="d3p1:allocationsDetails"/>
+	</objectType>
+	<objectType name="allocationsDetails">
+		<property xmlns:d3p1="http://veeroute.com/assignPerformersToVehicles" name="allocations" type="d3p1:allocations" upperBound="-1"/>
+	</objectType>
+</package>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e8033bce-6c5b-4f74-90f7-1c16c0688f78">
+  <producedTypes>
+    <selectionType typeId="e08418da-a060-4d1b-b0fa-750a3ab77263" valueTypeId="a92d43fa-3dfc-466b-b040-9eaf079b00b1"/>
+    <listType typeId="fb480604-8fb3-46bb-a662-bb87f9743b34" valueTypeId="6180aea2-2323-43a6-8d31-ff6e9c62bc58"/>
+    <managerType typeId="f5f52807-a321-4281-b065-6f87da291aa5" valueTypeId="38a81eef-0a3c-4c84-aa78-935ccaea9989"/>
+    <recordSetType typeId="774300d9-e84b-45f3-a164-1f0e9be10d11" valueTypeId="86e4556b-1050-489c-925d-bdd17078b70b"/>
+    <recordKeyType typeId="2d807a6d-fb2e-4502-a7f3-3e1c94572fcc" valueTypeId="afd9435e-c6e8-43d7-a452-c10c811f91ea"/>
+    <recordType typeId="e97d0130-4967-4149-9d60-608cb87df9e3" valueTypeId="60d41b9b-1503-40bd-9319-e646275a4f90"/>
+    <recordManagerType typeId="f0d2f3ae-290a-49ab-934c-286dd94bd8de" valueTypeId="d2e2d2a5-591b-47e5-9f4d-b80fabcb4d69"/>
+  </producedTypes>
+  <name>зпДокументыКПерерасчету</name>
+  <synonym>
+    <key>ru</key>
+    <value>(зп) Документы к перерасчету</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="99a89e15-9a45-4063-8e41-b6c27f7022cc">
+    <name>ТребуетсяПерерасчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется перерасчет</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="e6b9012a-c0e2-4352-bd15-fd52b587d1a9">
+    <name>ОснованиеПерерасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание перерасчета</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗакрытиеЗаказов</types>
+      <types>DocumentRef.КорректировкаУслугСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c489d3fa-91b5-4f99-8197-4193291320f5">
+    <name>КомментарийПерерасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий перерасчета</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <attributes uuid="76943262-a40b-4da3-b429-4b79b0054469">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="92db5cae-7cfd-436a-ad1f-75ad8a67967d">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.зпНачислениеЗП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

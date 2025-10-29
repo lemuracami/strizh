@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="855a66fa-89f4-406f-918b-02f327ddf56a">
+  <producedTypes>
+    <selectionType typeId="2f4478a7-b75f-466f-810d-5f5f3f6b72b7" valueTypeId="a2cb48a4-fa2b-40ec-85f8-695b6de57469"/>
+    <listType typeId="d17c9b7c-2cf3-40fb-b43f-bddab55086c8" valueTypeId="68d97db9-716d-4aa9-a7c8-2fb056e7d6e5"/>
+    <managerType typeId="cda8275b-12aa-475a-9207-773b999fad72" valueTypeId="86a45010-7760-419f-bac9-69552d4545b8"/>
+    <recordSetType typeId="e5869a94-3f54-4e78-adf3-264bcddd14ef" valueTypeId="8faa8369-8c08-4689-88fb-94235b29bd40"/>
+    <recordKeyType typeId="82c1409f-ccf0-415e-8dcf-e10688adabe7" valueTypeId="3aedd498-fdcc-4d15-af28-e9c667890d23"/>
+    <recordType typeId="c69fa400-ecd2-4075-ae7d-9744b66ac61e" valueTypeId="e300cc49-ae5b-4c21-bb93-3ba4cadb0c23"/>
+    <recordManagerType typeId="d5e12aa0-0d5a-42cf-ae32-4fd1c12c770a" valueTypeId="2e940899-f61c-4fde-9eb7-2cac93782416"/>
+  </producedTypes>
+  <name>СостоянияЗакрытияЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния закрытия заказов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4eded50b-183e-4eaa-861f-2a7006d97efb">
+    <name>ЗаказЗакрыт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ закрыт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="515dbfe7-97e4-42d3-9573-1840475d86ee">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗакрытиеЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="403519be-1c2c-4b14-b605-9edb0ed0b5ec">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="4ded7da2-2a1d-4660-be8b-1db0398f24ce">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

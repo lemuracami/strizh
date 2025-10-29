@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://veeroute.com/mcs/webservice"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://veeroute.com/mcs/webservice"
+		targetNamespace="http://veeroute.com/mcs/webservice">
+	<types>
+		<xs:schema xmlns:sch="http://veeroute.com/mcs/webservice"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				elementFormDefault="qualified"
+				targetNamespace="http://veeroute.com/mcs/webservice">
+			<xs:element name="addPerformersRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="performers">
+							<xs:complexType>
+								<xs:sequence maxOccurs="unbounded"
+										minOccurs="1">
+									<xs:element maxOccurs="1"
+											minOccurs="1"
+											name="performer"
+											type="xsd1:performer"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ordersRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="orders">
+							<xs:complexType>
+								<xs:sequence maxOccurs="unbounded"
+										minOccurs="1">
+									<xs:element maxOccurs="1"
+											minOccurs="1"
+											name="order"
+											type="xsd1:order"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="routesRequest">
+				<xs:complexType>
+					<xs:sequence maxOccurs="1"
+							minOccurs="1">
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="transportationOrder"
+								type="xsd1:transportationOrder"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addPerformersResponse">
+				<xs:complexType>
+					<xs:sequence maxOccurs="1">
+						<xs:element maxOccurs="unbounded"
+								minOccurs="1"
+								name="performer"
+								type="xsd1:performerResponse"/>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="message"
+								type="xs:string"/>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="code"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="performerResponse">
+				<xs:sequence maxOccurs="1">
+					<xs:element minOccurs="1"
+							name="id"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="name"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="message"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="status"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ordersResponse">
+				<xs:complexType>
+					<xs:sequence maxOccurs="1">
+						<xs:element maxOccurs="unbounded"
+								minOccurs="1"
+								name="order"
+								type="xsd1:orderResponse"/>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="message"
+								type="xs:string"/>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="code"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="orderResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							name="orderReference"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="zndNumber"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="code"
+							type="xs:int"/>
+					<xs:element minOccurs="0"
+							name="message"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="routesResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="message"
+								type="xs:string"/>
+						<xs:element maxOccurs="1"
+								minOccurs="1"
+								name="code"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="performer">
+				<xs:all>
+					<xs:element minOccurs="1"
+							name="id"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="name"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="phone"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="login"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="password"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="mptr"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="account"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="action">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="create"/>
+								<xs:enumeration value="Create"/>
+								<xs:enumeration value="CREATE"/>
+								<xs:enumeration value="block"/>
+								<xs:enumeration value="Block"/>
+								<xs:enumeration value="BLOCK"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="carrierParty"
+							type="xsd1:carrierParty"/>
+				</xs:all>
+			</xs:complexType>
+			<xs:complexType name="carrierParty">
+				<xs:all>
+					<xs:element minOccurs="1"
+							name="internalID"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="name"
+							type="xs:string"/>
+				</xs:all>
+			</xs:complexType>
+			<xs:complexType name="order">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							name="orderReference"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="zndNumber"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="client"
+							type="xsd1:client"/>
+					<xs:element minOccurs="1"
+							name="location"
+							type="xsd1:location"/>
+					<xs:element minOccurs="1"
+							name="dropWindow"
+							type="xsd1:dropWindow"/>
+					<xs:element minOccurs="1"
+							name="deliveryType"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="comment"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="deliveryComment"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="orderType"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							name="clientType"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							name="orderPaymentStatus"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							name="orderPaymentType"
+							type="xs:int"/>
+					<xs:element minOccurs="0"
+							name="isTradeIn">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<!--<xs:enumeration value="True"/>-->
+								<!--<xs:enumeration value="False"/>-->
+								<xs:enumeration value="true"/>
+								<xs:enumeration value="false"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="orderPaymentSum"
+							type="xs:float"/>
+					<xs:element minOccurs="1"
+							name="orderAction">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="create"/>
+								<xs:enumeration value="CREATE"/>
+								<xs:enumeration value="Create"/>
+								<xs:enumeration value="delete"/>
+								<xs:enumeration value="DELETE"/>
+								<xs:enumeration value="Delete"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element maxOccurs="unbounded"
+							minOccurs="1"
+							name="orderItems"
+							type="xsd1:orderItem"/>
+					<xs:element minOccurs="1"
+							name="orderPriceSum"
+							type="xs:float"/>
+					<xs:element minOccurs="1"
+							name="orderPriceSumWithPromo"
+							type="xs:float"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="client">
+				<xs:all>
+					<!--<xs:element minOccurs="1" name="contactPerson" type="xs:string"/>-->
+					<xs:element minOccurs="1"
+							name="contactPerson">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="0"
+							name="contactNumber"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="additionalContactNumber"
+							type="xs:string"/>
+				</xs:all>
+			</xs:complexType>
+			<xs:complexType name="location">
+				<xs:all>
+					<!--<xs:element minOccurs="1" name="address" type="xs:string"/>-->
+					<xs:element minOccurs="1"
+							name="address">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="0"
+							name="additionalAddress"
+							type="xs:string"/>
+				</xs:all>
+			</xs:complexType>
+			<xs:complexType name="dropWindow">
+				<xs:all>
+					<xs:element minOccurs="1"
+							name="start">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<!--timestamp: yyyy-mm-dd HH:mm:ss-->
+								<xs:pattern value="(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])\s([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="end">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<!--timestamp: yyyy-mm-dd HH:mm:ss-->
+								<xs:pattern value="(19|20)\d\d-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])\s([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:all>
+			</xs:complexType>
+			<xs:complexType name="orderItem">
+				<xs:all>
+					<xs:element minOccurs="1"
+							name="id"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="loadingPoint"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="wareCodeSAP"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="name"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="type"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							name="price"
+							type="xs:float"/>
+					<xs:element minOccurs="1"
+							name="count">
+						<xs:simpleType>
+							<xs:restriction base="xs:integer">
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="2147483647"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="priceSum"
+							type="xs:float"/>
+				</xs:all>
+			</xs:complexType>
+			<xs:complexType name="transportationOrder">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							name="transportationOrderNumber"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="vechicleID"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="driverID"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="mptr"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="account"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="action">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="create"/>
+								<xs:enumeration value="CREATE"/>
+								<xs:enumeration value="Create"/>
+								<xs:enumeration value="delete"/>
+								<xs:enumeration value="DELETE"/>
+								<xs:enumeration value="Delete"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="carrierParty"
+							type="xsd1:carrierParty"/>
+					<xs:element maxOccurs="unbounded"
+							minOccurs="1"
+							name="clientOrders"
+							type="xsd1:clientOrder"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="clientOrder">
+				<xs:sequence>
+					<xs:element name="sequence">
+						<xs:simpleType>
+							<xs:restriction base="xs:integer">
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="2147483647"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="typeCode">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1001"/>
+								<xs:enumeration value="1002"/>
+								<xs:enumeration value="1010"/>
+								<xs:enumeration value="1140"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="orderReference"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="delivery"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="orderZNDtm"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="orderZNDtext"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="contactNumberZing"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="additionalContactNumberZing"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="mptr"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="latitude"
+							type="xs:float"/>
+					<xs:element minOccurs="1"
+							name="longitude"
+							type="xs:float"/>
+					<xs:element minOccurs="0"
+							name="techAddress"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="account"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<!--date: dd.mm.yyyy-->
+								<xs:pattern value="(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="0"
+							name="dfl"
+							type="xsd1:dfl"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="dfl">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							name="deliveryType">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<!--<xs:enumeration value="True"/>-->
+								<!--<xs:enumeration value="False"/>-->
+								<xs:enumeration value="true"/>
+								<xs:enumeration value="false"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="0"
+							name="comment"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							name="isTradeIn">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<!--<xs:enumeration value="True"/>-->
+								<!--<xs:enumeration value="False"/>-->
+								<xs:enumeration value="true"/>
+								<xs:enumeration value="false"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="orderType"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							name="client"
+							type="xsd1:client"/>
+					<xs:element minOccurs="1"
+							name="location"
+							type="xsd1:location"/>
+					<xs:element minOccurs="1"
+							name="dropWindow"
+							type="xsd1:dropWindow"/>
+					<xs:element maxOccurs="unbounded"
+							minOccurs="1"
+							name="items"
+							type="xsd1:item"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="item">
+				<xs:all>
+					<xs:element minOccurs="1"
+							name="id"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="loadingPoint"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="wareCode"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="name"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							name="count">
+						<xs:simpleType>
+							<xs:restriction base="xs:integer">
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="2147483647"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="1"
+							name="type">
+						<xs:simpleType>
+							<xs:restriction base="xs:int">
+								<xs:enumeration value="1"/>
+								<xs:enumeration value="2"/>
+								<xs:enumeration value="3"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:all>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="addPerformersRequest">
+		<part name="addPerformersRequest"
+				element="tns:addPerformersRequest"/>
+	</message>
+	<message name="routesResponse">
+		<part name="routesResponse"
+				element="tns:routesResponse"/>
+	</message>
+	<message name="ordersResponse">
+		<part name="ordersResponse"
+				element="tns:ordersResponse"/>
+	</message>
+	<message name="routesRequest">
+		<part name="routesRequest"
+				element="tns:routesRequest"/>
+	</message>
+	<message name="addPerformersResponse">
+		<part name="addPerformersResponse"
+				element="tns:addPerformersResponse"/>
+	</message>
+	<message name="ordersRequest">
+		<part name="ordersRequest"
+				element="tns:ordersRequest"/>
+	</message>
+	<portType name="mcsPort">
+		<operation name="addPerformers">
+			<input name="addPerformersRequest"
+					message="tns:addPerformersRequest"/>
+			<output name="addPerformersResponse"
+					message="tns:addPerformersResponse"/>
+		</operation>
+		<operation name="routes">
+			<input name="routesRequest"
+					message="tns:routesRequest"/>
+			<output name="routesResponse"
+					message="tns:routesResponse"/>
+		</operation>
+		<operation name="orders">
+			<input name="ordersRequest"
+					message="tns:ordersRequest"/>
+			<output name="ordersResponse"
+					message="tns:ordersResponse"/>
+		</operation>
+	</portType>
+	<binding name="mcsPortSoap11"
+			type="tns:mcsPort">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="addPerformers">
+			<soapbind:operation style="document"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="routes">
+			<soapbind:operation style="document"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="orders">
+			<soapbind:operation style="document"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="mcsPortService">
+		<port name="mcsPortSoap11"
+				binding="tns:mcsPortSoap11">
+			<soapbind:address location="http://buildserv.veeroute.com:80/mcs"/>
+		</port>
+	</service>
+</definitions>

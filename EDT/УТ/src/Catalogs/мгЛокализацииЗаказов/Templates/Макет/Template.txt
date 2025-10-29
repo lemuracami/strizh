@@ -1,0 +1,185 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=9"><!-- Bспользуем IE 9 -->
+<!-- Загрузка API yandex  -->
+<script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU"></script><script type="text/javascript">	
+		
+		var myMap;        // создадим голобальную переменную для карты                                          
+		var myPolygon;    // для полигона
+		                                                
+		ymaps.ready(CreateMap); 									// выполняем инициализацию полсе загрузки API  
+
+		function CreateMap() {    									// CreateMap Создание объетка карты  
+
+			//отклик готовности 
+			return1c("готов","1");
+			
+			 myMap = new ymaps.Map("YMapsID", {
+		      center: [55.76, 37.64],
+		      zoom: 11,
+		      // type: "yandex#satellite", 
+		      controls: ["zoomControl", "fullscreenControl"]		 	// добавим стандартное поведения и кнопку полнорежимного просмотра
+		    });
+			
+		
+			// переводим карту в полноразмерный режим
+			myMap.controls.get("fullscreenControl").enterFullscreen();		
+			myMap.controls.get("fullscreenControl").options.visible = false;
+			
+			// привяжем событие щелчка по карте
+			myMap.events.add('click', function (e) {  
+				return1c('ЩелчокПоКарте',e.get('coords'));
+	        	//myMap.hint.open(e.get('coords'), 'Координаты щелчка переданы на форму');
+	    		});
+			
+			// Скрываем хинт при открытии балуна.
+		    myMap.events.add('balloonopen', function (e) {
+		        myMap.hint.close();
+		    });
+		    
+		    
+		    // Создаем многоугольник без вершин.
+            var myPolygon = new ymaps.Polygon([], {}, {
+                interactivityModel: 'default#transparent',
+                editorDrawingCursor: "crosshair",
+                fillColor: '#00FF00',
+                strokeWidth: 2,
+                opacity: 0.5,
+                draggable: false
+            });
+		    
+            // привяжем событие щелчка по карте
+			myPolygon.events.add('click', function (e) {  
+				return1c('ЩелчокПоПолигону',myPolygon.geometry.getCoordinates());
+	        	//myMap.hint.open(e.get('coords'), 'Координаты щелчка по полигону переданы на форму');
+	    		});
+	    		
+            // Добавляем многоугольник на карту.
+            myMap.geoObjects.add(myPolygon);
+            
+            // Включаем режим редактирования с возможностью добавления новых вершин.
+            //myPolygon.editor.startDrawing();
+		
+		}
+		
+		function getCoordinatesPolygon() {
+	
+		var coord =  myPolygon.geometry.getCoordinates();
+		document.getElementById("coords").value = JSON.stringify(coord); 
+		
+		}
+		
+		function return1c(name,data){ 
+			// вызов обработчика
+			var evt = document.createEventObject();
+			evt.propertyName = name;
+			evt.data = data;
+			evt.cancelBubble = true;
+			evt.returnValue = false;
+			document.fireEvent('onclick',evt);
+		}
+		
+        // Создание полигона.
+        function createPolygon(coords) {
+            return new ymaps.Polygon(coords, {}, {
+                //interactivityModel: 'default#transparent',
+                editorDrawingCursor: "crosshair",
+                fillColor: '#00FF00',
+                strokeWidth: 2,
+                opacity: 0.5,
+                draggable: false
+            });
+        }
+        
+        // Загрузить полигон.
+        function loadPolygon(coordsStr) {
+            var coords = JSON.parse(coordsStr);
+            myMap.geoObjects.removeAll(); // удалим все старые объекты
+            polygon = createPolygon(coords);
+            // Метод работает только с корректно заданной картой.
+            polygon.options.setParent(myMap.options);
+            polygon.geometry.setMap(myMap);
+            myMap.geoObjects.add(polygon);
+            polygon.events.add('click', function (e) {
+                printGeometry(polygon.geometry.getCoordinates());
+                return1c('ЩелчокПоПолигону',myPolygon.geometry.getCoordinates());
+            });
+            return polygon;
+        }
+        
+        function startDrawing() {
+        	myPolygon = loadPolygon('[]');
+            myPolygon.editor.startDrawing();
+        }
+        
+        function startEditing() {
+            myPolygon.editor.startDrawing();
+        }
+
+        function stopEditing() {
+            myPolygon.editor.stopEditing();
+            printGeometry(myPolygon.geometry.getCoordinates());
+        }
+        
+        function coordContains(coordStr) {
+        	var coords = JSON.parse(coordStr);
+            if (!myMap.balloon.isOpen()) {
+                var text = ' НЕ ВХОДИТ в полигон!';
+                if (polygon.geometry.contains(coords)) text = ' Входит в полигон!';
+
+                myMap.balloon.open(coords, {
+                    contentHeader: 'Событие!',
+                    contentBody: '<p>Координаты точки:' + [coords[0].toPrecision(6), coords[1].toPrecision(6)].join(', ') + '</br>' + text + '</p>',
+                    contentFooter: '<sup>Щелкните еще раз</sup>'
+                });
+            }
+            else {
+                myMap.balloon.close();
+            }
+        }
+        
+        // Выводит массив координат геообъекта в "geometry"
+	    function printGeometry(coords) {
+	      $('#geometry').html('Координаты: ' + stringify(coords));
+
+	      function stringify(coords) {
+	        var res = '';
+	        if ($.isArray(coords)) {
+	          res = '[ ';
+	          for (var i = 0, l = coords.length; i < l; i++) {
+	            if (i > 0) {
+	              res += ', ';
+	            }
+	            res += stringify(coords[i]);
+	          }
+	          res += ' ]';
+	        } else if (typeof coords == 'number') {
+	          res = coords.toPrecision(6);
+	        } else if (coords.toString) {
+	          res = coords.toString();
+	        }
+
+	        return res;
+	      }
+	    }
+		
+	 </script><style>
+        html,
+        body,
+        #YMapsID {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+     </style><meta name="GENERATOR" content="MSHTML 11.00.9600.18666"><base href="v8config://1e4190e9-76c2-456e-a607-4d817110ffd9/mdobject/id97d8a202-649f-4758-bbd0-a15cc7135550/8eb4fad1-1fa6-403e-970f-2c12dbb43e23">
+</HEAD>
+<BODY>
+<div id="YMapsID"></div>
+<div id="TEST"></div>
+<div>Цвет заливки: <input id="color_polygon" type="text" value="#0000ff"> Уровень прозрачности заливки: <input id="fillopacity_polygon" type="text" value="0.5"><br>Цвет линии обводки: <input id="color_line" type="text" value="#cc3333"> Толщина линии обводки: <input name="width_line" id="width_line" type="text" size="2" value="1"> Уровень прозрачности обводки: <input id="opacity_line" type="text" value="1"><br></div>
+<div id="geometry"></div>
+<input id="coords">
+</BODY>
+</HTML>

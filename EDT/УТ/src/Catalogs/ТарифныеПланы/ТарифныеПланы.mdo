@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1d470a6e-fa80-49ac-b5d8-6a496217e09a">
+  <producedTypes>
+    <objectType typeId="d8a6f0e0-3735-4fb2-84d4-64aabff927df" valueTypeId="424c83eb-20c8-4732-9fa7-a8c63a26f27b"/>
+    <refType typeId="54c50753-3dcb-4b9b-854c-55de8a80d0e0" valueTypeId="fe9ba167-447a-4937-bc32-95b338841dcb"/>
+    <selectionType typeId="bf66cad5-ffce-411c-adbc-87a5f2ca0971" valueTypeId="6dfc8360-3c61-4285-9b80-4077ed983d44"/>
+    <listType typeId="bfeb592e-fcaa-4c0b-8343-c94657d1e6f6" valueTypeId="a36dfb54-f643-427d-8b28-28d9ffe80e9d"/>
+    <managerType typeId="25cb1f96-296e-49ec-9e5e-3bfbac4cb1da" valueTypeId="136e72ab-8767-4b17-af02-553b3a971555"/>
+  </producedTypes>
+  <name>ТарифныеПланы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тарифные планы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ТарифныеПланы.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ТарифныеПланы.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <hierarchical>true</hierarchical>
+  <limitLevelCount>true</limitLevelCount>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="97c6cb23-eb03-49fd-9557-e2e1a883e576">
+      <name>ВторойУровень</name>
+      <description>Второй уровень</description>
+      <code xsi:type="core:StringValue">
+        <value>100000002</value>
+      </code>
+      <isFolder>true</isFolder>
+      <content id="0cc6c052-b59e-4c02-8413-98e1db270911">
+        <name>ОсновнойТарифВторогоУровня</name>
+        <description>Основной тариф второго уровня</description>
+        <code xsi:type="core:StringValue">
+          <value>100000003</value>
+        </code>
+      </content>
+    </items>
+    <items id="92eec134-0922-4770-8efb-99b29b7b0f79">
+      <name>ПервыйУровень</name>
+      <description>Первый уровень</description>
+      <code xsi:type="core:StringValue">
+        <value>100000001</value>
+      </code>
+      <isFolder>true</isFolder>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ТарифныеПланы.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ТарифныеПланы.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="af3cd1b5-655d-425d-bd9e-d209eb2fef4b">
+    <name>ТипТарифа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип тарифа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТипыТарифов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e057804d-c504-4051-8680-0e526ebf5a8e">
+    <name>КлассификаторТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Классификатор тарификации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаКлассификаторРайонов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="9ecd4a99-b529-4359-854d-c8c8b3c3228b">
+    <producedTypes>
+      <objectType typeId="dc9d1b49-bc40-48e3-a718-1fd9ec9edc31" valueTypeId="5c7c3de7-4978-4c02-b881-e284ee2b80f5"/>
+      <rowType typeId="3e1425a0-e578-4206-96df-b81ee6cda6d0" valueTypeId="cee9106f-991d-4839-88e9-f18d2db0e91f"/>
+    </producedTypes>
+    <name>ДоступныеБрейки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные брейки</value>
+    </synonym>
+    <attributes uuid="2d8390b6-9310-467e-9cb7-d374c6281923">
+      <name>РасчетныйБрейк</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расчетный брейк</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РасчетныеБрейки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="b9325191-ce7e-4258-b9af-5243a010027e">
+    <producedTypes>
+      <objectType typeId="65d2c430-27d4-4826-bd4a-f51625702c7d" valueTypeId="f5176881-93a7-4246-8de6-9b58edc86e05"/>
+      <rowType typeId="926ab707-8872-43b0-8dc0-58950b45a9e7" valueTypeId="58b2f8b3-40d7-4933-addd-870efe7e7cb0"/>
+    </producedTypes>
+    <name>ДоступныеЗоныТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные зоны тарификации</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2fef801e-d922-49ea-b748-646ccf948f88">
+      <name>Зона</name>
+      <synonym>
+        <key>ru</key>
+        <value>Зона</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ГруппыРайонов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="b7915ed9-348f-4927-917e-204b45b73846">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f251a4b4-cf05-48a7-908a-ac8fb724e191">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

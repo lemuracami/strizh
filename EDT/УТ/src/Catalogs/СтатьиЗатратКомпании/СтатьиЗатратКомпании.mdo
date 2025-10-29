@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e1c2db7b-7974-48bf-abf2-3efb61739990">
+  <producedTypes>
+    <objectType typeId="76ec294d-5769-4820-ba78-ee4e3ae13138" valueTypeId="3cdd8e74-af3e-4fe0-bf1e-56e3591b0cae"/>
+    <refType typeId="3763eea6-0ccc-430a-9ecc-591ea8d3b120" valueTypeId="59603b81-3b99-45d7-ad2b-a7e668b46088"/>
+    <selectionType typeId="9dd89e15-df2f-41b6-add8-4657186cc776" valueTypeId="37aced74-6cc5-4ce3-9f0f-60536b26498f"/>
+    <listType typeId="8b8e6e66-7436-4ed3-acd9-57965c51da21" valueTypeId="4eb6cd08-8115-4145-b9fa-7d5da273e89b"/>
+    <managerType typeId="acee7aea-37fd-45e1-9e27-5d109a13e9ed" valueTypeId="f0c1d9ba-b36e-4ae6-958f-03e1e1e5c383"/>
+  </producedTypes>
+  <name>СтатьиЗатратКомпании</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статьи затрат компании</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.СтатьиЗатратКомпании.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.СтатьиЗатратКомпании.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>11</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="424acdaf-6211-485a-9871-78ae8eb425a0">
+      <name>ПрямыеРасходы</name>
+      <description>Прямые расходы</description>
+      <code xsi:type="core:StringValue">
+        <value>00000000001</value>
+      </code>
+      <isFolder>true</isFolder>
+      <content id="86eff810-5870-48b1-8b58-825407fde352">
+        <name>ЗаработнаяПлата</name>
+        <description>Заработная плата</description>
+        <code xsi:type="core:StringValue">
+          <value>00000000003</value>
+        </code>
+      </content>
+      <content id="1d51faa3-1250-45b2-8a06-5ea480fba2e6">
+        <name>СтоимостьПодъемаОплачиваемая</name>
+        <description>Стоимость подъема оплачиваемая</description>
+        <code xsi:type="core:StringValue">
+          <value>00000000005</value>
+        </code>
+      </content>
+      <content id="67ec6272-70bf-4b4b-a6af-61b167695c44">
+        <name>Эквайринг</name>
+        <description>Эквайринг</description>
+        <code xsi:type="core:StringValue">
+          <value>00000000004</value>
+        </code>
+      </content>
+    </items>
+    <items id="6c5d2169-8e71-4553-b40b-0ea9ed5af86a">
+      <name>РаспределяемыеРасходы</name>
+      <description>Распределяемые расходы</description>
+      <code xsi:type="core:StringValue">
+        <value>00000000002</value>
+      </code>
+      <isFolder>true</isFolder>
+      <content id="c3330612-0b21-439e-b571-cefd8f3a5319">
+        <name>ГСМ</name>
+        <description>ГСМ</description>
+        <code xsi:type="core:StringValue">
+          <value>00000000006</value>
+        </code>
+      </content>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.СтатьиЗатратКомпании.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultFolderForm>Catalog.СтатьиЗатратКомпании.Form.ФормаГруппы</defaultFolderForm>
+  <defaultListForm>Catalog.СтатьиЗатратКомпании.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.СтатьиЗатратКомпании.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="62b06c77-d878-486a-b267-2a7d5a6f3d20">
+    <name>ВидРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид расходов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыЗатратКомпании</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <use>ForFolderAndItem</use>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6177bd4a-6f21-4dda-b414-70842487c685">
+    <name>ТипЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип затрат</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗатрат</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="11796980-b21b-4137-84ab-f0f80df8b81a">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="81af68e4-4b59-4457-aab1-8e04851729f1">
+    <name>ФормаГруппы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма группы</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0ca78859-8da0-43bc-8846-3b46b4f6b4ee">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="65853f5e-a5d2-41c1-8218-c28f05d5fa59">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cbf39f10-0166-4db2-bde6-885cb3f59268">
+  <producedTypes>
+    <selectionType typeId="a28f4481-be60-487c-8533-ad8ed9023882" valueTypeId="3fa68e16-2fb5-41b8-9fc0-aecddd09f6fa"/>
+    <listType typeId="cba4f3c3-0a93-41f8-b21f-f2e8b0c053f1" valueTypeId="86f10ae0-6b2e-4db2-bf41-09583c2a9a34"/>
+    <managerType typeId="b48bf3b8-c578-4534-a921-9fddf592582d" valueTypeId="38c61270-8e20-4c21-a0d7-900e338cf427"/>
+    <recordSetType typeId="88981f1e-80d0-4191-b87e-8ff4173c0174" valueTypeId="9b7e7965-5614-4b39-87c4-9e8bc65b45ef"/>
+    <recordKeyType typeId="306611ad-e449-4a18-ba19-cb7013dd0082" valueTypeId="adac7dce-7440-44a3-8c10-96bfb1ad4c2d"/>
+    <recordType typeId="595326d1-4d61-4dee-8f08-ce68bc8ee271" valueTypeId="343a4ef8-e028-43ea-bd29-75226b87a8ec"/>
+  </producedTypes>
+  <name>новаРасходГСМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Нормативный и фактический расход ГСМ в транспорте</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4d26fb92-1e94-4446-9433-3814bac25d95">
+    <name>РасходПоНорме</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расход по норме</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="f837c13f-8039-492e-ab53-cb4870dd604b">
+    <name>РасходПоФакту</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расход по факту</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="98d7b5d3-2a32-44d6-9f31-3d76ce967072">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="5bab762e-472a-4522-b96e-462b9b2ae476">
+    <name>Бак</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бак</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаБакиТранспорта</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

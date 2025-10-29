@@ -1,0 +1,1809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="ozon/api/subagent"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="ozon/api/subagent"
+		name="ArticleService"
+		targetNamespace="ozon/api/subagent">
+	<types>
+		<xs:schema xmlns:i0="http://api.ocourier.ru/subagent/article"
+				xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				elementFormDefault="qualified"
+				targetNamespace="ozon/api/subagent">
+			<xs:element name="PostingReceive">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingReceive"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingReceive"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingBarcode"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="CarriageBarcode"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="IsDamaged"
+									nillable="true"
+									type="xs:boolean"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Login"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Password"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PostingReceiveResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingReceiveResult"
+								type="xsd1:ReplyPostingReceive"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingReceive"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ResultCode"
+							type="xs:int"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ResultMessage"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ResultProcessTime"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PostingGiveout">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingGiveout"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingGiveout"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingBarcode"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="IsCash"
+									nillable="true"
+									type="xs:boolean"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ExemplarReturnedInfoList"
+									type="xsd1:ArrayOfExemplarReturnedInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfExemplarReturnedInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ExemplarReturnedInfo"
+							nillable="true"
+							type="xsd1:ExemplarReturnedInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ExemplarReturnedInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Barcode"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ReturnReasonID"
+							nillable="true"
+							type="xs:long"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PostingGiveoutResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingGiveoutResult"
+								type="xsd1:ReplyPostingGiveout"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingGiveout"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingReturn">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingReturn"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingReturn"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PostingID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingBarcode"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ReturnReasonID"
+									nillable="true"
+									type="xs:long"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingReturnResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingReturnResult"
+								type="xsd1:ReplyPostingReturn"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingReturn"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingGiveoutToCourier">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingGiveoutToCourier"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingGiveoutToCourier"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingBarcode"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingGiveoutToCourierResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingGiveoutToCourierResult"
+								type="xsd1:ReplyPostingGiveoutToCourier"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingGiveoutToCourier"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingReturnFromCourier">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingReturnFromCourier"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingReturnFromCourier"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="Barcode"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingReturnFromCourierResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingReturnFromCourierResult"
+								type="xsd1:ReplyPostingReturnFromCourier"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingReturnFromCourier"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingReadyForGiveoutListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingReadyForGiveoutListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingReadyForGiveoutListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingName"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="RecipientName"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageSize"
+									nillable="true"
+									type="xs:int"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageNumber"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingReadyForGiveoutListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingReadyForGiveoutListGetResult"
+								type="xsd1:ReplyPostingReadyForGiveoutListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingReadyForGiveoutListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingInfoList"
+									type="xsd1:ArrayOfPostingInfo"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="Rows"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfPostingInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="PostingInfo"
+							nillable="true"
+							type="xsd1:PostingInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="PostingInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PostingID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PostingBarcode"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageBarcode"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PostingName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Description"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="StateName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="StateSysName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="SourcePlaceID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="SourcePlaceName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DestinationPlaceID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DestinationPlaceName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ClientName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ClientPrice"
+							nillable="true"
+							type="xs:decimal"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ClientEmail"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ClientPhone"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="RecipientName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryAddress"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryVariantID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryVariantName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="StorageExpirationDate"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="StoreName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ETAMomentFrom"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ETAMomentTo"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Weight"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="VolumeWeight"
+							nillable="true"
+							type="xs:decimal"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Length"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Width"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Height"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryVariantCode"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="IsReturn"
+							nillable="true"
+							type="xs:boolean"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="IsPartialGiveoutDisabled"
+							nillable="true"
+							type="xs:boolean"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="IsClientReturnDisabled"
+							nillable="true"
+							type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PostingExpectedListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingExpectedListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingExpectedListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingName"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="RecipientName"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageSize"
+									nillable="true"
+									type="xs:int"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageNumber"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingExpectedListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingExpectedListGetResult"
+								type="xsd1:ReplyPostingExpectedListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingExpectedListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingInfoList"
+									type="xsd1:ArrayOfPostingInfo"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="Rows"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingLabelGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingLabelGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingLabelGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PostingID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ReportFormat"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingLabelGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingLabelGetResult"
+								type="xsd1:ReplyPostingLabelGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingLabelGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ReportData"
+									type="xs:base64Binary"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ReportExtension"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ReportFormat"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ArticleReturnedListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestArticleReturnedListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestArticleReturnedListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingName"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="RecipientName"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageSize"
+									nillable="true"
+									type="xs:int"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageNumber"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ArticleReturnedListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="ArticleReturnedListGetResult"
+								type="xsd1:ReplyArticleReturnedListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyArticleReturnedListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ArticleReturnedInfoList"
+									type="xsd1:ArrayOfArticleReturnedInfo"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="Rows"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfArticleReturnedInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ArticleReturnedInfo"
+							nillable="true"
+							type="xsd1:ArticleReturnedInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ArticleReturnedInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Name"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractorName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Barcode"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="RecipientName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="SourcePlaceName"
+							nillable="true"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArticleReturn">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestArticleReturn"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestArticleReturn"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PostingID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ExemplarList"
+									type="xsd1:ArrayOfLong"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PlaceID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ReturnReasonID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="Moment"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfLong">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ExemplarID"
+							nillable="true"
+							type="xs:long"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArticleReturnResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="ArticleReturnResult"
+								type="xsd1:ReplyArticleReturn"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyArticleReturn"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ArticleInfoGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestArticleInfoGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestArticleInfoGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ArticleBarcode"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ArticleInfoGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="ArticleInfoGetResult"
+								type="xsd1:ReplyArticleInfoGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyArticleInfoGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ArticleInfo"
+									type="xsd1:ArticleInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArticleInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Barcode"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageBarcode"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StateName"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StateSysName"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ArticleType"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StoreName"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryType"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryTypeName"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryVariantCode"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryPrice"
+							nillable="true"
+							type="xs:decimal"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryAddress"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="RecipientName"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ClientPrice"
+							nillable="true"
+							type="xs:decimal"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ItemPrice"
+							nillable="true"
+							type="xs:decimal"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Weight"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="VolumeWeight"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Length"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Width"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Height"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="IsCompany"
+							nillable="true"
+							type="xs:boolean"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StorageTime"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StorageExpirationDate"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Comment"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Phone"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Email"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ETADatetimeFrom"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ETADatetimeTo"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Items"
+							type="xsd1:ArrayOfArticleItemInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfArticleItemInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ArticleItemInfo"
+							nillable="true"
+							type="xsd1:ArticleItemInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ArticleItemInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StateName"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StateSysName"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Code"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Barcode"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Price"
+							nillable="true"
+							type="xs:decimal"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="IsReturn"
+							nillable="true"
+							type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArticleTrack">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestArticleTrack"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestArticleTrack"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ArticleID"
+									nillable="true"
+									type="xs:long"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ArticleTrackResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="ArticleTrackResult"
+								type="xsd1:ReplyArticleTrack"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyArticleTrack"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="TrackingStateInfoList"
+									type="xsd1:ArrayOfTrackingStateInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfTrackingStateInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="TrackingStateInfo"
+							nillable="true"
+							type="xsd1:TrackingStateInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="TrackingStateInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Moment"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PlaceID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PlaceName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Description"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Name"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Priority"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArticleReturnedSend">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestArticleReturnedSend"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestArticleReturnedSend"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ArticlePairInfoList"
+									type="xsd1:ArrayOfPairInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfPairInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ArticlePairInfo"
+							nillable="true"
+							type="xsd1:PairInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="PairInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArticleReturnedSendResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="ArticleReturnedSendResult"
+								type="xsd1:ReplyArticleReturnedSend"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyArticleReturnedSend"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="CarriageID"
+									nillable="true"
+									type="xs:long"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingDeliveryDateChange">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPostingDeliveryDateChange"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPostingDeliveryDateChange"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingBarcode"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="DateFrom"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="DateTo"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PostingDeliveryDateChangeResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PostingDeliveryDateChangeResult"
+								type="xsd1:ReplyPostingDeliveryDateChange"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPostingDeliveryDateChange"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ArticlePostingSearch">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestArticlePostingSearch"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestArticlePostingSearch"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="Name"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="Barcode"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PersonName"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="DeliveredFrom"
+									type="xs:string"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="DeliveredTo"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageSize"
+									nillable="true"
+									type="xs:int"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageNumber"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ArticlePostingSearchResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="ArticlePostingSearchResult"
+								type="xsd1:ReplyArticlePostingSearch"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyArticlePostingSearch"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PostingInfoList"
+									type="xsd1:ArrayOfPostingInfo"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="Rows"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="IArticleService_PostingReceive_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReceive"/>
+	</message>
+	<message name="IArticleService_PostingReceive_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReceiveResponse"/>
+	</message>
+	<message name="IArticleService_PostingGiveout_InputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveout"/>
+	</message>
+	<message name="IArticleService_PostingGiveout_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveoutResponse"/>
+	</message>
+	<message name="IArticleService_PostingReturn_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReturn"/>
+	</message>
+	<message name="IArticleService_PostingReturn_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReturnResponse"/>
+	</message>
+	<message name="IArticleService_PostingGiveoutToCourier_InputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveoutToCourier"/>
+	</message>
+	<message name="IArticleService_PostingGiveoutToCourier_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveoutToCourierResponse"/>
+	</message>
+	<message name="IArticleService_PostingReturnFromCourier_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReturnFromCourier"/>
+	</message>
+	<message name="IArticleService_PostingReturnFromCourier_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReturnFromCourierResponse"/>
+	</message>
+	<message name="IArticleService_PostingReadyForGiveoutListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReadyForGiveoutListGet"/>
+	</message>
+	<message name="IArticleService_PostingReadyForGiveoutListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReadyForGiveoutListGetResponse"/>
+	</message>
+	<message name="IArticleService_PostingExpectedListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingExpectedListGet"/>
+	</message>
+	<message name="IArticleService_PostingExpectedListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingExpectedListGetResponse"/>
+	</message>
+	<message name="IArticleService_PostingLabelGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingLabelGet"/>
+	</message>
+	<message name="IArticleService_PostingLabelGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingLabelGetResponse"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedListGet_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedListGet"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedListGetResponse"/>
+	</message>
+	<message name="IArticleService_ArticleReturn_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturn"/>
+	</message>
+	<message name="IArticleService_ArticleReturn_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnResponse"/>
+	</message>
+	<message name="IArticleService_ArticleInfoGet_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleInfoGet"/>
+	</message>
+	<message name="IArticleService_ArticleInfoGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleInfoGetResponse"/>
+	</message>
+	<message name="IArticleService_ArticleTrack_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleTrack"/>
+	</message>
+	<message name="IArticleService_ArticleTrack_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleTrackResponse"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedSend_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedSend"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedSend_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedSendResponse"/>
+	</message>
+	<message name="IArticleService_PostingDeliveryDateChange_InputMessage">
+		<part name="parameters"
+				element="tns:PostingDeliveryDateChange"/>
+	</message>
+	<message name="IArticleService_PostingDeliveryDateChange_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingDeliveryDateChangeResponse"/>
+	</message>
+	<message name="IArticleService_ArticlePostingSearch_InputMessage">
+		<part name="parameters"
+				element="tns:ArticlePostingSearch"/>
+	</message>
+	<message name="IArticleService_ArticlePostingSearch_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticlePostingSearchResponse"/>
+	</message>
+	<portType name="IArticleService">
+		<operation name="PostingReceive">
+			<input name="PostingReceiveRequest"
+					message="tns:IArticleService_PostingReceive_InputMessage"/>
+			<output name="PostingReceiveResponse"
+					message="tns:IArticleService_PostingReceive_OutputMessage"/>
+		</operation>
+		<operation name="PostingGiveout">
+			<input name="PostingGiveoutRequest"
+					message="tns:IArticleService_PostingGiveout_InputMessage"/>
+			<output name="PostingGiveoutResponse"
+					message="tns:IArticleService_PostingGiveout_OutputMessage"/>
+		</operation>
+		<operation name="PostingReturn">
+			<input name="PostingReturnRequest"
+					message="tns:IArticleService_PostingReturn_InputMessage"/>
+			<output name="PostingReturnResponse"
+					message="tns:IArticleService_PostingReturn_OutputMessage"/>
+		</operation>
+		<operation name="PostingGiveoutToCourier">
+			<input name="PostingGiveoutToCourierRequest"
+					message="tns:IArticleService_PostingGiveoutToCourier_InputMessage"/>
+			<output name="PostingGiveoutToCourierResponse"
+					message="tns:IArticleService_PostingGiveoutToCourier_OutputMessage"/>
+		</operation>
+		<operation name="PostingReturnFromCourier">
+			<input name="PostingReturnFromCourierRequest"
+					message="tns:IArticleService_PostingReturnFromCourier_InputMessage"/>
+			<output name="PostingReturnFromCourierResponse"
+					message="tns:IArticleService_PostingReturnFromCourier_OutputMessage"/>
+		</operation>
+		<operation name="PostingReadyForGiveoutListGet">
+			<input name="PostingReadyForGiveoutListGetRequest"
+					message="tns:IArticleService_PostingReadyForGiveoutListGet_InputMessage"/>
+			<output name="PostingReadyForGiveoutListGetResponse"
+					message="tns:IArticleService_PostingReadyForGiveoutListGet_OutputMessage"/>
+		</operation>
+		<operation name="PostingExpectedListGet">
+			<input name="PostingExpectedListGetRequest"
+					message="tns:IArticleService_PostingExpectedListGet_InputMessage"/>
+			<output name="PostingExpectedListGetResponse"
+					message="tns:IArticleService_PostingExpectedListGet_OutputMessage"/>
+		</operation>
+		<operation name="PostingLabelGet">
+			<input name="PostingLabelGetRequest"
+					message="tns:IArticleService_PostingLabelGet_InputMessage"/>
+			<output name="PostingLabelGetResponse"
+					message="tns:IArticleService_PostingLabelGet_OutputMessage"/>
+		</operation>
+		<operation name="ArticleReturnedListGet">
+			<input name="ArticleReturnedListGetRequest"
+					message="tns:IArticleService_ArticleReturnedListGet_InputMessage"/>
+			<output name="ArticleReturnedListGetResponse"
+					message="tns:IArticleService_ArticleReturnedListGet_OutputMessage"/>
+		</operation>
+		<operation name="ArticleReturn">
+			<input name="ArticleReturnRequest"
+					message="tns:IArticleService_ArticleReturn_InputMessage"/>
+			<output name="ArticleReturnResponse"
+					message="tns:IArticleService_ArticleReturn_OutputMessage"/>
+		</operation>
+		<operation name="ArticleInfoGet">
+			<input name="ArticleInfoGetRequest"
+					message="tns:IArticleService_ArticleInfoGet_InputMessage"/>
+			<output name="ArticleInfoGetResponse"
+					message="tns:IArticleService_ArticleInfoGet_OutputMessage"/>
+		</operation>
+		<operation name="ArticleTrack">
+			<input name="ArticleTrackRequest"
+					message="tns:IArticleService_ArticleTrack_InputMessage"/>
+			<output name="ArticleTrackResponse"
+					message="tns:IArticleService_ArticleTrack_OutputMessage"/>
+		</operation>
+		<operation name="ArticleReturnedSend">
+			<input name="ArticleReturnedSendRequest"
+					message="tns:IArticleService_ArticleReturnedSend_InputMessage"/>
+			<output name="ArticleReturnedSendResponse"
+					message="tns:IArticleService_ArticleReturnedSend_OutputMessage"/>
+		</operation>
+		<operation name="PostingDeliveryDateChange">
+			<input name="PostingDeliveryDateChangeRequest"
+					message="tns:IArticleService_PostingDeliveryDateChange_InputMessage"/>
+			<output name="PostingDeliveryDateChangeResponse"
+					message="tns:IArticleService_PostingDeliveryDateChange_OutputMessage"/>
+		</operation>
+		<operation name="ArticlePostingSearch">
+			<input name="ArticlePostingSearchRequest"
+					message="tns:IArticleService_ArticlePostingSearch_InputMessage"/>
+			<output name="ArticlePostingSearchResponse"
+					message="tns:IArticleService_ArticlePostingSearch_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_IArticleService"
+			type="tns:IArticleService">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="PostingReceive">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReceive"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingGiveout">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingGiveout"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingReturn">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReturn"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingGiveoutToCourier">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingGiveoutToCourier"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingReturnFromCourier">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReturnFromCourier"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingReadyForGiveoutListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReadyForGiveoutListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingExpectedListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingExpectedListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingLabelGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingLabelGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleReturnedListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleReturnedListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleReturn">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleReturn"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleInfoGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleInfoGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleTrack">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleTrack"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleReturnedSend">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleReturnedSend"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingDeliveryDateChange">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingDeliveryDateChange"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticlePostingSearch">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticlePostingSearch"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ArticleService">
+		<port name="BasicHttpBinding_IArticleService"
+				binding="tns:BasicHttpBinding_IArticleService">
+			<soapbind:address location="http://api.ocourier.ru/subagent/v2/ArticleService.svc"/>
+		</port>
+	</service>
+</definitions>

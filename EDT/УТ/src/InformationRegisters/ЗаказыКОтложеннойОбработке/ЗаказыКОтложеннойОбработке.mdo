@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ecf8d20f-a6b3-412b-9a00-93b2e849284e">
+  <producedTypes>
+    <selectionType typeId="225450bc-6d6f-4a85-8e89-66ac263c429b" valueTypeId="cd53bea7-aa94-4f02-9e7e-b5e8bc916c5d"/>
+    <listType typeId="2a0307ea-2cd6-4bc3-8984-c4db978560a6" valueTypeId="391f5587-2d68-493b-bf09-888f395d03de"/>
+    <managerType typeId="ec00bf34-cc97-4794-b3a3-739f8ac8632a" valueTypeId="5d8626da-c81b-45bf-9777-598b93f4c0c0"/>
+    <recordSetType typeId="86fb11c1-1076-4654-bd81-4b9b56a115eb" valueTypeId="8d195735-a3a1-4bcc-819f-31b10ac08ffe"/>
+    <recordKeyType typeId="c5e036a9-3ba8-40f0-8d86-90ebfab40136" valueTypeId="29923bb1-31a0-44a3-a4bb-9530369701bc"/>
+    <recordType typeId="3c2d1f8c-fcec-4b01-bdc2-3ee9ae340e2d" valueTypeId="815ae064-1438-467b-81aa-0d4a1f081d3f"/>
+    <recordManagerType typeId="db172d01-ff3f-4ae2-a86a-69d404d5239f" valueTypeId="66b29db7-813f-4d44-86fc-cfb400abb5a4"/>
+  </producedTypes>
+  <name>ЗаказыКОтложеннойОбработке</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заказы к отложенной обработке</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ЗаказыКОтложеннойОбработке.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ЗаказыКОтложеннойОбработке.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3b74b0f3-08ad-4e3d-a4e3-dc43297d86d2">
+    <name>ЭтапОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап обработки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ЭтапыОтложеннойОбработкиЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="b69a7bbb-752b-41d7-ac48-1c5644814abc">
+    <name>Значение1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение1</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>20</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4ab3270e-aaf4-4f27-bfd4-55c4faf3c88a">
+    <name>Значение2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение2</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e81d5953-0281-4161-8ded-06e5e93e853f">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f2249bd9-195e-4f5a-b759-e9b0e9cfdcba">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d4d75576-e227-45e4-bb45-83e89563a5be">
+    <name>ТипОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип обработки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыОтложеннойОбработкиЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8b9161b3-9a48-44b6-9177-7ccc6ce24fc5">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1fa2865a-4d4d-4ad9-8db2-e9028ff13686">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d302aef2-d57a-433e-85fb-560a5aeaf118">
+  <producedTypes>
+    <selectionType typeId="50786774-c942-406e-a93a-72be27f507f2" valueTypeId="9c21578f-1226-4675-b2f3-f5dc205831bf"/>
+    <listType typeId="c383c682-2757-43a5-b928-ce6f2dc93dfa" valueTypeId="455a2a55-47a4-4bd8-b25f-27a864e78984"/>
+    <managerType typeId="6d7fb4c0-5712-4c43-b4df-f4e30209518c" valueTypeId="d0fe68d5-6b80-4f7b-b7bc-fe778f5a1f1c"/>
+    <recordSetType typeId="dca0326e-2754-4804-8fb0-05b6acc87227" valueTypeId="39fe6034-8be0-4497-9552-12ae31ba28d9"/>
+    <recordKeyType typeId="8db26516-64e1-4373-a2bd-0313177e3c95" valueTypeId="ea3badd1-db22-4a46-893d-e4e1db1fd795"/>
+    <recordType typeId="7fa568e4-3cc9-46d3-a8df-fe3a84af1236" valueTypeId="5c56910d-0e39-4a36-aece-c5582dced7ed"/>
+    <recordManagerType typeId="cc5c77e3-4b32-4582-ab2b-52dec29dbcf2" valueTypeId="d7517b32-1284-4e08-b7c9-7a27294d434f"/>
+  </producedTypes>
+  <name>НазначениеКассировПоОрганизациям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначение кассиров по организациям</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="15c0060f-7ec2-4848-8109-0e484eb452ef">
+    <name>УчитываетсяПриНазначении</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учитывается при назначении</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d833183c-3c58-462e-a8e4-d5998d2cdaf7">
+    <name>График</name>
+    <synonym>
+      <key>ru</key>
+      <value>График</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГрафикиРаботыКассиров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9c89a70a-6be0-4fd1-b741-414214ab4a1d">
+    <name>Порядок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="13c9ffa8-86c3-4f79-b448-d2224c60f0cd">
+    <name>Кассир</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кассир</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Кассиры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b982cf5f-536c-4c8e-9de0-408b60c7bd38">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="db594048-5f77-49a6-ad87-2e12bd4290e4">
+    <name>Терминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

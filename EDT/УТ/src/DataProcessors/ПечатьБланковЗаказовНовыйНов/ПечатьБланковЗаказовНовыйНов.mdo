@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="65381cce-e173-44eb-9962-6ad9fe96fa43">
+  <producedTypes>
+    <objectType typeId="a73a3591-ce43-4da7-9038-3b3869949b29" valueTypeId="0ec4c9fa-4a60-4800-9e19-1fd3660fb194"/>
+    <managerType typeId="fabad2b2-77f9-4d0c-832e-092c4b4a5aee" valueTypeId="d740ff3e-d5a2-42df-8580-24e7ee03092c"/>
+  </producedTypes>
+  <name>ПечатьБланковЗаказовНовыйНов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Печать бланков заказов (нераб)</value>
+  </synonym>
+  <defaultForm>DataProcessor.ПечатьБланковЗаказовНовыйНов.Form.ФормаУпр</defaultForm>
+  <attributes uuid="d861c6e8-aa46-45aa-8d4e-b0dcca39794d">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="aa8a2cf5-7da9-4184-80fd-0ddcf658b568">
+    <name>Доставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаМестнаяДоставка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="716bcf2d-95b7-47d1-8c29-d956c4d1ec2c">
+    <producedTypes>
+      <objectType typeId="2d9196e6-92ac-48b5-b3b9-2f20b4a79637" valueTypeId="9a3c3f3d-0e30-4f58-849e-1019c042fbc1"/>
+      <rowType typeId="f5fdc2e9-5de6-404e-b5e7-f99b09c403d4" valueTypeId="dcc26560-7894-4630-821c-f940c97da63b"/>
+    </producedTypes>
+    <name>Заказы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="08bd5624-408e-4eb2-a89c-3f7ef8d45cb9">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаборТовара</types>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="446b1065-1d9e-49d9-90f5-b52e49a4bb2e">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5da5e118-8058-42cf-9793-43808b5662be">
+    <name>ФормаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма управляемая</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="56b676c0-ffbf-48c2-86c6-398c263cf94f">
+    <name>ФормаПечатиПоГруппам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма печати по группам</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="d978167d-6390-416a-a97e-546e887f38cd">
+    <name>Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет</value>
+    </synonym>
+  </templates>
+  <templates uuid="87c2aae5-2322-44de-816d-9d7885c4b43e">
+    <name>Макет_ШК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет ШК</value>
+    </synonym>
+  </templates>
+  <templates uuid="ea6b13c0-efd0-4bfc-a2ae-da13255d1912">
+    <name>МакетНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет новый</value>
+    </synonym>
+  </templates>
+  <templates uuid="ac891b7a-99c7-45c4-ab5b-56e0880c48d0">
+    <name>МакетУрезанный_доУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный до упр</value>
+    </synonym>
+  </templates>
+  <templates uuid="bb866d43-a586-42f7-8d3c-69e518616e35">
+    <name>МакетУрезанный2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный2</value>
+    </synonym>
+  </templates>
+  <templates uuid="fbe0dcac-f63b-4b1a-94a2-76e86e1fba72">
+    <name>МакетУрезанный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный</value>
+    </synonym>
+  </templates>
+  <templates uuid="44cbebb7-e5f9-425d-8885-ac44caa68c7d">
+    <name>МакетУрезанный3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный3</value>
+    </synonym>
+  </templates>
+  <templates uuid="9c89a352-cfff-4476-8e13-f7f1d3d43c2d">
+    <name>МакетСписокРейсовПоГруппам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет список рейсов по группам</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

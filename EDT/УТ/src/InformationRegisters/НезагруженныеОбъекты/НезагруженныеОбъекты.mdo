@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="806cc90a-4129-4eba-b777-fa601d95d921">
+  <producedTypes>
+    <selectionType typeId="f1e37e1d-f2f1-45dd-8996-3b76daf481dc" valueTypeId="d67661c9-9fc4-4688-a168-feff11ff860e"/>
+    <listType typeId="4936a256-8e1e-41c7-a1d8-0f175a27ef58" valueTypeId="8abe138d-bcb9-4486-a0f1-ae90ec58ff21"/>
+    <managerType typeId="136f2c4f-f651-4b88-ad82-38d0faf37410" valueTypeId="5fff24e0-1096-48ec-905a-96751f115522"/>
+    <recordSetType typeId="bcf8bb38-6cd9-4699-8079-18aa6805eac2" valueTypeId="59d4cf79-4f59-491e-9aac-0327c07def1f"/>
+    <recordKeyType typeId="b8d50e47-9744-44d1-8843-cb0b73533cc3" valueTypeId="abb1872e-f7cb-4aa4-82d9-f97b1f403ee2"/>
+    <recordType typeId="7240e5dd-7553-4707-8b1e-cb0d5906ef35" valueTypeId="3417e973-abe5-4bc2-9f3f-5ed9a97f0c2d"/>
+    <recordManagerType typeId="3ebe95b5-bd68-4de4-a016-302b900361b8" valueTypeId="ed967dd8-2eb5-40d7-bc06-a308d3d6152e"/>
+  </producedTypes>
+  <name>НезагруженныеОбъекты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Незагруженные объекты</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="6cdef01d-b747-4be8-a4ba-cb8b05e184db">
+    <name>Загружено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загружено</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="e34c103f-5695-431c-a55f-12d0c8be8ddd">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="a0b374fc-25e0-46fa-99ae-c7225a840cf0">
+    <name>ТипЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип загрузки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗагрузок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="81a8ef52-96bf-4e1c-9f50-81ba27cef754">
+    <name>КодОбъекта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код объекта</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Доставка</dataPath>
+			<field>Доставка</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасчетныйБрейк</dataPath>
+			<field>РасчетныйБрейк</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЭкипажа</dataPath>
+			<field>ТипЭкипажа</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регион</dataPath>
+			<field>Регион</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Транспорт</dataPath>
+			<field>Транспорт</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТарифнаяСетка</dataPath>
+			<field>ТарифнаяСетка</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УчастникЭкипажа</dataPath>
+			<field>УчастникЭкипажа</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияДоставки</dataPath>
+			<field>КатегорияДоставки</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДоставки</dataPath>
+			<field>ТипДоставки</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасчетПоМинимальнойСтоимости</dataPath>
+			<field>РасчетПоМинимальнойСтоимости</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизЛицо</dataPath>
+			<field>ФизЛицо</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Территориальность</dataPath>
+			<field>Территориальность</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подъём</dataPath>
+			<field>Подъём</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подъём</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДоставок</dataPath>
+			<field>КоличествоДоставок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество доставок</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VIPДоставка</dataPath>
+			<field>VIPДоставка</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоVIPДоставок</dataPath>
+			<field>КоличествоVIPДоставок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество VIPДоставок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПереносовСЗаездами</dataPath>
+			<field>КоличествоПереносовСЗаездами</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество переносов с заездами</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТарифнаяСеткаПартнера</dataPath>
+			<field>ТарифнаяСеткаПартнера</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗонаТарификации</dataPath>
+			<field>ЗонаТарификации</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияЗаказаДляРасчетаЗП</dataPath>
+			<field>КатегорияЗаказаДляРасчетаЗП</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидVip</dataPath>
+			<field>ВидVip</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПравилаОпределенияКатегорииЗаказаДляЗП</dataPath>
+			<field>ПравилаОпределенияКатегорииЗаказаДляЗП</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидТарифаРасчетаЗП</dataPath>
+			<field>ВидТарифаРасчетаЗП</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТарифицируемыйВес</dataPath>
+			<field>ТарифицируемыйВес</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрЛицо</dataPath>
+			<field>ЮрЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъёмЗабора</dataPath>
+			<field>ОбъёмЗабора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипТранспорта</dataPath>
+			<field>ТипТранспорта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаёмныйЭкипаж</dataPath>
+			<field>НаёмныйЭкипаж</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидВыполненияДоставки</dataPath>
+			<field>ВидВыполненияДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Этаж</dataPath>
+			<field>Этаж</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=-</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПодъемаНаЭтаж</dataPath>
+			<field>ВидПодъемаНаЭтаж</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реализация</dataPath>
+			<field>Реализация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерВнешнегоЗаказа</dataPath>
+			<field>НомерВнешнегоЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер внешнего заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РасчетЗарплатыОбороты.ТипЭкипажа КАК ТипЭкипажа,
+	РасчетЗарплатыОбороты.Транспорт КАК Транспорт,
+	РасчетЗарплатыОбороты.УчастникЭкипажа КАК УчастникЭкипажа,
+	РасчетЗарплатыОбороты.КатегорияДоставки КАК КатегорияДоставки,
+	РасчетЗарплатыОбороты.ФизЛицо КАК ФизЛицо,
+	РасчетЗарплатыОбороты.ТипДоставки КАК ТипДоставки,
+	РасчетЗарплатыОбороты.Доставка КАК Доставка,
+	РасчетЗарплатыОбороты.Территориальность КАК Территориальность,
+	СУММА(ЕСТЬNULL(РасчетЗарплатыОбороты.СуммаОборот, 0)) КАК Сумма,
+	СУММА(ЕСТЬNULL(РасчетЗарплатыОбороты.ПодъёмОборот, 0)) КАК Подъём,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ РасчетЗарплатыОбороты.Доставка) КАК КоличествоДоставок,
+	РасчетЗарплатыОбороты.VIPДоставка КАК VIPДоставка,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+			КОГДА РасчетЗарплатыОбороты.VIPДоставка = ИСТИНА
+				ТОГДА РасчетЗарплатыОбороты.Доставка
+			ИНАЧЕ NULL
+		КОНЕЦ) КАК КоличествоVIPДоставок,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+			КОГДА РасчетЗарплатыОбороты.ВидВыполненияДоставки = ЗНАЧЕНИЕ(Перечисление.ВидыВыполненияДоставокЭкипажами.ПустаяСсылка)
+					ИЛИ РасчетЗарплатыОбороты.ВидВыполненияДоставки = ЗНАЧЕНИЕ(Перечисление.ВидыВыполненияДоставокЭкипажами.Доставка)
+				ТОГДА NULL
+			ИНАЧЕ РасчетЗарплатыОбороты.Доставка
+		КОНЕЦ) КАК КоличествоПереносовСЗаездами,
+	РасчетЗарплатыОбороты.Партнер КАК Партнер,
+	РасчетЗарплатыОбороты.Регион КАК Регион,
+	РасчетЗарплатыОбороты.ТарифнаяСетка КАК ТарифнаяСетка,
+	РасчетЗарплатыОбороты.ТарифнаяСеткаПартнера КАК ТарифнаяСеткаПартнера,
+	РасчетЗарплатыОбороты.ЗонаТарификации КАК ЗонаТарификации,
+	РасчетЗарплатыОбороты.КатегорияЗаказаДляРасчетаЗП КАК КатегорияЗаказаДляРасчетаЗП,
+	РасчетЗарплатыОбороты.ПравилаОпределенияКатегорииЗаказаДляЗП КАК ПравилаОпределенияКатегорииЗаказаДляЗП,
+	РасчетЗарплатыОбороты.ВидТарифаРасчетаЗП КАК ВидТарифаРасчетаЗП,
+	ЕСТЬNULL(ДополнительныеПараметрыЗаказа.ТарифицируемыйВес, ЗакрытиеЗаказовЗаказы.ВесЗаказа) КАК ТарифицируемыйВес,
+	ЗакрытиеЗаказовЗаказы.ВидПодъемаНаЭтаж КАК ВидПодъемаНаЭтаж,
+	ЕСТЬNULL(ЗакрытиеЗаказовЗаказы.Этаж, 0) КАК Этаж,
+	ВЫРАЗИТЬ(ЗакрытиеЗаказовЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).Ссылка КАК Реализация,
+	ВЫРАЗИТЬ(ЗакрытиеЗаказовЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).Номер КАК Номер,
+	ВЫРАЗИТЬ(ЗакрытиеЗаказовЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).НомерВнешнегоЗаказа КАК НомерВнешнегоЗаказа
+ИЗ
+	РегистрНакопления.РасчетЗарплаты.Обороты(, , Авто, Регион В (&amp;Терминал)) КАК РасчетЗарплатыОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ДополнительныеПараметрыЗаказа КАК ДополнительныеПараметрыЗаказа
+		ПО (ВЫРАЗИТЬ(РасчетЗарплатыОбороты.Доставка КАК Документ.РеализацияТоваровУслуг).Ссылка = ДополнительныеПараметрыЗаказа.Заказ)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗакрытиеЗаказов.Заказы КАК ЗакрытиеЗаказовЗаказы
+		ПО (ВЫРАЗИТЬ(РасчетЗарплатыОбороты.Доставка КАК Документ.РеализацияТоваровУслуг).Ссылка = ЗакрытиеЗаказовЗаказы.Реализация)
+ГДЕ
+	ЕСТЬNULL(РасчетЗарплатыОбороты.ПодъёмОборот, 0) &lt;&gt; 0
+
+СГРУППИРОВАТЬ ПО
+	РасчетЗарплатыОбороты.ТипЭкипажа,
+	РасчетЗарплатыОбороты.Транспорт,
+	РасчетЗарплатыОбороты.УчастникЭкипажа,
+	РасчетЗарплатыОбороты.КатегорияДоставки,
+	РасчетЗарплатыОбороты.ФизЛицо,
+	РасчетЗарплатыОбороты.ТипДоставки,
+	РасчетЗарплатыОбороты.Территориальность,
+	РасчетЗарплатыОбороты.Доставка,
+	РасчетЗарплатыОбороты.VIPДоставка,
+	РасчетЗарплатыОбороты.Партнер,
+	РасчетЗарплатыОбороты.Регион,
+	РасчетЗарплатыОбороты.ТарифнаяСетка,
+	РасчетЗарплатыОбороты.ТарифнаяСеткаПартнера,
+	РасчетЗарплатыОбороты.ЗонаТарификации,
+	РасчетЗарплатыОбороты.КатегорияЗаказаДляРасчетаЗП,
+	РасчетЗарплатыОбороты.ПравилаОпределенияКатегорииЗаказаДляЗП,
+	РасчетЗарплатыОбороты.ВидТарифаРасчетаЗП,
+	ЕСТЬNULL(ДополнительныеПараметрыЗаказа.ТарифицируемыйВес, ЗакрытиеЗаказовЗаказы.ВесЗаказа),
+	ЗакрытиеЗаказовЗаказы.ВидПодъемаНаЭтаж,
+	ВЫРАЗИТЬ(ЗакрытиеЗаказовЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).Ссылка,
+	ВЫРАЗИТЬ(ЗакрытиеЗаказовЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).Номер,
+	ВЫРАЗИТЬ(ЗакрытиеЗаказовЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).НомерВнешнегоЗаказа,
+	ЕСТЬNULL(ЗакрытиеЗаказовЗаказы.Этаж, 0)</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НАЧАЛОПЕРИОДА(&amp;СтПериод.ДатаНачала, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(&amp;СтПериод.ДатаОкончания, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>Терминал</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Терминал</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РегиональныеТерминалы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СтПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Партнер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Реализация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерВнешнегоЗаказа</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер партнера</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КатегорияДоставки</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Категория</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТарифицируемыйВес</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес заказа</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма за заказ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подъём</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма за подъем</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидПодъемаНаЭтаж</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ подъема</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Этаж</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Терминал</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.РегиональныеТерминалы.МоскваСтриж</dcscor:value>
+					<dcsset:userSettingID>6814c237-1280-4703-b05c-8912d926f2e2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>75425df5-66ee-44e6-8609-5f62f095bbae</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Партнер</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Партнер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>Реализация</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Номер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НомерВнешнегоЗаказа</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Номер партнера</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КатегорияДоставки</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Категория</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ТарифицируемыйВес</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Вес заказа</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сумма</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма за заказ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Подъём</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма за подъем</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидПодъемаНаЭтаж</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Способ подъема</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Этаж</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

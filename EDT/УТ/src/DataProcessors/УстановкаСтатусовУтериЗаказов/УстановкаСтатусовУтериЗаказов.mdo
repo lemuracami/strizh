@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5c792efa-093a-4a4f-bc94-8a73dc14c45e">
+  <producedTypes>
+    <objectType typeId="4e89ec8b-6364-41db-a087-3f1605a0491d" valueTypeId="c16d2a4e-9a04-460c-9ec1-97d496663bf4"/>
+    <managerType typeId="b767f670-0607-4a06-bb0b-ca51e2480761" valueTypeId="ca2c0639-7f8d-451c-b5fa-afda0ee57d74"/>
+  </producedTypes>
+  <name>УстановкаСтатусовУтериЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка статусов утери заказов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.УстановкаСтатусовУтериЗаказов.Form.Форма</defaultForm>
+  <attributes uuid="82360258-de1e-4b3b-8bbb-804771337117">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="13863834-fc8d-464b-b50a-c37391e3acd2">
+    <name>НомерЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер заказа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="379431e8-f610-4720-86f3-00789097c419">
+    <name>ТерминалОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал обработки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a2635d93-7dc2-4764-9a43-b6c085f82b9b">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="8103344c-f3a6-4e9b-9660-b8446db6a333">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

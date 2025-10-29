@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="79ac4046-6050-4138-92d6-e99afb28a472">
+  <producedTypes>
+    <selectionType typeId="db7a7280-24c6-4e81-b516-6745cadd975f" valueTypeId="897389a8-6d1c-4b87-8a89-a7d6d2d7cc68"/>
+    <listType typeId="5d975e1f-32b0-49ab-870f-89ba3288547f" valueTypeId="4e11896a-8491-4ca1-a0eb-649c35a1fc3a"/>
+    <managerType typeId="71aa8699-b2be-4d48-b955-67f73b54ac2c" valueTypeId="f7b23ed8-1346-49e2-98cd-d73c5a1e7c9f"/>
+    <recordSetType typeId="7977903b-2918-4ad0-8f22-a03b95b57089" valueTypeId="2bc1fda8-dac5-4163-8bbd-e572789e400c"/>
+    <recordKeyType typeId="62cdcfe9-d099-4596-a015-d5233881e058" valueTypeId="864b2693-6839-42cc-9a40-0d149b040fb9"/>
+    <recordType typeId="1355d72d-b283-46a8-8828-74963bae21fe" valueTypeId="cc6b899b-831b-44e7-8486-963b0f5544c9"/>
+  </producedTypes>
+  <name>РасчетМотивацииЭкипажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет мотивации экипажей</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="ccf3dc17-074e-4a33-bca3-6d453c45b855">
+    <name>Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="aa4ce6cd-7dc3-4f95-afe0-8da9e5cf6c8d">
+    <name>ТипРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип расчета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыРасчетаНУЭкипажей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="8aa14af2-944b-4274-9bad-062d6e278477">
+    <name>ПоказательРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель расчета</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ba566ef2-691b-411c-81bf-022b74dce5a1">
+    <name>БазаДляРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>База для расчета</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="b185712c-4620-49cc-9233-2dff6abca7f3">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0a34daf4-1bf9-4c5f-9200-5e40813160a5">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физ лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ab9491e4-ae78-440e-bb0f-d9e169a3ad5a">
+    <name>УчастникЭкипажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участник экипажа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УчастникЭкипажа</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d401cad4-43f4-4fcf-9b2e-8d306e7af7c4">
+    <name>СтатьяНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья НУ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НачисленияУдержанияЭкипажей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e6fdc857-1971-4645-80e2-b5e985e42102">
+    <name>ТипНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип НУ</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНУЭкипажей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

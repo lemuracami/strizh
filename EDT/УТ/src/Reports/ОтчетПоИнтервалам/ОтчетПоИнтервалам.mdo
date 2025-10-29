@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8764c194-a777-42d4-91be-5590a0824b20">
+  <producedTypes>
+    <objectType typeId="8955974b-bcbf-480a-a501-1b93e72198d4" valueTypeId="7895b108-636e-45fc-9f8b-fa98c4c71640"/>
+    <managerType typeId="d98dcc0a-74c7-4e8b-b4fa-42f6b2223398" valueTypeId="ed0a9660-76d4-4fde-b08c-02b3b197b21c"/>
+  </producedTypes>
+  <name>ОтчетПоИнтервалам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отчет по интервалам</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.ОтчетПоИнтервалам.Form.ФормаОтчетаУпр</defaultForm>
+  <mainDataCompositionSchema>Report.ОтчетПоИнтервалам.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <attributes uuid="f5d9cafa-a4c5-4d07-853a-6d3ad088eb92">
+    <name>ПериодОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период отчета</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8fee927a-f6dc-4239-a219-0c87c04f7f02">
+    <name>ВариантОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант отчета</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="97da1dd7-a394-4537-b4e9-da9e2388f8a6">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4137dd75-900d-454e-9a3b-77ff7088dd17">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель/Экспедитор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a09936b4-c3dc-4f08-a293-f8acd41b75e3">
+    <name>Причина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныОтказаПереноса</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9da0b269-ecd4-4320-bd73-d539a7992360">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a2015f7f-bf05-4ef8-9d41-c1b75967ce84">
+    <name>Терминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3f82c55f-947b-4713-a030-75edad01755f">
+    <name>УбратьЗаборы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Убрать заборы</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="88dce379-eb3c-47d8-a434-baebd7e8ebb5">
+    <name>Интервал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Интервал</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="683e095a-9dde-4dd6-82d6-fd4c3b112b49">
+    <name>ФормаОтчетаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета упр</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="f3c0cfe8-8183-4ceb-8f33-9646ac9a57ed">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="e85e54eb-e3c7-40ab-862b-05bf1578734e">
+    <name>МакетПоПериоду</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет по периоду</value>
+    </synonym>
+  </templates>
+</mdclass:Report>

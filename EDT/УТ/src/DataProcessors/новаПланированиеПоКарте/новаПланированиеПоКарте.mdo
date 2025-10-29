@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="69c00c4e-434d-4292-9607-e34f76715ed6">
+  <producedTypes>
+    <objectType typeId="13de546c-c14b-41e4-93da-a0da2350cfad" valueTypeId="4d697141-1c4e-48f4-8d12-c74d17582dc9"/>
+    <managerType typeId="c2954c33-c2f6-418d-8537-24bc3e502cb2" valueTypeId="07c051dc-d6a4-4a5b-8627-dd63bd2beabd"/>
+  </producedTypes>
+  <name>новаПланированиеПоКарте</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планирование по карте</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.новаПланированиеПоКарте.Form.Основная</defaultForm>
+  <attributes uuid="a6ab8beb-e77a-430a-8a4a-7b42e9b6c8ba">
+    <name>УсекатьДоставкиПоВесу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Усекать доставки по весу</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8037764a-aa2f-4148-b661-92f3e9c87aed">
+    <name>УсекатьДоставкиПоОбъему</name>
+    <synonym>
+      <key>ru</key>
+      <value>Усекать доставки по объему</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fd41847f-b2c3-41b3-b7bd-b086dd9ddaa1">
+    <name>УсекатьТранспортПоГрузоподъемности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Усекать транспорт по грузоподъемности</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c0acc1d1-e480-48be-b34f-696c632b78dc">
+    <name>УсекатьТранспортПоГрузовместимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Усекать транспорт по грузовместимости</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="180a29ed-ac5c-4996-bb0c-6a0c507db27d">
+    <name>ДатаПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата планирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d87adad3-7f58-406f-a5a9-3c69b926ecf7">
+    <name>НастройкаОтображенияМаркеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка отображения маркеров</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВаринтыНастройкиПланированияПоКарте</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="94a413f8-57c0-4fc9-a427-8bef92b916d0">
+    <name>УсекатьДоставкиПоРедактируемомуРейсу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Усекать доставки по редактируемому рейсу</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2b48263e-df2a-48bc-b07b-2177eb35c145">
+    <name>КатегорияДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КатегорииДоставки2014</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a0e12497-21a5-491e-baa8-dbbaa43447f4">
+    <name>НастройкаФильтра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка фильтра</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НастройкиФильтраДоставокНаПланированииПоКарте</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="441135c5-351b-4d24-a40e-f7cebda0dd37">
+    <name>ВыборРейса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор рейса</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c25bd58e-e626-4ccb-a806-62c3a9a3d9d9">
+    <name>ВыборТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор транспорта</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="26d3d444-8a72-4218-95f3-7f260e679119">
+    <name>Настройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d49fd85d-7ec9-4166-b2ef-356712e35d1b">
+    <name>Основная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e7e5190b-e562-43f4-a781-c7e3af5a04ac">
+    <name>СписокЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список заказов</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="40ffaace-f979-4fd3-a319-e6ca3a9e265a">
+    <name>СписокЗаказовГруппыМаркеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список заказов группы маркеров</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="024156ba-47ae-4abe-b7a7-963bb9b1a08e">
+    <name>СписокЗаказовДляОтмены</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список заказов для отмены</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a35ca709-e1f8-46b9-a004-61d7ec3331ce">
+    <name>СписокТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список транспорта</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3d2b808e-e584-4704-98f7-d1a242ab7820">
+    <name>ФильтрВеса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр веса</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="deb452d9-85c3-4c1b-ab15-cf52d7e6a264">
+    <name>ФильтрВидовТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр видов транспорта</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="895c25a7-6c9b-4c55-9c6f-2a6ad6e8c02b">
+    <name>ФильтрГрузовместимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр грузовместимости</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f9471249-7891-4d95-8dc6-8be06aa06fe9">
+    <name>ФильтрГрузоотправителей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр грузоотправителей</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="4af2c677-f8a4-4f46-8ff0-739ad5d8874d">
+    <name>ФильтрГрузоподъемности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр грузоподъемности</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="53641c03-777b-4e4b-9441-aa20753fd16b">
+    <name>ФильтрКатегорийЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр категорий заказов</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8d459764-c583-4b17-985d-5987f8645485">
+    <name>ФильтрКатегорийТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр категорий транспорта</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="65a378f2-0091-4021-9a3a-0f3675011a90">
+    <name>ФильтрОбъема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр объема</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5fea1bce-de5d-4a60-9a3e-e79698d256e3">
+    <name>ФильтрРайонов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр районов</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1e6c943c-4b11-406b-9c2e-48190970d3b2">
+    <name>ФильтрКоличестваМест</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр количества мест</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="79c35930-20fd-415d-8b61-52bf1d7146b4">
+    <name>ОкноУправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окно управления</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="47a9680c-ca22-4c11-acfe-2d42129f205e">
+    <name>ФильтрКатегорийДоставок2014</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр категорий доставок 2014</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="93c8f3a2-55f8-41f4-898b-cdfd667339ab">
+    <name>ФильтрЧасовДоставокС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр часов доставок с</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a0d940ee-5750-44f3-ba0f-5858662417ab">
+    <name>ФильтрИнтернетМагазинов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр интернет магазинов</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f114f52a-ab12-420a-8e7b-a4eba1d585a3">
+    <name>ФильтрЧасовДоставокПо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр часов доставок по</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8c9cdfab-63c9-4932-86a8-2f937d13856f">
+    <name>ФильтрПризнаковМО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр признаков МО</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="ba2aac2c-96fc-4272-9de2-56b1a4d575a0">
+    <name>КартинкаВыделеныВсе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка выделены все</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="08ac480d-d13f-4f2b-a44f-5b32731de830">
+    <name>КартинкаВыделенаЧасть</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка выделена часть</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="1c4683dc-9a33-4558-8436-bb30d9826fab">
+    <name>КартинкаВыделениеСнято</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка выделение снято</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
+</mdclass:DataProcessor>

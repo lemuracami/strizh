@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5b702faf-8c21-4fe8-84f3-a468aae70419">
+  <producedTypes>
+    <selectionType typeId="4d2819d3-94a0-4b16-ab17-a7d80f223426" valueTypeId="59f68c7d-d974-405d-bab9-fb409cf0284b"/>
+    <listType typeId="75e0dba3-9c88-4997-b6fc-d3f177ea01e7" valueTypeId="57c9f2b4-7371-4d10-ab18-b6bca85ff766"/>
+    <managerType typeId="b6d79213-ada1-489b-b249-29177a5ffb81" valueTypeId="578f48a3-751b-4058-b7a1-86c8aea0da53"/>
+    <recordSetType typeId="a5a68806-56ee-4e30-860a-f03f89bc5215" valueTypeId="ec5f1950-b2ff-4598-9626-560a66337580"/>
+    <recordKeyType typeId="c1f10953-a18d-4fa8-8da1-85459a80c0e1" valueTypeId="0dcb9e47-fe01-49e9-b997-990dc9bd2299"/>
+    <recordType typeId="71b38d80-d62d-4d6d-bcd5-6614535480cb" valueTypeId="0b197ecf-6dd8-4e0d-b0b3-30f51d0e8b57"/>
+    <recordManagerType typeId="073999e3-f9c2-4a0a-aa67-c00bd35af06e" valueTypeId="dbb7992e-d841-45c7-8f26-11844c2a9907"/>
+  </producedTypes>
+  <name>зпТарификацияПолигоновПарковки_КУдалению</name>
+  <synonym>
+    <key>ru</key>
+    <value>(зп) Тарификация полигонов парковки</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="45e8cabb-2e02-455c-9409-e36988b9f3aa">
+    <name>СтоимостьЗаРейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость за рейс</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="07fa58f8-2f5d-4bf8-a4ab-d5d62ad9f44e">
+    <name>СхемаРасчетаЗП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема расчета ЗП</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпСхемыРасчетаЗП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="259223b4-7d83-42ed-80f4-887ebb2a8075">
+    <name>ТарифРасчетаЗП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф расчета ЗП</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпТарифыРасчетаЗП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7279250b-e378-4035-807a-7b0228fc9dfc">
+    <name>ВидПолигоновПарковки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид полигонов парковки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпВидыПолигоновПарковки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

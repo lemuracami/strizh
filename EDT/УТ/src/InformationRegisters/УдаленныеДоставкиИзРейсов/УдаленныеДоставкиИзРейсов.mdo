@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d681339d-5cbe-4554-a2b9-3cfb233c197b">
+  <producedTypes>
+    <selectionType typeId="6e29aea8-0b8f-4426-b417-48df6af83660" valueTypeId="0b87c06b-2475-4c00-bb3e-1d30c11b7c17"/>
+    <listType typeId="f5178efc-4ab9-488e-98fb-d4f09b3468da" valueTypeId="e5bf57d9-50fd-4823-862c-737c8c944185"/>
+    <managerType typeId="75301057-5117-4482-848e-7fd18b523334" valueTypeId="ff2051f5-2e50-4b9a-bcce-2dde513d0d58"/>
+    <recordSetType typeId="b7705f28-c8ca-4d38-9cdb-14b67e7493c0" valueTypeId="a4d939f8-5677-4461-b28d-18797c009e0a"/>
+    <recordKeyType typeId="03bdac1d-7aeb-4746-bd2a-21934d7ec4b1" valueTypeId="5cf379be-582d-4c0b-9f4f-e2d17a479742"/>
+    <recordType typeId="dc8cf778-ac88-4d6c-9ae2-73190bee3812" valueTypeId="85722a16-c027-43f2-ac86-dc02d30db5b4"/>
+    <recordManagerType typeId="2bfb3318-adbb-4169-bd37-58aca23f5e96" valueTypeId="0fb0632d-0a62-486b-b5af-8f8257745958"/>
+  </producedTypes>
+  <name>УдаленныеДоставкиИзРейсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Удаленные доставки из рейсов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.УдаленныеДоставкиИзРейсов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.УдаленныеДоставкиИзРейсов.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="1331d8c2-6cb1-4599-bf9a-5ced447cf9aa">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаРейсМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9d44fb21-cd62-4434-b2f7-7d312c412431">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c8424af5-04f2-4fca-9a46-14837c0cef1c">
+    <name>Реализация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реализация</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="3244dc11-2b0d-4708-a373-65a685eda6a3">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="4070d7b5-d4f1-404a-aac1-f3a0c75a17a4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

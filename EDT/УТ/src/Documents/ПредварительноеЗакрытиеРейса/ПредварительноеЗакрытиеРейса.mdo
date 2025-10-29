@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7cae9563-bc4b-4cf0-85d6-0ebcd1605ff7">
+  <producedTypes>
+    <objectType typeId="d1d0cf67-2108-445c-954c-978a2f296a55" valueTypeId="50c996eb-eb92-45f4-a277-2111bfe7e7dc"/>
+    <refType typeId="7cf98e7f-c8ee-4c9d-ba56-d3fc3c5c7ba5" valueTypeId="2988cdce-16fc-4ea4-b253-f21e24b7e770"/>
+    <selectionType typeId="ee59d80d-94f2-46e4-91c9-c2e3fb4d02b4" valueTypeId="54694a32-d084-4b43-abea-37c25bfb536c"/>
+    <listType typeId="7dcd11cb-d43a-4f39-a986-9a72bc1fe20f" valueTypeId="fae4b426-de70-45af-8514-984b6834a8d2"/>
+    <managerType typeId="9947cd52-8759-4c39-ba97-cbc34adbe2e8" valueTypeId="abf36e86-837f-4673-b7ca-1f6fed285c94"/>
+  </producedTypes>
+  <name>ПредварительноеЗакрытиеРейса</name>
+  <synonym>
+    <key>ru</key>
+    <value>Предварительное закрытие рейса</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ПредварительноеЗакрытиеРейса.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ПредварительноеЗакрытиеРейса.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ПредварительноеЗакрытиеРейса.Form.ФормаСписка</defaultListForm>
+  <registerRecords>InformationRegister.СостоянияЗаказов</registerRecords>
+  <registerRecords>InformationRegister.СтатусыПредварительногоЗакрытияРейсов</registerRecords>
+  <registerRecords>InformationRegister.ДатыДоставок</registerRecords>
+  <attributes uuid="860e857d-b788-46be-a14a-349e77b2c1c8">
+    <name>ОтчетВодителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчет водителя</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.новаОтчетВодителя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="d7d9fb9a-42f7-427a-b65a-9e5e699a0f75">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3fc9251d-2576-4f73-a586-c4debaf7a985">
+    <name>ФормаДокумента1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа1</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="259c5213-ac4a-4b7f-9308-6b8142dcd011">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="4e74bc56-4d37-4159-9fef-72550492f0f3">
+    <producedTypes>
+      <objectType typeId="2b03758e-f7b8-4e85-89ef-fe0ed638a99c" valueTypeId="f75de131-7cc3-4591-9815-a25f1cef6371"/>
+      <rowType typeId="0edd7a0e-1ddf-4242-9940-d9088a5a275f" valueTypeId="52c9fecc-a951-4b57-bd2c-f0c19b429f4a"/>
+    </producedTypes>
+    <name>Заказы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы</value>
+    </synonym>
+    <attributes uuid="124089af-046b-491e-b0af-8350209caaf0">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="8e4b656c-9ed6-48f8-98aa-bb17323ad72c">
+      <name>ТекущаяДатаДоставки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Текущая дата доставки</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="bda7398f-a629-426c-9838-6878d2b77752">
+      <name>РезультатДоставки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Результат доставки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаРезультатМестнойДоставки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="12db48ad-d922-436a-a0a6-d2a8e4e2f7ad">
+      <name>ПричинаНевыполнения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Причина невыполнения</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПричиныНеВыполненияДоставки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <quickChoice>Use</quickChoice>
+      <createOnInput>DontUse</createOnInput>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2101bcf1-0bb7-44ef-8b46-9101ad80df32">
+      <name>ПричинаОтказа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Причина отказа</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПричиныОтказаПереноса</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="92ea94db-d39b-4941-b7bc-cc2235f0ee83">
+      <name>ДатаПереноса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата переноса</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="102146d9-776e-4d01-939b-c5c37162f6e6">
+      <name>ПредварительноеЗакрытие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Предварительное закрытие</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="6e908855-1595-408b-8254-53dd5c88bb4a">
+    <producedTypes>
+      <objectType typeId="d060b837-055e-4f13-bd3d-7ecff55d7f38" valueTypeId="f312c252-589e-4696-a76a-afc6b12199a4"/>
+      <rowType typeId="efb994e3-c643-46da-982a-874397f68c69" valueTypeId="479901be-aa8f-46a5-bdbc-efc439f87615"/>
+    </producedTypes>
+    <name>ДанныеМПВодителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Данные МПВодителя</value>
+    </synonym>
+    <attributes uuid="91331bd8-3b93-4fec-851f-5e6ff9a0c152">
+      <name>Доставка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доставка</value>
+      </synonym>
+      <type>
+        <types>BusinessProcessRef.новаМестнаяДоставка</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a3ce6f79-8002-4b52-957d-9a8cb9cfc9d7">
+      <name>АктуальныеДанные</name>
+      <synonym>
+        <key>ru</key>
+        <value>Актуальные данные</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="27dbb9db-464a-4346-9311-3fed5d1635ce">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ДанныеЗаказаВодителя</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d0d43ef8-f55e-4f7c-8535-7dca7beaec5d">
+      <name>ТипОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип оплаты</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ТипыОплат</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e5474bbb-8211-4422-945a-196a148cae8f">
+      <name>Реализация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Реализация</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="dccab67d-0cb4-4112-8026-865b5c7796d7">
+      <name>ТипЗаказа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип заказа</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ТипыЗаказов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="adf3461b-7f47-41fa-8b09-cf3d24478969">
+      <name>Забор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Забор</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаборТовара</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

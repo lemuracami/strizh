@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core">
+	<selection>
+		<item xsi:type="SelectedItemField">
+			<field>КоличествоЗаказов</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>КоличествоКлиентов</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>КоличествоТочекДоставки</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ОбъемЗаказов</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>СуммаЗаказов</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ВесЗаказов</field>
+		</item>
+	</selection>
+	<dataParameters>
+		<dcscor:item>
+			<dcscor:parameter>Период</dcscor:parameter>
+			<dcscor:value xsi:type="xsd:string"/>
+		</dcscor:item>
+		<dcscor:item>
+			<dcscor:parameter>Преднастройки</dcscor:parameter>
+			<dcscor:value xsi:type="xsd:string">Количество заказов</dcscor:value>
+		</dcscor:item>
+		<dcscor:item>
+			<dcscor:parameter>Группировка</dcscor:parameter>
+			<dcscor:value xsi:type="xsd:string"/>
+		</dcscor:item>
+	</dataParameters>
+	<outputParameters>
+		<dcscor:item>
+			<dcscor:parameter>DataParametersOutput</dcscor:parameter>
+			<dcscor:value xsi:type="DataCompositionTextOutputType">Output</dcscor:value>
+		</dcscor:item>
+	</outputParameters>
+	<item xsi:type="StructureItemGroup">
+		<groupItems>
+			<item xsi:type="GroupItemField">
+				<field>Водитель</field>
+				<groupType>Items</groupType>
+				<periodAdditionType>None</periodAdditionType>
+				<periodAdditionBegin xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+				<periodAdditionEnd xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+			</item>
+		</groupItems>
+		<order>
+			<item xsi:type="OrderItemAuto"/>
+		</order>
+		<selection>
+			<item xsi:type="SelectedItemAuto"/>
+		</selection>
+		<item xsi:type="StructureItemGroup">
+			<groupItems>
+				<item xsi:type="GroupItemField">
+					<field>ПричиныНеВыполнения</field>
+					<groupType>Items</groupType>
+					<periodAdditionType>None</periodAdditionType>
+					<periodAdditionBegin xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+					<periodAdditionEnd xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+				</item>
+			</groupItems>
+			<order>
+				<item xsi:type="OrderItemAuto"/>
+			</order>
+			<selection>
+				<item xsi:type="SelectedItemAuto"/>
+			</selection>
+		</item>
+	</item>
+	<item xsi:type="StructureItemChart">
+		<point>
+			<groupItems>
+				<item xsi:type="GroupItemField">
+					<field>Водитель</field>
+					<groupType>Items</groupType>
+					<periodAdditionType>None</periodAdditionType>
+					<periodAdditionBegin xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+					<periodAdditionEnd xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+				</item>
+			</groupItems>
+			<order>
+				<item xsi:type="OrderItemAuto"/>
+			</order>
+			<selection>
+				<item xsi:type="SelectedItemAuto"/>
+			</selection>
+		</point>
+		<selection>
+			<item xsi:type="SelectedItemField">
+				<field>СуммаЗаказов</field>
+			</item>
+		</selection>
+		<outputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ChartType</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:ChartType">StackedBar</dcscor:value>
+			</dcscor:item>
+			<dcscor:item>
+				<dcscor:parameter>TitleOutput</dcscor:parameter>
+				<dcscor:value xsi:type="DataCompositionTextOutputType">Output</dcscor:value>
+			</dcscor:item>
+			<dcscor:item>
+				<dcscor:parameter>Title</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Не выполнено заказов</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</outputParameters>
+	</item>
+	<item xsi:type="StructureItemChart">
+		<point>
+			<groupItems>
+				<item xsi:type="GroupItemField">
+					<field>ПричиныНеВыполнения</field>
+					<groupType>Items</groupType>
+					<periodAdditionType>None</periodAdditionType>
+					<periodAdditionBegin xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+					<periodAdditionEnd xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+				</item>
+			</groupItems>
+			<order>
+				<item xsi:type="OrderItemAuto"/>
+			</order>
+			<selection>
+				<item xsi:type="SelectedItemAuto"/>
+			</selection>
+		</point>
+		<selection>
+			<item xsi:type="SelectedItemField">
+				<field>СуммаЗаказов</field>
+			</item>
+		</selection>
+		<outputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ChartType</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:ChartType">Pie</dcscor:value>
+			</dcscor:item>
+			<dcscor:item>
+				<dcscor:parameter>TitleOutput</dcscor:parameter>
+				<dcscor:value xsi:type="DataCompositionTextOutputType">Auto</dcscor:value>
+			</dcscor:item>
+			<dcscor:item>
+				<dcscor:parameter>Title</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Причины не выполнения</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</outputParameters>
+	</item>
+</Settings>

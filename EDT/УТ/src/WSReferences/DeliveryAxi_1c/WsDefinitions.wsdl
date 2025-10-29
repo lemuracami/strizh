@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://tempuri.org/"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://schemas.microsoft.com/2003/10/Serialization/"
+		xmlns:xsd2="http://strizh.delivery"
+		xmlns:xsd3="http://tempuri.org/"
+		xmlns:xsd4="http://tempuri.org/Imports"
+		name="ax"
+		targetNamespace="http://tempuri.org/">
+	<types>
+		<xsd:schema xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:ns1="http://schemas.microsoft.com/2003/10/Serialization/"
+				xmlns:ns2="http://strizh.delivery"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tns="http://tempuri.org/Imports"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				xmlns:xsd1="http://tempuri.org/Imports"
+				xmlns:xsd4="http://schemas.microsoft.com/2003/10/Serialization/"
+				targetNamespace="http://tempuri.org/Imports">
+			<xsd:import schemaLocation="file://1.xsd"
+					namespace="http://tempuri.org/"/>
+			<xsd:import schemaLocation="file://3.xsd"
+					namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="file://2.xsd"
+					namespace="http://strizh.delivery"/>
+		</xsd:schema>
+	</types>
+	<message name="Iax_SetStatus_InputMessage">
+		<part name="parameters"
+				element="tns:SetStatus"/>
+	</message>
+	<message name="Iax_SetStatus_OutputMessage">
+		<part name="parameters"
+				element="tns:SetStatusResponse"/>
+	</message>
+	<message name="Iax_GetOrderForms_InputMessage">
+		<part name="parameters"
+				element="tns:GetOrderForms"/>
+	</message>
+	<message name="Iax_GetOrderForms_OutputMessage">
+		<part name="parameters"
+				element="tns:GetOrderFormsResponse"/>
+	</message>
+	<message name="Iax_SetOrderOkey_InputMessage">
+		<part name="parameters"
+				element="tns:SetOrderOkey"/>
+	</message>
+	<message name="Iax_SetOrderOkey_OutputMessage">
+		<part name="parameters"
+				element="tns:SetOrderOkeyResponse"/>
+	</message>
+	<message name="Iax_LoadReturnList_InputMessage">
+		<part name="parameters"
+				element="tns:LoadReturnList"/>
+	</message>
+	<message name="Iax_LoadReturnList_OutputMessage">
+		<part name="parameters"
+				element="tns:LoadReturnListResponse"/>
+	</message>
+	<portType name="Iax">
+		<operation name="SetStatus">
+			<input name="SetStatusRequest"
+					message="tns:Iax_SetStatus_InputMessage"/>
+			<output name="SetStatusResponse"
+					message="tns:Iax_SetStatus_OutputMessage"/>
+		</operation>
+		<operation name="GetOrderForms">
+			<input name="GetOrderFormsRequest"
+					message="tns:Iax_GetOrderForms_InputMessage"/>
+			<output name="GetOrderFormsResponse"
+					message="tns:Iax_GetOrderForms_OutputMessage"/>
+		</operation>
+		<operation name="SetOrderOkey">
+			<input name="SetOrderOkeyRequest"
+					message="tns:Iax_SetOrderOkey_InputMessage"/>
+			<output name="SetOrderOkeyResponse"
+					message="tns:Iax_SetOrderOkey_OutputMessage"/>
+		</operation>
+		<operation name="LoadReturnList">
+			<input name="LoadReturnListRequest"
+					message="tns:Iax_LoadReturnList_InputMessage"/>
+			<output name="LoadReturnListResponse"
+					message="tns:Iax_LoadReturnList_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_Iax"
+			type="tns:Iax">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SetStatus">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/Iax/SetStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderForms">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/Iax/GetOrderForms"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderOkey">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/Iax/SetOrderOkey"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="LoadReturnList">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/Iax/LoadReturnList"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ax">
+		<port name="BasicHttpBinding_Iax"
+				binding="tns:BasicHttpBinding_Iax">
+			<soapbind:address location="http://adminka.strizh-logistic.ru/services/ax.svc"/>
+		</port>
+	</service>
+</definitions>

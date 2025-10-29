@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="278fc81a-1707-4d38-9f71-bce99c066a48">
+  <producedTypes>
+    <selectionType typeId="1edad5f2-076f-4951-a5d4-561e00d3fc53" valueTypeId="bb165344-2c4c-4bce-a3c1-295ebdf8fad2"/>
+    <listType typeId="b465f1fe-88d5-41c4-8b47-173c4e749c1f" valueTypeId="fd7aef8c-07d1-4da5-af77-a0f37bc4173e"/>
+    <managerType typeId="ac7506d5-cb55-4345-af79-b595ff196024" valueTypeId="444352d6-4160-4c48-9c94-25344a79a17a"/>
+    <recordSetType typeId="4389bdd8-8f30-4f37-8ade-7ab6ffe6682c" valueTypeId="ff206c7f-9c6a-407f-9def-cf2e86e18d96"/>
+    <recordKeyType typeId="b862bf09-e006-41c5-bff3-02c8bf0cd548" valueTypeId="99c0a321-810a-4b97-97b0-311f41ba7e67"/>
+    <recordType typeId="c07eee1a-d105-484b-bc60-8b9eabfb1681" valueTypeId="615e22c5-f14f-4486-b810-e76b19ea8f40"/>
+    <recordManagerType typeId="cab351ed-8103-421f-8a2d-4caccf63ede6" valueTypeId="c24c213c-7920-446a-bdb4-5195e5cbc4fa"/>
+  </producedTypes>
+  <name>МассивАдресовДляОбменаСМП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Массив адресов для обмена СМП</value>
+  </synonym>
+  <dataHistory>Use</dataHistory>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.МассивАдресовДляОбменаСМП.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.МассивАдресовДляОбменаСМП.Form.ФормаСписка</defaultListForm>
+  <resources uuid="b5ad23f2-b69a-4871-a9e5-694a0e05fa4a">
+    <name>Приоритет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приоритет</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b4dcc1a8-dceb-4380-abd0-26988bbab890">
+    <name>Терминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="378ed630-f1e8-4904-bcec-fc90647912dc">
+    <name>Адрес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="54267535-6d3e-4bc5-a15b-36430f1da204">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="91ff3aff-ef01-4154-8387-ef618e9f0527">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,143 @@
+<xs:schema xmlns:tns="http://strizh.delivery"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="http://strizh.delivery">
+	<xs:complexType xmlns:default="http://schemas.microsoft.com/2003/10/Serialization/"
+			name="responseSetStatus">
+		<xs:sequence>
+			<xs:element name="errors"
+					nillable="true"
+					type="tns:errors">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/"
+								EmitDefaultValue="false"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="responseSetStatus"
+			nillable="true"
+			type="tns:responseSetStatus"/>
+	<xs:complexType name="errors">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="error"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="errors"
+			nillable="true"
+			type="tns:errors"/>
+	<xs:complexType name="arrayOfOkeys">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="okey"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="arrayOfOkeys"
+			nillable="true"
+			type="tns:arrayOfOkeys"/>
+	<xs:complexType xmlns:default="http://schemas.microsoft.com/2003/10/Serialization/"
+			name="responseGetOrderForms">
+		<xs:sequence>
+			<xs:element name="errors"
+					nillable="true"
+					type="tns:errors">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/"
+								EmitDefaultValue="false"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderForm"
+					nillable="true"
+					type="xs:base64Binary">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/"
+								EmitDefaultValue="false"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="responseGetOrderForms"
+			nillable="true"
+			type="tns:responseGetOrderForms"/>
+	<xs:complexType xmlns:default="http://schemas.microsoft.com/2003/10/Serialization/"
+			name="responseSetOrderOkey">
+		<xs:sequence>
+			<xs:element name="errors"
+					nillable="true"
+					type="tns:errors">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/"
+								EmitDefaultValue="false"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="responseSetOrderOkey"
+			nillable="true"
+			type="tns:responseSetOrderOkey"/>
+	<xs:complexType name="arrayOfReturnOrders">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="returnOrder"
+					nillable="true"
+					type="tns:returnOrder"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="arrayOfReturnOrders"
+			nillable="true"
+			type="tns:arrayOfReturnOrders"/>
+	<xs:complexType xmlns:default="http://schemas.microsoft.com/2003/10/Serialization/"
+			name="returnOrder">
+		<xs:sequence>
+			<xs:element name="order"
+					nillable="true"
+					type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/"
+								EmitDefaultValue="false"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="count"
+					type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="returnOrder"
+			nillable="true"
+			type="tns:returnOrder"/>
+	<xs:complexType xmlns:default="http://schemas.microsoft.com/2003/10/Serialization/"
+			name="responseLoadReturnList">
+		<xs:sequence>
+			<xs:element name="errors"
+					nillable="true"
+					type="tns:errors">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/"
+								EmitDefaultValue="false"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="responseLoadReturnList"
+			nillable="true"
+			type="tns:responseLoadReturnList"/>
+</xs:schema>

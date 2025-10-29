@@ -1,0 +1,75 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/ServiceMobileWarehouse">
+	<objectType name="Driver">
+		<property name="Name" type="xs:string" nillable="false"/>
+		<property name="ID" type="xs:string"/>
+	</objectType>
+	<objectType name="Car">
+		<property name="Name" type="xs:string"/>
+		<property name="ID" type="xs:string"/>
+	</objectType>
+	<objectType name="Partner">
+		<property name="Name" type="xs:string"/>
+		<property name="ID" type="xs:string"/>
+	</objectType>
+	<objectType name="Item">
+		<property name="Name" type="xs:string"/>
+		<property name="ID" type="xs:string"/>
+	</objectType>
+	<objectType name="FreightForwarder">
+		<property name="Name" type="xs:string"/>
+		<property name="ID" type="xs:string"/>
+	</objectType>
+	<objectType name="Order">
+		<property name="Date" type="xs:dateTime"/>
+		<property name="Name" type="xs:string"/>
+		<property name="Number" type="xs:string"/>
+		<property name="PartnerID" type="xs:string"/>
+		<property name="IntervalFrom" type="xs:time"/>
+		<property name="IntervalBy" type="xs:time"/>
+		<property name="Latitude" type="xs:decimal"/>
+		<property name="Longitude" type="xs:decimal"/>
+		<property name="Client" type="xs:string"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="ArrayOfItems" type="d3p1:ArrayOfItems" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ArrayOfItems">
+		<property name="ItemID" type="xs:string" lowerBound="1" upperBound="1"/>
+		<property name="Amount" type="xs:int"/>
+		<property name="Price" type="xs:decimal"/>
+		<property name="Sum" type="xs:decimal"/>
+	</objectType>
+	<objectType name="Trip">
+		<property name="TripID" type="xs:string"/>
+		<property name="DateTrip" type="xs:dateTime"/>
+		<property name="CarID" type="xs:string"/>
+		<property name="FreightForwarderID" type="xs:string"/>
+		<property name="DriverID" type="xs:string"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="ArrayOfOrdersID" type="d3p1:ArrayOfOrdersID" lowerBound="0" upperBound="-1"/>
+		<property name="ArrayOfOrdersBarcodes" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ArrayOfOrdersID">
+		<property name="OdrerID" type="xs:string"/>
+		<property name="OdrerPartnerID" type="xs:string"/>
+	</objectType>
+	<objectType name="ArrayOfOrdersBarcodes">
+		<property name="OdrerID" type="xs:string"/>
+		<property name="Barcode" type="xs:string"/>
+	</objectType>
+	<objectType name="TableDrivers">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="Driver" type="d3p1:Driver" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="TableCars">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="Car" type="d3p1:Car" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="TablePartners">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="Partner" type="d3p1:Partner" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="TableItems">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="Item" type="d3p1:Item" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="TableFreightForwarders">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="FreightForwarder" type="d3p1:FreightForwarder" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="TableOrders">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/ServiceMobileWarehouse" name="Order" type="d3p1:Order" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+</package>

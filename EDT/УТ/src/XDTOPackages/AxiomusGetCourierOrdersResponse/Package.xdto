@@ -1,0 +1,18 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/AxiomusGetCourierOrdersResponse">
+	<property xmlns:d2p1="http://www.strizh-logistic.ru/AxiomusGetCourierOrdersResponse" name="response" type="d2p1:response"/>
+	<objectType name="order">
+		<property name="status" type="xs:int"/>
+		<property name="customer_price" type="xs:float"/>
+		<property name="okey" type="xs:string" lowerBound="0" upperBound="-1"/>
+		<property name="num" type="xs:int"/>
+		<property name="id" type="xs:int"/>
+	</objectType>
+	<objectType name="orderlist">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/AxiomusGetCourierOrdersResponse" name="order" type="d3p1:order"/>
+	</objectType>
+	<objectType name="response">
+		<property name="request" type="xs:string" form="Element"/>
+		<property name="query" type="xs:string"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/AxiomusGetCourierOrdersResponse" name="orderlist" type="d3p1:orderlist"/>
+	</objectType>
+</package>

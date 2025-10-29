@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="ozon/api/subagent"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="ozon/api/subagent"
+		xmlns:xsd2="ozon/api/subagent/Imports"
+		name="ReportService"
+		targetNamespace="ozon/api/subagent">
+	<types>
+		<xsd:schema xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tns="ozon/api/subagent/Imports"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				targetNamespace="ozon/api/subagent/Imports">
+			<xsd:import schemaLocation="file://1.xsd"
+					namespace="ozon/api/subagent"/>
+		</xsd:schema>
+	</types>
+	<message name="IReportService_PostingProcessedListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingProcessedListGet"/>
+	</message>
+	<message name="IReportService_PostingProcessedListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingProcessedListGetResponse"/>
+	</message>
+	<message name="IReportService_ReportAdd_InputMessage">
+		<part name="parameters"
+				element="tns:ReportAdd"/>
+	</message>
+	<message name="IReportService_ReportAdd_OutputMessage">
+		<part name="parameters"
+				element="tns:ReportAddResponse"/>
+	</message>
+	<message name="IReportService_ReportGet_InputMessage">
+		<part name="parameters"
+				element="tns:ReportGet"/>
+	</message>
+	<message name="IReportService_ReportGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ReportGetResponse"/>
+	</message>
+	<portType name="IReportService">
+		<operation name="PostingProcessedListGet">
+			<input name="PostingProcessedListGetRequest"
+					message="tns:IReportService_PostingProcessedListGet_InputMessage"/>
+			<output name="PostingProcessedListGetResponse"
+					message="tns:IReportService_PostingProcessedListGet_OutputMessage"/>
+		</operation>
+		<operation name="ReportAdd">
+			<input name="ReportAddRequest"
+					message="tns:IReportService_ReportAdd_InputMessage"/>
+			<output name="ReportAddResponse"
+					message="tns:IReportService_ReportAdd_OutputMessage"/>
+		</operation>
+		<operation name="ReportGet">
+			<input name="ReportGetRequest"
+					message="tns:IReportService_ReportGet_InputMessage"/>
+			<output name="ReportGetResponse"
+					message="tns:IReportService_ReportGet_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_IReportService"
+			type="tns:IReportService">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="PostingProcessedListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IReportService/PostingProcessedListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReportAdd">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IReportService/ReportAdd"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReportGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IReportService/ReportGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ReportService">
+		<port name="BasicHttpBinding_IReportService"
+				binding="tns:BasicHttpBinding_IReportService">
+			<soapbind:address location="http://api.ozon-dostavka.ru/subagent/v2/ReportService.svc"/>
+		</port>
+	</service>
+</definitions>

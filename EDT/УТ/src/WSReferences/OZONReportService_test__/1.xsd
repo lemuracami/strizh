@@ -1,0 +1,223 @@
+<xs:schema xmlns:tns="http://api.ocourier.ru/subagent/report"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="http://api.ocourier.ru/subagent/report">
+	<xs:element name="PostingProcessedListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestPostingProcessedListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestPostingProcessedListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DateFrom"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DateTo"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Mode"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageSize"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageNumber"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="Login"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="Password"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PostingProcessedListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="PostingProcessedListGetResult"
+						type="tns:ReplyPostingProcessedListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyPostingProcessedListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="PostingProcessedInfoList"
+							type="tns:ArrayOfPostingProcessedInfo"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Rows"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseReply">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ResultCode"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="ResultMessage"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="ResultProcessTime"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfPostingProcessedInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="PostingProcessedInfo"
+					nillable="true"
+					type="tns:PostingProcessedInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PostingProcessedInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="PostingID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="PostingName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ClientAmount"
+					nillable="true"
+					type="xs:decimal"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DateIn"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DateOut"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DeliveryVariantID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DeliveryVariantName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="OperationType"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ReportGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestReportGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestReportGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReportType"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReportFormat"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ReportGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="ReportGetResult"
+						type="tns:ReplyReportGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyReportGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReportData"
+							type="xs:base64Binary"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReportFormat"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReportExtension"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

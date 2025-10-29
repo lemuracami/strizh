@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="urn:DetMir.ru:TransComp:Common"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="urn:DetMir.ru:TransComp:Common"
+		name="TransComp_GetDlvStatus_Out"
+		targetNamespace="urn:DetMir.ru:TransComp:Common">
+	<documentation> </documentation>
+	<types>
+		<xsd:schema xmlns="urn:DetMir.ru:TransComp:Common"
+				xmlns:p1="urn:DetMir.ru:TransComp:Common"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				targetNamespace="urn:DetMir.ru:TransComp:Common">
+			<xsd:element name="TransCompGetDlvStatusResp"
+					type="xsd1:TransCompGetDlvStatusResp"/>
+			<xsd:element name="TransCompGetDlvStatusReq"
+					type="xsd1:TransCompGetDlvStatusReq"/>
+			<xsd:complexType name="TransCompGetDlvStatusResp">
+				<xsd:annotation>
+					<xsd:appinfo source="http://sap.com/xi/VersionID">5b374b47aba811e8c23b0000006ab3d2</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="Delivery"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">5985a9f820c311e5998f00ff333563f5</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Exidv"
+							type="xsd:string"
+							minOccurs="0"/>
+					<xsd:element name="Status"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">5985e8cd20c311e5a65b00ff333563f5</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Msg"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">5b3b9b7caba811e899189cb654f0abee</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="TransCompGetDlvStatusReq">
+				<xsd:annotation>
+					<xsd:appinfo source="http://sap.com/xi/VersionID">fe3a93a720c311e5c4710000006ab3d2</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="Partner"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">5985a9f820c311e5998f00ff333563f5</xsd:appinfo>
+							<xsd:documentation>Partner Number</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="OrderDocNo"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">5985e8cd20c311e5a65b00ff333563f5</xsd:appinfo>
+							<xsd:documentation>InternetShop Order Number</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</types>
+	<message name="TransCompGetDlvStatusReq">
+		<documentation> </documentation>
+		<part name="TransCompGetDlvStatusReq"
+				element="tns:TransCompGetDlvStatusReq"/>
+	</message>
+	<message name="TransCompGetDlvStatusResp">
+		<documentation> </documentation>
+		<part name="TransCompGetDlvStatusResp"
+				element="tns:TransCompGetDlvStatusResp"/>
+	</message>
+	<portType name="TransComp_GetDlvStatus_Out">
+		<documentation> </documentation>
+		<operation name="GetDlvStatus_Sync">
+			<documentation> </documentation>
+			<input name="GetDlvStatus_SyncRequest"
+					message="tns:TransCompGetDlvStatusReq"/>
+			<output name="GetDlvStatus_SyncResponse"
+					message="tns:TransCompGetDlvStatusResp"/>
+		</operation>
+	</portType>
+	<binding name="TransComp_GetDlvStatus_OutBinding"
+			type="tns:TransComp_GetDlvStatus_Out">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetDlvStatus_Sync">
+			<soapbind:operation style="document"
+					soapAction="http://sap.com/xi/WebService/soap1.1"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="TransComp_GetDlvStatus_OutService">
+		<port name="HTTP_Port"
+				binding="tns:TransComp_GetDlvStatus_OutBinding">
+			<soapbind:address location="http://sappi.detmir.ru:18101/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORT_COMPANIES_P&amp;receiverParty=&amp;receiverService=&amp;interface=TransComp_GetDlvStatus_Out&amp;interfaceNamespace=urn%3ADetMir.ru%3ATransComp%3ACommon"/>
+		</port>
+		<port name="HTTPS_Port"
+				binding="tns:TransComp_GetDlvStatus_OutBinding">
+			<soapbind:address location="https://sappip.detmir-group.ru:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORT_COMPANIES_P&amp;receiverParty=&amp;receiverService=&amp;interface=TransComp_GetDlvStatus_Out&amp;interfaceNamespace=urn%3ADetMir.ru%3ATransComp%3ACommon"/>
+		</port>
+	</service>
+</definitions>

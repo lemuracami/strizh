@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="ozon/api/subagent"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="ozon/api/subagent"
+		name="InformationService"
+		targetNamespace="ozon/api/subagent">
+	<types>
+		<xs:schema xmlns:i0="http://api.ocourier.ru/subagent/information"
+				xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				elementFormDefault="qualified"
+				targetNamespace="ozon/api/subagent">
+			<xs:element name="UserListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestUserListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestUserListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Login"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Password"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="UserListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="UserListGetResult"
+								type="xsd1:ReplyUserListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyUserListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="UserInfoList"
+									type="xsd1:ArrayOfUserInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ResultCode"
+							type="xs:int"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ResultMessage"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ResultProcessTime"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfUserInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="UserInfo"
+							nillable="true"
+							type="xsd1:UserInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="UserInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Login"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CurrentPlaceID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CurrentPlaceName"
+							nillable="true"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ReturnReasonListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestReturnReasonListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestReturnReasonListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ReturnReasonType"
+									type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="ReturnReasonListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="ReturnReasonListGetResult"
+								type="xsd1:ReplyReturnReasonListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyReturnReasonListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ReturnReasonInfoList"
+									type="xsd1:ArrayOfReturnReasonInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfReturnReasonInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ReturnReasonInfo"
+							nillable="true"
+							type="xsd1:ReturnReasonInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ReturnReasonInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Name"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Code"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Type"
+							nillable="true"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="UserContractListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestUserContractListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestUserContractListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest"/>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="UserContractListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="UserContractListGetResult"
+								type="xsd1:ReplyUserContractListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyUserContractListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="ContractInfoList"
+									type="xsd1:ArrayOfContractInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfContractInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ContractInfo"
+							nillable="true"
+							type="xsd1:ContractInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ContractInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Name"
+							nillable="true"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="DeliveryVariantListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestDeliveryVariantListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestDeliveryVariantListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="DeliveryVariantID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="StateSysName"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageSize"
+									nillable="true"
+									type="xs:int"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageNumber"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="DeliveryVariantListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="DeliveryVariantListGetResult"
+								type="xsd1:ReplyDeliveryVariantListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyDeliveryVariantListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="DeliveryVariantInfoList"
+									type="xsd1:ArrayOfDeliveryVariantInfo"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="Rows"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfDeliveryVariantInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="DeliveryVariantInfo"
+							nillable="true"
+							type="xsd1:DeliveryVariantInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="DeliveryVariantInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="TypeID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="TypeSysName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="TypeName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="StateID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="StateSysName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="StateName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Name"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Code"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Address"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="SettlementID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="SettlementName"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PlaceID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PlaceName"
+							nillable="true"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PlaceInformationListGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="request"
+								type="xsd1:RequestPlaceInformationListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RequestPlaceInformationListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseRequest">
+						<xs:sequence>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="ContractID"
+									nillable="true"
+									type="xs:long"/>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="Name"
+									type="xs:string"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageSize"
+									nillable="true"
+									type="xs:int"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="PageNumber"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="PlaceInformationListGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+								maxOccurs="1"
+								name="PlaceInformationListGetResult"
+								type="xsd1:ReplyPlaceInformationListGet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="ReplyPlaceInformationListGet"
+					mixed="false">
+				<xs:complexContent mixed="false">
+					<xs:extension base="xsd1:BaseReply">
+						<xs:sequence>
+							<xs:element minOccurs="0"
+									maxOccurs="1"
+									name="PlaceInfoList"
+									type="xsd1:ArrayOfPlaceInfo"/>
+							<xs:element minOccurs="1"
+									maxOccurs="1"
+									name="Rows"
+									nillable="true"
+									type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ArrayOfPlaceInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="PlaceInfo"
+							nillable="true"
+							type="xsd1:PlaceInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="PlaceInfo">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Name"
+							nillable="true"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Address"
+							nillable="true"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="IInformationService_UserListGet_InputMessage">
+		<part name="parameters"
+				element="tns:UserListGet"/>
+	</message>
+	<message name="IInformationService_UserListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:UserListGetResponse"/>
+	</message>
+	<message name="IInformationService_ReturnReasonListGet_InputMessage">
+		<part name="parameters"
+				element="tns:ReturnReasonListGet"/>
+	</message>
+	<message name="IInformationService_ReturnReasonListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ReturnReasonListGetResponse"/>
+	</message>
+	<message name="IInformationService_UserContractListGet_InputMessage">
+		<part name="parameters"
+				element="tns:UserContractListGet"/>
+	</message>
+	<message name="IInformationService_UserContractListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:UserContractListGetResponse"/>
+	</message>
+	<message name="IInformationService_DeliveryVariantListGet_InputMessage">
+		<part name="parameters"
+				element="tns:DeliveryVariantListGet"/>
+	</message>
+	<message name="IInformationService_DeliveryVariantListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:DeliveryVariantListGetResponse"/>
+	</message>
+	<message name="IInformationService_PlaceInformationListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PlaceInformationListGet"/>
+	</message>
+	<message name="IInformationService_PlaceInformationListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PlaceInformationListGetResponse"/>
+	</message>
+	<portType name="IInformationService">
+		<operation name="UserListGet">
+			<input name="UserListGetRequest"
+					message="tns:IInformationService_UserListGet_InputMessage"/>
+			<output name="UserListGetResponse"
+					message="tns:IInformationService_UserListGet_OutputMessage"/>
+		</operation>
+		<operation name="ReturnReasonListGet">
+			<input name="ReturnReasonListGetRequest"
+					message="tns:IInformationService_ReturnReasonListGet_InputMessage"/>
+			<output name="ReturnReasonListGetResponse"
+					message="tns:IInformationService_ReturnReasonListGet_OutputMessage"/>
+		</operation>
+		<operation name="UserContractListGet">
+			<input name="UserContractListGetRequest"
+					message="tns:IInformationService_UserContractListGet_InputMessage"/>
+			<output name="UserContractListGetResponse"
+					message="tns:IInformationService_UserContractListGet_OutputMessage"/>
+		</operation>
+		<operation name="DeliveryVariantListGet">
+			<input name="DeliveryVariantListGetRequest"
+					message="tns:IInformationService_DeliveryVariantListGet_InputMessage"/>
+			<output name="DeliveryVariantListGetResponse"
+					message="tns:IInformationService_DeliveryVariantListGet_OutputMessage"/>
+		</operation>
+		<operation name="PlaceInformationListGet">
+			<input name="PlaceInformationListGetRequest"
+					message="tns:IInformationService_PlaceInformationListGet_InputMessage"/>
+			<output name="PlaceInformationListGetResponse"
+					message="tns:IInformationService_PlaceInformationListGet_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_IInformationService"
+			type="tns:IInformationService">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="UserListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/UserListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReturnReasonListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/ReturnReasonListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UserContractListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/UserContractListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeliveryVariantListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/DeliveryVariantListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PlaceInformationListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/PlaceInformationListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="InformationService">
+		<port name="BasicHttpBinding_IInformationService"
+				binding="tns:BasicHttpBinding_IInformationService">
+			<soapbind:address location="http://api.ocourier.ru/subagent/v2/InformationService.svc"/>
+		</port>
+	</service>
+</definitions>

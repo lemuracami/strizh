@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="97637bc9-43d1-4b6c-9c8e-27052f97551b">
+  <producedTypes>
+    <selectionType typeId="d0dc17df-be50-483d-9d4d-b760e2f05d8c" valueTypeId="3112d244-2802-485d-a026-da06bcaef97b"/>
+    <listType typeId="146933b7-43d3-4265-92b9-2ef70def50b1" valueTypeId="febc8561-e20f-47e4-a3c3-2fc96875517c"/>
+    <managerType typeId="13c6a777-874e-4d07-b7f8-28a9bcc22a8d" valueTypeId="b9024edb-b89d-4918-ab92-34c404c5d609"/>
+    <recordSetType typeId="00b47dbe-95e0-4e17-95b9-757b90a94004" valueTypeId="78bed238-81f9-4086-b69b-7366b7b95a74"/>
+    <recordKeyType typeId="8044de71-9672-4af1-b8e4-5d4626149c33" valueTypeId="c630f28d-2e05-4b10-9919-3c8981645e09"/>
+    <recordType typeId="477f1c03-93ff-493a-8d44-57e35eb18087" valueTypeId="989b546c-eb77-4fda-b724-8305079c5e92"/>
+    <recordManagerType typeId="d369552d-6db4-4d5f-b613-c875618c3b94" valueTypeId="83f7f2fd-62c9-4e64-a398-aea6efc55fee"/>
+  </producedTypes>
+  <name>ПолигоныОпределенияСменыМаршрутизации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Полигоны определения смены маршрутизации</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="58e245ef-dbcf-47c8-af23-30bb2d392d65">
+    <name>ПолигонУчитывается</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полигон учитывается</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="3f59d041-c455-4744-840d-d5e0959421dc">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="c339862f-87d1-4632-83b4-75e622071866">
+    <name>Смена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Смены</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="900d7759-5078-4565-9850-a944f2068e10">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c91fb162-5dde-4aae-8ac2-11bac1a41f82">
+    <name>ДатаРейсов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата рейсов</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4ce92f34-a2b4-4189-a715-dabf1970845e">
+    <name>ГруппаПолигоновМаршрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа полигонов маршрутизации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыПолигоновМаршрутизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="de5d068c-8f3b-4462-9b9e-8efdb218b417">
+    <name>НомерПолигонаМаршрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер полигона маршрутизации</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

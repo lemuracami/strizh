@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://v8.1c.ru/8.2/data/spreadsheet" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<languageSettings>
+		<currentLanguage>ru</currentLanguage>
+		<defaultLanguage>ru</defaultLanguage>
+		<languageInfo>
+			<id>ru</id>
+			<code>Русский</code>
+			<description>Русский</description>
+		</languageInfo>
+	</languageSettings>
+	<columns>
+		<size>8</size>
+		<columnsItem>
+			<index>0</index>
+			<column>
+				<formatIndex>1</formatIndex>
+			</column>
+		</columnsItem>
+	</columns>
+	<rowsItem>
+		<index>0</index>
+		<row>
+			<c>
+				<c>
+					<f>2</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Карта маршрутизация&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="https://mpmap.strizh-logistic.ru/v1/dragControl.css?10"&gt;
+    &lt;link rel="stylesheet" href="https://mpmap.strizh-logistic.ru/v1/common.css?10"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=9" /&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    &lt;script src="https://mpmap.strizh-logistic.ru/v1/jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;!--Строка подключения сгенерированного скрипта,нужно понять куда его сохранять чтобы иметь полную ссылку--&gt;
+    &lt;!--Сейчас ссылается на папку,где находится основаня страница--&gt;
+    &lt;script src="https://mpmap.strizh-logistic.ru/v1/MapUtils.js?10" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;script src="https://mpmap.strizh-logistic.ru/v1/Selection.js?10" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;script src="https://mpmap.strizh-logistic.ru/v1/YScripts.js?10" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;script src="https://mpmap.strizh-logistic.ru/v1/CommonFunc.js?10" type="text/javascript"&gt;&lt;/script&gt;
+
+    &lt;!--Скрипт контрола списка с заказами--&gt;
+    &lt;script src="https://mpmap.strizh-logistic.ru/v1/dragControl.js?10" type="text/javascript"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+        function exec(script) {
+            try {
+                eval(script);
+            }
+            catch (e) {
+                alert(e.message);
+            }
+        }
+        var WebKitUsage;
+        var FormEvent;
+        var select;
+        var xForm1C;
+        var map;
+        var clusterer;
+        //исходный массив с точками
+        var points;
+        //массив с точками на карте
+        var hashPoints;
+        //массив с точками маршрута
+        var routePoints = [];
+        //массив с геоточками маршрута
+        var routePlacemarks = [];
+        //флаг начала построения маршрута
+        var routeIsBuilding = false;
+        var mapIsLoad = false;
+        $(window).load(function () {
+
+            ymaps.ready(function () {
+                hashPoints = new ymaps.util.Storage();
+                map = new ymaps.Map("YMapsID", {
+
+                    // Центр карты
+                    center: [55.755819, 37.617644],
+                    // Коэффициент масштабирования
+                    zoom: 13,
+                    // Тип карты
+                    searchControlProvider: 'yandex#search',
+                    state: { behaviors: ["scrollZoom"] }
+                });
+
+                firstButton = new ymaps.control.Button("Отключить подсказки");
+                firstButton.events.add('click', (e) =&gt; {
+                STZ.HandleShowBalloonsClick();
+                });
+
+                map.controls.add(firstButton,{maxWidth:190,float: 'right'});
+
+                map.behaviors.disable(['rightMouseButtonMagnifier']);
+                map.behaviors.enable(['drag']);
+
+                MapUtils.Init(map);
+                select = new STZ.Selection(map);
+
+                createClusters();
+                mapIsLoad = true;
+                onStart();
+            });
+        });
+        function createClusters() {       // Creating a clusterer with an accordian layout
+            clusterer = new ymaps.Clusterer({
+                clusterDisableClickZoom: true,
+
+                clusterBalloonContentLayout: "cluster#balloonAccordion"
+            });
+
+            map.geoObjects.add(clusterer);
+
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body style="height:100%;" //~~onload~~&gt;
+    &lt;div id='message_name' style='display: none'&gt;&lt;/div&gt;
+    &lt;div id='message_data' style='display: none'&gt;&lt;/div&gt;
+    &lt;div class="tab"&gt;
+        &lt;button id="btnShowMap" class="tablinks" onclick="showTab(event, 'tabMaps')"&gt;Карта&lt;/button&gt;
+        &lt;button id="btnShowList" class="tablinks" onclick="showTab(event, 'tabList')"&gt;Список&lt;/button&gt;
+        &lt;input style="display:none;font-size:1.5em;" type="button" id="buttonStartRoute" onclick="showPoints()" value="Показать заказы"&gt;
+        &lt;input style="display:none;font-size:1.5em;" type="button" id="buttonStartRoute" onclick="startRoute()" value="Начать маршрут"&gt;
+        &lt;input style="display:none;font-size:1.5em;" type="button" id="buttonStartRoute" onclick="fixRoute()" value="Зафиксировать маршрут"&gt;
+        &lt;input style="display:none;font-size:1.5em;" type="button" id="buttonStartRoute" onclick="cancelRoute()" value="Отменить маршрут"&gt;
+        &lt;div id="routeOrders"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+	&lt;div style="margin-top: 60px;height:100%;width:100%;"&gt;
+        &lt;div style="height:100%;width:100%;position: fixed;" id="tabMaps" class="tabcontent"&gt;
+            &lt;div id="YMapsID" style="width:100%;height:100%;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="tabList" class="tabcontent"&gt;
+            &lt;div id="ordersList"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+	&lt;/div&gt;   
+
+&lt;/body&gt;
+
+&lt;script&gt;
+    let items = [
+        { RouteIndex:1, Lat: 55.844110, Lng: 37.728247, UID: '1', OrderId: '123456', Interval: "c 10:00 до 14:00", Address: "улица Касаткина, Переулок Московский, подъезд 6, квартира 7", },
+        { RouteIndex:2, Lat: 55.944110, Lng: 37.928247, UID: '2', OrderId: '222222', Interval: "c 16:00 до 22:00", Address: "улица Касаткина, 8", },
+        { RouteIndex:3, Lat: 56.144110, Lng: 37.728247, UID: '3', OrderId: '333333', Interval: "c 19:00 до 22:00", Address: "улица Касаткина, 9", },
+		{ RouteIndex:4, Lat: 56.344110, Lng: 37.828247, UID: '4', OrderId: '444444', Interval: "c 10:00 до 22:00", Address: "улица Касаткина, 10" },
+		{ RouteIndex:5, Lat: 56.544110, Lng: 37.928247, UID: '5', OrderId: '555555', Interval: "c 10:00 до 22:00", Address: "улица Касаткина, 11", OrderType: 2 }
+    ];
+
+    //listUI.createInstance(document.getElementById("ordersList"), cloneArray(items), onDrag);
+
+    function showPoints() {
+        STZ.ShowAddressCoordByArr(items);
+    }
+
+    function startRoute() {
+        STZ.StartRoute();        
+    }
+
+    function fixRoute() {
+        STZ.EndRoute();
+        //let data = document.getElementById('message_data').innerHTML;
+        //document.getElementById('routeOrders').textContent = 'Маршрут: ' + data;
+    }
+
+    function cancelRoute() {
+        STZ.CancelRoute();        
+    }
+
+    function showTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i &lt; tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i &lt; tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function onStart(){
+        document.getElementById("btnShowMap").click();
+    }
+&lt;/script&gt;
+
+&lt;/html&gt;</v8:content>
+						</v8:item>
+					</tl>
+				</c>
+			</c>
+			<c>
+				<i>7</i>
+				<c>
+					<f>0</f>
+					<tl/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<templateMode>true</templateMode>
+	<defaultFormatIndex>3</defaultFormatIndex>
+	<height>1</height>
+	<vgRows>1</vgRows>
+	<namedItem xsi:type="NamedItemCells">
+		<name>ТекстСкрипта</name>
+		<area>
+			<type>Rectangle</type>
+			<beginRow>0</beginRow>
+			<endRow>0</endRow>
+			<beginColumn>0</beginColumn>
+			<endColumn>0</endColumn>
+		</area>
+	</namedItem>
+	<font faceName="Arial" height="10" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+	<format>
+		<width>938</width>
+	</format>
+	<format>
+		<font>0</font>
+	</format>
+	<format>
+		<width>72</width>
+	</format>
+</document>

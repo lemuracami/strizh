@@ -1,0 +1,277 @@
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration">
+	<xs:complexType name="ArrayOfActOfAcceptance">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="ActOfAcceptance"
+					nillable="true"
+					type="tns:ActOfAcceptance"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfActOfAcceptance"
+			nillable="true"
+			type="tns:ArrayOfActOfAcceptance"/>
+	<xs:complexType name="ActOfAcceptance">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="Date"
+					type="xs:dateTime"/>
+			<xs:element minOccurs="0"
+					name="Number"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Orders"
+					nillable="true"
+					type="tns:ArrayOfActOfAcceptanceOrder"/>
+			<xs:element minOccurs="0"
+					name="ShipFromCompany"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ActOfAcceptance"
+			nillable="true"
+			type="tns:ActOfAcceptance"/>
+	<xs:complexType name="ArrayOfActOfAcceptanceOrder">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="ActOfAcceptanceOrder"
+					nillable="true"
+					type="tns:ActOfAcceptanceOrder"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfActOfAcceptanceOrder"
+			nillable="true"
+			type="tns:ArrayOfActOfAcceptanceOrder"/>
+	<xs:complexType name="ActOfAcceptanceOrder">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="Containers"
+					nillable="true"
+					type="tns:ArrayOfActOfAcceptanceContainer"/>
+			<xs:element minOccurs="0"
+					name="OrderNumber"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="ShipmentId"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="WaybillNumber"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ActOfAcceptanceOrder"
+			nillable="true"
+			type="tns:ActOfAcceptanceOrder"/>
+	<xs:complexType name="ArrayOfActOfAcceptanceContainer">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="ActOfAcceptanceContainer"
+					nillable="true"
+					type="tns:ActOfAcceptanceContainer"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfActOfAcceptanceContainer"
+			nillable="true"
+			type="tns:ArrayOfActOfAcceptanceContainer"/>
+	<xs:complexType name="ActOfAcceptanceContainer">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="ContainerId"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="GoodsAmount"
+					type="xs:decimal"/>
+			<xs:element minOccurs="0"
+					name="Weight"
+					type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ActOfAcceptanceContainer"
+			nillable="true"
+			type="tns:ActOfAcceptanceContainer"/>
+	<xs:complexType name="ApproveStatusByIdItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="Id"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="WaybillNumber"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ApproveStatusByIdItem"
+			nillable="true"
+			type="tns:ApproveStatusByIdItem"/>
+	<xs:complexType name="ArrayOfApproveStatusByIdItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="ApproveStatusByIdItem"
+					nillable="true"
+					type="tns:ApproveStatusByIdItem"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfApproveStatusByIdItem"
+			nillable="true"
+			type="tns:ArrayOfApproveStatusByIdItem"/>
+	<xs:complexType name="ArrayOfDeclineStatusItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="DeclineStatusItem"
+					nillable="true"
+					type="tns:DeclineStatusItem"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfDeclineStatusItem"
+			nillable="true"
+			type="tns:ArrayOfDeclineStatusItem"/>
+	<xs:complexType name="DeclineStatusItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="ErrorCode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="ErrorText"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="RequestId"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DeclineStatusItem"
+			nillable="true"
+			type="tns:DeclineStatusItem"/>
+	<xs:complexType name="DeclineStatusByIdItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="ErrorCode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="ErrorText"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Id"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DeclineStatusByIdItem"
+			nillable="true"
+			type="tns:DeclineStatusByIdItem"/>
+	<xs:complexType name="ArrayOfDeclineStatusByIdItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="DeclineStatusByIdItem"
+					nillable="true"
+					type="tns:DeclineStatusByIdItem"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfDeclineStatusByIdItem"
+			nillable="true"
+			type="tns:ArrayOfDeclineStatusByIdItem"/>
+	<xs:complexType name="SetStatusResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="ErrorText"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Result"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SetStatusResponse"
+			nillable="true"
+			type="tns:SetStatusResponse"/>
+	<xs:complexType name="ArrayOfSetDeliveryStatusItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="SetDeliveryStatusItem"
+					nillable="true"
+					type="tns:SetDeliveryStatusItem"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfSetDeliveryStatusItem"
+			nillable="true"
+			type="tns:ArrayOfSetDeliveryStatusItem"/>
+	<xs:complexType name="SetDeliveryStatusItem">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="CarNumber"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="City"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Comment"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="CustomStatus"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Date"
+					type="xs:dateTime"/>
+			<xs:element minOccurs="0"
+					name="DriverPhone"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="OrderReNumber"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="RequestId"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Status"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="TerminalCode"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SetDeliveryStatusItem"
+			nillable="true"
+			type="tns:SetDeliveryStatusItem"/>
+	<xs:complexType name="ArrayOfSetStatusResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="SetStatusResponse"
+					nillable="true"
+					type="tns:SetStatusResponse"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfSetStatusResponse"
+			nillable="true"
+			type="tns:ArrayOfSetStatusResponse"/>
+</xs:schema>

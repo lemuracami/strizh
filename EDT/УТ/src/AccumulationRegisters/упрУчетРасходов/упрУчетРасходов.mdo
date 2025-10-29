@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b30fd6b5-2509-4dd2-9c11-46f9ca105b34">
+  <producedTypes>
+    <selectionType typeId="3ce678d5-15a3-447f-b672-8dbf32e5bef0" valueTypeId="8a77fa95-9444-4d77-b564-df30a5cb7f58"/>
+    <listType typeId="cada30c5-62d8-4dee-a944-85e587e5b1ba" valueTypeId="8fef5a00-0b78-4ba4-bd39-917b5403e1ae"/>
+    <managerType typeId="893af3b4-a0bb-4061-ab20-e0c81e84a41e" valueTypeId="a4628a95-6bd9-4db6-b8c0-e8e783bdb487"/>
+    <recordSetType typeId="9d1eb1c2-abb5-4061-b600-ace4528e9f9e" valueTypeId="6a91a48b-570f-415d-814f-0543cb65d1ff"/>
+    <recordKeyType typeId="4e544b46-c348-4bc9-8667-90c33ca1837c" valueTypeId="f128bae5-c4de-4d0e-9447-f29f3472edf3"/>
+    <recordType typeId="10c44413-0b20-43ea-a79e-2d0593f3a5eb" valueTypeId="d14aa154-d664-43e7-b460-7539813e5822"/>
+  </producedTypes>
+  <name>упрУчетРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>(упр) Учет расходов</value>
+  </synonym>
+  <registerType>Turnovers</registerType>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="b06594d4-0793-4120-a125-6f2db5ffe6cd">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="6f14da0c-8f72-4452-8237-bffd7e4d5eb2">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bf5a8e39-da82-4d73-8de5-d238dfabbc30">
+    <name>СтатьяРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.упрСтатьиРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a2cb6331-0323-481a-9155-b1a7bf458eeb">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2e7c3d53-8a07-4705-9731-0a56d6656fa3">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

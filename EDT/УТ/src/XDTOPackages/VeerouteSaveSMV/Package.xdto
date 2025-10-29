@@ -1,0 +1,47 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://veeroute.com/save">
+	<objectType name="apiRequest">
+		<property name="sessionID" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/save" name="orders" type="d3p1:orders"/>
+	</objectType>
+	<objectType name="orders">
+		<property xmlns:d3p1="http://veeroute.com/save" name="order" type="d3p1:order" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="order">
+		<property name="orderReference" type="xs:string"/>
+		<property name="areaOfControl" type="xs:string"/>
+		<property name="date" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/save" name="client" type="d3p1:client" lowerBound="1" upperBound="1"/>
+		<property xmlns:d3p1="http://veeroute.com/save" name="location" type="d3p1:location"/>
+		<property xmlns:d3p1="http://veeroute.com/save" name="dropWindows" type="d3p1:dropWindows" upperBound="1"/>
+		<property name="durationDrop" type="xs:time"/>
+		<property name="price" type="xs:decimal"/>
+		<property name="capacity" type="xs:decimal"/>
+		<property name="volume" type="xs:decimal"/>
+		<property xmlns:d3p1="http://veeroute.com/save" name="orderItems" type="d3p1:orderItems" upperBound="1"/>
+	</objectType>
+	<objectType name="client">
+		<property name="name" type="xs:string"/>
+		<property name="contactPerson" type="xs:string"/>
+		<property name="contactNumber" type="xs:string"/>
+	</objectType>
+	<objectType name="location">
+		<property name="name" type="xs:string"/>
+		<property name="address" type="xs:string"/>
+		<property name="latitude" type="xs:decimal"/>
+		<property name="longitude" type="xs:decimal"/>
+	</objectType>
+	<objectType name="dropWindows">
+		<property xmlns:d3p1="http://veeroute.com/save" name="dropWindow" type="d3p1:dropWindow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="dropWindow">
+		<property name="start" type="xs:string"/>
+		<property name="end" type="xs:string"/>
+	</objectType>
+	<objectType name="orderItems">
+		<property xmlns:d3p1="http://veeroute.com/save" name="orderItem" type="d3p1:orderItem" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="orderItem">
+		<property name="name" type="xs:string"/>
+		<property name="barcode" type="xs:string"/>
+	</objectType>
+</package>

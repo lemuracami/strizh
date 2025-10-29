@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core">
+	<selection>
+		<item xsi:type="SelectedItemField">
+			<field>Статистика</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ПериодДень</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ВесЗаказов</field>
+		</item>
+	</selection>
+	<dataParameters>
+		<dcscor:item>
+			<dcscor:parameter>Периодичность</dcscor:parameter>
+			<dcscor:value xsi:type="xsd:string"/>
+		</dcscor:item>
+		<dcscor:item>
+			<dcscor:parameter>Период</dcscor:parameter>
+			<dcscor:value xsi:type="xsd:string"/>
+		</dcscor:item>
+		<dcscor:item>
+			<dcscor:parameter>Преднастройка</dcscor:parameter>
+			<dcscor:value xsi:type="xsd:string">Сумма заказов</dcscor:value>
+		</dcscor:item>
+	</dataParameters>
+	<outputParameters>
+		<dcscor:item>
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>AppearanceTemplate</dcscor:parameter>
+			<dcscor:value xsi:type="xsd:string">None</dcscor:value>
+		</dcscor:item>
+		<dcscor:item>
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>ChartType</dcscor:parameter>
+			<dcscor:value xsi:type="v8ui:ChartType">Line</dcscor:value>
+			<dcscor:item>
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ChartType.AutoSeriesSeparation</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:AutoSeriesSeparation">All</dcscor:value>
+			</dcscor:item>
+		</dcscor:item>
+		<dcscor:item>
+			<dcscor:parameter>TitleOutput</dcscor:parameter>
+			<dcscor:value xsi:type="DataCompositionTextOutputType">Output</dcscor:value>
+		</dcscor:item>
+		<dcscor:item>
+			<dcscor:parameter>Title</dcscor:parameter>
+			<dcscor:value xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Динамика показателей доставки</v8:content>
+				</v8:item>
+			</dcscor:value>
+		</dcscor:item>
+	</outputParameters>
+	<item xsi:type="StructureItemGroup">
+		<groupItems>
+			<item xsi:type="GroupItemField">
+				<field>Статистика</field>
+				<groupType>Items</groupType>
+				<periodAdditionType>None</periodAdditionType>
+				<periodAdditionBegin xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+				<periodAdditionEnd xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+			</item>
+		</groupItems>
+		<order>
+			<item xsi:type="OrderItemAuto">
+				<use>false</use>
+			</item>
+		</order>
+		<selection>
+			<item xsi:type="SelectedItemAuto"/>
+		</selection>
+	</item>
+	<item xsi:type="StructureItemChart">
+		<point>
+			<groupItems>
+				<item xsi:type="GroupItemField">
+					<field>ПериодДень</field>
+					<groupType>Items</groupType>
+					<periodAdditionType>Day</periodAdditionType>
+					<periodAdditionBegin xsi:nil="true"/>
+					<periodAdditionEnd xsi:nil="true"/>
+				</item>
+			</groupItems>
+			<order>
+				<item xsi:type="OrderItemAuto"/>
+			</order>
+			<selection>
+				<item xsi:type="SelectedItemAuto"/>
+			</selection>
+		</point>
+		<series>
+			<groupItems>
+				<item xsi:type="GroupItemField">
+					<field>Статистика</field>
+					<groupType>Items</groupType>
+					<periodAdditionType>None</periodAdditionType>
+					<periodAdditionBegin xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+					<periodAdditionEnd xsi:type="xsd:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+				</item>
+			</groupItems>
+			<order>
+				<item xsi:type="OrderItemAuto"/>
+			</order>
+			<selection>
+				<item xsi:type="SelectedItemAuto"/>
+			</selection>
+		</series>
+		<selection>
+			<item xsi:type="SelectedItemAuto"/>
+		</selection>
+		<outputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ChartType</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:ChartType">Line</dcscor:value>
+				<dcscor:item>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ChartType.AutoSeriesSeparation</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:AutoSeriesSeparation">All</dcscor:value>
+				</dcscor:item>
+				<dcscor:item>
+					<dcscor:parameter>ChartType.LegendPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="DataCompositionChartLegendPlacement">Bottom</dcscor:value>
+				</dcscor:item>
+			</dcscor:item>
+			<dcscor:item>
+				<dcscor:parameter>TitleOutput</dcscor:parameter>
+				<dcscor:value xsi:type="DataCompositionTextOutputType">Output</dcscor:value>
+			</dcscor:item>
+		</outputParameters>
+	</item>
+</Settings>

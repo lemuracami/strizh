@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="96ea53cf-8041-4062-8622-b94b0948245a">
+  <producedTypes>
+    <objectType typeId="97bda660-4293-4b4f-b563-21c62b4d9558" valueTypeId="2e50535c-128a-42d4-9457-a153453a0282"/>
+    <refType typeId="a96a060b-ba5a-4861-a38b-68b775a3bf2a" valueTypeId="786595a7-fe3b-42f3-b030-b1383f20d011"/>
+    <selectionType typeId="63698940-0d8c-438f-9d66-53b865b53b64" valueTypeId="2f359f83-2345-4a3d-874d-1c3afffc1525"/>
+    <listType typeId="e1de1d0c-94e4-499a-bf55-9d45fae625be" valueTypeId="293f482b-0ced-4d37-9d1a-74bb49e4086b"/>
+    <managerType typeId="671d0ee6-093b-4cd9-95c4-3cac75a93b6f" valueTypeId="907d6a0d-b47f-4925-993a-9731b4514ea8"/>
+  </producedTypes>
+  <name>УстановкаСтатусовЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка статусов заказов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.УстановкаСтатусовЗаказов.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.УстановкаСтатусовЗаказов.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.УстановкаСтатусовЗаказов.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.УстановкаСтатусовЗаказов.Form.ФормаВыбора</defaultChoiceForm>
+  <registerRecords>InformationRegister.СтатусыСкладскогоУчета</registerRecords>
+  <registerRecords>InformationRegister.СостоянияЗаказов</registerRecords>
+  <attributes uuid="efa90da3-810c-4bb0-ade3-cc0b1cc9af89">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="292e6bc0-9adf-40a8-8f06-f028fbeb808a">
+    <name>ПричинаОтклоненияЗаказаВСистеме</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отклонения заказа в системе</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныОтклоненияЗаказаВСистеме</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b660986d-edf5-476c-8abc-130345c9942c">
+    <name>СтатусAxiomus</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус axiomus</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="37016137-739b-4ab0-b0de-9c0536a6ee03">
+    <name>ТекущийСтатус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текущий статус</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="75785fb4-0275-4f78-95f7-2f5a85f4000f">
+    <name>ФинальныйСтатус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Финальный статус</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cd304888-06de-43f5-95c8-018d34f37631">
+    <name>СтатусИМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус ИМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусЗаказаИнтернетМагазина</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5b555813-417b-41b2-b252-91b174d57d16">
+    <name>УстанавливатьТекущийСтатус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Устанавливать текущий статус</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f586b48d-6b20-4432-b130-2d564e38179a">
+    <name>УстанавливатьФинальныйСтатус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Устанавливать финальный статус</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e7f8ba65-88a0-44c6-8b24-8ece8645a23f">
+    <name>УстанавливатьСтатусИМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Устанавливать статус ИМ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ac1cc86d-024f-46c1-8551-f1c0842d430f">
+    <name>WebService</name>
+    <synonym>
+      <key>ru</key>
+      <value>Web service</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b5122750-8f59-4017-9209-43625fd13ab7">
+    <name>ТерминалОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал обработки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f21d089d-e953-437f-ae55-c4982c79f2b9">
+    <name>ПричинаОтказаПереноса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отказа переноса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныОтказаПереноса</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="655e30f5-6816-4222-8349-814ab24993d4">
+    <name>ИнициаторСостояния</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инициатор состояния</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ИнициаторыСостояния</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e53bf47e-58f0-43db-905b-71fa083b6dcb">
+    <name>ДатаПереноса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата переноса</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8afa9bef-2522-428c-9027-e213ca41b83a">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="18a102b8-e10c-4322-909d-5891beade0d8">
+    <name>ДанныеСтатусаЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Данные статуса заказа</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ДанныеЗаказаВодителя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="6b5a49e8-d176-4477-8212-32bdbd34f84b">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="844f4fd7-d0fe-45a7-80ce-9fa3b25b26d2">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b278ce79-9dd3-4acb-810e-21a9309202a9">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

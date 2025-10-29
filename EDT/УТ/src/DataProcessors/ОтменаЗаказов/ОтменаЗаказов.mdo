@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6c762e53-870e-4c2a-b58a-3c73f11ee751">
+  <producedTypes>
+    <objectType typeId="1aba0bbf-680b-43f5-9ee0-42f95dc05592" valueTypeId="8009c984-5210-493d-8146-3424e3e568e2"/>
+    <managerType typeId="c0553b73-ed05-4a01-b60a-99add5fc8f17" valueTypeId="57770487-1869-4afa-a745-6d146a07f93d"/>
+  </producedTypes>
+  <name>ОтменаЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отмена заказов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ОтменаЗаказов.Form.Форма</defaultForm>
+  <attributes uuid="95e655a2-e42b-44fa-9cf5-23e6b1a8cb21">
+    <name>СписокЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список заказов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <multiLine>true</multiLine>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4952cd2d-cbf8-47e2-bfe0-ba43a64a43e8">
+    <name>СелекторТипаНомера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Селектор типа номера</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="41d524cb-2dcd-48ce-ac55-af79639e61e9">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fcc32c27-64d8-4df8-9d44-ef1325394ad2">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <multiLine>true</multiLine>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="221864b9-9060-40fe-ad61-7dd77231f12e">
+    <name>ИнициаторСостояния</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инициатор состояния</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ИнициаторыСостояния</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d5915e3d-7d6b-4c47-b972-7690a6877edf">
+    <name>ПричинаОтказаПереноса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отказа переноса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныОтказаПереноса</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c999b95c-9921-49fb-8b38-6e62fb3f5bdb">
+    <name>МассоваяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Массовая операция (> 100 заказов)</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="26af2115-1bdd-4074-9e77-59cd721c3463">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="d701d61b-9412-44f0-adf0-13e5e5df63fb">
+    <name>ЗаказыВРейсе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы в рейсе</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

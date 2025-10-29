@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="13abd3c7-eb91-4bb8-94bd-32ac13b3b97c">
+  <name>новаПередЗаписьюДокументаКорректировки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перед записью документа корректировки</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.КорректировкаЗаказаПокупателя</types>
+    <types>DocumentObject.КорректировкаЗаказаПоставщику</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.новаИнтеграция.ДокументКорректировкиЗаказаПередЗаписью</handler>
+</mdclass:EventSubscription>

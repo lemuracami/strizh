@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="40c03c8b-450d-450f-9911-665cf111d17d">
+  <producedTypes>
+    <selectionType typeId="eea8b5bc-daab-4e26-83b8-09a69f6cef06" valueTypeId="2c434ecc-adc9-4a33-94f9-95e4709e165a"/>
+    <listType typeId="541a38ee-06a3-4be6-acdd-e454e3d35827" valueTypeId="f34a003f-851c-488c-b2e8-33d00cac9356"/>
+    <managerType typeId="f697589e-8bc4-417e-8b4d-bd362ee492c1" valueTypeId="105d98de-c56c-47a1-b7f7-b3f19a8d90e4"/>
+    <recordSetType typeId="d270a4d9-7005-48dd-80ae-1efc52af1ba0" valueTypeId="f14a9f8f-4ad5-4fcc-9737-f13422848804"/>
+    <recordKeyType typeId="f457265f-b90c-4f83-b96a-c0e3f979d801" valueTypeId="71301b82-be36-4b07-a820-7eb2697fe805"/>
+    <recordType typeId="ea3f6959-076b-466f-a1d8-56f90d0b1e32" valueTypeId="494a57c9-aad0-4cdb-ba70-5218a3852ee3"/>
+    <recordManagerType typeId="be797a90-4242-448f-add7-9f984b3e64f5" valueTypeId="8627a884-8087-4db6-90df-afbe0ec57b30"/>
+  </producedTypes>
+  <name>ИзменениеЧеков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Изменение чеков</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="ada0be25-316c-4634-8c6a-ecdb97ab9f69">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1873599a-a394-4aba-adc5-976bc09e5ded">
+    <name>Признак</name>
+    <synonym>
+      <key>ru</key>
+      <value>Признак</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="51de739e-641c-4f65-ac97-a6fd11581c9b">
+    <name>ФормированиеЧеков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Формирование чеков</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПечатьЧековПоДоставкам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ff10832d-cdc6-4c71-a93f-9366c5d3c70d">
+    <name>Чек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чек</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЧекККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,507 @@
+<xs:schema xmlns:tns="ozon/api/subagent"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="ozon/api/subagent">
+	<xs:element name="UserListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestUserListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestUserListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="Login"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="Password"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UserListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="UserListGetResult"
+						type="tns:ReplyUserListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyUserListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="UserInfoList"
+							type="tns:ArrayOfUserInfo"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseReply">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ResultCode"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="ResultMessage"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="ResultProcessTime"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfUserInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="UserInfo"
+					nillable="true"
+					type="tns:UserInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UserInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Login"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="CurrentPlaceID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="CurrentPlaceName"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ReturnReasonListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestReturnReasonListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestReturnReasonListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReturnReasonType"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ReturnReasonListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="ReturnReasonListGetResult"
+						type="tns:ReplyReturnReasonListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyReturnReasonListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReturnReasonInfoList"
+							type="tns:ArrayOfReturnReasonInfo"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfReturnReasonInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="ReturnReasonInfo"
+					nillable="true"
+					type="tns:ReturnReasonInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReturnReasonInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Code"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Type"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UserContractListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestUserContractListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestUserContractListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="UserContractListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="UserContractListGetResult"
+						type="tns:ReplyUserContractListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyUserContractListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ContractInfoList"
+							type="tns:ArrayOfContractInfo"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfContractInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="ContractInfo"
+					nillable="true"
+					type="tns:ContractInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DeliveryVariantListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestDeliveryVariantListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestDeliveryVariantListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryVariantID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StateSysName"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageSize"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageNumber"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="DeliveryVariantListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="DeliveryVariantListGetResult"
+						type="tns:ReplyDeliveryVariantListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyDeliveryVariantListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryVariantInfoList"
+							type="tns:ArrayOfDeliveryVariantInfo"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Rows"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfDeliveryVariantInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="DeliveryVariantInfo"
+					nillable="true"
+					type="tns:DeliveryVariantInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeliveryVariantInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="TypeID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="TypeSysName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="TypeName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateSysName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Code"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Address"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="SettlementID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="SettlementName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="PlaceID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="PlaceName"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PlaceInformationListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestPlaceInformationListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestPlaceInformationListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageSize"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageNumber"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PlaceInformationListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="PlaceInformationListGetResult"
+						type="tns:ReplyPlaceInformationListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyPlaceInformationListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="PlaceInfoList"
+							type="tns:ArrayOfPlaceInfo"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Rows"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfPlaceInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="PlaceInfo"
+					nillable="true"
+					type="tns:PlaceInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PlaceInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Address"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

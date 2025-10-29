@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c81d92d2-027f-4c0d-af3c-9257b97ae870">
+  <producedTypes>
+    <objectType typeId="7e84b39a-8b74-491b-9d49-9ed43817fd43" valueTypeId="995e64e3-c7c9-4958-be29-901ac3cf7cae"/>
+    <refType typeId="b4983e30-852f-4c7a-93e3-a7034298762b" valueTypeId="f1388b6b-f266-44f7-927e-d86cefac9c03"/>
+    <selectionType typeId="049baa73-73e6-4ac0-8976-95ac2efc1f90" valueTypeId="2d80754d-3cdd-46bd-baad-599546ad617b"/>
+    <listType typeId="3d48fe09-8937-4136-b2b0-f3b1ba960fae" valueTypeId="da8e7114-bb45-4bfe-a34e-d37763e0ab16"/>
+    <managerType typeId="951986db-ccc9-4465-908f-16c41686c728" valueTypeId="d7761109-c4df-40a7-9046-a57e1bd7f7ad"/>
+  </producedTypes>
+  <name>ЗафиксированныйГрафикЭкипажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зафиксированный график экипажей</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ЗафиксированныйГрафикЭкипажей.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ЗафиксированныйГрафикЭкипажей.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <attributes uuid="ed01cabd-b25e-4709-a426-128ac4fe7761">
+    <name>ДатаРейсов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата рейсов</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="539fc62b-e17f-418c-bcda-84b9901ad190">
+    <name>Оператор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="456e0aab-f267-4282-a482-c3a43a9e4e27">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="0b28176f-3293-4520-aa04-314bf5005c50">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="e1b66021-933b-4e64-9b9d-ddccc3ad8a16">
+    <producedTypes>
+      <objectType typeId="49a2c59c-6f93-4e62-a4da-df32213f8b04" valueTypeId="db4c5853-4de2-45df-a2e5-2c4b21e60996"/>
+      <rowType typeId="8e0a8901-fd67-4b41-a641-e3031ed4ce8f" valueTypeId="ea4ccee4-94ff-44a8-af3d-c2f409ea5fc4"/>
+    </producedTypes>
+    <name>Экипажи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экипажи</value>
+    </synonym>
+    <attributes uuid="e2be2049-1a21-4f51-879c-f21fc285c237">
+      <name>Рейс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рейс</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.Рейс</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a5fce674-b907-4dae-85af-23ee8545684f">
+      <name>ТипУчастникаЭкипажа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип участника экипажа</value>
+      </synonym>
+      <type>
+        <types>EnumRef.УчастникЭкипажа</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="fb980a64-b79c-4b69-8a56-46b920a6c679">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаЭкспедиторы</types>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d1defd38-148d-422b-b830-9336d6ea094b">
+      <name>Транспорт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаТранспорт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="356fb83e-607c-4d39-918a-572f7dbae7df">
+  <producedTypes>
+    <selectionType typeId="51361983-ab5d-486e-a24d-7dc05e423af5" valueTypeId="6095e63b-0768-4123-8a79-e85dfbd04576"/>
+    <listType typeId="b000291d-bc1b-429b-878c-a8776e877dee" valueTypeId="599946ee-cdb9-4592-bb74-c490fdc9cb2f"/>
+    <managerType typeId="4f161de4-25d8-4976-a4f0-dc373f2ecbf2" valueTypeId="3a6bf00f-0923-4d6f-a2d0-570c44a773d3"/>
+    <recordSetType typeId="a58482f7-e61b-4859-b519-7e8b14925e9b" valueTypeId="d9307f65-e8e5-4f6e-a69e-de97032311ad"/>
+    <recordKeyType typeId="54caa43d-69d2-4437-899f-0e2654377400" valueTypeId="d58b4877-6f8b-4607-8cfb-7584e624e84f"/>
+    <recordType typeId="6e50a7fd-b8af-4fe8-9723-2d701ced4f9d" valueTypeId="1bfd2c1a-0962-4d48-9e96-291d6bfb9644"/>
+    <recordManagerType typeId="665eab3a-8b11-475f-b3fc-c939f568635a" valueTypeId="7cd5d033-3a34-4bc7-87d7-b2dfea5a7fc2"/>
+  </producedTypes>
+  <name>ЛогОбменаСИсточникамиДанных1С</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лог обмена с источниками данных1 С</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4f4534bc-2599-4355-a3b0-b320084fcb31">
+    <name>ВозниклаОшибка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возникла ошибка</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d1c0400b-8d6c-4016-b172-04d5d603a26e">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="ee8ba8a3-9f28-40d8-8349-a57e6ef4fa08">
+    <name>КоличествоПереданныхОбъектов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество переданных объектов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="55693ed9-0e74-4ad3-a72b-62eb18d64ff4">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="9d0116b0-3228-4ce7-912e-0f47af52e834">
+    <name>ИсточникДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник данных</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИсточникиДанныхБазы1С</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4abb4224-ddb9-415f-baf1-37c61515d07c">
+    <name>НаправлениеПередачиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление передачи данных</value>
+    </synonym>
+    <type>
+      <types>EnumRef.НаправленияПередачиДанных</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

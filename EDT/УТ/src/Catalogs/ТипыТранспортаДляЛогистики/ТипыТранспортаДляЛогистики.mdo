@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="565f8a90-2b43-4fd3-948f-14352f9b0e58">
+  <producedTypes>
+    <objectType typeId="fad33250-f495-4a25-a3f8-71461b17bb65" valueTypeId="13b2f0db-cc8b-4781-b8cf-cbc37d74e960"/>
+    <refType typeId="c3c165be-085f-4e31-867d-ba003dbdeca4" valueTypeId="d6bd6a3d-7d1f-43e3-8762-da57cc39d571"/>
+    <selectionType typeId="f0340274-d668-4cf1-9ccc-4a403e7d0ded" valueTypeId="8d6e3e56-36d8-4181-b90e-52ce75fd332b"/>
+    <listType typeId="34f8ebba-de23-474d-abd7-409e05ecb369" valueTypeId="c2fc99ec-e70b-4cdd-aeb3-e0c4e6cfd423"/>
+    <managerType typeId="5415577e-b94f-4c2d-8d55-f1b491708c61" valueTypeId="8e8c77da-3f66-4942-8920-6c883301de1d"/>
+  </producedTypes>
+  <name>ТипыТранспортаДляЛогистики</name>
+  <synonym>
+    <key>ru</key>
+    <value>Типы транспорта для логистики</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ТипыТранспортаДляЛогистики.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ТипыТранспортаДляЛогистики.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ТипыТранспортаДляЛогистики.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ТипыТранспортаДляЛогистики.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="a4518bbe-d6e6-4b52-866a-a083da0f96c8">
+    <name>ТипТранспортаПриЭкспедировании</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип транспорта при экспедировании</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТипыТранспортаДляЛогистики</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ec438e22-71d8-4009-8846-1428d93c8dc2">
+    <name>ЗаборныйТранспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заборный транспорт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="247c9ed7-504b-4139-857f-99754d11016d">
+    <name>Цвет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цвет</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="4252c0ad-0bb5-470e-afd3-513c6fd64ca0">
+    <producedTypes>
+      <objectType typeId="4407b03e-74a2-41e2-b3ed-126c55eef780" valueTypeId="899dfe61-60bd-418b-948c-3eeeb59e7ea5"/>
+      <rowType typeId="3d5e0a23-0970-49eb-b3b2-1f463da1be8f" valueTypeId="9c5f6550-e16d-45c9-8077-93ceb5270f5a"/>
+    </producedTypes>
+    <name>ДоступныеКатегорииЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные категории заказов</value>
+    </synonym>
+    <attributes uuid="e3dadb9c-62bc-482c-8577-182971ef7593">
+      <name>КатегорияДоставки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Категория доставки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КатегорииДоставки2014</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="11d6f34d-caa8-4d5c-bd93-244454fb6ea7">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="35a51669-d370-4377-8416-133f2917c587">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

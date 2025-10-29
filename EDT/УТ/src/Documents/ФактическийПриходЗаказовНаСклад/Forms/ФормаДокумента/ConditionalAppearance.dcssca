@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalAppearance xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+	<item>
+		<selection>
+			<item>
+				<field>ЗаказыФото</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.Фото</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:string">Фото: 0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:LightGray</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection/>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.ЕстьВПриходе</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.ЕстьНаСканере</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:Red</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection/>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.КоличествоМестПриход</left>
+				<comparisonType>Greater</comparisonType>
+				<right xsi:type="dcscor:Field">Объект.Заказы.КоличествоМестСканировано</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:MediumPurple</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>Заказы</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.СуммаВПриходе</left>
+				<comparisonType>NotEqual</comparisonType>
+				<right xsi:type="dcscor:Field">Объект.Заказы.СуммаНаСканере</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:LightCoral</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>Заказы</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.ЕстьНаСканере</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.ЕстьНаСканереЗаполнено</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ЗаказыНомерСтроки</field>
+			</item>
+			<item>
+				<field>ЗаказыЗаказ1</field>
+			</item>
+			<item>
+				<field>ЗаказыНомерЗаказа</field>
+			</item>
+			<item>
+				<field>ЗаказыПоступлениеПодтверждено</field>
+			</item>
+			<item>
+				<field>ЗаказыКонтрагент</field>
+			</item>
+			<item>
+				<field>ЗаказыЕстьВСистеме</field>
+			</item>
+			<item>
+				<field>ЗаказыЕстьВСистемеЗаполнено</field>
+			</item>
+			<item>
+				<field>ЗаказыСуммаВСистеме</field>
+			</item>
+			<item>
+				<field>ЗаказыКоличествоВСистеме</field>
+			</item>
+			<item>
+				<field>ЗаказыЕстьВПриходе</field>
+			</item>
+			<item>
+				<field>ЗаказыЕстьВПриходеЗаполнено</field>
+			</item>
+			<item>
+				<field>ЗаказыСуммаВПриходе</field>
+			</item>
+			<item>
+				<field>ЗаказыКоличествоВПриходе</field>
+			</item>
+			<item>
+				<field>ЗаказыЕстьНаСканере</field>
+			</item>
+			<item>
+				<field>ЗаказыЕстьНаСканереЗаполнено</field>
+			</item>
+			<item>
+				<field>ЗаказыСуммаНаСканере</field>
+			</item>
+			<item>
+				<field>ЗаказыКоличествоНаСканере</field>
+			</item>
+			<item>
+				<field>ЗаказыКоличествоМестСканировано</field>
+			</item>
+			<item>
+				<field>ЗаказыКоличествоМестПриход</field>
+			</item>
+			<item>
+				<field>ЗаказыСмена</field>
+			</item>
+			<item>
+				<field>ЗаказыЗаказНаУстановку</field>
+			</item>
+			<item>
+				<field>ЗаказыБрак</field>
+			</item>
+			<item>
+				<field>ЗаказыСостояниеЗаказа</field>
+			</item>
+			<item>
+				<field>ЗаказыФото</field>
+			</item>
+			<item>
+				<field>ЗаказыДокументПрихода</field>
+			</item>
+			<item>
+				<field>ЗаказыКомментарий</field>
+			</item>
+			<item>
+				<field>ЗаказыЗаказ</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.ЕстьВПриходеЗаполнено</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="dcscor:Field">Объект.Заказы.ЕстьНаСканереЗаполнено</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Видимость</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Отображать</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<use>false</use>
+		<selection>
+			<item>
+				<field>Заказы</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemGroup">
+				<groupType>AndGroup</groupType>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Объект.Заказы.СуммаВПриходе</left>
+					<comparisonType>NotEqual</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Объект.Заказы.СуммаВПриходе</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="dcscor:Field">Объект.Заказы.СуммаНаСканере</right>
+				</item>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Объект.Заказы.СуммаНаСканере</left>
+					<comparisonType>NotEqual</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+				<item xsi:type="FilterItemGroup">
+					<groupType>OrGroup</groupType>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">Объект.Заказы.СуммаВСистеме</left>
+						<comparisonType>NotEqual</comparisonType>
+						<right xsi:type="dcscor:Field">Объект.Заказы.СуммаВПриходе</right>
+					</item>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">Объект.Заказы.СуммаВСистеме</left>
+						<comparisonType>NotEqual</comparisonType>
+						<right xsi:type="dcscor:Field">Объект.Заказы.СуммаНаСканере</right>
+					</item>
+				</item>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:PeachPuff</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<use>false</use>
+		<selection>
+			<item>
+				<field>ЗаказыЕстьНаСканереЗаполнено</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.ЕстьНаСканере</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<use>false</use>
+		<selection>
+			<item>
+				<field>ЗаказыЕстьНаСканереЗаполнено</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.Заказы.ЕстьНаСканере</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+</ConditionalAppearance>

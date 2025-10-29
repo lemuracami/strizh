@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f77c988c-b1f0-4bb1-93e9-1d3950ecf44c">
+  <producedTypes>
+    <objectType typeId="8ed35ab5-3ec3-4c7f-95b3-23cd1e37971b" valueTypeId="e1b832b2-40ca-4868-9f25-f26f4c576754"/>
+    <refType typeId="f2619d84-387d-4320-9720-d79246fb5858" valueTypeId="5cd3e79f-fa1a-43f0-b7df-6f3a90c42dd4"/>
+    <selectionType typeId="dcfb8dfe-5c62-4816-8a9a-82e1acbecdab" valueTypeId="d430005c-277e-40dd-89b5-40ffa5b31a3a"/>
+    <listType typeId="a2bb2108-3383-4783-885c-120a3ea6b912" valueTypeId="fed292d2-1bae-49a2-9b9f-b2885062200a"/>
+    <managerType typeId="1dbc5fb1-c49d-4930-9645-a9606ea407b7" valueTypeId="f1e051d7-0a90-4b36-a88f-579a0559a47c"/>
+  </producedTypes>
+  <name>НачисленияУдержанияЭкипажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Начисления удержания экипажей</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.НачисленияУдержанияЭкипажей.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.НачисленияУдержанияЭкипажей.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <limitLevelCount>true</limitLevelCount>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="756fb116-4751-4b96-aedc-1cf2310a57cf">
+      <name>ВыполнениеБолее80ИМенее90Доставок</name>
+      <description>Выполнение более 80 % и менее 90% доставок</description>
+      <code xsi:type="core:StringValue">
+        <value>000000003</value>
+      </code>
+    </items>
+    <items id="a9c37b38-5c4d-4c57-abcc-3877300c2e30">
+      <name>ВыполнениеБолее90Доставок</name>
+      <description>Выполнение более 90 % доставок</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+    </items>
+    <items id="9133ddc4-546d-4e27-bf69-7cc744bc7e92">
+      <name>ВыполнениеМенее80Доставок</name>
+      <description>Выполнение менее 80 % доставок</description>
+      <code xsi:type="core:StringValue">
+        <value>000000002</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.НачисленияУдержанияЭкипажей.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultFolderForm>Catalog.НачисленияУдержанияЭкипажей.Form.ФормаГруппы</defaultFolderForm>
+  <defaultListForm>Catalog.НачисленияУдержанияЭкипажей.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.НачисленияУдержанияЭкипажей.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="0eea0576-3833-4b4c-9eb6-0f0a79ff46db">
+    <name>ТипНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип НУ</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНУЭкипажей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <use>ForFolderAndItem</use>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6971e79d-07bf-4171-aaf8-fccffcda54de">
+    <name>ВариантРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант расчета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыРасчетаНУЭкипажей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="fe87f86a-5eb2-40e2-9371-8065f91e4e90">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5245d0f5-821e-40b0-ad4a-53e601d0bd9d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="754fd82a-35e6-49ed-80ee-e7ceb0fea98e">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3f0aff65-aab8-4360-a02d-b53f28088b7d">
+    <name>ФормаГруппы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма группы</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

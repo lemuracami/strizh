@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9adc68c3-b74c-4e41-abaf-20d471dbccfe">
+  <producedTypes>
+    <selectionType typeId="6b90fc3e-0ad8-4192-a139-377ffd1fbc8b" valueTypeId="8ade743a-6bf8-46a5-a4fd-9e75fdce8745"/>
+    <listType typeId="23471032-7f9d-4683-b7d7-729ffc1b89f0" valueTypeId="8ef18cb6-6cba-4a2c-8837-cdd49e125501"/>
+    <managerType typeId="e7c0e652-3379-4301-be2d-043778dcc315" valueTypeId="31312945-738e-40f0-83a3-f371d407d5bd"/>
+    <recordSetType typeId="c7f57b90-cacb-4d9a-8251-ec4bb74b16bd" valueTypeId="855c1af1-f249-4a3a-aab2-aff47eeedd91"/>
+    <recordKeyType typeId="2dd7fd20-de7d-448c-813e-10f4f77a71f2" valueTypeId="343ab9f2-4ab3-4920-bf30-ebb860d6053c"/>
+    <recordType typeId="6313202b-4549-4e20-9b64-bd4d87c7766c" valueTypeId="25301444-f767-4839-bc04-6a62e825605a"/>
+    <recordManagerType typeId="a4274d12-4298-474b-9341-0ecae68e3a8b" valueTypeId="9a28f793-8a61-4776-9b5f-d86dd6aef4b6"/>
+  </producedTypes>
+  <name>ЗаказыКПереносуНаВторуюОчередь</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заказы к переносу на вторую очередь</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8d6160ac-e37e-4e92-9d35-e9ae12bd7c55">
+    <name>ТипПереноса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип переноса</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыОперацийПереносаЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="3ca5c1dc-8583-4954-bd45-d2ca5740b243">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="edd66a58-fe96-44bd-900a-abc1a8aec06e">
+    <name>ДатаПереноса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата переноса</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

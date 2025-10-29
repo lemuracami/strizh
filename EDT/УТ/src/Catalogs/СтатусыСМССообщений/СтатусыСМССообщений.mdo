@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8bd39d8a-437e-441d-bb14-bf17ff16fab9">
+  <producedTypes>
+    <objectType typeId="229b39ea-b02f-4e23-b844-fbf04b7c25c9" valueTypeId="de3926c3-2952-4f45-b914-96cb952833e2"/>
+    <refType typeId="222a6257-50a2-44df-8181-e77abdf6e739" valueTypeId="7dfd2978-d9e7-4f0e-9961-a60cd07d67c7"/>
+    <selectionType typeId="a911c5ad-f380-4844-a3a3-d6a0ebaf8667" valueTypeId="c09171ae-b405-4db7-a5f1-6ddae102e18c"/>
+    <listType typeId="7f702c0d-ac98-4e65-bc01-be475107e7d8" valueTypeId="bbaf57a6-0cd4-400f-9fea-591f44d8bcaf"/>
+    <managerType typeId="b356433a-bff2-4d50-b194-78aaf47d6e16" valueTypeId="605582d5-0765-4e90-8971-f9a8206bfb1a"/>
+  </producedTypes>
+  <name>СтатусыСМССообщений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы СМССообщений</value>
+  </synonym>
+  <inputByString>Catalog.СтатусыСМССообщений.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.СтатусыСМССообщений.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <limitLevelCount>true</limitLevelCount>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="db7e712d-1feb-4e0d-a390-0c9379ab2cbd">
+      <name>ПросторСМС</name>
+      <description>Простор СМС</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+      <isFolder>true</isFolder>
+      <content id="ed681d22-bd2e-425a-ad02-ce20f3d705ee">
+        <name>БалансПуст</name>
+        <description>Баланс пуст</description>
+        <code xsi:type="core:StringValue">
+          <value>000000009</value>
+        </code>
+      </content>
+      <content id="6cd84673-1e0c-4b4a-86da-829d88ec4694">
+        <name>НевернаяПодписьОтправителя</name>
+        <description>Неверная подпись отправителя</description>
+        <code xsi:type="core:StringValue">
+          <value>000000005</value>
+        </code>
+      </content>
+      <content id="893e18a3-65e1-4b4b-a281-6e92176547ea">
+        <name>НеверноЗаданНомерТефона</name>
+        <description>Неверно задан номер тефона</description>
+        <code xsi:type="core:StringValue">
+          <value>000000003</value>
+        </code>
+      </content>
+      <content id="0ff157e1-d12c-45f3-99da-99cbcb783f33">
+        <name>НеверноеНазваниеОчередиСтатусовСообщений</name>
+        <description>Неверное название очереди статусов сообщений</description>
+        <code xsi:type="core:StringValue">
+          <value>000000008</value>
+        </code>
+      </content>
+      <content id="1dc51c48-ba3c-44f6-b1a1-18dc630ae3da">
+        <name>НеверныйФорматДатыОтложеннойОтправкиСообщения</name>
+        <description>Неверный формат даты отложенной отправки сообщения</description>
+        <code xsi:type="core:StringValue">
+          <value>000000007</value>
+        </code>
+      </content>
+      <content id="c81a9e80-bf97-424d-a8d9-778de6ff0e89">
+        <name>НеправильныйФорматWapPushСсылки</name>
+        <description>Неправильный формат wap-push ссылки</description>
+        <code xsi:type="core:StringValue">
+          <value>000000006</value>
+        </code>
+      </content>
+      <content id="2f26f13a-130d-4c50-b3f1-5c05acf7a39b">
+        <name>ОтсутствуетТекст</name>
+        <description>Отсутствует текст</description>
+        <code xsi:type="core:StringValue">
+          <value>000000004</value>
+        </code>
+      </content>
+      <content id="a37a3bb8-ee32-4d47-9c0d-334866985618">
+        <name>СообщениеПринятоСервисом</name>
+        <description>Сообщение принято сервисом</description>
+        <code xsi:type="core:StringValue">
+          <value>000000002</value>
+        </code>
+      </content>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="146071c1-af2f-49eb-be04-d0ebf6b8d991">
+    <name>Оператор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОператорыСМСРассылки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаДоставки</dataPath>
+			<field>ДатаДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПолигонов</dataPath>
+			<field>ГруппаПолигонов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа полигонов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗаказов</dataPath>
+			<field>КоличествоЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество заказов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗаказа</dataPath>
+			<field>ТипЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СхемаМаршрутизации</dataPath>
+			<field>СхемаМаршрутизации</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПолигонМаршрутизации</dataPath>
+			<field>ПолигонМаршрутизации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияДоставки</dataPath>
+			<field>КатегорияДоставки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Категория доставки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Смена</dataPath>
+			<field>Смена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>//CeHbKA #3715 04.02.2020
+ВЫБРАТЬ
+	Смены.Ссылка КАК Смена,
+	ЧАС(Смены.ИнтервалДоставкиС) КАК ЧасИнтервалДоставкиС,
+	ИСТИНА КАК ИнтервалСоответствуетСмена2
+ПОМЕСТИТЬ ВТ_ПараметрыСмена2
+ИЗ
+	Справочник.Смены КАК Смены
+ГДЕ
+	Смены.Ссылка = ЗНАЧЕНИЕ(Справочник.Смены.Смена2)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СменыЛогистическиеБрейки.Ссылка КАК Смена,
+	СменыЛогистическиеБрейки.ЛогистическийБрейк КАК ЛогистическийБрейк,
+	ИСТИНА КАК БрейкСоответствуетСмена2
+ПОМЕСТИТЬ ВТ_БрейкиСмена2
+ИЗ
+	Справочник.Смены.ЛогистическиеБрейки КАК СменыЛогистическиеБрейки
+ГДЕ
+	СменыЛогистическиеБрейки.Ссылка = ЗНАЧЕНИЕ(Справочник.Смены.Смена2)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+//CeHbKA #3715 04.02.2020
+ВЫБРАТЬ
+	ПолигоныМаршрутизацииЗаказов.ДатаДоставки КАК ДатаДоставки,
+	ПолигоныМаршрутизацииЗаказов.Заказ КАК Заказ,
+	ПолигоныМаршрутизацииЗаказов.СхемаМаршрутизации КАК СхемаМаршрутизации,
+	ПолигоныМаршрутизацииЗаказов.ПолигонМаршрутизации КАК ПолигонМаршрутизации,
+	ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка) КАК ТипЗаказа,
+	//Асеев 05.05.2021 (Задача № 3837)&gt;&gt;&gt;
+	//КатегорииДоставки2014.Ссылка КАК КатегорияДоставки
+	ПараметрыТарифаЗаказаСрезПоследних.КатегорияДоставки
+	//Асеев 05.05.2021 (Задача № 3837)&lt;&lt;&lt;
+ПОМЕСТИТЬ ВТ_Данные
+ИЗ
+	РегистрСведений.ПолигоныМаршрутизацииЗаказов КАК ПолигоныМаршрутизацииЗаказов
+	    //Асеев 05.05.2021 (Задача № 3837)&gt;&gt;&gt;
+		//ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.КатегорииДоставки2014 КАК КатегорииДоставки2014
+		//ПО ПолигоныМаршрутизацииЗаказов.Заказ.КатегорияДоставки = КатегорииДоставки2014.Категория
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыТарифаЗаказа.СрезПоследних({(&amp;ПериодСреза)}, ) КАК ПараметрыТарифаЗаказаСрезПоследних
+		ПО ПолигоныМаршрутизацииЗаказов.Заказ = ПараметрыТарифаЗаказаСрезПоследних.Заказ
+		//Асеев 05.05.2021 (Задача № 3837)&lt;&lt;&lt;
+ГДЕ
+	ПолигоныМаршрутизацииЗаказов.СхемаМаршрутизации = &amp;СхемаМаршрутизации
+	И ПолигоныМаршрутизацииЗаказов.ДатаДоставки МЕЖДУ &amp;ДатаНач И &amp;ДатаКон
+	И ТИПЗНАЧЕНИЯ(ПолигоныМаршрутизацииЗаказов.Заказ) = ТИП(Документ.РеализацияТоваровУслуг)
+	И ПолигоныМаршрутизацииЗаказов.Заказ.ВладелецТовара.Код &lt;&gt; "Shop_771"
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПолигоныМаршрутизацииЗаказов.ДатаДоставки,
+	ПолигоныМаршрутизацииЗаказов.Заказ,
+	ПолигоныМаршрутизацииЗаказов.СхемаМаршрутизации,
+	ПолигоныМаршрутизацииЗаказов.ПолигонМаршрутизации,
+	ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор),
+	""
+ИЗ
+	РегистрСведений.ПолигоныМаршрутизацииЗаказов КАК ПолигоныМаршрутизацииЗаказов
+ГДЕ
+	ПолигоныМаршрутизацииЗаказов.СхемаМаршрутизации = &amp;СхемаМаршрутизации
+	И ПолигоныМаршрутизацииЗаказов.ДатаДоставки МЕЖДУ &amp;ДатаНач И &amp;ДатаКон
+	И ТИПЗНАЧЕНИЯ(ПолигоныМаршрутизацииЗаказов.Заказ) = ТИП(Документ.ЗаборТовара)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПолигоныМаршрутизацииЗаказов.ДатаДоставки,
+	ПолигоныМаршрутизацииЗаказов.Заказ,
+	ПолигоныМаршрутизацииЗаказов.СхемаМаршрутизации,
+	ПолигоныМаршрутизацииЗаказов.ПолигонМаршрутизации,
+	"БЕРУ.Постамат",
+	//Асеев 05.05.2021 (Задача № 3837)&gt;&gt;&gt;
+	//КатегорииДоставки2014.Ссылка
+	ПараметрыТарифаЗаказаСрезПоследних.КатегорияДоставки
+	//Асеев 05.05.2021 (Задача № 3837)&lt;&lt;&lt;
+ИЗ
+	РегистрСведений.ПолигоныМаршрутизацииЗаказов КАК ПолигоныМаршрутизацииЗаказов
+		//Асеев 05.05.2021 (Задача № 3837)&gt;&gt;&gt;
+		//ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.КатегорииДоставки2014 КАК КатегорииДоставки2014
+		//ПО ПолигоныМаршрутизацииЗаказов.Заказ.КатегорияДоставки = КатегорииДоставки2014.Категория
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыТарифаЗаказа.СрезПоследних({(&amp;ПериодСреза)}, ) КАК ПараметрыТарифаЗаказаСрезПоследних
+		ПО ПолигоныМаршрутизацииЗаказов.Заказ = ПараметрыТарифаЗаказаСрезПоследних.Заказ
+		//Асеев 05.05.2021 (Задача № 3837)&lt;&lt;&lt;
+ГДЕ
+	ПолигоныМаршрутизацииЗаказов.СхемаМаршрутизации = &amp;СхемаМаршрутизации
+	И ПолигоныМаршрутизацииЗаказов.ДатаДоставки МЕЖДУ &amp;ДатаНач И &amp;ДатаКон
+	И ПолигоныМаршрутизацииЗаказов.Заказ.ВладелецТовара.Код = "Shop_771"
+	И ТИПЗНАЧЕНИЯ(ПолигоныМаршрутизацииЗаказов.Заказ) = ТИП(Документ.РеализацияТоваровУслуг)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ГруппыПолигоновМаршрутизацииПолигоныМаршрутизации.Ссылка.Ссылка КАК ГруппаПолигонов,
+	ПолигоныМаршрутизации.Ссылка КАК Полигон
+ПОМЕСТИТЬ ГруппыПолигонов
+ИЗ
+	Справочник.ГруппыПолигоновМаршрутизации.ПолигоныМаршрутизации КАК ГруппыПолигоновМаршрутизацииПолигоныМаршрутизации
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.ПолигоныМаршрутизации КАК ПолигоныМаршрутизации
+		ПО ГруппыПолигоновМаршрутизацииПолигоныМаршрутизации.НомерПолигона = ПолигоныМаршрутизации.Порядок
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	//ДополнительныеПараметрыЗаказа.Заказ КАК Заказ,
+	ВТ_Данные.Заказ КАК Заказ,
+	ВТ_Данные.ДатаДоставки КАК ДатаДоставки,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_Данные.Заказ) КАК КоличествоЗаказов,
+	ВТ_Данные.СхемаМаршрутизации КАК СхемаМаршрутизации,
+	ВТ_Данные.ПолигонМаршрутизации КАК ПолигонМаршрутизации,
+	ВТ_Данные.ТипЗаказа КАК ТипЗаказа,
+	//ВТ_Данные.КатегорияДоставки КАК КатегорияДоставки,
+	ЕСТЬNULL(ГруппыПолигонов.ГруппаПолигонов, "Без группы") КАК ГруппаПолигонов,
+	//CeHbKA #3715 04.02.2020
+	ВЫБОР
+		КОГДА &amp;Смена2БезУчетаПолигона
+			ТОГДА isnull(ДополнительныеПараметрыЗаказа.ЛогистическийБрейк, "")
+		ИНАЧЕ ВТ_Данные.КатегорияДоставки
+	КОНЕЦ КАК КатегорияДоставки,
+	ВЫБОР
+		КОГДА &amp;Смена2БезУчетаПолигона
+			ТОГДА 
+				ВЫБОР
+					КОГДА isnull(ВТ_ПараметрыСмена2.ИнтервалСоответствуетСмена2, ЛОЖЬ) И isnull(ВТ_БрейкиСмена2.БрейкСоответствуетСмена2, ЛОЖЬ)
+						ТОГДА Значение(Справочник.Смены.Смена2)
+					ИНАЧЕ isnull(ДополнительныеПараметрыЗаказа.Смена, Значение(Справочник.Смены.Смена1))
+				КОНЕЦ
+		ИНАЧЕ isnull(ДополнительныеПараметрыЗаказа.Смена, Значение(Справочник.Смены.Смена1))
+	КОНЕЦ КАК Смена
+	//CeHbKA #3715 04.02.2020
+	//ДополнительныеПараметрыЗаказа.Смена КАК Смена
+ИЗ
+	ВТ_Данные КАК ВТ_Данные
+		ЛЕВОЕ СОЕДИНЕНИЕ ГруппыПолигонов КАК ГруппыПолигонов
+		ПО ВТ_Данные.ПолигонМаршрутизации = ГруппыПолигонов.Полигон
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ДополнительныеПараметрыЗаказа КАК ДополнительныеПараметрыЗаказа
+		ПО ВТ_Данные.Заказ = ДополнительныеПараметрыЗаказа.Заказ
+		//CeHbKA #3715 04.02.2020
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПараметрыСмена2
+		ПО ЧАС(ДополнительныеПараметрыЗаказа.Доставка.ВремяПрибытияС) &gt;= ВТ_ПараметрыСмена2.ЧасИнтервалДоставкиС
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_БрейкиСмена2
+		ПО ДополнительныеПараметрыЗаказа.ЛогистическийБрейк = ВТ_БрейкиСмена2.ЛогистическийБрейк 
+		//CeHbKA #3715 04.02.2020
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Данные.ДатаДоставки,
+	ВТ_Данные.ПолигонМаршрутизации,
+	ВТ_Данные.ТипЗаказа,
+	ВТ_Данные.СхемаМаршрутизации,
+	ВТ_Данные.КатегорияДоставки,
+	ЕСТЬNULL(ГруппыПолигонов.ГруппаПолигонов, "Без группы"),
+	ДополнительныеПараметрыЗаказа.Смена,
+	//ДополнительныеПараметрыЗаказа.Заказ,
+	//CeHbKA #3715 04.02.2020
+	ВТ_Данные.Заказ,
+	ДополнительныеПараметрыЗаказа.ЛогистическийБрейк,
+	ВТ_ПараметрыСмена2.ИнтервалСоответствуетСмена2,
+	ВТ_БрейкиСмена2.БрейкСоответствуетСмена2
+	//CeHbKA #3715 04.02.2020</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоЗаказов</dataPath>
+		<expression>Сумма(КоличествоЗаказов)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаКон</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата кон</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодСтр.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДатаНач</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата нач</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодСтр.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>СхемаМаршрутизации</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Схема маршрутизации</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СхемыПолигональнойМаршрутизации</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.СхемыПолигональнойМаршрутизации.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>ПериодСтр</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Yesterday</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Смена2БезУчетаПолигона</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Смена2 без учета полигона</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПериодСреза</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период среза</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной (по Полигонам)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Смена</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Смены.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>200191e8-854d-41bf-92d0-d65627215da9</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Заказ.ОбщийВес</dcsset:left>
+					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">30</dcsset:right>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доставки весом до 30 кг</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>616488ae-4f3c-4f4b-a381-2a16a8d9e846</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СхемаМаршрутизации</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>9eae3855-c9f7-4048-8a89-cb4f3470040f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодСтр</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Yesterday</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d9cbd175-fe10-4ac7-b504-f5805de48a5c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Смена2БезУчетаПолигона</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>b4d5d858-5aaf-4c47-b6ca-52c4f45e6fdc</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПолигонМаршрутизации.Порядок</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаДоставки</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ТипЗаказа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПолигонМаршрутизации</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto">
+								<dcsset:use>false</dcsset:use>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection/>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Шрифт</dcscor:parameter>
+										<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>КатегорияДоставки</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ГруппыПолигонов</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>по Группам Полигонов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Смена</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Смены.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>4b94a53f-9665-4a4f-9e2a-3e32e339a14c</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СхемаМаршрутизации</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>9eae3855-c9f7-4048-8a89-cb4f3470040f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодСтр</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Yesterday</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d9cbd175-fe10-4ac7-b504-f5805de48a5c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Смена2БезУчетаПолигона</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>d25c2d53-a2d5-48dc-a870-25ceed302093</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПолигонМаршрутизации.Порядок</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаДоставки</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ТипЗаказа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ГруппаПолигонов</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto">
+								<dcsset:use>false</dcsset:use>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection/>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Шрифт</dcscor:parameter>
+										<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>КатегорияДоставки</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПоПолигонамСГруппами</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>по Полигонам С Группами</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Смена</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Смены.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>309ce799-c86f-4746-b8b5-083c292e1a5d</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СхемаМаршрутизации</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>9eae3855-c9f7-4048-8a89-cb4f3470040f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодСтр</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Yesterday</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d9cbd175-fe10-4ac7-b504-f5805de48a5c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Смена2БезУчетаПолигона</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>ad62c125-7f0b-4739-b1b5-6ad3a776ad9d</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПолигонМаршрутизации.Порядок</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаДоставки</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ТипЗаказа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПолигонМаршрутизации</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ГруппаПолигонов</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto">
+								<dcsset:use>false</dcsset:use>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection/>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Шрифт</dcscor:parameter>
+										<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>КатегорияДоставки</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

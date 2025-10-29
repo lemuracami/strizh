@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a203d0f-8844-48b0-81e4-b4090451bb0c">
+  <producedTypes>
+    <objectType typeId="2abe9351-14cc-4d69-a3b4-6a1e60c1f8e8" valueTypeId="6ea54dd9-c0ad-4d86-8c8b-84e4a1b4d79d"/>
+    <managerType typeId="09db13e2-23c7-4b22-872a-3a7086416d88" valueTypeId="4ccba9d0-d84a-4c1e-b854-b57bb2d8740f"/>
+  </producedTypes>
+  <name>новаВыгрузкаРейсовВWMS</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выгрузка рейсов в WMS</value>
+  </synonym>
+  <comment>Выгружаем подготовленные рейсы в формате XML В WMS</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <attributes uuid="1046bb48-8fa1-4556-8f04-2deae046d17a">
+    <name>ВыводитьЛог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить лог</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ea28c827-580a-498c-9fc8-0b24f54355ef">
+    <name>ДатаКонВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конечная дата выгрузки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="57f0c03a-e2f6-489c-84d0-959d80e813a4">
+    <name>ДатаНачВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала выгрузки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d0962cb2-0e94-4eed-8135-f7ec3009f006">
+    <name>ЗаписыватьЛог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Записывать лог</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a17eca9c-5cda-4539-a530-3e3b0907335a">
+    <name>ИмяФайлаВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя файла выгрузки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3d12213d-0b20-49bb-8d11-803b4a424529">
+    <name>КаталогВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Каталог выгрузки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="028c733e-4123-429e-ba25-c5d285b014a6">
+    <name>удалитьИмяФайлаОбмена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить имя файла обмена</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d74fa395-5afa-40cd-8e13-5727850b8778">
+    <name>ШаблонВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон выгрузки</value>
+    </synonym>
+    <comment>Формат(ТекущаяДата(),&quot;ДФ=&quot;&quot;ггггММдд_ЧЧммсс_&quot;&quot;&quot;)+&quot;DOSTAVKA_OUT_UTL&quot;.XML</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7204f7ad-93d2-4f82-a79c-e404226e9a13">
+    <name>ШаблонКвитанции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон квитанции</value>
+    </synonym>
+    <comment>*CONFIRMATION_OUT_UTL.XLM</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="359fd3df-b0fa-46c6-a5a3-159528401035">
+    <name>ШаблонЛогФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон лог файла</value>
+    </synonym>
+    <comment>Формат(ТекущаяДата(),&quot;ДФ=&quot;&quot;ггггММдд_ЧЧммсс_&quot;&quot;&quot;)+&quot;DOSTAVKA_OUT_UTL&quot;.Log</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="87ce65ab-d12a-472f-a1c0-3a5eafa222ec">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

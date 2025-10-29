@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2ae2a790-f584-4296-93ac-29e307a6fbbb">
+  <producedTypes>
+    <selectionType typeId="7afc67a6-6828-4eaa-93a1-e86eea758a60" valueTypeId="7bd0dbec-4f05-47c4-b5b1-f015ff34be33"/>
+    <listType typeId="a85a8c93-ca6e-4c57-a278-40566972b79f" valueTypeId="bcfe6ba4-7c80-4646-a04d-a5da96b81f5b"/>
+    <managerType typeId="20a82697-d4a3-4c9b-85c0-eb6822a3f16e" valueTypeId="3336f771-84d1-4e6f-bd15-cedaac338f75"/>
+    <recordSetType typeId="49dafa8c-5b41-4475-826a-931e6f8383aa" valueTypeId="810eaba0-f24b-413e-950a-ec074ab9cf98"/>
+    <recordKeyType typeId="67aa2d8b-30b2-4ee8-a81f-357b15a61988" valueTypeId="4399a98c-c215-489e-8c33-95969ce51dec"/>
+    <recordType typeId="565f9dea-d057-40ba-ab77-e5e156085a33" valueTypeId="d270edd6-9f09-48ae-ac5c-79b26c0428e8"/>
+    <recordManagerType typeId="aa0be48b-bd5f-4fa4-acb2-8a010f2854d7" valueTypeId="2e6d15d2-4c74-4ef2-acc8-2d9860bd23e4"/>
+  </producedTypes>
+  <name>КорзинаПолигональнойМаршрутизации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корзина полигональной маршрутизации</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="881cb8ce-afc1-42f5-91e8-5ac574bd0bbf">
+    <name>ЗаказВКорзине</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ в корзине</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="85d31db0-d169-4392-a9df-83fdbcefc727">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="b8faa9e4-6363-4e7d-beda-bf7e74f142bf">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fdcb118e-6e30-4171-b7c4-d85e57d3dff8">
+    <name>ДатаПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата планирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e6f1bc75-63fc-48ea-b91a-797802e1db8b">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

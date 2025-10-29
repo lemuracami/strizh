@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="78ef5fe3-838a-4bdc-9b50-93272b92e032">
+  <name>warehouseService</name>
+  <synonym>
+    <key>ru</key>
+    <value>Warehouse service</value>
+  </synonym>
+  <rootURL>WarehouseService</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="a880cbdf-0da7-4009-9a3f-dbfa54540591">
+    <name>warehouse</name>
+    <synonym>
+      <key>ru</key>
+      <value>Warehouse</value>
+    </synonym>
+    <template>/V1/{ИмяМетода}</template>
+    <methods uuid="cf0dc443-3397-4bb2-b125-c15655effc13">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>warehousePOST</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

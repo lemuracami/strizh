@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3244f325-9a8b-40e9-bb8d-d85c6f53a762">
+  <producedTypes>
+    <selectionType typeId="36ded563-3338-4556-a3e4-5e8dab060799" valueTypeId="fa910e9a-1622-463e-8a7c-1018ff407d74"/>
+    <listType typeId="b4b54e23-f45f-438a-b682-29f6c3bd32f0" valueTypeId="616e29b3-86ac-40ae-b105-a61ef9cce837"/>
+    <managerType typeId="24d5d288-5e7a-41af-8f50-9565db8d858b" valueTypeId="1b4dfd75-f1ae-4d89-8922-69e4cdf0a5ce"/>
+    <recordSetType typeId="52fb490d-1b4c-4e03-ae3f-52c669b69b45" valueTypeId="b20ca0f1-5b08-4672-b8d6-969b41cc95f7"/>
+    <recordKeyType typeId="2c04f707-990f-4d7a-aa47-63a4cb7a56b6" valueTypeId="f323c3d3-3ecf-4607-893c-319520a15fa6"/>
+    <recordType typeId="96c62591-c1f6-4704-8865-9bce038a97b4" valueTypeId="bd99df7e-b3c2-46d2-be2a-b64a6a3b6e78"/>
+    <recordManagerType typeId="7bd05263-a0b0-4784-8bd1-5a4b13f0ae69" valueTypeId="0d0228e1-fa50-4e60-b8bc-4e912c1024ab"/>
+  </producedTypes>
+  <name>ПланируемыеПолигоныЭкипажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планируемые полигоны экипажей</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f7c2b433-f46b-4a3c-9ea7-db0a9395fb23">
+    <name>ПолигонУчитывается</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полигон учитывается</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="cd74124a-9299-4bed-9954-fa00fec9b943">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7a0a8fa9-4cbf-49b8-ac39-e17ff6229f46">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.УвольнениеСРаботыИзОрганизация</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="78290ba1-cd4f-4375-aa93-7432d0cf8bda">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="85e6f8bf-b384-4512-a225-c99bf1845493">
+    <name>СхемаПолигональнойМаршрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема полигональной маршрутизации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СхемыПолигональнойМаршрутизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="42b2a2d7-660b-4723-b34d-9be0c25330a5">
+    <name>СменаМаршрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена маршрутизации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Смены</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d30b752a-0139-4df7-bf32-9e9dbbb23ee0">
+    <name>Полигон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полигон</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПолигоныМаршрутизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

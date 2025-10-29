@@ -1,0 +1,26 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.nova-areas.ru">
+	<objectType name="area">
+		<property name="name" type="xs:string"/>
+		<property xmlns:d3p1="http://www.nova-areas.ru" name="ribs" type="d3p1:ribs"/>
+		<property xmlns:d3p1="http://www.nova-areas.ru" name="dots" type="d3p1:dots"/>
+	</objectType>
+	<objectType name="rib">
+		<property name="latitude1" type="xs:float" form="Attribute"/>
+		<property name="longitude1" type="xs:float" form="Attribute"/>
+		<property name="latitude2" type="xs:float" form="Attribute"/>
+		<property name="longitude2" type="xs:float" form="Attribute"/>
+	</objectType>
+	<objectType name="dot">
+		<property name="latitude" type="xs:float" form="Attribute"/>
+		<property name="longitude" type="xs:float" form="Attribute"/>
+	</objectType>
+	<objectType name="ribs">
+		<property xmlns:d3p1="http://www.nova-areas.ru" name="rib" type="d3p1:rib" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="dots">
+		<property xmlns:d3p1="http://www.nova-areas.ru" name="dot" type="d3p1:dot" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="areas">
+		<property xmlns:d3p1="http://www.nova-areas.ru" name="area" type="d3p1:area" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

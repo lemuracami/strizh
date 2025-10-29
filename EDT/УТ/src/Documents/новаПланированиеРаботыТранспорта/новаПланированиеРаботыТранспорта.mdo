@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dff18e39-2f73-4bdc-b56e-275486cef95a">
+  <producedTypes>
+    <objectType typeId="6852d286-9c30-4110-b1ce-4d18af7e2017" valueTypeId="aaf01a67-3390-40c8-ac80-9fe7528da40b"/>
+    <refType typeId="cb7f54bc-ff87-413e-adbd-d0cd30fe2e5a" valueTypeId="6f98910c-b28d-4ad6-98ec-8b05af5d57f5"/>
+    <selectionType typeId="26513cee-4077-41af-984e-6fc7b3aae363" valueTypeId="539c29e3-0430-4d33-8a15-afdc30f59699"/>
+    <listType typeId="12b9589d-8d97-4c4a-a47a-84d3063ab80c" valueTypeId="c9b7d6d1-38de-44c2-95a8-e2fc5fa928c4"/>
+    <managerType typeId="e152903d-f200-4b7e-b95f-d7d3979058f2" valueTypeId="3e400f1e-e8ec-44cb-ae66-99cbb1d4d727"/>
+  </producedTypes>
+  <name>новаПланированиеРаботыТранспорта</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планирование работы транспорта</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.новаПланированиеРаботыТранспорта.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>6</numberLength>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.новаПланированиеРаботыТранспорта.Form.ФормаБыстрогоВвода</defaultObjectForm>
+  <defaultListForm>Document.новаПланированиеРаботыТранспорта.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <attributes uuid="3074fefd-caab-48b1-8179-ed755e9f051c">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаПользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="092eafbf-bc7d-4a99-9e08-9f4259b4bccf">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="cb491466-ec05-420a-8fc3-80ec2e85912b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="23809ee1-d6c7-44b7-8c03-41d27ecb94d9">
+    <name>ФормаБыстрогоВвода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма быстрого ввода</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="f2c1961d-6bc8-4bfd-b3b9-da02d8f07bbd">
+    <producedTypes>
+      <objectType typeId="20e0c53b-6799-4650-9381-b552da674574" valueTypeId="31372e12-c6ed-42b3-b321-536b3d3aa6a9"/>
+      <rowType typeId="1d3b82c2-f592-471d-8e65-79f894bf7ede" valueTypeId="2ca2b55c-4766-40e7-97be-950c2cf47f9b"/>
+    </producedTypes>
+    <name>ДоступностьТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступность транспорта</value>
+    </synonym>
+    <attributes uuid="23c03cbe-837b-415c-b594-30ea04141596">
+      <name>Транспорт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаТранспорт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b0a4be71-8bd4-4457-af6c-fa1bba334218">
+      <name>НачалоПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начало периода</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4502379d-3a7a-4d19-bc97-260a1348781e">
+      <name>КонецПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Конец периода</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e80fb7e5-b305-4b1e-896b-3cfb26a8c721">
+      <name>Доступен</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доступен</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4f78ab32-acd3-48cb-bef1-7b585e54d060">
+      <name>Гараж</name>
+      <synonym>
+        <key>ru</key>
+        <value>Гараж</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаГаражи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

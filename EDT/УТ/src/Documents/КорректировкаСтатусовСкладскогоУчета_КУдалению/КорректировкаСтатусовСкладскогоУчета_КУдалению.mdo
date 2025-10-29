@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="860807f9-2b0c-4c4b-8bfb-a912c7b018a0">
+  <producedTypes>
+    <objectType typeId="1498bc66-ee3c-456e-9b18-0037997dba0c" valueTypeId="ddb5aa5b-6a03-469c-9629-39f0e1c3191f"/>
+    <refType typeId="9478ae50-92e7-49a5-b85f-b5d7c3837dcf" valueTypeId="3ab35ec4-2bd1-466c-8c80-03fede290a73"/>
+    <selectionType typeId="e01044ad-55d0-4595-b81c-a00d0b626a9f" valueTypeId="7ddd3fee-7a4f-473d-a91c-b0433c0b3360"/>
+    <listType typeId="764857eb-ed0e-4d22-8d00-c283e67ada32" valueTypeId="4d1e913c-b495-4195-b63e-7303d9495814"/>
+    <managerType typeId="7d2cab9f-02e5-404b-a0e8-770d0229f7a1" valueTypeId="a29a5f15-0f20-4320-aa47-8f274b88b62c"/>
+  </producedTypes>
+  <name>КорректировкаСтатусовСкладскогоУчета_КУдалению</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корректировка статусов складского учета к удалению</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.КорректировкаСтатусовСкладскогоУчета_КУдалению.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.КорректировкаСтатусовСкладскогоУчета_КУдалению.Form.ФормаДокумента</defaultObjectForm>
+  <registerRecords>InformationRegister.СтатусыСкладскогоУчета</registerRecords>
+  <attributes uuid="15fb95db-fd76-4f23-8a43-f1298da7f446">
+    <name>СтатусСкладскогоУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус складского учета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыСкладскогоУчета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СтатусыСкладскогоУчета.ПодготовленКВозврату</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="d29b5491-6551-4fbe-a5c1-38a06d373d8a">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="df446e18-3b82-400c-8ae8-839274146619">
+    <producedTypes>
+      <objectType typeId="35ded534-5f17-4b6a-8aee-05245a205178" valueTypeId="4fdb5b9a-0736-421e-bf37-e61f0b8214b0"/>
+      <rowType typeId="2392dddd-9106-4c92-a8b1-922f58fa8a3a" valueTypeId="cd6702ea-4681-477d-8c23-6f4b97d54675"/>
+    </producedTypes>
+    <name>Заказы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы</value>
+    </synonym>
+    <attributes uuid="609f5d62-68bf-44ef-8c94-12f0092bcfae">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a2ddad9a-2d66-41fd-b2cf-cd4819d92ef1">
+      <name>ТипЗаказа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип заказа</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ТипыЗаказов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

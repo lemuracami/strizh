@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dbda4b4c-73a5-4c79-bb73-fa208135c68f">
+  <producedTypes>
+    <selectionType typeId="823309dc-3e85-4113-85fb-28aeb3c4354c" valueTypeId="d5c0ee8e-3ce3-4fbb-b2b6-0609c2ad19f3"/>
+    <listType typeId="be409148-80bc-47e7-8e5a-9cba464581dd" valueTypeId="928668a3-c720-4eec-87f4-40d86b3585d3"/>
+    <managerType typeId="4c055a92-ae9f-42fb-89c0-ad93ad473346" valueTypeId="54a875d9-8eb1-40d8-af83-e54f6d9bb066"/>
+    <recordSetType typeId="322cd6ce-5fe6-41d8-96d8-8a7aa997f2ea" valueTypeId="21853beb-69bb-43f3-a042-ba4b76929d75"/>
+    <recordKeyType typeId="65e86984-dc8f-455a-ba3b-ed377f52626e" valueTypeId="af3447d5-fc5b-46c7-8c78-f17f48e0c704"/>
+    <recordType typeId="74ae0c15-0600-41f8-a864-ac8178c6ffe4" valueTypeId="3247e417-acc9-4698-9d1a-c1372c96fc83"/>
+    <recordManagerType typeId="65015e73-aa57-4859-93ba-e13aa5a0ef44" valueTypeId="4607f61d-963b-4644-82ab-0b12dc491d17"/>
+  </producedTypes>
+  <name>УчетПроектовРазработки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет проектов разработки</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.УчетПроектовРазработки.Form.ФормаСпискаУпр</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f52660a7-9b16-40f0-87c4-f07a91c8e259">
+    <name>ПланируемаяДатаНачалаРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планируемая дата начала работ</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3666fb4c-3368-4ecf-98ef-33b82ae61c09">
+    <name>ПланируемаяДатаОкончанияРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планируемая дата окончания работ</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f79b40d9-1296-4ade-b5e2-1a97452684cb">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="14cf618a-bb16-45df-b72d-ddb9fe25cdec">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="beac7ea2-b898-4106-9e6a-44f29d077638">
+    <name>Проект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проект</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПроектыРазработки</types>
+      <types>CatalogRef.ЭтапыПроектовРазработки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="7450a4d7-2db5-49c0-9b47-cae818a58cf8">
+    <name>ФормаСпискаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка упр</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

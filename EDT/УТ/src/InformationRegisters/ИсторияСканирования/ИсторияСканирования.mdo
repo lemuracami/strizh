@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc24733c-27fc-4632-a76b-b3d5fa99a97a">
+  <producedTypes>
+    <selectionType typeId="9847a429-ea16-4494-8615-45b76e13e0cc" valueTypeId="b4099d80-551a-446b-8be4-7f3dbd3789dc"/>
+    <listType typeId="84428ca3-0aca-46ad-9c23-a1e83c45d332" valueTypeId="f1f638de-5a96-47e3-bb1b-d18819675a4f"/>
+    <managerType typeId="6814b324-10a8-4fe4-beaa-478664bf8f97" valueTypeId="6c236206-2d7e-4b3a-a073-6f31a3f807be"/>
+    <recordSetType typeId="c6aa625f-b6c3-4b35-ba1b-ff485cc8a460" valueTypeId="6d6746e4-379f-414b-ae29-a62cbd49f7ae"/>
+    <recordKeyType typeId="e26804c0-edca-4a38-9738-837e5cddb4ae" valueTypeId="6385dd0f-5794-49bc-970e-b6631b438897"/>
+    <recordType typeId="ae60d496-4c2e-461a-b65c-b3f5176eb3d2" valueTypeId="0a562c27-3bba-402b-90c4-508aacf1e651"/>
+    <recordManagerType typeId="6a10a788-b723-48fd-bfc9-d2491efda448" valueTypeId="e64f666d-44e5-4c8f-a1ce-1b592caef870"/>
+  </producedTypes>
+  <name>ИсторияСканирования</name>
+  <synonym>
+    <key>ru</key>
+    <value>История сканирования</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="d43f9f53-d321-42f3-907c-7fe395f4fee8">
+    <name>Штрихкод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрихкод</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>40</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="bc5e395c-9e36-475e-925d-c30d7639148a">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="85c511f7-63ca-4ed5-9751-c3a2d61dafbf">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="6d4a451f-d9be-436d-a8a7-0d97adf367a2">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ФактическийПриходЗаказовНаСклад</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

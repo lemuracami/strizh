@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8e2c42b9-b376-42e6-8b98-827da5a24938">
+  <producedTypes>
+    <selectionType typeId="8bae3fa1-2f3e-49cb-a20c-356634506be0" valueTypeId="e3bdfe3f-704e-419d-9fd8-4c20303f3c6f"/>
+    <listType typeId="8420809f-d9e7-4978-a265-446e3956c90e" valueTypeId="4f090bd2-60f8-4fa8-8958-49e46c56f23e"/>
+    <managerType typeId="0d8b5453-c67f-4809-a870-cb5d66abdb68" valueTypeId="37c13519-5e58-4e4e-a312-2b1b694ef1cd"/>
+    <recordSetType typeId="5c1772fa-a5b2-48b7-8289-45fc22be30f1" valueTypeId="d3f63813-2a0e-4491-9660-2b1128d5a91a"/>
+    <recordKeyType typeId="f0eacf68-bb87-4249-a53b-2b2d5304b147" valueTypeId="ecaaac09-85af-42bc-8f90-7e761a02e1ec"/>
+    <recordType typeId="30482fa8-bd5a-4d82-a040-1f237f587397" valueTypeId="d81fc260-b785-4182-8078-cef7cca62926"/>
+    <recordManagerType typeId="cc218392-540c-4961-8377-8088d13fb8a7" valueTypeId="4e48786e-d15b-4165-bcf2-acf9f235da3d"/>
+  </producedTypes>
+  <name>ПрямыеЗатратыПоСтатьямДоходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Прямые затраты по статьям доходов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="77ab4e4e-ac29-43fa-a290-154341cb0990">
+    <name>СтатьяЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья затрат</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиЗатратКомпании</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e0784aeb-b8e2-4dfa-b538-9654cba4c050">
+    <name>ПроцентОтДохода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент от дохода</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5f0622c4-c284-4072-b28e-185939e28f5f">
+    <name>СтатьяДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья доходов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиДоходовКомпании</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

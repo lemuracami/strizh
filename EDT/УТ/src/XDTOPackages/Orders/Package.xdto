@@ -1,0 +1,73 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/1CMobile/Order">
+	<import namespace="http://www.strizh-logistic.ru/1CMobile/Nomenklature"/>
+	<import namespace="http://www.strizh-logistic.ru/1CMobile/Klients"/>
+	<objectType name="Order">
+		<property name="Number" type="xs:string"/>
+		<property name="NumberEx" type="xs:string" lowerBound="1" nillable="true"/>
+		<property name="Date" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Klients" name="Client" type="d3p1:Klients"/>
+		<property name="InternetShop" type="xs:string"/>
+		<property name="Status" type="xs:short"/>
+		<property name="TimeOfDelivery" type="xs:string"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Order" name="Tovars" type="d3p1:OrderRow" lowerBound="0" upperBound="-1"/>
+		<property name="Dolgota" type="xs:string"/>
+		<property name="Shirota" type="xs:string"/>
+		<property name="Phone" type="xs:string" nillable="true"/>
+		<property name="Address" type="xs:string"/>
+		<property name="TypeOfPay" type="xs:byte"/>
+		<property name="SumDelivery" type="xs:double"/>
+		<property name="SelectTypeOfPay" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="InternetShopID" type="xs:string" nillable="true"/>
+		<property name="tariffID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="DataOfLifting" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="TotalSum" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="TotalSumEnabled" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="PartialRedemptionDisabled" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="VolumeImport" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="WeightImport" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="NDSDelivery" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="PrintCheck" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="email" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="SendCheckOnEmail" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="organizationCodeCash" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="organizationCodeTerminal" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="countOfPlaces" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="weight" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="methodPaymentOfLifting" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="changeOfPaymentTypeDisabled" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="idRowOrder" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="partnerID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="tripId" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="requestLiftType" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="idSMSTemplate" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="tariffZoneCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="customerIdentificationCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="requestCustomerIdentificationCode" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="organizationCodeQPS" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Order" name="DeliveryCostCalculations" type="d3p1:DeliveryCostCalculationRow" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="costDeliveryRequiredIfRefusal" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="prepaymentAmount" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="signingReturnAccDoc" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="fittingRequired" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="calendarID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="dateIdRowOrder" type="xs:dateTime" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="OrderRow">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Nomenklature" name="Nomenklature" type="d3p1:Nomenklature"/>
+		<property name="Count" type="xs:double"/>
+		<property name="Summa" type="xs:double" nillable="true"/>
+		<property name="price" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="NDSRow" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="barcode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="markingCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="idGoodSeller" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="signSubjectCalc" type="xs:integer" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ArrayOfOrders">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Order" name="Order" type="d3p1:Order" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="DeliveryCostCalculationRow">
+		<property name="TotalCost" type="xs:double" nillable="true"/>
+		<property name="DeliveryCost" type="xs:double" nillable="true"/>
+	</objectType>
+</package>

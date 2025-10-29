@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c68696fc-0b88-4401-94b9-8b0f47d6503e">
+  <producedTypes>
+    <selectionType typeId="a246ac10-85ff-4777-836f-669324f054f3" valueTypeId="49d3c079-ee85-4152-b923-c7b606e6d5de"/>
+    <listType typeId="49767d33-b7d2-40b0-9d0c-4c10c7ee8a9d" valueTypeId="7b66dba9-9a0f-4f2a-8968-099fdee6754a"/>
+    <managerType typeId="21556bf1-0b94-4185-907e-584a9f4a5761" valueTypeId="16698f09-1c91-40cd-b495-f706ca2350b4"/>
+    <recordSetType typeId="7b24e12c-e472-48b9-9b09-a1da4966f5e5" valueTypeId="8531170c-2936-4f00-9250-2635c8fb365f"/>
+    <recordKeyType typeId="7d81dddd-a29d-4dc7-a7b6-42028eae72fc" valueTypeId="48d62811-d141-4f70-b02c-5209a56a05ce"/>
+    <recordType typeId="7926e08f-fc0d-4452-972e-c385d7448194" valueTypeId="7e42d8c7-af67-4a45-8b31-2d587a017c00"/>
+    <recordManagerType typeId="8cad5cb0-0387-48ca-9fb9-8b60ae24fb84" valueTypeId="90a04733-bda7-482e-9750-239f5661eb90"/>
+  </producedTypes>
+  <name>ИндивидуальныеТарифыРасчетаЗарплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Индивидуальные тарифы расчета зарплаты</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="df700d3c-be5d-4168-b8cf-df1914d235cc">
+    <name>Тариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="12aabb3a-fdc1-47cc-a153-91bd40548baa">
+    <name>ТарифЧас</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф час</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="71d9c50f-5e99-4bd9-9061-5f14ad7a4f20">
+    <name>НеПрименятьИндивидуальныйТариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не применять индивидуальный тариф</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="86d4b5eb-568b-4f33-a494-d33187121a75">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6a2d3a2b-71d8-4d97-9e15-7773c9c47da5">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="53c31eb7-063e-4d61-b056-7282e450c3b1">
+    <name>ТипЭкипажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип экипажа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыТарифовРасчетаЗарплаты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dd2b4eaa-f4b4-468c-923c-28e9f1279033">
+    <name>УчастникЭкипажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участник экипажа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УчастникЭкипажа</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b41500f8-5f62-47e7-b81f-d9b17580e6e9">
+    <name>Территориальность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Территориальность</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТерриториальностьДоставок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

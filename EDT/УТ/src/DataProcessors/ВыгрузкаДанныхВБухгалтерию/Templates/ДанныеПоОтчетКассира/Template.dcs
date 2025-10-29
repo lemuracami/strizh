@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТерминалДоставки</dataPath>
+			<field>ТерминалДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаОтказаПереноса</dataPath>
+			<field>ПричинаОтказаПереноса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрЛицо</dataPath>
+			<field>ЮрЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗаказа</dataPath>
+			<field>ТипЗаказа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Транспорт</dataPath>
+			<field>Транспорт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтернетМагазин</dataPath>
+			<field>ИнтернетМагазин</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОплаты</dataPath>
+			<field>ТипОплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водитель</dataPath>
+			<field>Водитель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Экспедитор</dataPath>
+			<field>Экспедитор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланВыгрузки</dataPath>
+			<field>ПланВыгрузки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>План выгрузки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РезультатДоставки</dataPath>
+			<field>РезультатДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаНеВыполнения</dataPath>
+			<field>ПричинаНеВыполнения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Спецсчет</dataPath>
+			<field>Спецсчет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЧекиНеПечатаются</dataPath>
+			<field>ЧекиНеПечатаются</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УдаленноеЗакрытие</dataPath>
+			<field>УдаленноеЗакрытие</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНаличные</dataPath>
+			<field>СуммаНаличные</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма наличные</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаТерминал</dataPath>
+			<field>СуммаТерминал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма терминал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВыгрузки</dataPath>
+			<field>ДатаВыгрузки</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВЫБОР
+		КОГДА НЕ УчетДенежныхСредствКассиромРасширеныйОбороты.ИнтернетМагазин.Родитель.ОсновнойМагазин = ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)
+			ТОГДА УчетДенежныхСредствКассиромРасширеныйОбороты.ИнтернетМагазин.Родитель.ОсновнойМагазин
+		ИНАЧЕ УчетДенежныхСредствКассиромРасширеныйОбороты.ИнтернетМагазин
+	КОНЕЦ КАК Партнер,
+	УчетДенежныхСредствКассиромРасширеныйОбороты.Заказ КАК Заказ,
+	УчетДенежныхСредствКассиромРасширеныйОбороты.СуммаНаличныеОборот КАК СуммаНаличные,
+	УчетДенежныхСредствКассиромРасширеныйОбороты.СуммаБезНаличныеОборот КАК СуммаТерминал
+ПОМЕСТИТЬ ДанныеПоЗаказам
+ИЗ
+	РегистрНакопления.УчетДенежныхСредствКассиромРасширеный.Обороты(&amp;НачалоПериода, &amp;КонецПериода, День, ) КАК УчетДенежныхСредствКассиромРасширеныйОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДанныеПоЗаказам.Партнер КАК Партнер,
+	ДанныеПоЗаказам.Партнер.ОсновнойДоговорКонтрагента.Организация КАК Организация,
+	ДанныеПоЗаказам.Заказ КАК Заказ,
+	ДанныеПоЗаказам.СуммаНаличные КАК СуммаНаличные,
+	ДанныеПоЗаказам.СуммаТерминал КАК СуммаТерминал,
+	ПараметрыКонтрагентовСрезПоследних.Спецсчет КАК Спецсчет
+ПОМЕСТИТЬ ДанныеПоПартнерам
+ИЗ
+	ДанныеПоЗаказам КАК ДанныеПоЗаказам
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыКонтрагентов.СрезПоследних(&amp;КонецПериода, ) КАК ПараметрыКонтрагентовСрезПоследних
+		ПО ДанныеПоЗаказам.Партнер = ПараметрыКонтрагентовСрезПоследних.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДанныеПоПартнерам.Партнер КАК Партнер,
+	ДанныеПоПартнерам.Организация КАК Организация,
+	ДанныеПоПартнерам.Заказ КАК Заказ,
+	ДанныеПоПартнерам.СуммаНаличные КАК СуммаНаличные,
+	ДанныеПоПартнерам.СуммаТерминал КАК СуммаТерминал,
+	ДанныеПоПартнерам.Спецсчет КАК Спецсчет,
+	ПланыВыгрузкиДанныхВБухгалтерию.Ссылка КАК ПланВыгрузки,
+	ДанныеПоПартнерам.Партнер.Представление КАК ПартнерПредставление,
+	ВыгрузкаДанныхВБухгалтериюСрезПоследних.Период КАК ДатаВыгрузки
+ИЗ
+	ДанныеПоПартнерам КАК ДанныеПоПартнерам
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ПланыВыгрузкиДанныхВБухгалтерию КАК ПланыВыгрузкиДанныхВБухгалтерию
+		ПО (ПланыВыгрузкиДанныхВБухгалтерию.ПланАктивен)
+			И ДанныеПоПартнерам.Организация = ПланыВыгрузкиДанныхВБухгалтерию.Организация
+			И ДанныеПоПартнерам.Спецсчет = ПланыВыгрузкиДанныхВБухгалтерию.Спецсчет
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ВыгрузкаДанныхВБухгалтерию.СрезПоследних(, ДатаВыгрузки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода) КАК ВыгрузкаДанныхВБухгалтериюСрезПоследних
+		ПО ДанныеПоПартнерам.Партнер = ВыгрузкаДанныхВБухгалтериюСрезПоследних.Партнер
+
+УПОРЯДОЧИТЬ ПО
+	ПартнерПредставление,
+	Заказ</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодВыгрузки.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодВыгрузки.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПериодВыгрузки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период выгрузки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодВыгрузки</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Партнер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Организация</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Заказ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПланВыгрузки</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Спецсчет</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаНаличные</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаТерминал</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаВыгрузки</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

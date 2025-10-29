@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="303e91e9-ac35-4b1e-8bad-a2a953f8b2be">
+  <producedTypes>
+    <selectionType typeId="28a8a6d8-c642-43b5-9dba-74ed0a0cb1dd" valueTypeId="9d7909de-d8cd-451a-b363-a987bebae4ca"/>
+    <listType typeId="cdbd6a0f-001e-4293-a7c0-39f3edc6577e" valueTypeId="194c55ea-1f06-4077-9ac9-cafd7edf644b"/>
+    <managerType typeId="e9caa966-d776-4e17-a2db-38895f780e6a" valueTypeId="410d9535-1898-46ed-8438-846e7540f821"/>
+    <recordSetType typeId="5a66cc43-4a5d-471e-84ad-aa2cc2198c95" valueTypeId="f95cc589-00bf-4577-b26b-c975dc96b7e2"/>
+    <recordKeyType typeId="f1bc3189-c565-4cba-947f-434569f1fd8c" valueTypeId="95b51aa3-4be4-4368-8a75-3eccf547aa1f"/>
+    <recordType typeId="bb8b5a15-d20a-4182-addf-5ee79452f399" valueTypeId="12b44db9-f982-4d58-94c3-7a013dd0ef53"/>
+    <recordManagerType typeId="854bd68a-2a73-4310-8725-f7e92e4398e9" valueTypeId="6c9872b1-8848-488a-8992-720e9e862f64"/>
+  </producedTypes>
+  <name>ИсторияСтатусовСкладскогоУчетаВозвратовПоставщику</name>
+  <synonym>
+    <key>ru</key>
+    <value>История статусов складского учета возвратов поставщику</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="ec064e9b-cf41-43e7-9c89-77bdb413eafd">
+    <name>СтатусСкладскогоУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус складского учета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыСкладскогоУчета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0f4e1d50-f091-4237-9870-996fcd071db9">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ГрупповаяУстановкаСтатусовСкладскогоУчета</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="b00816d9-5275-49cf-8ae7-0e4673c5fa09">
+    <name>ДатаИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bfc8d736-43d2-4e95-987f-512c517f0fe4">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="187ce04c-dbe1-4ab6-b2e9-bfbe4071a69d">
+    <name>ВозвратПоставщику</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возврат поставщику</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

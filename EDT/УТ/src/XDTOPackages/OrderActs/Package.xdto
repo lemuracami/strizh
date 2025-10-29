@@ -1,0 +1,46 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/1CMobile/OrderAct">
+	<import namespace="http://www.strizh-logistic.ru/1CMobile/Nomenklature"/>
+	<objectType name="OrderAct">
+		<property name="Number" type="xs:string" nillable="true"/>
+		<property name="Date" type="xs:dateTime" nillable="true"/>
+		<property name="Status" type="xs:short" nillable="true"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/OrderAct" name="Tovars" type="d3p1:OrderActRow" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="ReasonFail" type="xs:string" nillable="true"/>
+		<property name="DateReason" type="xs:dateTime" nillable="true"/>
+		<property name="NumberDok" type="xs:string" nillable="true"/>
+		<property name="Summa" type="xs:double" nillable="true"/>
+		<property name="TypeOfPay" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="ResultOfDelivery" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="IsTakingGoods" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="PiecesOfFreight" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="VolumeBreak" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PaletCount" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="TypeOfLifting" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="FloorOfLifting" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="countRequestPrintingCheck" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="dateOfSendingDataOfCheck" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="dateOfPrintingCheck" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="idCheck" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="errorFormingCheck" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="emailRecepient" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="idReturnCheck" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="TypeOfPayCheck" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="liftingBreak" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="liftingCalcSum" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="liftingApprovedSum" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="liftingWeight" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="liftingCountOfWalkersPerFloor" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="liftingWeightUploaded" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="tripId" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="customerIdentificationCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="statusSetWithoutCustomerIdentificationCode" type="xs:boolean" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="OrderActRow">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Nomenklature" name="Nomenklature" type="d3p1:Nomenklature" nillable="true"/>
+		<property name="Count" type="xs:double" nillable="true"/>
+		<property name="markingCode" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ArrayOfOrderActs">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/OrderAct" name="OrderAct" type="d3p1:OrderAct" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

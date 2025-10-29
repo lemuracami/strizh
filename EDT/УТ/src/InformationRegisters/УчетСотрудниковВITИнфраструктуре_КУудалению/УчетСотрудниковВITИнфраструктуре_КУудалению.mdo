@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6e3bb975-abcb-4862-a62f-3cca48278981">
+  <producedTypes>
+    <selectionType typeId="b140a0b9-82c8-4ac0-b60d-4f3fdf148c50" valueTypeId="9793f973-fe7b-4427-97c6-56881b5f0479"/>
+    <listType typeId="fecc51b3-159f-49c8-ae44-fc7180e5d951" valueTypeId="81feede9-5c26-42b2-b28a-5038afbbe992"/>
+    <managerType typeId="4dd4c414-4a99-4fc8-925f-7f79139582f4" valueTypeId="0c088ae4-48d6-4a76-b18b-e30e08f599e5"/>
+    <recordSetType typeId="28d3afb6-1d03-41f1-8540-090efbc1d138" valueTypeId="6d0f3c6d-306e-47f6-b970-741df611db59"/>
+    <recordKeyType typeId="10996dd9-39a0-4c38-96c4-e64cf8a941c7" valueTypeId="5ac09064-8366-492a-b19e-6fbbf5d4230e"/>
+    <recordType typeId="c3c209fe-9d59-4199-bdb1-38139db02b46" valueTypeId="5db22822-cfb0-4810-ae06-c729834d154c"/>
+    <recordManagerType typeId="2a94f03d-f550-40b3-b111-264a579c6e6e" valueTypeId="80264173-3510-45e2-a60b-0fe09386f33c"/>
+  </producedTypes>
+  <name>УчетСотрудниковВITИнфраструктуре_КУудалению</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет сотрудников в IT инфраструктуре</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="927329c9-b043-4306-a019-303f89413a26">
+    <name>СостояниеУчетныхДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние учетных данных</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостояниеУчетныхДанныхВITИнфраструктуреКомпании_КУдалению</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1dbbc728-f427-4713-b9c2-599e6128bf49">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e67cd196-b95a-4aeb-ac6a-797091552bd6">
+    <name>СостояниеСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние сотрудника</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостояниеРаботникаОрганизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="1a376220-6ca0-4c22-87ab-57a91d64a42f">
+    <name>Логин</name>
+    <synonym>
+      <key>ru</key>
+      <value>Логин</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="4a67a83d-48a4-427e-a354-65213186e414">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="94374bd4-29ea-48e4-88dd-65248f4ffdef">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6479f964-d672-4d98-be0e-e07f96377e94">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8d760328-8af9-4380-90c0-5f08b8fdee98">
+    <name>УчетнаяСистема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учетная система</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УчетныеСистемыКомпании_КУдалению</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

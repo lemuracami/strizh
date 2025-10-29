@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bf131a42-62fc-425f-a3f5-f284c5e9ef89">
+  <producedTypes>
+    <selectionType typeId="e2243549-25cb-41c0-9c12-38519b2ec83e" valueTypeId="9bb4e05c-c52a-4d86-9bbb-56238120bd2b"/>
+    <listType typeId="406a235d-e1d4-4ecc-a1d5-58f7ec76b1bc" valueTypeId="361b88c1-1c8c-47df-b4ca-4db61de821f0"/>
+    <managerType typeId="f4d0bcb5-4082-431c-9d7d-c02f1d58722d" valueTypeId="26d665dc-83eb-49bb-b728-7d5754145a90"/>
+    <recordSetType typeId="71a2ad9e-abf7-459e-b835-c178aa4c8493" valueTypeId="1b9a101b-055e-4ebe-9333-c08d32909443"/>
+    <recordKeyType typeId="664c197d-9c77-44ee-8264-83c38677d79c" valueTypeId="884e5ff4-ea40-454a-86d3-fff3b86b8693"/>
+    <recordType typeId="a0917222-6deb-4be1-a060-c8b01366f7b9" valueTypeId="375d0e48-28da-418a-a171-bc16dee755f4"/>
+    <recordManagerType typeId="8bd62bd5-ccae-47db-bfa0-0d61bbb0ca3b" valueTypeId="407ca1d8-a616-4891-bc30-bcd03c4d510a"/>
+  </producedTypes>
+  <name>новаЗаданияРейсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Задания рейсов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3cc3a759-dec7-424b-8c23-a539667c229d">
+    <name>Вид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид</value>
+    </synonym>
+    <type>
+      <types>EnumRef.новаВидыЗаданийРейсаМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b3ac6a5e-ae87-4918-91c8-6c5e620704f8">
+    <name>Доставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаМестнаяДоставка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="02d7be99-1e69-4119-ae66-bfc642693054">
+    <name>ЗаданиеВыполнено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задание выполнено</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="98ce4301-9a44-45aa-ac1f-9fe0a8dad831">
+    <name>ЗаданиеВыполненоВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задание выполнено вручную</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="fd7ced8e-c749-46e5-a834-9953c12e42a9">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаРейсМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2c89eeda-ee92-4c23-af88-17a85997095f">
+    <name>КодТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код точки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="aba16555-f67f-4061-b002-553331789da7">
+    <name>НомерЗадания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер задания</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="143c26a4-8a78-4596-993a-0d28f7f95921">
+    <name>МаршрутСопровождения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маршрут сопровождения</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

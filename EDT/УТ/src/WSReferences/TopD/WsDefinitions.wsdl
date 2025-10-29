@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://is.topdelivery.ru/api/soap/p/1.0/"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://is.topdelivery.ru/api/soap/p/1.0/"
+		targetNamespace="http://is.topdelivery.ru/api/soap/p/1.0/">
+	<types>
+		<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+				xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				elementFormDefault="qualified"
+				targetNamespace="http://is.topdelivery.ru/api/soap/p/1.0/">
+			<s:complexType name="ctAuth">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="login"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="password"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctRequestResult">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="message"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctExecution">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="executorId"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctTimeInterval">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="date"
+							type="s:date"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="bTime"
+							type="s:time"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="eTime"
+							type="s:time"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctAddress">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="type"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="region"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="city"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="zipcode"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="street"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="building"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="appartment"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctClientInfo">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="fio"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="phone"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="email"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="comment"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="address"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctDiscount">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="type"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="value"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctPack">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="need"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="type"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctItem">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="name"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="article"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="count"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="declaredPrice"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="clientPrice"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="weight"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="push"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="status"
+							type="xsd1:ctIdNameCompare"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="deliveryCount"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctOrderIdentity">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="orderId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="barcode"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="webshopNumber"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctAddOrderResult">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							nillable="true"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							nillable="true"
+							name="message"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="orderIdentity"
+							type="xsd1:ctOrderIdentity"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctShipmentIntakeParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="need"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="address"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="contacts"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="intakeDate"
+							type="xsd1:ctTimeInterval"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctOrderWeightVolume">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="weight"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="volume"
+							type="xsd1:ctVolume"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctVolume">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="length"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="width"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="height"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctAddShipmentOrder">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="orderIdentity"
+							type="xsd1:ctOrderIdentity"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="sizes"
+							type="xsd1:ctOrderWeightVolume"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="placesCount"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctShipmentPlace">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="number"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="weight"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctIdNameCompare">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="id"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="name"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctAddClaimResult">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="claimId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="message"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctAddClaimOrdersParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="claimId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							nillable="true"
+							name="orders"
+							type="xsd1:ctAddShipmentOrder"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctShipmentDirection">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="type"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="receiverId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="directionName"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctOrderDenyParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="type"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="reason"
+							type="xsd1:ctIdNameCompare"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="getCitiesRegions">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="auth"
+								type="xsd1:ctAuth"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="true"
+								name="regionId"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ctRegionZipcodes">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="regionId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="regionName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							nillable="true"
+							name="zipcodes"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							nillable="true"
+							name="cities"
+							type="xsd1:ctCityZipcodes"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctCityZipcodes">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="cityId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="cityName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							nillable="true"
+							name="zipcodes"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="getCitiesRegionsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="requestResult"
+								type="xsd1:ctRequestResult"/>
+						<s:element minOccurs="0"
+								maxOccurs="unbounded"
+								nillable="true"
+								name="citiesRegions"
+								type="xsd1:ctRegionZipcodes"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ctEvent">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="eventId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="eventType"
+							type="xsd1:ctIdNameCompare"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="user"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="date"
+							type="s:date"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="prevValue"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="newValue"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="comment"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="region"
+							type="xsd1:ctIdNameCompare"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="city"
+							type="xsd1:ctIdNameCompare"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctOrderDirectCosts">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="summ"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="details"
+							type="xsd1:ctOrderDirectCostsDetails"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctOrderDirectCostsDetails">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="delivery"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="rko"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="pack"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="sms"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="marking"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="insurance"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="process_webshop_order"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="additional_courier"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctOrderReturnCosts">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="summ"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="details"
+							type="xsd1:ctOrderReturnCostsDetails"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctOrderReturnCostsDetails">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="return"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="insurance_return"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctSetShipmentOnTheWayParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="contacts"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="responsibleFace"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="transportDocNumber"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="intake"
+							type="xsd1:ctShipmentIntakeParams"/>
+					<s:element minOccurs="1"
+							maxOccurs="unbounded"
+							nillable="false"
+							name="places"
+							type="xsd1:ctShipmentPlace"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctAddShipmentParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="direction"
+							type="xsd1:ctShipmentDirection"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="packer"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="freighterId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="unbounded"
+							nillable="false"
+							name="orders"
+							type="xsd1:ctAddShipmentOrder"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="setOnTheWay"
+							type="xsd1:ctSetShipmentOnTheWayParams"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="addShipment">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="auth"
+								type="xsd1:ctAuth"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="addedShipment"
+								type="xsd1:ctAddShipmentParams"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="addShipmentResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="requestResult"
+								type="xsd1:ctRequestResult"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="true"
+								name="addShipmentResult"
+								type="xsd1:ctAddShipmentResult"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="true"
+								name="setShipmentOnTheWayResult"
+								type="xsd1:ctRequestResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ctAddShipmentResult">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="shipmentId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="message"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							nillable="true"
+							name="attachOrders"
+							type="xsd1:ctAddOrderResult"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctChangeShipmentStatusParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="shipmentId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="setOnTheWay"
+							type="xsd1:ctSetShipmentOnTheWayParams"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="changeShipmentStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="auth"
+								type="xsd1:ctAuth"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="statusParams"
+								type="xsd1:ctChangeShipmentStatusParams"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="changeShipmentStatusResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="requestResult"
+								type="xsd1:ctRequestResult"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="true"
+								name="setStatusResult"
+								type="xsd1:ctRequestResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ctSetOrderFinalStatusParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="orderIdentity"
+							type="xsd1:ctOrderIdentity"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="accessCode"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="workStatus"
+							type="xsd1:ctIdNameCompare"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="dateFactDelivery"
+							type="s:date"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="clientPaid"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="denyParams"
+							type="xsd1:ctOrderDenyParams"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="deliveryPaid"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="comment"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							nillable="true"
+							name="items"
+							type="xsd1:ctItem"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="setOrdersFinalStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="auth"
+								type="xsd1:ctAuth"/>
+						<s:element minOccurs="1"
+								maxOccurs="unbounded"
+								nillable="false"
+								name="finalStatusParams"
+								type="xsd1:ctSetOrderFinalStatusParams"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="setOrdersFinalStatusResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="requestResult"
+								type="xsd1:ctRequestResult"/>
+						<s:element minOccurs="0"
+								maxOccurs="unbounded"
+								nillable="true"
+								name="setOrdersFinalStatus"
+								type="xsd1:ctAddOrderResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ctCallStatus">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="callStatus"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="denyReason"
+							type="xsd1:ctIdNameCompare"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="carryReason"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="clientCostAgreed"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ctEditOrderResult">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="orderIdentity"
+							type="xsd1:ctOrderIdentity"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="callStatus"
+							type="xsd1:ctRequestResult"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="clientInfo"
+							type="xsd1:ctRequestResult"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="desireDateDelivery"
+							type="xsd1:ctRequestResult"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="message"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="editOrders">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="auth"
+								type="xsd1:ctAuth"/>
+						<s:element minOccurs="1"
+								maxOccurs="unbounded"
+								nillable="false"
+								name="editOrdersParams"
+								type="xsd1:ctEditOrderParams"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ctEditOrderParams">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="orderIdentity"
+							type="xsd1:ctOrderIdentity"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="accessCode"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="desireDateDelivery"
+							type="xsd1:ctTimeInterval"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="clientInfo"
+							type="xsd1:ctClientInfo"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="callStatus"
+							type="xsd1:ctCallStatus"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="editOrdersResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="requestResult"
+								type="xsd1:ctRequestResult"/>
+						<s:element minOccurs="0"
+								maxOccurs="unbounded"
+								nillable="true"
+								name="editOrdersResult"
+								type="xsd1:ctEditOrderResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="setOrderProblemStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="auth"
+								type="xsd1:ctAuth"/>
+						<s:element minOccurs="0"
+								maxOccurs="unbounded"
+								nillable="true"
+								name="problemOrders"
+								type="xsd1:ctOrderProblemStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ctOrderProblemStatus">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="orderIdentity"
+							type="xsd1:ctOrderIdentity"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="false"
+							name="problemStatus"
+							type="xsd1:ctIdNameCompare"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							nillable="true"
+							name="comment"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="setOrderProblemStatusResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								nillable="false"
+								name="requestResult"
+								type="xsd1:ctRequestResult"/>
+						<s:element minOccurs="0"
+								maxOccurs="unbounded"
+								nillable="true"
+								name="setProblemResult"
+								type="xsd1:ctAddOrderResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+	</types>
+	<message name="addShipmentSoapIn">
+		<part name="parameters"
+				element="tns:addShipment"/>
+	</message>
+	<message name="addShipmentSoapOut">
+		<part name="parameters"
+				element="tns:addShipmentResponse"/>
+	</message>
+	<message name="changeShipmentStatusSoapIn">
+		<part name="parameters"
+				element="tns:changeShipmentStatus"/>
+	</message>
+	<message name="changeShipmentStatusSoapOut">
+		<part name="parameters"
+				element="tns:changeShipmentStatusResponse"/>
+	</message>
+	<message name="setOrdersFinalStatusSoapIn">
+		<part name="parameters"
+				element="tns:setOrdersFinalStatus"/>
+	</message>
+	<message name="setOrdersFinalStatusSoapOut">
+		<part name="parameters"
+				element="tns:setOrdersFinalStatusResponse"/>
+	</message>
+	<message name="editOrdersSoapIn">
+		<part name="parameters"
+				element="tns:editOrders"/>
+	</message>
+	<message name="editOrdersSoapOut">
+		<part name="parameters"
+				element="tns:editOrdersResponse"/>
+	</message>
+	<message name="getCitiesRegionsSoapIn">
+		<part name="parameters"
+				element="tns:getCitiesRegions"/>
+	</message>
+	<message name="getCitiesRegionsSoapOut">
+		<part name="parameters"
+				element="tns:getCitiesRegionsResponse"/>
+	</message>
+	<message name="setOrderProblemStatusSoapIn">
+		<part name="parameters"
+				element="tns:setOrderProblemStatus"/>
+	</message>
+	<message name="setOrderProblemStatusSoapOut">
+		<part name="parameters"
+				element="tns:setOrderProblemStatusResponse"/>
+	</message>
+	<portType name="partnerSoapGateSoap">
+		<operation name="addShipment">
+			<input name="addShipmentRequest"
+					message="tns:addShipmentSoapIn"/>
+			<output name="addShipmentResponse"
+					message="tns:addShipmentSoapOut"/>
+		</operation>
+		<operation name="changeShipmentStatus">
+			<input name="changeShipmentStatusRequest"
+					message="tns:changeShipmentStatusSoapIn"/>
+			<output name="changeShipmentStatusResponse"
+					message="tns:changeShipmentStatusSoapOut"/>
+		</operation>
+		<operation name="setOrdersFinalStatus">
+			<input name="setOrdersFinalStatusRequest"
+					message="tns:setOrdersFinalStatusSoapIn"/>
+			<output name="setOrdersFinalStatusResponse"
+					message="tns:setOrdersFinalStatusSoapOut"/>
+		</operation>
+		<operation name="editOrders">
+			<input name="editOrdersRequest"
+					message="tns:editOrdersSoapIn"/>
+			<output name="editOrdersResponse"
+					message="tns:editOrdersSoapOut"/>
+		</operation>
+		<operation name="getCitiesRegions">
+			<input name="getCitiesRegionsRequest"
+					message="tns:getCitiesRegionsSoapIn"/>
+			<output name="getCitiesRegionsResponse"
+					message="tns:getCitiesRegionsSoapOut"/>
+		</operation>
+		<operation name="setOrderProblemStatus">
+			<input name="setOrderProblemStatusRequest"
+					message="tns:setOrderProblemStatusSoapIn"/>
+			<output name="setOrderProblemStatusResponse"
+					message="tns:setOrderProblemStatusSoapOut"/>
+		</operation>
+	</portType>
+	<binding name="partnerSoapGateSoap"
+			type="tns:partnerSoapGateSoap">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="addShipment">
+			<soapbind:operation style="document"
+					soapAction="http://is.topdelivery.ru/api/soap/p/1.0/addShipment"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="changeShipmentStatus">
+			<soapbind:operation style="document"
+					soapAction="http://is.topdelivery.ru/api/soap/p/1.0/changeShipmentStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setOrdersFinalStatus">
+			<soapbind:operation style="document"
+					soapAction="http://is.topdelivery.ru/api/soap/p/1.0/setOrdersFinalStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="editOrders">
+			<soapbind:operation style="document"
+					soapAction="http://is.topdelivery.ru/api/soap/p/1.0/editOrders"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getCitiesRegions">
+			<soapbind:operation style="document"
+					soapAction="http://is.topdelivery.ru/api/soap/p/1.0/getCitiesRegions"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setOrderProblemStatus">
+			<soapbind:operation style="document"
+					soapAction="http://is.topdelivery.ru/api/soap/p/1.0/setOrderProblemStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="partnerSoapGate">
+		<port name="partnerSoapGateSoap"
+				binding="tns:partnerSoapGateSoap">
+			<soapbind:address location="http://is.topdelivery.ru/api/soap/p/1.0/index.php"/>
+		</port>
+	</service>
+</definitions>

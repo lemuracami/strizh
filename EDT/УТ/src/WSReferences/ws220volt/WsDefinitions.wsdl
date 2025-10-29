@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.nwth.ru"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.nwth.ru"
+		name="PVZService"
+		targetNamespace="http://www.nwth.ru">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.nwth.ru"
+				targetNamespace="http://www.nwth.ru"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:simpleType name="CallCustomerMadeType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="YES"/>
+					<xs:enumeration value="NO"/>
+					<xs:enumeration value="ALL"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Client">
+				<xs:sequence>
+					<xs:element name="code"
+							type="xs:string"/>
+					<xs:element name="name"
+							type="xs:string"/>
+					<xs:element name="allowNP"
+							type="xs:boolean"/>
+					<xs:element name="inn"
+							type="xs:string"/>
+					<xs:element name="kpp"
+							type="xs:string"/>
+					<xs:element name="orderStorageLifetime"
+							type="xs:int"/>
+					<xs:element name="orderStorageExtend"
+							type="xs:decimal"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Comment">
+				<xs:sequence>
+					<xs:element name="id"
+							type="xs:string"/>
+					<xs:element name="date"
+							type="xs:dateTime"/>
+					<xs:element name="text"
+							type="xs:string"/>
+					<xs:element name="author"
+							type="xs:string"/>
+					<xs:element name="type"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="CommentType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="PHONE_CALL"/>
+					<xs:enumeration value="EMAIL_MESSAGE"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Contact">
+				<xs:sequence>
+					<xs:element name="contactType"
+							type="xsd1:ContactType"/>
+					<xs:element name="contact"
+							type="xs:string"/>
+					<xs:element name="description"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ContactType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Phone"/>
+					<xs:enumeration value="Fax"/>
+					<xs:enumeration value="Email"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Event">
+				<xs:sequence>
+					<xs:element name="id"
+							type="xs:string"/>
+					<xs:element name="eventType"
+							type="xsd1:EventTypes"/>
+					<xs:element name="eventDate"
+							type="xs:dateTime"/>
+					<xs:element name="eventObject"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="EventOrderStatusChanged">
+				<xs:sequence>
+					<xs:element name="orderNumber"
+							type="xsd1:OrderNumber"/>
+					<xs:element name="orderNumberInternal"
+							type="xs:string"
+							minOccurs="0"/>
+					<xs:element name="orderStatus"
+							type="xsd1:OrderStatus"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="EventTypes">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ORDER_STATUS_CHANGED"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Events">
+				<xs:sequence>
+					<xs:element name="event"
+							type="xsd1:Event"
+							minOccurs="0"
+							maxOccurs="100"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="EventsForCommit">
+				<xs:sequence>
+					<xs:element name="eventID"
+							type="xs:string"
+							minOccurs="0"
+							maxOccurs="100"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="GetOrderListStatusFilter">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ALL"/>
+					<xs:enumeration value="ALL_WITHOUT_ISSUED"/>
+					<xs:enumeration value="NEW"/>
+					<xs:enumeration value="RECEIVED_POINT"/>
+					<xs:enumeration value="OUTSTANDING_CUSTOMER"/>
+					<xs:enumeration value="RETURN_TO_THE_SENDER"/>
+					<xs:enumeration value="RETURNED_TO_THE_SENDER"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="Money">
+				<xs:restriction base="xs:decimal">
+					<xs:totalDigits value="15"/>
+					<xs:fractionDigits value="2"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Order">
+				<xs:sequence>
+					<xs:element name="orderDate"
+							type="xs:dateTime"
+							minOccurs="0"/>
+					<xs:element name="orderNumber"
+							type="xs:string"
+							minOccurs="0"/>
+					<xs:element name="orderNumberInternal"
+							type="xs:string"
+							minOccurs="0"/>
+					<xs:element name="invoiceNumberInternal"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="senderCode"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="senderName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="receiverName"
+							type="xs:string"/>
+					<xs:element name="receiverPhone"
+							type="xs:string"/>
+					<xs:element name="pointCode"
+							type="xsd1:PointCode"/>
+					<xs:element name="pointName"
+							type="xs:string"
+							minOccurs="0"/>
+					<xs:element name="pointOwner"
+							type="xs:string"
+							minOccurs="0"/>
+					<xs:element name="nalPlat"
+							type="xs:boolean"/>
+					<xs:element name="summaNP"
+							type="xsd1:Money"
+							minOccurs="0"/>
+					<xs:element name="status"
+							type="xsd1:OrderStatus"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="reasonForReturn"
+							type="xsd1:ReasonForReturn"
+							minOccurs="0"/>
+					<xs:element name="expiredDate"
+							type="xs:date"
+							minOccurs="0"/>
+					<xs:element name="parcel"
+							type="xsd1:Parcel"
+							maxOccurs="9999"/>
+					<xs:element name="product"
+							type="xsd1:Product"
+							minOccurs="0"
+							maxOccurs="999"/>
+					<xs:element name="deliveryDateToPoint"
+							type="xs:date"
+							minOccurs="0"/>
+					<xs:element name="dateReceivedWarehouse"
+							type="xs:dateTime"
+							minOccurs="0"/>
+					<xs:element name="dateCallRecipient"
+							type="xs:dateTime"
+							minOccurs="0"/>
+					<xs:element name="dateOutstandingCustomer"
+							type="xs:dateTime"
+							minOccurs="0"/>
+					<xs:element name="dateReturnSender"
+							type="xs:dateTime"
+							minOccurs="0"/>
+					<xs:element name="dateReturnedSender"
+							type="xs:dateTime"
+							minOccurs="0"/>
+					<xs:element name="recommendedProducts"
+							type="xsd1:Product"
+							minOccurs="0"
+							maxOccurs="9999"/>
+					<xs:element name="comment"
+							type="xsd1:Comment"
+							minOccurs="0"
+							maxOccurs="999"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OrderList">
+				<xs:sequence>
+					<xs:element name="order"
+							type="xsd1:OrderListItem"
+							maxOccurs="9999"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OrderListItem">
+				<xs:sequence>
+					<xs:element name="orderDate"
+							type="xs:dateTime"/>
+					<xs:element name="orderUnixTime"
+							type="xs:integer"
+							minOccurs="0"/>
+					<xs:element name="orderNumber"
+							type="xs:string"/>
+					<xs:element name="senderName"
+							type="xs:string"/>
+					<xs:element name="orderNumberInternal"
+							type="xs:string"/>
+					<xs:element name="invoiceNumberInternal"
+							type="xs:string"/>
+					<xs:element name="summaNP"
+							type="xsd1:Money"/>
+					<xs:element name="receiverName"
+							type="xs:string"/>
+					<xs:element name="receiverPhone"
+							type="xs:string"/>
+					<xs:element name="deliveryDateToPoint"
+							type="xs:date"/>
+					<xs:element name="pointName"
+							type="xs:string"/>
+					<xs:element name="expiredDate"
+							type="xs:date"/>
+					<xs:element name="status"
+							type="xsd1:OrderStatus"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="OrderNumber">
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:maxLength value="9"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="OrderStatus">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="NEW"/>
+					<xs:enumeration value="RECEIVED_POINT"/>
+					<xs:enumeration value="CALL_CUSTOMER"/>
+					<xs:enumeration value="OUTSTANDING_CUSTOMER"/>
+					<xs:enumeration value="RETURN_TO_THE_SENDER"/>
+					<xs:enumeration value="RETURNED_TO_THE_SENDER"/>
+					<xs:enumeration value="CANCELLED"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="OrderStatusItem">
+				<xs:sequence>
+					<xs:element name="status"
+							type="xsd1:OrderStatus"/>
+					<xs:element name="dateTime"
+							type="xs:dateTime"/>
+					<xs:element name="comment"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OrderStatusItemList">
+				<xs:sequence>
+					<xs:element name="item"
+							type="xsd1:OrderStatusItem"
+							minOccurs="0"
+							maxOccurs="9999"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Parcel">
+				<xs:sequence>
+					<xs:element name="number"
+							type="xs:string"/>
+					<xs:element name="cargoValue"
+							type="xsd1:Money"/>
+					<xs:element name="weight"
+							type="xs:decimal"/>
+					<xs:element name="width"
+							type="xs:decimal"/>
+					<xs:element name="height"
+							type="xs:decimal"/>
+					<xs:element name="length"
+							type="xs:decimal"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Point">
+				<xs:sequence>
+					<xs:element name="code"
+							type="xsd1:PointCode"/>
+					<xs:element name="name"
+							type="xsd1:PointName"/>
+					<xs:element name="address"
+							type="xs:string"/>
+					<xs:element name="allowNP"
+							type="xs:boolean"/>
+					<xs:element name="limits"
+							type="xsd1:limits"/>
+					<xs:element name="status"
+							type="xsd1:PointStatus"
+							minOccurs="0"/>
+					<xs:element name="workTime"
+							type="xsd1:WorkTime"/>
+					<xs:element name="contact"
+							type="xsd1:Contact"
+							minOccurs="0"
+							maxOccurs="99"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="PointCode">
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:maxLength value="9"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="PointName">
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="50"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="PointStatus">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="OK"/>
+					<xs:enumeration value="EXCEEDED_MONEY_LIMIT"/>
+					<xs:enumeration value="EXCEEDED_WEIGHT_LIMIT"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="PointsList">
+				<xs:sequence>
+					<xs:element name="point"
+							type="xsd1:Point"
+							minOccurs="0"
+							maxOccurs="9999"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Product">
+				<xs:sequence>
+					<xs:element name="code"
+							type="xs:string"
+							minOccurs="0"/>
+					<xs:element name="name"
+							type="xs:string"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ReasonForReturn">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="SHORTAGE"/>
+					<xs:enumeration value="LABELING_ERROR"/>
+					<xs:enumeration value="ABSENCE_CUSTOMER"/>
+					<xs:enumeration value="CUSTOMER_REJECTION"/>
+					<xs:enumeration value="EXPIRED"/>
+					<xs:enumeration value="OTHER"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="Result">
+				<xs:sequence>
+					<xs:element name="code"
+							type="xsd1:ReturnCodes"/>
+					<xs:element name="errorMessage"
+							type="xs:string"
+							minOccurs="0"/>
+					<xs:element name="data"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:simpleType name="ReturnCodes">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="OK"/>
+					<xs:enumeration value="ORDER_NOT_FOUND"/>
+					<xs:enumeration value="POINT_NOT_FOUND"/>
+					<xs:enumeration value="CLIENT_NOT_FOUND"/>
+					<xs:enumeration value="SENDER_NOT_FOUND"/>
+					<xs:enumeration value="UNKNOWN_STATUS"/>
+					<xs:enumeration value="ORDER_NUMBER_NOT_UNIQUE"/>
+					<xs:enumeration value="PARCEL_NUMBER_NOT_UNIQUE"/>
+					<xs:enumeration value="ERROR"/>
+					<xs:enumeration value="NOT_DELETED_ILLEGAL_STATUS"/>
+					<xs:enumeration value="ERROR_LAST_DATE"/>
+					<xs:enumeration value="INCORRECT_STATUS"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="ServerInfo">
+				<xs:sequence>
+					<xs:element name="status"
+							type="xs:string"/>
+					<xs:element name="localTime"
+							type="xs:dateTime"/>
+					<xs:element name="protocolVersion"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Time">
+				<xs:sequence>
+					<xs:element name="timeFrom"
+							type="xs:time"/>
+					<xs:element name="timeTo"
+							type="xs:time"/>
+					<xs:element name="comment"
+							type="xs:string"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="UserInfo">
+				<xs:sequence>
+					<xs:element name="userType"
+							type="xs:string"/>
+					<xs:element name="userCode"
+							type="xs:string"/>
+					<xs:element name="userName"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WorkTime">
+				<xs:sequence>
+					<xs:element name="mon"
+							type="xsd1:Time"/>
+					<xs:element name="tue"
+							type="xsd1:Time"/>
+					<xs:element name="wed"
+							type="xsd1:Time"/>
+					<xs:element name="thu"
+							type="xsd1:Time"/>
+					<xs:element name="fri"
+							type="xsd1:Time"/>
+					<xs:element name="sat"
+							type="xsd1:Time"/>
+					<xs:element name="sun"
+							type="xsd1:Time"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="limits">
+				<xs:sequence>
+					<xs:element name="maxWeight"
+							type="xs:decimal"/>
+					<xs:element name="maxLength"
+							type="xs:decimal"/>
+					<xs:element name="maxWidth"
+							type="xs:decimal"/>
+					<xs:element name="maxHeight"
+							type="xs:decimal"/>
+					<xs:element name="maxSummaNP"
+							type="xsd1:Money"/>
+					<xs:element name="maxParcelsSumma"
+							type="xsd1:Money"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="getPointsList">
+				<xs:complexType>
+					<xs:sequence/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPointsListResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createOrder">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="order"
+								type="xsd1:Order"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createOrderResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrderStatus">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrderStatusResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrder">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrderResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrderList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="dateFrom"
+								type="xs:date"/>
+						<xs:element name="dateTo"
+								type="xs:date"/>
+						<xs:element name="pointCode"
+								type="xsd1:PointCode"/>
+						<xs:element name="orderStatus"
+								type="xsd1:GetOrderListStatusFilter"/>
+						<xs:element name="callCustomerMade"
+								type="xsd1:CallCustomerMadeType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrderListResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setOrderStatus">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xs:string"/>
+						<xs:element name="status"
+								type="xs:string"/>
+						<xs:element name="extParam"
+								type="xs:string"
+								nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setOrderStatusResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPoint">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="pointCode"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPointResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Point"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getClient">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="clientCode"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getClientResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getServerInfo">
+				<xs:complexType>
+					<xs:sequence/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getServerInfoResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setOrderExpiredDate">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xs:string"/>
+						<xs:element name="expiredDate"
+								type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setOrderExpiredDateResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="removeOrder">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="removeOrderResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrderStatusHistory">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOrderStatusHistoryResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getEventMessages">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="maxCount"
+								type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getEventMessagesResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="commitEventMessages">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="events"
+								type="xsd1:EventsForCommit"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="commitEventMessagesResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setDeliveryDateToPoint">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xsd1:OrderNumber"/>
+						<xs:element name="deliveryDate"
+								type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setDeliveryDateToPointResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPaymentReport">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="number"
+								type="xs:string"/>
+						<xs:element name="date"
+								type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getPaymentReportResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createClient">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="client"
+								type="xsd1:Client"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createClientResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getUserInfo">
+				<xs:complexType>
+					<xs:sequence/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getUserInfoResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addOrderComment">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xsd1:OrderNumber"/>
+						<xs:element name="comment"
+								type="xs:string"/>
+						<xs:element name="type"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addOrderCommentResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="extendOrderExpiredDate">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="orderNumber"
+								type="xsd1:OrderNumber"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="extendOrderExpiredDateResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createPoint">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="point"
+								type="xsd1:Point"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createPointResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Result"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="getPointsListRequestMessage">
+		<part name="parameters"
+				element="tns:getPointsList"/>
+	</message>
+	<message name="getPointsListResponseMessage">
+		<part name="parameters"
+				element="tns:getPointsListResponse"/>
+	</message>
+	<message name="createOrderRequestMessage">
+		<part name="parameters"
+				element="tns:createOrder"/>
+	</message>
+	<message name="createOrderResponseMessage">
+		<part name="parameters"
+				element="tns:createOrderResponse"/>
+	</message>
+	<message name="getOrderStatusRequestMessage">
+		<part name="parameters"
+				element="tns:getOrderStatus"/>
+	</message>
+	<message name="getOrderStatusResponseMessage">
+		<part name="parameters"
+				element="tns:getOrderStatusResponse"/>
+	</message>
+	<message name="getOrderRequestMessage">
+		<part name="parameters"
+				element="tns:getOrder"/>
+	</message>
+	<message name="getOrderResponseMessage">
+		<part name="parameters"
+				element="tns:getOrderResponse"/>
+	</message>
+	<message name="getOrderListRequestMessage">
+		<part name="parameters"
+				element="tns:getOrderList"/>
+	</message>
+	<message name="getOrderListResponseMessage">
+		<part name="parameters"
+				element="tns:getOrderListResponse"/>
+	</message>
+	<message name="setOrderStatusRequestMessage">
+		<part name="parameters"
+				element="tns:setOrderStatus"/>
+	</message>
+	<message name="setOrderStatusResponseMessage">
+		<part name="parameters"
+				element="tns:setOrderStatusResponse"/>
+	</message>
+	<message name="getPointRequestMessage">
+		<part name="parameters"
+				element="tns:getPoint"/>
+	</message>
+	<message name="getPointResponseMessage">
+		<part name="parameters"
+				element="tns:getPointResponse"/>
+	</message>
+	<message name="getClientRequestMessage">
+		<part name="parameters"
+				element="tns:getClient"/>
+	</message>
+	<message name="getClientResponseMessage">
+		<part name="parameters"
+				element="tns:getClientResponse"/>
+	</message>
+	<message name="getServerInfoRequestMessage">
+		<part name="parameters"
+				element="tns:getServerInfo"/>
+	</message>
+	<message name="getServerInfoResponseMessage">
+		<part name="parameters"
+				element="tns:getServerInfoResponse"/>
+	</message>
+	<message name="setOrderExpiredDateRequestMessage">
+		<part name="parameters"
+				element="tns:setOrderExpiredDate"/>
+	</message>
+	<message name="setOrderExpiredDateResponseMessage">
+		<part name="parameters"
+				element="tns:setOrderExpiredDateResponse"/>
+	</message>
+	<message name="removeOrderRequestMessage">
+		<part name="parameters"
+				element="tns:removeOrder"/>
+	</message>
+	<message name="removeOrderResponseMessage">
+		<part name="parameters"
+				element="tns:removeOrderResponse"/>
+	</message>
+	<message name="getOrderStatusHistoryRequestMessage">
+		<part name="parameters"
+				element="tns:getOrderStatusHistory"/>
+	</message>
+	<message name="getOrderStatusHistoryResponseMessage">
+		<part name="parameters"
+				element="tns:getOrderStatusHistoryResponse"/>
+	</message>
+	<message name="getEventMessagesRequestMessage">
+		<part name="parameters"
+				element="tns:getEventMessages"/>
+	</message>
+	<message name="getEventMessagesResponseMessage">
+		<part name="parameters"
+				element="tns:getEventMessagesResponse"/>
+	</message>
+	<message name="commitEventMessagesRequestMessage">
+		<part name="parameters"
+				element="tns:commitEventMessages"/>
+	</message>
+	<message name="commitEventMessagesResponseMessage">
+		<part name="parameters"
+				element="tns:commitEventMessagesResponse"/>
+	</message>
+	<message name="setDeliveryDateToPointRequestMessage">
+		<part name="parameters"
+				element="tns:setDeliveryDateToPoint"/>
+	</message>
+	<message name="setDeliveryDateToPointResponseMessage">
+		<part name="parameters"
+				element="tns:setDeliveryDateToPointResponse"/>
+	</message>
+	<message name="getPaymentReportRequestMessage">
+		<part name="parameters"
+				element="tns:getPaymentReport"/>
+	</message>
+	<message name="getPaymentReportResponseMessage">
+		<part name="parameters"
+				element="tns:getPaymentReportResponse"/>
+	</message>
+	<message name="createClientRequestMessage">
+		<part name="parameters"
+				element="tns:createClient"/>
+	</message>
+	<message name="createClientResponseMessage">
+		<part name="parameters"
+				element="tns:createClientResponse"/>
+	</message>
+	<message name="getUserInfoRequestMessage">
+		<part name="parameters"
+				element="tns:getUserInfo"/>
+	</message>
+	<message name="getUserInfoResponseMessage">
+		<part name="parameters"
+				element="tns:getUserInfoResponse"/>
+	</message>
+	<message name="addOrderCommentRequestMessage">
+		<part name="parameters"
+				element="tns:addOrderComment"/>
+	</message>
+	<message name="addOrderCommentResponseMessage">
+		<part name="parameters"
+				element="tns:addOrderCommentResponse"/>
+	</message>
+	<message name="extendOrderExpiredDateRequestMessage">
+		<part name="parameters"
+				element="tns:extendOrderExpiredDate"/>
+	</message>
+	<message name="extendOrderExpiredDateResponseMessage">
+		<part name="parameters"
+				element="tns:extendOrderExpiredDateResponse"/>
+	</message>
+	<message name="createPointRequestMessage">
+		<part name="parameters"
+				element="tns:createPoint"/>
+	</message>
+	<message name="createPointResponseMessage">
+		<part name="parameters"
+				element="tns:createPointResponse"/>
+	</message>
+	<portType name="PVZServicePortType">
+		<operation name="getPointsList">
+			<input name="getPointsListRequest"
+					message="tns:getPointsListRequestMessage"/>
+			<output name="getPointsListResponse"
+					message="tns:getPointsListResponseMessage"/>
+		</operation>
+		<operation name="createOrder">
+			<input name="createOrderRequest"
+					message="tns:createOrderRequestMessage"/>
+			<output name="createOrderResponse"
+					message="tns:createOrderResponseMessage"/>
+		</operation>
+		<operation name="getOrderStatus">
+			<input name="getOrderStatusRequest"
+					message="tns:getOrderStatusRequestMessage"/>
+			<output name="getOrderStatusResponse"
+					message="tns:getOrderStatusResponseMessage"/>
+		</operation>
+		<operation name="getOrder">
+			<input name="getOrderRequest"
+					message="tns:getOrderRequestMessage"/>
+			<output name="getOrderResponse"
+					message="tns:getOrderResponseMessage"/>
+		</operation>
+		<operation name="getOrderList">
+			<input name="getOrderListRequest"
+					message="tns:getOrderListRequestMessage"/>
+			<output name="getOrderListResponse"
+					message="tns:getOrderListResponseMessage"/>
+		</operation>
+		<operation name="setOrderStatus">
+			<input name="setOrderStatusRequest"
+					message="tns:setOrderStatusRequestMessage"/>
+			<output name="setOrderStatusResponse"
+					message="tns:setOrderStatusResponseMessage"/>
+		</operation>
+		<operation name="getPoint">
+			<input name="getPointRequest"
+					message="tns:getPointRequestMessage"/>
+			<output name="getPointResponse"
+					message="tns:getPointResponseMessage"/>
+		</operation>
+		<operation name="getClient">
+			<input name="getClientRequest"
+					message="tns:getClientRequestMessage"/>
+			<output name="getClientResponse"
+					message="tns:getClientResponseMessage"/>
+		</operation>
+		<operation name="getServerInfo">
+			<input name="getServerInfoRequest"
+					message="tns:getServerInfoRequestMessage"/>
+			<output name="getServerInfoResponse"
+					message="tns:getServerInfoResponseMessage"/>
+		</operation>
+		<operation name="setOrderExpiredDate">
+			<input name="setOrderExpiredDateRequest"
+					message="tns:setOrderExpiredDateRequestMessage"/>
+			<output name="setOrderExpiredDateResponse"
+					message="tns:setOrderExpiredDateResponseMessage"/>
+		</operation>
+		<operation name="removeOrder">
+			<input name="removeOrderRequest"
+					message="tns:removeOrderRequestMessage"/>
+			<output name="removeOrderResponse"
+					message="tns:removeOrderResponseMessage"/>
+		</operation>
+		<operation name="getOrderStatusHistory">
+			<input name="getOrderStatusHistoryRequest"
+					message="tns:getOrderStatusHistoryRequestMessage"/>
+			<output name="getOrderStatusHistoryResponse"
+					message="tns:getOrderStatusHistoryResponseMessage"/>
+		</operation>
+		<operation name="getEventMessages">
+			<input name="getEventMessagesRequest"
+					message="tns:getEventMessagesRequestMessage"/>
+			<output name="getEventMessagesResponse"
+					message="tns:getEventMessagesResponseMessage"/>
+		</operation>
+		<operation name="commitEventMessages">
+			<input name="commitEventMessagesRequest"
+					message="tns:commitEventMessagesRequestMessage"/>
+			<output name="commitEventMessagesResponse"
+					message="tns:commitEventMessagesResponseMessage"/>
+		</operation>
+		<operation name="setDeliveryDateToPoint">
+			<input name="setDeliveryDateToPointRequest"
+					message="tns:setDeliveryDateToPointRequestMessage"/>
+			<output name="setDeliveryDateToPointResponse"
+					message="tns:setDeliveryDateToPointResponseMessage"/>
+		</operation>
+		<operation name="getPaymentReport">
+			<input name="getPaymentReportRequest"
+					message="tns:getPaymentReportRequestMessage"/>
+			<output name="getPaymentReportResponse"
+					message="tns:getPaymentReportResponseMessage"/>
+		</operation>
+		<operation name="createClient">
+			<input name="createClientRequest"
+					message="tns:createClientRequestMessage"/>
+			<output name="createClientResponse"
+					message="tns:createClientResponseMessage"/>
+		</operation>
+		<operation name="getUserInfo">
+			<input name="getUserInfoRequest"
+					message="tns:getUserInfoRequestMessage"/>
+			<output name="getUserInfoResponse"
+					message="tns:getUserInfoResponseMessage"/>
+		</operation>
+		<operation name="addOrderComment">
+			<input name="addOrderCommentRequest"
+					message="tns:addOrderCommentRequestMessage"/>
+			<output name="addOrderCommentResponse"
+					message="tns:addOrderCommentResponseMessage"/>
+		</operation>
+		<operation name="extendOrderExpiredDate">
+			<input name="extendOrderExpiredDateRequest"
+					message="tns:extendOrderExpiredDateRequestMessage"/>
+			<output name="extendOrderExpiredDateResponse"
+					message="tns:extendOrderExpiredDateResponseMessage"/>
+		</operation>
+		<operation name="createPoint">
+			<input name="createPointRequest"
+					message="tns:createPointRequestMessage"/>
+			<output name="createPointResponse"
+					message="tns:createPointResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="PVZServiceSoapBinding"
+			type="tns:PVZServicePortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getPointsList">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getPointsList"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="createOrder">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:createOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrderStatus">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrderStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrder">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrderList">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrderList"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setOrderStatus">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:setOrderStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getPoint">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getPoint"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getClient">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getClient"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getServerInfo">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getServerInfo"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setOrderExpiredDate">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:setOrderExpiredDate"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="removeOrder">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:removeOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrderStatusHistory">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrderStatusHistory"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getEventMessages">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getEventMessages"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="commitEventMessages">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:commitEventMessages"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setDeliveryDateToPoint">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:setDeliveryDateToPoint"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getPaymentReport">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getPaymentReport"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="createClient">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:createClient"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getUserInfo">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getUserInfo"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addOrderComment">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:addOrderComment"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="extendOrderExpiredDate">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:extendOrderExpiredDate"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="createPoint">
+			<soapbind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:createPoint"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="PVZServiceSoap12Binding"
+			type="tns:PVZServicePortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getPointsList">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getPointsList"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="createOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:createOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrderStatus">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrderStatus"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrderList">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrderList"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setOrderStatus">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:setOrderStatus"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getPoint">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getPoint"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getClient">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getClient"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getServerInfo">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getServerInfo"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setOrderExpiredDate">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:setOrderExpiredDate"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="removeOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:removeOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrderStatusHistory">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getOrderStatusHistory"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getEventMessages">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getEventMessages"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="commitEventMessages">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:commitEventMessages"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setDeliveryDateToPoint">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:setDeliveryDateToPoint"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getPaymentReport">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getPaymentReport"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="createClient">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:createClient"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getUserInfo">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:getUserInfo"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addOrderComment">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:addOrderComment"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="extendOrderExpiredDate">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:extendOrderExpiredDate"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="createPoint">
+			<soap12bind:operation style="document"
+					soapAction="http://www.nwth.ru#PVZService:createPoint"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="PVZService">
+		<port name="PVZServiceSoap"
+				binding="tns:PVZServiceSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="http://pvztest.220-volt.ru/1c/ws/PVZService"/>
+		</port>
+		<port name="PVZServiceSoap12"
+				binding="tns:PVZServiceSoap12Binding">
+			<soap12bind:address location="http://pvztest.220-volt.ru/1c/ws/PVZService"/>
+		</port>
+	</service>
+</definitions>

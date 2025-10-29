@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cef58bdf-9087-479e-ae5d-ba434c5ecea1">
+  <producedTypes>
+    <objectType typeId="0c6fcaf4-a83e-4908-93d2-1025395cb756" valueTypeId="b08224f7-c924-4673-88ad-7fb649943028"/>
+    <refType typeId="b7472714-fbde-46c9-a690-dd50ab9e6976" valueTypeId="9addafe7-5dd4-475c-ab5f-7122ddc72278"/>
+    <selectionType typeId="bac17009-294f-48f3-834c-037dd99acff4" valueTypeId="654548a3-40f8-48aa-8ec2-547a5b74ee66"/>
+    <listType typeId="a2e1797c-9894-45ee-a512-fb53b207f3eb" valueTypeId="66482acc-072d-4b84-9b04-05c7e185850e"/>
+    <managerType typeId="3b8c640d-6522-4a68-9360-32ba69fbada8" valueTypeId="36f607c5-9bfc-4992-9ef4-ea08b61becbb"/>
+  </producedTypes>
+  <name>новаРегистрацияДоходовРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистрация доходов и расходов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.новаРегистрацияДоходовРасходов.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.новаРегистрацияДоходовРасходов.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.новаРегистрацияДоходовРасходов.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>AccumulationRegister.новаНераспределенныеДоходыРасходыМестнойДоставки</registerRecords>
+  <attributes uuid="0fb2aea6-8644-42ec-95f1-97562c4ebc3e">
+    <name>ОтноситьНаОбъект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Относить на объект</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+      <types>CatalogRef.новаВодители</types>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7c8e589e-74a7-49d6-bf07-a087cc144e89">
+    <name>Доход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доход</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="186cd84c-08d9-49a2-8d7a-09689e89e45e">
+    <name>Расход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расход</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="303c4b62-c66c-4660-a938-72eefe430a69">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7056ea57-4074-42c1-9397-43076d5daa6d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="6d59a4b9-94cb-4881-841f-8c7a4ea961bd">
+    <producedTypes>
+      <objectType typeId="7acd8897-1fbd-4e2d-96a2-8b215b53a5bd" valueTypeId="0eb59d5f-70de-4c7f-ac58-f5223b02c67f"/>
+      <rowType typeId="a57ffbd1-da27-4ed7-9cd0-aee36aa87eb4" valueTypeId="96a603e4-d324-4c5b-86fc-b60954069114"/>
+    </producedTypes>
+    <name>ДоходыРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доходы расходы</value>
+    </synonym>
+    <attributes uuid="dd6b5207-81c4-4a4b-a301-8c7a86a79423">
+      <name>Статья</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаСтатьиДоходовРасходов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3ac41443-ba08-4fb6-aa8a-d2691b3af5ba">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="bdb99d95-0a4e-4a71-b44b-1421b7369a53">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

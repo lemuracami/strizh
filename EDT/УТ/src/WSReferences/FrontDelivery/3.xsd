@@ -1,0 +1,254 @@
+<xs:schema xmlns:ns1="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+		xmlns:tns="strizh-logistic.ru/contracts"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="strizh-logistic.ru/contracts">
+	<xs:import schemaLocation="file://4.xsd"
+			namespace="strizh-logistic.ru/services/v2/sinc/RegionOrder"/>
+	<xs:complexType name="Statuses">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="OrderStatusSC"
+					nillable="true"
+					type="tns:OrderStatusSC"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Statuses"
+			nillable="true"
+			type="tns:Statuses"/>
+	<xs:complexType name="OrderStatusSC">
+		<xs:sequence>
+			<xs:element name="OrderIdImport"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Status"
+					type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="OrderStatusSC"
+			nillable="true"
+			type="tns:OrderStatusSC"/>
+	<xs:complexType name="AcceptanceReports">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="AcceptanceReport"
+					nillable="true"
+					type="tns:AcceptanceReport"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AcceptanceReports"
+			nillable="true"
+			type="tns:AcceptanceReports"/>
+	<xs:complexType name="AcceptanceReport">
+		<xs:sequence>
+			<xs:element name="AcceptanceReportNumber"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Date"
+					type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AcceptanceReport"
+			nillable="true"
+			type="tns:AcceptanceReport"/>
+	<xs:complexType name="Intakes">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="Intake"
+					nillable="true"
+					type="tns:Intake"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Intakes"
+			nillable="true"
+			type="tns:Intakes"/>
+	<xs:complexType name="Intake">
+		<xs:sequence>
+			<xs:element name="orderId"
+					type="xs:int"/>
+			<xs:element name="orderIdImport"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Intake"
+			nillable="true"
+			type="tns:Intake"/>
+	<xs:complexType name="WhSenders">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="WhSender"
+					nillable="true"
+					type="tns:WhSender"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="WhSenders"
+			nillable="true"
+			type="tns:WhSenders"/>
+	<xs:complexType name="WhSender">
+		<xs:sequence>
+			<xs:element name="sender"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="whId"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="WhSender"
+			nillable="true"
+			type="tns:WhSender"/>
+	<xs:complexType name="ExtendedOrders">
+		<xs:sequence>
+			<xs:element xmlns:q1="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+					minOccurs="0"
+					maxOccurs="unbounded"
+					name="Order"
+					nillable="true"
+					type="q1:Order"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExtendedOrders"
+			nillable="true"
+			type="tns:ExtendedOrders"/>
+	<xs:complexType name="Shops">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="Shop"
+					nillable="true"
+					type="tns:Shop"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Shops"
+			nillable="true"
+			type="tns:Shops"/>
+	<xs:complexType name="Shop">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="InternetShopId"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="SettingId"
+					type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Shop"
+			nillable="true"
+			type="tns:Shop"/>
+	<xs:complexType name="OrdersForRegion">
+		<xs:sequence>
+			<xs:element xmlns:q2="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+					minOccurs="0"
+					maxOccurs="unbounded"
+					name="Order"
+					nillable="true"
+					type="q2:Order"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="OrdersForRegion"
+			nillable="true"
+			type="tns:OrdersForRegion"/>
+	<xs:complexType name="ArrayOfAddressSuggest">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="AddressSuggest"
+					nillable="true"
+					type="tns:AddressSuggest"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfAddressSuggest"
+			nillable="true"
+			type="tns:ArrayOfAddressSuggest"/>
+	<xs:complexType name="AddressSuggest">
+		<xs:sequence>
+			<xs:element name="Block"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Geo_lat"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Geo_lon"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="House"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="OrderID"
+					type="xs:int"/>
+			<xs:element name="Qc_geo"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Region"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Settlement"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Street"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Value"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AddressSuggest"
+			nillable="true"
+			type="tns:AddressSuggest"/>
+	<xs:complexType name="ArrayOfAddressSuggestStr">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="AddressSuggestStr"
+					nillable="true"
+					type="tns:AddressSuggestStr"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfAddressSuggestStr"
+			nillable="true"
+			type="tns:ArrayOfAddressSuggestStr"/>
+	<xs:complexType name="AddressSuggestStr">
+		<xs:sequence>
+			<xs:element name="Block"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Geo_lat"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Geo_lon"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="House"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Qc_geo"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Region"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Settlement"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Street"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element name="Value"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AddressSuggestStr"
+			nillable="true"
+			type="tns:AddressSuggestStr"/>
+</xs:schema>

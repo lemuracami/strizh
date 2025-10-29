@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="strizh.delivery"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://strizh.delivery"
+		xmlns:xsd2="strizh.delivery"
+		name="Delivery"
+		targetNamespace="strizh.delivery">
+	<types>
+		<xs:schema xmlns:tns="http://strizh.delivery"
+				xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsd1="strizh.delivery"
+				xmlns:xsd2="http://strizh.delivery"
+				targetNamespace="http://strizh.delivery"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="arrayOfGoodItem">
+				<xs:sequence>
+					<xs:element name="goodItem"
+							type="xsd2:goodItem"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="arrayOfOkeys">
+				<xs:sequence>
+					<xs:element name="okey"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="arrayOfOrderState">
+				<xs:sequence>
+					<xs:element name="orderState"
+							type="xsd2:orderState"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="arrayOfReturnOrders">
+				<xs:sequence>
+					<xs:element name="returnOrder"
+							type="xsd2:returnOrder"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="errors">
+				<xs:sequence>
+					<xs:element name="error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="goodItem">
+				<xs:sequence>
+					<xs:element name="articul"
+							type="xs:string"/>
+					<xs:element name="count"
+							type="xs:integer"/>
+					<xs:element name="summa"
+							type="xs:decimal"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="orderState">
+				<xs:sequence>
+					<xs:element name="okey"
+							type="xs:string"/>
+					<xs:element name="state"
+							type="xs:integer"/>
+					<xs:element name="cash"
+							type="xs:decimal"/>
+					<xs:element name="rejectionReason"
+							type="xs:int"/>
+					<xs:element name="distanceFromKAD"
+							type="xs:double"/>
+					<xs:element name="transferredGoods"
+							type="xsd2:arrayOfGoodItem"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="requestLoadCashReport">
+				<xs:sequence>
+					<xs:element name="courier_id"
+							type="xs:string"/>
+					<xs:element name="date"
+							type="xs:date"/>
+					<xs:element name="idDoc"
+							type="xs:string"/>
+					<xs:element name="orders"
+							type="xsd2:arrayOfOrderState"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="responseGetOrderForms">
+				<xs:sequence>
+					<xs:element name="errors"
+							type="xsd2:errors"/>
+					<xs:element name="OrderForm"
+							type="xs:base64Binary"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="responseLoadCashReport">
+				<xs:sequence>
+					<xs:element name="errors"
+							type="xsd2:errors"/>
+					<xs:element name="idDoc"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="responseLoadReturnList">
+				<xs:sequence>
+					<xs:element name="errors"
+							type="xsd2:errors"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="responseSetStatus">
+				<xs:sequence>
+					<xs:element name="errors"
+							type="xsd2:errors"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="returnOrder">
+				<xs:sequence>
+					<xs:element name="order"
+							type="xs:string"/>
+					<xs:element name="count"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://strizh.delivery"
+				xmlns:xs2="strizh.delivery"
+				xmlns:xsd1="strizh.delivery"
+				xmlns:xsd2="http://strizh.delivery"
+				targetNamespace="strizh.delivery"
+				elementFormDefault="qualified">
+			<xs:import namespace="http://strizh.delivery"/>
+			<xs:element name="SetStatus">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="okey"
+								type="xs:string"/>
+						<xs:element name="status"
+								type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SetStatusResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd2:responseSetStatus"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetOrderForms">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="okeys"
+								type="xsd2:arrayOfOkeys"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetOrderFormsResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd2:responseGetOrderForms"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoadCashReport">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="request"
+								type="xsd2:requestLoadCashReport"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoadCashReportResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd2:responseLoadCashReport"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoadReturnList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ReturnList"
+								type="xsd2:arrayOfReturnOrders"/>
+						<xs:element name="Order"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoadReturnListResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd2:responseLoadReturnList"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="SetStatusRequestMessage">
+		<part name="parameters"
+				element="tns:SetStatus"/>
+	</message>
+	<message name="SetStatusResponseMessage">
+		<part name="parameters"
+				element="tns:SetStatusResponse"/>
+	</message>
+	<message name="GetOrderFormsRequestMessage">
+		<part name="parameters"
+				element="tns:GetOrderForms"/>
+	</message>
+	<message name="GetOrderFormsResponseMessage">
+		<part name="parameters"
+				element="tns:GetOrderFormsResponse"/>
+	</message>
+	<message name="LoadCashReportRequestMessage">
+		<part name="parameters"
+				element="tns:LoadCashReport"/>
+	</message>
+	<message name="LoadCashReportResponseMessage">
+		<part name="parameters"
+				element="tns:LoadCashReportResponse"/>
+	</message>
+	<message name="LoadReturnListRequestMessage">
+		<part name="parameters"
+				element="tns:LoadReturnList"/>
+	</message>
+	<message name="LoadReturnListResponseMessage">
+		<part name="parameters"
+				element="tns:LoadReturnListResponse"/>
+	</message>
+	<portType name="DeliveryPortType">
+		<operation name="SetStatus">
+			<input name="SetStatusRequest"
+					message="tns:SetStatusRequestMessage"/>
+			<output name="SetStatusResponse"
+					message="tns:SetStatusResponseMessage"/>
+		</operation>
+		<operation name="GetOrderForms">
+			<input name="GetOrderFormsRequest"
+					message="tns:GetOrderFormsRequestMessage"/>
+			<output name="GetOrderFormsResponse"
+					message="tns:GetOrderFormsResponseMessage"/>
+		</operation>
+		<operation name="LoadCashReport">
+			<input name="LoadCashReportRequest"
+					message="tns:LoadCashReportRequestMessage"/>
+			<output name="LoadCashReportResponse"
+					message="tns:LoadCashReportResponseMessage"/>
+		</operation>
+		<operation name="LoadReturnList">
+			<input name="LoadReturnListRequest"
+					message="tns:LoadReturnListRequestMessage"/>
+			<output name="LoadReturnListResponse"
+					message="tns:LoadReturnListResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="DeliverySoapBinding"
+			type="tns:DeliveryPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SetStatus">
+			<soapbind:operation style="document"
+					soapAction="strizh.delivery#Delivery:SetStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderForms">
+			<soapbind:operation style="document"
+					soapAction="strizh.delivery#Delivery:GetOrderForms"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="LoadCashReport">
+			<soapbind:operation style="document"
+					soapAction="strizh.delivery#Delivery:LoadCashReport"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="LoadReturnList">
+			<soapbind:operation style="document"
+					soapAction="strizh.delivery#Delivery:LoadReturnList"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="DeliverySoap12Binding"
+			type="tns:DeliveryPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SetStatus">
+			<soap12bind:operation style="document"
+					soapAction="strizh.delivery#Delivery:SetStatus"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderForms">
+			<soap12bind:operation style="document"
+					soapAction="strizh.delivery#Delivery:GetOrderForms"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="LoadCashReport">
+			<soap12bind:operation style="document"
+					soapAction="strizh.delivery#Delivery:LoadCashReport"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="LoadReturnList">
+			<soap12bind:operation style="document"
+					soapAction="strizh.delivery#Delivery:LoadReturnList"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Delivery">
+		<port name="DeliverySoap"
+				binding="tns:DeliverySoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="http://192.168.5.134/logist_copy_ON_lem/ws/Delivery.1cws"/>
+		</port>
+		<port name="DeliverySoap12"
+				binding="tns:DeliverySoap12Binding">
+			<soap12bind:address location="http://192.168.5.134/logist_copy_ON_lem/ws/Delivery.1cws"/>
+		</port>
+	</service>
+</definitions>

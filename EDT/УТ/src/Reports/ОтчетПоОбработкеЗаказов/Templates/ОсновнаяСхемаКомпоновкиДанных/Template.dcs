@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВозвратыНаСкладе</dataPath>
+			<field>ВозвратыНаСкладе</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возвраты на складе</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПередано</dataPath>
+			<field>КоличествоПередано</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество передано</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДоставленоСДругойПопытки</dataPath>
+			<field>КоличествоДоставленоСДругойПопытки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество доставлено с другой попытки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВозвратыВПути</dataPath>
+			<field>ВозвратыВПути</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возвраты в пути</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВозвратыВозвращено</dataPath>
+			<field>ВозвратыВозвращено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возвраты возвращено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолоичествоНЕДоставлено</dataPath>
+			<field>КолоичествоНЕДоставлено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Колоичество НЕДоставлено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоНЕДоставленоСДругойПопытки</dataPath>
+			<field>КоличествоНЕДоставленоСДругойПопытки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество НЕДоставлено с другой попытки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДоставлено</dataPath>
+			<field>КоличествоДоставлено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество доставлено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗаказа</dataPath>
+			<field>ТипЗаказа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Возвраты</dataPath>
+			<field>Возвраты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возвраты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоНЕДоставленоСПервойПопытки</dataPath>
+			<field>КоличествоНЕДоставленоСПервойПопытки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество НЕДоставлено с первой попытки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДоставленоСПервойПопытки</dataPath>
+			<field>КоличествоДоставленоСПервойПопытки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество доставлено с первой попытки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПереданоНеПоехали</dataPath>
+			<field>КоличествоПереданоНеПоехали</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество передано не поехали</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ОстаткиЗаказовОбороты.Заказ КАК Заказ
+ПОМЕСТИТЬ ВТ_ЗаказыПередано
+ИЗ
+	РегистрНакопления.ОстаткиЗаказов.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Авто, ) КАК ОстаткиЗаказовОбороты
+ГДЕ
+	ОстаткиЗаказовОбороты.Регистратор ССЫЛКА Документ.ФактическийПриходЗаказовНаСклад
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ СостоянияЗаказов.РезультатДоставки) КАК КоличествоПопыток,
+	СостоянияЗаказов.Заказ,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ СостоянияЗаказов.ПричинаНеВыполнения) КАК КоличествоПопытокНеДоставлено
+ПОМЕСТИТЬ ВТ_КоличествоПопыток
+ИЗ
+	ВТ_ЗаказыПередано КАК ВТ_ЗаказыПередано
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ПО ВТ_ЗаказыПередано.Заказ = СостоянияЗаказов.Заказ
+
+СГРУППИРОВАТЬ ПО
+	СостоянияЗаказов.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СтатусыСкладскогоУчета.Заказ,
+	МАКСИМУМ(СтатусыСкладскогоУчета.Период) КАК Период,
+	МАКСИМУМ(ВЫБОР
+			КОГДА СтатусыСкладскогоУчета.СтатусСкладскогоУчета = ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.ЗаказНеВозвратный)
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ) КАК НеВозвратныйЗаказ
+ПОМЕСТИТЬ ВТ_СтатусыСкладскогоУчетаСрез
+ИЗ
+	РегистрСведений.СтатусыСкладскогоУчета КАК СтатусыСкладскогоУчета
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ЗаказыПередано КАК ВТ_ЗаказыПередано
+		ПО СтатусыСкладскогоУчета.Заказ = ВТ_ЗаказыПередано.Заказ
+
+СГРУППИРОВАТЬ ПО
+	СтатусыСкладскогоУчета.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СтатусыСкладскогоУчета.Заказ,
+	СтатусыСкладскогоУчета.СтатусСкладскогоУчета КАК СтатусСкладскогоУчета
+ПОМЕСТИТЬ ВТ_СтатусыСкладскогоУчетаСрезПоследних
+ИЗ
+	РегистрСведений.СтатусыСкладскогоУчета КАК СтатусыСкладскогоУчета
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_СтатусыСкладскогоУчетаСрез КАК ВТ_СрезПослдедних
+		ПО СтатусыСкладскогоУчета.Заказ = ВТ_СрезПослдедних.Заказ
+			И СтатусыСкладскогоУчета.Период = ВТ_СрезПослдедних.Период
+			И (НЕ ВТ_СрезПослдедних.НеВозвратныйЗаказ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара КАК Контрагент,
+	МАКСИМУМ(1) КАК КоличествоПередано,
+	МАКСИМУМ(0) КАК КоличествоДоставлено,
+	МАКСИМУМ(0) КАК КоличествоДоставленоСПервойПопытки,
+	МАКСИМУМ(0) КАК КоличествоДоставленоСДругойПопытки,
+	МАКСИМУМ(0) КАК КолоичествоНЕДоставлено,
+	МАКСИМУМ(0) КАК КоличествоНЕДоставленоСПервойПопытки,
+	МАКСИМУМ(0) КАК КоличествоНЕДоставленоСДругойПопытки,
+	МАКСИМУМ(0) КАК Возвраты,
+	МАКСИМУМ(0) КАК ВозвратыВозвращено,
+	МАКСИМУМ(0) КАК ВозвратыВПути,
+	МАКСИМУМ(0) КАК ВозвратыНаСкладе,
+	МАКСИМУМ(0) КАК КоличествоПереданоНеПоехали
+ПОМЕСТИТЬ ВТ_Объединение
+ИЗ
+	ВТ_ЗаказыПередано КАК ВТ_ЗаказыПередано
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара,
+	МАКСИМУМ(0),
+	МАКСИМУМ(1),
+	МАКСИМУМ(ВЫБОР
+			КОГДА ВТ_КоличествоПопыток.КоличествоПопыток = 1
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ),
+	МАКСИМУМ(ВЫБОР
+			КОГДА ВТ_КоличествоПопыток.КоличествоПопыток &gt; 1
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0)
+ИЗ
+	ВТ_ЗаказыПередано КАК ВТ_ЗаказыПередано
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ПО ВТ_ЗаказыПередано.Заказ = СостоянияЗаказовСрезПоследних.Заказ
+			И (СостоянияЗаказовСрезПоследних.РезультатДоставки В (ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена), ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично)))
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_КоличествоПопыток КАК ВТ_КоличествоПопыток
+		ПО ВТ_ЗаказыПередано.Заказ = ВТ_КоличествоПопыток.Заказ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара,
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(1),
+	МАКСИМУМ(ВЫБОР
+			КОГДА ВТ_КоличествоПопыток.КоличествоПопытокНеДоставлено = 1
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ),
+	МАКСИМУМ(ВЫБОР
+			КОГДА ВТ_КоличествоПопыток.КоличествоПопытокНеДоставлено &gt; 1
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0)
+ИЗ
+	ВТ_ЗаказыПередано КАК ВТ_ЗаказыПередано
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ПО ВТ_ЗаказыПередано.Заказ = СостоянияЗаказовСрезПоследних.Заказ
+			И (СостоянияЗаказовСрезПоследних.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НЕВыполнена))
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_КоличествоПопыток КАК ВТ_КоличествоПопыток
+		ПО ВТ_ЗаказыПередано.Заказ = ВТ_КоличествоПопыток.Заказ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара,
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(1),
+	МАКСИМУМ(ВЫБОР
+			КОГДА ВТ_СтатусыСкладскогоУчетаСрезПоследних.СтатусСкладскогоУчета = ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.ВозвратПринятМагазином)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ),
+	МАКСИМУМ(ВЫБОР
+			КОГДА ВТ_СтатусыСкладскогоУчетаСрезПоследних.СтатусСкладскогоУчета = ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.ВозвратОтправлен)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ),
+	МАКСИМУМ(ВЫБОР
+			КОГДА ВТ_СтатусыСкладскогоУчетаСрезПоследних.СтатусСкладскогоУчета В (ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.Возврат1), ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.Возврат2), ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.ПодготовленКВозврату))
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ),
+	МАКСИМУМ(0)
+ИЗ
+	ВТ_ЗаказыПередано КАК ВТ_ЗаказыПередано
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_СтатусыСкладскогоУчетаСрезПоследних КАК ВТ_СтатусыСкладскогоУчетаСрезПоследних
+		ПО ВТ_ЗаказыПередано.Заказ = ВТ_СтатусыСкладскогоУчетаСрезПоследних.Заказ
+			И (ВТ_СтатусыСкладскогоУчетаСрезПоследних.СтатусСкладскогоУчета В (ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.Возврат1), ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.Возврат2), ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.ВозвратОтправлен), ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.ВозвратПринятМагазином), ЗНАЧЕНИЕ(Справочник.СтатусыСкладскогоУчета.ПодготовленКВозврату)))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара,
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(0),
+	МАКСИМУМ(1)
+ИЗ
+	ВТ_ЗаказыПередано КАК ВТ_ЗаказыПередано
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ПО ВТ_ЗаказыПередано.Заказ = СостоянияЗаказовСрезПоследних.Заказ
+ГДЕ
+	ЕСТЬNULL(СостоянияЗаказовСрезПоследних.Заказ, ИСТИНА) = ИСТИНА
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыПередано.Заказ,
+	ВТ_ЗаказыПередано.Заказ.ВладелецТовара
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Итог.Заказ,
+	ВТ_Итог.Контрагент,
+	СУММА(ВТ_Итог.КоличествоПередано) КАК КоличествоПередано,
+	СУММА(ВТ_Итог.КоличествоДоставлено) КАК КоличествоДоставлено,
+	СУММА(ВТ_Итог.КоличествоДоставленоСПервойПопытки) КАК КоличествоДоставленоСПервойПопытки,
+	СУММА(ВТ_Итог.КоличествоДоставленоСДругойПопытки) КАК КоличествоДоставленоСДругойПопытки,
+	СУММА(ВТ_Итог.КолоичествоНЕДоставлено) КАК КолоичествоНЕДоставлено,
+	СУММА(ВТ_Итог.КоличествоНЕДоставленоСПервойПопытки) КАК КоличествоНЕДоставленоСПервойПопытки,
+	СУММА(ВТ_Итог.КоличествоНЕДоставленоСДругойПопытки) КАК КоличествоНЕДоставленоСДругойПопытки,
+	СУММА(ВТ_Итог.Возвраты) КАК Возвраты,
+	СУММА(ВТ_Итог.ВозвратыВозвращено) КАК ВозвратыВозвращено,
+	СУММА(ВТ_Итог.ВозвратыВПути) КАК ВозвратыВПути,
+	СУММА(ВТ_Итог.ВозвратыНаСкладе) КАК ВозвратыНаСкладе,
+	СУММА(ВТ_Итог.КоличествоПереданоНеПоехали) КАК КоличествоПереданоНеПоехали
+ПОМЕСТИТЬ ВТ_Группировка
+ИЗ
+	ВТ_Объединение КАК ВТ_Итог
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Итог.Заказ,
+	ВТ_Итог.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Группировка.Заказ,
+	ВТ_Группировка.Контрагент,
+	ВТ_Группировка.КоличествоПередано,
+	ВТ_Группировка.КоличествоДоставлено,
+	ВТ_Группировка.КоличествоДоставленоСПервойПопытки,
+	ВТ_Группировка.КоличествоДоставленоСДругойПопытки,
+	ВТ_Группировка.КолоичествоНЕДоставлено,
+	ВТ_Группировка.КоличествоНЕДоставленоСПервойПопытки,
+	ВТ_Группировка.КоличествоНЕДоставленоСДругойПопытки,
+	ВТ_Группировка.Возвраты,
+	ВТ_Группировка.ВозвратыВозвращено,
+	ВТ_Группировка.ВозвратыВПути,
+	ВТ_Группировка.ВозвратыНаСкладе,
+	ВТ_Группировка.КоличествоПереданоНеПоехали
+ИЗ
+	ВТ_Группировка КАК ВТ_Группировка</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ПроцентОбщийДоставлено</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент общий доставлено</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентГруппыДоставленоСПервой</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент группы доставлено с первой</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентГруппыДоставленоСДругой</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент группы доставлено с другой</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентОбщийНеДоставлено</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент общий не доставлено</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентГруппыНеДоставленоСПервой</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент группы не доставлено с первой</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентГруппыНеДоставленоСДругой</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент группы не доставлено с другой</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентВозвратыВозвращено</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент возвраты возвращено</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентВозвратыВПути</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент возвраты в пути</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентВозвратыНаСкладе</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент возвраты на складе</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентОбщийВозвраты</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент общий возвраты</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентОбщийНеПоехали</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент общий не поехали</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Возвраты</dataPath>
+		<expression>Сумма(Возвраты)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВозвратыВозвращено</dataPath>
+		<expression>Сумма(ВозвратыВозвращено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВозвратыВПути</dataPath>
+		<expression>Сумма(ВозвратыВПути)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВозвратыНаСкладе</dataPath>
+		<expression>Сумма(ВозвратыНаСкладе)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоставлено</dataPath>
+		<expression>Сумма(КоличествоДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоставленоСДругойПопытки</dataPath>
+		<expression>Сумма(КоличествоДоставленоСДругойПопытки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоставленоСПервойПопытки</dataPath>
+		<expression>Сумма(КоличествоДоставленоСПервойПопытки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоНЕДоставленоСДругойПопытки</dataPath>
+		<expression>Сумма(КоличествоНЕДоставленоСДругойПопытки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоНЕДоставленоСПервойПопытки</dataPath>
+		<expression>Сумма(КоличествоНЕДоставленоСПервойПопытки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПередано</dataPath>
+		<expression>Сумма(КоличествоПередано)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолоичествоНЕДоставлено</dataPath>
+		<expression>Сумма(КолоичествоНЕДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОбщийДоставлено</dataPath>
+		<expression>(Сумма(КоличествоДоставлено)/Сумма(КоличествоПередано))*100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентГруппыДоставленоСПервой</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(КоличествоДоставлено)&lt;&gt;0 ТОГДА(Сумма(КоличествоДоставленоСПервойПопытки)/Сумма(КоличествоДоставлено))*100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентГруппыДоставленоСДругой</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(КоличествоДоставлено)&lt;&gt;0 ТОГДА(Сумма(КоличествоДоставленоСДругойПопытки)/Сумма(КоличествоДоставлено))*100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОбщийНеДоставлено</dataPath>
+		<expression>(Сумма(КолоичествоНЕДоставлено)/Сумма(КоличествоПередано))*100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентГруппыНеДоставленоСПервой</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(КолоичествоНЕДоставлено)&lt;&gt;0 ТОГДА(Сумма(КоличествоНеДоставленоСПервойПопытки)/Сумма(КолоичествоНЕДоставлено))*100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентГруппыНеДоставленоСДругой</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(КолоичествоНЕДоставлено)&lt;&gt;0 ТОГДА(Сумма(КоличествоНЕДоставленоСДругойПопытки)/Сумма(КолоичествоНЕДоставлено))*100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентВозвратыВозвращено</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(Возвраты)&lt;&gt;0 ТОГДА (Сумма(ВозвратыВозвращено)/Сумма(Возвраты))*100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентВозвратыВПути</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(Возвраты)&lt;&gt;0 ТОГДА (Сумма(ВозвратыВПути)/Сумма(Возвраты))*100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентВозвратыНаСкладе</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(Возвраты)&lt;&gt;0 ТОГДА (Сумма(ВозвратыНаСкладе)/Сумма(Возвраты))*100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОбщийВозвраты</dataPath>
+		<expression>(Сумма(Возвраты)/Сумма(КоличествоПередано))*100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПереданоНеПоехали</dataPath>
+		<expression>Сумма(КоличествоПереданоНеПоехали)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОбщийНеПоехали</dataPath>
+		<expression>(Сумма(КоличествоПереданоНеПоехали)/Сумма(КоличествоПередано))*100</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>СтандартныйПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтандартныйПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisWeek</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d140938a-a0a8-4841-a554-bc07bc590271</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Передано</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Всего</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоПередано</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоПередано.ПроцентВГруппе</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от итого</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>из них не поехали</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоПереданоНеПоехали</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОбщийНеПоехали</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от передано</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Horizontally</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доставлено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Всего</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоДоставлено</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОбщийДоставлено</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от передано</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>С первой попытки</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоДоставленоСПервойПопытки</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентГруппыДоставленоСПервой</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от доставлено</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Другое</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоДоставленоСДругойПопытки</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентГруппыДоставленоСДругой</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от доставлено</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Horizontally</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Не доставлено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Всего</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КолоичествоНЕДоставлено</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОбщийНеДоставлено</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от передано</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>С первой попытки</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоНЕДоставленоСПервойПопытки</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентГруппыНеДоставленоСПервой</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от не доставлено</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Другое</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КоличествоНЕДоставленоСДругойПопытки</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентГруппыНеДоставленоСДругой</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от не доставлено</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Horizontally</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Возвраты</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Всего</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Возвраты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОбщийВозвраты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от передано</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Возвращено</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ВозвратыВозвращено</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентВозвратыВозвращено</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от возвраты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>В пути</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ВозвратыВПути</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентВозвратыВПути</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от возвраты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>На складе</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ВозвратыНаСкладе</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентВозвратыНаСкладе</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от возвраты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Vertically</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Horizontally</dcsset:placement>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Контрагент</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Контрагент</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,12 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://veeroute.com/delete">
+	<objectType name="apiRequest">
+		<property name="sessionID" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/delete" name="orders" type="d3p1:orders"/>
+	</objectType>
+	<objectType name="order">
+		<property name="orderReference" type="xs:string"/>
+	</objectType>
+	<objectType name="orders">
+		<property xmlns:d3p1="http://veeroute.com/delete" name="order" type="d3p1:order" upperBound="-1"/>
+	</objectType>
+</package>

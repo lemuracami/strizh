@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://auth.utele.pro/soap"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://auth.utele.pro/soap">
+	<message name="send_messageRequest">
+		<part name="login"
+				type="xsd:string">
+			<documentation>SmartTelecom user login</documentation>
+		</part>
+		<part name="pass"
+				type="xsd:string">
+			<documentation>SmartTelecom user password</documentation>
+		</part>
+		<part name="src_addr"
+				type="xsd:string">
+			<documentation>SMS From address</documentation>
+		</part>
+		<part name="dst_addr"
+				type="xsd:string">
+			<documentation>SMS recipient phone number in international format</documentation>
+		</part>
+		<part name="text"
+				type="xsd:string">
+			<documentation>SMS text</documentation>
+		</part>
+		<part name="id_sms_in"
+				type="xsd:string">
+			<documentation>User-defined SMS ID use 0 or blank to disable</documentation>
+		</part>
+	</message>
+	<message name="send_messageResponse">
+		<part name="send_messageReturn"
+				type="xsd:string">
+			<documentation>SmartTelecom SMS ID</documentation>
+		</part>
+	</message>
+	<message name="schedule_messageRequest">
+		<part name="login"
+				type="xsd:string">
+			<documentation>SmartTelecom user login</documentation>
+		</part>
+		<part name="pass"
+				type="xsd:string">
+			<documentation>SmartTelecom user password</documentation>
+		</part>
+		<part name="src_addr"
+				type="xsd:string">
+			<documentation>SMS From address</documentation>
+		</part>
+		<part name="dst_addr"
+				type="xsd:string">
+			<documentation>SMS recipient phone number in international format</documentation>
+		</part>
+		<part name="text"
+				type="xsd:string">
+			<documentation>SMS text</documentation>
+		</part>
+		<part name="date_from"
+				type="xsd:string">
+			<documentation>Date to start SMS delivery (YYYY-MM-DD)</documentation>
+		</part>
+		<part name="rq_time_from"
+				type="xsd:string">
+			<documentation>Time to start the SMS delivery (hh:mm:ss), use blank to ignore</documentation>
+		</part>
+		<part name="rq_time_to"
+				type="xsd:string">
+			<documentation>Time until delivery attempts should be carried out (hh:mm:ss), use blank to ignore</documentation>
+		</part>
+		<part name="id_sms_in"
+				type="xsd:string">
+			<documentation>User-defined SMS ID use blank to ignore</documentation>
+		</part>
+	</message>
+	<message name="schedule_messageResponse">
+		<part name="schedule_messageReturn"
+				type="xsd:string">
+			<documentation>SmartTelecom SMS ID</documentation>
+		</part>
+	</message>
+	<message name="check_statusRequest">
+		<part name="login"
+				type="xsd:string">
+			<documentation>SmartTelecom user login</documentation>
+		</part>
+		<part name="pass"
+				type="xsd:string">
+			<documentation>SmartTelecom user password</documentation>
+		</part>
+		<part name="id_sms"
+				type="xsd:string">
+			<documentation>SmartTelecom SMS ID</documentation>
+		</part>
+	</message>
+	<message name="check_statusResponse">
+		<part name="check_statusReturn"
+				type="xsd:string">
+			<documentation>Message delivery status</documentation>
+		</part>
+	</message>
+	<portType name="SMSHandler">
+		<operation name="send_message"
+				parameterOrder="login pass src_addr dst_addr text id_sms_in">
+			<input name="send_messageRequest"
+					message="tns:send_messageRequest"/>
+			<output name="send_messageResponse"
+					message="tns:send_messageResponse"/>
+		</operation>
+		<operation name="schedule_message"
+				parameterOrder="login pass src_addr dst_addr text date_from rq_time_from rq_time_to id_sms_in">
+			<input name="schedule_messageRequest"
+					message="tns:schedule_messageRequest"/>
+			<output name="schedule_messageResponse"
+					message="tns:schedule_messageResponse"/>
+		</operation>
+		<operation name="check_status"
+				parameterOrder="login pass id_sms">
+			<input name="check_statusRequest"
+					message="tns:check_statusRequest"/>
+			<output name="check_statusResponse"
+					message="tns:check_statusResponse"/>
+		</operation>
+	</portType>
+	<binding name="SMSSoapBinding"
+			type="tns:SMSHandler">
+		<soapbind:binding style="rpc"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="send_message">
+			<soapbind:operation style="rpc"/>
+			<input>
+				<soapbind:body use="encoded"
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						namespace="http://auth.utele.pro/soap"/>
+			</input>
+			<output>
+				<soapbind:body use="encoded"
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						namespace="http://auth.utele.pro/soap"/>
+			</output>
+		</operation>
+		<operation name="schedule_message">
+			<soapbind:operation style="rpc"/>
+			<input>
+				<soapbind:body use="encoded"
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						namespace="http://auth.utele.pro/soap"/>
+			</input>
+			<output>
+				<soapbind:body use="encoded"
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						namespace="http://auth.utele.pro/soap"/>
+			</output>
+		</operation>
+		<operation name="check_status">
+			<soapbind:operation style="rpc"/>
+			<input>
+				<soapbind:body use="encoded"
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						namespace="http://auth.utele.pro/soap"/>
+			</input>
+			<output>
+				<soapbind:body use="encoded"
+						encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+						namespace="http://auth.utele.pro/soap"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="SMSHandlerService">
+		<port name="SMS"
+				binding="tns:SMSSoapBinding">
+			<soapbind:address location="http://auth.utele.pro/soap"/>
+		</port>
+	</service>
+</definitions>

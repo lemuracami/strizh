@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1c66c1b8-6182-4788-a793-25041be730a1">
+  <producedTypes>
+    <selectionType typeId="d9a634ef-f330-435e-b472-5f6059d5cf03" valueTypeId="2ae006e6-5caf-47f2-aeb2-bf4e80500c14"/>
+    <listType typeId="3beee599-5a44-4d00-afcd-cf501dcdf914" valueTypeId="f0101285-923a-46f8-bf3c-9c6c8a379e2f"/>
+    <managerType typeId="8d574be4-1d31-44a1-959d-816e700ab173" valueTypeId="e3116838-3803-4bb2-840a-84a7901203e9"/>
+    <recordSetType typeId="30f4180b-c76e-4d9c-a5f7-3cc7b5cca4a2" valueTypeId="917a46c0-2fbb-43fc-93af-e160bf3d1d82"/>
+    <recordKeyType typeId="017b16d1-010a-412a-a841-1268069e1c5e" valueTypeId="55fd1099-64ff-41f6-b287-e289e71370a5"/>
+    <recordType typeId="4c844c5b-097c-4a89-a5e1-443a7c62e7d9" valueTypeId="f6872adb-892f-4c8b-8edf-cf82a0f8f47c"/>
+    <recordManagerType typeId="18eb3634-b242-48df-8b09-76f4b765c6cf" valueTypeId="dd1e9fac-e555-4389-ad39-03ca59e307f0"/>
+  </producedTypes>
+  <name>oz_ЭкземплярыТоваровЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Экземпляры товаров заказов</value>
+  </synonym>
+  <dataHistory>Use</dataHistory>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.oz_ЭкземплярыТоваровЗаказов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.oz_ЭкземплярыТоваровЗаказов.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="2de1501e-2bb9-4386-80c6-d5f96f4fb37f">
+    <name>ДатаМодификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата модификации</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="20267234-6d6e-489b-90e9-091c99126bc4">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ab7116b5-35ad-45d3-b587-d7a422b05d71">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9c3d5ce1-d1bd-4ab8-ae7e-3bf27a0963e9">
+    <name>Экземпляр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экземпляр</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.oz_ОтказныеЭкземплярыТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="908c043d-4413-4aad-9b50-5bbddf718345">
+    <name>Штрихкод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрихкод</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="acea2b24-ee70-4834-b9c0-0a9e12511727">
+    <name>id</name>
+    <synonym>
+      <key>ru</key>
+      <value>Id</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>30</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="5c3c2eec-008b-40eb-9b6f-62a003bbd02d">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b2b6b83a-d5f1-4fc4-aaf4-c1f667b26818">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

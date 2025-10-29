@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="056754e2-4517-4dc7-8f1b-87066959680b">
+  <name>рэОбработкаПроведения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Рэ обработка проведения</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.ЗакрытиеЗаказов</types>
+    <types>DocumentObject.новаОтчетВодителя</types>
+    <types>DocumentObject.ЗагрузкаСТСД</types>
+    <types>DocumentObject.ПогрузкаВАвто</types>
+    <types>DocumentObject.ГрупповаяУстановкаСтатусовЗаказов</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.рэИнтеграцияРэдЭкспресс.REDОбработкаПроведения</handler>
+</mdclass:EventSubscription>

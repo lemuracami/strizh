@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta http-equiv="X-UA-Compatible" content="IE=9"></meta><!-- Bспользуем IE 9 --><!-- Загрузка API yandex  --><script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script><script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script><!--<script src="http://yandex.st/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>--><!--<script type="text/javascript" src="scripts/mkad.js"></script>--><script type="text/javascript">	
+		
+		var myMap;
+        var myPolygon;
+        var myCollection;
+        var myGeoObject;
+        var myObjects;
+
+        // Дождёмся загрузки API и готовности DOM.
+        ymaps.ready(init);
+
+
+        function init() {
+			
+        	return1c("готов","1");
+        	
+            myObjects = [];
+
+            myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 10
+            }, {
+                    balloonMaxWidth: 200,
+                    searchControlProvider: 'yandex#search',
+                    controls: ["zoomControl", "fullscreenControl"]
+                });
+
+            // переводим карту в полноразмерный режим
+            // myMap.controls.get("fullscreenControl ").enterFullscreen();
+            // myMap.controls.get("fullscreenControl ").options.visible = false;
+
+
+            setupControls(myMap, myPolygon);
+
+            myMap.events.add('click', function (e) {
+                if (!myMap.balloon.isOpen()) {
+                    var coords = e.get('coords');
+                    myMap.balloon.open(coords, {
+                        contentHeader: 'Событие!',
+                        contentBody: '<p>Кто-то щелкнул по карте.</p>' +
+                        '<p>Координаты щелчка: ' + [
+                            coords[0].toPrecision(6),
+                            coords[1].toPrecision(6)
+                        ].join(', ') + '</p>',
+                        contentFooter: '<sup>Щелкните еще раз</sup>'
+                    });
+                }
+                else {
+                    myMap.balloon.close();
+                }
+            });
+
+            myMap.events.add('contextmenu', function (e) {
+                myMap.hint.open(e.get('coords'), 'Кто-то щелкнул правой кнопкой');
+            });
+
+            myMap.events.add('balloonopen', function (e) {
+                myMap.hint.close();
+            });
+
+            myMap.geoObjects.add(
+                new ymaps.Placemark([55.684758, 37.738521], {
+                    balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+                }, {
+                        preset: 'islands#blueDotIcon',
+                        iconColor: '#0095b6'
+                    }));
+            
+            var coords = [
+                [55.75, 37.50], [55.75, 37.71], [55.70, 37.70]
+            ],
+            myCollection = new ymaps.GeoObjectCollection({}, {
+                preset: 'islands#redIcon', //все метки красные
+                draggable: true // и их можно перемещать
+                });
+
+            for (var i = 0; i < coords.length; i++) {
+                myCollection.add(new ymaps.Placemark(coords[i]));
+            }
+
+            myMap.geoObjects.add(myCollection);
+
+            var jsonObject = {
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [55.8395, 37.7384]
+                },
+                // Свойства.
+                properties: {
+                    // Контент метки.
+                    iconContent: 'JSON Object',
+                    hintContent: 'Это JSON Object & Options'
+                }
+            };
+            var jsonOptions = {
+                // Опции.
+                // Иконка метки будет растягиваться под размер ее содержимого.
+                preset: 'islands#blackStretchyIcon',
+                // Метку можно перемещать.
+                draggable: true
+            };
+
+            myGeoObject = new ymaps.GeoObject(jsonObject, jsonOptions);
+
+            myMap.geoObjects.add(myGeoObject);
+
+
+            // При клике на карту все метки будут удалены.
+            myCollection.getMap().events.add('click', function() {
+                myCollection.removeAll();
+            });
+
+            ymaps.geocode('Москва', {
+		        /**
+		         * Опции запроса
+		         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
+		         */
+                // Сортировка результатов от центра окна карты.
+                // boundedBy: myMap.getBounds(),
+                // strictBounds: true,
+                // Вместе с опцией boundedBy будет искать строго внутри области, указанной в boundedBy.
+                // Если нужен только один результат, экономим трафик пользователей.
+                results: 1
+            }).then(function (res) {
+                // Выбираем первый результат геокодирования.
+                var firstGeoObject = res.geoObjects.get(0),
+                    // Координаты геообъекта.
+                    coords = firstGeoObject.geometry.getCoordinates(),
+                    // Область видимости геообъекта.
+                    bounds = firstGeoObject.properties.get('boundedBy');
+
+                firstGeoObject.options.set('preset', 'islands#darkBlueDotIconWithCaption');
+                // Получаем строку с адресом и выводим в иконке геообъекта.
+                firstGeoObject.properties.set('iconCaption', firstGeoObject.getAddressLine());
+
+                // Добавляем первый найденный геообъект на карту.
+                myMap.geoObjects.add(firstGeoObject);
+                // Масштабируем карту на область видимости геообъекта.
+                myMap.setBounds(bounds, {
+                    // Проверяем наличие тайлов на данном масштабе.
+                    checkZoomRange: true
+                });
+
+                /**
+                 * Все данные в виде javascript-объекта.
+                 */
+                
+            });
+
+            // Создаем многоугольник без вершин.
+            myPolygon = new ymaps.Polygon([], {}, {
+                //interactivityModel: 'default#transparent',
+                editorDrawingCursor: "crosshair",
+                fillColor: '#00FF00',
+                strokeWidth: 2,
+                opacity: 0.5,
+                draggable: false
+            });
+            myPolygon.events.add(['editorstatechange', 'click'], function (e) {
+                
+                printGeometry(myPolygon.geometry.getCoordinates());
+            });
+            // Добавляем многоугольник на карту.
+            myMap.geoObjects.add(myPolygon);
+
+            // Включаем режим редактирования с возможностью добавления новых вершин.
+            //myPolygon.editor.startDrawing();
+
+        }
+
+		function return1c(name,data){ 
+			// вызов обработчика
+			var evt = document.createEventObject();
+			evt.propertyName = name;
+			evt.data = data;
+			evt.cancelBubble = true;
+			evt.returnValue = false;
+			document.fireEvent('onclick',evt);
+		}
+
+        // Создание метки.
+        function createPlacemark(coords,hint) {
+            return new ymaps.Placemark(coords, {
+            	hintContent: hint,
+                preset: 'islands#blueCircleDotIcon'               
+            });
+        }
+
+        // Создание полигона.
+        function createPolygon(coords, hintContent, fillColor) {
+            return new ymaps.Polygon(coords,
+                {
+                    hintContent: hintContent
+                }, 
+                {
+                    //interactivityModel: 'default#transparent',
+                    editorDrawingCursor: "crosshair",
+                    fillColor: fillColor,
+                    strokeWidth: 2,
+                    //strokeColor: "0066ffff",
+                    opacity: 0.5,
+                    draggable: false,
+                    editorMenuManager: function (items) {
+                        
+                        return items.filter(filterStopDrawing);
+                }
+            });
+        }
+
+        function filterStopDrawing(element) { 
+            return element.id != 'stopDrawing';
+        }
+
+        // Загрузить список областей.
+        function loadPolygonList(polygonStr) {
+            var polygons = JSON.parse(polygonStr);
+            // var polygons = JSON.parse(
+            //     '[[[[[ 55.8359, 37.4293 ], [ 55.8822, 37.5144 ], [ 55.8591, 37.5955 ], [ 55.8344, 37.5639 ], [ 55.8119, 37.5089 ], [ 55.8359, 37.4293 ]]], "Область 1", "#6699ff"], [[[[ 55.6844, 37.5031 ], [ 55.6370, 37.5073 ], [ 55.6238, 37.6034 ], [ 55.6456, 37.6940 ], [ 55.7216, 37.6638 ], [ 55.6844, 37.5031 ]]], "Область 2", "#6699AA"]]');
+            
+            myMap.geoObjects.removeAll(); // удалим все старые объекты
+
+            myObjects = [];
+            
+            polygons.forEach(function(item, i, arr) {
+                polygon = createPolygon(item[0], item[1], item[2]);
+                polygon.options.setParent(myMap.options);
+                polygon.geometry.setMap(myMap);
+                myObjects.push(polygon);
+            });
+
+            ymaps.geoQuery(myObjects).addToMap(myMap);
+
+            myMap.setBounds(ymaps.geoQuery(myObjects).getBounds());
+
+        }
+
+        // Загрузить полигон.
+        function loadPolygon(coordsStr, hintStr, colorStr) {
+            var coords = JSON.parse(coordsStr);
+            myMap.geoObjects.removeAll(); // удалим все старые объекты
+            var polygon = createPolygon(coords, hintStr, colorStr);
+            // Метод работает только с корректно заданной картой.
+            polygon.options.setParent(myMap.options);
+            polygon.geometry.setMap(myMap);
+            myMap.geoObjects.add(polygon);
+            polygon.events.add('click', function (e) {
+                
+                printGeometry(polygon.geometry.getCoordinates());
+            });
+            return polygon;
+        }
+
+        function startDrawing() {
+            myPolygon = loadPolygon('[]','Область на карте', '#00FF00');
+            myPolygon.editor.startDrawing();
+        }
+
+        function startEditing() {
+            myPolygon.editor.startDrawing();
+        }
+
+        function stopEditing() {
+            myPolygon.editor.stopEditing();
+            printGeometry(myPolygon.geometry.getCoordinates());
+        }
+
+        function coordContains(coordStr) {
+            var coords = JSON.parse(coordStr);
+            if (!myMap.balloon.isOpen()) {
+                // var coords = [55.8489, 37.3146];
+                // var coords = [55.7088, 37.4698];
+                var text = ' НЕ ВХОДИТ в полигон!';
+                if (polygon.geometry.contains(coords)) text = ' Входит в полигон!';
+
+                myMap.balloon.open(coords, {
+                    contentHeader: 'Событие!',
+                    contentBody: '<p>Координаты точки:' + [coords[0].toPrecision(6), coords[1].toPrecision(6)].join(', ') + '</br>' + text + '</p>',
+                    contentFooter: '<sup>Щелкните еще раз</sup>'
+                });
+            }
+            else {
+                myMap.balloon.close();
+            }
+        }
+
+        function coordContainsObjects(coordStr) {
+            var coords = JSON.parse(coordStr);
+            var contains = false;
+            var hintContent = '';
+            var minArea = 0; 
+            myObjects.forEach(function(item, i, arr) {
+                if (item.geometry.contains(coords)) { 
+                    contains = true; 
+                    
+                    var countor = item.geometry.getCoordinates()[0];
+                    var ret = 0;
+                    for (var i = 0, l = countor.length - 1; i < l; ++i) {
+                        // ret  += (countor[i][0] - countor[i + 1][0]) * (countor[i][1] + countor[i + 1][1]) / 2;
+                        ret += (countor[i][0]*countor[i + 1][1] - countor[i][1]*countor[i + 1][0]) / 2;
+                    }
+                    ret = Math.abs(ret);
+                    
+                    if (minArea === 0 || ret < minArea) {
+                        minArea = ret;
+                        hintContent = item.properties.get('hintContent');
+                    }
+                }
+            });
+            
+            return1c("Вхождение",[contains, hintContent]);
+            return [contains, hintContent];
+        }
+
+        function setupControls(map, polygon) {
+
+            var btnCoordContains = new ymaps.control.Button('Определить вхождение координаты в полигон');
+            btnCoordContains.options.set('maxWidth', 400);
+            btnCoordContains.events.add(['click'], function (e) {
+                
+                coordContains('[55.8489, 37.3146]');
+            });
+
+            var btnCoordContainsObjects = new ymaps.control.Button('Определить вхождение координаты в полигоны');
+            btnCoordContainsObjects.options.set('maxWidth', 400);
+            btnCoordContainsObjects.events.add(['click'], function (e) {
+                
+                
+            });
+
+            var btnLoadPlacemark = new ymaps.control.Button('Загрузить точку');
+            btnLoadPlacemark.options.set('maxWidth', 200);
+            btnLoadPlacemark.events.add(['click'], function (e) {
+                
+                 myMap.geoObjects.add(createPlacemark([55.7951, 37.5756]));
+            });
+
+            var btnLoadPolygonList = new ymaps.control.Button('Загрузить список полигонов');
+            btnLoadPolygonList.options.set('maxWidth', 200);
+            btnLoadPolygonList.events.add(['click'], function (e) {
+                
+                loadPolygonList(
+                '[[[[[ 55.7826, 37.4700 ], [ 55.8205, 37.4755 ], [ 55.8437, 37.6362 ], [ 55.8256, 37.6492 ], [ 55.7721, 37.6514 ], [ 55.7621, 37.5717 ], [ 55.7826, 37.4700 ]]], "Область 1", "#6699ff"]'+
+                ', [[[[ 55.8451, 37.4035 ], [ 55.8880, 37.4770 ], [ 55.8953, 37.5738 ], [ 55.8760, 37.7015 ], [ 55.8475, 37.7750 ], [ 55.8100, 37.8141 ], [ 55.7593, 37.8148 ], [ 55.6683, 37.7855 ], [ 55.5929, 37.6056 ], [ 55.7265, 37.3953 ], [ 55.7668, 37.3623 ], [ 55.8451, 37.4035 ]]], "Область 2", "#6699AA"]'+
+                ', [[[[ 55.8389, 37.4798 ], [ 55.8606, 37.6459 ], [ 55.7751, 37.7523 ], [ 55.7081, 37.6281 ], [ 55.7077, 37.5834 ], [ 55.7372, 37.5148 ], [ 55.8389, 37.4798 ]]], "Область 3", "#669966"]]'
+                ); 
+                
+                // [[[[ 55.8451, 37.4035 ], [ 55.8880, 37.4770 ], [ 55.8953, 37.5738 ], [ 55.8760, 37.7015 ], [ 55.8475, 37.7750 ], [ 55.8100, 37.8141 ], [ 55.7593, 37.8148 ], [ 55.6683, 37.7855 ], [ 55.5929, 37.6056 ], [ 55.7265, 37.3953 ], [ 55.7668, 37.3623 ], [ 55.8451, 37.4035 ] ]], "Область 2", "#6699AA"]
+                
+                // loadPolygonList('[[[[[ 55.8359, 37.4293 ], [ 55.8822, 37.5144 ], [ 55.8591, 37.5955 ], [ 55.8344, 37.5639 ], [ 55.8119, 37.5089 ], [ 55.8359, 37.4293 ]]], "Область 1", "#6699ff"], [[[[ 55.6844, 37.5031 ], [ 55.6370, 37.5073 ], [ 55.6238, 37.6034 ], [ 55.6456, 37.6940 ], [ 55.7216, 37.6638 ], [ 55.6844, 37.5031 ]]], "Область 2", "#6699AA"]]');
+            });
+
+            var btnLoadPolygon = new ymaps.control.Button('Загрузить полигон');
+            btnLoadPolygon.options.set('maxWidth', 200);
+            btnLoadPolygon.events.add(['click'], function (e) {
+                
+                myPolygon = loadPolygon('[[[55.9007, 37.5127], [55.9092, 37.5704], [55.9069, 37.5965], [55.9015, 37.6281], [55.8969, 37.6569], [55.8884, 37.7173], [55.8745, 37.7393], [55.8591, 37.7681], [55.8413, 37.8066], [55.8227, 37.8313], [55.8057, 37.8423], [55.7879, 37.8437], [55.7647, 37.8437], [55.7190, 37.8340], [55.7035, 37.8313], [55.6554, 37.8368], [55.6414, 37.8231], [55.6165, 37.7819], [55.5753, 37.6857], [55.5761, 37.6006], [55.5979, 37.5045], [55.6391, 37.4619], [55.6919, 37.4124], [55.7182, 37.3864], [55.7337, 37.3767], [55.7562, 37.3685], [55.7864, 37.3671], [55.8049, 37.3864], [55.8305, 37.3918], [55.8459, 37.3960], [55.8768, 37.4152], [55.9007, 37.5127]]]','Область на карте', '#00FF00');
+            });
+
+            var btnStopEditing = new ymaps.control.Button('Завершить редактирование');
+            btnStopEditing.options.set('maxWidth', 200);
+            btnStopEditing.events.add(['click'], function (e) {
+                
+                stopEditing();
+            });
+
+            var btnStartDrawing = new ymaps.control.Button('Начать редактирование');
+            btnStartDrawing.options.set('maxWidth', 200);
+            btnStartDrawing.events.add(['click'], function (e) {
+                
+                startDrawing();
+            });
+
+            myMap.controls
+                .add(btnCoordContainsObjects)
+                .add(btnLoadPlacemark)
+                .add(btnLoadPolygonList)
+                // .add(btnCoordContains)
+                .add(btnStopEditing)
+                .add(btnStartDrawing)
+                .add(btnLoadPolygon)
+                ;
+        }
+
+        // Выводит массив координат геообъекта в <div id="geometry">
+        function printGeometry(coords) {
+            $('#geometry').html('Координаты: ' + stringify(coords));
+
+            function stringify(coords) {
+                var res = '';
+                if ($.isArray(coords)) {
+                    res = '[ ';
+                    for (var i = 0, l = coords.length; i < l; i++) {
+                        if (i > 0) {
+                            res += ', ';
+                        }
+                        res += stringify(coords[i]);
+                    }
+                    res += ' ]';
+                } else if (typeof coords == 'number') {
+                    res = coords.toPrecision(6);
+                } else if (coords.toString) {
+                    res = coords.toString();
+                }
+
+                return res;
+            }
+        }
+		
+	 </script><style>
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+     </style><meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></meta></head><body>
+<div id="map"></div>
+<div>Цвет заливки: <input id="color_polygon" type="text" value="#0000ff"></input> Уровень прозрачности заливки: <input id="fillopacity_polygon" type="text" value="0.5"></input><br>Цвет линии обводки: <input id="color_line" type="text" value="#cc3333"></input> Толщина линии обводки: <input name="width_line" id="width_line" type="text" size="2" value="1"></input> Уровень прозрачности обводки: <input id="opacity_line" type="text" value="1"></input><br></div>
+<div id="geometry"></div></body></html>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаОтказа</dataPath>
+			<field>ПричинаОтказа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Результат</dataPath>
+			<field>Результат</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СостоянияЗаказов.Период,
+	СостоянияЗаказов.Регистратор,
+	СостоянияЗаказов.НомерСтроки,
+	СостоянияЗаказов.Активность,
+	СостоянияЗаказов.Доставка,
+	СостоянияЗаказов.Заказ,
+	СостоянияЗаказов.РезультатДоставки,
+	СостоянияЗаказов.ПричинаНеВыполнения,
+	СостоянияЗаказов.ПричинаОтказа,
+	СостоянияЗаказов.ДатаПереноса,
+	СостоянияЗаказов.Экспедитор,
+	СостоянияЗаказов.Водитель,
+	1 КАК Количество
+ПОМЕСТИТЬ ВТ_ВсеЗаказы
+ИЗ
+	РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+ГДЕ
+	СостоянияЗаказов.Период МЕЖДУ &amp;Дата1 И &amp;Дата2
+	И СостоянияЗаказов.Регистратор ССЫЛКА Документ.новаОтчетВодителя
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВсеЗаказы.Период,
+	СУММА(ВТ_ВсеЗаказы.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_Выполненные
+ИЗ
+	ВТ_ВсеЗаказы КАК ВТ_ВсеЗаказы
+ГДЕ
+	(ВТ_ВсеЗаказы.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена)
+			ИЛИ ВТ_ВсеЗаказы.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ВсеЗаказы.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВсеЗаказы.Период,
+	ВТ_ВсеЗаказы.ПричинаНеВыполнения,
+	ВТ_ВсеЗаказы.ПричинаОтказа,
+	ВТ_ВсеЗаказы.Количество
+ПОМЕСТИТЬ ВТ_НЕвыполненные
+ИЗ
+	ВТ_ВсеЗаказы КАК ВТ_ВсеЗаказы
+ГДЕ
+	ВТ_ВсеЗаказы.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НеВыполнена)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа,
+	СУММА(ВТ_НЕвыполненные.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_ОтказБезЗаезда
+ИЗ
+	ВТ_НЕвыполненные КАК ВТ_НЕвыполненные
+ГДЕ
+	ВТ_НЕвыполненные.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаБезЗаезда)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа,
+	СУММА(ВТ_НЕвыполненные.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_ОтказСЗаездом
+ИЗ
+	ВТ_НЕвыполненные КАК ВТ_НЕвыполненные
+ГДЕ
+	ВТ_НЕвыполненные.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаСЗаездом)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа,
+	СУММА(ВТ_НЕвыполненные.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_ПереносДоставки
+ИЗ
+	ВТ_НЕвыполненные КАК ВТ_НЕвыполненные
+ГДЕ
+	ВТ_НЕвыполненные.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа,
+	СУММА(ВТ_НЕвыполненные.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_ПереносСЗаездом
+ИЗ
+	ВТ_НЕвыполненные КАК ВТ_НЕвыполненные
+ГДЕ
+	ВТ_НЕвыполненные.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_НЕвыполненные.Период,
+	ВТ_НЕвыполненные.ПричинаОтказа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_Выполненные.Период, ДЕНЬ) КАК Дата,
+	СУММА(ВТ_Выполненные.Количество) КАК Количество,
+	NULL КАК ПричинаОтказа,
+	"Выполненные" КАК Результат
+ИЗ
+	ВТ_Выполненные КАК ВТ_Выполненные
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ВТ_Выполненные.Период, ДЕНЬ)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ОтказБезЗаезда.Период, ДЕНЬ),
+	СУММА(ВТ_ОтказБезЗаезда.Количество),
+	ВТ_ОтказБезЗаезда.ПричинаОтказа,
+	"ОтказБезЗаезда"
+ИЗ
+	ВТ_ОтказБезЗаезда КАК ВТ_ОтказБезЗаезда
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ОтказБезЗаезда.ПричинаОтказа,
+	НАЧАЛОПЕРИОДА(ВТ_ОтказБезЗаезда.Период, ДЕНЬ)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ОтказСЗаездом.Период, ДЕНЬ),
+	СУММА(ВТ_ОтказСЗаездом.Количество),
+	ВТ_ОтказСЗаездом.ПричинаОтказа,
+	"ОтказСЗаездом"
+ИЗ
+	ВТ_ОтказСЗаездом КАК ВТ_ОтказСЗаездом
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ОтказСЗаездом.ПричинаОтказа,
+	НАЧАЛОПЕРИОДА(ВТ_ОтказСЗаездом.Период, ДЕНЬ)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ПереносДоставки.Период, ДЕНЬ),
+	СУММА(ВТ_ПереносДоставки.Количество),
+	ВТ_ПереносДоставки.ПричинаОтказа,
+	"ПереносДоставки"
+ИЗ
+	ВТ_ПереносДоставки КАК ВТ_ПереносДоставки
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПереносДоставки.ПричинаОтказа,
+	НАЧАЛОПЕРИОДА(ВТ_ПереносДоставки.Период, ДЕНЬ)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ПереносСЗаездом.Период, ДЕНЬ),
+	СУММА(ВТ_ПереносСЗаездом.Количество),
+	ВТ_ПереносСЗаездом.ПричинаОтказа,
+	"ПереносСЗаездом"
+ИЗ
+	ВТ_ПереносСЗаездом КАК ВТ_ПереносСЗаездом
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПереносСЗаездом.ПричинаОтказа,
+	НАЧАЛОПЕРИОДА(ВТ_ПереносСЗаездом.Период, ДЕНЬ)
+
+УПОРЯДОЧИТЬ ПО
+	Дата</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<parameter>
+		<name>СтПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Дата1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НАЧАЛОПЕРИОДА(&amp;СтПериод.ДатаНачала, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>Дата2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(&amp;СтПериод.ДатаОкончания, "ДЕНЬ")</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisWeek</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>0ff87555-a0a0-4cb7-95c9-eda77eed0458</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Результат</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Результат</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование показателя</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Количество</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПричинаОтказа</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СистемныеПоля.НомерПоПорядкуВГруппировке</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПричинаОтказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Количество</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

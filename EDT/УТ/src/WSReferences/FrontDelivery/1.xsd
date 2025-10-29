@@ -1,0 +1,361 @@
+<xs:schema xmlns:ns1="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+		xmlns:ns2="strizh-logistic.ru/contracts"
+		xmlns:ns3="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.terminalOrder"
+		xmlns:ns4="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder"
+		xmlns:ns5="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+		xmlns:tns="strizh-logistic.ru/services"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="strizh-logistic.ru/services">
+	<xs:import schemaLocation="file://2.xsd"
+			namespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"/>
+	<xs:import schemaLocation="file://3.xsd"
+			namespace="strizh-logistic.ru/contracts"/>
+	<xs:import schemaLocation="file://7.xsd"
+			namespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.terminalOrder"/>
+	<xs:import schemaLocation="file://8.xsd"
+			namespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder"/>
+	<xs:import schemaLocation="file://5.xsd"
+			namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+	<xs:element name="IsRegisterLoadedForOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="orderNumber"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+						minOccurs="0"
+						name="Auth"
+						nillable="true"
+						type="q1:Authentication"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IsRegisterLoadedForOrderResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="IsRegisterLoadedForOrderResult"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetStatusSC">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q2="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="Statuses"
+						nillable="true"
+						type="q2:Statuses"/>
+				<xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+						minOccurs="0"
+						name="Auth"
+						nillable="true"
+						type="q3:Authentication"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetStatusSCResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="SetStatusSCResult"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddAcceptanceReportToIntake">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="intakeNumber"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element xmlns:q4="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="AcceptanceReports"
+						nillable="true"
+						type="q4:AcceptanceReports"/>
+				<xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+						minOccurs="0"
+						name="Auth"
+						nillable="true"
+						type="q5:Authentication"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddAcceptanceReportToIntakeResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="AddAcceptanceReportToIntakeResult"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetIntakesToWH">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="dateFrom"
+						type="xs:dateTime"/>
+				<xs:element minOccurs="0"
+						name="dateTo"
+						type="xs:dateTime"/>
+				<xs:element minOccurs="0"
+						name="WarehouseId"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+						minOccurs="0"
+						name="Auth"
+						nillable="true"
+						type="q6:Authentication"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetIntakesToWHResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q7="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="GetIntakesToWHResult"
+						nillable="true"
+						type="q7:Intakes"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetWHForIntake">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="orderId"
+						type="xs:int"/>
+				<xs:element minOccurs="0"
+						name="warehouseId"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+						minOccurs="0"
+						name="Auth"
+						nillable="true"
+						type="q8:Authentication"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetWHForIntakeResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="SetWHForIntakeResult"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateWHSender">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q9="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="whSenders"
+						nillable="true"
+						type="q9:WhSenders"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateWHSenderResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="UpdateWHSenderResult"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetExtendedOrders">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="modifyDate"
+						type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetExtendedOrdersResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q10="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="GetExtendedOrdersResult"
+						nillable="true"
+						type="q10:ExtendedOrders"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetModifiedTerminals">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="modifyDate"
+						type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetModifiedTerminalsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.terminalOrder"
+						minOccurs="0"
+						name="GetModifiedTerminalsResult"
+						nillable="true"
+						type="q11:ArrayOfTerminal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LoadPostingItems">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="postingBarcode"
+						nillable="true"
+						type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LoadPostingItemsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="LoadPostingItemsResult"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LoadPostingItems_test">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="postingBarcode"
+						nillable="true"
+						type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LoadPostingItems_testResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="LoadPostingItems_testResult"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetModifiedShops">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="modifyDate"
+						type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetModifiedShopsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q12="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="GetModifiedShopsResult"
+						nillable="true"
+						type="q12:Shops"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetOrdersForRegion">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="modifyDate"
+						type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetOrdersForRegionResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q13="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="GetOrdersForRegionResult"
+						nillable="true"
+						type="q13:OrdersForRegion"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetModifiedPickPoints">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="modifyDate"
+						type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetModifiedPickPointsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder"
+						minOccurs="0"
+						name="GetModifiedPickPointsResult"
+						nillable="true"
+						type="q14:ArrayOfFranchise"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddressSuggest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+						minOccurs="0"
+						name="orders"
+						nillable="true"
+						type="q15:ArrayOfint"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddressSuggestResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q16="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="AddressSuggestResult"
+						nillable="true"
+						type="q16:ArrayOfAddressSuggest"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddressSuggestStr">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="address"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element minOccurs="0"
+						name="addressCount"
+						type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddressSuggestStrResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q17="strizh-logistic.ru/contracts"
+						minOccurs="0"
+						name="AddressSuggestStrResult"
+						nillable="true"
+						type="q17:ArrayOfAddressSuggestStr"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="09df7006-7396-4f85-895a-c4ee4962071c">
+  <producedTypes>
+    <selectionType typeId="703969a0-3f65-4efa-a496-8439a7a754f0" valueTypeId="ad55db47-9106-46dc-9350-d71ec9f09d63"/>
+    <listType typeId="fc5fdb58-bd24-4ef9-84e7-7e139593d88d" valueTypeId="d4e84ae2-d79f-407d-b13b-081bb589bc02"/>
+    <managerType typeId="b63f2a81-9cde-4f3b-9fb6-fa72f0f5b821" valueTypeId="4dc0ef59-7936-4712-ae30-a55b2b34f79a"/>
+    <recordSetType typeId="614d5dc1-7200-4e30-8e4d-1fa73b6a69bd" valueTypeId="1ff6a2e9-f8aa-4b4b-aa11-a61b160e6970"/>
+    <recordKeyType typeId="11c5f09a-f1ef-4ff7-97f0-99c7cb4bb3ee" valueTypeId="c756be9a-b906-4f1a-94d7-ab12810960d8"/>
+    <recordType typeId="c37502a2-b41f-441f-b593-f98a10baed1d" valueTypeId="71728832-0d1c-4e4c-9a58-a4b6b4d6c31c"/>
+    <recordManagerType typeId="05f3d61d-1fcf-4f39-8303-85a8caec9070" valueTypeId="70140852-dc44-400f-9014-4f1b91d88351"/>
+  </producedTypes>
+  <name>зпЗакрытыеРасчетныеПериоды</name>
+  <synonym>
+    <key>ru</key>
+    <value>(зп) Закрытые расчетные периоды</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="0caff469-be50-44fa-82af-1211b22e2d7b">
+    <name>ПериодЗакрыт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период закрыт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="736628c1-6e52-4d7e-b241-126ec476b945">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="771839dd-e277-449a-8657-d17fdf5c2852">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.зпРасчетЗП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="fea9263a-3f48-46ba-8152-456a1d7c0afe">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="906812ed-b162-482f-ade5-17922b5ba33c">
+    <name>РасчетныйПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчетный период</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

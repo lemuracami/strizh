@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТарифДоставки</dataPath>
+			<field>ТарифДоставки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тариф доставки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегионДоставки</dataPath>
+			<field>РегионДоставки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регион доставки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КассовоеОбслуживание</dataPath>
+			<field>КассовоеОбслуживание</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вес</dataPath>
+			<field>Вес</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОплаты</dataPath>
+			<field>ТипОплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗарплатаЭкипажей</dataPath>
+			<field>ЗарплатаЭкипажей</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарплата экипажей</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Стоимость</dataPath>
+			<field>Стоимость</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерЗаказа</dataPath>
+			<field>НомерЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтернетМагазин</dataPath>
+			<field>ИнтернетМагазин</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	РеализацияТоваровУслуг.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_Заказы
+ИЗ
+	РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ПО (ЗакрытыеЗаказы.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+			И ЗакрытыеЗаказы.Реализация = РеализацияТоваровУслуг.Ссылка
+			И (ЗакрытыеЗаказы.СтатусЗаказа В (ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена), ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично)))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПараметрыТарифаЗаказаСрезПоследних.Заказ КАК Заказ,
+	ПараметрыТарифаЗаказаСрезПоследних.ЗонаТарификации КАК ЗонаТарификации
+ПОМЕСТИТЬ ВТ_ПараметрыТарифаЗаказа
+ИЗ
+	РегистрСведений.ПараметрыТарифаЗаказа.СрезПоследних(
+			{(&amp;ПериодСреза)},
+			Заказ В
+				(ВЫБРАТЬ
+					ВТ_Заказы.Ссылка КАК Ссылка
+				ИЗ
+					ВТ_Заказы КАК ВТ_Заказы)) КАК ПараметрыТарифаЗаказаСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(РасчетЗарплаты.Сумма) КАК Сумма,
+	РасчетЗарплаты.Доставка КАК Доставка
+ПОМЕСТИТЬ ВТ_ЗарплатаЭкипажей
+ИЗ
+	РегистрНакопления.РасчетЗарплаты КАК РасчетЗарплаты
+ГДЕ
+	РасчетЗарплаты.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	РасчетЗарплаты.Доставка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.Ссылка КАК Ссылка,
+	ВложенныйЗапрос.Номенклатура КАК Номенклатура,
+	СУММА(ВложенныйЗапрос.Сумма) КАК Сумма,
+	СУММА(ВложенныйЗапрос.Вес) КАК Вес
+ПОМЕСТИТЬ ВТ_РеализацияТоваровИУслуг
+ИЗ
+	(ВЫБРАТЬ
+		РеализацияТоваровУслугТовары.Ссылка КАК Ссылка,
+		РеализацияТоваровУслугТовары.Номенклатура КАК Номенклатура,
+		РеализацияТоваровУслугТовары.Сумма КАК Сумма,
+		РеализацияТоваровУслугТовары.Вес КАК Вес
+	ИЗ
+		Документ.РеализацияТоваровУслуг.Товары КАК РеализацияТоваровУслугТовары
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Заказы КАК ВТ_Заказы
+			ПО РеализацияТоваровУслугТовары.Ссылка = ВТ_Заказы.Ссылка
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РеализацияТоваровУслугУслуги.Ссылка,
+		РеализацияТоваровУслугУслуги.Номенклатура,
+		РеализацияТоваровУслугУслуги.Сумма,
+		NULL
+	ИЗ
+		Документ.РеализацияТоваровУслуг.Услуги КАК РеализацияТоваровУслугУслуги
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Заказы КАК ВТ_Заказы
+			ПО РеализацияТоваровУслугУслуги.Ссылка = ВТ_Заказы.Ссылка
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РеализацияТоваровУслугПодарочныеПозиции.Ссылка,
+		РеализацияТоваровУслугПодарочныеПозиции.Номенклатура,
+		0,
+		NULL
+	ИЗ
+		Документ.РеализацияТоваровУслуг.ПодарочныеПозиции КАК РеализацияТоваровУслугПодарочныеПозиции
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Заказы КАК ВТ_Заказы
+			ПО РеализацияТоваровУслугПодарочныеПозиции.Ссылка = ВТ_Заказы.Ссылка) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Ссылка,
+	ВложенныйЗапрос.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РеализацияТоваровУслуг.Ссылка КАК Заказ,
+	ВТ_РеализацияТоваровИУслуг.Номенклатура КАК Номенклатура,
+	ВТ_РеализацияТоваровИУслуг.Сумма КАК Стоимость,
+	ЗакрытыеЗаказы.ТипОплаты КАК ТипОплаты,
+	ВТ_РеализацияТоваровИУслуг.Вес КАК Вес,
+	ЕСТЬNULL(ВТ_ПараметрыТарифаЗаказа.ЗонаТарификации, ЗНАЧЕНИЕ(Справочник.ГруппыРайонов.ПустаяСсылка)) КАК РегионДоставки,
+	ЗакрытыеЗаказы.УслугиСД КАК ТарифДоставки,
+	ЗакрытыеЗаказы.КассовоеОбслуживание КАК КассовоеОбслуживание,
+	ВТ_ЗарплатаЭкипажей.Сумма КАК ЗарплатаЭкипажей,
+	РеализацияТоваровУслуг.Номер КАК НомерЗаказа,
+	ЗакрытыеЗаказы.ИнтернетМагазин КАК ИнтернетМагазин
+ИЗ
+	РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПараметрыТарифаЗаказа КАК ВТ_ПараметрыТарифаЗаказа
+			ПО РеализацияТоваровУслуг.Ссылка = ВТ_ПараметрыТарифаЗаказа.Заказ
+		ПО (ЗакрытыеЗаказы.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+			И ЗакрытыеЗаказы.Реализация = РеализацияТоваровУслуг.Ссылка
+			И (ЗакрытыеЗаказы.СтатусЗаказа В (ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена), ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично)))
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЗарплатаЭкипажей КАК ВТ_ЗарплатаЭкипажей
+		ПО (РеализацияТоваровУслуг.Ссылка = ВТ_ЗарплатаЭкипажей.Доставка)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_РеализацияТоваровИУслуг КАК ВТ_РеализацияТоваровИУслуг
+		ПО (РеализацияТоваровУслуг.Ссылка = ВТ_РеализацияТоваровИУслуг.Ссылка)</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Вес</dataPath>
+		<expression>Сумма(Вес)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Стоимость</dataPath>
+		<expression>Сумма(Стоимость)</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодСреза</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период среза</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипОплаты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РегионДоставки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Вес</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Стоимость</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИнтернетМагазин</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>94b4df77-5fe0-4f60-bb75-5235f18534d5</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>8ddd1ea9-f436-4b34-bcf7-1c31136b9516</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>НомерЗаказа</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ТипОплаты</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>РегионДоставки</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ТарифДоставки</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>КассовоеОбслуживание</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ЗарплатаЭкипажей</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

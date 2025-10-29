@@ -1,0 +1,179 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO">
+	<import namespace="http://v8.1c.ru/8.1/data/core"/>
+	<objectType name="getCostOfLiftingRequest">
+		<property name="typeOfLifting" type="xs:byte"/>
+		<property name="FloorOfLifting" type="xs:byte"/>
+		<property name="liftingCountOfWalkersPerFloor" type="xs:byte"/>
+		<property name="orderId" type="xs:string"/>
+		<property name="weight" type="xs:double" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="getCostOfLiftingResponse">
+		<property name="liftingCalcSum" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="liftingBreak" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="liftingTariff" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="successfully" type="xs:boolean"/>
+	</objectType>
+	<objectType name="organization">
+		<property name="id" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="nameFull" type="xs:string"/>
+		<property name="address" type="xs:string"/>
+		<property name="inn" type="xs:string"/>
+		<property name="kpp" type="xs:string"/>
+		<property name="bankAccountQPS" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="emailOnCheck" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="assist_MerchantId" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="assist_login" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="assist_password" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="settingsAssistForOrganization" type="d3p1:settingAssistForOrganization" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfOrganization">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="organization" type="d3p1:organization" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="partner">
+		<property name="id" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="fullName" type="xs:string"/>
+		<property name="inn" type="xs:string"/>
+		<property name="isAggregator" type="xs:boolean"/>
+		<property name="latinName" type="xs:string"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="settingsAssistForOrganization" type="d3p1:settingAssistForOrganization" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfPartners">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="partner" type="d3p1:partner" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="trip">
+		<property name="carId" type="xs:string"/>
+		<property name="id" type="xs:string"/>
+		<property name="dateTrip" type="xs:date"/>
+		<property name="dateDocument" type="xs:dateTime"/>
+		<property name="driverId" type="xs:string"/>
+		<property name="paletNumber" type="xs:int"/>
+		<property name="deletionMark" type="xs:boolean"/>
+		<property name="customerInformationMode" type="xs:string"/>
+		<property name="forwarderId" type="xs:string"/>
+		<property name="phone" type="xs:string"/>
+		<property name="assistTerminalIssued" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="RPHasPrinted" type="xs:boolean" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfTrips">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="trip" type="d3p1:trip" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="exchangeErrorRecord">
+		<property name="dateRecord" type="xs:dateTime"/>
+		<property name="error" type="xs:string"/>
+		<property name="version" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfExchangeErrorRecord">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="exchangeErrorRecord" type="d3p1:exchangeErrorRecord" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="driverNotification">
+		<property name="date" type="xs:date"/>
+		<property name="type" type="xs:byte"/>
+	</objectType>
+	<objectType name="arrayOfDriverNotifications">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="driverNotification" type="d3p1:driverNotification" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="SMSTemplate">
+		<property name="id" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="text" type="xs:string"/>
+		<property name="sender" type="xs:string"/>
+		<property name="declination" type="xs:string"/>
+	</objectType>
+	<objectType name="arrayOfSMSTemplates">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="SMSTemplate" type="d3p1:SMSTemplate" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="SMSSendingLogRecord">
+		<property name="date" type="xs:dateTime"/>
+		<property name="tripId" type="xs:string"/>
+		<property name="orderId" type="xs:string"/>
+		<property name="SMSTempateId" type="xs:string"/>
+		<property name="carId" type="xs:string"/>
+		<property name="dateSending" type="xs:dateTime"/>
+		<property name="dateReceiving" type="xs:dateTime"/>
+		<property name="text" type="xs:string"/>
+		<property name="phoneNumber" type="xs:string"/>
+		<property name="isError" type="xs:boolean"/>
+		<property name="errorText" type="xs:string"/>
+	</objectType>
+	<objectType name="arrayOfSMSSendingLogRecords">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="SMSSendingLogRecord" type="d3p1:SMSSendingLogRecord" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="forwarder">
+		<property name="id" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="latinName" type="xs:string"/>
+	</objectType>
+	<objectType name="arrayOfForwarder">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="forwarder" type="d3p1:forwarder" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="requestForTransferOfOrdersRequest">
+		<property name="tripId" type="xs:int"/>
+		<property name="sourceCarId" type="xs:string"/>
+		<property name="recepientCarId" type="xs:string"/>
+		<property name="regionId" type="xs:int"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="orders" type="d3p1:transferOfOrdersOrderRows"/>
+		<property name="numberDoc" type="xs:int"/>
+	</objectType>
+	<objectType name="transferOfOrdersOrderRow">
+		<property name="orderId" type="xs:string"/>
+		<property name="address" type="xs:string"/>
+		<property name="countOfPlaces" type="xs:string"/>
+		<property name="status" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="transferOfOrdersOrderRows">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="orderRow" type="d3p1:transferOfOrdersOrderRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="transferOfOrdersResponse">
+		<property name="successfully" type="xs:boolean"/>
+		<property name="idDocument" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="error" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="acceptForTransferOfOrdersRequest">
+		<property name="requestForTransferId" type="xs:string"/>
+		<property name="status" type="xs:string"/>
+		<property name="regionId" type="xs:int"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="orders" type="d3p1:transferOfOrdersOrderRows"/>
+		<property name="numberDoc" type="xs:int"/>
+	</objectType>
+	<objectType name="typeOfAttachedDoc">
+		<property name="id" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="enabledForMA" type="xs:boolean"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="availabilityByOrderTypes" type="d3p1:arrayOfAvailabilityByOrderTypes"/>
+		<property name="filePrefix" type="xs:string"/>
+		<property name="photoQuality" type="xs:int"/>
+		<property name="blackAndWhitePhoto" type="xs:boolean"/>
+		<property name="photoMark" type="xs:boolean"/>
+	</objectType>
+	<objectType name="arrayOfTypesOfAttachedDocs">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="typeOfAttachedDoc" type="d3p1:typeOfAttachedDoc" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="availabilityByOrderType">
+		<property name="orderType" type="xs:string"/>
+		<property name="available" type="xs:boolean"/>
+	</objectType>
+	<objectType name="arrayOfAvailabilityByOrderTypes">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="availabilityByOrderType" type="d3p1:availabilityByOrderType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="attachedDoc">
+		<property name="id" type="xs:int"/>
+		<property name="name" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="data" type="d3p1:ValueStorage"/>
+		<property name="createDate" type="xs:dateTime"/>
+		<property name="nameExt" type="xs:string"/>
+		<property name="typeDoc" type="xs:int"/>
+		<property name="orderId" type="xs:string"/>
+		<property name="orderType" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfAttachedDoc">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO" name="attachedDocs" type="d3p1:attachedDoc" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="settingAssistForOrganization">
+		<property name="terminalCode" type="xs:int"/>
+		<property name="merchantId" type="xs:long"/>
+		<property name="login" type="xs:string"/>
+		<property name="password" type="xs:string"/>
+	</objectType>
+</package>

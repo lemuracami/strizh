@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ccb63536-a990-4649-8d24-a92912efc708">
+  <producedTypes>
+    <selectionType typeId="3a1d4d81-1c36-48b9-816e-26d1ac87afec" valueTypeId="01cf50fc-c3c6-4e0c-81b8-9d1d2282d8e3"/>
+    <listType typeId="740f991c-a049-4fa0-a7c7-3cc1101eebad" valueTypeId="e176d1bc-f396-4b32-8723-017ece0ac1b9"/>
+    <managerType typeId="f1fdefeb-96dc-420a-b2e0-4042901caeec" valueTypeId="77cec9ae-5acb-40ab-b31c-bb3368252bde"/>
+    <recordSetType typeId="7789b59d-ce61-49b3-9aac-57d75cd3afb2" valueTypeId="e363b037-39f6-49d6-95e8-0fcb3352fa62"/>
+    <recordKeyType typeId="de1b7257-47d6-42c8-9e68-a633cd33d8cb" valueTypeId="9af9e27b-62aa-48d2-8f69-93284b893bba"/>
+    <recordType typeId="bed673c8-5973-457c-9a29-9d9fc4dd0a5d" valueTypeId="6e23c834-b5bc-4a88-b25b-652890ae9917"/>
+    <recordManagerType typeId="e6c4d7b4-7194-46dd-9d9c-5b0f96d23827" valueTypeId="9e4113f8-e369-4831-aced-24e3ca160546"/>
+  </producedTypes>
+  <name>НастройкиВнешнейМаршрутизации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки внешней маршрутизации</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.НастройкиВнешнейМаршрутизации.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.НастройкиВнешнейМаршрутизации.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f70cf813-34f1-44a9-a7b2-b870017ba3d6">
+    <name>НомерПалетыОт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер палеты от</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1155451f-4f86-407a-b102-49dd6d6cd8e7">
+    <name>НомерПалетыДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер палеты до</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="24021614-a348-493b-b627-cfe2addb2b2d">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="65e943fd-1000-4bac-a2f1-4557cb9da6de">
+    <name>ОператорМашрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор машрутизации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f5f56495-b9c5-4b37-9a1f-34d8b9f78874">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <forms uuid="b61afc2d-c491-4b21-a576-75690bf76752">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7091621a-15bf-47bf-8493-f86aaed1bb39">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

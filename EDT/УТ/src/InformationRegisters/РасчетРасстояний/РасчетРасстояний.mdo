@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ecd59b26-2f87-4315-b02a-848558d1b728">
+  <producedTypes>
+    <selectionType typeId="e124418e-49d9-44b9-9561-778306db4567" valueTypeId="61fee20e-9f10-4305-9da5-b36052adff7d"/>
+    <listType typeId="befad48a-28d7-4cf1-98e2-2e4d5dd92c15" valueTypeId="b204e6d6-db0d-4fc4-be38-d0c7c8d42de4"/>
+    <managerType typeId="1b3e2efc-aac2-4a93-859e-9fa53e4f5228" valueTypeId="ebf4796d-0638-43e5-80e4-1bd6ba1b1e23"/>
+    <recordSetType typeId="bcde5897-8d59-44d0-aad7-2dac21a1083c" valueTypeId="2b84fdda-42c2-4458-a418-4994d16e1ea5"/>
+    <recordKeyType typeId="718f64c2-4a5e-48e8-9678-c37a5b17d042" valueTypeId="757fca5f-868d-4200-a247-281bd69f578e"/>
+    <recordType typeId="175c9ec3-9327-4203-89a6-4937f2beaddd" valueTypeId="bd5cf0f4-41c6-41af-bf0a-28e3e79be044"/>
+    <recordManagerType typeId="6ea97149-d32a-4efa-95c7-c05c14bd11d3" valueTypeId="299a5128-ba96-454b-bfe0-946c0d9600fe"/>
+  </producedTypes>
+  <name>РасчетРасстояний</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет расстояний</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="c9c42e25-5c31-4e36-8280-2a3b30434b1c">
+    <name>Расстояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расстояние</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="e480ffa3-8b0a-402f-9b75-7a9a0f9d9955">
+    <name>ТочкаОтправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка отправления</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТочкиДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a6d1900e-ec6f-4ec0-a0c3-59f23e770448">
+    <name>ТочкаПрибытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка прибытия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТочкиДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cdcff32e-a249-45d9-8a81-2fb11979d756">
+    <name>ПовышающийКоэффициент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Повышающий коэффициент</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="7eb1d09d-8660-4abb-a946-d8b8f802d63e">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c4acde9d-9e1d-4fb5-9344-3241a47988f8">
+    <name>ТипЗамераРасстояния</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип замера расстояния</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗамераРасстояний</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

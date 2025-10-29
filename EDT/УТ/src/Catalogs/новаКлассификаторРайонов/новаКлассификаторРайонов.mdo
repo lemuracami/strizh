@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a50df539-ec80-407a-ab44-fae51c33b50e">
+  <producedTypes>
+    <objectType typeId="add83ced-4f78-4123-9ac1-a9ada64b716d" valueTypeId="bdf21348-8065-4e5c-8740-3c4e13c1704b"/>
+    <refType typeId="e5335c31-ca53-4aba-ae38-cc08b443ec07" valueTypeId="15b4ff53-ba27-4d35-ae2e-5cf5e7eb1ba9"/>
+    <selectionType typeId="b1a93419-724c-47f3-badb-a73a7775aa9f" valueTypeId="6b18d0e5-0849-4da8-a668-533d01fb59be"/>
+    <listType typeId="6b643506-1cf5-41e5-b715-3bfbdd3f3fb5" valueTypeId="c8999b50-3970-4ebb-b1eb-a735d6c7608a"/>
+    <managerType typeId="885a0d12-4173-4744-a048-a5c1528a2dff" valueTypeId="ac9c0e5e-b4a2-4aa3-9a80-d43ff2c3168c"/>
+  </producedTypes>
+  <name>новаКлассификаторРайонов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Классификатор районов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.новаКлассификаторРайонов.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.новаКлассификаторРайонов.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchyType>HierarchyOfItems</hierarchyType>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.новаКлассификаторРайонов.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="d0f498df-890c-43da-9e52-4889e37d5cec">
+    <name>IDsql</name>
+    <synonym>
+      <key>ru</key>
+      <value>ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="90b83ba7-7633-45be-9d00-b8f6bdbf8c49">
+    <name>ЗонаТарификацииПриНепривязанномАдресе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зона тарификации при непривязанном адресе</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыРайонов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="4b6c5f56-57ee-4346-b96f-0c07bbd69b74">
+    <producedTypes>
+      <objectType typeId="0921133f-df04-4fff-ab7e-50ad4386107e" valueTypeId="bd789556-83e4-4f07-9b81-177ec62b5fe0"/>
+      <rowType typeId="06d65ef9-17f4-4465-9fb9-92256e02c34e" valueTypeId="df320330-e7aa-4014-a23b-abe974d53c39"/>
+    </producedTypes>
+    <name>ДоступныеЗоныТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные зоны тарификации</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ab0c2a17-d6c4-4a26-a73d-baba08a35664">
+      <name>Зона</name>
+      <synonym>
+        <key>ru</key>
+        <value>Зона</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ГруппыРайонов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="4314e92d-6b8b-4bf7-ba3b-f1f475d90653">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

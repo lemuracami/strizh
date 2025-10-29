@@ -1,0 +1,40 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://veeroute.com/vehicle">
+	<objectType name="vehicle">
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property name="active" type="xs:boolean" form="Attribute"/>
+		<property name="suspended" type="xs:boolean" form="Attribute"/>
+		<property name="costByDistance" type="xs:string" form="Attribute"/>
+		<property name="maxWeight" type="xs:integer" form="Attribute"/>
+		<property name="averageSpeed" type="xs:integer" form="Attribute"/>
+		<property name="color" type="xs:string" form="Attribute"/>
+		<property name="areaOfControl" type="xs:string" form="Attribute"/>
+		<property name="maxVolume" type="xs:decimal" form="Attribute"/>
+		<property xmlns:d3p1="http://veeroute.com/vehicle" name="vehicleRequirements" type="d3p1:ArrayvehicleRequirements" lowerBound="1" upperBound="1" form="Element"/>
+		<property xmlns:d3p1="http://veeroute.com/vehicle" name="homeLocation" type="d3p1:homeLocation"/>
+		<property name="allowSpeedCorrectionFactor" type="xs:boolean"/>
+		<property name="externalID" type="xs:string"/>
+	</objectType>
+	<objectType name="arrayOfVehicle">
+		<property xmlns:d3p1="http://veeroute.com/vehicle" name="vehicle" type="d3p1:vehicle" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="vehiclesDetails">
+		<property xmlns:d3p1="http://veeroute.com/vehicle" name="vehicles" type="d3p1:arrayOfVehicle"/>
+	</objectType>
+	<objectType name="apiRequest">
+		<property name="sessionID" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/vehicle" name="vehiclesDetails" type="d3p1:vehiclesDetails"/>
+	</objectType>
+	<objectType name="ArrayvehicleRequirements">
+		<property xmlns:d3p1="http://veeroute.com/vehicle" name="vehicleRequirement" type="d3p1:vehicleRequirement" lowerBound="0" upperBound="-1" form="Element"/>
+	</objectType>
+	<objectType name="vehicleRequirement">
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property name="abbreviation" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="homeLocation">
+		<property name="address" type="xs:string" form="Attribute"/>
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property name="latitude" type="xs:decimal" form="Attribute"/>
+		<property name="longitude" type="xs:decimal" form="Attribute"/>
+	</objectType>
+</package>

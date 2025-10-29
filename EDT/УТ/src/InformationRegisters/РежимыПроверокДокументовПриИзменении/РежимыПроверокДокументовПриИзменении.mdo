@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="24ad64fd-2f3e-4163-8700-c4e3ac4c580b">
+  <producedTypes>
+    <selectionType typeId="904fcf93-9f9a-4d2b-b9a9-0e8001d26b91" valueTypeId="1673888c-3f6b-43b5-a0bd-e57d906a3c75"/>
+    <listType typeId="f7749e17-b87e-47d5-a133-ae5d5c00df8b" valueTypeId="7dfa516c-44b0-4b2b-bde4-f926d0a4edfa"/>
+    <managerType typeId="87206f6b-cad1-4bfe-a0eb-fc54c7a3c969" valueTypeId="4f438ffc-0c87-4a98-aad1-0630c0ab08ed"/>
+    <recordSetType typeId="db471a5a-1344-4542-b818-f4fa56d9cc31" valueTypeId="28874bb3-0dbd-4fef-906c-c9be55a989f7"/>
+    <recordKeyType typeId="7c8e84eb-354a-46e2-baef-4730119fb75e" valueTypeId="28a7d701-1e2c-4ce7-89a9-761a75040cef"/>
+    <recordType typeId="a5fa01f0-46b1-489e-81ec-05c0ef5845cb" valueTypeId="59247bf7-3d43-4098-ae40-68e00a721e0e"/>
+    <recordManagerType typeId="5bd43983-a462-4687-990c-16db5aaf4fa8" valueTypeId="fae6eb88-13db-4794-a986-29cd3c019f67"/>
+  </producedTypes>
+  <name>РежимыПроверокДокументовПриИзменении</name>
+  <synonym>
+    <key>ru</key>
+    <value>Режимы проверок документов при изменении</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="fe5ca1c0-d038-4ebe-acd2-6f5917835720">
+    <name>ОтключитьПроверку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отключить проверку</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="4dcd80ee-dd15-48cc-a536-61a4deb465da">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="66f96c4f-53e3-4c35-8964-d91e2fd4a6e3">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0f1c6739-ae2c-430e-bd53-88303601ad6c">
+    <name>ОбластьПроверкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Область проверки данных</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ОбластиПроверокИзмененияДанных</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

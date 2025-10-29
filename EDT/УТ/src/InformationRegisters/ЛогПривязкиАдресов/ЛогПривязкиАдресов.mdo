@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e8f673a-053a-49b7-8624-e437cb77e0c8">
+  <producedTypes>
+    <selectionType typeId="d6739c86-f6a5-4ab3-a4e2-7b8c92219acc" valueTypeId="8925aba9-a98d-440c-95f6-ef8185371041"/>
+    <listType typeId="ff61d9ea-fdd3-4429-9c8b-fccf699e9b1c" valueTypeId="70dbe314-7b73-484e-95ab-e0e154c0e97a"/>
+    <managerType typeId="dc0a1433-fa46-40cd-879b-f67e97d1eb9d" valueTypeId="777affd2-e4cf-4e04-bdbb-212d67ead57e"/>
+    <recordSetType typeId="9f2f7268-bee3-418b-8e44-b22f91b84e64" valueTypeId="21c24024-1b93-4b9f-9e96-f56e265edb01"/>
+    <recordKeyType typeId="3d442215-70d8-4b64-a7b0-19901864e875" valueTypeId="67687aaf-5bd6-4ebc-bc95-ae4babb7a4d4"/>
+    <recordType typeId="3fe0b53c-9e9d-40aa-a5ee-29ff3dc6a9a9" valueTypeId="f58b20d4-f487-4453-9ecb-d6e7c57f101a"/>
+    <recordManagerType typeId="e3b5df41-8da5-4710-87df-4fcb7f2de4ca" valueTypeId="5f4b3258-8c8a-4f5c-b68c-f2a63327149f"/>
+  </producedTypes>
+  <name>ЛогПривязкиАдресов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лог привязки адресов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="eebfe4d0-f3be-46b8-aa12-a63b28902e36">
+    <name>Адрес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>500</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="b3bd93f8-d82a-4aad-9882-cc1fd9895eec">
+    <name>РучнаяПривязка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ручная привязка</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="5d80f589-0f7b-41ff-a968-0ca49db50555">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="18bc206c-6d6b-4a42-927c-1aba6210a3b7">
+    <name>ТочкаДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТочкиДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="Text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></meta></head><body>
+<h1>Specifying technological log settings in the configuration file (logcfg.xml)</h1>
+<dl><dt>The data processor is intended for editing the technological log configuration file <strong>(logcfg.xml</strong>).</dt></dl><p class="Important">The data processor does not implement all of the features provided by the log configuration file format but it is sufficient for the majority of scenarios.</p>
+<p>Once the data processor window is opened, the data processor attempts to load the technological log configuration file. It searches for the file in the following directories:</p>
+<ul><li><strong>bin\conf </strong>directory of the current 1C:Enterprise 8 version. If the file is found, the data processor loads it and does not perform further search. 
+</li><li>If the file is not found and the <strong>bin\conf </strong>directory contains <strong>conf.cfg</strong>, the data processor attempts to find the file in the directory specified in <strong>conf.cfg. </strong>If<strong> </strong>the<strong> </strong>file is found, the data processor loads it.</li></ul><p>You can use the data processor for specifying technological log parameters, as well as parameters for generating dumps and monitoring memory leaks.</p>
+<p>On the <span class="string"><strong>Technological log settings </strong>tab you can set technological </span>log creation parameters.</p>
+<p>On the <span class="string"><strong>Dump settings, memory leak and query plan monitoring</strong> tab you can specify parameters for the following </span>events:</p>
+<ul><li>Creating memory dumps 
+</li><li>Recording server memory leaks 
+</li><li>Recording configuration memory leaks</li></ul><p>On the <strong>Default </strong><span class="string"><strong>technological log and system events </strong></span>tab you can specify default technological log parameters.</p>
+<p>You can also create configuration file templates.</p>
+<p>To create a configuration file template, specify the configuration file parameters, click <strong>More</strong>, and then click <strong>Save as template. </strong>The configuration file <strong></strong>will be saved to the common configuration files directory as <strong>config*.lct </strong>(where <strong>*</strong> is<strong> </strong>the sequential number of the template file).</p>
+<h2>Using the technological log parameter editor</h2>
+<p>This scenario describes how to specify technological log parameters.</p>
+<h3>Specifying technological log editor parameters </h3>
+<p>Start from the <strong>Settings</strong> parameter group. These parameters specify whether the technological log is generated, its location, retention period, and other details.</p>
+<p>If you want the technological log to be generated, select the <strong>Generate</strong><span class="string"><strong> technological log </strong>check box. </span></p>
+<p><span class="string"><strong>Technological log location</strong> and </span><span class="string"><strong><span class="string"><strong>History retention period </strong></span>(in hours) </strong>defines </span>where and how long the technological log will be stored.</p>
+<p>The right part of the settings group contains auxiliary controls, which helps you to set up the technological log generation. The option button group (<span><strong>All properties of the selected events</strong>,<strong> </strong><span><strong>Selected properties only</strong>, and <strong>All properties</strong></span>) defines</span> which events are displayed in the editor window:<strong> </strong></p>
+<ul><li>
+<div><span class="string"><strong>All properties of the selected events.</strong> O</span>nly properties available for events selected in the first column are displayed. You can edit the content of the displayed properties by selecting and clearing the check boxes. Properties of columns that are not selected are not displayed. This mode is dynamic.</div>
+</li><li>
+<div>
+<div><span class="string"><strong>Selected properties only. </strong>O</span>nly properties that include any of the selected technological log events are displayed. This mode is not dynamic.</div></div>
+</li><li>
+<div>
+<div><strong>All properties.</strong> All properties of all technological log events are displayed. This mode is not dynamic.</div></div></li></ul><p>If you want only selected events to be displayed, click <strong><span class="string">Selected events onl</span>y</strong>.</p>
+<p>You can specify how events and properties are displayed using the <span class="string"><strong>Display details </strong></span>and <span class="string"><strong>Display names </strong></span>buttons.</p>
+<dl><dt>
+<div>In the bottom, you can view the details of the current event (the <strong>Current event </strong>group) and current property (the <strong>Current property </strong>group). The event or the property ID is displayed in brackets at the end of its details. For example, for <strong>SQL, Microsoft SQL Server</strong> event the group header is <strong>Current event </strong>(<strong>dbmssql</strong>). You can collapse the <strong>Settings </strong>group.</div></dt></dl><h3>General editing rules</h3>
+<p>The parameter editor is a table where rows contain events that can be registered in the technological log and column contain event properties are in the columns.</p>
+<p>Cells that have borders are clickable. Click a cell to select or clear a check mark</p>
+<p>If you select a check box in any row, the first check box in the row (which specifies whether the event is included in the technological log) is also selected. Clearing a check box does not clear the first check box in the row.</p>
+<p>You can select a property for all events that can have this property by running the <span class="string"><strong>Enable logging for all events </strong>context menu command. To clear </span>all marks in a column run the <span class="string"><strong>Disable logging for all events </strong>context menu comma</span>nd.</p>
+<p>To set a condition for an event, use the <span class="string"><strong>Event conditions </strong>context menu command. You </span>can run the <span class="string"><strong>Event conditions </strong>command by right-clicking any </span>event column. If conditions are specified, the mark is displayed in bold (<strong>V</strong>). To remove event conditions, remove them from the list in the condition editor window or run the <strong></strong><span class="string"><strong>Clear event conditions </strong>context menu command. Once </span>all of the conditions are deleted, the mark is displayed in a normal font (V).</p>
+<p>To set a condition for a property, use the <span class="string"><strong>Property conditions </strong>context menu command by right-clicking an editable column (with </span>a border). If conditions are specified, the mark is displayed in bold (<strong>V</strong>). To remove property conditions, remove them from the list of conditions in the condition editor window or run the <span class="string"><strong>Clear property conditions </strong>context menu command. </span>Once all conditions are deleted, the mark is displayed in a normal font (V).</p>
+<p>To revert to the default event and property settings, run the <span class="string"><strong>Clear technological log parameters </strong></span>context menu command. The default settings are "register all properties of all events without conditions". All other settings (technological log location and retention period) retain their configured values.</p>
+<h3>Using templates</h3>
+<p>The technological log configuration file editor contains several templates (prefilled configuration files) that help you to specify configuration file settings. To use a template, click <strong>Load template </strong>and<strong> </strong>then select a template from the list.</p>
+<p>You can also create custom configuration file templates. To create a custom template, specify the parameters on the <span class="string"><strong>Technological log settings </strong>and<strong> </strong><span class="string"><strong>Dump settings, memory leak, and query plan monitoring </strong>tab<strong>, </strong>click<strong> More</strong>, and then click<strong> Save as template</strong>. The template is saved to the system configuration file directory. </span></span></p>
+<p>The saved templates are available in the template selection window, which is opened by clicking the <strong>Load template </strong>button.</p>
+<dl><dt>
+<h3>Describing standard scenarios in the technological log parameter editor</h3></dt></dl><p>For logging all of the events and all event properties, set a check mark at the crossing of <strong>All events </strong>and <strong>All properties. </strong>The following text will be included in <strong>logcfg.xml</strong>:</p><pre class="SyntaxDescription">&lt;event&gt;
+ &lt;ne property="name" value=""/&gt;
+&lt;/event&gt;
+&lt;property name="all"/&gt;
+</pre>
+<p>If you want the file to contain <strong>&lt;property name="all"/&gt;</strong>, set the <strong>All properties </strong>property for the <strong>All events </strong>event excluding the event itself.</p>
+<p>For logging all events of a property, select the cell in the first column, before the selected property. For example, if you select the cell before the <strong>SQL, Microsoft SQL Server</strong> property, <strong>logcfg.xml</strong> will contain the following text:</p><pre class="SyntaxDescription">&lt;event&gt;
+ &lt;eq property="name" value="dbmssql"/&gt;
+&lt;/event&gt;
+</pre>
+<p dir="ltr">For logging all properties of the selected events, select the <strong>All properties </strong>property of the event (once you select <strong>All properties</strong>, the<strong> </strong>event is selected automatically and its available properties are highlighted). For example, if you select the <strong>All properties </strong>column of <strong>SQL, the Microsoft SQL Server</strong>, <strong>logcfg.xml</strong> will<strong> </strong>contain<strong> </strong>the following <strong></strong>text:</p><pre class="SyntaxDescription" dir="ltr">&lt;event&gt;
+ &lt;eq property="name" value="dbmssql"/&gt;
+&lt;/event&gt;
+&lt;property name="all"&gt;
+ &lt;event&gt;
+  &lt;eq property="name" value="dbmssql"/&gt;
+ &lt;/event&gt;
+&lt;/property&gt;
+</pre>
+<p>For logging an event only when the condition is true, right-click any of the event cells and then click <strong>Event conditions</strong>. In the window<strong> </strong>that is opened, specify the conditions (only properties available for the current event are listed in this window). For example, if the condition is "the <strong>dbmssql</strong> event is<strong> </strong>only logged if the <strong>duration</strong> value<strong> </strong>is <strong></strong>greater than <strong>100 000", </strong>the <strong>logcfg.xml</strong> will contain the following text: <strong></strong></p><pre class="SyntaxDescription" dir="ltr">&lt;event&gt;
+ &lt;eq property="name" value="dbmssql"/&gt;
+ &lt;gt property="duration" value="100000"/&gt;
+&lt;/event&gt;
+</pre>
+<p dir="ltr">For logging a property for a specific event only when a condition is true, right-click the property cell then click <strong>Property conditions </strong>(provided that the property is available for the selected event). For example, if the condition is "the <strong>sql </strong>property of the <strong>dbmssql </strong>event is logged only if the <strong>duration </strong>property of the <strong>dbmssql </strong>event is greater than <strong>150 000" </strong>the <strong>logcfg.xml </strong>will contain the following text:</p><pre class="SyntaxDescription">&lt;property name="sql"&gt;
+ &lt;event&gt;
+  &lt;eq property="name" value="dbmssql"/&gt;
+  &lt;gt property="duration" value="150000"/&gt;
+ &lt;/event&gt;
+&lt;/property&gt;</pre>
+<p class="Usual">For logging a property for all events, right-click the property cell and then click <strong>Enable logging for all events</strong>.<strong> </strong>The<strong> logcfg.xml</strong> will contain a text similar to the following example:<strong></strong></p><pre class="SyntaxDescription">&lt;property name="dbpid"&gt;
+ &lt;event&gt;
+  &lt;ne property="name" value=""/&gt;
+ &lt;/event&gt;
+ &lt;event&gt;
+  &lt;eq property="name" value="db2"/&gt;
+ &lt;/event&gt;
+ &lt;event&gt;
+  &lt;eq property="name" value="dbmssql"/&gt;
+ &lt;/event&gt;
+ &lt;event&gt;
+  &lt;eq property="name" value="dboracle"/&gt;
+ &lt;/event&gt;
+ &lt;event&gt;
+  &lt;eq property="name" value="dbpostgrs"/&gt;
+ &lt;/event&gt;
+&lt;/property&gt;</pre>
+<h2>Specifying settings for creating dumps, monitoring memory leaks, and saving query plans</h2>
+<h3>Specifying dump settings</h3>
+<p>If you want 1C:Enterprise to create a memory dump once an error causes an unexpected shutdown, select the <span class="string"><strong>Create a dump when the application is terminated abnormally</strong> check<strong> </strong>box.</span> In the majority of scenarios, you can keepthe default dump type. To set the default dump type right-click the dump editing field and then click <strong><span class="string">Recommended dump setti</span>ngs</strong>.</p>
+<h3>Specifying settings for logging query plans</h3>
+<p><span class="string">The <strong>Log query plans </strong></span><strong>(&lt;plansql&gt;) </strong>check box and the <strong>planSQLText </strong>property of SQL operator execution events of various DBMS describe the logging of query plans. Select <strong>Log query plans (&lt;plansql&gt;)</strong> and <strong>planSQLText </strong>property of your DBMS to log query plans. We recommend that you enable logging of the<strong> sql</strong> properties of SQL operator execution events when logging query plans. </p><pre class="SyntaxDescription"> &lt;plansql/&gt;
+ &lt;log location="C:\v82\logs history="48"&gt;
+  &lt;event&gt;
+   &lt;eq property="name" value="dbmssql"/&gt;
+  &lt;/event&gt;
+  &lt;property name="plansqltext"&gt;
+   &lt;event&gt;
+    &lt;eq property="name" value="dbmssql"/&gt;
+   &lt;/event&gt;
+  &lt;/property&gt;
+  &lt;property name="sql"&gt;
+   &lt;event&gt;
+    &lt;eq property="name" value="dbmssql"/&gt;
+   &lt;/event&gt;
+  &lt;/property&gt;
+ &lt;/log&gt;</pre>
+<p>In the given example, logging query texts in SQL language (the <strong>sql </strong>property) and query plans (the <strong>plansqltext </strong>property) of DBMS operator execution events of MSSQL (the <strong>dbmssql </strong>event) and the <strong>Log query plans <strong>(&lt;plansql&gt;) </strong> </strong>check box are selected.</p>
+<p class="Important">Retrieving query plans might significantly increase the query execution time.</p>
+<h3>Specifying settings for logging memory leaks</h3>
+<p class="Usual">The following settings describe the logging of memory leaks:</p>
+<ul><li>
+<div><span><strong>Monitor memory that server uses</strong>. Requires the<strong> Server memory leaks </strong>(<strong>mem</strong>) event or all events to be selected for logging.</span><strong></strong></div>
+</li><li>
+<div><span class="string"><strong><span><strong>Monitor</strong></span> memory leaks in the configuration script. </strong>Requires</span> you to specify which leaks will be logged. You can do it using the check boxes <span><strong>Control point of starting/ending script execution on the client </strong>and<strong> Control point of starting/ending script execution on the server</strong>)<strong>, </strong>and<strong> </strong>lists of modules to be monitored. This scenario also requires selecting the <strong>Memory leak </strong>(<strong>leaks</strong>) event or all events.</span><strong></strong><strong></strong><strong> </strong></div></li></ul><h2>Specifying default technological log settings</h2>
+<p>Default technological log is a type of technological log designed for logging events that occur during unexpected application behavior (what is considered unexpected is defined by the 1C:Enterprise platform). This log has a fixed event filter, which is generated by the platform and cannot be changed.</p>
+<p>It also has the following customizable parameters: <span class="string"><strong>System technological log location </strong></span>and <span class="string"><strong>History retention period (in hours). </strong>If</span> you want to revert to their default values, click <span class="string"><strong>Revert tp default technological</strong> <strong>l</strong></span><strong>og settings.</strong></p>
+<p>You can set the level of detail in the <strong>System events</strong> table.</p></body></html>

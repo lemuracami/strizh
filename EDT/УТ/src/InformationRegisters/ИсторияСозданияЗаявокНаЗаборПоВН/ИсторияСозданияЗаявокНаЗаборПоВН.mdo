@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c7425955-c0c0-478b-9ce4-fe8c95dae292">
+  <producedTypes>
+    <selectionType typeId="24b8d141-b438-46fe-a784-adf0e3a715cf" valueTypeId="78e5d412-73c6-4ce9-8371-8aeb4d2be17a"/>
+    <listType typeId="d8ee2747-8081-4c66-b5e7-fa7d7475d47d" valueTypeId="12b0e6cc-6d6b-4bb7-a0c7-0105562f4ca9"/>
+    <managerType typeId="9878cd5f-ccd6-4312-8b58-b9d3afd84e18" valueTypeId="38f2044b-27b0-4325-8e1f-20bc2c403d52"/>
+    <recordSetType typeId="0cfcb99a-4516-4a68-ab32-1af5c821733f" valueTypeId="cbe6a871-d03e-43fd-bd93-7e0a79ac2a5b"/>
+    <recordKeyType typeId="0ff8c043-379a-4f5a-8333-e696596d6855" valueTypeId="1af37c8e-7350-44d8-913d-dd9bccf8cb63"/>
+    <recordType typeId="4a117d41-dbaf-4a9b-86cb-7f5ac24ed32d" valueTypeId="2a179e36-db9e-43ba-bb37-c9da82708647"/>
+    <recordManagerType typeId="77f967a4-6af1-41df-931c-f8fe87b20d68" valueTypeId="c334b7c6-fcae-4ddb-8600-80c822022f46"/>
+  </producedTypes>
+  <name>ИсторияСозданияЗаявокНаЗаборПоВН</name>
+  <synonym>
+    <key>ru</key>
+    <value>История создания заявок на забор по ВН</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ИсторияСозданияЗаявокНаЗаборПоВН.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ИсторияСозданияЗаявокНаЗаборПоВН.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="2f7042a2-1a64-4378-ad14-1fe1acc800e7">
+    <name>НомерСозданнойЗаявкиНаЗабор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер созданной заявки на забор</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="fa770755-eda0-461a-91eb-64cd3371c376">
+    <name>ЗаявкаСозданаУспешно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка создана успешно</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="03755dc6-76af-46fa-90a9-2d1d5d723717">
+    <name>ТекстОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="93c26b53-93b1-483e-a06d-e6a3d26d9d9d">
+    <name>ВозвратнаяНакладная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возвратная накладная</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="a80383e4-36a3-4347-aef6-093200a0bfe9">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9dba5536-2611-46ab-bd8f-0b442caf81a8">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

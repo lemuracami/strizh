@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рейс</dataPath>
+			<field>Рейс</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРасчета</dataPath>
+			<field>ДатаРасчета</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КмСвыше</dataPath>
+			<field>КмСвыше</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Км свыше</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗакрытиеРейса</dataPath>
+			<field>ЗакрытиеРейса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрытие рейса</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm:ss</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизЛицо</dataPath>
+			<field>ФизЛицо</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЧасовОтработано</dataPath>
+			<field>ЧасовОтработано</field>
+			<presentationExpression>ВЫБОР
+КОГДА ЧасовОтработано &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ЧасовОтработано)
+КОНЕЦ</presentationExpression>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПечатьМЛ</dataPath>
+			<field>ПечатьМЛ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать МЛ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm:ss</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновноеНачисление</dataPath>
+			<field>ОсновноеНачисление</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ПараметрыВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.ВидНачисления</dcscor:choiceParameter>
+							<dcscor:value xsi:type="dcscor:DesignTimeValue">Перечисление.зпВидыНачислений.ОсновноеНачисление</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЧасы</dataPath>
+			<field>СуммаЧасы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма часы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПодъем</dataPath>
+			<field>СуммаПодъем</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма подъем</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаФикс</dataPath>
+			<field>СуммаФикс</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма фикс</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПробег</dataPath>
+			<field>СуммаПробег</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма пробег</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаИтого</dataPath>
+			<field>СуммаИтого</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма итого</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Рейс.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_Рейсы
+ИЗ
+	Документ.Рейс КАК Рейс
+ГДЕ
+	Рейс.ДатаРейса МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+	И Рейс.ТерминалДоставки = &amp;Регион
+{ГДЕ
+	Рейс.Ссылка.* КАК Рейс,
+	Рейс.ДатаРейса КАК ДатаРасчета}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.Рейс КАК Рейс,
+	зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.ФизЛицо КАК ФизЛицо
+ПОМЕСТИТЬ ВТ_ФизЛицаРейсов
+ИЗ
+	РегистрСведений.зпИсходныеДанныеРасчетаЗППоРейсам.СрезПоследних(
+			,
+			Рейс В
+				(ВЫБРАТЬ
+					ВТ_Рейсы.Ссылка КАК Ссылка
+				ИЗ
+					ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.Рейс КАК Рейс,
+	ВложенныйЗапрос.ФизЛицо КАК ФизЛицо,
+	СУММА(ВложенныйЗапрос.КмСвыше) КАК КмСвыше,
+	СУММА(ВложенныйЗапрос.ЧасовОтработано) КАК ЧасовОтработано,
+	СУММА(ВложенныйЗапрос.СуммаЧасы) КАК СуммаЧасы,
+	МИНИМУМ(ВложенныйЗапрос.ПечатьМЛ) КАК ПечатьМЛ,
+	МАКСИМУМ(ВложенныйЗапрос.ЗакрытиеРейса) КАК ЗакрытиеРейса,
+	СУММА(ВложенныйЗапрос.СуммаПодъем) КАК СуммаПодъем,
+	СУММА(ВложенныйЗапрос.СуммаФикс) КАК СуммаФикс,
+	СУММА(ВложенныйЗапрос.СуммаПробег) КАК СуммаПробег,
+	СУММА(ВложенныйЗапрос.СуммаИтого) КАК СуммаИтого
+ПОМЕСТИТЬ ВТ_Расчет
+ИЗ
+	(ВЫБРАТЬ
+		зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Рейс КАК Рейс,
+		зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.ФизЛицо КАК ФизЛицо,
+		ВЫБОР
+			КОГДА зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Начисление = ЗНАЧЕНИЕ(Справочник.зпНачисления.ДоплатаЗаПробег)
+				ТОГДА зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.ТарифицируемыйКилометражПоРейсу
+			ИНАЧЕ 0
+		КОНЕЦ КАК КмСвыше,
+		0 КАК ЧасовОтработано,
+		0 КАК СуммаЧасы,
+		NULL КАК ПечатьМЛ,
+		NULL КАК ЗакрытиеРейса,
+		0 КАК СуммаПодъем,
+		зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Сумма КАК СуммаИтого,
+		ВЫБОР
+			КОГДА зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Начисление = ЗНАЧЕНИЕ(Справочник.зпНачисления.ДоплатаЗаЭкспедирование)
+				ТОГДА зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаФикс,
+		ВЫБОР
+			КОГДА зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Начисление В (ЗНАЧЕНИЕ(Справочник.зпНачисления.ДоплатаЗаПробег), ЗНАЧЕНИЕ(Справочник.зпНачисления.ДоплатаЗаПробегЗаМКАД))
+				ТОГДА зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаПробег
+	ИЗ
+		РегистрСведений.зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисления.СрезПоследних(
+				,
+				Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы)
+					И Начисление В (ЗНАЧЕНИЕ(Справочник.зпНачисления.ДоплатаЗаПробег), ЗНАЧЕНИЕ(Справочник.зпНачисления.ДоплатаЗаЭкспедирование), ЗНАЧЕНИЕ(Справочник.зпНачисления.ДоплатаЗаПробегЗаМКАД)) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.Рейс,
+		зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.ФизЛицо,
+		0,
+		ВЫБОР
+			КОГДА зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.Начисление = зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.ОсновноеНачисление
+				ТОГДА зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.ЧасовОтработаноФактически
+			ИНАЧЕ 0
+		КОНЕЦ,
+		зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.СуммаОплаты,
+		NULL,
+		NULL,
+		0,
+		зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.СуммаОплаты,
+		0,
+		0
+	ИЗ
+		РегистрСведений.зпИсходныеДанныеРасчетаЗПЧасы.СрезПоследних(
+				,
+				Рейс В
+					(ВЫБРАТЬ
+						ВТ_Рейсы.Ссылка КАК Ссылка
+					ИЗ
+						ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ВТ_ФизЛицаРейсов.Рейс,
+		ВТ_ФизЛицаРейсов.ФизЛицо,
+		0,
+		0,
+		0,
+		ВЫБОР
+			КОГДА КонтрольВремени.Событие = ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.РаспечаткаМаршрутногоЛиста)
+				ТОГДА КонтрольВремени.Период
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА КонтрольВремени.Событие = ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.ЗакрытиеРейсаЛогист)
+				ТОГДА КонтрольВремени.Период
+		КОНЕЦ,
+		0,
+		0,
+		0,
+		0
+	ИЗ
+		ВТ_ФизЛицаРейсов КАК ВТ_ФизЛицаРейсов
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.КонтрольВремени КАК КонтрольВремени
+			ПО ВТ_ФизЛицаРейсов.Рейс = КонтрольВремени.Рейс
+				И (КонтрольВремени.Событие В (ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.РаспечаткаМаршрутногоЛиста), ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.ЗакрытиеРейсаЛогист)))
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Рейс,
+		зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.ФизЛицо,
+		0,
+		0,
+		0,
+		NULL,
+		NULL,
+		зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Сумма,
+		зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Сумма,
+		0,
+		0
+	ИЗ
+		РегистрСведений.зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисления.СрезПоследних(
+				,
+				Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы)
+					И Начисление = ЗНАЧЕНИЕ(Справочник.зпНачисления.ОплатаПодъемаНаЭтажПриДоставкеЗаказа) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.Рейс,
+		зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.ФизЛицо,
+		0,
+		0,
+		0,
+		NULL,
+		NULL,
+		0,
+		зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.СуммаРасчетаЗП,
+		0,
+		0
+	ИЗ
+		РегистрСведений.зпИсходныеДанныеРасчетаЗППоЗаказам.СрезПоследних(
+				,
+				Рейс В
+					(ВЫБРАТЬ
+						ВТ_Рейсы.Ссылка КАК Ссылка
+					ИЗ
+						ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Рейс,
+	ВложенныйЗапрос.ФизЛицо
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТ_Расчет.ФизЛицо КАК ФизЛицо
+ПОМЕСТИТЬ ВТ_ФизЛица
+ИЗ
+	ВТ_Расчет КАК ВТ_Расчет
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РаботникиОрганизации.ФизЛицо КАК ФизЛицо,
+	МАКСИМУМ(РаботникиОрганизации.Период) КАК Период
+ПОМЕСТИТЬ ВТ_МаксПериодыПриема
+ИЗ
+	РегистрСведений.РаботникиОрганизации КАК РаботникиОрганизации
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ФизЛица КАК ВТ_ФизЛица
+		ПО (РаботникиОрганизации.Период &lt;= &amp;ОкончаниеПериода)
+			И РаботникиОрганизации.ФизЛицо = ВТ_ФизЛица.ФизЛицо
+			И (РаботникиОрганизации.Состояние = ЗНАЧЕНИЕ(Перечисление.СостояниеРаботникаОрганизации.ПринятНаРаботуВОрганизацию))
+
+СГРУППИРОВАТЬ ПО
+	РаботникиОрганизации.ФизЛицо
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РаботникиОрганизации.ФизЛицо КАК ФизЛицо,
+	РаботникиОрганизации.Организация КАК Организация,
+	РаботникиОрганизации.ОсновноеНачисление КАК ОсновноеНачисление
+ПОМЕСТИТЬ ВТ_Организации
+ИЗ
+	РегистрСведений.РаботникиОрганизации КАК РаботникиОрганизации
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_МаксПериодыПриема КАК ВТ_МаксПериодыПриема
+		ПО РаботникиОрганизации.Период = ВТ_МаксПериодыПриема.Период
+			И РаботникиОрганизации.ФизЛицо = ВТ_МаксПериодыПриема.ФизЛицо
+			И (РаботникиОрганизации.Состояние = ЗНАЧЕНИЕ(Перечисление.СостояниеРаботникаОрганизации.ПринятНаРаботуВОрганизацию))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Расчет.Рейс.ДатаРейса КАК ДатаРасчета,
+	ВТ_Расчет.Рейс КАК Рейс,
+	ВТ_Расчет.ФизЛицо КАК ФизЛицо,
+	ВТ_Расчет.КмСвыше КАК КмСвыше,
+	ВТ_Расчет.ЧасовОтработано КАК ЧасовОтработано,
+	ВТ_Расчет.СуммаЧасы КАК СуммаЧасы,
+	ВТ_Расчет.ПечатьМЛ КАК ПечатьМЛ,
+	ВТ_Расчет.ЗакрытиеРейса КАК ЗакрытиеРейса,
+	ВТ_Организации.ОсновноеНачисление КАК ОсновноеНачисление,
+	ВТ_Расчет.СуммаПодъем КАК СуммаПодъем,
+	ВТ_Расчет.СуммаФикс КАК СуммаФикс,
+	ВТ_Расчет.СуммаПробег КАК СуммаПробег,
+	ВТ_Расчет.СуммаИтого КАК СуммаИтого
+{ВЫБРАТЬ
+	ДатаРасчета КАК ДатаРасчета,
+	Рейс.*,
+	ФизЛицо.*,
+	КмСвыше,
+	ЧасовОтработано,
+	ПечатьМЛ,
+	ЗакрытиеРейса,
+	ОсновноеНачисление.*,
+	СуммаЧасы,
+	СуммаПодъем,
+	СуммаФикс,
+	СуммаПробег,
+	СуммаИтого}
+ИЗ
+	ВТ_Расчет КАК ВТ_Расчет
+		{ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Организации КАК ВТ_Организации
+		ПО ВТ_Расчет.ФизЛицо = ВТ_Организации.ФизЛицо}
+{ГДЕ
+	ВТ_Расчет.КмСвыше,
+	ВТ_Расчет.ЧасовОтработано,
+	ВТ_Расчет.ПечатьМЛ,
+	ВТ_Расчет.ЗакрытиеРейса,
+	ВТ_Организации.ОсновноеНачисление.*,
+	ВТ_Расчет.СуммаПодъем,
+	ВТ_Расчет.СуммаЧасы,
+	ВТ_Расчет.СуммаФикс,
+	ВТ_Расчет.СуммаПробег,
+	ВТ_Расчет.СуммаИтого}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>КмСвыше</dataPath>
+		<expression>Сумма(КмСвыше)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПечатьМЛ</dataPath>
+		<expression>Минимум(ПечатьМЛ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЧасовОтработано</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЧасовОтработано) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Сумма(ЧасовОтработано))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗакрытиеРейса</dataPath>
+		<expression>Максимум(ЗакрытиеРейса)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПечатьМЛ</dataPath>
+		<expression>0</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЗакрытиеРейса</dataPath>
+		<expression>0</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаЧасы</dataPath>
+		<expression>Сумма(СуммаЧасы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПодъем</dataPath>
+		<expression>Сумма(СуммаПодъем)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаФикс</dataPath>
+		<expression>Сумма(СуммаФикс)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПробег</dataPath>
+		<expression>Сумма(СуммаПробег)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаИтого</dataPath>
+		<expression>Сумма(СуммаИтого)</expression>
+	</totalField>
+	<parameter>
+		<name>Регион</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Регион</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РегиональныеТерминалы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ОкончаниеПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Окончание периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ФизЛицо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОсновноеНачисление</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Vertically</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КмСвыше</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасовОтработано</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Час отраб</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПечатьМЛ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗакрытиеРейса</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Закр рейс</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>С часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПодъем</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>С подъем</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаФикс</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>С фикс</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПробег</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>С пробег</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>С итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Vertically</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизЛицо</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>3479b489-698e-4497-83c7-aba659f10287</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОсновноеНачисление</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>628f6545-b061-43b7-8040-0d13f19c05b0</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Регион</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>8d8fe664-19a2-448a-8bb5-5676d62b3ff8</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>5d08e368-4077-4978-9468-68cc3404e007</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>1b44981f-73cc-4e63-89a5-8c50f7dc3a2e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ОкончаниеПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>1f7b0f7e-70aa-4e76-95af-40beabb332e3</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ФизЛицо</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="2" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ОсновноеНачисление</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="false" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>КмСвыше</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="2" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаРасчета</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ФизЛицо</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОсновноеНачисление</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

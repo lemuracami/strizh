@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="92a6a450-8a00-4a90-ad35-c365098f767f">
+  <producedTypes>
+    <selectionType typeId="2199cef9-966e-4d53-a23f-69c017d622c3" valueTypeId="07bc7b8a-f5a4-4efb-930c-d9c76d0f9978"/>
+    <listType typeId="a6c71d69-74ee-486c-bb75-42b3f69b6995" valueTypeId="939b9c04-2765-4032-be5e-38b3231b771d"/>
+    <managerType typeId="ea6656b0-d6af-4d9c-a416-41cc238194b4" valueTypeId="af24fd91-c77e-4aee-b657-134d82470941"/>
+    <recordSetType typeId="03dc9fde-41a4-4fd6-a1c8-e95d7640bed6" valueTypeId="d5d1d629-6c59-4539-b027-d18ccbd86fa5"/>
+    <recordKeyType typeId="1605be1b-cff2-4d35-9b4c-47b65ea3fc6a" valueTypeId="f3dea2be-e83c-4c29-ae64-03bb3d265499"/>
+    <recordType typeId="cbfcacae-1317-4689-a74d-193678d7608f" valueTypeId="684bf380-da2f-4648-8b66-bb85d6472d4a"/>
+    <recordManagerType typeId="2226fee2-4dc9-4970-aaed-c4d4815b8dd8" valueTypeId="fb58a4f4-b45c-4635-90c6-d574d1e129f7"/>
+  </producedTypes>
+  <name>ИндивидуальнаяМаршрутизацияПоРейсам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Индивидуальная маршрутизация по рейсам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="e62496a6-02c8-4f49-8fbe-ea4bbbc1b215">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="a0e659ca-fc21-4054-af6c-3838df990960">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c929c7c3-0a6d-4ad1-879a-1becf54e7abc">
+    <name>ОтвязкаПриСменеПолигона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отвязка при смене полигона</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="511a2f13-3b3c-4278-98da-e1ec310b4d58">
+    <name>ДатаПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата планирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0e453107-1d9c-44a3-a354-9e31298882fc">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="36869c71-06da-49ca-8bc3-7cc08026167d">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

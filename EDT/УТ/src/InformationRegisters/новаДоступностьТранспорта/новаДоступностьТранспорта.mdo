@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="15236d59-52cc-4687-a9f9-feb5cfda6593">
+  <producedTypes>
+    <selectionType typeId="f8582964-c3cf-497d-9a59-cad89dfb05cd" valueTypeId="5712db8a-b9e5-439c-b6c7-ef842889076b"/>
+    <listType typeId="02b16854-a312-4011-ba58-ea0d38df1dde" valueTypeId="5b7cb8a1-1eb9-4292-ac0d-cbd7f1a1fe63"/>
+    <managerType typeId="fd011bad-67a5-40de-a1f1-872c7ff940b4" valueTypeId="917aa40b-5d45-4244-a689-faeec4c19adc"/>
+    <recordSetType typeId="45e38e17-4f5a-4e46-a04d-634b10393eff" valueTypeId="af47102f-3a7c-4290-8787-7f6f5b87dd5c"/>
+    <recordKeyType typeId="201f4fed-a319-4962-a0af-577c37085512" valueTypeId="86fb89e6-1f78-4c62-9cdc-b07a087ebd4d"/>
+    <recordType typeId="60b3537e-dd38-4e54-8c0f-0ab1b390a0ba" valueTypeId="2cbf40ba-7fe4-4125-b0cc-31ccc0080dab"/>
+    <recordManagerType typeId="cc4d3b64-2649-4ff4-9980-c42200339532" valueTypeId="6d307848-6394-4fa5-b972-a784a7bb2f93"/>
+  </producedTypes>
+  <name>новаДоступностьТранспорта</name>
+  <synonym>
+    <key>ru</key>
+    <value>Доступность транспорта</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="d604ff20-0f6c-44f4-a173-897ddf94fff6">
+    <name>КодПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код периода</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>32</length>
+        <fixed>true</fixed>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0b33721c-34a3-4fd9-b9d4-ce50680fdb09">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.новаПланированиеРаботыТранспорта</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c3b4c5e8-59fc-4e0b-84e0-ab8c5c349452">
+    <name>Доступен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="8a68ecbc-567e-429a-86d1-6a09dc85d1cc">
+    <name>Гараж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Гараж</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаГаражи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="04a3def6-96fa-4645-b959-9ab275bf0502">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8e01bc8f-3e02-4eea-bd03-3405e918be06">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="be2764de-eb7d-4865-a1a8-d82e8e278a4b">
+    <name>КонецПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="cf70e411-826c-4f4b-8557-6e9a4fb02d47">
+    <name>ПланированиеРаботыТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планирование работы транспорта</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

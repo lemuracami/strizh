@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6eef2e5c-7ad9-46c8-a288-3446c0f18588">
+  <producedTypes>
+    <objectType typeId="00712ac0-796f-4779-aece-168067d604d7" valueTypeId="5f0a4a64-ddac-4c35-af4e-548d6d9d3fa3"/>
+    <refType typeId="7b058e99-38c3-40cc-be73-be3e16d61974" valueTypeId="b0e1888f-18fc-49a4-b056-8a8225d95cda"/>
+    <selectionType typeId="bf3ae287-8ce7-4952-b375-5f73e7cbd7d5" valueTypeId="f86a1864-105d-4606-976c-4584d31987e4"/>
+    <listType typeId="874ea422-33d1-4e86-a4ec-2bec195838e8" valueTypeId="d35dbe21-122f-44a7-892a-e30a58f98875"/>
+    <managerType typeId="ca08db02-7b54-4295-a171-1c9ca6a8a9c6" valueTypeId="4bc22f46-d848-4f85-b6b2-541936daca88"/>
+  </producedTypes>
+  <name>ВводДанныхГСМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ввод данных ГСМ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ВводДанныхГСМ.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ВводДанныхГСМ.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ВводДанныхГСМ.Form.ФормаСписка</defaultListForm>
+  <registerRecords>AccumulationRegister.РасходГСМ</registerRecords>
+  <registerRecords>InformationRegister.СтоимостьГСМ</registerRecords>
+  <registerRecords>InformationRegister.ВводДанныхОРасходахКомпании</registerRecords>
+  <attributes uuid="2f6dd007-ee61-42f2-b73a-b4fb2c8af355">
+    <name>ДатаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отчета</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="69437a65-e233-4c42-b05e-0c23349787ae">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="f457f4c2-5a33-4ecb-8f5b-25d67d325c15">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="cfb02bd5-39f9-4810-ab59-54052ea05346">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="0d271f5c-c661-45b9-9174-3b04489011d3">
+    <producedTypes>
+      <objectType typeId="7a78825a-957c-4675-8846-931c9fe8a36a" valueTypeId="11707e64-b571-415d-9825-71e8b6a482e2"/>
+      <rowType typeId="01e747d7-4e99-446c-b34a-c61cac4ea328" valueTypeId="827d5985-dc83-4915-b2fb-cc4e53332bd3"/>
+    </producedTypes>
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <attributes uuid="40db54e9-221e-4064-82e7-5ae7c6e2dce4">
+      <name>Рейс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рейс</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.Рейс</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6bd2ef0b-9681-460f-8595-86acac1a84be">
+      <name>Транспорт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаТранспорт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0508dec8-76e2-4d73-bee8-28df7af45527">
+      <name>Водитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Водитель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ce2672a1-7da4-4dc0-a1d6-728b69b6c442">
+      <name>РасходГСМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расход ГСМ</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="607f8da3-c997-4949-9332-f8bf350ebf79">
+      <name>ПоказанияОдометраНаНачалоДня</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показания одометра на начало дня</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9db3ed33-3f33-43e5-9416-ee5ae2826f6f">
+      <name>ПоказанияОдометраНаКонецДня</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показания одометра на конец дня</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="63c08125-e617-4d50-b37c-372a9e894309">
+    <producedTypes>
+      <objectType typeId="0e220a88-bf0d-45f2-b7de-cbd27bf4b628" valueTypeId="8088ca9f-832a-4531-87b5-101cdd028974"/>
+      <rowType typeId="924604fb-76e5-46ed-aca7-35c5142be481" valueTypeId="71994918-876d-45c7-9021-172f800e6932"/>
+    </producedTypes>
+    <name>СтоимостьГСМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость ГСМ</value>
+    </synonym>
+    <attributes uuid="fc4cc239-1f2c-4e56-a41b-3cc4bb010531">
+      <name>ТипГСМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип ГСМ</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ТипыГСМ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a386009c-f9f5-4d86-b0b2-cbe4e9d259e2">
+      <name>Стоимость</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

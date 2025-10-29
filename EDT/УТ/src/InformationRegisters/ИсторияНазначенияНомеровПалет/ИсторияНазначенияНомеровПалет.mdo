@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="79df25eb-14e1-406d-919e-1a285c94e17c">
+  <producedTypes>
+    <selectionType typeId="0756e4cc-4f27-47f8-8027-11d55dbd3920" valueTypeId="9e8e6886-6e9c-4d2c-ae4e-5b4d4c94a413"/>
+    <listType typeId="c096cda2-d0d0-4e25-8445-903713fa7322" valueTypeId="4627338c-8918-4b22-8fc2-87be609537ef"/>
+    <managerType typeId="5aae5710-8404-4a71-9905-0ad12e61f592" valueTypeId="195597d3-cd53-47b4-936c-f8d60a24fa95"/>
+    <recordSetType typeId="110790f2-e889-4f0a-a4d4-dcd76e40e4ae" valueTypeId="1143fb80-8299-4553-995a-6cedd3949a1d"/>
+    <recordKeyType typeId="da661297-5c2f-47a1-a9da-81aac97dc9e2" valueTypeId="4c3c0fca-5f59-40d9-b676-903f0939df29"/>
+    <recordType typeId="e17af2c4-7315-469c-b7ea-88fe29f8d694" valueTypeId="24bca5bf-5a62-4f65-a3b0-8ea97d0ba717"/>
+    <recordManagerType typeId="88beed27-9d9a-44e4-bd9d-9283751b96e4" valueTypeId="9c87aec2-59f6-4e60-a03f-6d5c36dbb038"/>
+  </producedTypes>
+  <name>ИсторияНазначенияНомеровПалет</name>
+  <synonym>
+    <key>ru</key>
+    <value>История назначения номеров палет</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="7cf511e2-cb27-44c9-8ee3-4f44564abb29">
+    <name>НомерПалеты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер палеты</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="f337ff88-6c8e-4614-b938-a16c7f2b2d0c">
+    <name>НетДанныхПредыдущейПривязки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нет данных предыдущей привязки</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="ff88d717-b4eb-4463-aed3-9e3e1f1bc0ba">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="bc116d01-1763-4418-b786-634e55d0c43f">
+    <name>ЗагрузкаРейсов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка рейсов</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ФормированиеРейсов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="93497a37-57e6-4637-a022-91757e0ae1a2">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="38c5ef4a-0179-4687-969f-98e550893a71">
+    <name>РежимНазначенияНомеровПалет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим назначения номеров палет</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыНазначенияНомеровПалет</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

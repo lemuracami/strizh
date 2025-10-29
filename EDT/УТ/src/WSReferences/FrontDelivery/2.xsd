@@ -1,0 +1,20 @@
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization">
+	<xs:complexType name="Authentication">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="Login"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Password"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Authentication"
+			nillable="true"
+			type="tns:Authentication"/>
+</xs:schema>

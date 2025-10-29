@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="eb3014eb-fdfe-4abd-8f51-5b5c9f26bb49">
+  <producedTypes>
+    <objectType typeId="ebd24be7-1a21-4b22-a8e8-87298d47b82c" valueTypeId="3f11b6c4-49c8-4a62-bb53-0f9148af3c95"/>
+    <refType typeId="3f366cd6-ab42-43e9-bfdb-104ec1396569" valueTypeId="56dda437-bb33-4f7b-a703-35e27aa3b0e5"/>
+    <selectionType typeId="7b2806a8-5b9c-4c84-bafb-3d19386051e0" valueTypeId="4ab0b865-13c6-4989-a824-fd54d89bacbf"/>
+    <listType typeId="c542f66b-a038-4a94-9000-ebf6258eac9a" valueTypeId="2871dd2f-7318-4ae2-b29b-2d627583ea71"/>
+    <managerType typeId="3922f521-5491-48ed-82d6-1a0a9a087d79" valueTypeId="213c6fab-f633-47bd-87a3-13a917d36987"/>
+  </producedTypes>
+  <name>ДоставкаПВЗ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Доставка ПВЗ</value>
+  </synonym>
+  <inputByString>Document.ДоставкаПВЗ.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <attributes uuid="ca8103c4-2b58-4182-b8ca-f0dca24e0349">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="76327f73-5133-48c1-97b3-5ae878f90943">
+    <name>КонсолидированныйЗаказПВЗ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Консолидированный заказ ПВЗ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="04151064-dc18-402e-b7ba-bfe54b7b1353">
+    <name>ПунктПВЗ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пункт ПВЗ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПунктыПВЗ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="25a3d4ec-5447-4605-a132-1e9237a58bcf">
+    <name>НомерПалеты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер палеты</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="b9e23de2-3765-45d3-a2b3-9485ab7a0a83">
+    <producedTypes>
+      <objectType typeId="cea6b5b3-fa5a-4762-9862-fe1e5bf14b61" valueTypeId="67b55318-23ee-489f-b52f-99554c9a10b0"/>
+      <rowType typeId="539c4eaa-227c-44ef-8161-41954d6a9d3a" valueTypeId="7e871794-18ee-4e56-ae20-43281439f956"/>
+    </producedTypes>
+    <name>ЗаказыПВЗ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы ПВЗ</value>
+    </synonym>
+    <attributes uuid="30a728ad-b904-402d-ac68-5c92df0f8511">
+      <name>ЗаказПВЗ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ ПВЗ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9618204f-1fc3-4786-a4ae-aaedf4b98347">
+      <name>УдаленИзРейса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Удален из рейса</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

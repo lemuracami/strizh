@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="78b2b822-3c1b-4e9d-8d54-bbf56f08c3ef">
+  <producedTypes>
+    <selectionType typeId="ee3b8e48-b5db-42b2-9df9-5ba2e6075895" valueTypeId="2723f8b3-29a5-41ed-98b7-fbf4df2a8841"/>
+    <listType typeId="02f9a67f-9dcf-4c8b-bf12-8a4864f9bbb0" valueTypeId="0ab1d627-2f7d-4422-9887-eca60f6178a5"/>
+    <managerType typeId="39ff0eab-96e8-4cdf-8d4c-c21028139049" valueTypeId="bcd406dc-4069-4f4b-93d7-ed33426a70cc"/>
+    <recordSetType typeId="33b6a68c-1717-43d2-80da-0850f0bdfd38" valueTypeId="9006eb0d-f65d-4923-93f1-a6f7b6229d01"/>
+    <recordKeyType typeId="94c3ae39-0189-4c11-8a58-1b037c91b8ea" valueTypeId="3744a409-a5fd-4f22-bf42-69a19b51cda1"/>
+    <recordType typeId="f96c025d-feca-4e59-b6b8-15fb46740876" valueTypeId="9d95d34d-8a1f-42b6-8253-8b83339a8c21"/>
+    <recordManagerType typeId="e7708312-900c-41e6-ae35-3f130f66d009" valueTypeId="86ae468a-93fd-47a4-8afb-5174ad80b39b"/>
+  </producedTypes>
+  <name>КалендариДоставокПоЗонамДоставки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Календари доставок по зонам доставки</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.КалендариДоставокПоЗонамДоставки.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.КалендариДоставокПоЗонамДоставки.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="304609e4-f267-44a8-91ee-9feaab372166">
+    <name>КалендарьДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Календарь доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КалендариДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="f6a0f947-e76a-4d31-b430-4a1faea33116">
+    <name>idАдминки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Id админки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="7b4ff4c1-1d66-474d-a319-24073028cbe6">
+    <name>ТерминалОтгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал отгрузки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="50b519c7-4929-4ab5-956c-dd682548d264">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0891253e-6ddf-4775-b429-3f8090bb2df8">
+    <name>ЗонаДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зона доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыРайонов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="4f61ecb4-310b-4dc4-bbd3-977551449e56">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d9078865-a962-43f7-9ec3-555aa703a3fa">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="98eba594-d011-42fa-8734-3cec4687ac13">
+  <producedTypes>
+    <selectionType typeId="4db20311-df09-4271-b9ae-59531f8d484a" valueTypeId="2cae38a6-8608-46a0-8d3c-2d08e84a10a2"/>
+    <listType typeId="1bbf1295-0c0b-47ae-ba19-2ca556af56be" valueTypeId="572f01f2-715b-40e8-8354-5affbddcc4b6"/>
+    <managerType typeId="7cce1c55-8bee-48e7-90f6-fd9468213a7e" valueTypeId="6a0dfb7b-2bd5-4aa5-bcc5-adf0e1f2df84"/>
+    <recordSetType typeId="bde6b002-3b40-4b46-b012-edad330d7e74" valueTypeId="852af5cb-7761-4e51-b330-5e94a2aa1b32"/>
+    <recordKeyType typeId="e2b51f31-40f7-4ff9-936a-85cf723c557b" valueTypeId="37393355-5ac2-417b-82f9-c1c40ae399ab"/>
+    <recordType typeId="ea3acfb1-90a6-4ded-a70c-7e11236e23b9" valueTypeId="0df019f5-e422-4ce8-8ddd-81f531ff2083"/>
+    <recordManagerType typeId="ab3584a3-dc4c-40d0-ac78-622aae52246e" valueTypeId="744303ea-22a3-463c-a864-7ada48b98099"/>
+  </producedTypes>
+  <name>зпМинимальныеСтавки</name>
+  <synonym>
+    <key>ru</key>
+    <value>(зп) Минимальные ставки</value>
+  </synonym>
+  <dataHistory>Use</dataHistory>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.зпМинимальныеСтавки.Form.ФормаЗаписи</defaultRecordForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="384dd01d-99e1-41e3-ae56-da3acc09a200">
+    <name>МинимальнаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Минимальная ставка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="6c25d7a1-5b11-425d-a075-27eff6c392d2">
+    <name>СхемаРасчетаЗП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема расчета ЗП</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпСхемыРасчетаЗП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="82d60f02-127d-4712-a2e8-8c7d464bd3fd">
+    <name>ТарифРасчетаЗП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф расчета ЗП</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпТарифыРасчетаЗП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="80853092-8f7b-4fff-8320-a761358ce36a">
+    <name>ВидМинимальнойСтавки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид минимальной ставки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.зпВидыМинимальныхСтавок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6de77040-7fb1-4993-a784-4ad01def3b90">
+    <name>ОсновноеНачисление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное начисление</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпНачисления</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="48015ff7-de25-4416-9f99-673ab6b36ec4">
+    <name>Должность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cd714657-a204-4048-88f0-b69c28b1df52">
+    <name>Роль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1101e86d-561c-484b-b696-493046bdab2f">
+    <name>СоставЭкипажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состав экипажа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.зпСоставЭкипажа</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c968231a-a3ac-4948-bc38-059004c6de2f">
+    <name>ВидДня</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид дня</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыДнейПроизводственногоКалендаря</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f2677e97-4761-4a7f-9fbe-d728c0170777">
+    <name>БрейкОтработанныхДней</name>
+    <synonym>
+      <key>ru</key>
+      <value>Брейк отработанных дней</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпБрейки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e76d826a-4e35-4b93-ada1-66ac92691075">
+    <name>БрейкМинимальногоПроцентаВыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Брейк минимального процента выполнения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпБрейки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bd931492-228b-448c-b21d-d463e3ee502e">
+    <name>БрейкМинимальногоПробегаПоРейсу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Брейк минимального пробега по рейсу</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.зпБрейки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="62f26e00-d8fc-4ff2-b4fe-64c4a13657c2">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

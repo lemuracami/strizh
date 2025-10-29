@@ -1,0 +1,850 @@
+<xs:schema xmlns:tns="ozon/api/subagent"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="ozon/api/subagent">
+	<xs:element name="CarriageReceive">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageReceive"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageReceive"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageBarcode"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="IsBroken"
+							nillable="true"
+							type="xs:boolean"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="Comment"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="Login"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="Password"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CarriageReceiveResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageReceiveResult"
+						type="tns:ReplyCarriageReceive"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageReceive"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseReply">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ResultCode"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="ResultMessage"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="ResultProcessTime"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CarriageSend">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageSend"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageSend"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageBarcode"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageSendResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageSendResult"
+						type="tns:ReplyCarriageSend"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageSend"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StartDate"
+							type="xs:string"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="StopDate"
+							type="xs:string"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageSize"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageNumber"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="State"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageListGetResult"
+						type="tns:ReplyCarriageListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageInfoList"
+							type="tns:ArrayOfCarriageInfo"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Rows"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfCarriageInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="CarriageInfo"
+					nillable="true"
+					type="tns:CarriageInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CarriageInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Barcode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateSysName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Description"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="RouteID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="RouteName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Moment"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CarriageGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageBarcode"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageGetResult"
+						type="tns:ReplyCarriageGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageInfo"
+							type="tns:CarriageInfo"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageContentGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageContentGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageContentGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageSize"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageNumber"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageBarcode"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageContentGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageContentGetResult"
+						type="tns:ReplyCarriageContentGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageContentGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="PostingInfoList"
+							type="tns:ArrayOfPostingInfo"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Rows"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfPostingInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="PostingInfo"
+					nillable="true"
+					type="tns:PostingInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PostingInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="PostingID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="PostingBarcode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="CarriageID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="CarriageBarcode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="PostingName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Description"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StateSysName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="SourcePlaceID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="SourcePlaceName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DestinationPlaceID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DestinationPlaceName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ClientName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ClientPrice"
+					nillable="true"
+					type="xs:decimal"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ClientEmail"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ClientPhone"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="RecipientName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DeliveryAddress"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DeliveryVariantID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DeliveryVariantName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StorageExpirationDate"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="StoreName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ETAMomentFrom"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ETAMomentTo"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Weight"
+					nillable="true"
+					type="xs:int"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="VolumeWeight"
+					nillable="true"
+					type="xs:decimal"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Length"
+					nillable="true"
+					type="xs:int"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Width"
+					nillable="true"
+					type="xs:int"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Height"
+					nillable="true"
+					type="xs:int"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DeliveryVariantCode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="IsReturn"
+					nillable="true"
+					type="xs:boolean"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="IsPartialGiveoutDisabled"
+					nillable="true"
+					type="xs:boolean"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="IsClientReturnDisabled"
+					nillable="true"
+					type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CarriageDocumentListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageDocumentListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageDocumentListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="DocumentType"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageDocumentListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageDocumentListGetResult"
+						type="tns:ReplyCarriageDocumentListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageDocumentListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageDocumentInfoList"
+							type="tns:ArrayOfCarriageDocumentInfo"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfCarriageDocumentInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="CarriageDocumentInfo"
+					nillable="true"
+					type="tns:CarriageDocumentInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CarriageDocumentInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DocumentID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DocumentType"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DocumentTypeName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DocumentName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="DocumentDate"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CarriageReturnAdd">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageReturnAdd"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageReturnAdd"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageVolume"
+							nillable="true"
+							type="xs:decimal"/>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="ReturnArticleList"
+							type="tns:ArrayOfPairInfo"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfPairInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="PairInfo"
+					nillable="true"
+					type="tns:PairInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PairInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="0"
+					maxOccurs="1"
+					name="Name"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CarriageReturnAddResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageReturnAddResult"
+						type="tns:ReplyCarriageReturnAdd"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageReturnAdd"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="CarriageID"
+							nillable="true"
+							type="xs:long"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageToSendListGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="request"
+						type="tns:RequestCarriageToSendListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RequestCarriageToSendListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseRequest">
+				<xs:sequence>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="ContractID"
+							nillable="true"
+							type="xs:long"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageSize"
+							nillable="true"
+							type="xs:int"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="PageNumber"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CarriageToSendListGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						maxOccurs="1"
+						name="CarriageToSendListGetResult"
+						type="tns:ReplyCarriageToSendListGet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReplyCarriageToSendListGet"
+			mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:BaseReply">
+				<xs:sequence>
+					<xs:element minOccurs="0"
+							maxOccurs="1"
+							name="CarriageToSendInfoList"
+							type="tns:ArrayOfCarriageToSendInfo"/>
+					<xs:element minOccurs="1"
+							maxOccurs="1"
+							name="Rows"
+							nillable="true"
+							type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ArrayOfCarriageToSendInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="CarriageToSendInfo"
+					nillable="true"
+					type="tns:CarriageToSendInfo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CarriageToSendInfo">
+		<xs:sequence>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="ID"
+					nillable="true"
+					type="xs:long"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Barcode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="Date"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="CarrierName"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="1"
+					maxOccurs="1"
+					name="CarrierWaybillNumber"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

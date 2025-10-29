@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ed9b3379-66a5-4f69-bdc2-54ee04c3893d">
+  <producedTypes>
+    <selectionType typeId="48e7683d-bacf-41d1-b8cf-74f868f7f8f2" valueTypeId="9599a8a6-0630-4a1c-a103-3f90b6c2fad2"/>
+    <listType typeId="13c5a609-a727-41d7-809a-a45ddcb3471c" valueTypeId="b1e06eb4-5125-47ce-a4ed-6f934cdd47df"/>
+    <managerType typeId="96c75f1a-0c13-46f8-93df-11d47d0d576d" valueTypeId="99443a8f-0da6-4fac-b658-61262fa7a8c9"/>
+    <recordSetType typeId="b74327ca-0d06-40c5-ad15-f53cfbafa37f" valueTypeId="948ed681-b19a-4638-9578-fb7d85ab2c6f"/>
+    <recordKeyType typeId="475204db-3d3b-4a9a-b6c3-dfcb9e9ed293" valueTypeId="f7401b9a-6fa2-4f5f-9d17-37f297f51f73"/>
+    <recordType typeId="cf2956c9-af91-4624-9411-63bc1863c5a5" valueTypeId="d9d35106-ead2-4f28-b16c-af516c7a1c3f"/>
+    <recordManagerType typeId="8c3ba401-3f80-4588-ba2d-8fea520d2a8c" valueTypeId="f8bd1ba1-798a-466f-ae6f-4364e11956cb"/>
+  </producedTypes>
+  <name>УчетПогрузкиЗаказовВТранспорт</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет погрузки заказов в транспорт</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.УчетПогрузкиЗаказовВТранспорт.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4c4fb585-0451-4127-b204-1009cf37cfcd">
+    <name>ЗаказЗагружен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ загружен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="70dbf8f2-bd9e-4117-b2c6-48109606da30">
+    <name>ПричинаНеЗагрузкиЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина не загрузки заказов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПричиныНеЗагрузкиЗаказовВТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="da4046ef-e9d6-4379-81ea-d296b23dd1c9">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="901a74de-b3d6-4d8e-9990-d2bb2c7f03cf">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="990a8a7d-395e-43e9-bb3f-abeddc88e665">
+    <name>Экспедитор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экспедитор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="47067f99-2c10-43e1-b9b9-10f8039edff9">
+    <name>ЭтапПогрузкиЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап погрузки заказов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭтапыПогрузкиЗаказовВТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="66f1fd6b-54da-45e9-955f-e76391cd521a">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="93cf7c39-a10e-4ba7-a11b-8dd0a303e2cc">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="ac7cc189-6023-4ec1-96f7-8a7644eb23fd">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

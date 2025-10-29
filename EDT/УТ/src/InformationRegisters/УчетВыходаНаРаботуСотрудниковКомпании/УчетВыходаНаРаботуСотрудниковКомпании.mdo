@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="590a34c4-dcc7-417e-b0cb-2a62a97c9fd1">
+  <producedTypes>
+    <selectionType typeId="a27b894f-312c-4896-a365-24005eb4c7e8" valueTypeId="d9bffc59-49bb-4c26-98cc-a4b64d3b5d70"/>
+    <listType typeId="074fc4f3-3d55-4887-a8d6-6b9b39177c4d" valueTypeId="961d640f-1c79-4f04-b16a-25e1a21ced27"/>
+    <managerType typeId="982af94e-5949-4423-b619-f0ee1d566d62" valueTypeId="9da49ee0-321d-4c6d-b3b4-6ad63b58a244"/>
+    <recordSetType typeId="5c638a04-a7c7-42ce-bf10-030ab02564c5" valueTypeId="a663c98b-eedf-40c0-ad02-310a04a9c8fd"/>
+    <recordKeyType typeId="8b347b16-4cab-40dc-88aa-44ac8cabc0a1" valueTypeId="4c7d79d1-e9c8-4226-a5ec-a28927f7979e"/>
+    <recordType typeId="0442b20a-545b-4559-a3cf-376346e8a61c" valueTypeId="859e8e2d-136c-42cc-880b-f9f7d851d034"/>
+    <recordManagerType typeId="097c16f8-5fed-4006-a0ee-d32c7d39eaad" valueTypeId="72e8c1c1-66a3-4043-afb6-f690a138366f"/>
+  </producedTypes>
+  <name>УчетВыходаНаРаботуСотрудниковКомпании</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет выхода на работу сотрудников компании</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="7675c6e2-2af0-440e-8b91-c478960f745a">
+    <name>БэйджСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бэйдж сотрудника</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.БэйджиСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3cbebb29-c60f-48a3-9b9a-cbd01ca8dddc">
+    <name>СотрудникВышелНаРаботу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник вышел на работу</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="88175f83-54d0-437d-9c1e-37087fd7740a">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

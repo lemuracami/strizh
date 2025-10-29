@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаКалендаря</dataPath>
+			<field>ДатаКалендаря</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Выполнено</dataPath>
+			<field>Выполнено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Перенос</dataPath>
+			<field>Перенос</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенос</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Всего</dataPath>
+			<field>Всего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НеВыполнено</dataPath>
+			<field>НеВыполнено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не выполнено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водитель</dataPath>
+			<field>Водитель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водитель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СПервойПопытки</dataPath>
+			<field>СПервойПопытки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С первой попытки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря,
+	РеализацияТоваровУслуг.Ссылка КАК Заказ,
+	новаЗаданияРейсов.Рейс.Водитель КАК Водитель
+ПОМЕСТИТЬ ВТ_ЗаказыВсего
+ИЗ
+	Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.новаЗаданияРейсов КАК новаЗаданияРейсов
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.РегламентированныйПроизводственныйКалендарь КАК РегламентированныйПроизводственныйКалендарь
+			ПО (ГОД(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = ГОД(новаЗаданияРейсов.Рейс.ДатаНачала))
+				И (МЕСЯЦ(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = МЕСЯЦ(новаЗаданияРейсов.Рейс.ДатаНачала))
+				И (ДЕНЬ(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = ДЕНЬ(новаЗаданияРейсов.Рейс.ДатаНачала))
+		ПО (новаЗаданияРейсов.Доставка.Номер = РеализацияТоваровУслуг.Номер)
+ГДЕ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И новаЗаданияРейсов.Рейс.ДатаНачала МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря,
+	РеализацияТоваровУслуг.Ссылка,
+	новаЗаданияРейсов.Рейс.Водитель
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.Заказ
+ПОМЕСТИТЬ ПеренесенныеЗаказы
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ПО ВТ_ЗаказыВсего.Заказ = СостоянияЗаказов.Заказ
+			И (СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки)
+				ИЛИ СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь)
+				ИЛИ СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыВсего.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Водитель,
+	МАКСИМУМ(ЛОЖЬ) КАК СПервойПопытки
+ПОМЕСТИТЬ ВТ_ЗаказыПеренос
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ПО ВТ_ЗаказыВсего.Заказ = СостоянияЗаказов.Заказ
+			И (СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки)
+				ИЛИ СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь)
+				ИЛИ СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом))
+			И (ГОД(ВТ_ЗаказыВсего.ДатаКалендаря) = ГОД(СостоянияЗаказов.Период))
+			И (МЕСЯЦ(ВТ_ЗаказыВсего.ДатаКалендаря) = МЕСЯЦ(СостоянияЗаказов.Период))
+			И (ДЕНЬ(ВТ_ЗаказыВсего.ДатаКалендаря) = ДЕНЬ(СостоянияЗаказов.Период))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Водитель
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Водитель,
+	МАКСИМУМ(ВЫБОР
+			КОГДА ПеренесенныеЗаказы.Заказ ЕСТЬ NULL 
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ) КАК СПервойПопытки
+ПОМЕСТИТЬ ВТ_ЗакказыВыполнено
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ПО (ВТ_ЗаказыВсего.Заказ = (ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг)))
+			И (ЗакрытыеЗаказы.СтатусЗаказа = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена)
+				ИЛИ ЗакрытыеЗаказы.СтатусЗаказа = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично))
+			И (ГОД(ВТ_ЗаказыВсего.ДатаКалендаря) = ГОД(ЗакрытыеЗаказы.Период))
+			И (МЕСЯЦ(ВТ_ЗаказыВсего.ДатаКалендаря) = МЕСЯЦ(ЗакрытыеЗаказы.Период))
+			И (ДЕНЬ(ВТ_ЗаказыВсего.ДатаКалендаря) = ДЕНЬ(ЗакрытыеЗаказы.Период))
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЗаказыПеренос КАК ВТ_ЗаказыПеренос
+		ПО ВТ_ЗаказыВсего.ДатаКалендаря = ВТ_ЗаказыПеренос.ДатаКалендаря
+			И ВТ_ЗаказыВсего.Заказ = ВТ_ЗаказыПеренос.Заказ
+		ЛЕВОЕ СОЕДИНЕНИЕ ПеренесенныеЗаказы КАК ПеренесенныеЗаказы
+		ПО ВТ_ЗаказыВсего.Заказ = ПеренесенныеЗаказы.Заказ
+ГДЕ
+	ЕСТЬNULL(ВТ_ЗаказыПеренос.Заказ, ИСТИНА) = ИСТИНА
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Водитель
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Водитель,
+	МАКСИМУМ(ВЫБОР
+			КОГДА ПеренесенныеЗаказы.Заказ ЕСТЬ NULL 
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ) КАК СПервойПопытки
+ПОМЕСТИТЬ ВТ_ЗакказыНеВыполнено
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ПО (ЗакрытыеЗаказы.СтатусЗаказа = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НеВыполнена))
+			И (ВТ_ЗаказыВсего.Заказ = (ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг)))
+			И (ГОД(ВТ_ЗаказыВсего.ДатаКалендаря) = ГОД(ЗакрытыеЗаказы.Период))
+			И (МЕСЯЦ(ВТ_ЗаказыВсего.ДатаКалендаря) = МЕСЯЦ(ЗакрытыеЗаказы.Период))
+			И (ДЕНЬ(ВТ_ЗаказыВсего.ДатаКалендаря) = ДЕНЬ(ЗакрытыеЗаказы.Период))
+		ЛЕВОЕ СОЕДИНЕНИЕ ПеренесенныеЗаказы КАК ПеренесенныеЗаказы
+		ПО ВТ_ЗаказыВсего.Заказ = ПеренесенныеЗаказы.Заказ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Водитель
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Водитель,
+	ВТ_ЗаказыВсего.Заказ,
+	1 КАК Всего,
+	NULL КАК Выполнено,
+	NULL КАК НеВыполнено,
+	NULL КАК Перенос,
+	NULL КАК СПервойПопытки
+ПОМЕСТИТЬ ВТ_ЗаказыОбъединение
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ЗакказыВыполнено.ДатаКалендаря,
+	ВТ_ЗакказыВыполнено.Водитель,
+	ВТ_ЗакказыВыполнено.Заказ,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗакказыВыполнено.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	NULL,
+	NULL,
+	ВТ_ЗакказыВыполнено.СПервойПопытки
+ИЗ
+	ВТ_ЗакказыВыполнено КАК ВТ_ЗакказыВыполнено
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ЗакказыНеВыполнено.ДатаКалендаря,
+	ВТ_ЗакказыНеВыполнено.Водитель,
+	ВТ_ЗакказыНеВыполнено.Заказ,
+	NULL,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗакказыНеВыполнено.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	NULL,
+	ВТ_ЗакказыНеВыполнено.СПервойПопытки
+ИЗ
+	ВТ_ЗакказыНеВыполнено КАК ВТ_ЗакказыНеВыполнено
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ЗаказыПеренос.ДатаКалендаря,
+	ВТ_ЗаказыПеренос.Водитель,
+	ВТ_ЗаказыПеренос.Заказ,
+	NULL,
+	NULL,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗаказыПеренос.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	ВТ_ЗаказыПеренос.СПервойПопытки
+ИЗ
+	ВТ_ЗаказыПеренос КАК ВТ_ЗаказыПеренос
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыОбъединение.ДатаКалендаря,
+	ВТ_ЗаказыОбъединение.Водитель,
+	ВТ_ЗаказыОбъединение.Заказ,
+	СУММА(ВТ_ЗаказыОбъединение.Всего) КАК Всего,
+	СУММА(ВТ_ЗаказыОбъединение.Выполнено) КАК Выполнено,
+	СУММА(ВТ_ЗаказыОбъединение.НеВыполнено) КАК НеВыполнено,
+	СУММА(ВТ_ЗаказыОбъединение.Перенос) КАК Перенос,
+	МАКСИМУМ(ВТ_ЗаказыОбъединение.СПервойПопытки) КАК СПервойПопытки
+ПОМЕСТИТЬ ВТ_Итоговая
+ИЗ
+	ВТ_ЗаказыОбъединение КАК ВТ_ЗаказыОбъединение
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыОбъединение.ДатаКалендаря,
+	ВТ_ЗаказыОбъединение.Водитель,
+	ВТ_ЗаказыОбъединение.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Итоговая.ДатаКалендаря,
+	ВТ_Итоговая.Водитель,
+	ВТ_Итоговая.Заказ,
+	ВТ_Итоговая.Всего,
+	ВТ_Итоговая.Выполнено,
+	ВТ_Итоговая.НеВыполнено,
+	ВТ_Итоговая.Перенос,
+	ВТ_Итоговая.СПервойПопытки
+ИЗ
+	ВТ_Итоговая КАК ВТ_Итоговая</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ПроцентВыполнено</dataPath>
+		<expression>0</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент выполнено</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентНеВыполнено</dataPath>
+		<expression>0</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент не выполнено</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентПеренесено</dataPath>
+		<expression>0</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент перенесено</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Всего</dataPath>
+		<expression>Сумма(Всего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Выполнено</dataPath>
+		<expression>Сумма(Выполнено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НеВыполнено</dataPath>
+		<expression>Сумма(НеВыполнено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Перенос</dataPath>
+		<expression>Сумма(Перенос)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентВыполнено</dataPath>
+		<expression>(Сумма(Выполнено)/Сумма(Всего))*100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентНеВыполнено</dataPath>
+		<expression>(Сумма(НеВыполнено)/Сумма(Всего))*100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентПеренесено</dataPath>
+		<expression>(Сумма(Перенос)/Сумма(Всего))*100</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>СтандартныйПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стандартный период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заказ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СПервойПопытки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ВСЕГО</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Всего</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Всего.ПроцентОбщий</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Horizontally</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Выполнено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентВыполнено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Horizontally</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отказы</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НеВыполнено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентНеВыполнено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Horizontally</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Переносы</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Перенос</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентПеренесено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Horizontally</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтандартныйПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d7b3653a-1d39-47aa-a0e3-2ffdcb39bab6</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаКалендаря</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Водитель</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

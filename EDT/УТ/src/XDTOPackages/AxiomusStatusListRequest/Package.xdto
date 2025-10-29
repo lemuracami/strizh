@@ -1,0 +1,30 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/AxiomusStatusListRequest">
+	<property name="singleorder">
+		<typeDef xsi:type="ObjectType">
+			<property name="mode" type="xs:string"/>
+			<property name="auth" lowerBound="0">
+				<typeDef xsi:type="ObjectType">
+					<property name="ukey" type="xs:string" lowerBound="0" form="Attribute"/>
+					<property name="__content" type="xs:string" form="Text"/>
+				</typeDef>
+			</property>
+			<property name="okeylist">
+				<typeDef xsi:type="ObjectType">
+					<property name="okey" type="xs:string" lowerBound="0" upperBound="-1"/>
+				</typeDef>
+			</property>
+		</typeDef>
+	</property>
+	<objectType name="singleorder">
+		<property name="mode" type="xs:string"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/AxiomusStatusListRequest" name="auth" type="d3p1:auth" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/AxiomusStatusListRequest" name="okeylist" type="d3p1:okeylist" lowerBound="1" upperBound="1"/>
+	</objectType>
+	<objectType name="auth">
+		<property name="ukey" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="__content" type="xs:string" lowerBound="1" form="Text"/>
+	</objectType>
+	<objectType name="okeylist">
+		<property name="okey" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

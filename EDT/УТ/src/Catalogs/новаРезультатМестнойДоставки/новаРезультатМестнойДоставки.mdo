@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1277a915-c82b-409f-8d08-4804ddce488e">
+  <producedTypes>
+    <objectType typeId="4554b05f-8037-4207-b169-4f0b4f677926" valueTypeId="ebcc4f1f-1647-4a83-88c4-7eefad863c00"/>
+    <refType typeId="6629117f-ddd7-4731-a969-981aed9f7965" valueTypeId="4f1e54d0-0fb0-4239-bca4-cf84687f6d34"/>
+    <selectionType typeId="0a37d0fb-a0b2-4456-af22-f894a728b295" valueTypeId="7a9142f1-52ad-46fe-baa3-29d1d1ebf2b2"/>
+    <listType typeId="b74b79f8-fe15-4637-ac43-da3be8aa3df1" valueTypeId="7a03f94c-66f8-43c3-a3cf-50bcdd01ca76"/>
+    <managerType typeId="61cc8e15-9a18-400c-9c83-ca5b84a28ed2" valueTypeId="9008eba4-07b6-416e-b0e7-0ca8803d8b21"/>
+  </producedTypes>
+  <name>новаРезультатМестнойДоставки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Результаты местной доставки</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.новаРезультатМестнойДоставки.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.новаРезультатМестнойДоставки.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>75</descriptionLength>
+  <codeType>String</codeType>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="4f028f5d-6c1a-4be8-982e-69f7ba3dbcb0">
+      <name>Выполнена</name>
+      <description>Выполнена</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+    </items>
+    <items id="717f3e12-52a5-4fbf-818b-149985d01101">
+      <name>ВыполненаЧастично</name>
+      <description>Выполнена частично</description>
+      <code xsi:type="core:StringValue">
+        <value>000000002</value>
+      </code>
+    </items>
+    <items id="7498ee15-5dec-4877-b8aa-bd6e7bee5a3f">
+      <name>НеВыполнена</name>
+      <description>Не выполнена</description>
+      <code xsi:type="core:StringValue">
+        <value>000000003</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <quickChoice>true</quickChoice>
+  <choiceMode>QuickChoice</choiceMode>
+  <defaultObjectForm>Catalog.новаРезультатМестнойДоставки.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.новаРезультатМестнойДоставки.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.новаРезультатМестнойДоставки.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="a38a3b73-88ce-4609-965d-4ffdc93d6635">
+    <name>РезультатВыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат выполнения</value>
+    </synonym>
+    <type>
+      <types>EnumRef.новаРезультатВыполненияМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d1e70389-daa3-47c6-b881-1fe3c2277e57">
+    <name>ПричиныНеВыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причины не выполнения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаПричиныНеВыполненияМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ef6258ad-49e4-4540-9f9a-f0233afd5cb7">
+    <name>ПроцентОплатыВодителю</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент оплаты водителю</value>
+    </synonym>
+    <comment>Если выполнена 100%</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="14d39620-f13d-4539-8586-ccf4d38274d8">
+    <name>ТочкаПосещена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка посещена (Да/Нет)</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="f37d81fb-e8fe-4bb3-b544-6289a38d4c79">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c7705945-ac17-4953-916f-a3597ee853ed">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3ddfee8b-6551-4447-a6e4-67d7fa50b878">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

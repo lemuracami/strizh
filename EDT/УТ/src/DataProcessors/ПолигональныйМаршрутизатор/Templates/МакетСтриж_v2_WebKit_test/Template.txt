@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+    <html xmlns="http://www.w3.org/1999/xhtml">                                                                                                                                                                   
+    <head>
+        <title>Примеры. Геокодирование.</title>
+                 
+
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+<script src="http://pmmap.strizh-logistic.ru/jquery/jquery.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!--Строка подключения сгенерированного скрипта,нужно понять куда его сохранять чтобы иметь полную ссылку-->
+    <!--Сейчас ссылается на папку,где находится основаня страница-->
+    <script src="http://pmmap.strizh-logistic.ru/MapUtils.js?765475467" type="text/javascript"></script>
+    <script src="http://pmmap.strizh-logistic.ru/MapPolygons.js?454564" type="text/javascript"></script>
+    <script src="http://pmmap.strizh-logistic.ru/Selection.js?654378" type="text/javascript"></script>
+    <script src="http://pmmap.strizh-logistic.ru/YScripts.js?363457" type="text/javascript"></script>
+
+    
+    <script src="http://pmmap.strizh-logistic.ru/jquery/jquery-ui.js"></script>
+    <link href="http://pmmap.strizh-logistic.ru/jquery/jquery-ui.css" rel="stylesheet" />
+	
+	 <script src="http://pmmap.strizh-logistic.ru/ContextMenuPlugin.js?85684556"></script> 		
+ 		<script type="text/javascript"> 
+ 		  function exec(script) {
+            try {
+                eval(script);
+            }
+            catch (e) {
+                alert(e.message);
+            }
+        } 
+        var WebKitUsage;
+        var FormEvent;
+        var router;
+        var select;
+        var xForm1C;
+        var myPoints = new Array();
+        var myRouts = new Array();
+        var strOpen = "OPEN";
+        var strKontr = "Kontragent";
+               var KopdinatShirota = 0;
+        var KopdinatDolgota  = 0;
+        var UID_Zakaza  = "";
+                var map, geoResult;
+         var clusterer;
+        var clustererCars;
+        var select;
+        var routes;
+        var hashPoints;
+		var mapIsLoad = false;
+$(window).load(function () {
+
+ymaps.ready(function () {
+ routes = new ymaps.util.Storage();
+             hashPoints =new ymaps.util.Storage();
+			               map = new ymaps.Map("YMapsID", {
+			               
+                // Центр карты
+                center: [^ПараметрЦентрКарты^],
+                // Коэффициент масштабирования
+                zoom: 9,
+                // Тип карты
+                searchControlProvider: 'yandex#search',
+                state: { behaviors: [ "scrollZoom"] }
+            });
+            map.behaviors.disable([ 'rightMouseButtonMagnifier']);
+            map.behaviors.enable([ 'drag']);
+         
+            MapUtils.Init(map);
+           select = new STZ.Selection(map, myPoints, MapUtils._polygons, onSelectionEnd, { subMenuWidth: 280, subMenuHeight: 400 });
+            select.Enable();
+            //Отрисовка
+            MapUtils.DrawPolygons(^ПараметрИдСхемы^);
+            createClusters();
+            mapIsLoad = true;             
+
+        }); 
+ });        
+                function createClusters()
+        {       // Creating a clusterer with an accordian layout
+              clusterer = new ymaps.Clusterer({
+                clusterDisableClickZoom: true,
+               
+                clusterBalloonContentLayout: "cluster#balloonAccordion"
+            });
+
+                   
+
+             clustererCars = new ymaps.Clusterer({
+               preset: 'islands#invertedVioletClusterIcons',
+                 clusterDisableClickZoom: true,
+                
+                 clusterBalloonContentLayout: "cluster#balloonAccordion"
+             });
+
+
+
+             map.geoObjects.add(clustererCars);
+             map.geoObjects.add(clusterer);
+
+        }
+             </script>
+    </head>
+    <body //~~onload~~> 
+<div id='message_name' style='display: none'></div>
+<div id='message_data' style='display: none'></div>
+<button id="interactionButton" style="display: none;">Кнопка взаимодействия</button>
+
+        <div id="YMapsID" style="width:1100px;height:700px"></div>
+		<ul style="width:100px;display:none;position:absolute;  top: 0; left: 0;   right: 0;    bottom: 0;z-index:1;height:100px;" id="menu">
+	 	</ul>
+	 	<div id="newMenu" class="context-menu-one" style="display:none;z-index:999;" ></div>
+    <div id="subMenu1"  style="display:none;z-index:998;overflow:auto;"></div>              	
+    <div id="TEST" />
+    </form>
+    </body>
+         
+    </html>

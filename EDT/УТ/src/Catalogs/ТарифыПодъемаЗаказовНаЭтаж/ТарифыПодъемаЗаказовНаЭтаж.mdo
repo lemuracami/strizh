@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f67bbdb5-5f85-4862-88cd-dbd6477db0a9">
+  <producedTypes>
+    <objectType typeId="ac70e607-d08a-487f-89d6-41dda4565825" valueTypeId="e01721e7-a6ff-4cbe-ae5b-e6e238ea78a4"/>
+    <refType typeId="473a6ed8-2cd7-4912-a165-bdc56d131f25" valueTypeId="e6a88a14-7bd3-4b0e-9935-3140ce099d7c"/>
+    <selectionType typeId="b826d4ee-bbc4-493d-83ff-acccf7446185" valueTypeId="53979692-98b2-4df1-bcdd-1b866a227cea"/>
+    <listType typeId="6d42f3c5-1bc8-4028-8438-669424226bd4" valueTypeId="e3518207-a124-4b4c-af2e-f147be4b94fd"/>
+    <managerType typeId="5aefacf7-c3ee-47f5-96a1-10afeba48d89" valueTypeId="df7316e5-641f-42e5-b116-aef854627925"/>
+  </producedTypes>
+  <name>ТарифыПодъемаЗаказовНаЭтаж</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тарифы подъема заказов на этаж</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ТарифыПодъемаЗаказовНаЭтаж.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ТарифыПодъемаЗаказовНаЭтаж.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <owners>Catalog.Контрагенты</owners>
+  <codeLength>11</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ТарифыПодъемаЗаказовНаЭтаж.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ТарифыПодъемаЗаказовНаЭтаж.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="b7e074cc-9043-4f12-a8ab-3849dfb4516f">
+    <name>КодТарифа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код тарифа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e213a1dd-5972-444b-8dc4-2838a9ae2776">
+    <name>МетодОплатыУслугиПодъема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Метод оплаты услуги подъема</value>
+    </synonym>
+    <type>
+      <types>EnumRef.МетодыОплатыПодъёмаЗаказа</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="de5e905f-cbf9-45ab-861b-3ad8680686dc">
+    <name>ТипТарифа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип тарифа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипТарифаНаПодъемЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="715adf44-8caa-4e75-b360-245c6a229b5d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d4d880be-3c1c-4e49-b2e8-79b95a9ee948">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

@@ -1,0 +1,29 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/warehouseProcessing">
+	<objectType name="parcel">
+		<property name="number" type="xs:string"/>
+		<property name="orderId" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="quantityPlaces" type="xs:int"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/warehouseProcessing" name="packages" type="d3p1:arrayOfPackages" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="package">
+		<property name="id" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="barcode" type="xs:string"/>
+	</objectType>
+	<objectType name="carriage">
+		<property name="number" type="xs:string"/>
+		<property name="date" type="xs:date"/>
+		<property name="stockId" type="xs:string" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/warehouseProcessing" name="parcels" type="d3p1:arrayOfParcels"/>
+	</objectType>
+	<objectType name="addCarriageResponse">
+		<property name="result" type="xs:boolean" nillable="true"/>
+		<property name="error" type="xs:string" nillable="true"/>
+		<property name="carriageId" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfParcels">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/warehouseProcessing" name="parcel" type="d3p1:parcel" lowerBound="1" upperBound="-1"/>
+	</objectType>
+	<objectType name="arrayOfPackages">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/warehouseProcessing" name="package" type="d3p1:package" lowerBound="1" upperBound="-1"/>
+	</objectType>
+</package>

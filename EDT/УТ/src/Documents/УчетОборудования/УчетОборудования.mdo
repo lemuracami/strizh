@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bb08764a-8b76-4729-90ea-946e97866b0f">
+  <producedTypes>
+    <objectType typeId="56be546a-c0a6-42f3-a9f0-027cbd25141a" valueTypeId="852a408c-93fe-4f5c-83fb-25bfa5740d2f"/>
+    <refType typeId="070d0b76-c87f-4332-8586-af9e00c9878d" valueTypeId="dd6ef41f-7ee6-458c-a810-b2e6f4393640"/>
+    <selectionType typeId="ce1b8123-9a1f-40ff-8a87-56aec0b44844" valueTypeId="0f140a50-40bd-4623-99ee-a063e4d662aa"/>
+    <listType typeId="ea271c08-267e-4f64-ad83-de31324c990e" valueTypeId="86b2c0c4-50d6-4443-a9f5-ed6d375ab7ae"/>
+    <managerType typeId="af8a3d8b-df52-4a18-a303-1bc10cff81a8" valueTypeId="35d09be4-e485-4188-873e-d4bdfa02329e"/>
+  </producedTypes>
+  <name>УчетОборудования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет оборудования</value>
+  </synonym>
+  <inputByString>Document.УчетОборудования.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.УчетОборудования.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>InformationRegister.УчетОборудования</registerRecords>
+  <registerRecords>AccumulationRegister.УчетОстатковОборудования</registerRecords>
+  <registerRecords>InformationRegister.КомплектыОборудования</registerRecords>
+  <attributes uuid="d94970a6-6a0d-4078-bd27-2978c8356ac5">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7aa33a1a-e504-488c-915f-cb73d72ee2fc">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d00ab66b-a58e-4c7b-b400-002f2ad63397">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физ лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9fd990b8-a27d-4d5e-9509-3ae5f43c7948">
+    <name>СостояниеОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние оборудования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияЕдиницыОборудования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="505068b9-c60f-4427-8db3-d3fbf6d3b9ef">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e7d4cbf3-53a9-4e5e-9a40-5701ae1e33d6">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="dc98c00e-af6d-47d7-a142-77da0561e9d8">
+    <name>НаемныйЭкипаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наемный экипаж</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="af406b9d-d801-48ed-9d67-140d72db02e1">
+    <name>ВыдачаНаДлительныйСрок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдача на длительный срок</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="4b646385-c369-45d6-a890-38fcc77db59f">
+    <name>ЖурналВыдачиОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Журнал выдачи оборудования</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e4a26a1a-8eae-4d89-b73d-02414882f27a">
+    <name>ФормаУчетаОборудованияСтарая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма учета оборудования старая</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="cb25797c-82a8-4694-9141-cda04c4a24f4">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="16dc7ccf-8e4c-4340-b315-53217218d54f">
+    <name>ФормаУчетаОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма учета оборудования</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="ffe5b162-c1fd-4b66-a1ce-01cc8eecbc14">
+    <producedTypes>
+      <objectType typeId="b7ebc9c7-22ee-4b46-825d-fe58fff030d9" valueTypeId="b0cf3e53-1d38-4c1f-9aba-b0deec753782"/>
+      <rowType typeId="96b6ed96-81d0-4c5f-abcc-bd55b7853223" valueTypeId="e770152f-7edf-4f90-8514-58fe7b8e058e"/>
+    </producedTypes>
+    <name>СписокОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список оборудования</value>
+    </synonym>
+    <attributes uuid="1e70f5f3-753c-4bfd-b131-d83cca6ef0c2">
+      <name>Оборудование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оборудование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Оборудование</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0bff0e0f-3341-4ee9-9f6a-fadf0082d8da">
+      <name>ВремяВводаДанных</name>
+      <synonym>
+        <key>ru</key>
+        <value>Время ввода данных</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d300c26a-ee50-4ebc-a5d9-6a8116a8c5b1">
+      <name>ТранспортКомплекта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт комплекта</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаТранспорт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4711eeb0-7e57-4545-9135-fef5241d5494">
+      <name>УстановитьКомплектным</name>
+      <synonym>
+        <key>ru</key>
+        <value>Установить комплектным</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5a863cb0-2694-4cb0-a64e-870350441262">
+      <name>ОбрудованиеПовреждено</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обрудование повреждено</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="545b69cd-75e5-447d-9586-0ebff5fc0abb">
+      <name>ОписаниеПовреждения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Описание повреждения</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="ac228a7e-bfbc-4844-8e29-24011a55f07b">
+    <producedTypes>
+      <objectType typeId="1f1690e4-44f7-4db5-aa4e-215e793859d1" valueTypeId="5887b26e-02aa-4aa6-a2b3-420d7c744e41"/>
+      <rowType typeId="332d243a-d56f-4cc4-97d5-3e95cbab529e" valueTypeId="a18161c0-1cdc-4cbf-b7ca-350d2cef13db"/>
+    </producedTypes>
+    <name>ТекущийКомплектОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текущий комплект оборудования</value>
+    </synonym>
+    <attributes uuid="f7731c90-5c21-4669-a4e8-e7e44f3776f7">
+      <name>Оборудование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оборудование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Оборудование</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <templates uuid="e6ba7330-396d-4b0b-b9a6-722cb0638d63">
+    <name>МакетОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет отчета</value>
+    </synonym>
+  </templates>
+  <commands uuid="08ecc996-5024-44ba-8566-70f8291c7ce9">
+    <name>ОткрытьЖурналВыдачиОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Открыть журнал выдачи оборудования</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Document>

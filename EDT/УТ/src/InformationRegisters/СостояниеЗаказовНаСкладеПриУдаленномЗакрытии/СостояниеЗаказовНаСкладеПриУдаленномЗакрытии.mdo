@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="68e2dfea-89b9-4e5c-8a4d-6e132dab3da3">
+  <producedTypes>
+    <selectionType typeId="39c892c7-fce5-482c-89d8-b6bd2d3cb50c" valueTypeId="aa58fbe3-fff6-420b-aff1-e0baf050cd92"/>
+    <listType typeId="68164eab-117e-4da0-b3d3-f50aef2d8a6f" valueTypeId="944302e5-5315-45b6-b049-621bbe0dbc50"/>
+    <managerType typeId="d2c38abf-e385-4c5c-85b0-74928eac06e2" valueTypeId="f8c60b24-18d7-4d47-8571-d6752d37a609"/>
+    <recordSetType typeId="7cc5f462-81b0-4f07-a8be-964e98e24a35" valueTypeId="95d73109-6d79-4a0b-965a-da0e7eebb34a"/>
+    <recordKeyType typeId="d0c8451b-9870-45f1-8a1b-231a581bff1f" valueTypeId="26e29c52-ab4e-4e57-8c93-158eabb446a5"/>
+    <recordType typeId="3ca39f7b-ccb3-4818-9fa6-0654f8bc3b31" valueTypeId="ba456b09-e21a-42ce-9c76-ff89055e0817"/>
+    <recordManagerType typeId="328dc86e-c772-4c6e-b010-7005a023b3f1" valueTypeId="6e18ae2a-9801-4ab2-a8b1-e3c48102a032"/>
+  </producedTypes>
+  <name>СостояниеЗаказовНаСкладеПриУдаленномЗакрытии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояние заказов на складе при удаленном закрытии</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.СостояниеЗаказовНаСкладеПриУдаленномЗакрытии.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="c4d5f1bc-fcdb-47c1-8782-32b344f9c5e9">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ecdd4b13-268d-43b3-b4d1-f5ad4feed4e2">
+    <name>ЗаказСданНаСклад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ сдан на склад</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="8f6f151f-41be-4b81-b0ce-529ba6eef050">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="565e91ba-61eb-4410-8895-f38baa9a508f">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="65f9da42-2543-4ac2-9828-acd82b7b4830">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="ef4eddc6-a409-4086-b7df-1ea43b715d1a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

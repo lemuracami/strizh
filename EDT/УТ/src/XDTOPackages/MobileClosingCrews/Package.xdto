@@ -1,0 +1,47 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/1CMobile/MobileClosingCrews">
+	<objectType name="dataGoodsCourier">
+		<property name="number" type="xs:string"/>
+		<property name="id_App" type="xs:string"/>
+		<property name="car" type="xs:string"/>
+		<property name="courierAgreesWithData" type="xs:boolean"/>
+		<property name="dateOfRide" type="xs:date"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/MobileClosingCrews" name="goodRows" type="d3p1:goodRows"/>
+	</objectType>
+	<objectType name="goodRow">
+		<property name="orderId" type="xs:string"/>
+		<property name="goodId" type="xs:string"/>
+		<property name="count" type="xs:int"/>
+		<property name="price" type="xs:double"/>
+		<property name="barcode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="markingCode" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="goodRows">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/MobileClosingCrews" name="goodRow" type="d3p1:goodRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="dataCashCourier">
+		<property name="number" type="xs:string"/>
+		<property name="id_App" type="xs:string"/>
+		<property name="car" type="xs:string"/>
+		<property name="courierAgreesWithData" type="xs:boolean"/>
+		<property name="dateOfRide" type="xs:date"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/MobileClosingCrews" name="cashRows" type="d3p1:cashRows"/>
+	</objectType>
+	<objectType name="cashRow">
+		<property name="orderId" type="xs:string"/>
+		<property name="typeOfPay" type="xs:byte"/>
+		<property name="amount" type="xs:double"/>
+	</objectType>
+	<objectType name="cashRows">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/MobileClosingCrews" name="cashRow" type="d3p1:cashRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="responseGoodsCourier">
+		<property name="successfully" type="xs:boolean"/>
+		<property name="idDocument" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="error" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="responseCashCourier">
+		<property name="successfully" type="xs:boolean"/>
+		<property name="idDocument" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="error" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+</package>

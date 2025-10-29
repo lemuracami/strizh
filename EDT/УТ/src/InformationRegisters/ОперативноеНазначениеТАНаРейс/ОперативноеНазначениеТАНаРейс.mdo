@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e2e70d9d-66dd-4185-a5dd-32022c92a4aa">
+  <producedTypes>
+    <selectionType typeId="df6c65dc-8838-4ce3-a875-7d0fa647f493" valueTypeId="2c3cf3ab-7360-47d1-9009-9ec14a237634"/>
+    <listType typeId="1db9a6bc-6426-46c4-aed6-47ab9be304e5" valueTypeId="e4cc5b14-1cca-4fd4-aac7-bdde5ab4fade"/>
+    <managerType typeId="f23db82d-da69-4a20-b056-cdfd5b4dc440" valueTypeId="49dbfafe-e2ad-4fa7-b0f4-4c2fcfab9401"/>
+    <recordSetType typeId="49c34548-9fea-466a-8c83-c43b7a331066" valueTypeId="d19adf54-0992-4be1-b580-02dc4539e10a"/>
+    <recordKeyType typeId="ef37eb4a-731d-4d57-8f12-a8b0191a2d5a" valueTypeId="e623eaba-ab72-4f2c-88c7-dee2f7202631"/>
+    <recordType typeId="c46fb2c5-475e-4444-8130-e35bdd2729d0" valueTypeId="c499b258-8fea-4860-89d2-389be643426e"/>
+    <recordManagerType typeId="c4f8cb22-5172-4221-a1e1-3b81e5b5b740" valueTypeId="5f8bf15e-4d02-430e-abb8-eb335d863fd7"/>
+  </producedTypes>
+  <name>ОперативноеНазначениеТАНаРейс</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оперативное назначение ТАНа рейс</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ОперативноеНазначениеТАНаРейс.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ОперативноеНазначениеТАНаРейс.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="bd09d7e5-fcd3-4117-bf29-58f93aedf833">
+    <name>ТА</name>
+    <synonym>
+      <key>ru</key>
+      <value>ТА</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТелефонныеАппараты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="0ee8e323-c711-42f6-a401-24c542d19564">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="58a6244e-1921-4bab-b5ca-11757b9fbfae">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="281e3e74-3968-451d-b35c-c2f2a34e1a58">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d461f5be-7303-4985-ac8b-52a69bb0433f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

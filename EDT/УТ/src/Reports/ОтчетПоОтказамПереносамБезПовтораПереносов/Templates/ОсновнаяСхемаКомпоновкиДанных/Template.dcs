@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Активность</dataPath>
+			<field>Активность</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСтроки</dataPath>
+			<field>НомерСтроки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Доставка</dataPath>
+			<field>Доставка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаНеВыполнения</dataPath>
+			<field>ПричинаНеВыполнения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаОтказа</dataPath>
+			<field>ПричинаОтказа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РезультатДоставки</dataPath>
+			<field>РезультатДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтернетМагазин</dataPath>
+			<field>ИнтернетМагазин</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интернет магазин</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерВнешнегоЗаказа</dataPath>
+			<field>НомерВнешнегоЗаказа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рейс</dataPath>
+			<field>Рейс</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рейс</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Порядок</dataPath>
+			<field>Порядок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПереноса</dataPath>
+			<field>ДатаПереноса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйАдрес</dataPath>
+			<field>НовыйАдрес</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый адрес</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ИсторияАдресовСрезПоследних.Заказ,
+	ИсторияАдресовСрезПоследних.Адрес
+ПОМЕСТИТЬ ВТИсторияАдресов
+ИЗ
+	РегистрСведений.ИсторияАдресов.СрезПоследних(, ) КАК ИсторияАдресовСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаНеВыполнения,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.Заказ.ВладелецТовара КАК ИнтернетМагазин,
+	СостоянияЗаказовСрезПоследних.Заказ.Дата КАК Дата,
+	СостоянияЗаказовСрезПоследних.Заказ.Номер КАК Номер,
+	СостоянияЗаказовСрезПоследних.Заказ.НомерВнешнегоЗаказа КАК НомерВнешнегоЗаказа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ СостоянияЗаказовСрезПоследних.Заказ) КАК Количество,
+	новаРейсМестнойДоставки.Ссылка КАК Рейс,
+	2 КАК Порядок,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	ВТИсторияАдресов.Адрес КАК НовыйАдрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+ПОМЕСТИТЬ ВТ_Итог
+ИЗ
+	РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.новаЗаданияРейсов КАК новаЗаданияРейсов
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ БизнесПроцесс.новаРейсМестнойДоставки КАК новаРейсМестнойДоставки
+			ПО новаЗаданияРейсов.Рейс = новаРейсМестнойДоставки.Ссылка
+		ПО СостоянияЗаказовСрезПоследних.Доставка = новаЗаданияРейсов.Доставка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИсторияАдресов КАК ВТИсторияАдресов
+		ПО СостоянияЗаказовСрезПоследних.Заказ = ВТИсторияАдресов.Заказ
+ГДЕ
+	СостоянияЗаказовСрезПоследних.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новарезультатместнойдоставки.НеВыполнена)
+	И новаРейсМестнойДоставки.ДатаНачала МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И НЕ новаРейсМестнойДоставки.РейсОтменен
+	И новаРейсМестнойДоставки.Завершен
+
+СГРУППИРОВАТЬ ПО
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.ПричинаНеВыполнения,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	СостоянияЗаказовСрезПоследних.Заказ.ВладелецТовара,
+	СостоянияЗаказовСрезПоследних.Заказ.Дата,
+	СостоянияЗаказовСрезПоследних.Заказ.Номер,
+	СостоянияЗаказовСрезПоследних.Заказ.НомерВнешнегоЗаказа,
+	новаРейсМестнойДоставки.Ссылка,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	"ДОСТАВЛЕНО",
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.Заказ.ВладелецТовара,
+	СостоянияЗаказовСрезПоследних.Заказ.Дата,
+	СостоянияЗаказовСрезПоследних.Заказ.Номер,
+	СостоянияЗаказовСрезПоследних.Заказ.НомерВнешнегоЗаказа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ СостоянияЗаказовСрезПоследних.Заказ),
+	новаРейсМестнойДоставки.Ссылка,
+	3,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+ИЗ
+	РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИсторияАдресов КАК ВТИсторияАдресов
+		ПО СостоянияЗаказовСрезПоследних.Заказ = ВТИсторияАдресов.Заказ
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.новаЗаданияРейсов КАК новаЗаданияРейсов
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ БизнесПроцесс.новаРейсМестнойДоставки КАК новаРейсМестнойДоставки
+			ПО новаЗаданияРейсов.Рейс = новаРейсМестнойДоставки.Ссылка
+		ПО СостоянияЗаказовСрезПоследних.Доставка = новаЗаданияРейсов.Доставка
+ГДЕ
+	СостоянияЗаказовСрезПоследних.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новарезультатместнойдоставки.Выполнена)
+	И новаРейсМестнойДоставки.ДатаНачала МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И НЕ новаРейсМестнойДоставки.РейсОтменен
+	И новаРейсМестнойДоставки.Завершен
+
+СГРУППИРОВАТЬ ПО
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	ВТИсторияАдресов.Адрес,
+	новаРейсМестнойДоставки.Ссылка,
+	СостоянияЗаказовСрезПоследних.Заказ.ВладелецТовара,
+	СостоянияЗаказовСрезПоследних.Заказ.Дата,
+	СостоянияЗаказовСрезПоследних.Заказ.Номер,
+	СостоянияЗаказовСрезПоследних.Заказ.НомерВнешнегоЗаказа,
+	СостоянияЗаказовСрезПоследних.Регистратор
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	"ДОСТАВЛЕНО",
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.Заказ.ВладелецТовара,
+	СостоянияЗаказовСрезПоследних.Заказ.Дата,
+	СостоянияЗаказовСрезПоследних.Заказ.Номер,
+	СостоянияЗаказовСрезПоследних.Заказ.НомерВнешнегоЗаказа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ СостоянияЗаказовСрезПоследних.Заказ),
+	новаРейсМестнойДоставки.Ссылка,
+	4,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+ИЗ
+	РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.новаЗаданияРейсов КАК новаЗаданияРейсов
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ БизнесПроцесс.новаРейсМестнойДоставки КАК новаРейсМестнойДоставки
+			ПО новаЗаданияРейсов.Рейс = новаРейсМестнойДоставки.Ссылка
+		ПО СостоянияЗаказовСрезПоследних.Доставка = новаЗаданияРейсов.Доставка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИсторияАдресов КАК ВТИсторияАдресов
+		ПО СостоянияЗаказовСрезПоследних.Заказ = ВТИсторияАдресов.Заказ
+ГДЕ
+	СостоянияЗаказовСрезПоследних.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новарезультатместнойдоставки.ВыполненаЧастично)
+	И новаРейсМестнойДоставки.ДатаНачала МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И НЕ новаРейсМестнойДоставки.РейсОтменен
+	И новаРейсМестнойДоставки.Завершен
+
+СГРУППИРОВАТЬ ПО
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	СостоянияЗаказовСрезПоследних.Заказ.ВладелецТовара,
+	СостоянияЗаказовСрезПоследних.Заказ.Дата,
+	СостоянияЗаказовСрезПоследних.Заказ.Номер,
+	СостоянияЗаказовСрезПоследних.Заказ.НомерВнешнегоЗаказа,
+	новаРейсМестнойДоставки.Ссылка,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаНеВыполнения,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	УчетДенежныхСредствКассиром.Заказ.ВладелецТовара,
+	УчетДенежныхСредствКассиром.Заказ.Дата,
+	УчетДенежныхСредствКассиром.Заказ.Номер,
+	УчетДенежныхСредствКассиром.Заказ.НомерВнешнегоЗаказа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ УчетДенежныхСредствКассиром.Заказ.Ссылка),
+	NULL,
+	5,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+ИЗ
+	РегистрНакопления.УчетДенежныхСредствКассиром КАК УчетДенежныхСредствКассиром
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИсторияАдресов КАК ВТИсторияАдресов
+		ПО (ВЫРАЗИТЬ(УчетДенежныхСредствКассиром.Заказ КАК Документ.РеализацияТоваровУслуг).Ссылка = ВТИсторияАдресов.Заказ)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ПО (ВЫРАЗИТЬ(УчетДенежныхСредствКассиром.Заказ КАК Документ.РеализацияТоваровУслуг).Номер = СостоянияЗаказовСрезПоследних.Заказ.Номер)
+ГДЕ
+	(УчетДенежныхСредствКассиром.Регистратор ССЫЛКА Документ.ПечатьЧековПоДоставкам
+			ИЛИ УчетДенежныхСредствКассиром.Регистратор ССЫЛКА Документ.ДанныеЗаказаСамовывоза)
+	И УчетДенежныхСредствКассиром.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новарезультатместнойдоставки.НеВыполнена)
+
+СГРУППИРОВАТЬ ПО
+	УчетДенежныхСредствКассиром.Заказ.ВладелецТовара,
+	УчетДенежныхСредствКассиром.Заказ.Дата,
+	УчетДенежныхСредствКассиром.Заказ.Номер,
+	УчетДенежныхСредствКассиром.Заказ.НомерВнешнегоЗаказа,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаНеВыполнения,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	СостоянияЗаказовСрезПоследних.Регистратор
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	"ДОСТАВЛЕНО",
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	УчетДенежныхСредствКассиром.Заказ.ВладелецТовара,
+	УчетДенежныхСредствКассиром.Заказ.Дата,
+	УчетДенежныхСредствКассиром.Заказ.Номер,
+	УчетДенежныхСредствКассиром.Заказ.НомерВнешнегоЗаказа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ УчетДенежныхСредствКассиром.Заказ.Ссылка),
+	NULL,
+	6,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+ИЗ
+	РегистрНакопления.УчетДенежныхСредствКассиром КАК УчетДенежныхСредствКассиром
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИсторияАдресов КАК ВТИсторияАдресов
+		ПО (ВЫРАЗИТЬ(УчетДенежныхСредствКассиром.Заказ КАК Документ.РеализацияТоваровУслуг).Ссылка = ВТИсторияАдресов.Заказ)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ПО (ВЫРАЗИТЬ(УчетДенежныхСредствКассиром.Заказ КАК Документ.РеализацияТоваровУслуг).Номер = СостоянияЗаказовСрезПоследних.Заказ.Номер)
+ГДЕ
+	(УчетДенежныхСредствКассиром.Регистратор ССЫЛКА Документ.ПечатьЧековПоДоставкам
+			ИЛИ УчетДенежныхСредствКассиром.Регистратор ССЫЛКА Документ.ДанныеЗаказаСамовывоза)
+	И УчетДенежныхСредствКассиром.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новарезультатместнойдоставки.Выполнена)
+
+СГРУППИРОВАТЬ ПО
+	УчетДенежныхСредствКассиром.Заказ.ВладелецТовара,
+	УчетДенежныхСредствКассиром.Заказ.Дата,
+	УчетДенежныхСредствКассиром.Заказ.Номер,
+	УчетДенежныхСредствКассиром.Заказ.НомерВнешнегоЗаказа,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	СостоянияЗаказовСрезПоследних.Регистратор
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	"ДОСТАВЛЕНО",
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	УчетДенежныхСредствКассиром.Заказ.ВладелецТовара,
+	УчетДенежныхСредствКассиром.Заказ.Дата,
+	УчетДенежныхСредствКассиром.Заказ.Номер,
+	УчетДенежныхСредствКассиром.Заказ.НомерВнешнегоЗаказа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ УчетДенежныхСредствКассиром.Заказ.Ссылка),
+	NULL,
+	7,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.Регистратор
+ИЗ
+	РегистрНакопления.УчетДенежныхСредствКассиром КАК УчетДенежныхСредствКассиром
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИсторияАдресов КАК ВТИсторияАдресов
+		ПО (ВЫРАЗИТЬ(УчетДенежныхСредствКассиром.Заказ КАК Документ.РеализацияТоваровУслуг).Ссылка = ВТИсторияАдресов.Заказ)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов.СрезПоследних(&amp;Период, ) КАК СостоянияЗаказовСрезПоследних
+		ПО (ВЫРАЗИТЬ(УчетДенежныхСредствКассиром.Заказ КАК Документ.РеализацияТоваровУслуг).Номер = СостоянияЗаказовСрезПоследних.Заказ.Номер)
+ГДЕ
+	(УчетДенежныхСредствКассиром.Регистратор ССЫЛКА Документ.ПечатьЧековПоДоставкам
+			ИЛИ УчетДенежныхСредствКассиром.Регистратор ССЫЛКА Документ.ДанныеЗаказаСамовывоза)
+	И УчетДенежныхСредствКассиром.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.Период МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И СостоянияЗаказовСрезПоследних.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новарезультатместнойдоставки.ВыполненаЧастично)
+
+СГРУППИРОВАТЬ ПО
+	УчетДенежныхСредствКассиром.Заказ.ВладелецТовара,
+	УчетДенежныхСредствКассиром.Заказ.Дата,
+	УчетДенежныхСредствКассиром.Заказ.Номер,
+	УчетДенежныхСредствКассиром.Заказ.НомерВнешнегоЗаказа,
+	ВТИсторияАдресов.Адрес,
+	СостоянияЗаказовСрезПоследних.НомерСтроки,
+	СостоянияЗаказовСрезПоследних.Активность,
+	СостоянияЗаказовСрезПоследних.Доставка,
+	СостоянияЗаказовСрезПоследних.РезультатДоставки,
+	СостоянияЗаказовСрезПоследних.ПричинаОтказа,
+	СостоянияЗаказовСрезПоследних.ДатаПереноса,
+	СостоянияЗаказовСрезПоследних.Регистратор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВозвратТоваровОтПокупателяТовары.Ссылка.Номер,
+	ВозвратТоваровОтПокупателяТовары.Номенклатура,
+	ВЫБОР
+		КОГДА УслугиПоЗаказам.Ссылка ЕСТЬ NULL 
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ КАК ЭтоУслугаПоЗаказам
+ПОМЕСТИТЬ ВТ_Услуги
+ИЗ
+	Документ.ВозвратТоваровОтПокупателя.Товары КАК ВозвратТоваровОтПокупателяТовары
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.УслугиПоЗаказам КАК УслугиПоЗаказам
+		ПО ВозвратТоваровОтПокупателяТовары.Номенклатура.Артикул = УслугиПоЗаказам.Артикул
+			И (НЕ УслугиПоЗаказам.ПометкаУдаления)
+ГДЕ
+	ВозвратТоваровОтПокупателяТовары.Ссылка.Номер В
+			(ВЫБРАТЬ
+				ВТ_Итог.Номер
+			ИЗ
+				ВТ_Итог КАК ВТ_Итог)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РеализацияТоваровУслугТовары.Ссылка.Номер,
+	РеализацияТоваровУслугТовары.Номенклатура,
+	ВЫБОР
+		КОГДА УслугиПоЗаказам.Ссылка ЕСТЬ NULL 
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ
+ИЗ
+	Документ.РеализацияТоваровУслуг.Товары КАК РеализацияТоваровУслугТовары
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.УслугиПоЗаказам КАК УслугиПоЗаказам
+		ПО РеализацияТоваровУслугТовары.Номенклатура.Артикул = УслугиПоЗаказам.Артикул
+			И (НЕ УслугиПоЗаказам.ПометкаУдаления)
+ГДЕ
+	РеализацияТоваровУслугТовары.Ссылка.Номер В
+			(ВЫБРАТЬ
+				ВТ_Итог.Номер
+			ИЗ
+				ВТ_Итог КАК ВТ_Итог)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РеализацияТоваровУслугУслуги.Ссылка.Номер,
+	РеализацияТоваровУслугУслуги.Номенклатура,
+	ВЫБОР
+		КОГДА УслугиПоЗаказам.Ссылка ЕСТЬ NULL 
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ
+ИЗ
+	Документ.РеализацияТоваровУслуг.Услуги КАК РеализацияТоваровУслугУслуги
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.УслугиПоЗаказам КАК УслугиПоЗаказам
+		ПО РеализацияТоваровУслугУслуги.Номенклатура.Артикул = УслугиПоЗаказам.Артикул
+			И (НЕ УслугиПоЗаказам.ПометкаУдаления)
+ГДЕ
+	РеализацияТоваровУслугУслуги.Ссылка.Номер В
+			(ВЫБРАТЬ
+				ВТ_Итог.Номер
+			ИЗ
+				ВТ_Итог КАК ВТ_Итог)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер,
+	РеализацияТоваровУслугПодарочныеПозиции.Номенклатура,
+	ВЫБОР
+		КОГДА УслугиПоЗаказам.Ссылка ЕСТЬ NULL 
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ
+ИЗ
+	Документ.РеализацияТоваровУслуг.ПодарочныеПозиции КАК РеализацияТоваровУслугПодарочныеПозиции
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.УслугиПоЗаказам КАК УслугиПоЗаказам
+		ПО РеализацияТоваровУслугПодарочныеПозиции.Номенклатура.Артикул = УслугиПоЗаказам.Артикул
+			И (НЕ УслугиПоЗаказам.ПометкаУдаления)
+ГДЕ
+	РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер В
+			(ВЫБРАТЬ
+				ВТ_Итог.Номер
+			ИЗ
+				ВТ_Итог КАК ВТ_Итог)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПоступлениеТоваровУслугТовары.Ссылка.Номер,
+	ПоступлениеТоваровУслугТовары.Номенклатура,
+	ВЫБОР
+		КОГДА УслугиПоЗаказам.Ссылка ЕСТЬ NULL 
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ
+ИЗ
+	Документ.ПоступлениеТоваровУслуг.Товары КАК ПоступлениеТоваровУслугТовары
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.УслугиПоЗаказам КАК УслугиПоЗаказам
+		ПО ПоступлениеТоваровУслугТовары.Номенклатура.Артикул = УслугиПоЗаказам.Артикул
+			И (НЕ УслугиПоЗаказам.ПометкаУдаления)
+ГДЕ
+	ПоступлениеТоваровУслугТовары.Ссылка.Номер В
+			(ВЫБРАТЬ
+				ВТ_Итог.Номер
+			ИЗ
+				ВТ_Итог КАК ВТ_Итог)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПоступлениеТоваровУслугУслуги.Ссылка.Номер,
+	ПоступлениеТоваровУслугУслуги.Номенклатура,
+	ВЫБОР
+		КОГДА УслугиПоЗаказам.Ссылка ЕСТЬ NULL 
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ
+ИЗ
+	Документ.ПоступлениеТоваровУслуг.Услуги КАК ПоступлениеТоваровУслугУслуги
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.УслугиПоЗаказам КАК УслугиПоЗаказам
+		ПО ПоступлениеТоваровУслугУслуги.Номенклатура.Артикул = УслугиПоЗаказам.Артикул
+			И (НЕ УслугиПоЗаказам.ПометкаУдаления)
+ГДЕ
+	ПоступлениеТоваровУслугУслуги.Ссылка.Номер В
+			(ВЫБРАТЬ
+				ВТ_Итог.Номер
+			ИЗ
+				ВТ_Итог КАК ВТ_Итог)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПоступлениеТоваровУслугПодарочныеПозиции.Ссылка.Номер,
+	ПоступлениеТоваровУслугПодарочныеПозиции.Номенклатура,
+	ВЫБОР
+		КОГДА УслугиПоЗаказам.Ссылка ЕСТЬ NULL 
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ
+ИЗ
+	Документ.ПоступлениеТоваровУслуг.ПодарочныеПозиции КАК ПоступлениеТоваровУслугПодарочныеПозиции
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.УслугиПоЗаказам КАК УслугиПоЗаказам
+		ПО ПоступлениеТоваровУслугПодарочныеПозиции.Номенклатура.Артикул = УслугиПоЗаказам.Артикул
+			И (НЕ УслугиПоЗаказам.ПометкаУдаления)
+ГДЕ
+	ПоступлениеТоваровУслугПодарочныеПозиции.Ссылка.Номер В
+			(ВЫБРАТЬ
+				ВТ_Итог.Номер
+			ИЗ
+				ВТ_Итог КАК ВТ_Итог)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ.Номер КАК Номер,
+	ВТ.Номенклатура,
+	МАКСИМУМ(ВТ.ЭтоУслугаПоЗаказам) КАК ЭтоУслугаПоЗаказам
+ПОМЕСТИТЬ ВТ_ПромежуточныйИтогУслуги
+ИЗ
+	ВТ_Услуги КАК ВТ
+
+СГРУППИРОВАТЬ ПО
+	ВТ.Номер,
+	ВТ.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПромежуточныйИтог.Номер,
+	МИНИМУМ(ВТ_ПромежуточныйИтог.ЭтоУслугаПоЗаказам) КАК ЭтоУслугаПоЗаказам
+ПОМЕСТИТЬ ВТ_ИтогТолькоУслуги
+ИЗ
+	ВТ_ПромежуточныйИтогУслуги КАК ВТ_ПромежуточныйИтог
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПромежуточныйИтог.Номер
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Итог.Номер КАК Номер
+ПОМЕСТИТЬ ВТ_СписокЗаказовТолькоУслуги
+ИЗ
+	ВТ_ИтогТолькоУслуги КАК ВТ_Итог
+ГДЕ
+	ВТ_Итог.ЭтоУслугаПоЗаказам
+
+ИНДЕКСИРОВАТЬ ПО
+	Номер
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СостоянияЗаказов.Заказ.Номер
+ПОМЕСТИТЬ ВТ_РанееПеренесенныеЗаказы
+ИЗ
+	РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Итог КАК ВТ_Итог
+		ПО СостоянияЗаказов.Заказ.Номер = ВТ_Итог.Номер
+ГДЕ
+	СостоянияЗаказов.Период &lt; &amp;ПериодПеренесенные
+	И СостоянияЗаказов.ПричинаНеВыполнения В(&amp;ПричинаНеВыполнения)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(ВТ_Итог.Регистратор) КАК Регистратор,
+	МАКСИМУМ(ВТ_Итог.НомерСтроки) КАК НомерСтроки,
+	ВТ_Итог.Активность,
+	МАКСИМУМ(ВТ_Итог.Доставка) КАК Доставка,
+	ВТ_Итог.РезультатДоставки,
+	ВТ_Итог.ПричинаНеВыполнения,
+	ВТ_Итог.ПричинаОтказа,
+	ВТ_Итог.ИнтернетМагазин,
+	ВТ_Итог.Дата,
+	ВТ_Итог.Номер,
+	ВТ_Итог.НомерВнешнегоЗаказа,
+	МАКСИМУМ(ВТ_Итог.Количество) КАК Количество,
+	МАКСИМУМ(ВТ_Итог.Рейс) КАК Рейс,
+	ВТ_Итог.Порядок КАК Порядок,
+	МАКСИМУМ(ВТ_Итог.ДатаПереноса) КАК ДатаПереноса,
+	ВТ_Итог.НовыйАдрес
+ПОМЕСТИТЬ ВТ
+ИЗ
+	ВТ_Итог КАК ВТ_Итог
+ГДЕ
+	НЕ ВТ_Итог.Номер В
+				(ВЫБРАТЬ
+					ВТ_СписокЗаказовТолькоУслуги.Номер
+				ИЗ
+					ВТ_СписокЗаказовТолькоУслуги КАК ВТ_СписокЗаказовТолькоУслуги)
+	И ВЫБОР
+			КОГДА ВТ_Итог.ПричинаНеВыполнения В (&amp;ПричинаНеВыполнения)
+				ТОГДА НЕ ВТ_Итог.Номер В
+							(ВЫБРАТЬ
+								ВТ_РанееПеренесенныеЗаказы.ЗаказНомер
+							ИЗ
+								ВТ_РанееПеренесенныеЗаказы КАК ВТ_РанееПеренесенныеЗаказы)
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Итог.Активность,
+	ВТ_Итог.РезультатДоставки,
+	ВТ_Итог.ПричинаНеВыполнения,
+	ВТ_Итог.ПричинаОтказа,
+	ВТ_Итог.ИнтернетМагазин,
+	ВТ_Итог.Дата,
+	ВТ_Итог.Номер,
+	ВТ_Итог.НомерВнешнегоЗаказа,
+	ВТ_Итог.Порядок,
+	ВТ_Итог.НовыйАдрес
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ.Регистратор,
+	ВТ.НомерСтроки,
+	ВТ.Активность,
+	ВТ.Доставка,
+	ВТ.РезультатДоставки,
+	ВТ.ПричинаНеВыполнения,
+	ВТ.ПричинаОтказа,
+	ВТ.ИнтернетМагазин,
+	ВТ.Дата,
+	ВТ.Номер,
+	ВТ.НомерВнешнегоЗаказа,
+	ВТ.Количество,
+	ВТ.Рейс,
+	ВТ.Порядок,
+	ВТ.ДатаПереноса,
+	ВТ.НовыйАдрес
+ИЗ
+	ВТ КАК ВТ</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ПолныйНомерЗаказа</dataPath>
+		<expression>ОбщегоНазначения.СформироватьПолныйНомерЗаказа(Номер, НомерВнешнегоЗаказа)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Полный номер заказа</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<parameter>
+		<name>КонПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Кон периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодСтр.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НачПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Нач периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодСтр.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ПериодСтр</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Today</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодСтр.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодПеренесенные</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период перенесенные</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ДОБАВИТЬКДАТЕ(&amp;ПериодСтр.ДатаНачала,"СЕКУНДА",-1)</expression>
+	</parameter>
+	<parameter>
+		<name>ПричинаНеВыполнения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Причина не выполнения</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПричиныНеВыполненияДоставки</v8:Type>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>10</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки</value>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь</value>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИнтернетМагазин</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Контрагенты.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>0d7c83dd-f1cb-4bf7-98e9-42e6a93b0adb</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодСтр</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Today</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>54d709e3-1c9f-4e31-b8ca-2b2c6cecca69</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПричинаНеВыполнения</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отказы-переносы</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ИнтернетМагазин</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">РезультатДоставки</dcsset:left>
+							<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.Выполнена</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Количество</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПолныйНомерЗаказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПричинаОтказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Рейс.Транспорт.НомерГосударственнойРегистрации</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДатаПереноса</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>НовыйАдрес</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Количество</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>Количество</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Текст</dcscor:parameter>
+										<dcscor:value xsi:type="xs:string"/>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+						<dcsset:use>false</dcsset:use>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество.ПроцентОбщий</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ДляПочты</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Почта</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИнтернетМагазин</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a71c847c-db1e-4b59-8530-431bb8b948ae</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодСтр</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Today</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>54d709e3-1c9f-4e31-b8ca-2b2c6cecca69</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПричинаНеВыполнения</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отказы-переносы</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ИнтернетМагазин</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">РезультатДоставки</dcsset:left>
+							<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.Выполнена</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Шрифт</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МакетОформления</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПолныйНомерЗаказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПричинаОтказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДатаПереноса</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>НовыйАдрес</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>Количество</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Текст</dcscor:parameter>
+										<dcscor:value xsi:type="xs:string"/>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МакетОформления</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ДляПочтыРуководству</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Почта руководство</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИнтернетМагазин</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a71c847c-db1e-4b59-8530-431bb8b948ae</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодСтр</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Today</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>54d709e3-1c9f-4e31-b8ca-2b2c6cecca69</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПричинаНеВыполнения</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отказы-переносы</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+						<dcsset:use>false</dcsset:use>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество.ПроцентОбщий</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ИнтернетМагазин</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">РезультатДоставки</dcsset:left>
+							<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.Выполнена</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Количество</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПолныйНомерЗаказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПричинаОтказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Рейс.Транспорт.НомерГосударственнойРегистрации</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДатаПереноса</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>НовыйАдрес</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Количество</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>Количество</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter/>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Текст</dcscor:parameter>
+										<dcscor:value xsi:type="xs:string"/>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="870200e4-258b-431f-8eaa-863b0610576b">
+  <producedTypes>
+    <selectionType typeId="47962255-e204-4b61-9981-3acfe4368d34" valueTypeId="189337ef-099c-45b5-9c86-0400c84fb4dc"/>
+    <listType typeId="dac254e5-383a-4b6d-9839-e893ceabd9c1" valueTypeId="c6ec87a8-e331-4807-b1c6-e944d1ddcbf5"/>
+    <managerType typeId="a4e0d913-a0c7-4ccf-80ae-a6d6d6006c09" valueTypeId="a17f8855-fe1e-4c4d-973c-3093a91cf88c"/>
+    <recordSetType typeId="816db07b-8be2-4c60-a5fd-ce83a3d870e8" valueTypeId="5c5b8f30-8dbb-4d9a-8675-d54f3e85c0e0"/>
+    <recordKeyType typeId="b5841c87-2633-4015-9a77-1d1932b008dc" valueTypeId="a7ff5390-710e-4714-83b0-fa2104475c7c"/>
+    <recordType typeId="7b3c41ed-8165-46b3-b66d-d3338ae43db2" valueTypeId="19a4d096-e25f-421d-a75a-9bcec45d8b5d"/>
+    <recordManagerType typeId="55e66131-fe58-4e42-95cc-565ffe90d8c8" valueTypeId="ccc48dd8-18f5-4743-9a66-0e0978f52c3d"/>
+  </producedTypes>
+  <name>СтатусыВыгрузкиВВероут</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы выгрузки в вероут</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.СтатусыВыгрузкиВВероут.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.СтатусыВыгрузкиВВероут.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="46e6e64d-c55b-4ddd-b4c8-1b695d0b6ea3">
+    <name>СтатусВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус выгрузки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="4f3d7c67-9560-4988-a155-934ad65b39ae">
+    <name>СтатусВыгрузки_</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус выгрузки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыВыгрузкиВВероут</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="5333791b-89a8-4e63-9e1d-377c22a8eae7">
+    <name>ТекстОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="886f64fe-9dc4-43f2-aee5-db047a359ecf">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a002a52d-b143-4735-bfbb-95f9a8038297">
+    <name>ДатаПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата планирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a4484d8f-df3c-4563-9427-62599342a4fc">
+    <name>Суффикс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Суффикс</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e274ce76-479a-4e07-9976-8caef8336ce2">
+    <name>ВидСервера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид сервера</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="96f5d32f-2ee7-4d79-b6ce-dceb208a5856">
+    <name>Данные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Данные</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПакетыДанныхВероут</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fda0f75d-d23c-4879-9ed0-30f8c32d093f">
+    <name>НомерСтрокиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер строки данных</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="112e891d-a78b-4186-9c63-063aefc80c2f">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1cf165b0-326c-4d82-b19e-5d99bf799c8b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

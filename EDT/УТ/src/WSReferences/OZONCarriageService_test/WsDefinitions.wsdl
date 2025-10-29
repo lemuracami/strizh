@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="ozon/api/subagent"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="ozon/api/subagent"
+		xmlns:xsd2="ozon/api/subagent/Imports"
+		name="CarriageService"
+		targetNamespace="ozon/api/subagent">
+	<types>
+		<xsd:schema xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tns="ozon/api/subagent/Imports"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				targetNamespace="ozon/api/subagent/Imports">
+			<xsd:import schemaLocation="file://1.xsd"
+					namespace="ozon/api/subagent"/>
+		</xsd:schema>
+	</types>
+	<message name="ICarriageService_CarriageReceive_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageReceive"/>
+	</message>
+	<message name="ICarriageService_CarriageReceive_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageReceiveResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageSend_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageSend"/>
+	</message>
+	<message name="ICarriageService_CarriageSend_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageSendResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageFinish_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageFinish"/>
+	</message>
+	<message name="ICarriageService_CarriageFinish_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageFinishResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageListGet_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageListGet"/>
+	</message>
+	<message name="ICarriageService_CarriageListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageListGetResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageGet_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageGet"/>
+	</message>
+	<message name="ICarriageService_CarriageGet_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageGetResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageContentGet_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageContentGet"/>
+	</message>
+	<message name="ICarriageService_CarriageContentGet_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageContentGetResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageCurrentContentGet_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageCurrentContentGet"/>
+	</message>
+	<message name="ICarriageService_CarriageCurrentContentGet_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageCurrentContentGetResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageDocumentListGet_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageDocumentListGet"/>
+	</message>
+	<message name="ICarriageService_CarriageDocumentListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageDocumentListGetResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageReturnAdd_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageReturnAdd"/>
+	</message>
+	<message name="ICarriageService_CarriageReturnAdd_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageReturnAddResponse"/>
+	</message>
+	<message name="ICarriageService_CarriageToSendListGet_InputMessage">
+		<part name="parameters"
+				element="tns:CarriageToSendListGet"/>
+	</message>
+	<message name="ICarriageService_CarriageToSendListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:CarriageToSendListGetResponse"/>
+	</message>
+	<portType name="ICarriageService">
+		<operation name="CarriageReceive">
+			<input name="CarriageReceiveRequest"
+					message="tns:ICarriageService_CarriageReceive_InputMessage"/>
+			<output name="CarriageReceiveResponse"
+					message="tns:ICarriageService_CarriageReceive_OutputMessage"/>
+		</operation>
+		<operation name="CarriageSend">
+			<input name="CarriageSendRequest"
+					message="tns:ICarriageService_CarriageSend_InputMessage"/>
+			<output name="CarriageSendResponse"
+					message="tns:ICarriageService_CarriageSend_OutputMessage"/>
+		</operation>
+		<operation name="CarriageFinish">
+			<input name="CarriageFinishRequest"
+					message="tns:ICarriageService_CarriageFinish_InputMessage"/>
+			<output name="CarriageFinishResponse"
+					message="tns:ICarriageService_CarriageFinish_OutputMessage"/>
+		</operation>
+		<operation name="CarriageListGet">
+			<input name="CarriageListGetRequest"
+					message="tns:ICarriageService_CarriageListGet_InputMessage"/>
+			<output name="CarriageListGetResponse"
+					message="tns:ICarriageService_CarriageListGet_OutputMessage"/>
+		</operation>
+		<operation name="CarriageGet">
+			<input name="CarriageGetRequest"
+					message="tns:ICarriageService_CarriageGet_InputMessage"/>
+			<output name="CarriageGetResponse"
+					message="tns:ICarriageService_CarriageGet_OutputMessage"/>
+		</operation>
+		<operation name="CarriageContentGet">
+			<input name="CarriageContentGetRequest"
+					message="tns:ICarriageService_CarriageContentGet_InputMessage"/>
+			<output name="CarriageContentGetResponse"
+					message="tns:ICarriageService_CarriageContentGet_OutputMessage"/>
+		</operation>
+		<operation name="CarriageCurrentContentGet">
+			<input name="CarriageCurrentContentGetRequest"
+					message="tns:ICarriageService_CarriageCurrentContentGet_InputMessage"/>
+			<output name="CarriageCurrentContentGetResponse"
+					message="tns:ICarriageService_CarriageCurrentContentGet_OutputMessage"/>
+		</operation>
+		<operation name="CarriageDocumentListGet">
+			<input name="CarriageDocumentListGetRequest"
+					message="tns:ICarriageService_CarriageDocumentListGet_InputMessage"/>
+			<output name="CarriageDocumentListGetResponse"
+					message="tns:ICarriageService_CarriageDocumentListGet_OutputMessage"/>
+		</operation>
+		<operation name="CarriageReturnAdd">
+			<input name="CarriageReturnAddRequest"
+					message="tns:ICarriageService_CarriageReturnAdd_InputMessage"/>
+			<output name="CarriageReturnAddResponse"
+					message="tns:ICarriageService_CarriageReturnAdd_OutputMessage"/>
+		</operation>
+		<operation name="CarriageToSendListGet">
+			<input name="CarriageToSendListGetRequest"
+					message="tns:ICarriageService_CarriageToSendListGet_InputMessage"/>
+			<output name="CarriageToSendListGetResponse"
+					message="tns:ICarriageService_CarriageToSendListGet_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_ICarriageService"
+			type="tns:ICarriageService">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CarriageReceive">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageReceive"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageSend">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageSend"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageFinish">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageFinish"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageContentGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageContentGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageCurrentContentGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageCurrentContentGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageDocumentListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageDocumentListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageReturnAdd">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageReturnAdd"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CarriageToSendListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/ICarriageService/CarriageToSendListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CarriageService">
+		<port name="BasicHttpBinding_ICarriageService"
+				binding="tns:BasicHttpBinding_ICarriageService">
+			<soapbind:address location="http://apitest.ozon-dostavka.ru/subagent/v2/CarriageService.svc"/>
+		</port>
+	</service>
+</definitions>

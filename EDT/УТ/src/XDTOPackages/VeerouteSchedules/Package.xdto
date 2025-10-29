@@ -1,0 +1,23 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://veeroute.com/schedules">
+	<objectType name="apiRequest">
+		<property name="sessionID" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/schedules" name="runs" type="d3p1:runs" lowerBound="1" upperBound="1" form="Element"/>
+	</objectType>
+	<objectType name="run">
+		<property name="vehicleName" type="xs:string" form="Attribute"/>
+		<property name="driverName" type="xs:string" form="Attribute"/>
+		<property name="allocationDate" type="xs:string" form="Attribute"/>
+		<property name="number" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://veeroute.com/schedules" name="order" type="d3p1:order" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="orders">
+		<property xmlns:d3p1="http://veeroute.com/schedules" name="order" type="d3p1:order" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="order">
+		<property name="reference" type="xs:string" form="Attribute"/>
+		<property name="sequence" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="runs">
+		<property xmlns:d3p1="http://veeroute.com/schedules" name="run" type="d3p1:run" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

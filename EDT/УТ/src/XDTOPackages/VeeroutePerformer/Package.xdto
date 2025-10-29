@@ -1,0 +1,39 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://veeroute.com/performer">
+	<objectType name="apiRequest">
+		<property name="sessionID" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/performer" name="performersDetails" type="d3p1:performersDetails"/>
+	</objectType>
+	<objectType name="performersDetails">
+		<property xmlns:d3p1="http://veeroute.com/performer" name="units" type="d3p1:unit" upperBound="1" fixed="false"/>
+		<property xmlns:d3p1="http://veeroute.com/performer" name="performers" type="d3p1:arrayOfPerformers"/>
+	</objectType>
+	<objectType name="arrayOfPerformers">
+		<property xmlns:d3p1="http://veeroute.com/performer" name="performer" type="d3p1:performer" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="performer">
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property name="email" type="xs:string" form="Attribute"/>
+		<property name="login" type="xs:string" form="Attribute"/>
+		<property name="priceForOneHour" type="xs:string" form="Attribute"/>
+		<property name="password" type="xs:string" form="Attribute"/>
+		<property name="areaOfControl" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://veeroute.com/performer" name="availabilities" type="d3p1:ArrayOfAvailabilities" lowerBound="1" upperBound="1" form="Element"/>
+		<property name="breakShift" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="ArrayOfAvailabilities">
+		<property xmlns:d3p1="http://veeroute.com/performer" name="availability" type="d3p1:availability" lowerBound="0" upperBound="-1" form="Element"/>
+	</objectType>
+	<objectType name="availability">
+		<property name="weekDay" type="xs:string" form="Attribute"/>
+		<property name="from" type="xs:string" form="Attribute"/>
+		<property name="to" type="xs:string" form="Attribute"/>
+		<property name="fixedDayStart" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="startLocation">
+		<property name="address" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="homeLocation">
+		<property name="address" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="unit"/>
+</package>

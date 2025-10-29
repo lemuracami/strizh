@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fc2094c0-5d67-436c-bbe2-3da0d55263bb">
+  <producedTypes>
+    <selectionType typeId="43c522e7-3335-4cd9-9e35-23e9c7c6bae3" valueTypeId="92c03581-6ffc-4e15-ac14-99c5e777bd44"/>
+    <listType typeId="a992d7f9-ba80-4a14-ab40-eb6b16913991" valueTypeId="123d400a-8651-45a1-984d-5c3b1cb179de"/>
+    <managerType typeId="b1a519a5-dfb3-452b-8f6e-457d54479e26" valueTypeId="5a3d4a29-1035-4696-b2eb-d1cdf6c8abb7"/>
+    <recordSetType typeId="ce77a717-82bf-4ebc-8f74-1238fdf28190" valueTypeId="cc5f3a30-484b-4201-9de2-2ee881b2402d"/>
+    <recordKeyType typeId="c7c5a7fa-8413-4799-862a-cc9ebce03bef" valueTypeId="feeedbd4-d405-4bc5-9567-af572ebdb619"/>
+    <recordType typeId="a60b263d-9a89-4011-abf5-cfe085e7144c" valueTypeId="ea06963e-a073-421b-b5ad-ca7a9ac41ac9"/>
+  </producedTypes>
+  <name>ОтработанноеВремяПоТабелю</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отработанное время по табелю</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="49cbc661-6fe2-4215-a853-1600a4ec9858">
+    <name>Показатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="4c2ba33b-87b2-4e38-adbd-08c0b67eb166">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Подразделения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="1fdfdb91-1487-4a92-ab50-20fc6e9f19d1">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+      <types>CatalogRef.новаЭкспедиторы</types>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="85a849b4-676e-4563-bf26-9dc0abff4781">
+    <name>ДатаПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="695f3f1c-9ece-45e5-b3dc-a6381b6ffc43">
+    <name>ВидОтработанногоВремени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид отработанного времени</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлассификаторИспользованияРабочегоВремени</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c796244f-9910-47e4-b9d9-083b384a314e">
+    <name>ВидПериодаРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид периода расчета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПериодыРасчетаЗП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

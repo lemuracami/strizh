@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УслугиСДЧистые</dataPath>
+			<field>УслугиСДЧистые</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПолученная</dataPath>
+			<field>СуммаПолученная</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаНевыполнения</dataPath>
+			<field>ПричинаНевыполнения</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_ДоставкаСТерминалаНаТерминал</dataPath>
+			<field>Показатель_ДоставкаСТерминалаНаТерминал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель доставка с терминала на терминал</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатусИнтернетМагазина</dataPath>
+			<field>СтатусИнтернетМагазина</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТерминалПриёма</dataPath>
+			<field>ТерминалПриёма</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаОтказа</dataPath>
+			<field>ПричинаОтказа</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОплаченоКлиентовНал</dataPath>
+			<field>ОплаченоКлиентовНал</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Месяц</dataPath>
+			<field>Месяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=MMMM</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОплаты</dataPath>
+			<field>ТипОплаты</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаДоставкиЗаМКАД</dataPath>
+			<field>СуммаДоставкиЗаМКАД</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_Подъём</dataPath>
+			<field>Показатель_Подъём</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель подъём</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОценочная</dataPath>
+			<field>СуммаОценочная</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредоплатаПоКредиту</dataPath>
+			<field>ПредоплатаПоКредиту</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_СтраховойСбор</dataPath>
+			<field>Показатель_СтраховойСбор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель страховой сбор</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЧастичногоВозврата</dataPath>
+			<field>СуммаЧастичногоВозврата</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АгентскоеВознаграждение</dataPath>
+			<field>АгентскоеВознаграждение</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаВозврата</dataPath>
+			<field>СуммаВозврата</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗонаТарификации</dataPath>
+			<field>ЗонаТарификации</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_ОжиданиеКурьера</dataPath>
+			<field>Показатель_ОжиданиеКурьера</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель ожидание курьера</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФактическийВес</dataPath>
+			<field>ФактическийВес</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасчетныйБрейк</dataPath>
+			<field>РасчетныйБрейк</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Транспорт</dataPath>
+			<field>Транспорт</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Масса</dataPath>
+			<field>Масса</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияДоставки</dataPath>
+			<field>КатегорияДоставки</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТарифнаяСеткаПартнера</dataPath>
+			<field>ТарифнаяСеткаПартнера</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаОтклоненияЗаказа</dataPath>
+			<field>ПричинаОтклоненияЗаказа</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТерминалДоставки</dataPath>
+			<field>ТерминалДоставки</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтернетМагазин</dataPath>
+			<field>ИнтернетМагазин</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаДоставкиДоМКАД</dataPath>
+			<field>СуммаДоставкиДоМКАД</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БанковскаяКомиссия</dataPath>
+			<field>БанковскаяКомиссия</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Экспедитор</dataPath>
+			<field>Экспедитор</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_Бахилы</dataPath>
+			<field>Показатель_Бахилы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель бахилы</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТарифнаяСетка</dataPath>
+			<field>ТарифнаяСетка</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_МаркировкаЗаказа</dataPath>
+			<field>Показатель_МаркировкаЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель маркировка заказа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховойСбор</dataPath>
+			<field>СтраховойСбор</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водитель</dataPath>
+			<field>Водитель</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КассовоеОбслуживание</dataPath>
+			<field>КассовоеОбслуживание</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_ВозвратТоваровПоставщику</dataPath>
+			<field>Показатель_ВозвратТоваровПоставщику</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель возврат товаров поставщику</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_КомплектацияЗаказа</dataPath>
+			<field>Показатель_КомплектацияЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель комплектация заказа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидVip</dataPath>
+			<field>ВидVip</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VIPДоставка</dataPath>
+			<field>VIPДоставка</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрЛицо</dataPath>
+			<field>ЮрЛицо</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатусЗаказа</dataPath>
+			<field>СтатусЗаказа</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗаказа</dataPath>
+			<field>ТипЗаказа</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УслугиСД</dataPath>
+			<field>УслугиСД</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель_ОсновнаяЧасть</dataPath>
+			<field>Показатель_ОсновнаяЧасть</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель основная часть</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗаказов</dataPath>
+			<field>КоличествоЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество заказов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реализация</dataPath>
+			<field>Реализация</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасстояниеПоДорогам</dataPath>
+			<field>РасстояниеПоДорогам</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расстояние по дорогам</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасстояниеПоПрямой</dataPath>
+			<field>РасстояниеПоПрямой</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расстояние по прямой</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗамераРасстояния</dataPath>
+			<field>ТипЗамераРасстояния</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗакрытыеЗаказы.ЮрЛицо,
+	ЗакрытыеЗаказы.ТипЗаказа,
+	ЗакрытыеЗаказы.Транспорт,
+	ЗакрытыеЗаказы.ИнтернетМагазин,
+	ЗакрытыеЗаказы.КатегорияДоставки,
+	ЗакрытыеЗаказы.Водитель,
+	ЗакрытыеЗаказы.Экспедитор,
+	ЗакрытыеЗаказы.Клиент,
+	ЗакрытыеЗаказы.Реализация,
+	ЗакрытыеЗаказы.ТипОплаты,
+	ЗакрытыеЗаказы.СтатусЗаказа,
+	ЗакрытыеЗаказы.ПричинаНевыполнения,
+	ЗакрытыеЗаказы.СтатусИнтернетМагазина,
+	ЗакрытыеЗаказы.ПричинаОтказа,
+	ЗакрытыеЗаказы.VIPДоставка,
+	ЗакрытыеЗаказы.ВидVip,
+	ЗакрытыеЗаказы.ТарифнаяСетка,
+	ЗакрытыеЗаказы.РасчетныйБрейк,
+	ЗакрытыеЗаказы.ТарифнаяСеткаПартнера,
+	ЗакрытыеЗаказы.ЗонаТарификации,
+	СУММА(ЗакрытыеЗаказы.СуммаОценочная) КАК СуммаОценочная,
+	СУММА(ЗакрытыеЗаказы.СуммаПолученная) КАК СуммаПолученная,
+	СУММА(ЗакрытыеЗаказы.СуммаДоставкиДоМКАД) КАК СуммаДоставкиДоМКАД,
+	СУММА(ЗакрытыеЗаказы.СуммаДоставкиЗаМКАД) КАК СуммаДоставкиЗаМКАД,
+	СУММА(ЗакрытыеЗаказы.УслугиСД) КАК УслугиСД,
+	СУММА(ЗакрытыеЗаказы.БанковскаяКомиссия) КАК БанковскаяКомиссия,
+	СУММА(ЗакрытыеЗаказы.КассовоеОбслуживание) КАК КассовоеОбслуживание,
+	СУММА(ЗакрытыеЗаказы.СуммаВозврата) КАК СуммаВозврата,
+	СУММА(ЗакрытыеЗаказы.Масса) КАК Масса,
+	СУММА(ЗакрытыеЗаказы.СуммаЧастичногоВозврата) КАК СуммаЧастичногоВозврата,
+	СУММА(ЗакрытыеЗаказы.ОплаченоКлиентовНал) КАК ОплаченоКлиентовНал,
+	СУММА(ЗакрытыеЗаказы.АгентскоеВознаграждение) КАК АгентскоеВознаграждение,
+	СУММА(ЗакрытыеЗаказы.ПредоплатаПоКредиту) КАК ПредоплатаПоКредиту,
+	СУММА(ЗакрытыеЗаказы.УслугиСДЧистые) КАК УслугиСДЧистые,
+	СУММА(ЗакрытыеЗаказы.СтраховойСбор) КАК СтраховойСбор,
+	КОНЕЦПЕРИОДА(ЗакрытыеЗаказы.Период, МЕСЯЦ) КАК Месяц,
+	ЗакрытыеЗаказы.Партнер,
+	ЗакрытыеЗаказы.ТерминалДоставки,
+	ЗакрытыеЗаказы.ТерминалПриёма,
+	ЗакрытыеЗаказы.ПричинаОтклоненияЗаказа,
+	ЗакрытыеЗаказы.ФактическийВес,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗакрытыеЗаказы.Реализация) КАК КоличествоЗаказов
+ПОМЕСТИТЬ ВТ_Данные
+ИЗ
+	РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+ГДЕ
+	ЗакрытыеЗаказы.Период МЕЖДУ &amp;ДатаНач И &amp;ДатаКон
+
+СГРУППИРОВАТЬ ПО
+	ЗакрытыеЗаказы.ТипЗаказа,
+	ЗакрытыеЗаказы.Транспорт,
+	ЗакрытыеЗаказы.ЮрЛицо,
+	ЗакрытыеЗаказы.ИнтернетМагазин,
+	ЗакрытыеЗаказы.КатегорияДоставки,
+	ЗакрытыеЗаказы.Водитель,
+	ЗакрытыеЗаказы.Экспедитор,
+	ЗакрытыеЗаказы.Клиент,
+	ЗакрытыеЗаказы.ТипОплаты,
+	ЗакрытыеЗаказы.СтатусЗаказа,
+	ЗакрытыеЗаказы.ПричинаНевыполнения,
+	ЗакрытыеЗаказы.СтатусИнтернетМагазина,
+	ЗакрытыеЗаказы.ПричинаОтказа,
+	ЗакрытыеЗаказы.VIPДоставка,
+	ЗакрытыеЗаказы.ВидVip,
+	ЗакрытыеЗаказы.ТарифнаяСетка,
+	ЗакрытыеЗаказы.РасчетныйБрейк,
+	ЗакрытыеЗаказы.ТарифнаяСеткаПартнера,
+	ЗакрытыеЗаказы.ЗонаТарификации,
+	ЗакрытыеЗаказы.Реализация,
+	КОНЕЦПЕРИОДА(ЗакрытыеЗаказы.Период, МЕСЯЦ),
+	ЗакрытыеЗаказы.Партнер,
+	ЗакрытыеЗаказы.ТерминалДоставки,
+	ЗакрытыеЗаказы.ТерминалПриёма,
+	ЗакрытыеЗаказы.ПричинаОтклоненияЗаказа,
+	ЗакрытыеЗаказы.ФактическийВес
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТ_Данные.ЮрЛицо,
+	ВТ_Данные.ТипЗаказа,
+	ВТ_Данные.Транспорт,
+	ВТ_Данные.ИнтернетМагазин,
+	ВТ_Данные.КатегорияДоставки,
+	ВТ_Данные.Водитель,
+	ВТ_Данные.Экспедитор,
+	ВТ_Данные.Клиент,
+	ВТ_Данные.Реализация,
+	ВТ_Данные.ТипОплаты,
+	ВТ_Данные.СтатусЗаказа,
+	ВТ_Данные.ПричинаНевыполнения,
+	ВТ_Данные.СтатусИнтернетМагазина,
+	ВТ_Данные.ПричинаОтказа,
+	ВТ_Данные.VIPДоставка,
+	ВТ_Данные.ВидVip,
+	ВТ_Данные.ТарифнаяСетка,
+	ВТ_Данные.РасчетныйБрейк,
+	ВТ_Данные.ТарифнаяСеткаПартнера,
+	ВТ_Данные.ЗонаТарификации,
+	ВТ_Данные.СуммаОценочная КАК СуммаОценочная,
+	ВТ_Данные.СуммаПолученная КАК СуммаПолученная,
+	ВТ_Данные.СуммаДоставкиДоМКАД КАК СуммаДоставкиДоМКАД,
+	ВТ_Данные.СуммаДоставкиЗаМКАД КАК СуммаДоставкиЗаМКАД,
+	ВТ_Данные.УслугиСД КАК УслугиСД,
+	ВТ_Данные.БанковскаяКомиссия КАК БанковскаяКомиссия,
+	ВТ_Данные.КассовоеОбслуживание КАК КассовоеОбслуживание,
+	ВТ_Данные.СуммаВозврата КАК СуммаВозврата,
+	ВТ_Данные.Масса КАК Масса,
+	ВТ_Данные.СуммаЧастичногоВозврата КАК СуммаЧастичногоВозврата,
+	ВТ_Данные.ОплаченоКлиентовНал КАК ОплаченоКлиентовНал,
+	ВТ_Данные.АгентскоеВознаграждение КАК АгентскоеВознаграждение,
+	ВТ_Данные.ПредоплатаПоКредиту КАК ПредоплатаПоКредиту,
+	ВТ_Данные.УслугиСДЧистые КАК УслугиСДЧистые,
+	ВТ_Данные.СтраховойСбор КАК СтраховойСбор,
+	ВТ_Данные.КоличествоЗаказов,
+	ВТ_Данные.Месяц,
+	ВТ_Данные.Партнер,
+	ВТ_Данные.ТерминалДоставки,
+	ВТ_Данные.ТерминалПриёма,
+	ВТ_Данные.ПричинаОтклоненияЗаказа,
+	ВТ_Данные.ФактическийВес КАК ФактическийВес,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Страховой сбор"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_СтраховойСбор,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Подъём"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_Подъём,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Ожидание курьера"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_ОжиданиеКурьера,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Маркировка заказа"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_МаркировкаЗаказа,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "комплектация заказа"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_КомплектацияЗаказа,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Доставка с терминала выдачи на терминал приема"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_ДоставкаСТерминалаНаТерминал,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Возврат товаров поставщику"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_ВозвратТоваровПоставщику,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Бахилы"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_Бахилы,
+	СУММА(ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг.Наименование = "Основная часть"
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Показатель_ОсновнаяЧасть,
+	ЕСТЬNULL(РасчетРасстоянийСрезПоследних.Расстояние, 0) КАК РасстояниеПоПрямой,
+	ЕСТЬNULL(РасчетРасстоянийСрезПоследнихПоДорогам.Расстояние, 0) КАК РасстояниеПоДорогам
+ИЗ
+	ВТ_Данные КАК ВТ_Данные
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РасчетУслугСД КАК РасчетУслугСД
+		ПО ВТ_Данные.Реализация.Ссылка = РасчетУслугСД.Реализация.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РасчетРасстояний.СрезПоследних(, ТипЗамераРасстояния = ЗНАЧЕНИЕ(Перечисление.ТипыЗамераРасстояний.ПоПрямойОтБазы)) КАК РасчетРасстоянийСрезПоследних
+		ПО ВТ_Данные.Реализация.Ссылка = РасчетРасстоянийСрезПоследних.Заказ
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РасчетРасстояний.СрезПоследних(, ТипЗамераРасстояния = ЗНАЧЕНИЕ(Перечисление.ТипыЗамераРасстояний.ПоДорогамОтБазы)) КАК РасчетРасстоянийСрезПоследнихПоДорогам
+		ПО ВТ_Данные.Реализация.Ссылка = РасчетРасстоянийСрезПоследнихПоДорогам.Заказ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Данные.ЮрЛицо,
+	ВТ_Данные.ТипЗаказа,
+	ВТ_Данные.Транспорт,
+	ВТ_Данные.ИнтернетМагазин,
+	ВТ_Данные.КатегорияДоставки,
+	ВТ_Данные.Водитель,
+	ВТ_Данные.Экспедитор,
+	ВТ_Данные.Клиент,
+	ВТ_Данные.Реализация,
+	ВТ_Данные.ТипОплаты,
+	ВТ_Данные.СтатусЗаказа,
+	ВТ_Данные.ПричинаНевыполнения,
+	ВТ_Данные.СтатусИнтернетМагазина,
+	ВТ_Данные.ПричинаОтказа,
+	ВТ_Данные.VIPДоставка,
+	ВТ_Данные.ВидVip,
+	ВТ_Данные.ТарифнаяСетка,
+	ВТ_Данные.РасчетныйБрейк,
+	ВТ_Данные.ТарифнаяСеткаПартнера,
+	ВТ_Данные.ЗонаТарификации,
+	ВТ_Данные.Месяц,
+	ВТ_Данные.Партнер,
+	ВТ_Данные.ТерминалДоставки,
+	ВТ_Данные.ТерминалПриёма,
+	ВТ_Данные.ПричинаОтклоненияЗаказа,
+	ВТ_Данные.ФактическийВес,
+	ВТ_Данные.СуммаОценочная,
+	ВТ_Данные.СуммаПолученная,
+	ВТ_Данные.СуммаДоставкиДоМКАД,
+	ВТ_Данные.СуммаДоставкиЗаМКАД,
+	ВТ_Данные.УслугиСД,
+	ВТ_Данные.БанковскаяКомиссия,
+	ВТ_Данные.КассовоеОбслуживание,
+	ВТ_Данные.СуммаВозврата,
+	ВТ_Данные.Масса,
+	ВТ_Данные.СуммаЧастичногоВозврата,
+	ВТ_Данные.ОплаченоКлиентовНал,
+	ВТ_Данные.АгентскоеВознаграждение,
+	ВТ_Данные.ПредоплатаПоКредиту,
+	ВТ_Данные.УслугиСДЧистые,
+	ВТ_Данные.СтраховойСбор,
+	ВТ_Данные.КоличествоЗаказов,
+	ЕСТЬNULL(РасчетРасстоянийСрезПоследних.Расстояние, 0),
+	ЕСТЬNULL(РасчетРасстоянийСрезПоследнихПоДорогам.Расстояние, 0)</query>
+	</dataSet>
+	<totalField>
+		<dataPath>АгентскоеВознаграждение</dataPath>
+		<expression>Сумма(АгентскоеВознаграждение)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>БанковскаяКомиссия</dataPath>
+		<expression>Сумма(БанковскаяКомиссия)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КассовоеОбслуживание</dataPath>
+		<expression>Сумма(КассовоеОбслуживание)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗаказов</dataPath>
+		<expression>Количество(Различные Реализация)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Масса</dataPath>
+		<expression>Сумма(Масса)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОплаченоКлиентовНал</dataPath>
+		<expression>Сумма(ОплаченоКлиентовНал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_Бахилы</dataPath>
+		<expression>Сумма(Показатель_Бахилы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_ВозвратТоваровПоставщику</dataPath>
+		<expression>Сумма(Показатель_ВозвратТоваровПоставщику)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_ДоставкаСТерминалаНаТерминал</dataPath>
+		<expression>Сумма(Показатель_ДоставкаСТерминалаНаТерминал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_КомплектацияЗаказа</dataPath>
+		<expression>Сумма(Показатель_КомплектацияЗаказа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_МаркировкаЗаказа</dataPath>
+		<expression>Сумма(Показатель_МаркировкаЗаказа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_ОжиданиеКурьера</dataPath>
+		<expression>Сумма(Показатель_ОжиданиеКурьера)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_ОсновнаяЧасть</dataPath>
+		<expression>Сумма(Показатель_ОсновнаяЧасть)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_Подъём</dataPath>
+		<expression>Сумма(Показатель_Подъём)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Показатель_СтраховойСбор</dataPath>
+		<expression>Сумма(Показатель_СтраховойСбор)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПредоплатаПоКредиту</dataPath>
+		<expression>Сумма(ПредоплатаПоКредиту)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтраховойСбор</dataPath>
+		<expression>Сумма(СтраховойСбор)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаВозврата</dataPath>
+		<expression>Сумма(СуммаВозврата)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаДоставкиДоМКАД</dataPath>
+		<expression>Сумма(СуммаДоставкиДоМКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаДоставкиЗаМКАД</dataPath>
+		<expression>Сумма(СуммаДоставкиЗаМКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаОценочная</dataPath>
+		<expression>Сумма(СуммаОценочная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПолученная</dataPath>
+		<expression>Сумма(СуммаПолученная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаЧастичногоВозврата</dataPath>
+		<expression>Сумма(СуммаЧастичногоВозврата)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УслугиСД</dataPath>
+		<expression>Сумма(УслугиСД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УслугиСДЧистые</dataPath>
+		<expression>Сумма(УслугиСДЧистые)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФактическийВес</dataPath>
+		<expression>Сумма(ФактическийВес)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасстояниеПоДорогам</dataPath>
+		<expression>Сумма(РасстояниеПоДорогам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасстояниеПоПрямой</dataPath>
+		<expression>Сумма(РасстояниеПоПрямой)</expression>
+	</totalField>
+	<parameter>
+		<name>ПериодСтр</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>ДатаКон</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата кон</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(&amp;ПериодСтр.ДатаОкончания,"ДЕНЬ")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДатаНач</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата нач</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НАЧАЛОПЕРИОДА(&amp;ПериодСтр.ДатаНачала,"ДЕНЬ")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Реализация.Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Реализация.НомерВнешнегоЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнтернетМагазин</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОценочная</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОплаченоКлиентовНал</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>БанковскаяКомиссия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КассовоеОбслуживание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтраховойСбор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УслугиСД</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УслугиСДЧистые</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатели услуг СД</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_Бахилы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Бахилы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_СтраховойСбор</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Страховой сбор</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_ВозвратТоваровПоставщику</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Возврат товаров поставщику</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_ДоставкаСТерминалаНаТерминал</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставка с терминала на терминал</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_КомплектацияЗаказа</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Маркировка заказ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_МаркировкаЗаказа</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Маркировка заказ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_ОжиданиеКурьера</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ожидание курьера</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_Подъём</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подъем</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Показатель_ОсновнаяЧасть</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Основная часть</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РасстояниеПоПрямой</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расстояние по прямой</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РасстояниеПоДорогам</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расстояние по дорогам</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">СтатусИнтернетМагазина</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.СтатусЗаказаИнтернетМагазина.ЗаказЗакрыт</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ТерминалДоставки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>f4336cc6-75da-4ab1-8f48-be12d7a46e15</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодСтр</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>0e4f5684-c594-4a90-bef9-c5bbf158ac6e</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Месяц</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ИнтернетМагазин</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Партнер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Реализация.Номер</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Реализация.НомерВнешнегоЗаказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИнтернетМагазин</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаОценочная</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ОплаченоКлиентовНал</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КоличествоЗаказов</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>БанковскаяКомиссия</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КассовоеОбслуживание</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СтраховойСбор</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>УслугиСД</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>УслугиСДЧистые</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Показатели услуг СД</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_Бахилы</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Бахилы</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_СтраховойСбор</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страховой сбор</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_ВозвратТоваровПоставщику</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Возврат товаров поставщику</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_ДоставкаСТерминалаНаТерминал</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доставка с терминала на терминал</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_КомплектацияЗаказа</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комплектация заказа</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_МаркировкаЗаказа</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Маркировка заказ</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_ОжиданиеКурьера</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ожидание курьера</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_Подъём</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подъем</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Показатель_ОсновнаяЧасть</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основная часть</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>РасстояниеПоПрямой</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Расстояние по прямой</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>РасстояниеПоДорогам</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Расстояние по дорогам</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

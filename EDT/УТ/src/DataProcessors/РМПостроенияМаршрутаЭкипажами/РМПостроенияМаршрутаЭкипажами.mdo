@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a95b1baf-d0f0-42a7-b06b-faf4cbf58491">
+  <producedTypes>
+    <objectType typeId="ecc82502-2f81-4172-b48d-c302bf896c6c" valueTypeId="5d823b83-8e4b-43fb-a6ec-b2b5de9ed8cd"/>
+    <managerType typeId="5f850fcd-dbb8-4a2b-9652-0f8f35689966" valueTypeId="9e821d77-feb9-43cb-b5d1-697f21a4e144"/>
+  </producedTypes>
+  <name>РМПостроенияМаршрутаЭкипажами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Рабочее место Построения маршрута экипажами</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.РМПостроенияМаршрутаЭкипажами.Form.Форма</defaultForm>
+  <attributes uuid="15a34517-fb83-44ac-bb89-3b65ee71ed94">
+    <name>ТипФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="186a1e1f-63a6-4c59-86bc-cfbcbe61c6c5">
+    <name>АдресФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="542284d3-66ab-477e-aeeb-616e0ad91c25">
+    <name>ШиротаФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Широта финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="01942651-aee4-4834-9ac2-c4f733afdc0c">
+    <name>ДолготаФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Долгота финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="af2a991d-3802-4a82-8216-25a9d285de24">
+    <producedTypes>
+      <objectType typeId="fe69dddb-47b2-4ae8-8a35-3a33c58e8087" valueTypeId="a056a4ca-3bf9-4c69-9b8b-3688108ad263"/>
+      <rowType typeId="aa59ea70-10fe-4387-ab04-dd1b5b8ccde2" valueTypeId="ea23b8f3-90cd-44a2-a191-15cc46518c0a"/>
+    </producedTypes>
+    <name>ПорядокЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок заказов</value>
+    </synonym>
+    <attributes uuid="cc468b87-2d28-4251-a0d2-08236c980c29">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаборТовара</types>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8759720e-3b11-4c1a-af3d-c29e9c97c8c0">
+      <name>ПорядокМаршрутизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Порядок маршрутизации</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="37a7fada-0946-4a42-b97c-ae039cbe1df1">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="709f4d1f-6ea9-490d-aad3-5797ca9c5452">
+    <name>ФормаВводаАдреса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма ввода адреса</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="3eaaf500-25c1-4cbc-adba-02c47d6ce17b">
+    <name>МакетДанныеXTML</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет данные XTML</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="2018e329-1e52-4951-bf4f-7491dde3a35b">
+    <name>МакетДанныеXTMLТаб</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет данные XTMLТаб</value>
+    </synonym>
+  </templates>
+  <templates uuid="b2ddf8b1-4429-4edb-b57a-05c980ff83f1">
+    <name>МакетДанныеXTMLТаб_тест</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет данные XTMLТаб тест</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

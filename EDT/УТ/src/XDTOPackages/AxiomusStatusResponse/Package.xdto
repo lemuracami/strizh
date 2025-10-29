@@ -1,0 +1,56 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/AxiomusStatusResponse">
+	<property name="response">
+		<typeDef xsi:type="ObjectType">
+			<property name="request" type="xs:string"/>
+			<property name="order">
+				<typeDef xsi:type="ObjectType">
+					<property name="id" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="inner_id" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="price" type="xs:float" lowerBound="0" form="Attribute"/>
+					<property name="customer_price" type="xs:float" lowerBound="0" form="Attribute"/>
+					<property name="incl_deliv_sum" type="xs:float" lowerBound="0" form="Attribute"/>
+					<property name="group" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="export_order" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="return_order" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="fid" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="__content" type="xs:string" form="Text"/>
+				</typeDef>
+			</property>
+			<property name="status">
+				<typeDef xsi:type="ObjectType">
+					<property name="code" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="__content" type="xs:string" form="Text"/>
+				</typeDef>
+			</property>
+			<property name="d_date" type="xs:date"/>
+			<property name="refused_items">
+				<typeDef xsi:type="ObjectType">
+					<property name="item">
+						<typeDef xsi:type="ObjectType">
+							<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+							<property name="quantity" type="xs:int" lowerBound="0" form="Attribute"/>
+							<property name="price" type="xs:float" lowerBound="0" form="Attribute"/>
+							<property name="__content" type="xs:string" form="Text"/>
+						</typeDef>
+					</property>
+				</typeDef>
+			</property>
+			<property name="post_status">
+				<typeDef xsi:type="ObjectType">
+					<property name="tracking" type="xs:string" lowerBound="0" form="Attribute"/>
+					<property name="postprice" type="xs:float" lowerBound="0" form="Attribute"/>
+					<property name="datestate" type="xs:string" lowerBound="0" form="Attribute"/>
+					<property name="__content" type="xs:string" form="Text"/>
+				</typeDef>
+			</property>
+			<property name="packs">
+				<typeDef xsi:type="ObjectType">
+					<property name="number" type="xs:string" lowerBound="0" form="Attribute"/>
+					<property name="places" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="status" type="xs:int" lowerBound="0" form="Attribute"/>
+					<property name="__content" type="xs:string" form="Text"/>
+				</typeDef>
+			</property>
+		</typeDef>
+	</property>
+</package>

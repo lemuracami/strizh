@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0d023612-be1c-4efa-847e-5ff0ea5d2ae6">
+  <producedTypes>
+    <selectionType typeId="a320d081-66e7-495f-abb0-bdaf769d93a6" valueTypeId="476e1082-c62f-41ba-b7b5-24d9046ab9cd"/>
+    <listType typeId="7be6618a-9d08-4e01-b405-7e2f74c07c18" valueTypeId="7bd15da6-7ba6-4829-b9d6-2ea809fc0994"/>
+    <managerType typeId="0183843e-cac6-4eb6-81dd-f2ebb4580424" valueTypeId="71ebbdd5-eb12-4a7f-9bc7-e40c1ca9bf4f"/>
+    <recordSetType typeId="9d351378-fc3c-4e28-a353-fd4fe68535b3" valueTypeId="269bdf69-e4a4-4f5f-b1d1-3d8246588274"/>
+    <recordKeyType typeId="60987a0a-094d-406b-941d-0bf7a68c3737" valueTypeId="0f7a1f4a-454e-427d-8a45-facf8b7f1a0e"/>
+    <recordType typeId="d12b9d77-9ce8-4e97-9758-5103e01fac95" valueTypeId="3ffe40b0-8a0e-43d6-a615-c51cfe0c8c3a"/>
+    <recordManagerType typeId="f210fed4-e9e2-4bcb-8aae-916a4bd39ea1" valueTypeId="a5e111c4-02aa-48e7-a65a-9c9e43c382b3"/>
+  </producedTypes>
+  <name>упрСостоянияПлатежей</name>
+  <synonym>
+    <key>ru</key>
+    <value>(упр) Состояния платежей</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="21b483a2-a9c9-484a-bf2c-dcb880e05139">
+    <name>СостояниеПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние платежа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.упрСостоянияПлатежей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="3960c70e-f65a-4cc4-921b-69a5e97a9ac5">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.упрЗагрузкаДанныхОПлатежахИзБП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2a537b5a-6149-40fa-9d3e-f3104eded450">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="652ec8b0-1732-45e8-85a3-29e1c96e3634">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="f26a1f11-b293-4861-983d-41d4482398dd">
+    <name>Платеж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платеж</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.упрПлатежноеПоручение</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

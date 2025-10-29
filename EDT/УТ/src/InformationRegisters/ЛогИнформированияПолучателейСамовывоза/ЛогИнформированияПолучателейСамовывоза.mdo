@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3ea96b1e-06e8-4149-8d67-5d886dd11a91">
+  <producedTypes>
+    <selectionType typeId="0767f0d7-451b-460b-a8c6-fc855073dff9" valueTypeId="636644f5-af7f-4f4d-9434-739999a871a6"/>
+    <listType typeId="4563fe59-df41-44e7-ba94-f9aa7aa233b4" valueTypeId="72344bbe-10b7-4852-bdec-48d9f073489d"/>
+    <managerType typeId="c69be40e-ab5b-49d0-93d2-8970c3c3401f" valueTypeId="e56649d1-d877-494f-9a58-6491d94b8b70"/>
+    <recordSetType typeId="098b35fa-5142-4fc6-a3bb-105982d10abe" valueTypeId="d268c068-c5b5-405d-a19c-4aa2d3b24303"/>
+    <recordKeyType typeId="f21fbc35-11c1-4861-88eb-72a84ba92c34" valueTypeId="c8dc22f4-6daf-460f-a511-2f2c13542bf8"/>
+    <recordType typeId="620a0aa1-1835-42a5-a75c-2419c963fa31" valueTypeId="e9d88194-55f3-42b2-b1fc-62357cd9fa09"/>
+    <recordManagerType typeId="02b25f32-4e85-441e-a70d-c852a77955a4" valueTypeId="97f8b0a2-1629-4c59-b390-789895635822"/>
+  </producedTypes>
+  <name>ЛогИнформированияПолучателейСамовывоза</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лог информирования получателей самовывоза</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="17b4e192-bcdc-4f28-ac5b-00360b64e821">
+    <name>ИнформированиеПроизведено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Информирование произведено</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cbedeca1-01a6-4a40-9e43-67c215dbf941">
+    <name>КоличествоЗаказовВВыборке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество заказов в выборке</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="21365a91-5cfd-4dae-bc1b-e94c69100173">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="b4f1e5e4-201f-4b24-b107-c906ec06c213">
+    <name>Терминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b72fbcb4-6e9b-4e18-8477-d76c4aa1b0bf">
+    <name>ТипИнформирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип информирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыИнформированияПолучателейЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="999082dc-e254-4daf-aaa6-48d1e5800548">
+  <producedTypes>
+    <objectType typeId="3fdee058-9d3b-4aaf-a63b-e9084f40ed29" valueTypeId="818b5de9-a7cc-4e31-a1e9-2bb0f1fff72f"/>
+    <refType typeId="fd4f398e-c21a-44eb-ab87-280003215668" valueTypeId="10936561-037d-40d8-8aec-34bd16a3c582"/>
+    <selectionType typeId="000bce65-3453-4e3b-b0a5-a28b39f9707c" valueTypeId="5c8bac82-633b-48a2-926c-218171c1b018"/>
+    <listType typeId="0d76840a-3d32-494d-a851-e563026f700e" valueTypeId="07a23590-c562-4df0-a45c-2df0d5487be1"/>
+    <managerType typeId="89262108-7abf-4465-ac88-6be4c3270bd9" valueTypeId="1ef60353-217b-4a5e-a5eb-ad344cd2ec77"/>
+  </producedTypes>
+  <name>зпКатегорииЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>(зп) Категории заказов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.зпКатегорииЗаказов.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.зпКатегорииЗаказов.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <owners>Catalog.зпСхемыКатегорийЗаказов</owners>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.зпКатегорииЗаказов.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="5bafac8c-985e-496d-9c47-78d1bc003cc2">
+    <name>УровеньОбслуживания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уровень обслуживания</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УровниОбслуживания</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="bddab105-ed58-4cc8-a985-a2f46d682b4f">
+    <name>КатегорияДоставкиДляАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория доставки для аналитики</value>
+    </synonym>
+    <type>
+      <types>EnumRef.зпКлассификаторКатегорийДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="1ce9f40f-b2c6-4bd7-816c-2c8fb0b68d20">
+    <producedTypes>
+      <objectType typeId="bd079a23-31ce-4b60-ac33-72787eea85fe" valueTypeId="4561cee0-c62b-425e-96a7-d7a4753870ab"/>
+      <rowType typeId="2b3339ea-10b4-45a3-8609-edb33a21ab47" valueTypeId="bb7cdedb-03c0-49ab-8aac-d7a7f207ea6e"/>
+    </producedTypes>
+    <name>ПоказателиКатегории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатели категории</value>
+    </synonym>
+    <attributes uuid="29b6dcde-188c-49b4-8234-68f69f17157b">
+      <name>ВидПоказателя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид показателя</value>
+      </synonym>
+      <type>
+        <types>EnumRef.зпВидыПоказателейКатегорийЗаказов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="49a56ffc-74d3-4620-9705-d4151c2aa7d7">
+      <name>Значение1</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение1</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d446c0e3-239c-4f91-8125-690c804a7463">
+      <name>Значение2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение2</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="c3492960-b856-456a-8610-3af03e22a824">
+    <name>РедактированиеКатегорииЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование категории заказов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3c1ed6c8-a219-41e4-a4da-b4697a0a09ef">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

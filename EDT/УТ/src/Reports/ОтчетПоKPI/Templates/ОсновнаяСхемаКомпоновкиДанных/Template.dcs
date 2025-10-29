@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатусЗакрытия</dataPath>
+			<field>СтатусЗакрытия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус закрытия</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаЗакрытия</dataPath>
+			<field>ДатаЗакрытия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата закрытия</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоступления</dataPath>
+			<field>ДатаПоступления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата поступления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СторонаПретензииПереноса</dataPath>
+			<field>СторонаПретензииПереноса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сторона претензии переноса</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поступление</dataPath>
+			<field>Поступление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаДоставки</dataPath>
+			<field>ДатаДоставки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата доставки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтернетМагазин</dataPath>
+			<field>ИнтернетМагазин</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерВнешнегоЗаказа</dataPath>
+			<field>НомерВнешнегоЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер внешнего заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаПереноса</dataPath>
+			<field>ПричинаПереноса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Причина переноса</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).Ссылка КАК Заказ,
+	ЗакрытыеЗаказы.Период КАК ДатаЗакрытия,
+	ПоступлениеТоваровУслуг.Ссылка КАК Поступление,
+	ПоступлениеТоваровУслуг.Дата КАК ДатаПоступления,
+	ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).Дата КАК ДатаДоставки,
+	ВЫБОР
+		КОГДА ЗакрытыеЗаказы.СтатусИнтернетМагазина В (&amp;СтатусИнтернетМагазина)
+			ТОГДА ЗакрытыеЗаказы.СтатусИнтернетМагазина
+		ИНАЧЕ ЗакрытыеЗаказы.СтатусЗаказа
+	КОНЕЦ КАК СтатусЗакрытия,
+	ЗакрытыеЗаказы.ИнтернетМагазин
+ПОМЕСТИТЬ ВТ_Основная
+ИЗ
+	РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПоступлениеТоваровУслуг КАК ПоступлениеТоваровУслуг
+		ПО ЗакрытыеЗаказы.Поступление = ПоступлениеТоваровУслуг.Ссылка
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыСкладскогоУчета КАК СтатусыСкладскогоУчета
+		ПО (ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).Ссылка = СтатусыСкладскогоУчета.Заказ.Ссылка)
+			И (СтатусыСкладскогоУчета.СтатусСкладскогоУчета = &amp;СтатусСкладскогоУчета)
+ГДЕ
+	(ЗакрытыеЗаказы.СтатусЗаказа В (&amp;СтатусЗаказа)
+			ИЛИ ЗакрытыеЗаказы.СтатусИнтернетМагазина В (&amp;СтатусИнтернетМагазина))
+	И СтатусыСкладскогоУчета.Период МЕЖДУ &amp;Дата1 И &amp;Дата2
+	И ЗакрытыеЗаказы.Реализация ССЫЛКА Документ.РеализацияТоваровУслуг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СостоянияЗаказов.Заказ,
+	МАКСИМУМ(СостоянияЗаказов.Период) КАК Период,
+	СостоянияЗаказов.Доставка
+ПОМЕСТИТЬ ВТ_ПереносыДатаСреза
+ИЗ
+	ВТ_Основная КАК ВТ_Основная
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ПО ВТ_Основная.Заказ = СостоянияЗаказов.Заказ
+			И (СостоянияЗаказов.Период &lt;= ВТ_Основная.ДатаЗакрытия)
+ГДЕ
+	СостоянияЗаказов.ПричинаНеВыполнения В(&amp;ПричинаНеВыполнения)
+
+СГРУППИРОВАТЬ ПО
+	СостоянияЗаказов.Заказ,
+	СостоянияЗаказов.Доставка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СостоянияЗаказов.Заказ,
+	СостоянияЗаказов.ПричинаОтказа.СторонаПретензии КАК СторонаПретензии,
+	СостоянияЗаказов.ПричинаОтказа КАК ПричинаПереноса
+ПОМЕСТИТЬ ВТ_ПереносыСрезПоследних
+ИЗ
+	ВТ_ПереносыДатаСреза КАК ВТ_ПереносыДатаСреза
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ПО ВТ_ПереносыДатаСреза.Заказ = СостоянияЗаказов.Заказ
+			И ВТ_ПереносыДатаСреза.Доставка = СостоянияЗаказов.Доставка
+			И ВТ_ПереносыДатаСреза.Период = СостоянияЗаказов.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Основная.Заказ,
+	МИНИМУМ(ЕСТЬNULL(ИзменениеДатыДоставки.ДатаДоставки, ВТ_Основная.ДатаДоставки)) КАК ДатаДоставки,
+	МИНИМУМ(ИзменениеДатыДоставки.Дата) КАК ДатаПоступления
+ПОМЕСТИТЬ ВТ_ДатаДоставки
+ИЗ
+	ВТ_Основная КАК ВТ_Основная
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ИзменениеДатыДоставки КАК ИзменениеДатыДоставки
+		ПО ВТ_Основная.Заказ.Номер = ИзменениеДатыДоставки.Доставка.Номер
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Основная.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Основная.Заказ,
+	ВТ_Основная.ДатаЗакрытия,
+	ВТ_Основная.Поступление,
+	ЕСТЬNULL(ВТ_ДатаДоставки.ДатаПоступления, ВТ_Основная.ДатаПоступления) КАК ДатаПоступления,
+	ВТ_ДатаДоставки.ДатаДоставки,
+	ВТ_Основная.СтатусЗакрытия,
+	ВТ_ПереносыСрезПоследних.СторонаПретензии КАК СторонаПретензииПереноса,
+	ВТ_Основная.ИнтернетМагазин,
+	ВТ_Основная.Заказ.НомерВнешнегоЗаказа КАК НомерВнешнегоЗаказа,
+	ВТ_ПереносыСрезПоследних.ПричинаПереноса
+ИЗ
+	ВТ_Основная КАК ВТ_Основная
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПереносыСрезПоследних КАК ВТ_ПереносыСрезПоследних
+		ПО ВТ_Основная.Заказ = ВТ_ПереносыСрезПоследних.Заказ
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДатаДоставки КАК ВТ_ДатаДоставки
+		ПО ВТ_Основная.Заказ = ВТ_ДатаДоставки.Заказ</query>
+	</dataSet>
+	<parameter>
+		<name>Дата1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Дата2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПричинаНеВыполнения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Причина не выполнения</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПричиныНеВыполненияДоставки</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки</value>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь</value>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СтатусЗаказа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статус заказа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.новаРезультатМестнойДоставки</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.Выполнена</value>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СтатусИнтернетМагазина</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статус интернет магазина</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СтатусЗаказаИнтернетМагазина</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.СтатусЗаказаИнтернетМагазина.ЗаказОтклонен</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СтатусСкладскогоУчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статус складского учета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СтатусыСкладскогоУчета</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.СтатусыСкладскогоУчета.ПриходПроверен</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заказ.Номер</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер заказа</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерВнешнегоЗаказа</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ клиента</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоступления</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата передачи заказа к нам в систему</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаДоставки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаЗакрытия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтатусЗакрытия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СторонаПретензииПереноса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПричинаПереноса</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ИнтернетМагазин</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>0e0d782a-b62a-41e9-bde7-d64ce5211b35</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>f02a69d5-900b-435b-a7a4-05e19a38b978</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ДатаДоставки</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаЗакрытия</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаПоступления</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=dd.MM.yyyy</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ИнтернетМагазин</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="94db1256-d5ff-4343-b302-6305f317341e">
+  <producedTypes>
+    <objectType typeId="73dd0227-f233-497d-8eef-b730ea1d011d" valueTypeId="32560ba8-8f61-4b4a-a561-d7f6b1eb67d3"/>
+    <refType typeId="d7660aa6-12b8-44c5-9560-ca034f62b44f" valueTypeId="2029ffb8-cd12-4db8-a09f-c5e5ed1cb99a"/>
+    <selectionType typeId="132dfb03-6794-4f24-932f-45dbeff5d970" valueTypeId="4b0cdfda-f640-4ecb-9a5c-4b2e514d6139"/>
+    <listType typeId="016629ca-aec5-41ed-9e36-cb1879389dc0" valueTypeId="54334e68-211e-433f-b2e8-7ed4f697d5ea"/>
+    <managerType typeId="b983cc07-f5d5-4241-827b-86b4dbb39e93" valueTypeId="1b9641a4-181e-4005-aa55-f1a3fbd13071"/>
+  </producedTypes>
+  <name>ВводДанныхОПрямыхЗатратах</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ввод данных о прямых затратах</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ВводДанныхОПрямыхЗатратах.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ВводДанныхОПрямыхЗатратах.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ВводДанныхОПрямыхЗатратах.Form.ФормаСписка</defaultListForm>
+  <registerRecords>InformationRegister.ВводДанныхОРасходахКомпании</registerRecords>
+  <attributes uuid="2d47ed1f-e42c-4869-9099-41eabccfcbd0">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="af87b94b-bd59-42bd-b80e-baa9c98d011c">
+    <name>Оператор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="4a51b0c5-c6d8-484e-b7d2-a40087e5e9d6">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="00800eec-c446-490a-8d0f-f8d2b00dadc7">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="f16658e3-2734-4fcb-aec2-9b95cea92b7c">
+    <producedTypes>
+      <objectType typeId="98e439e6-684c-4e1d-a139-fdf965f16f59" valueTypeId="2a08501b-fb3f-4fd8-9bab-16cc67efcbb0"/>
+      <rowType typeId="cfea7bf0-1e63-408d-9cf1-964354ffa584" valueTypeId="a59eed57-17bf-40a8-91e9-3eb161b17293"/>
+    </producedTypes>
+    <name>СтатьиЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статьи затрат</value>
+    </synonym>
+    <attributes uuid="07ac7859-6278-43cb-85fa-04e1f7604a57">
+      <name>СтатьяЗатрат</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья затрат</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатьиЗатратКомпании</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="015c795e-4f02-44c8-90b5-7711adda51c8">
+      <name>КатегорияДоставки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Категория доставки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КатегорииДоставки2014</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9344eb76-c089-440c-9d19-27821c1acc2d">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b7adeb3d-b905-4ccd-a780-f82d3654ff39">
+      <name>ТипЗаказа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип заказа</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ТипыЗаказов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="59183290-7d13-42f7-9a2c-d3803bac8b8c">
+  <producedTypes>
+    <selectionType typeId="e937ee0a-3028-4844-9bca-9edafb1d9c88" valueTypeId="c3382a21-b203-4bde-b4b2-775be55c7b3b"/>
+    <listType typeId="1a10f8d6-2719-46ec-a8b1-76ae4d2f88d3" valueTypeId="43353371-d82a-4ba0-9803-6c8d4c542e2e"/>
+    <managerType typeId="44bc1c0a-c9c0-467a-998f-f4f4603678a7" valueTypeId="dca4fc2b-f638-4ec8-92d0-7dfc7651631d"/>
+    <recordSetType typeId="94206fa8-442b-4da3-a66e-f7dfdb106fe7" valueTypeId="ecc4d851-5f11-4128-916a-5714fb42e98e"/>
+    <recordKeyType typeId="225c5ca0-d5bf-47cd-837f-9660c5ab3abd" valueTypeId="1f3ab616-3a5c-4a3e-a94a-949052b68f57"/>
+    <recordType typeId="318373b3-fc5b-450f-914c-e0beec258287" valueTypeId="752f5622-bd7b-45eb-a076-b6aab1a9d612"/>
+  </producedTypes>
+  <name>экЗатратыПоЗаказам</name>
+  <synonym>
+    <key>ru</key>
+    <value>(эк) Затраты по заказам</value>
+  </synonym>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="347a823e-2aa2-404f-9495-ab7fa8863224">
+    <name>СуммаЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма затрат</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="e8c08b64-99a4-451e-a085-bef2be40cbd6">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c4e16439-56b4-471c-8781-55f7de96fda8">
+    <name>СтатьяЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья затрат</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.экСтатьиЗатрат</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="cd0d01b8-6150-45c0-8b06-46757352a432">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="185e93dd-c8ba-42da-b693-95f986fd3c2e">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

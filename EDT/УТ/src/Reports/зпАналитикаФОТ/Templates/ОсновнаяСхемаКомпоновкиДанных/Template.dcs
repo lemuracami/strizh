@@ -1,0 +1,4719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рейс</dataPath>
+			<field>Рейс</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рейс</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРасчета</dataPath>
+			<field>ДатаРасчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расчета</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизЛицо</dataPath>
+			<field>ФизЛицо</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновноеНачисление</dataPath>
+			<field>ОсновноеНачисление</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ПараметрыВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.ВидНачисления</dcscor:choiceParameter>
+							<dcscor:value xsi:type="dcscor:DesignTimeValue">Перечисление.зпВидыНачислений.ОсновноеНачисление</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаИтого</dataPath>
+			<field>СуммаИтого</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма итого</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПодъемы</dataPath>
+			<field>СуммаПодъемы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма подъемы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПодъемов</dataPath>
+			<field>КоличествоПодъемов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество подъемов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоплатаЗаЧасы</dataPath>
+			<field>ДоплатаЗаЧасы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доплата за часы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЧасовКДоплате</dataPath>
+			<field>ЧасовКДоплате</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Часов к доплате</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПереплатаМинималкой</dataPath>
+			<field>ПереплатаМинималкой</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переплата минималкой</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоМинималок</dataPath>
+			<field>КоличествоМинималок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество минималок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовДоставлено</dataPath>
+			<field>ЗаказовДоставлено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов доставлено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МГТ</dataPath>
+			<field>МГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>МГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СГТ</dataPath>
+			<field>СГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КГТ</dataPath>
+			<field>КГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СКГТ</dataPath>
+			<field>СКГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СКГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СТ</dataPath>
+			<field>СТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Забор</dataPath>
+			<field>Забор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Забор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаЦКАД</dataPath>
+			<field>ЗаЦКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>За ЦКАД</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоМКАД</dataPath>
+			<field>ДоМКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>До МКАД КАД</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаМКАД</dataPath>
+			<field>ЗаМКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>За МКАД КАД</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоставленоКГ</dataPath>
+			<field>ДоставленоКГ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доставлено КГ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщееКоличествоЗаказов</dataPath>
+			<field>ОбщееКоличествоЗаказов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЧасовСумма</dataPath>
+			<field>ЧасовСумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Часов сумма</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейВсего</dataPath>
+			<field>ДнейВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейБезЭкспедитора</dataPath>
+			<field>ДнейБезЭкспедитора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней без экспедитора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаЧеловек</dataPath>
+			<field>ГруппаЧеловек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Человек</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаСуммаИтого</dataPath>
+			<field>ГруппаСуммаИтого</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Сумма итого</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаСуммаПодъемы</dataPath>
+			<field>ГруппаСуммаПодъемы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Сумма подъемы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДоставленоКГ</dataPath>
+			<field>ГруппаДоставленоКГ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Доставлено КГ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПодъемов</dataPath>
+			<field>ГруппаКоличествоПодъемов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Количество подъемов</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПереплатаМинималкой</dataPath>
+			<field>ГруппаПереплатаМинималкой</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Переплата минималкой</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДнейВсего</dataPath>
+			<field>ГруппаДнейВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Дней всего</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаЗаЦКАД</dataPath>
+			<field>ГруппаЗаЦКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа За ЦКАД</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоМинималок</dataPath>
+			<field>ГруппаКоличествоМинималок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Количество минималок</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаЧасовСумма</dataPath>
+			<field>ГруппаЧасовСумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Часов сумма</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаСКГТ</dataPath>
+			<field>ГруппаСКГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа СКГТ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаМГТ</dataPath>
+			<field>ГруппаМГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа МГТ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДоплатаЗаЧасы</dataPath>
+			<field>ГруппаДоплатаЗаЧасы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Доплата за часы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаЧасовКДоплате</dataPath>
+			<field>ГруппаЧасовКДоплате</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Часов к доплате</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаЗаказовДоставлено</dataPath>
+			<field>ГруппаЗаказовДоставлено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Заказов доставлено</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаСГТ</dataPath>
+			<field>ГруппаСГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа СГТ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКГТ</dataPath>
+			<field>ГруппаКГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа КГТ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаСТ</dataPath>
+			<field>ГруппаСТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа СТ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаЗабор</dataPath>
+			<field>ГруппаЗабор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Забор</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДоМКАД</dataPath>
+			<field>ГруппаДоМКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа До МКАД КАД</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаЗаМКАД</dataPath>
+			<field>ГруппаЗаМКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа За МКАД КАД</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентВыполненияСумма</dataPath>
+			<field>ПроцентВыполненияСумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Процент выполнения сумма</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВремяПечатиМЛСекундыСреднее</dataPath>
+			<field>ВремяПечатиМЛСекундыСреднее</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время печати МЛСекунды среднее</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодРасчета</dataPath>
+			<field>ПериодРасчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период расчета</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='MMMM yyyy'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Т_Рейс.Ссылка КАК Ссылка,
+	МИНИМУМ(ВЫБОР
+			КОГДА КонтрольВремени.Событие = ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.РаспечаткаМаршрутногоЛиста)
+				ТОГДА КонтрольВремени.Период
+		КОНЕЦ) КАК РаспечаткаМЛ,
+	МАКСИМУМ(ВЫБОР
+			КОГДА КонтрольВремени.Событие = ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.ЗакрытиеРейсаЛогист)
+				ТОГДА КонтрольВремени.Период
+		КОНЕЦ) КАК ЗакрытиеРейса
+ПОМЕСТИТЬ ВТ_Рейсы
+ИЗ
+	Документ.Рейс КАК Т_Рейс
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КонтрольВремени КАК КонтрольВремени
+		ПО Т_Рейс.Ссылка = КонтрольВремени.Рейс
+			И (КонтрольВремени.Событие В (ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.РаспечаткаМаршрутногоЛиста), ЗНАЧЕНИЕ(Справочник.СобытияКонтроляВремени.ЗакрытиеРейсаЛогист)))
+ГДЕ
+	Т_Рейс.ДатаРейса МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+	И Т_Рейс.ТерминалДоставки = &amp;Регион
+{ГДЕ
+	Т_Рейс.Ссылка.* КАК Рейс,
+	Т_Рейс.ДатаРейса КАК ДатаРасчета}
+
+СГРУППИРОВАТЬ ПО
+	Т_Рейс.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.ФизЛицо КАК ФизЛицо,
+	КОНЕЦПЕРИОДА(ВложенныйЗапрос.Рейс.ДатаРейса, МЕСЯЦ) КАК ПериодРасчета,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.ПрименяетсяМинимальнаяСтавка
+				ТОГДА ВложенныйЗапрос.СуммаМинимальнойСтавки + ВложенныйЗапрос.СуммаРасчетаЗППоЧасам + ВложенныйЗапрос.СуммаРасчетаЗПДопНачисленияПоРейсам
+			ИНАЧЕ ВложенныйЗапрос.СуммаРасчетаЗППоЗаказам + ВложенныйЗапрос.СуммаРасчетаЗППоЧасам + ВложенныйЗапрос.СуммаРасчетаЗПДопНачисленияПоРейсам + ВложенныйЗапрос.СуммаРасчетаЗПДопНачисленияПоЗаказам
+		КОНЕЦ) КАК СуммаИтого,
+	СУММА(ВложенныйЗапрос.СуммаПодъемНаЭтаж) КАК СуммаПодъемы,
+	СУММА(ВложенныйЗапрос.КоличествоПодъемов) КАК КоличествоПодъемов,
+	СУММА(ВложенныйЗапрос.ДоплатаЗаЧасы) КАК ДоплатаЗаЧасы,
+	СУММА(ВложенныйЗапрос.ЧасовПереработки) КАК КоличествоЧасовКДоплате,
+	СУММА(ВложенныйЗапрос.ДоплатаДоМинималки) КАК ПереплатаМинималкой,
+	СУММА(ВложенныйЗапрос.КоличествоМинималок) КАК КоличествоМинималок,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставлено) КАК ЗаказовДоставлено,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоЗабор) КАК ЗаказовДоставленоЗабор,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоМГТ) КАК ЗаказовДоставленоМГТ,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоСГТ) КАК ЗаказовДоставленоСГТ,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоКГТ) КАК ЗаказовДоставленоКГТ,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоСКГТ) КАК ЗаказовДоставленоСКГТ,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоСТ) КАК ЗаказовДоставленоСТ,
+	СУММА(ВложенныйЗапрос.ВесЗаказа) КАК ДоставленоКГ,
+	СУММА(РАЗНОСТЬДАТ(ВТ_Рейсы.РаспечаткаМЛ, ВТ_Рейсы.ЗакрытиеРейса, СЕКУНДА) / 3600) КАК ЧасовСумма,
+	СУММА(ВложенныйЗапрос.КоличествоЗаказовВыполненных) КАК КоличествоЗаказовВыполненных,
+	СУММА(ВложенныйЗапрос.ОбщееКоличествоЗаказов) КАК ОбщееКоличествоЗаказов,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоДоМКАД) КАК ЗаказовДоставленоДоМКАД,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоЗаМКАД) КАК ЗаказовДоставленоЗаМКАД,
+	СУММА(ВложенныйЗапрос.ЗаказовДоставленоЗаЦКАД) КАК ЗаказовДоставленоЗаЦКАД,
+	КОЛИЧЕСТВО(ИСТИНА) КАК ДнейВсего,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.БезЭкспедитора
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ДнейБезЭкспедитора,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.ОбщееКоличествоЗаказов &gt; 0
+				ТОГДА ВложенныйЗапрос.КоличествоЗаказовВыполненных / ВложенныйЗапрос.ОбщееКоличествоЗаказов * 100
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ПроцентВыполненияСумма,
+	СРЕДНЕЕ(ЧАС(ВТ_Рейсы.РаспечаткаМЛ) * 3600 + МИНУТА(ВТ_Рейсы.РаспечаткаМЛ) * 60 + СЕКУНДА(ВТ_Рейсы.РаспечаткаМЛ)) КАК ВремяПечатиМЛСекундыСреднее
+ПОМЕСТИТЬ ВТ_Расчет
+ИЗ
+	(ВЫБРАТЬ
+		ВложенныйЗапрос.Рейс КАК Рейс,
+		ВложенныйЗапрос.ФизЛицо КАК ФизЛицо,
+		СУММА(ВложенныйЗапрос.КоличествоЗаказовВыполненных) КАК КоличествоЗаказовВыполненных,
+		СУММА(ВложенныйЗапрос.СуммаРасчетаЗППоРейсам) КАК СуммаРасчетаЗППоРейсам,
+		МАКСИМУМ(ВложенныйЗапрос.ПрименяетсяМинимальнаяСтавка) КАК ПрименяетсяМинимальнаяСтавка,
+		СУММА(ВложенныйЗапрос.СуммаМинимальнойСтавки) КАК СуммаМинимальнойСтавки,
+		СУММА(ВложенныйЗапрос.СуммаРасчетаЗППоЗаказам) КАК СуммаРасчетаЗППоЗаказам,
+		СУММА(ВложенныйЗапрос.СуммаРасчетаЗППоЧасам) КАК СуммаРасчетаЗППоЧасам,
+		СУММА(ВложенныйЗапрос.СуммаРасчетаЗПДопНачисленияПоРейсам) КАК СуммаРасчетаЗПДопНачисленияПоРейсам,
+		СУММА(ВложенныйЗапрос.СуммаРасчетаЗПДопНачисленияПоЗаказам) КАК СуммаРасчетаЗПДопНачисленияПоЗаказам,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставлено) КАК ЗаказовДоставлено,
+		СУММА(ВложенныйЗапрос.ОбщееКоличествоЗаказов) КАК ОбщееКоличествоЗаказов,
+		СУММА(ВложенныйЗапрос.ЧасовПереработки) КАК ЧасовПереработки,
+		СУММА(ВложенныйЗапрос.СуммаПодъемНаЭтаж) КАК СуммаПодъемНаЭтаж,
+		СУММА(ВложенныйЗапрос.КоличествоПодъемов) КАК КоличествоПодъемов,
+		СУММА(ВложенныйЗапрос.ДоплатаЗаЧасы) КАК ДоплатаЗаЧасы,
+		СУММА(ВложенныйЗапрос.ДоплатаДоМинималки) КАК ДоплатаДоМинималки,
+		СУММА(ВложенныйЗапрос.КоличествоМинималок) КАК КоличествоМинималок,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоЗабор) КАК ЗаказовДоставленоЗабор,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоМГТ) КАК ЗаказовДоставленоМГТ,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоСГТ) КАК ЗаказовДоставленоСГТ,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоКГТ) КАК ЗаказовДоставленоКГТ,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоСКГТ) КАК ЗаказовДоставленоСКГТ,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоСТ) КАК ЗаказовДоставленоСТ,
+		СУММА(ВложенныйЗапрос.ВесЗаказа) КАК ВесЗаказа,
+		МАКСИМУМ(ВложенныйЗапрос.БезЭкспедитора) КАК БезЭкспедитора,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоДоМКАД) КАК ЗаказовДоставленоДоМКАД,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоЗаМКАД) КАК ЗаказовДоставленоЗаМКАД,
+		СУММА(ВложенныйЗапрос.ЗаказовДоставленоЗаЦКАД) КАК ЗаказовДоставленоЗаЦКАД
+	ИЗ
+		(ВЫБРАТЬ
+			зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.Рейс КАК Рейс,
+			зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.ФизЛицо КАК ФизЛицо,
+			зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.КоличествоЗаказовВыполненных КАК КоличествоЗаказовВыполненных,
+			0 КАК СуммаРасчетаЗППоРейсам,
+			ЛОЖЬ КАК ПрименяетсяМинимальнаяСтавка,
+			0 КАК СуммаМинимальнойСтавки,
+			0 КАК СуммаРасчетаЗППоЗаказам,
+			0 КАК СуммаРасчетаЗППоЧасам,
+			0 КАК СуммаРасчетаЗПДопНачисленияПоРейсам,
+			0 КАК СуммаРасчетаЗПДопНачисленияПоЗаказам,
+			зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.КоличествоЗаказовВыполненных + зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.КоличествоЗаказовОтказСЗаездом + зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.КоличествоЗаказовПереносСЗаездом КАК ЗаказовДоставлено,
+			зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.ОбщееКоличествоЗаказов КАК ОбщееКоличествоЗаказов,
+			0 КАК ЧасовПереработки,
+			0 КАК СуммаПодъемНаЭтаж,
+			0 КАК КоличествоПодъемов,
+			0 КАК ДоплатаЗаЧасы,
+			0 КАК ДоплатаДоМинималки,
+			0 КАК КоличествоМинималок,
+			0 КАК ЗаказовДоставленоЗабор,
+			0 КАК ЗаказовДоставленоМГТ,
+			0 КАК ЗаказовДоставленоСГТ,
+			0 КАК ЗаказовДоставленоКГТ,
+			0 КАК ЗаказовДоставленоСКГТ,
+			0 КАК ЗаказовДоставленоСТ,
+			0 КАК ВесЗаказа,
+			зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних.СоставЭкипажа = ЗНАЧЕНИЕ(Перечисление.зпСоставЭкипажа.ВодительБезЭкспедитора) КАК БезЭкспедитора,
+			0 КАК ЗаказовДоставленоДоМКАД,
+			0 КАК ЗаказовДоставленоЗаМКАД,
+			0 КАК ЗаказовДоставленоЗаЦКАД
+		ИЗ
+			РегистрСведений.зпИсходныеДанныеРасчетаЗППоРейсам.СрезПоследних(
+					,
+					Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоРейсамСрезПоследних
+		
+		ОБЪЕДИНИТЬ ВСЕ
+		
+		ВЫБРАТЬ
+			зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.Рейс,
+			зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.ФизЛицо,
+			0,
+			зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.СуммаИтого,
+			зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.ПрименяетсяМинимальнаяСтавка,
+			зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.СуммаМинимальнойСтавки,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.ПрименяетсяМинимальнаяСтавка
+					ТОГДА зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.СуммаМинимальнойСтавки - зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.СуммаИтого
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних.ПрименяетсяМинимальнаяСтавка
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			0,
+			0
+		ИЗ
+			РегистрСведений.зпИсходныеДанныеРасчетаМинимальнойЗП.СрезПоследних(
+					,
+					Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаМинимальнойЗПСрезПоследних
+		
+		ОБЪЕДИНИТЬ ВСЕ
+		
+		ВЫБРАТЬ
+			зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.Рейс,
+			зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.ФизЛицо,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.СуммаРасчетаЗП,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.КатегорияЗаказа.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.Забор)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.КатегорияЗаказа.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.МГТ)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.КатегорияЗаказа.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.СГТ)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.КатегорияЗаказа.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.КГТ)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.КатегорияЗаказа.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.СКГТ)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.КатегорияЗаказа.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.СТ)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.ВесЗаказа,
+			ЛОЖЬ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.ЗонаДоставки.ЗонаДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторЗонДоставки.Зона1)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.ЗонаДоставки.ЗонаДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторЗонДоставки.Зона2)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних.ЗонаДоставки.ЗонаДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторЗонДоставки.Зона3)
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ
+		ИЗ
+			РегистрСведений.зпИсходныеДанныеРасчетаЗППоЗаказам.СрезПоследних(
+					,
+					Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоЗаказамСрезПоследних
+		
+		ОБЪЕДИНИТЬ ВСЕ
+		
+		ВЫБРАТЬ
+			зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.Рейс,
+			зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.ФизЛицо,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			0,
+			зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.СуммаОплаты,
+			0,
+			0,
+			0,
+			0,
+			зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.ЧасовПереработки,
+			0,
+			0,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.Начисление.СпособРасчета = ЗНАЧЕНИЕ(Перечисление.зпСпособыРасчетаНачислений.СтавкаЗаЧасПереработки)
+					ТОГДА зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних.СуммаОплаты
+				ИНАЧЕ 0
+			КОНЕЦ,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			0,
+			0
+		ИЗ
+			РегистрСведений.зпИсходныеДанныеРасчетаЗПЧасы.СрезПоследних(
+					,
+					Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗПЧасыСрезПоследних
+		
+		ОБЪЕДИНИТЬ ВСЕ
+		
+		ВЫБРАТЬ
+			зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Рейс,
+			зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.ФизЛицо,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			0,
+			0,
+			зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних.Сумма,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			0,
+			0
+		ИЗ
+			РегистрСведений.зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисления.СрезПоследних(
+					,
+					Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисленияСрезПоследних
+		
+		ОБЪЕДИНИТЬ ВСЕ
+		
+		ВЫБРАТЬ
+			зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Рейс,
+			зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.ФизЛицо,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			0,
+			0,
+			0,
+			зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Сумма,
+			0,
+			0,
+			0,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Начисление = ЗНАЧЕНИЕ(Справочник.зпНачисления.ОплатаПодъемаНаЭтажПриДоставкеЗаказа)
+					ТОГДА зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Сумма
+				ИНАЧЕ 0
+			КОНЕЦ,
+			ВЫБОР
+				КОГДА зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Начисление = ЗНАЧЕНИЕ(Справочник.зпНачисления.ОплатаПодъемаНаЭтажПриДоставкеЗаказа)
+						И зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних.Сумма &gt; 0
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			ЛОЖЬ,
+			0,
+			0,
+			0
+		ИЗ
+			РегистрСведений.зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисления.СрезПоследних(
+					,
+					Рейс В
+						(ВЫБРАТЬ
+							ВТ_Рейсы.Ссылка КАК Ссылка
+						ИЗ
+							ВТ_Рейсы КАК ВТ_Рейсы) {(ФизЛицо).*}) КАК зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисленияСрезПоследних) КАК ВложенныйЗапрос
+	
+	СГРУППИРОВАТЬ ПО
+		ВложенныйЗапрос.Рейс,
+		ВложенныйЗапрос.ФизЛицо) КАК ВложенныйЗапрос
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Рейсы КАК ВТ_Рейсы
+		ПО ВложенныйЗапрос.Рейс = ВТ_Рейсы.Ссылка
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.ФизЛицо,
+	КОНЕЦПЕРИОДА(ВложенныйЗапрос.Рейс.ДатаРейса, МЕСЯЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Расчет.ПериодРасчета КАК ПериодРасчета,
+	МАКСИМУМ(РаботникиОрганизации.Период) КАК Период,
+	РаботникиОрганизации.ФизЛицо КАК ФизЛицо
+ПОМЕСТИТЬ ВТ_МаксПериодыПриема
+ИЗ
+	РегистрСведений.РаботникиОрганизации КАК РаботникиОрганизации
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Расчет КАК ВТ_Расчет
+		ПО РаботникиОрганизации.Период &lt;= ВТ_Расчет.ПериодРасчета
+			И РаботникиОрганизации.ФизЛицо = ВТ_Расчет.ФизЛицо
+			И (РаботникиОрганизации.Состояние = ЗНАЧЕНИЕ(Перечисление.СостояниеРаботникаОрганизации.ПринятНаРаботуВОрганизацию))
+
+СГРУППИРОВАТЬ ПО
+	РаботникиОрганизации.ФизЛицо,
+	ВТ_Расчет.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_МаксПериодыПриема.ПериодРасчета КАК ПериодРасчета,
+	РаботникиОрганизации.ФизЛицо КАК ФизЛицо,
+	РаботникиОрганизации.Организация КАК Организация,
+	РаботникиОрганизации.ОсновноеНачисление КАК ОсновноеНачисление
+ПОМЕСТИТЬ ВТ_Организации
+ИЗ
+	РегистрСведений.РаботникиОрганизации КАК РаботникиОрганизации
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_МаксПериодыПриема КАК ВТ_МаксПериодыПриема
+		ПО РаботникиОрганизации.Период = ВТ_МаксПериодыПриема.Период
+			И РаботникиОрганизации.ФизЛицо = ВТ_МаксПериодыПриема.ФизЛицо
+			И (РаботникиОрганизации.Состояние = ЗНАЧЕНИЕ(Перечисление.СостояниеРаботникаОрганизации.ПринятНаРаботуВОрганизацию))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Расчет.ФизЛицо КАК ФизЛицо,
+	ВТ_Расчет.СуммаИтого КАК СуммаИтого,
+	ВТ_Расчет.СуммаПодъемы КАК СуммаПодъемы,
+	ВТ_Расчет.КоличествоПодъемов КАК КоличествоПодъемов,
+	ВТ_Расчет.ДоплатаЗаЧасы КАК ДоплатаЗаЧасы,
+	ВТ_Расчет.КоличествоЧасовКДоплате КАК ЧасовКДоплате,
+	ВТ_Расчет.ПереплатаМинималкой КАК ПереплатаМинималкой,
+	ВТ_Расчет.КоличествоМинималок КАК КоличествоМинималок,
+	ВТ_Расчет.ЗаказовДоставлено КАК ЗаказовДоставлено,
+	ВТ_Расчет.ЗаказовДоставленоЗабор КАК Забор,
+	ВТ_Расчет.ЗаказовДоставленоМГТ КАК МГТ,
+	ВТ_Расчет.ЗаказовДоставленоСГТ КАК СГТ,
+	ВТ_Расчет.ЗаказовДоставленоКГТ КАК КГТ,
+	ВТ_Расчет.ЗаказовДоставленоСКГТ КАК СКГТ,
+	ВТ_Расчет.ЗаказовДоставленоСТ КАК СТ,
+	ВТ_Расчет.ДоставленоКГ КАК ДоставленоКГ,
+	ВТ_Расчет.ЧасовСумма КАК ЧасовСумма,
+	ВТ_Расчет.КоличествоЗаказовВыполненных КАК КоличествоЗаказовВыполненных,
+	ВТ_Расчет.ОбщееКоличествоЗаказов КАК ОбщееКоличествоЗаказов,
+	ВТ_Расчет.ЗаказовДоставленоДоМКАД КАК ДоМКАД,
+	ВТ_Расчет.ЗаказовДоставленоЗаМКАД КАК ЗаМКАД,
+	ВТ_Расчет.ЗаказовДоставленоЗаЦКАД КАК ЗаЦКАД,
+	ВТ_Расчет.ДнейВсего КАК ДнейВсего,
+	ВТ_Расчет.ДнейБезЭкспедитора КАК ДнейБезЭкспедитора,
+	ВТ_Организации.ОсновноеНачисление КАК ОсновноеНачисление,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА 1
+	КОНЕЦ КАК ГруппаЧеловек,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.СуммаИтого
+	КОНЕЦ КАК ГруппаСуммаИтого,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.СуммаПодъемы
+	КОНЕЦ КАК ГруппаСуммаПодъемы,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.КоличествоПодъемов
+	КОНЕЦ КАК ГруппаКоличествоПодъемов,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ДоплатаЗаЧасы
+	КОНЕЦ КАК ГруппаДоплатаЗаЧасы,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.КоличествоЧасовКДоплате
+	КОНЕЦ КАК ГруппаЧасовКДоплате,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ПереплатаМинималкой
+	КОНЕЦ КАК ГруппаПереплатаМинималкой,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.КоличествоМинималок
+	КОНЕЦ КАК ГруппаКоличествоМинималок,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставлено
+	КОНЕЦ КАК ГруппаЗаказовДоставлено,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоМГТ
+	КОНЕЦ КАК ГруппаМГТ,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоСГТ
+	КОНЕЦ КАК ГруппаСГТ,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоКГТ
+	КОНЕЦ КАК ГруппаКГТ,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоСКГТ
+	КОНЕЦ КАК ГруппаСКГТ,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоСТ
+	КОНЕЦ КАК ГруппаСТ,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоЗабор
+	КОНЕЦ КАК ГруппаЗабор,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоДоМКАД
+	КОНЕЦ КАК ГруппаДоМКАД,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоЗаМКАД
+	КОНЕЦ КАК ГруппаЗаМКАД,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЗаказовДоставленоЗаЦКАД
+	КОНЕЦ КАК ГруппаЗаЦКАД,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ДоставленоКГ
+	КОНЕЦ КАК ГруппаДоставленоКГ,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ДнейВсего
+	КОНЕЦ КАК ГруппаДнейВсего,
+	ВЫБОР
+		КОГДА ВТ_Расчет.ДнейВсего &gt; 6
+			ТОГДА ВТ_Расчет.ЧасовСумма
+	КОНЕЦ КАК ГруппаЧасовСумма,
+	ВТ_Расчет.ПроцентВыполненияСумма КАК ПроцентВыполненияСумма,
+	ВТ_Расчет.ВремяПечатиМЛСекундыСреднее КАК ВремяПечатиМЛСекундыСреднее,
+	ВТ_Расчет.ПериодРасчета КАК ПериодРасчета
+{ВЫБРАТЬ
+	ФизЛицо.*,
+	ОсновноеНачисление.*,
+	СуммаИтого,
+	СуммаПодъемы,
+	КоличествоПодъемов,
+	ДоплатаЗаЧасы,
+	ЧасовКДоплате,
+	ПереплатаМинималкой,
+	КоличествоМинималок,
+	ЗаказовДоставлено,
+	МГТ,
+	СГТ,
+	КГТ,
+	СКГТ,
+	СТ,
+	Забор,
+	ДоМКАД,
+	ЗаМКАД,
+	ЗаЦКАД,
+	ДоставленоКГ,
+	ОбщееКоличествоЗаказов,
+	ДнейВсего,
+	ДнейБезЭкспедитора,
+	ЧасовСумма,
+	ГруппаЧеловек,
+	ГруппаСуммаИтого,
+	ГруппаСуммаПодъемы,
+	ГруппаКоличествоПодъемов,
+	ГруппаДоплатаЗаЧасы,
+	ГруппаЧасовКДоплате,
+	ГруппаПереплатаМинималкой,
+	ГруппаКоличествоМинималок,
+	ГруппаЗаказовДоставлено,
+	ГруппаМГТ,
+	ГруппаСГТ,
+	ГруппаКГТ,
+	ГруппаСКГТ,
+	ГруппаСТ,
+	ГруппаЗабор,
+	ГруппаДоМКАД,
+	ГруппаЗаМКАД,
+	ГруппаЗаЦКАД,
+	ГруппаДоставленоКГ,
+	ГруппаДнейВсего,
+	ГруппаЧасовСумма,
+	ПроцентВыполненияСумма,
+	ВремяПечатиМЛСекундыСреднее,
+	ПериодРасчета}
+ИЗ
+	ВТ_Расчет КАК ВТ_Расчет
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Организации КАК ВТ_Организации
+		ПО ВТ_Расчет.ФизЛицо = ВТ_Организации.ФизЛицо
+			И ВТ_Расчет.ПериодРасчета = ВТ_Организации.ПериодРасчета
+{ГДЕ
+	ВТ_Организации.ОсновноеНачисление.*}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Человек</dataPath>
+		<expression>1</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Человек</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЧасовКДоплатеФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА ЧасовКДоплате &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ЧасовКДоплате)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Часов к доплате (формат)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентВыполнения</dataPath>
+		<expression>ВЫБОР
+КОГДА ОбщееКоличествоЗаказов &gt; 0
+ТОГДА ЗаказовДоставлено / ОбщееКоличествоЗаказов * 100
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент выполнения</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА ЧасовСумма &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ЧасовСумма)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Часов сумма (формат)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ГруппаЧасовКДоплатеФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА ГруппаЧасовКДоплате &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ГруппаЧасовКДоплате)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа Часов к доплате (формат)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ГруппаЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА ГруппаЧасовСумма &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ГруппаЧасовСумма)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа Часов сумма (формат)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаСуммаИтого</dataPath>
+		<expression>СуммаИтого / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Сумма итого</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаСуммаПодъемы</dataPath>
+		<expression>СуммаПодъемы / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Сумма подъемы</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаКоличествоПодъемов</dataPath>
+		<expression>КоличествоПодъемов / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Количество подъемов</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаДоплатаЗаЧасы</dataPath>
+		<expression>ДоплатаЗаЧасы / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Доплата за часы</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЧасовКДоплате</dataPath>
+		<expression>ЧасовКДоплате / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Часов к доплате</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЧасовКДоплатеФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА ЧасовКДоплате / ДнейВсего &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ЧасовКДоплате / ДнейВсего)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Часов к доплате (формат)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType"/>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаПереплатаМинималкой</dataPath>
+		<expression>ПереплатаМинималкой / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Переплата минималкой</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаКоличествоМинималок</dataPath>
+		<expression>КоличествоМинималок / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Количество минималок</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЗаказовДоставлено</dataPath>
+		<expression>ЗаказовДоставлено / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Заказов доставлено</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаМГТ</dataPath>
+		<expression>МГТ / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека МГТ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаСГТ</dataPath>
+		<expression>СГТ / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека СГТ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаКГТ</dataPath>
+		<expression>КГТ / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека КГТ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаСКГТ</dataPath>
+		<expression>СКГТ / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека СКГТ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаСТ</dataPath>
+		<expression>СТ / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека СТ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЗабор</dataPath>
+		<expression>Забор / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаДоМКАД</dataPath>
+		<expression>ДоМКАД / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека До МКАД КАД</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЗаМКАД</dataPath>
+		<expression>ЗаМКАД / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека За МКАД КАД</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЗаЦКАД</dataPath>
+		<expression>ЗаЦКАД / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека За ЦКАД</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаДоставленоКГ</dataPath>
+		<expression>ДоставленоКГ / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Доставлено КГ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=3</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаОбщееКоличествоЗаказов</dataPath>
+		<expression>ОбщееКоличествоЗаказов / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Общее количество заказов</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЧасовСумма</dataPath>
+		<expression>ЧасовСумма / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Часов сумма</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЗаказСуммаИтого</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовДоставлено &gt; 0
+ТОГДА СуммаИтого / ЗаказовДоставлено
+ИНАЧЕ 0
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на заказ Сумма итого</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЗаказСуммаПодъемы</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовДоставлено &gt; 0
+ТОГДА СуммаПодъемы / ЗаказовДоставлено
+ИНАЧЕ 0
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на заказ Сумма подъемы</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЗаказДоплатаЗаЧасы</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовДоставлено &gt; 0
+ТОГДА ДоплатаЗаЧасы / ЗаказовДоставлено
+ИНАЧЕ 0
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на заказ Доплата за часы</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЗаказПереплатаМинималкой</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовДоставлено &gt; 0
+ТОГДА ПереплатаМинималкой / ЗаказовДоставлено
+ИНАЧЕ 0
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на заказ Переплата минималкой</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЗаказДоставленоКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовДоставлено &gt; 0
+ТОГДА ДоставленоКГ / ЗаказовДоставлено
+ИНАЧЕ 0
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на заказ Доставлено КГ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=3</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА ЧасовСумма / ДнейВсего &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ЧасовСумма / ДнейВсего)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Часов сумма (формат)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType"/>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЗаказЧасовСумма</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовДоставлено &gt; 0
+ТОГДА ЧасовСумма / ЗаказовДоставлено
+ИНАЧЕ 0
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на заказ Часов сумма</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЗаказЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовДоставлено &gt; 0 И ЧасовСумма / ЗаказовДоставлено &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(ЧасовСумма / ЗаказовДоставлено)
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на заказ Часов сумма (формат)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType"/>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаПроцентВыполнения</dataPath>
+		<expression>ПроцентВыполненияСумма / ДнейВсего</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Процент выполнения</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СреднееНаЧеловекаВремяПечатиМЛ</dataPath>
+		<expression>ДобавитьКДате(ДАТАВРЕМЯ(1,1,1), "Секунда", ВремяПечатиМЛСекундыСреднее)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Среднее на человека Время печати МЛ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=HH:mm</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Человек</dataPath>
+		<expression>Сумма(Человек)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаИтого</dataPath>
+		<expression>Сумма(СуммаИтого)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПодъемы</dataPath>
+		<expression>Сумма(СуммаПодъемы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПодъемов</dataPath>
+		<expression>Сумма(КоличествоПодъемов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДоплатаЗаЧасы</dataPath>
+		<expression>Сумма(ДоплатаЗаЧасы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЧасовКДоплате</dataPath>
+		<expression>Сумма(ЧасовКДоплате)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЧасовКДоплатеФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЧасовКДоплате) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Сумма(ЧасовКДоплате))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПереплатаМинималкой</dataPath>
+		<expression>Сумма(ПереплатаМинималкой)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоМинималок</dataPath>
+		<expression>Сумма(КоличествоМинималок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовДоставлено</dataPath>
+		<expression>Сумма(ЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>МГТ</dataPath>
+		<expression>Сумма(МГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СГТ</dataPath>
+		<expression>Сумма(СГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КГТ</dataPath>
+		<expression>Сумма(КГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СКГТ</dataPath>
+		<expression>Сумма(СКГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СТ</dataPath>
+		<expression>Сумма(СТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Забор</dataPath>
+		<expression>Сумма(Забор)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДоМКАД</dataPath>
+		<expression>Сумма(ДоМКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаМКАД</dataPath>
+		<expression>Сумма(ЗаМКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаЦКАД</dataPath>
+		<expression>Сумма(ЗаЦКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДоставленоКГ</dataPath>
+		<expression>Сумма(ДоставленоКГ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентВыполнения</dataPath>
+		<expression>ВЫБОР
+КОГДА СУММА(ОбщееКоличествоЗаказов) &gt; 0
+ТОГДА СУММА(ЗаказовДоставлено) / СУММА(ОбщееКоличествоЗаказов) * 100
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДнейВсего</dataPath>
+		<expression>Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДнейБезЭкспедитора</dataPath>
+		<expression>Сумма(ДнейБезЭкспедитора)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЧасовСумма</dataPath>
+		<expression>Сумма(ЧасовСумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЧасовСумма) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Сумма(ЧасовСумма))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщееКоличествоЗаказов</dataPath>
+		<expression>Сумма(ОбщееКоличествоЗаказов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЧеловек</dataPath>
+		<expression>Сумма(ГруппаЧеловек)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаСуммаИтого</dataPath>
+		<expression>Среднее(ГруппаСуммаИтого)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаСуммаПодъемы</dataPath>
+		<expression>Среднее(ГруппаСуммаПодъемы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаКоличествоПодъемов</dataPath>
+		<expression>Среднее(ГруппаКоличествоПодъемов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДоплатаЗаЧасы</dataPath>
+		<expression>Среднее(ГруппаДоплатаЗаЧасы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЧасовКДоплате</dataPath>
+		<expression>Среднее(ГруппаЧасовКДоплате)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаПереплатаМинималкой</dataPath>
+		<expression>Среднее(ГруппаПереплатаМинималкой)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаКоличествоМинималок</dataPath>
+		<expression>Среднее(ГруппаКоличествоМинималок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЗаказовДоставлено</dataPath>
+		<expression>Среднее(ГруппаЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаМГТ</dataPath>
+		<expression>Среднее(ГруппаМГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаСГТ</dataPath>
+		<expression>Среднее(ГруппаСГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаКГТ</dataPath>
+		<expression>Среднее(ГруппаКГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаСКГТ</dataPath>
+		<expression>Среднее(ГруппаСКГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЗабор</dataPath>
+		<expression>Среднее(ГруппаЗабор)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДоМКАД</dataPath>
+		<expression>Среднее(ГруппаДоМКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЗаМКАД</dataPath>
+		<expression>Среднее(ГруппаЗаМКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЗаЦКАД</dataPath>
+		<expression>Среднее(ГруппаЗаЦКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЧасовКДоплатеФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА Среднее(ГруппаЧасовКДоплате) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Среднее(ГруппаЧасовКДоплате))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаСТ</dataPath>
+		<expression>Среднее(ГруппаСТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДоставленоКГ</dataPath>
+		<expression>Среднее(ГруппаДоставленоКГ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДнейВсего</dataPath>
+		<expression>Среднее(ГруппаДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЧасовСумма</dataPath>
+		<expression>Среднее(ГруппаЧасовСумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА Среднее(ГруппаЧасовСумма) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Среднее(ГруппаЧасовСумма))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаСуммаИтого</dataPath>
+		<expression>Сумма(СуммаИтого) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаСуммаПодъемы</dataPath>
+		<expression>Сумма(СуммаПодъемы) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаКоличествоПодъемов</dataPath>
+		<expression>Сумма(КоличествоПодъемов) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаДоплатаЗаЧасы</dataPath>
+		<expression>Сумма(ДоплатаЗаЧасы) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЧасовКДоплате</dataPath>
+		<expression>Сумма(ЧасовКДоплате) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЧасовКДоплатеФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЧасовКДоплате) / Сумма(ДнейВсего) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Сумма(ЧасовКДоплате) / Сумма(ДнейВсего))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаПереплатаМинималкой</dataPath>
+		<expression>Сумма(ПереплатаМинималкой) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаКоличествоМинималок</dataPath>
+		<expression>Сумма(КоличествоМинималок) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЗаказовДоставлено</dataPath>
+		<expression>Сумма(ЗаказовДоставлено) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаМГТ</dataPath>
+		<expression>Сумма(МГТ) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаСГТ</dataPath>
+		<expression>Сумма(СГТ) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаКГТ</dataPath>
+		<expression>Сумма(КГТ) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаСКГТ</dataPath>
+		<expression>Сумма(СКГТ) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаСТ</dataPath>
+		<expression>Сумма(СТ) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЗабор</dataPath>
+		<expression>Сумма(Забор) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаДоМКАД</dataPath>
+		<expression>Сумма(ДоМКАД) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЗаМКАД</dataPath>
+		<expression>Сумма(ЗаМКАД) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЗаЦКАД</dataPath>
+		<expression>Сумма(ЗаЦКАД) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаДоставленоКГ</dataPath>
+		<expression>Сумма(ДоставленоКГ) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаОбщееКоличествоЗаказов</dataPath>
+		<expression>Сумма(ОбщееКоличествоЗаказов) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЧасовСумма</dataPath>
+		<expression>Сумма(ЧасовСумма) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЗаказСуммаИтого</dataPath>
+		<expression>Сумма(СуммаИтого) / Сумма(ЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЗаказСуммаПодъемы</dataPath>
+		<expression>Сумма(СуммаПодъемы) / Сумма(ЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЗаказДоплатаЗаЧасы</dataPath>
+		<expression>Сумма(ДоплатаЗаЧасы) / Сумма(ЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЗаказПереплатаМинималкой</dataPath>
+		<expression>Сумма(ПереплатаМинималкой) / Сумма(ЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЗаказДоставленоКГ</dataPath>
+		<expression>Сумма(ДоставленоКГ) / Сумма(ЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЧасовСумма) / Сумма(ДнейВсего) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Сумма(ЧасовСумма) / Сумма(ДнейВсего))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЗаказЧасовСумма</dataPath>
+		<expression>Сумма(ЧасовСумма) / Сумма(ЗаказовДоставлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЗаказЧасовСуммаФормат</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЧасовСумма) / Сумма(ЗаказовДоставлено) &gt; 0
+ТОГДА ОтправкаОтчетовСервер.ЧасыССотымиВЧасыСМинутами(Сумма(ЧасовСумма) / Сумма(ЗаказовДоставлено))
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаПроцентВыполнения</dataPath>
+		<expression>Сумма(ПроцентВыполненияСумма) / Сумма(ДнейВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СреднееНаЧеловекаВремяПечатиМЛ</dataPath>
+		<expression>ДобавитьКДате(ДАТАВРЕМЯ(1,1,1), "Секунда", Среднее(ВремяПечатиМЛСекундыСреднее))</expression>
+	</totalField>
+	<parameter>
+		<name>Регион</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Регион</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РегиональныеТерминалы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ОкончаниеПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Окончание периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ВажноеПроцентноеИзменение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Важное процентное изменение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>3</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">10</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ФизЛицо</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Абсолютные показатели</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Человек</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаИтого</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПодъемы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПодъемов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДоплатаЗаЧасы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПереплатаМинималкой</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоМинималок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаказовДоставлено</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>МГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СКГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Забор</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДоМКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаМКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаЦКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДоставленоКГ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентВыполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДнейВсего</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДнейБезЭкспедитора</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Среднее по группе на человека (отработавшие более 6 дней)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаЧеловек</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Человек</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаКоличествоПодъемов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество подъемов</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаКоличествоМинималок</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество минималок</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаЗаказовДоставлено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов доставлено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаМГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>МГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаСГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>КГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаСКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СКГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаСТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаЗабор</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Забор</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДоМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаЗаМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаЗаЦКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За ЦКАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДнейВсего</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дней всего</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В среднем на человека в день</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаКоличествоПодъемов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество подъемов</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаКоличествоМинималок</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество минималок</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаЗаказовДоставлено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов доставлено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаМГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>МГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаСГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>КГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаСКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СКГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаСТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаЗабор</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Забор</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаДоМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаЗаМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаЗаЦКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За ЦКАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаОбщееКоличествоЗаказов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов загружено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаПроцентВыполнения</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент выполнения</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЧеловекаВремяПечатиМЛ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Время печати МЛ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В среднем на заказ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЗаказСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЗаказСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЗаказДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЗаказПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЗаказДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СреднееНаЗаказЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОсновноеНачисление</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>7251528d-8c50-4a03-8dcc-519d95012bba</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизЛицо</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ff69574c-2a50-47cf-a8be-a5c1a6b30d05</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Регион</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.РегиональныеТерминалы.МоскваСтриж</dcscor:value>
+					<dcsset:userSettingID>56259b8d-1b16-438c-944a-1f0692d019b2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>73485211-adef-454d-bd63-02ba0a57bfaa</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВажноеПроцентноеИзменение</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФиксацияСверху</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>a2fd6850-fd7c-46c8-9373-6a54a212448d</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ФизЛицо</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ОсновноеНачисление</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Периодами</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Периодами</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ФизЛицо</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Абсолютные показатели</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>Человек</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаИтого</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СуммаПодъемы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>КоличествоПодъемов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДоплатаЗаЧасы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ПереплатаМинималкой</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>КоличествоМинималок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаказовДоставлено</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>МГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>КГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СКГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>Забор</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДоМКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ЗаМКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ЗаЦКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДоставленоКГ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентВыполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДнейВсего</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДнейБезЭкспедитора</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Среднее по группе на человека (отработавшие более 6 дней)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЧеловек</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Человек</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаКоличествоПодъемов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество подъемов</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаКоличествоМинималок</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество минималок</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗаказовДоставлено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов доставлено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаМГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>МГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>КГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СКГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗабор</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Забор</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДоМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗаМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗаЦКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За ЦКАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДнейВсего</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дней всего</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В среднем на человека в день</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаКоличествоПодъемов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество подъемов</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаКоличествоМинималок</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество минималок</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗаказовДоставлено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов доставлено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаМГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>МГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>КГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СКГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗабор</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Забор</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаДоМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗаМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗаЦКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За ЦКАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаОбщееКоличествоЗаказов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов загружено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаПроцентВыполнения</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент выполнения</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаВремяПечатиМЛ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Время печати МЛ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В среднем на заказ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОсновноеНачисление</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ef65a912-0239-4c29-b498-68c1fbba00dd</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизЛицо</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>de88c438-4066-4fb9-9512-78c509390c71</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Регион</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.РегиональныеТерминалы.МоскваСтриж</dcscor:value>
+					<dcsset:userSettingID>56259b8d-1b16-438c-944a-1f0692d019b2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>73485211-adef-454d-bd63-02ba0a57bfaa</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВажноеПроцентноеИзменение</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>401d1abd-7e69-47f6-9722-8d6bc14d62e0</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФиксацияСверху</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>9acb3094-cb50-4864-8be3-8a70ccbd2e3e</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодРасчета</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОсновноеНачисление</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ФизЛицо</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПериодамиПоОсновнымНачислениям</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Периодами по основным начислениям</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>Человек</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаИтого</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СуммаПодъемы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>КоличествоПодъемов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДоплатаЗаЧасы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ПереплатаМинималкой</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>КоличествоМинималок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаказовДоставлено</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>МГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>КГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СКГТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СТ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>Забор</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДоМКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ЗаМКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ЗаЦКАД</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДоставленоКГ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентВыполнения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДнейВсего</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ДнейБезЭкспедитора</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЧеловек</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Человек</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаКоличествоПодъемов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество подъемов</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаКоличествоМинималок</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество минималок</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗаказовДоставлено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов доставлено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаМГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>МГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>КГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СКГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаСТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗабор</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Забор</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДоМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗаМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЗаЦКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За ЦКАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДнейВсего</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дней всего</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаКоличествоПодъемов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество подъемов</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЧасовКДоплатеФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов к доплате</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаКоличествоМинималок</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество минималок</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗаказовДоставлено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов доставлено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаМГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>МГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>КГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСКГТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СКГТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаСТ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>СТ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗабор</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Забор</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаДоМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>До МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗаМКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За МКАД КАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЗаЦКАД</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>За ЦКАД</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаОбщееКоличествоЗаказов</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказов загружено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаПроцентВыполнения</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент выполнения</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЧеловекаВремяПечатиМЛ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Время печати МЛ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказСуммаИтого</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма итого</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказСуммаПодъемы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма подъемы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказДоплатаЗаЧасы</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доплата за часы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказПереплатаМинималкой</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переплата минималкой</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказДоставленоКГ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Доставлено КГ</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>СреднееНаЗаказЧасовСуммаФормат</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часов сумма</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Vertically</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОсновноеНачисление</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ef65a912-0239-4c29-b498-68c1fbba00dd</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизЛицо</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>de88c438-4066-4fb9-9512-78c509390c71</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Регион</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.РегиональныеТерминалы.МоскваСтриж</dcscor:value>
+					<dcsset:userSettingID>56259b8d-1b16-438c-944a-1f0692d019b2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>73485211-adef-454d-bd63-02ba0a57bfaa</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВажноеПроцентноеИзменение</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>401d1abd-7e69-47f6-9722-8d6bc14d62e0</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФиксацияСверху</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>713f1b32-0f74-45ec-8c85-a28aec971a8e</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодРасчета</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОсновноеНачисление</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,54 @@
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder">
+	<xs:complexType name="ArrayOfFranchise">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="Franchise"
+					nillable="true"
+					type="tns:Franchise"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfFranchise"
+			nillable="true"
+			type="tns:ArrayOfFranchise"/>
+	<xs:complexType name="Franchise">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="Address"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="City"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Code"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="DeliveryDurationFrom"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					name="DeliveryDurationTo"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					name="FranchiseId"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					name="IsActive"
+					type="xs:boolean"/>
+			<xs:element minOccurs="0"
+					name="IsCourierDeliveryEnabled"
+					type="xs:boolean"/>
+			<xs:element minOccurs="0"
+					name="IsSelfDeliveryEnabled"
+					type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Franchise"
+			nillable="true"
+			type="tns:Franchise"/>
+</xs:schema>

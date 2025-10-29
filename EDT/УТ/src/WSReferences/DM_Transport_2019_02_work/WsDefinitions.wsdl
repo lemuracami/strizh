@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="urn:DetMir.ru:TransComp:Common"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="urn:DetMir.ru:TransComp:Common"
+		name="TransComp_Transportion_Out"
+		targetNamespace="urn:DetMir.ru:TransComp:Common">
+	<documentation> </documentation>
+	<types>
+		<xsd:schema xmlns="urn:DetMir.ru:TransComp:Common"
+				xmlns:p1="urn:DetMir.ru:TransComp:Common"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				targetNamespace="urn:DetMir.ru:TransComp:Common">
+			<xsd:element name="TransCompTransportionReq"
+					type="xsd1:TransCompTransportionReq"/>
+			<xsd:element name="TransCompTransportionResp"
+					type="xsd1:TransCompTransportionResp"/>
+			<xsd:complexType name="TransCompTransportionResp">
+				<xsd:annotation>
+					<xsd:documentation lang="EN">1</xsd:documentation>
+					<xsd:appinfo source="http://sap.com/xi/VersionID">9a10149726a811e88a6e0000006ab3d2</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="GUID"
+							type="xsd:string"
+							minOccurs="0">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">b9c55bbe291111e891ce9cb654f0abee</xsd:appinfo>
+							<xsd:documentation>GUID сообщения</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="TransportionResp"
+							minOccurs="0"
+							maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">0fb19816158711e8a0be9cb654f0abee</xsd:appinfo>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DocNo"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">b9c587ed291111e8cde29cb654f0abee</xsd:appinfo>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DocExtNo"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">b9c587ee291111e8bf839cb654f0abee</xsd:appinfo>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Status"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">b9c587ef291111e8beb99cb654f0abee</xsd:appinfo>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="StatusInfo"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">b9c587f0291111e889e29cb654f0abee</xsd:appinfo>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ErrData"
+										minOccurs="0"
+										maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="ErrorCode"
+													type="xsd:string"
+													minOccurs="0"/>
+											<xsd:element name="ErrorText"
+													type="xsd:string"
+													minOccurs="0"/>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="TransCompTransportionReq">
+				<xsd:annotation>
+					<xsd:appinfo source="http://sap.com/xi/VersionID">0bd09332291211e8a0540000006ab3d2</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="Partner"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">de9b992326a711e8bfbd9cb654f0abee</xsd:appinfo>
+							<xsd:documentation>ID партнера</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="GUID"
+							type="xsd:string"
+							minOccurs="0">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2870290811e899b49cb654f0abee</xsd:appinfo>
+							<xsd:documentation>GUID сообщения</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Transportion"
+							maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">de9bb41426a711e8ac5e9cb654f0abee</xsd:appinfo>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TranspPlace"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">3a1b8114291111e8c5519cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Место плановой транспортировки</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="TranspType"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2871290811e8cef29cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Вид транспортировки</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="TypeOperation"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">de9bb40b26a711e8964f9cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Тип операции</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DocNo"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">de9bb40c26a711e8940f9cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Номер документа</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DocExtNo"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">de9bb40d26a711e8c7a69cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Номер документа в системе партнера</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DocDate"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">de9bb40e26a711e8aca79cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Дата создания документа в системе партнера</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DeliveryPlanDate"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">de9bb40f26a711e8b7829cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Плановая дата доставки</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="AutoType"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2872290811e8a1d79cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Тип транспортного средства</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="AutoData"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">3a1bb256291111e888909cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Маркировка(Гос.номер автомобиля)</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="AutoModel"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2873290811e8c5d99cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Марка транспортного средства</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DriverName"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2874290811e8866b9cb654f0abee</xsd:appinfo>
+										<xsd:documentation>ФИО водителя</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DriverPassportData"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2875290811e887469cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Паспортные данные водителя</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="DriverTel"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2876290811e89f029cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Телефон водителя</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ProcData"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2877290811e8a5039cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Номер/дата доверенности</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="AdData"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">2b6b2878290811e8a5c49cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Номер пломбы</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Comment"
+										type="xsd:string"
+										minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">de9bb41026a711e8a03f9cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Комментарий к поставке</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Text"
+										type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">0c15e411291211e8c9439cb654f0abee</xsd:appinfo>
+										<xsd:documentation>Доп. данные(Текст)</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Deliveries"
+										minOccurs="0"
+										maxOccurs="unbounded">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">de9bb41326a711e8a56c9cb654f0abee</xsd:appinfo>
+									</xsd:annotation>
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="DeliveryNo"
+													type="xsd:string"
+													minOccurs="0">
+												<xsd:annotation>
+													<xsd:appinfo source="http://sap.com/xi/TextID">de9bb41126a711e8b0249cb654f0abee</xsd:appinfo>
+													<xsd:documentation>Номер заказа</xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											<xsd:element name="DeliveryExNo"
+													type="xsd:string"
+													minOccurs="0">
+												<xsd:annotation>
+													<xsd:appinfo source="http://sap.com/xi/TextID">de9bb41226a711e8873f9cb654f0abee</xsd:appinfo>
+													<xsd:documentation>Номер заказа в системе партнера</xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</types>
+	<message name="TransCompTransportionReq">
+		<documentation> </documentation>
+		<part name="TransCompTransportionReq"
+				element="tns:TransCompTransportionReq"/>
+	</message>
+	<message name="TransCompTransportionResp">
+		<documentation> </documentation>
+		<part name="TransCompTransportionResp"
+				element="tns:TransCompTransportionResp"/>
+	</message>
+	<portType name="TransComp_Transportion_Out">
+		<documentation> </documentation>
+		<operation name="Transportion_Sync">
+			<documentation> </documentation>
+			<input name="Transportion_SyncRequest"
+					message="tns:TransCompTransportionReq"/>
+			<output name="Transportion_SyncResponse"
+					message="tns:TransCompTransportionResp"/>
+		</operation>
+	</portType>
+	<binding name="TransComp_Transportion_OutBinding"
+			type="tns:TransComp_Transportion_Out">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Transportion_Sync">
+			<soapbind:operation style="document"
+					soapAction="http://sap.com/xi/WebService/soap1.1"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="TransComp_Transportion_OutService">
+		<port name="HTTP_Port"
+				binding="tns:TransComp_Transportion_OutBinding">
+			<soapbind:address location="http://sappi.detmir.ru:18101/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORT_COMPANIES_P&amp;receiverParty=&amp;receiverService=&amp;interface=TransComp_Transportion_Out&amp;interfaceNamespace=urn%3ADetMir.ru%3ATransComp%3ACommon"/>
+		</port>
+		<port name="HTTPS_Port"
+				binding="tns:TransComp_Transportion_OutBinding">
+			<soapbind:address location="https://sappip.detmir-group.ru:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORT_COMPANIES_P&amp;receiverParty=&amp;receiverService=&amp;interface=TransComp_Transportion_Out&amp;interfaceNamespace=urn%3ADetMir.ru%3ATransComp%3ACommon"/>
+		</port>
+	</service>
+</definitions>

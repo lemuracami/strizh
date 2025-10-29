@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3638131c-0fd5-416b-a4ec-6332bf9ad82e">
+  <producedTypes>
+    <selectionType typeId="c8656848-ea64-42b6-8163-fe81d169d467" valueTypeId="2634ab88-71c6-4fcb-8578-afde8b35b4e6"/>
+    <listType typeId="5e5f89cf-e5bd-4958-85e8-0ffda8cacb1f" valueTypeId="c04c1d88-6226-4e17-897d-ff530007302e"/>
+    <managerType typeId="df36de6c-a278-45e3-ba45-ca1b52113ed0" valueTypeId="431a7e20-c67a-426c-be26-d169497e9701"/>
+    <recordSetType typeId="045e711c-fa58-421c-948e-e00b718958ff" valueTypeId="0cc92021-667b-48ff-8a5b-cfdefd9a3e64"/>
+    <recordKeyType typeId="2f3a5011-94ec-4648-84c7-0fc927ca1c77" valueTypeId="24c840bc-12cf-4ccc-85bc-bcb5700d741d"/>
+    <recordType typeId="792be86b-d2d1-4e17-98e4-eecc2fb78624" valueTypeId="23557714-7db3-43b7-82f2-659fa0ac1d36"/>
+    <recordManagerType typeId="1b395728-187b-45ad-9300-3b9281c39985" valueTypeId="12998f9b-0931-4399-9209-b1f018f1caf1"/>
+  </producedTypes>
+  <name>СозданиеМестПоЗаказам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создание мест по заказам</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.СозданиеМестПоЗаказам.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="8e4a4d74-10fd-4381-a6d8-9b8865c9ac9a">
+    <name>ПриходЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приход заказов</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПриходЗаказовНаСклад</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cc970cdd-b2c7-47f0-b3c9-d40208ac5f9b">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="56dec391-2239-4d25-ab42-8dae929f0eb8">
+    <name>МестоЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место заказа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МестаПоЗаказам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="3f7798a9-06a0-427c-9e25-1d4fd3f4f01a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

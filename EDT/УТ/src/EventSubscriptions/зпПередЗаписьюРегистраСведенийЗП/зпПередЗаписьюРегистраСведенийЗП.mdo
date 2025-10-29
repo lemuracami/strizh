@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a930bef4-64b0-4da6-9deb-e1527cf1c06b">
+  <name>зпПередЗаписьюРегистраСведенийЗП</name>
+  <synonym>
+    <key>ru</key>
+    <value>(зп) Перед записью регистра сведений ЗП</value>
+  </synonym>
+  <source>
+    <types>InformationRegisterRecordSet.зпИсходныеДанныеРасчетаЗППоЗаказам</types>
+    <types>InformationRegisterRecordSet.зпИсходныеДанныеРасчетаЗППоРейсам</types>
+    <types>InformationRegisterRecordSet.зпИсходныеДанныеРасчетаЗППоРейсамДополнительныеНачисления</types>
+    <types>InformationRegisterRecordSet.зпИсходныеДанныеРасчетаМинимальнойЗП</types>
+    <types>InformationRegisterRecordSet.зпИсходныеДанныеРасчетаЗППоЗаказамДополнительныеНачисления</types>
+    <types>InformationRegisterRecordSet.зпИсходныеДанныеРасчетаЗПЧасы</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.зпРаботаСРасчетомЗарплатыСервер.ПередЗаписьюРегистраСведенийЗППередЗаписью</handler>
+</mdclass:EventSubscription>

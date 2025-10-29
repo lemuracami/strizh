@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ff77a148-a070-4fbf-8b4b-2fd46b556b8d">
+  <producedTypes>
+    <objectType typeId="82a32525-e180-4acd-b1ef-54499a929b9c" valueTypeId="dfe15a93-5971-43d1-9398-6142e2a0727d"/>
+    <refType typeId="233a5c99-3593-4ee7-99ac-4c3dcb35cdf3" valueTypeId="fad7b62e-b95a-4a37-b821-132062ce195d"/>
+    <selectionType typeId="2ea67e40-6f97-4edb-98c0-3ce9f5659ebd" valueTypeId="e9e55a87-45f1-49bd-a03d-694ee9e121ab"/>
+    <listType typeId="38a9aef4-9616-4fc6-87a4-29df970150d5" valueTypeId="ae7109b2-eb44-4d3b-b3e2-755058a7c8dc"/>
+    <managerType typeId="ac937ec8-3dca-452a-b13e-7e42e82ef545" valueTypeId="f20e2614-093e-4ed3-b5d1-470d319026ae"/>
+  </producedTypes>
+  <name>упрЗагрузкаДанныхОПлатежахИзБП</name>
+  <synonym>
+    <key>ru</key>
+    <value>(упр) Загрузка данных о платежах из БП</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.упрЗагрузкаДанныхОПлатежахИзБП.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.упрЗагрузкаДанныхОПлатежахИзБП.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <attributes uuid="b662dc28-3272-406a-ab61-5da37131cfd1">
+    <name>ИсточникДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник данных</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИсточникиДанныхБазы1С</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c161c35d-cee1-4e19-ac14-ffe81f0b7588">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="81f756c2-d91a-47ed-850b-f5383fc13263">
+    <producedTypes>
+      <objectType typeId="7a2dbac5-e85c-409b-acca-eb4b7decc52c" valueTypeId="f6af766c-76a1-4326-84ac-588e063d3074"/>
+      <rowType typeId="8aa2c0a7-7b9f-4b1e-8652-3bdd1f423d27" valueTypeId="349d0c87-f76b-4471-bfbb-fe4612f57ab5"/>
+    </producedTypes>
+    <name>ПлатежныеПоручения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежные поручения</value>
+    </synonym>
+    <attributes uuid="9440905c-a028-4a41-aa73-a131b801051d">
+      <name>ПлатежноеПоручение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Платежное поручение</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.упрПлатежноеПоручение</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="208e0567-77fa-4a1f-8f1d-ee8af1eebd71">
+      <name>Выписка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Выписка</value>
+      </synonym>
+      <type>
+        <types>UUID</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="e2810594-7d1b-448a-8d28-265212f7f46f">
+      <name>СостояниеПлатежа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Состояние платежа</value>
+      </synonym>
+      <type>
+        <types>EnumRef.упрСостоянияПлатежей</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

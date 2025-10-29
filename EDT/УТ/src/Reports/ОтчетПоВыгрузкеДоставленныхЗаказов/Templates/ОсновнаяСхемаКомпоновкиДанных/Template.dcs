@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<nestedSchema>
+		<name>ОтчетПоЗаказам</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по заказам</v8:content>
+			</v8:item>
+		</title>
+		<schema>
+			<dataSource>
+				<name>ИсточникДанных1</name>
+				<dataSourceType>Local</dataSourceType>
+			</dataSource>
+			<dataSet xsi:type="DataSetQuery">
+				<name>НаборДанных1</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗонаТарификации</dataPath>
+					<field>ЗонаТарификации</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зона тарификации</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Заказ</dataPath>
+					<field>Заказ</field>
+					<role>
+						<dcscom:dimension>true</dcscom:dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Магазин</dataPath>
+					<field>Магазин</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Магазин</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Зона</dataPath>
+					<field>Зона</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зона</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказНомер</dataPath>
+					<field>ЗаказНомер</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДоставкаДата</dataPath>
+					<field>ДоставкаДата</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДоставкаАдрес</dataPath>
+					<field>ДоставкаАдрес</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес доставки</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВремяПрибытияПо</dataPath>
+					<field>ВремяПрибытияПо</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время прибытия по</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВремяПрибытияС</dataPath>
+					<field>ВремяПрибытияС</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время прибытия С</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ИнтервалДоставки</dataPath>
+					<field>ИнтервалДоставки</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Интервал доставки</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДеньНедели</dataPath>
+					<field>ДеньНедели</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>День недели</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=dddd</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказОбщийВес</dataPath>
+					<field>ЗаказОбщийВес</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общий вес</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЛогистическийБрейк</dataPath>
+					<field>ЛогистическийБрейк</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ПолигонМаршрутизацииПорядок</dataPath>
+					<field>ПолигонМаршрутизацииПорядок</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полигон маршрутизации</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Период</dataPath>
+					<field>Период</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СхемаМаршрутизации</dataPath>
+					<field>СхемаМаршрутизации</field>
+				</field>
+				<dataSource>ИсточникДанных1</dataSource>
+				<query>ВЫБРАТЬ
+	СостоянияЗаказов.Заказ КАК Заказ,
+	СостоянияЗаказов.Доставка КАК Доставка,
+	ПРЕДСТАВЛЕНИЕ(ЧАС(СостоянияЗаказов.Доставка.ВремяПрибытияС)) КАК ВремяПрибытияС,
+	ПРЕДСТАВЛЕНИЕ(ЧАС(СостоянияЗаказов.Доставка.ВремяПрибытияПо)) КАК ВремяПрибытияПо,
+	СостоянияЗаказов.РезультатДоставки КАК РезультатДоставки,
+	ДополнительныеПараметрыЗаказа.ЛогистическийБрейк КАК ЛогистическийБрейк,
+	ЕСТЬNULL(ПРЕДСТАВЛЕНИЕ(ПараметрыТарифаЗаказаСрезПоследних.ЗонаТарификации), "") КАК ЗаказЗонаТарификацииПредставление,
+	ЕСТЬNULL(ПараметрыТарифаЗаказаСрезПоследних.ЗонаТарификации, ЗНАЧЕНИЕ(Справочник.ГруппыРайонов.ПустаяСсылка)) КАК ЗонаТарификации
+ПОМЕСТИТЬ ДанныеПоЗаказам
+ИЗ
+	РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ПОЛНОЕ СОЕДИНЕНИЕ РегистрСведений.ДополнительныеПараметрыЗаказа КАК ДополнительныеПараметрыЗаказа
+		ПО СостоянияЗаказов.Заказ = ДополнительныеПараметрыЗаказа.Заказ
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыТарифаЗаказа.СрезПоследних КАК ПараметрыТарифаЗаказаСрезПоследних
+		ПО СостоянияЗаказов.Заказ = ПараметрыТарифаЗаказаСрезПоследних.Заказ
+ГДЕ
+	СостоянияЗаказов.Доставка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И НЕ СостоянияЗаказов.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НеВыполнена)
+	И НЕ СостоянияЗаказов.Доставка = ЗНАЧЕНИЕ(БизнесПроцесс.новаМестнаяДоставка.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ДанныеПоЗаказам.Заказ.Номер КАК ЗаказНомер,
+	ДанныеПоЗаказам.Доставка.Дата КАК ДоставкаДата,
+	ДанныеПоЗаказам.ВремяПрибытияС КАК ВремяПрибытияС,
+	ДанныеПоЗаказам.ВремяПрибытияПо КАК ВремяПрибытияПо,
+	ДанныеПоЗаказам.Доставка.ИнтервалДоставкиСтрокой КАК ИнтервалДоставки,
+	ДанныеПоЗаказам.Доставка.Адрес КАК ДоставкаАдрес,
+	ДанныеПоЗаказам.Заказ.ВладелецТовара КАК Магазин,
+	ДанныеПоЗаказам.Доставка.Дата КАК ДеньНедели,
+	ДанныеПоЗаказам.Заказ КАК Заказ,
+	ДанныеПоЗаказам.Заказ.ОбщийВес КАК ЗаказОбщийВес,
+	ДанныеПоЗаказам.ЗонаТарификации КАК ЗонаТарификации,
+	ДанныеПоЗаказам.ЛогистическийБрейк КАК ЛогистическийБрейк,
+	ВЫБОР
+		КОГДА ДанныеПоЗаказам.ЗонаТарификации.Код В ("00000000030", "00000000031", "00000000003")
+			ТОГДА "Зона 1"
+		ИНАЧЕ "Зона 2"
+	КОНЕЦ КАК Зона,
+	ПолигоныМаршрутизацииЗаказовСрезПоследних.ПолигонМаршрутизации.Порядок КАК ПолигонМаршрутизацииПорядок,
+	МАКСИМУМ(ПолигоныМаршрутизацииЗаказовСрезПоследних.Период) КАК Период
+ИЗ
+	ДанныеПоЗаказам КАК ДанныеПоЗаказам
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПолигоныМаршрутизацииЗаказов.СрезПоследних(&amp;ДатаОкончания, ) КАК ПолигоныМаршрутизацииЗаказовСрезПоследних
+		ПО ДанныеПоЗаказам.Заказ = ПолигоныМаршрутизацииЗаказовСрезПоследних.Заказ
+
+СГРУППИРОВАТЬ ПО
+	ДанныеПоЗаказам.Заказ.Номер,
+	ДанныеПоЗаказам.Доставка.Дата,
+	ДанныеПоЗаказам.ВремяПрибытияС,
+	ДанныеПоЗаказам.ВремяПрибытияПо,
+	ДанныеПоЗаказам.Доставка.ИнтервалДоставкиСтрокой,
+	ДанныеПоЗаказам.Доставка.Адрес,
+	ДанныеПоЗаказам.Заказ.ВладелецТовара,
+	ДанныеПоЗаказам.Заказ,
+	ДанныеПоЗаказам.Заказ.ОбщийВес,
+	ДанныеПоЗаказам.ЛогистическийБрейк,
+	ПолигоныМаршрутизацииЗаказовСрезПоследних.ПолигонМаршрутизации.Порядок,
+	ДанныеПоЗаказам.ЗонаТарификации,
+	ВЫБОР
+		КОГДА ДанныеПоЗаказам.ЗонаТарификации.Код В ("00000000030", "00000000031", "00000000003")
+			ТОГДА "Зона 1"
+		ИНАЧЕ "Зона 2"
+	КОНЕЦ,
+	ДанныеПоЗаказам.Доставка.Дата</query>
+			</dataSet>
+			<parameter>
+				<name>ПериодОтчета</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период отчета</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>v8:StandardPeriod</v8:Type>
+				</valueType>
+				<value xsi:type="v8:StandardPeriod">
+					<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+					<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+					<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+				</value>
+				<useRestriction>false</useRestriction>
+				<use>Always</use>
+			</parameter>
+			<parameter>
+				<name>ДатаНачала</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата начала</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>DateTime</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+				<useRestriction>true</useRestriction>
+				<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+			</parameter>
+			<parameter>
+				<name>ДатаОкончания</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата окончания</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>DateTime</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+				<useRestriction>true</useRestriction>
+				<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+			</parameter>
+			<parameter>
+				<name>Период</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>DateTime</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+				<useRestriction>false</useRestriction>
+			</parameter>
+			<settingsVariant>
+				<dcsset:name>Основной</dcsset:name>
+				<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+				<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+					<dcsset:dataParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+							<dcscor:value xsi:type="v8:StandardPeriod">
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</dcscor:value>
+							<dcsset:userSettingID>99db8c2e-2f52-477c-a5cc-8ceea5182c18</dcsset:userSettingID>
+						</dcscor:item>
+					</dcsset:dataParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаказНомер</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДоставкаДата</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИнтервалДоставки</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДоставкаАдрес</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Магазин</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДеньНедели</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаказОбщийВес</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Зона</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЛогистическийБрейк</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПолигонМаршрутизацииПорядок</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:settings>
+			</settingsVariant>
+		</schema>
+		<settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+		</settings>
+	</nestedSchema>
+	<nestedSchema>
+		<name>ОтчетПоЗаборам</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по заборам</v8:content>
+			</v8:item>
+		</title>
+		<schema>
+			<dataSource>
+				<name>ИсточникДанных1</name>
+				<dataSourceType>Local</dataSourceType>
+			</dataSource>
+			<dataSet xsi:type="DataSetQuery">
+				<name>НаборДанных1</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>РезультатДоставки</dataPath>
+					<field>РезультатДоставки</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ОбъемЗабора</dataPath>
+					<field>ОбъемЗабора</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объем забора</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВремяДоставкиПо</dataPath>
+					<field>ВремяДоставкиПо</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время доставки по</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Номер</dataPath>
+					<field>Номер</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗонаТарификации</dataPath>
+					<field>ЗонаТарификации</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зона тарификации</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Заказ</dataPath>
+					<field>Заказ</field>
+					<role>
+						<dcscom:dimension>true</dcscom:dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Дата</dataPath>
+					<field>Дата</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВремяДоставкиС</dataPath>
+					<field>ВремяДоставкиС</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время доставки С</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВесЗабора</dataPath>
+					<field>ВесЗабора</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес забора</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Магазин</dataPath>
+					<field>Магазин</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Магазин</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>АдресДоставки</dataPath>
+					<field>АдресДоставки</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес доставки</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Зона</dataPath>
+					<field>Зона</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зона</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ПолигонМаршрутизацииПорядок</dataPath>
+					<field>ПолигонМаршрутизацииПорядок</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полигон маршрутизации</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Период</dataPath>
+					<field>Период</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СхемаМаршрутизации</dataPath>
+					<field>СхемаМаршрутизации</field>
+				</field>
+				<dataSource>ИсточникДанных1</dataSource>
+				<query>ВЫБРАТЬ
+	СостоянияЗаказовРасширенный.РезультатДоставки КАК РезультатДоставки,
+	СостоянияЗаказовРасширенный.Заказ КАК Заказ,
+	СостоянияЗаказовРасширенный.Заказ.Номер КАК Номер,
+	СостоянияЗаказовРасширенный.Заказ.Дата КАК Дата,
+	ПРЕДСТАВЛЕНИЕ(ЧАС(СостоянияЗаказовРасширенный.Заказ.ВремяДоставкиС)) КАК ВремяДоставкиС,
+	ПРЕДСТАВЛЕНИЕ(ЧАС(СостоянияЗаказовРасширенный.Заказ.ВремяДоставкиПо)) КАК ВремяДоставкиПо,
+	СостоянияЗаказовРасширенный.Заказ.ОбъемЗабора КАК ОбъемЗабора,
+	СостоянияЗаказовРасширенный.Заказ.ВесЗабора КАК ВесЗабора,
+	ВЫРАЗИТЬ(СостоянияЗаказовРасширенный.Заказ.АдресДоставки КАК СТРОКА(200)) КАК АдресДоставки,
+	СостоянияЗаказовРасширенный.Заказ.Контрагент КАК Магазин,
+	СостоянияЗаказовРасширенный.Заказ.ЗонаТарификации КАК ЗонаТарификации,
+	ВЫБОР
+		КОГДА СостоянияЗаказовРасширенный.Заказ.ЗонаТарификации.Код В ("00000000030", "00000000031", "00000000003")
+			ТОГДА "Зона 1"
+		ИНАЧЕ "Зона 2"
+	КОНЕЦ КАК Зона,
+	ПолигоныМаршрутизацииЗаказовСрезПоследних.ПолигонМаршрутизации.Порядок КАК ПолигонМаршрутизацииПорядок,
+	МАКСИМУМ(ПолигоныМаршрутизацииЗаказовСрезПоследних.Период) КАК Период
+ИЗ
+	РегистрСведений.СостоянияЗаказовРасширенный КАК СостоянияЗаказовРасширенный
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПолигоныМаршрутизацииЗаказов.СрезПоследних(&amp;ДатаОкончания, ) КАК ПолигоныМаршрутизацииЗаказовСрезПоследних
+		ПО СостоянияЗаказовРасширенный.Заказ = ПолигоныМаршрутизацииЗаказовСрезПоследних.Заказ
+ГДЕ
+	СостоянияЗаказовРасширенный.Заказ.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И СостоянияЗаказовРасширенный.Заказ ССЫЛКА Документ.ЗаборТовара
+	И НЕ СостоянияЗаказовРасширенный.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НеВыполнена)
+
+СГРУППИРОВАТЬ ПО
+	СостоянияЗаказовРасширенный.РезультатДоставки,
+	СостоянияЗаказовРасширенный.Заказ,
+	СостоянияЗаказовРасширенный.Заказ.Номер,
+	СостоянияЗаказовРасширенный.Заказ.Дата,
+	СостоянияЗаказовРасширенный.Заказ.ОбъемЗабора,
+	СостоянияЗаказовРасширенный.Заказ.ВесЗабора,
+	СостоянияЗаказовРасширенный.Заказ.Контрагент,
+	СостоянияЗаказовРасширенный.Заказ.ЗонаТарификации,
+	ПолигоныМаршрутизацииЗаказовСрезПоследних.ПолигонМаршрутизации.Порядок,
+	ПРЕДСТАВЛЕНИЕ(ЧАС(СостоянияЗаказовРасширенный.Заказ.ВремяДоставкиС)),
+	ПРЕДСТАВЛЕНИЕ(ЧАС(СостоянияЗаказовРасширенный.Заказ.ВремяДоставкиПо)),
+	ВЫРАЗИТЬ(СостоянияЗаказовРасширенный.Заказ.АдресДоставки КАК СТРОКА(200)),
+	ВЫБОР
+		КОГДА СостоянияЗаказовРасширенный.Заказ.ЗонаТарификации.Код В ("00000000030", "00000000031", "00000000003")
+			ТОГДА "Зона 1"
+		ИНАЧЕ "Зона 2"
+	КОНЕЦ</query>
+			</dataSet>
+			<calculatedField>
+				<dataPath>ИнтервалДоставки</dataPath>
+				<expression>Строка(ВремяДоставкиС)  + ":00"+ "-" + Строка(ВремяДоставкиПо)+ ":00"</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Интервал доставки</v8:content>
+					</v8:item>
+				</title>
+			</calculatedField>
+			<calculatedField>
+				<dataPath>ДеньНедели</dataPath>
+				<expression>Дата</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>День недели</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ДФ=dddd</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</calculatedField>
+			<parameter>
+				<name>ДатаНачала</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата начала</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>DateTime</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+				<useRestriction>true</useRestriction>
+				<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+			</parameter>
+			<parameter>
+				<name>ДатаОкончания</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата окончания</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>DateTime</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+				<useRestriction>true</useRestriction>
+				<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+			</parameter>
+			<parameter>
+				<name>ПериодОтчета</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период отчета</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>v8:StandardPeriod</v8:Type>
+				</valueType>
+				<value xsi:type="v8:StandardPeriod">
+					<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+					<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+					<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+				</value>
+				<useRestriction>false</useRestriction>
+				<use>Always</use>
+			</parameter>
+			<parameter>
+				<name>Период</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>DateTime</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+				<useRestriction>false</useRestriction>
+			</parameter>
+			<settingsVariant>
+				<dcsset:name>Основной</dcsset:name>
+				<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+				<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+					<dcsset:dataParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+							<dcscor:value xsi:type="v8:StandardPeriod">
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</dcscor:value>
+							<dcsset:userSettingID>370d504f-a79a-4592-bbac-00dd98a115bc</dcsset:userSettingID>
+						</dcscor:item>
+					</dcsset:dataParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Заказ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Номер</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Дата</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИнтервалДоставки</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ОбъемЗабора</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ВесЗабора</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>АдресДоставки</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Магазин</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДеньНедели</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Зона</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПолигонМаршрутизацииПорядок</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:settings>
+			</settingsVariant>
+		</schema>
+		<settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+		</settings>
+	</nestedSchema>
+	<settingsVariant>
+		<dcsset:name>ПоЗаказам</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По заказам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+				<dcsset:objectID>ОтчетПоЗаказам</dcsset:objectID>
+				<dcsset:settings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">ЗонаТарификации</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>0fb69606-689c-4d8b-9e48-baad9ac5635b</dcsset:userSettingID>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:dataParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+							<dcscor:value xsi:type="v8:StandardPeriod">
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>2018-10-16T00:00:00</v8:startDate>
+								<v8:endDate>2018-10-16T23:59:59</v8:endDate>
+							</dcscor:value>
+							<dcsset:userSettingID>cc0001ba-76fa-4859-bf36-2305c47b4b52</dcsset:userSettingID>
+						</dcscor:item>
+					</dcsset:dataParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаказНомер</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДоставкаДата</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИнтервалДоставки</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДоставкаАдрес</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Магазин</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДеньНедели</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаказОбщийВес</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Зона</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЛогистическийБрейк</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПолигонМаршрутизацииПорядок</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:settings>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПоЗаборам</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По заборам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+				<dcsset:objectID>ОтчетПоЗаборам</dcsset:objectID>
+				<dcsset:settings>
+					<dcsset:dataParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+							<dcscor:value xsi:type="v8:StandardPeriod">
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>2018-10-16T00:00:00</v8:startDate>
+								<v8:endDate>2018-10-18T23:59:59</v8:endDate>
+							</dcscor:value>
+							<dcsset:userSettingID>679c7f48-51a7-4563-aef8-c875d827bfb6</dcsset:userSettingID>
+						</dcscor:item>
+					</dcsset:dataParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>Заказ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Номер</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Дата</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИнтервалДоставки</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ОбъемЗабора</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ВесЗабора</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>АдресДоставки</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Магазин</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДеньНедели</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Зона</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПолигонМаршрутизацииПорядок</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:settings>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

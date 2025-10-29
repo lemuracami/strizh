@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="edb864b7-ad2c-4b8f-aeac-5ec98042767b">
+  <producedTypes>
+    <selectionType typeId="a0e7a814-fcba-4110-bc34-3070acfa813d" valueTypeId="8b46ff32-cea5-4dd2-bc2a-85444141a13d"/>
+    <listType typeId="1483947a-dba9-4290-bce7-42567d007242" valueTypeId="873d0f73-8f74-44d1-8154-f99794bfdb74"/>
+    <managerType typeId="e7abd396-d502-416d-96b3-82ae35733f55" valueTypeId="ebfe6c24-f460-4b41-8f31-8dc4d7ed52d0"/>
+    <recordSetType typeId="db97defd-3cfa-4f54-acdd-5b5490d45aad" valueTypeId="322b7bcd-b7e6-451e-8ddd-d2ad7230c29d"/>
+    <recordKeyType typeId="eb4e5a7f-5b50-48ac-8a8f-e99df00fd467" valueTypeId="5151e343-bb0b-4bd1-9bc6-004ece82d3d7"/>
+    <recordType typeId="dda9b371-0e29-426d-a3c6-c01c0b46d7ab" valueTypeId="36af79f2-eac8-45ed-9f59-1a719fa625df"/>
+    <recordManagerType typeId="352eeb59-bf24-4601-a0b7-69abc1e4e859" valueTypeId="3c3a625b-6063-4b8b-92b3-016582282b14"/>
+  </producedTypes>
+  <name>НазначениеУслугПозаказам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначение услуг по заказам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="5f816c15-6560-47eb-8926-0e901b051e0b">
+    <name>Стоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="0474231c-7cae-4f5e-ae14-d6ef5dd13a0d">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыУслугПоЗаказам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="72ac0f9d-1baa-4f96-a4c1-e5e68a92e537">
+    <name>СформированныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сформированный документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.УслугиПоЗаказам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="d86a7331-a53f-4bb6-8357-aafb029108f0">
+    <name>НомерВнешнегоЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер внешнего заказа</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="018580a7-6f08-4a6c-8d0f-0d06665763e7">
+    <name>Услуга</name>
+    <synonym>
+      <key>ru</key>
+      <value>Услуга</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УслугиПоЗаказам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="551c5082-4ab5-4fe2-b933-e4cbf578bbf6">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,15 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/AxiomusGetCourierOrdersRequest">
+	<objectType name="singleorder">
+		<property name="mode" type="xs:string"/>
+		<property name="query"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/AxiomusGetCourierOrdersRequest" name="auth" type="d3p1:auth"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/AxiomusGetCourierOrdersRequest" name="courier" type="d3p1:courier"/>
+	</objectType>
+	<objectType name="courier">
+		<property name="date" type="xs:date" form="Attribute"/>
+		<property name="id" type="xs:int" form="Attribute"/>
+	</objectType>
+	<objectType name="auth">
+		<property name="ukey" type="xs:string" lowerBound="0" form="Attribute"/>
+	</objectType>
+</package>

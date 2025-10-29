@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c0804c94-8641-457a-b441-6b6e06f2325d">
+  <producedTypes>
+    <selectionType typeId="5218e8e1-68ec-428c-8fe3-f8c4a601c36a" valueTypeId="f3254a2e-9108-4b58-8477-9e92176e248a"/>
+    <listType typeId="49847fe3-78af-430e-a908-8c0fd1ac5fae" valueTypeId="f2af52cf-7604-4b8a-9533-0b1bfecaf5dc"/>
+    <managerType typeId="cea0dfa9-fe0a-40fe-94e4-1de6d5205a67" valueTypeId="3180d621-05cf-4cb9-88b2-fffe65c30fc8"/>
+    <recordSetType typeId="b2605cac-bdf1-4e67-b5fd-44cdf35e3c52" valueTypeId="db5e3576-6dcd-497d-a8f1-f4aff86cfa77"/>
+    <recordKeyType typeId="d6181ae8-1f21-4503-be47-2af226f98662" valueTypeId="0d9d71d5-0991-49a8-9c51-4ba3e51c9c8b"/>
+    <recordType typeId="bb31e099-2a69-4e25-873f-e921e83f14c6" valueTypeId="6b588609-d325-4b1b-93da-ddafd7bc8c27"/>
+    <recordManagerType typeId="6d40c18b-2c62-4222-a0e5-0373359bdbd1" valueTypeId="207ae7c9-0f4c-40d8-b095-919fd2c5ba1c"/>
+  </producedTypes>
+  <name>ЗоныТарификацииПартнеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зоны тарификации партнеров</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="7faeabc9-28c4-4a5c-b61a-e6ea2ceb67ac">
+    <name>ЗонаТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зона тарификации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЗоныТарификацииПартнеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="68a21f93-75dd-41cb-a08b-99777d7bead6">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.Фрахт</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="53a047dc-cd5a-4f73-a38d-17cfcc6c4a13">
+    <name>СхемаЗонТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема зон тарификации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СхемыЗонТарификацииПартнеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

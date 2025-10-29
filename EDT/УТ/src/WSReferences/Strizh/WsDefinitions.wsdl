@@ -1,0 +1,6267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://tempuri.org/"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://strizh.delivery"
+		xmlns:xsd2="http://tempuri.org/"
+		xmlns:xsd3="http://www.strizh-logistic.ru/FulFilment/"
+		xmlns:xsd4="http://www.strizh-logistic.ru/warehouseProcessing"
+		xmlns:xsd5="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+		targetNamespace="http://tempuri.org/">
+	<types>
+		<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+				xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:s1="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+				xmlns:s2="http://www.strizh-logistic.ru/FulFilment/"
+				xmlns:s3="http://www.strizh-logistic.ru/warehouseProcessing"
+				xmlns:s4="http://strizh.delivery"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				elementFormDefault="qualified"
+				targetNamespace="http://tempuri.org/">
+			<s:import namespace="strizh-logistic.ru/services/v2/sinc/RegionOrder"/>
+			<s:import namespace="http://www.strizh-logistic.ru/FulFilment/"/>
+			<s:import namespace="http://www.strizh-logistic.ru/warehouseProcessing"/>
+			<s:import namespace="http://strizh.delivery"/>
+			<s:element name="GetItemStocks">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="codes"
+								type="xsd2:ArrayOfString"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfString">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="string"
+							nillable="true"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Authentication">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Login"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Password"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetItemStocksResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetItemStocksResult"
+								type="xsd2:ArrayOfItemStock"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfItemStock">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ItemStock"
+							nillable="true"
+							type="xsd2:ItemStock"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ItemStock">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Code"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Price"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsActive"
+							type="s:boolean"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Stocks"
+							type="xsd2:ArrayOfStock"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfStock">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Stock"
+							nillable="true"
+							type="xsd2:Stock"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Stock">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Count"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetOrdersStatusHistory">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orders"
+								type="xsd2:ArrayOfInt"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfInt">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="int"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetOrdersStatusHistoryResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetOrdersStatusHistoryResult"
+								type="xsd2:GetOrdersStatusHistoryResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="GetOrdersStatusHistoryResponse">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Succeeded"
+							type="s:boolean"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Error"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Orders"
+							type="xsd2:ArrayOfOrderGroup"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfOrderGroup">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrderGroup"
+							nillable="true"
+							type="xsd2:OrderGroup"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrderGroup">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="OrderId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Statuses"
+							type="xsd2:ArrayOfOrderStatuses"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfOrderStatuses">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrderStatuses"
+							nillable="true"
+							type="xsd2:OrderStatuses"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrderStatuses">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="StatusId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="FinalStatusId"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Date"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="TimeStamp"
+							nillable="true"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="ProcessingTerminal"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Initiator"
+							nillable="true"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetInternetShopID">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="name"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetInternetShopIDResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetInternetShopIDResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetShopsID">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetShopsIDResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetShopsIDResult"
+								type="xsd2:ArrayOfShop"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfShop">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Shop"
+							type="xsd2:Shop"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Shop">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="shopID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="name"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetOrder">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderID"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetOrderResult"
+								type="xsd2:ExpOrder"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ExpOrder">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="OrderID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="UserID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FIO"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Phone"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryAddress"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="OrderStatusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrderStatus"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="PayTypeID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="PayType"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="ShopUrNameID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ShopUrName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ServiceDC"
+							type="xsd2:Money"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsRefusalWithDelivery"
+							type="s:boolean"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CashService"
+							type="xsd2:Money"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DateDelivery"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeDeliveryFrom"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeDeliveryTo"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryRur"
+							type="xsd2:Money"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DeliveryMKAD"
+							type="xsd2:Money"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Comment"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="CompleteDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="SelfDelivery"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="TypeDelivery"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsPayed"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Items"
+							type="xsd2:ArrayOfExpOrderItem"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Error"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Money">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Value"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfExpOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ExpOrderItem"
+							type="xsd2:ExpOrderItem"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ExpOrderItem">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="ID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="code"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ProductName"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Count"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Price"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="eid"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetSdOrderID">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderImportID"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="shopID"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetSdOrderIDResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetSdOrderIDResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterUser">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="user"
+								type="xsd2:ImpUser"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ImpUser">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="userID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="email"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="createDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="modifyDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="userTel"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="internetShopID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="cardNo"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="jurPerson"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="jurAddress"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="INN"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="KPP"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OKPO"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="RS"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="KS"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="userHomePhone"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="AddNewAddress"
+							type="s:boolean"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="UserAddresses"
+							type="xsd2:ArrayOfImpUserAddress"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FIO"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfImpUserAddress">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ImpUserAddress"
+							type="xsd2:ImpUserAddress"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ImpUserAddress">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="id"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="location"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="city"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="area"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="metro"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="street"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="house"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="userCase"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="apartment"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="building"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="entrance"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="intercom"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="floor"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FullAddress"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="comment"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="distanceFromMKAD"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="zipCode"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="RegisterUserResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="RegisterUserResult"
+								type="xsd2:ArrayOfInt"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterOrder">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="order"
+								type="xsd2:ImpOrder"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ImpOrder">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="userID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="completeDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="deliveryDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsRefusalWithDelivery"
+							type="s:boolean"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="deliveryPriceRUR"
+							type="xsd2:Money"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="comment"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="MobilePhone"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="timeDeliveryFrom"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="timeDeliveryTo"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="whoLastChange"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="deliveryForMkadRUR"
+							type="xsd2:Money"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderRBSStateID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="paytype"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="modifyDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="PAN"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="SumByCard"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="typeDelivery"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="ServiceDelivery"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="PiecesOfFreight"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="userAddressID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="SettingID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="orderIDImport"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="selfDelivery"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="manager"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="serviceDC"
+							type="xsd2:Money"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsPayed"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="assessedCost"
+							type="xsd2:Money"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="total"
+							type="xsd2:Money"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="volume"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="RegisterOrderResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="RegisterOrderResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetStatusOrders">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderId"
+								type="xsd2:ArrayOfInt"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetStatusOrdersResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetStatusOrdersResult"
+								type="xsd2:ArrayOfInt"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetStatusOrder">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetStatusOrderResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetStatusOrderResult"
+								type="xsd2:OrderStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrderStatus">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DriverPhone"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetStatusSdOrderID">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetStatusSdOrderIDResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetStatusSdOrderIDResult"
+								type="xsd2:OrderStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetStatusOrderByImportedID">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderId"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetStatusOrderByImportedIDResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetStatusOrderByImportedIDResult"
+								type="xsd2:OrderStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="AddItemsToOrder">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderitems"
+								type="xsd2:ArrayOfOrderItem"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderID"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrderItem"
+							type="xsd2:OrderItem"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrderItem">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Id"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Count"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Price"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="PriceZak"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="sku"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="dimension"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="mass"
+							type="s:double"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="code"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="categoryId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="rootCategoryId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="deliveryTypeId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="rateVAT"
+							nillable="true"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="AddItemsToOrderResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="AddItemsToOrderResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetNewOrders">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetNewOrdersResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetNewOrdersResult"
+								type="xsd2:ArrayOfOrderChanged"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfOrderChanged">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrderChanged"
+							type="xsd2:OrderChanged"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrderChanged">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="UpdateDeliveOrderId">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="OuterDeliveId"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateDeliveOrderIdResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="UpdateDeliveOrderIdResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="SetOrderParams">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderWeight"
+								type="s:string"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="PiecesOfFreight"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="SetOrderParamsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="SetOrderParamsResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RefuseOrder">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderID"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RefuseOrderResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="RefuseOrderResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderStatusByStrizhOrderID">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderStatusByStrizhOrderIDResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetOrderStatusByStrizhOrderIDResult"
+								type="xsd2:OrderStatusForShop"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrderStatusForShop">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusENGName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DriverPhone"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetOrderStatusFByStrizhOrderID">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderStatusFByStrizhOrderIDResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetOrderStatusFByStrizhOrderIDResult"
+								type="xsd2:OrderStatusForShopF"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrderStatusForShopF">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusENGName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DriverPhone"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="finalStatusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="finalStatusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="finalStatusENGName"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetOrderInf">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderInfResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetOrderInfResult"
+								type="xsd2:OrderInform"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrderInform">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusENGName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DriverPhone"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="finalStatusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="finalStatusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="finalStatusENGName"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="deliveryDate"
+							nillable="true"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="TimeStamp"
+							nillable="true"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="ProcessingTerminal"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Initiator"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="ReasonId"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ExtraOpts"
+							type="xsd2:ArrayOfExtraOpt"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfExtraOpt">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ExtraOpt"
+							type="xsd2:ExtraOpt"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ExtraOpt">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Key"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Value"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="RegisterInternetShop">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopName"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopTitle"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopJurFace"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopPhone"
+								type="s:string"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="sorting"
+								nillable="true"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="textReceipt"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="receiverID"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterInternetShopResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="RegisterInternetShopResult"
+								type="xsd2:addedShop"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="addedShop">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="internetShopID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="settingID"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="AddLogo">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="internetShopID"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="logo"
+								type="s:string"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="logoType"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="AddLogoResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="AddLogoResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ConfirmOrderPackaging">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderID"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ConfirmOrderPackagingResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="ConfirmOrderPackagingResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterChildInternetShop">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopName"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopTitle"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopJurFace"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopPhone"
+								type="s:string"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="sorting"
+								nillable="true"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="textReceipt"
+								type="s:string"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="parentID"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="receiverID"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="shopINN"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="phoneForCheck"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterChildInternetShopResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="RegisterChildInternetShopResult"
+								type="xsd2:addedShop"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="AddAcceptanceReport">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="report"
+								type="xsd2:AcceptanceReport"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="AcceptanceReport">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="reportIDImport"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="date"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ordersTable"
+							type="xsd2:ArrayOfOrdersTableRow"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfOrdersTableRow">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ordersTableRow"
+							nillable="true"
+							type="xsd2:ordersTableRow"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ordersTableRow">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="orderIDImport"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="places"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="AddAcceptanceReportResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="AddAcceptanceReportResult"
+								type="xsd2:AddAcceptanceReportResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="AddAcceptanceReportResponse">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="isError"
+							nillable="true"
+							type="s:boolean"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="error"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="reportID"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetServicesCost">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetServicesCostResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetServicesCostResult"
+								type="xsd2:ArrayOfServiceCost"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfServiceCost">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="ServiceCost"
+							nillable="true"
+							type="xsd2:ServiceCost"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ServiceCost">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="key"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="value"
+							type="s:double"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetCurrentStatuses">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="ordersId"
+								type="xsd2:ArrayOfInt"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCurrentStatusesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetCurrentStatusesResult"
+								type="xsd2:ArrayOfStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfStatus">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Status"
+							type="xsd2:Status"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Status">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="carNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="phone"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetFinalStatuses">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="ordersId"
+								type="xsd2:ArrayOfInt"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetFinalStatusesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetFinalStatusesResult"
+								type="xsd2:ArrayOfStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCurStatusWithSetDate">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetCurStatusWithSetDateResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetCurStatusWithSetDateResult"
+								type="xsd2:OrderCurrentStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrderCurrentStatus">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusENGName"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusSetDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DriverPhone"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetFinStatusWithSetDate">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetFinStatusWithSetDateResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetFinStatusWithSetDateResult"
+								type="xsd2:OrderFinalStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrderFinalStatus">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusENGName"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusSetDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DriverPhone"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="finalStatusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="finalStatusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="finalStatusENGName"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="finalStatusSetDate"
+							type="s:dateTime"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetRefusedOrderItems">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetRefusedOrderItemsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetRefusedOrderItemsResult"
+								type="xsd2:ArrayOfRefusedOrderItem"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfRefusedOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="RefusedOrderItem"
+							type="xsd2:RefusedOrderItem"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="RefusedOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="code"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="count"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="price"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcode"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="markingCode"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetSoldOrderItems">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetSoldOrderItemsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetSoldOrderItemsResult"
+								type="xsd2:ArrayOfSoldOrderItem"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfSoldOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="SoldOrderItem"
+							type="xsd2:SoldOrderItem"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="SoldOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="code"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="count"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="price"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcode"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="markingCode"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="UpdateShopPhone">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="phone"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateShopPhoneResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="UpdateShopPhoneResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="SetOrderBarcodes">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="barcodes"
+								type="xsd2:ArrayOfPieceBarcode"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfPieceBarcode">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="PieceBarcode"
+							nillable="true"
+							type="xsd2:PieceBarcode"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="PieceBarcode">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="piece"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcode"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="type"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="printFormat"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="labelContent"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="SetOrderBarcodesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="SetOrderBarcodesResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterOrderExtended">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:order"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterOrderExtendedResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="RegisterOrderExtendedResult"
+								type="xsd2:RegisterOrderExtendedResponce"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="RegisterOrderExtendedResponce"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response">
+						<s:sequence>
+							<s:element minOccurs="1"
+									maxOccurs="1"
+									name="OrderId"
+									nillable="true"
+									type="s:int"/>
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:complexType name="Response">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Errors"
+							type="xsd2:ArrayOfString1"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Warnings"
+							type="xsd2:ArrayOfString2"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfString1">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Error"
+							nillable="true"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfString2">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Warning"
+							nillable="true"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetActiveTerminals">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetActiveTerminalsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetActiveTerminalsResult"
+								type="xsd2:Terminals"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="Terminals">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Terminal"
+							nillable="true"
+							type="xsd2:Terminal"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Terminal">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="TerminalId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Code"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="City"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Address"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsSelfDeliveryEnabled"
+							type="s:boolean"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsCourierDeliveryEnabled"
+							type="s:boolean"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryDurationFrom"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryDurationTo"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetDeliveredOrders">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="dateFrom"
+								type="s:dateTime"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="dateTo"
+								type="s:dateTime"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetDeliveredOrdersResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetDeliveredOrdersResult"
+								type="xsd2:DeliveredOrdersResponce"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="DeliveredOrdersResponce">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Errors"
+							type="xsd2:ArrayOfString1"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Orders"
+							type="xsd2:ArrayOfOrder"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfOrder">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Order"
+							nillable="true"
+							type="xsd2:Order"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Order">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="OrderId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrderIdImport"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="CreateDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="CompleteDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Items"
+							type="xsd2:ArrayOfDeliveredOrderItem"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfDeliveredOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Item"
+							nillable="true"
+							type="xsd2:DeliveredOrderItem"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="DeliveredOrderItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Code"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Count"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetOpenDeliveredOrders">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="date"
+								type="s:dateTime"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOpenDeliveredOrdersResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetOpenDeliveredOrdersResult"
+								type="xsd2:DeliveredOrdersResponce"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderStatusInit">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderStatusInitResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetOrderStatusInitResult"
+								type="xsd2:OrderStatusInit"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrderStatusInit">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="statusID"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="statusENGName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ReasonRrefusal"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="DriverPhone"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Initializer"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="ChangeOrderStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="statusWay"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="statuses"
+								type="xsd2:ArrayOfStatusChange"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfStatusChange">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="StatusChange"
+							nillable="true"
+							type="xsd5:StatusChange"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="ChangeOrderStatusResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="ChangeOrderStatusResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetTransCancelReasons">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetTransCancelReasonsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetTransCancelReasonsResult"
+								type="xsd2:GetTransCancelReasonsResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="GetTransCancelReasonsResponse">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Reasons"
+							type="xsd2:ArrayOfTransCancelReason"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfTransCancelReason">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="TransCancelReason"
+							nillable="true"
+							type="xsd5:TransCancelReason"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetOrderTrack">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderIdImport"
+								type="s:string"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderTrackResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="GetOrderTrackResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CreatePickingTask">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="pickingTask"
+								type="xsd3:pickingTask"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CreatePickingTaskResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="CreatePickingTaskResult"
+								type="xsd3:responseCreatePickingTask"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateOrderExtended">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:order"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateOrderExtendedResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="UpdateOrderExtendedResult"
+								type="xsd2:UpdateOrderExtendedResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="UpdateOrderExtendedResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response"/>
+				</s:complexContent>
+			</s:complexType>
+			<s:element name="SetOrderIDAdditional">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderIDAdditional"
+								type="s:string"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="SetOrderIDAdditionalResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="SetOrderIDAdditionalResult"
+								type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderPlaceInf">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetOrderPlaceInfResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetOrderPlaceInfResult"
+								type="xsd2:ArrayOfOrderPlace"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfOrderPlace">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrderPlace"
+							type="xsd2:OrderPlace"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrderPlace">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="status"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcode"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="setDate"
+							nillable="true"
+							type="s:dateTime"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="SetTerminalsForIntake">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="sourcePlaceId"
+								type="s:int"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="deliveryPlaceId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="SetTerminalsForIntakeResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="SetTerminalsForIntakeResult"
+								type="xsd2:SetTerminalsForIntakeResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="SetTerminalsForIntakeResponse">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Errors"
+							type="xsd2:ArrayOfString1"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="ResultCode"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="AddCarriage">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="carriage"
+								type="xsd4:carriage"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="Auth"
+								type="xsd2:Authentication"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="AddCarriageResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="AddCarriageResult"
+								type="xsd4:addCarriageResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterWarehouse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:warehouse"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterWarehouseResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="RegisterWarehouseResult"
+								type="xsd2:RegisterWarehouseResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="RegisterWarehouseResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response">
+						<s:sequence>
+							<s:element minOccurs="1"
+									maxOccurs="1"
+									name="StockId"
+									nillable="true"
+									type="s:int"/>
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:element name="RegisterPickupPoint">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:pickupPoint"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="RegisterPickupPointResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="RegisterPickupPointResult"
+								type="xsd2:RegisterPickupPointResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="RegisterPickupPointResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response">
+						<s:sequence>
+							<s:element minOccurs="1"
+									maxOccurs="1"
+									name="PickupPointId"
+									nillable="true"
+									type="s:int"/>
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:element name="UpdatePickupPoint">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:pickupPoint"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdatePickupPointResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="UpdatePickupPointResult"
+								type="xsd2:UpdatePickupPointResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="UpdatePickupPointResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response">
+						<s:sequence>
+							<s:element minOccurs="1"
+									maxOccurs="1"
+									name="PickupPointId"
+									nillable="true"
+									type="s:int"/>
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:element name="UpdateWarehouse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:warehouse"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="settingId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateWarehouseResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="UpdateWarehouseResult"
+								type="xsd2:UpdateWarehouseResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="UpdateWarehouseResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response">
+						<s:sequence>
+							<s:element minOccurs="1"
+									maxOccurs="1"
+									name="StockId"
+									nillable="true"
+									type="s:int"/>
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:element name="SetOrdersStatusExternalRoute">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="ordersStatExtRoute"
+								type="xsd2:OrdersStatusExternalRoute"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="OrdersStatusExternalRoute">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrdersStatus"
+							type="xsd2:ArrayOfOrdersStatus"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfOrdersStatus">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrdersStatus"
+							nillable="true"
+							type="xsd2:OrdersStatus"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrdersStatus">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="RouteId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="RoutingDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryPlaceID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Order"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Status"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="SetOrdersStatusExternalRouteResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="SetOrdersStatusExternalRouteResult"
+								type="xsd1:commonResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="SetCrewForExternalRoute">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="crewExternalRoute"
+								type="xsd2:CrewExternalRoute"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="CrewExternalRoute">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryPlaceID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="RouteId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="RoutingDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarId"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CarBrand"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CourierId"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="CourierFullName"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="SetCrewForExternalRouteResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="SetCrewForExternalRouteResult"
+								type="xsd1:commonResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CreateExternalRoute">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="externalRoute"
+								type="xsd2:ExternalRoute"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ExternalRoute">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryPlaceID"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="RoutingDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="RouteId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Orders"
+							type="xsd2:ArrayOfInt"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="CreateExternalRouteResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="CreateExternalRouteResult"
+								type="xsd1:commonResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateOrderContactDetails">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:user"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:address"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="deliveryPlaceId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateOrderContactDetailsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="UpdateOrderContactDetailsResult"
+								type="xsd2:Response"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateOrderDateDelivery">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="dateIntervalDelivery"
+								type="xsd2:DateInterval"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="DateInterval">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeDeliveryFrom"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeDeliveryTo"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryDate"
+							type="s:dateTime"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="UpdateOrderDateDeliveryResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="UpdateOrderDateDeliveryResult"
+								type="xsd2:UpdateOrderDateDeliveryResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="UpdateOrderDateDeliveryResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response"/>
+				</s:complexContent>
+			</s:complexType>
+			<s:element name="UpdateOrderItems">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="items"
+								type="xsd2:ArrayOfItem"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Item"
+							nillable="true"
+							type="xsd5:Item"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="UpdateOrderItemsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="UpdateOrderItemsResult"
+								type="xsd2:UpdateOrderItemsResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="UpdateOrderItemsResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response"/>
+				</s:complexContent>
+			</s:complexType>
+			<s:element name="GetDeliveryCost">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								ref="xsd5:address"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderWeight"
+								type="s:float"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderWidth"
+								type="s:float"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderHeight"
+								type="s:float"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderLength"
+								type="s:float"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="deliveryPlaceId"
+								type="s:int"/>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="sourcePlaceId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetDeliveryCostResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetDeliveryCostResult"
+								type="xsd2:GetDeliveryCostResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="GetDeliveryCostResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response">
+						<s:sequence>
+							<s:element minOccurs="0"
+									maxOccurs="1"
+									name="DeliveryData"
+									type="xsd2:DeliveryData"/>
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:complexType name="DeliveryData">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryCost"
+							type="s:decimal"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryDate"
+							type="s:dateTime"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetReceiptsInfo">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GetReceiptsInfoResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="GetReceiptsInfoResult"
+								type="xsd2:GetReceiptsInfResponse"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="GetReceiptsInfResponse"
+					mixed="false">
+				<s:complexContent mixed="false">
+					<s:extension base="xsd2:Response">
+						<s:sequence>
+							<s:element minOccurs="0"
+									maxOccurs="1"
+									name="OrderReceipts"
+									type="xsd2:ArrayOfOrderReceipt"/>
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:complexType name="ArrayOfOrderReceipt">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrderReceipt"
+							nillable="true"
+							type="xsd2:OrderReceipt"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrderReceipt">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FsDocNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FsFiscalSignDoc"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FsFiscalNumberDoc"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="FsReceiptDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="FsReceiptTotal"
+							type="s:decimal"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="FsReceiptType"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FsReceiptFA"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="SetOrderDocuments">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="orderId"
+								type="s:int"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="orderDocuments"
+								type="xsd2:ArrayOfOrderDocument"/>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="accessKey"
+								type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfOrderDocument">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="OrderDocument"
+							nillable="true"
+							type="xsd2:OrderDocument"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="OrderDocument">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FileName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FileBody"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DocType"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="SetOrderDocumentsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="1"
+								name="SetOrderDocumentsResult"
+								type="xsd2:Response"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+		<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+				xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:s1="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+				xmlns:s2="http://www.strizh-logistic.ru/FulFilment/"
+				xmlns:s3="http://www.strizh-logistic.ru/warehouseProcessing"
+				xmlns:s4="http://strizh.delivery"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+				xmlns:tns="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				elementFormDefault="qualified"
+				targetNamespace="strizh-logistic.ru/services/v2/sinc/RegionOrder">
+			<s:element name="order"
+					nillable="true"
+					type="xsd5:Order"/>
+			<s:complexType name="Order">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="User"
+							type="xsd5:User"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Address"
+							type="xsd5:Address"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Items"
+							type="xsd5:ArrayOfItem"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="SettingId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="SourcePlaceId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryPlaceId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrderIdImport"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="SelfDelivery"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Weight"
+							type="s:decimal"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Volume"
+							type="s:decimal"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="PiecesOfFreight"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="TotalCost"
+							type="s:decimal"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DeliveryCost"
+							type="s:decimal"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="IsPartialGiveoutDisabled"
+							type="s:boolean"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="AssessedCost"
+							type="s:decimal"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="PayType"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Comment"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="DesiredDeliveryDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ShipmentWHDate"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeDeliveryFrom"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeDeliveryTo"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="StockId"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="LiftingIsPayed"
+							type="s:boolean"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="NDSDelivery"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="PaymentMethodOfLifting"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="PrepaymentAmount"
+							nillable="true"
+							type="s:decimal"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcodes"
+							type="xsd5:ArrayOfPieceBarcode"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="AdditionalServices"
+							type="xsd5:ArrayOfString"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="options"
+							type="xsd5:ArrayOfString"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="SystemOptions"
+							type="xsd5:ArrayOfSystemOption"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="User">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FIO"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Phone"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Email"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Address">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Region"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="City"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Street"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="House"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Case"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Building"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Apartment"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ZipCode"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FullAddress"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="AddressComment"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Latitude"
+							type="s:float"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Longitude"
+							type="s:float"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfItem">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="Item"
+							nillable="true"
+							type="xsd5:Item"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Item">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Article"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Count"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Price"
+							type="s:decimal"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="AssessedCost"
+							nillable="true"
+							type="s:decimal"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Barcode"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="NDS"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="BarcodePackage"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="MarkingCode"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="SellerInn"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="SellerName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="SellerPhone"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfPieceBarcode">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="PieceBarcode"
+							nillable="true"
+							type="xsd5:PieceBarcode"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="PieceBarcode">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="piece"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcode"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="type"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="printFormat"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="labelContent"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfString">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="string"
+							nillable="true"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfSystemOption">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="SystemOption"
+							nillable="true"
+							type="xsd5:SystemOption"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="SystemOption">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Value"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="StatusChange">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="StatusId"
+							nillable="true"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="FinalStatusId"
+							nillable="true"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="TransCancelReason">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Id"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Responsibility"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="warehouse"
+					nillable="true"
+					type="xsd5:Warehouse"/>
+			<s:complexType name="Warehouse">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="StockIdImport"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="StockName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="PhoneNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Address"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Latitude"
+							nillable="true"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Longitude"
+							nillable="true"
+							type="s:double"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrganizationName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrganizationINN"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeIntervalReceiptFrom"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeIntervalReceiptTo"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ContactPersonName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Email"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Comment"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="TerminalId"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="pickupPoint"
+					nillable="true"
+					type="xsd5:PickupPoint"/>
+			<s:complexType name="PickupPoint">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ExternalId"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Name"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="PhoneNumber"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Address"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Latitude"
+							nillable="true"
+							type="s:double"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="Longitude"
+							nillable="true"
+							type="s:double"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrganizationName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="OrganizationINN"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeIntervalFrom"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="TimeIntervalTo"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="ContactPersonName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Email"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="Comment"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="TerminalId"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="user"
+					nillable="true"
+					type="xsd5:User"/>
+			<s:element name="address"
+					nillable="true"
+					type="xsd5:Address"/>
+		</s:schema>
+		<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+				xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:s1="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+				xmlns:s2="http://www.strizh-logistic.ru/FulFilment/"
+				xmlns:s3="http://www.strizh-logistic.ru/warehouseProcessing"
+				xmlns:s4="http://strizh.delivery"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+				xmlns:tns="http://www.strizh-logistic.ru/FulFilment/"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				elementFormDefault="qualified"
+				targetNamespace="http://www.strizh-logistic.ru/FulFilment/">
+			<s:complexType name="pickingTask">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="number"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="date"
+							type="s:dateTime"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="pickingItems"
+							type="xsd3:pickingItem"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="settingId"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="regionId"
+							type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="pickingItem">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="id"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderId"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="articul"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="itemName"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="itemCount"
+							type="s:int"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcode"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="vendorId"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="vendorName"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="pickingItemStringID"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="responseCreatePickingTask">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="id"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="errors"
+							type="xsd3:responseData"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="warnings"
+							type="xsd3:responseData"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="responseData">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="pickingItemStringID"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="text"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="type"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+		</s:schema>
+		<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+				xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:s1="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+				xmlns:s2="http://www.strizh-logistic.ru/FulFilment/"
+				xmlns:s3="http://www.strizh-logistic.ru/warehouseProcessing"
+				xmlns:s4="http://strizh.delivery"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+				xmlns:tns="http://www.strizh-logistic.ru/warehouseProcessing"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				elementFormDefault="qualified"
+				targetNamespace="http://www.strizh-logistic.ru/warehouseProcessing">
+			<s:complexType name="carriage">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="number"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="date"
+							type="s:date"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="stockId"
+							nillable="true"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="parcels"
+							type="xsd4:ArrayOfParcel"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfParcel">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="parcel"
+							type="xsd4:parcel"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="parcel">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="number"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="orderId"
+							nillable="true"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="quantityPlaces"
+							type="s:int"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="packages"
+							nillable="true"
+							type="xsd4:ArrayOfPackage"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfPackage">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="package"
+							type="xsd4:package"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="package">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="id"
+							nillable="true"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="barcode"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="addCarriageResponse">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="result"
+							nillable="true"
+							type="s:boolean"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="error"
+							nillable="true"
+							type="s:string"/>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="carriageId"
+							nillable="true"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+		</s:schema>
+		<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+				xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:s1="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+				xmlns:s2="http://www.strizh-logistic.ru/FulFilment/"
+				xmlns:s3="http://www.strizh-logistic.ru/warehouseProcessing"
+				xmlns:s4="http://strizh.delivery"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+				xmlns:tns="http://strizh.delivery"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				elementFormDefault="qualified"
+				targetNamespace="http://strizh.delivery">
+			<s:complexType name="commonResponse">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="isError"
+							type="s:boolean"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="errorText"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="1"
+							name="idObject"
+							type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+		</s:schema>
+	</types>
+	<message name="GetItemStocksSoapIn">
+		<part name="parameters"
+				element="tns:GetItemStocks"/>
+	</message>
+	<message name="GetItemStocksSoapOut">
+		<part name="parameters"
+				element="tns:GetItemStocksResponse"/>
+	</message>
+	<message name="GetOrdersStatusHistorySoapIn">
+		<part name="parameters"
+				element="tns:GetOrdersStatusHistory"/>
+	</message>
+	<message name="GetOrdersStatusHistorySoapOut">
+		<part name="parameters"
+				element="tns:GetOrdersStatusHistoryResponse"/>
+	</message>
+	<message name="GetInternetShopIDSoapIn">
+		<part name="parameters"
+				element="tns:GetInternetShopID"/>
+	</message>
+	<message name="GetInternetShopIDSoapOut">
+		<part name="parameters"
+				element="tns:GetInternetShopIDResponse"/>
+	</message>
+	<message name="GetShopsIDSoapIn">
+		<part name="parameters"
+				element="tns:GetShopsID"/>
+	</message>
+	<message name="GetShopsIDSoapOut">
+		<part name="parameters"
+				element="tns:GetShopsIDResponse"/>
+	</message>
+	<message name="GetOrderSoapIn">
+		<part name="parameters"
+				element="tns:GetOrder"/>
+	</message>
+	<message name="GetOrderSoapOut">
+		<part name="parameters"
+				element="tns:GetOrderResponse"/>
+	</message>
+	<message name="GetSdOrderIDSoapIn">
+		<part name="parameters"
+				element="tns:GetSdOrderID"/>
+	</message>
+	<message name="GetSdOrderIDSoapOut">
+		<part name="parameters"
+				element="tns:GetSdOrderIDResponse"/>
+	</message>
+	<message name="RegisterUserSoapIn">
+		<part name="parameters"
+				element="tns:RegisterUser"/>
+	</message>
+	<message name="RegisterUserSoapOut">
+		<part name="parameters"
+				element="tns:RegisterUserResponse"/>
+	</message>
+	<message name="RegisterOrderSoapIn">
+		<part name="parameters"
+				element="tns:RegisterOrder"/>
+	</message>
+	<message name="RegisterOrderSoapOut">
+		<part name="parameters"
+				element="tns:RegisterOrderResponse"/>
+	</message>
+	<message name="GetStatusOrdersSoapIn">
+		<part name="parameters"
+				element="tns:GetStatusOrders"/>
+	</message>
+	<message name="GetStatusOrdersSoapOut">
+		<part name="parameters"
+				element="tns:GetStatusOrdersResponse"/>
+	</message>
+	<message name="GetStatusOrderSoapIn">
+		<part name="parameters"
+				element="tns:GetStatusOrder"/>
+	</message>
+	<message name="GetStatusOrderSoapOut">
+		<part name="parameters"
+				element="tns:GetStatusOrderResponse"/>
+	</message>
+	<message name="GetStatusSdOrderIDSoapIn">
+		<part name="parameters"
+				element="tns:GetStatusSdOrderID"/>
+	</message>
+	<message name="GetStatusSdOrderIDSoapOut">
+		<part name="parameters"
+				element="tns:GetStatusSdOrderIDResponse"/>
+	</message>
+	<message name="GetStatusOrderByImportedIDSoapIn">
+		<part name="parameters"
+				element="tns:GetStatusOrderByImportedID"/>
+	</message>
+	<message name="GetStatusOrderByImportedIDSoapOut">
+		<part name="parameters"
+				element="tns:GetStatusOrderByImportedIDResponse"/>
+	</message>
+	<message name="AddItemsToOrderSoapIn">
+		<part name="parameters"
+				element="tns:AddItemsToOrder"/>
+	</message>
+	<message name="AddItemsToOrderSoapOut">
+		<part name="parameters"
+				element="tns:AddItemsToOrderResponse"/>
+	</message>
+	<message name="GetNewOrdersSoapIn">
+		<part name="parameters"
+				element="tns:GetNewOrders"/>
+	</message>
+	<message name="GetNewOrdersSoapOut">
+		<part name="parameters"
+				element="tns:GetNewOrdersResponse"/>
+	</message>
+	<message name="UpdateDeliveOrderIdSoapIn">
+		<part name="parameters"
+				element="tns:UpdateDeliveOrderId"/>
+	</message>
+	<message name="UpdateDeliveOrderIdSoapOut">
+		<part name="parameters"
+				element="tns:UpdateDeliveOrderIdResponse"/>
+	</message>
+	<message name="SetOrderParamsSoapIn">
+		<part name="parameters"
+				element="tns:SetOrderParams"/>
+	</message>
+	<message name="SetOrderParamsSoapOut">
+		<part name="parameters"
+				element="tns:SetOrderParamsResponse"/>
+	</message>
+	<message name="RefuseOrderSoapIn">
+		<part name="parameters"
+				element="tns:RefuseOrder"/>
+	</message>
+	<message name="RefuseOrderSoapOut">
+		<part name="parameters"
+				element="tns:RefuseOrderResponse"/>
+	</message>
+	<message name="GetOrderStatusByStrizhOrderIDSoapIn">
+		<part name="parameters"
+				element="tns:GetOrderStatusByStrizhOrderID"/>
+	</message>
+	<message name="GetOrderStatusByStrizhOrderIDSoapOut">
+		<part name="parameters"
+				element="tns:GetOrderStatusByStrizhOrderIDResponse"/>
+	</message>
+	<message name="GetOrderStatusFByStrizhOrderIDSoapIn">
+		<part name="parameters"
+				element="tns:GetOrderStatusFByStrizhOrderID"/>
+	</message>
+	<message name="GetOrderStatusFByStrizhOrderIDSoapOut">
+		<part name="parameters"
+				element="tns:GetOrderStatusFByStrizhOrderIDResponse"/>
+	</message>
+	<message name="GetOrderInfSoapIn">
+		<part name="parameters"
+				element="tns:GetOrderInf"/>
+	</message>
+	<message name="GetOrderInfSoapOut">
+		<part name="parameters"
+				element="tns:GetOrderInfResponse"/>
+	</message>
+	<message name="RegisterInternetShopSoapIn">
+		<part name="parameters"
+				element="tns:RegisterInternetShop"/>
+	</message>
+	<message name="RegisterInternetShopSoapOut">
+		<part name="parameters"
+				element="tns:RegisterInternetShopResponse"/>
+	</message>
+	<message name="AddLogoSoapIn">
+		<part name="parameters"
+				element="tns:AddLogo"/>
+	</message>
+	<message name="AddLogoSoapOut">
+		<part name="parameters"
+				element="tns:AddLogoResponse"/>
+	</message>
+	<message name="ConfirmOrderPackagingSoapIn">
+		<part name="parameters"
+				element="tns:ConfirmOrderPackaging"/>
+	</message>
+	<message name="ConfirmOrderPackagingSoapOut">
+		<part name="parameters"
+				element="tns:ConfirmOrderPackagingResponse"/>
+	</message>
+	<message name="RegisterChildInternetShopSoapIn">
+		<part name="parameters"
+				element="tns:RegisterChildInternetShop"/>
+	</message>
+	<message name="RegisterChildInternetShopSoapOut">
+		<part name="parameters"
+				element="tns:RegisterChildInternetShopResponse"/>
+	</message>
+	<message name="AddAcceptanceReportSoapIn">
+		<part name="parameters"
+				element="tns:AddAcceptanceReport"/>
+	</message>
+	<message name="AddAcceptanceReportSoapOut">
+		<part name="parameters"
+				element="tns:AddAcceptanceReportResponse"/>
+	</message>
+	<message name="GetServicesCostSoapIn">
+		<part name="parameters"
+				element="tns:GetServicesCost"/>
+	</message>
+	<message name="GetServicesCostSoapOut">
+		<part name="parameters"
+				element="tns:GetServicesCostResponse"/>
+	</message>
+	<message name="GetCurrentStatusesSoapIn">
+		<part name="parameters"
+				element="tns:GetCurrentStatuses"/>
+	</message>
+	<message name="GetCurrentStatusesSoapOut">
+		<part name="parameters"
+				element="tns:GetCurrentStatusesResponse"/>
+	</message>
+	<message name="GetFinalStatusesSoapIn">
+		<part name="parameters"
+				element="tns:GetFinalStatuses"/>
+	</message>
+	<message name="GetFinalStatusesSoapOut">
+		<part name="parameters"
+				element="tns:GetFinalStatusesResponse"/>
+	</message>
+	<message name="GetCurStatusWithSetDateSoapIn">
+		<part name="parameters"
+				element="tns:GetCurStatusWithSetDate"/>
+	</message>
+	<message name="GetCurStatusWithSetDateSoapOut">
+		<part name="parameters"
+				element="tns:GetCurStatusWithSetDateResponse"/>
+	</message>
+	<message name="GetFinStatusWithSetDateSoapIn">
+		<part name="parameters"
+				element="tns:GetFinStatusWithSetDate"/>
+	</message>
+	<message name="GetFinStatusWithSetDateSoapOut">
+		<part name="parameters"
+				element="tns:GetFinStatusWithSetDateResponse"/>
+	</message>
+	<message name="GetRefusedOrderItemsSoapIn">
+		<part name="parameters"
+				element="tns:GetRefusedOrderItems"/>
+	</message>
+	<message name="GetRefusedOrderItemsSoapOut">
+		<part name="parameters"
+				element="tns:GetRefusedOrderItemsResponse"/>
+	</message>
+	<message name="GetSoldOrderItemsSoapIn">
+		<part name="parameters"
+				element="tns:GetSoldOrderItems"/>
+	</message>
+	<message name="GetSoldOrderItemsSoapOut">
+		<part name="parameters"
+				element="tns:GetSoldOrderItemsResponse"/>
+	</message>
+	<message name="UpdateShopPhoneSoapIn">
+		<part name="parameters"
+				element="tns:UpdateShopPhone"/>
+	</message>
+	<message name="UpdateShopPhoneSoapOut">
+		<part name="parameters"
+				element="tns:UpdateShopPhoneResponse"/>
+	</message>
+	<message name="SetOrderBarcodesSoapIn">
+		<part name="parameters"
+				element="tns:SetOrderBarcodes"/>
+	</message>
+	<message name="SetOrderBarcodesSoapOut">
+		<part name="parameters"
+				element="tns:SetOrderBarcodesResponse"/>
+	</message>
+	<message name="RegisterOrderExtendedSoapIn">
+		<part name="parameters"
+				element="tns:RegisterOrderExtended"/>
+	</message>
+	<message name="RegisterOrderExtendedSoapOut">
+		<part name="parameters"
+				element="tns:RegisterOrderExtendedResponse"/>
+	</message>
+	<message name="GetActiveTerminalsSoapIn">
+		<part name="parameters"
+				element="tns:GetActiveTerminals"/>
+	</message>
+	<message name="GetActiveTerminalsSoapOut">
+		<part name="parameters"
+				element="tns:GetActiveTerminalsResponse"/>
+	</message>
+	<message name="GetDeliveredOrdersSoapIn">
+		<part name="parameters"
+				element="tns:GetDeliveredOrders"/>
+	</message>
+	<message name="GetDeliveredOrdersSoapOut">
+		<part name="parameters"
+				element="tns:GetDeliveredOrdersResponse"/>
+	</message>
+	<message name="GetOpenDeliveredOrdersSoapIn">
+		<part name="parameters"
+				element="tns:GetOpenDeliveredOrders"/>
+	</message>
+	<message name="GetOpenDeliveredOrdersSoapOut">
+		<part name="parameters"
+				element="tns:GetOpenDeliveredOrdersResponse"/>
+	</message>
+	<message name="GetOrderStatusInitSoapIn">
+		<part name="parameters"
+				element="tns:GetOrderStatusInit"/>
+	</message>
+	<message name="GetOrderStatusInitSoapOut">
+		<part name="parameters"
+				element="tns:GetOrderStatusInitResponse"/>
+	</message>
+	<message name="ChangeOrderStatusSoapIn">
+		<part name="parameters"
+				element="tns:ChangeOrderStatus"/>
+	</message>
+	<message name="ChangeOrderStatusSoapOut">
+		<part name="parameters"
+				element="tns:ChangeOrderStatusResponse"/>
+	</message>
+	<message name="GetTransCancelReasonsSoapIn">
+		<part name="parameters"
+				element="tns:GetTransCancelReasons"/>
+	</message>
+	<message name="GetTransCancelReasonsSoapOut">
+		<part name="parameters"
+				element="tns:GetTransCancelReasonsResponse"/>
+	</message>
+	<message name="GetOrderTrackSoapIn">
+		<part name="parameters"
+				element="tns:GetOrderTrack"/>
+	</message>
+	<message name="GetOrderTrackSoapOut">
+		<part name="parameters"
+				element="tns:GetOrderTrackResponse"/>
+	</message>
+	<message name="CreatePickingTaskSoapIn">
+		<part name="parameters"
+				element="tns:CreatePickingTask"/>
+	</message>
+	<message name="CreatePickingTaskSoapOut">
+		<part name="parameters"
+				element="tns:CreatePickingTaskResponse"/>
+	</message>
+	<message name="UpdateOrderExtendedSoapIn">
+		<part name="parameters"
+				element="tns:UpdateOrderExtended"/>
+	</message>
+	<message name="UpdateOrderExtendedSoapOut">
+		<part name="parameters"
+				element="tns:UpdateOrderExtendedResponse"/>
+	</message>
+	<message name="SetOrderIDAdditionalSoapIn">
+		<part name="parameters"
+				element="tns:SetOrderIDAdditional"/>
+	</message>
+	<message name="SetOrderIDAdditionalSoapOut">
+		<part name="parameters"
+				element="tns:SetOrderIDAdditionalResponse"/>
+	</message>
+	<message name="GetOrderPlaceInfSoapIn">
+		<part name="parameters"
+				element="tns:GetOrderPlaceInf"/>
+	</message>
+	<message name="GetOrderPlaceInfSoapOut">
+		<part name="parameters"
+				element="tns:GetOrderPlaceInfResponse"/>
+	</message>
+	<message name="SetTerminalsForIntakeSoapIn">
+		<part name="parameters"
+				element="tns:SetTerminalsForIntake"/>
+	</message>
+	<message name="SetTerminalsForIntakeSoapOut">
+		<part name="parameters"
+				element="tns:SetTerminalsForIntakeResponse"/>
+	</message>
+	<message name="AddCarriageSoapIn">
+		<part name="parameters"
+				element="tns:AddCarriage"/>
+	</message>
+	<message name="AddCarriageSoapOut">
+		<part name="parameters"
+				element="tns:AddCarriageResponse"/>
+	</message>
+	<message name="RegisterWarehouseSoapIn">
+		<part name="parameters"
+				element="tns:RegisterWarehouse"/>
+	</message>
+	<message name="RegisterWarehouseSoapOut">
+		<part name="parameters"
+				element="tns:RegisterWarehouseResponse"/>
+	</message>
+	<message name="RegisterPickupPointSoapIn">
+		<part name="parameters"
+				element="tns:RegisterPickupPoint"/>
+	</message>
+	<message name="RegisterPickupPointSoapOut">
+		<part name="parameters"
+				element="tns:RegisterPickupPointResponse"/>
+	</message>
+	<message name="UpdatePickupPointSoapIn">
+		<part name="parameters"
+				element="tns:UpdatePickupPoint"/>
+	</message>
+	<message name="UpdatePickupPointSoapOut">
+		<part name="parameters"
+				element="tns:UpdatePickupPointResponse"/>
+	</message>
+	<message name="UpdateWarehouseSoapIn">
+		<part name="parameters"
+				element="tns:UpdateWarehouse"/>
+	</message>
+	<message name="UpdateWarehouseSoapOut">
+		<part name="parameters"
+				element="tns:UpdateWarehouseResponse"/>
+	</message>
+	<message name="SetOrdersStatusExternalRouteSoapIn">
+		<part name="parameters"
+				element="tns:SetOrdersStatusExternalRoute"/>
+	</message>
+	<message name="SetOrdersStatusExternalRouteSoapOut">
+		<part name="parameters"
+				element="tns:SetOrdersStatusExternalRouteResponse"/>
+	</message>
+	<message name="SetCrewForExternalRouteSoapIn">
+		<part name="parameters"
+				element="tns:SetCrewForExternalRoute"/>
+	</message>
+	<message name="SetCrewForExternalRouteSoapOut">
+		<part name="parameters"
+				element="tns:SetCrewForExternalRouteResponse"/>
+	</message>
+	<message name="CreateExternalRouteSoapIn">
+		<part name="parameters"
+				element="tns:CreateExternalRoute"/>
+	</message>
+	<message name="CreateExternalRouteSoapOut">
+		<part name="parameters"
+				element="tns:CreateExternalRouteResponse"/>
+	</message>
+	<message name="UpdateOrderContactDetailsSoapIn">
+		<part name="parameters"
+				element="tns:UpdateOrderContactDetails"/>
+	</message>
+	<message name="UpdateOrderContactDetailsSoapOut">
+		<part name="parameters"
+				element="tns:UpdateOrderContactDetailsResponse"/>
+	</message>
+	<message name="UpdateOrderDateDeliverySoapIn">
+		<part name="parameters"
+				element="tns:UpdateOrderDateDelivery"/>
+	</message>
+	<message name="UpdateOrderDateDeliverySoapOut">
+		<part name="parameters"
+				element="tns:UpdateOrderDateDeliveryResponse"/>
+	</message>
+	<message name="UpdateOrderItemsSoapIn">
+		<part name="parameters"
+				element="tns:UpdateOrderItems"/>
+	</message>
+	<message name="UpdateOrderItemsSoapOut">
+		<part name="parameters"
+				element="tns:UpdateOrderItemsResponse"/>
+	</message>
+	<message name="GetDeliveryCostSoapIn">
+		<part name="parameters"
+				element="tns:GetDeliveryCost"/>
+	</message>
+	<message name="GetDeliveryCostSoapOut">
+		<part name="parameters"
+				element="tns:GetDeliveryCostResponse"/>
+	</message>
+	<message name="GetReceiptsInfoSoapIn">
+		<part name="parameters"
+				element="tns:GetReceiptsInfo"/>
+	</message>
+	<message name="GetReceiptsInfoSoapOut">
+		<part name="parameters"
+				element="tns:GetReceiptsInfoResponse"/>
+	</message>
+	<message name="SetOrderDocumentsSoapIn">
+		<part name="parameters"
+				element="tns:SetOrderDocuments"/>
+	</message>
+	<message name="SetOrderDocumentsSoapOut">
+		<part name="parameters"
+				element="tns:SetOrderDocumentsResponse"/>
+	</message>
+	<portType name="SincSoap">
+		<operation name="GetItemStocks">
+			<input name="GetItemStocksRequest"
+					message="tns:GetItemStocksSoapIn"/>
+			<output name="GetItemStocksResponse"
+					message="tns:GetItemStocksSoapOut"/>
+		</operation>
+		<operation name="GetOrdersStatusHistory">
+			<input name="GetOrdersStatusHistoryRequest"
+					message="tns:GetOrdersStatusHistorySoapIn"/>
+			<output name="GetOrdersStatusHistoryResponse"
+					message="tns:GetOrdersStatusHistorySoapOut"/>
+		</operation>
+		<operation name="GetInternetShopID">
+			<input name="GetInternetShopIDRequest"
+					message="tns:GetInternetShopIDSoapIn"/>
+			<output name="GetInternetShopIDResponse"
+					message="tns:GetInternetShopIDSoapOut"/>
+		</operation>
+		<operation name="GetShopsID">
+			<input name="GetShopsIDRequest"
+					message="tns:GetShopsIDSoapIn"/>
+			<output name="GetShopsIDResponse"
+					message="tns:GetShopsIDSoapOut"/>
+		</operation>
+		<operation name="GetOrder">
+			<input name="GetOrderRequest"
+					message="tns:GetOrderSoapIn"/>
+			<output name="GetOrderResponse"
+					message="tns:GetOrderSoapOut"/>
+		</operation>
+		<operation name="GetSdOrderID">
+			<input name="GetSdOrderIDRequest"
+					message="tns:GetSdOrderIDSoapIn"/>
+			<output name="GetSdOrderIDResponse"
+					message="tns:GetSdOrderIDSoapOut"/>
+		</operation>
+		<operation name="RegisterUser">
+			<input name="RegisterUserRequest"
+					message="tns:RegisterUserSoapIn"/>
+			<output name="RegisterUserResponse"
+					message="tns:RegisterUserSoapOut"/>
+		</operation>
+		<operation name="RegisterOrder">
+			<input name="RegisterOrderRequest"
+					message="tns:RegisterOrderSoapIn"/>
+			<output name="RegisterOrderResponse"
+					message="tns:RegisterOrderSoapOut"/>
+		</operation>
+		<operation name="GetStatusOrders">
+			<input name="GetStatusOrdersRequest"
+					message="tns:GetStatusOrdersSoapIn"/>
+			<output name="GetStatusOrdersResponse"
+					message="tns:GetStatusOrdersSoapOut"/>
+		</operation>
+		<operation name="GetStatusOrder">
+			<input name="GetStatusOrderRequest"
+					message="tns:GetStatusOrderSoapIn"/>
+			<output name="GetStatusOrderResponse"
+					message="tns:GetStatusOrderSoapOut"/>
+		</operation>
+		<operation name="GetStatusSdOrderID">
+			<input name="GetStatusSdOrderIDRequest"
+					message="tns:GetStatusSdOrderIDSoapIn"/>
+			<output name="GetStatusSdOrderIDResponse"
+					message="tns:GetStatusSdOrderIDSoapOut"/>
+		</operation>
+		<operation name="GetStatusOrderByImportedID">
+			<input name="GetStatusOrderByImportedIDRequest"
+					message="tns:GetStatusOrderByImportedIDSoapIn"/>
+			<output name="GetStatusOrderByImportedIDResponse"
+					message="tns:GetStatusOrderByImportedIDSoapOut"/>
+		</operation>
+		<operation name="AddItemsToOrder">
+			<input name="AddItemsToOrderRequest"
+					message="tns:AddItemsToOrderSoapIn"/>
+			<output name="AddItemsToOrderResponse"
+					message="tns:AddItemsToOrderSoapOut"/>
+		</operation>
+		<operation name="GetNewOrders">
+			<input name="GetNewOrdersRequest"
+					message="tns:GetNewOrdersSoapIn"/>
+			<output name="GetNewOrdersResponse"
+					message="tns:GetNewOrdersSoapOut"/>
+		</operation>
+		<operation name="UpdateDeliveOrderId">
+			<input name="UpdateDeliveOrderIdRequest"
+					message="tns:UpdateDeliveOrderIdSoapIn"/>
+			<output name="UpdateDeliveOrderIdResponse"
+					message="tns:UpdateDeliveOrderIdSoapOut"/>
+		</operation>
+		<operation name="SetOrderParams">
+			<input name="SetOrderParamsRequest"
+					message="tns:SetOrderParamsSoapIn"/>
+			<output name="SetOrderParamsResponse"
+					message="tns:SetOrderParamsSoapOut"/>
+		</operation>
+		<operation name="RefuseOrder">
+			<input name="RefuseOrderRequest"
+					message="tns:RefuseOrderSoapIn"/>
+			<output name="RefuseOrderResponse"
+					message="tns:RefuseOrderSoapOut"/>
+		</operation>
+		<operation name="GetOrderStatusByStrizhOrderID">
+			<input name="GetOrderStatusByStrizhOrderIDRequest"
+					message="tns:GetOrderStatusByStrizhOrderIDSoapIn"/>
+			<output name="GetOrderStatusByStrizhOrderIDResponse"
+					message="tns:GetOrderStatusByStrizhOrderIDSoapOut"/>
+		</operation>
+		<operation name="GetOrderStatusFByStrizhOrderID">
+			<input name="GetOrderStatusFByStrizhOrderIDRequest"
+					message="tns:GetOrderStatusFByStrizhOrderIDSoapIn"/>
+			<output name="GetOrderStatusFByStrizhOrderIDResponse"
+					message="tns:GetOrderStatusFByStrizhOrderIDSoapOut"/>
+		</operation>
+		<operation name="GetOrderInf">
+			<input name="GetOrderInfRequest"
+					message="tns:GetOrderInfSoapIn"/>
+			<output name="GetOrderInfResponse"
+					message="tns:GetOrderInfSoapOut"/>
+		</operation>
+		<operation name="RegisterInternetShop">
+			<input name="RegisterInternetShopRequest"
+					message="tns:RegisterInternetShopSoapIn"/>
+			<output name="RegisterInternetShopResponse"
+					message="tns:RegisterInternetShopSoapOut"/>
+		</operation>
+		<operation name="AddLogo">
+			<input name="AddLogoRequest"
+					message="tns:AddLogoSoapIn"/>
+			<output name="AddLogoResponse"
+					message="tns:AddLogoSoapOut"/>
+		</operation>
+		<operation name="ConfirmOrderPackaging">
+			<input name="ConfirmOrderPackagingRequest"
+					message="tns:ConfirmOrderPackagingSoapIn"/>
+			<output name="ConfirmOrderPackagingResponse"
+					message="tns:ConfirmOrderPackagingSoapOut"/>
+		</operation>
+		<operation name="RegisterChildInternetShop">
+			<input name="RegisterChildInternetShopRequest"
+					message="tns:RegisterChildInternetShopSoapIn"/>
+			<output name="RegisterChildInternetShopResponse"
+					message="tns:RegisterChildInternetShopSoapOut"/>
+		</operation>
+		<operation name="AddAcceptanceReport">
+			<input name="AddAcceptanceReportRequest"
+					message="tns:AddAcceptanceReportSoapIn"/>
+			<output name="AddAcceptanceReportResponse"
+					message="tns:AddAcceptanceReportSoapOut"/>
+		</operation>
+		<operation name="GetServicesCost">
+			<input name="GetServicesCostRequest"
+					message="tns:GetServicesCostSoapIn"/>
+			<output name="GetServicesCostResponse"
+					message="tns:GetServicesCostSoapOut"/>
+		</operation>
+		<operation name="GetCurrentStatuses">
+			<input name="GetCurrentStatusesRequest"
+					message="tns:GetCurrentStatusesSoapIn"/>
+			<output name="GetCurrentStatusesResponse"
+					message="tns:GetCurrentStatusesSoapOut"/>
+		</operation>
+		<operation name="GetFinalStatuses">
+			<input name="GetFinalStatusesRequest"
+					message="tns:GetFinalStatusesSoapIn"/>
+			<output name="GetFinalStatusesResponse"
+					message="tns:GetFinalStatusesSoapOut"/>
+		</operation>
+		<operation name="GetCurStatusWithSetDate">
+			<input name="GetCurStatusWithSetDateRequest"
+					message="tns:GetCurStatusWithSetDateSoapIn"/>
+			<output name="GetCurStatusWithSetDateResponse"
+					message="tns:GetCurStatusWithSetDateSoapOut"/>
+		</operation>
+		<operation name="GetFinStatusWithSetDate">
+			<input name="GetFinStatusWithSetDateRequest"
+					message="tns:GetFinStatusWithSetDateSoapIn"/>
+			<output name="GetFinStatusWithSetDateResponse"
+					message="tns:GetFinStatusWithSetDateSoapOut"/>
+		</operation>
+		<operation name="GetRefusedOrderItems">
+			<input name="GetRefusedOrderItemsRequest"
+					message="tns:GetRefusedOrderItemsSoapIn"/>
+			<output name="GetRefusedOrderItemsResponse"
+					message="tns:GetRefusedOrderItemsSoapOut"/>
+		</operation>
+		<operation name="GetSoldOrderItems">
+			<input name="GetSoldOrderItemsRequest"
+					message="tns:GetSoldOrderItemsSoapIn"/>
+			<output name="GetSoldOrderItemsResponse"
+					message="tns:GetSoldOrderItemsSoapOut"/>
+		</operation>
+		<operation name="UpdateShopPhone">
+			<input name="UpdateShopPhoneRequest"
+					message="tns:UpdateShopPhoneSoapIn"/>
+			<output name="UpdateShopPhoneResponse"
+					message="tns:UpdateShopPhoneSoapOut"/>
+		</operation>
+		<operation name="SetOrderBarcodes">
+			<input name="SetOrderBarcodesRequest"
+					message="tns:SetOrderBarcodesSoapIn"/>
+			<output name="SetOrderBarcodesResponse"
+					message="tns:SetOrderBarcodesSoapOut"/>
+		</operation>
+		<operation name="RegisterOrderExtended">
+			<input name="RegisterOrderExtendedRequest"
+					message="tns:RegisterOrderExtendedSoapIn"/>
+			<output name="RegisterOrderExtendedResponse"
+					message="tns:RegisterOrderExtendedSoapOut"/>
+		</operation>
+		<operation name="GetActiveTerminals">
+			<input name="GetActiveTerminalsRequest"
+					message="tns:GetActiveTerminalsSoapIn"/>
+			<output name="GetActiveTerminalsResponse"
+					message="tns:GetActiveTerminalsSoapOut"/>
+		</operation>
+		<operation name="GetDeliveredOrders">
+			<input name="GetDeliveredOrdersRequest"
+					message="tns:GetDeliveredOrdersSoapIn"/>
+			<output name="GetDeliveredOrdersResponse"
+					message="tns:GetDeliveredOrdersSoapOut"/>
+		</operation>
+		<operation name="GetOpenDeliveredOrders">
+			<input name="GetOpenDeliveredOrdersRequest"
+					message="tns:GetOpenDeliveredOrdersSoapIn"/>
+			<output name="GetOpenDeliveredOrdersResponse"
+					message="tns:GetOpenDeliveredOrdersSoapOut"/>
+		</operation>
+		<operation name="GetOrderStatusInit">
+			<input name="GetOrderStatusInitRequest"
+					message="tns:GetOrderStatusInitSoapIn"/>
+			<output name="GetOrderStatusInitResponse"
+					message="tns:GetOrderStatusInitSoapOut"/>
+		</operation>
+		<operation name="ChangeOrderStatus">
+			<input name="ChangeOrderStatusRequest"
+					message="tns:ChangeOrderStatusSoapIn"/>
+			<output name="ChangeOrderStatusResponse"
+					message="tns:ChangeOrderStatusSoapOut"/>
+		</operation>
+		<operation name="GetTransCancelReasons">
+			<input name="GetTransCancelReasonsRequest"
+					message="tns:GetTransCancelReasonsSoapIn"/>
+			<output name="GetTransCancelReasonsResponse"
+					message="tns:GetTransCancelReasonsSoapOut"/>
+		</operation>
+		<operation name="GetOrderTrack">
+			<input name="GetOrderTrackRequest"
+					message="tns:GetOrderTrackSoapIn"/>
+			<output name="GetOrderTrackResponse"
+					message="tns:GetOrderTrackSoapOut"/>
+		</operation>
+		<operation name="CreatePickingTask">
+			<input name="CreatePickingTaskRequest"
+					message="tns:CreatePickingTaskSoapIn"/>
+			<output name="CreatePickingTaskResponse"
+					message="tns:CreatePickingTaskSoapOut"/>
+		</operation>
+		<operation name="UpdateOrderExtended">
+			<input name="UpdateOrderExtendedRequest"
+					message="tns:UpdateOrderExtendedSoapIn"/>
+			<output name="UpdateOrderExtendedResponse"
+					message="tns:UpdateOrderExtendedSoapOut"/>
+		</operation>
+		<operation name="SetOrderIDAdditional">
+			<input name="SetOrderIDAdditionalRequest"
+					message="tns:SetOrderIDAdditionalSoapIn"/>
+			<output name="SetOrderIDAdditionalResponse"
+					message="tns:SetOrderIDAdditionalSoapOut"/>
+		</operation>
+		<operation name="GetOrderPlaceInf">
+			<input name="GetOrderPlaceInfRequest"
+					message="tns:GetOrderPlaceInfSoapIn"/>
+			<output name="GetOrderPlaceInfResponse"
+					message="tns:GetOrderPlaceInfSoapOut"/>
+		</operation>
+		<operation name="SetTerminalsForIntake">
+			<input name="SetTerminalsForIntakeRequest"
+					message="tns:SetTerminalsForIntakeSoapIn"/>
+			<output name="SetTerminalsForIntakeResponse"
+					message="tns:SetTerminalsForIntakeSoapOut"/>
+		</operation>
+		<operation name="AddCarriage">
+			<input name="AddCarriageRequest"
+					message="tns:AddCarriageSoapIn"/>
+			<output name="AddCarriageResponse"
+					message="tns:AddCarriageSoapOut"/>
+		</operation>
+		<operation name="RegisterWarehouse">
+			<input name="RegisterWarehouseRequest"
+					message="tns:RegisterWarehouseSoapIn"/>
+			<output name="RegisterWarehouseResponse"
+					message="tns:RegisterWarehouseSoapOut"/>
+		</operation>
+		<operation name="RegisterPickupPoint">
+			<input name="RegisterPickupPointRequest"
+					message="tns:RegisterPickupPointSoapIn"/>
+			<output name="RegisterPickupPointResponse"
+					message="tns:RegisterPickupPointSoapOut"/>
+		</operation>
+		<operation name="UpdatePickupPoint">
+			<input name="UpdatePickupPointRequest"
+					message="tns:UpdatePickupPointSoapIn"/>
+			<output name="UpdatePickupPointResponse"
+					message="tns:UpdatePickupPointSoapOut"/>
+		</operation>
+		<operation name="UpdateWarehouse">
+			<input name="UpdateWarehouseRequest"
+					message="tns:UpdateWarehouseSoapIn"/>
+			<output name="UpdateWarehouseResponse"
+					message="tns:UpdateWarehouseSoapOut"/>
+		</operation>
+		<operation name="SetOrdersStatusExternalRoute">
+			<input name="SetOrdersStatusExternalRouteRequest"
+					message="tns:SetOrdersStatusExternalRouteSoapIn"/>
+			<output name="SetOrdersStatusExternalRouteResponse"
+					message="tns:SetOrdersStatusExternalRouteSoapOut"/>
+		</operation>
+		<operation name="SetCrewForExternalRoute">
+			<input name="SetCrewForExternalRouteRequest"
+					message="tns:SetCrewForExternalRouteSoapIn"/>
+			<output name="SetCrewForExternalRouteResponse"
+					message="tns:SetCrewForExternalRouteSoapOut"/>
+		</operation>
+		<operation name="CreateExternalRoute">
+			<input name="CreateExternalRouteRequest"
+					message="tns:CreateExternalRouteSoapIn"/>
+			<output name="CreateExternalRouteResponse"
+					message="tns:CreateExternalRouteSoapOut"/>
+		</operation>
+		<operation name="UpdateOrderContactDetails">
+			<input name="UpdateOrderContactDetailsRequest"
+					message="tns:UpdateOrderContactDetailsSoapIn"/>
+			<output name="UpdateOrderContactDetailsResponse"
+					message="tns:UpdateOrderContactDetailsSoapOut"/>
+		</operation>
+		<operation name="UpdateOrderDateDelivery">
+			<input name="UpdateOrderDateDeliveryRequest"
+					message="tns:UpdateOrderDateDeliverySoapIn"/>
+			<output name="UpdateOrderDateDeliveryResponse"
+					message="tns:UpdateOrderDateDeliverySoapOut"/>
+		</operation>
+		<operation name="UpdateOrderItems">
+			<input name="UpdateOrderItemsRequest"
+					message="tns:UpdateOrderItemsSoapIn"/>
+			<output name="UpdateOrderItemsResponse"
+					message="tns:UpdateOrderItemsSoapOut"/>
+		</operation>
+		<operation name="GetDeliveryCost">
+			<input name="GetDeliveryCostRequest"
+					message="tns:GetDeliveryCostSoapIn"/>
+			<output name="GetDeliveryCostResponse"
+					message="tns:GetDeliveryCostSoapOut"/>
+		</operation>
+		<operation name="GetReceiptsInfo">
+			<input name="GetReceiptsInfoRequest"
+					message="tns:GetReceiptsInfoSoapIn"/>
+			<output name="GetReceiptsInfoResponse"
+					message="tns:GetReceiptsInfoSoapOut"/>
+		</operation>
+		<operation name="SetOrderDocuments">
+			<input name="SetOrderDocumentsRequest"
+					message="tns:SetOrderDocumentsSoapIn"/>
+			<output name="SetOrderDocumentsResponse"
+					message="tns:SetOrderDocumentsSoapOut"/>
+		</operation>
+	</portType>
+	<binding name="SincSoap"
+			type="tns:SincSoap">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetItemStocks">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetItemStocks"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrdersStatusHistory">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrdersStatusHistory"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetInternetShopID">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetInternetShopID"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetShopsID">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetShopsID"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrder">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetSdOrderID">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetSdOrderID"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterUser">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RegisterUser"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterOrder">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RegisterOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusOrders">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusOrders"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusOrder">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusSdOrderID">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusSdOrderID"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusOrderByImportedID">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusOrderByImportedID"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddItemsToOrder">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/AddItemsToOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetNewOrders">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetNewOrders"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateDeliveOrderId">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdateDeliveOrderId"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderParams">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderParams"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RefuseOrder">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RefuseOrder"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderStatusByStrizhOrderID">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderStatusByStrizhOrderID"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderStatusFByStrizhOrderID">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderStatusFByStrizhOrderID"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderInf">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderInf"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterInternetShop">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RegisterInternetShop"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddLogo">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/AddLogo"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ConfirmOrderPackaging">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/ConfirmOrderPackaging"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterChildInternetShop">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RegisterChildInternetShop"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddAcceptanceReport">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/AddAcceptanceReport"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetServicesCost">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetServicesCost"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetCurrentStatuses">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetCurrentStatuses"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetFinalStatuses">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetFinalStatuses"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetCurStatusWithSetDate">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetCurStatusWithSetDate"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetFinStatusWithSetDate">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetFinStatusWithSetDate"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetRefusedOrderItems">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetRefusedOrderItems"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetSoldOrderItems">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetSoldOrderItems"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateShopPhone">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdateShopPhone"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderBarcodes">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderBarcodes"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterOrderExtended">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RegisterOrderExtended"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetActiveTerminals">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetActiveTerminals"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDeliveredOrders">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetDeliveredOrders"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOpenDeliveredOrders">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOpenDeliveredOrders"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderStatusInit">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderStatusInit"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeOrderStatus">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/ChangeOrderStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetTransCancelReasons">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetTransCancelReasons"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderTrack">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderTrack"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CreatePickingTask">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/CreatePickingTask"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderExtended">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderExtended"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderIDAdditional">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderIDAdditional"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderPlaceInf">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderPlaceInf"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetTerminalsForIntake">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/SetTerminalsForIntake"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddCarriage">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/AddCarriage"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterWarehouse">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RegisterWarehouse"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterPickupPoint">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/RegisterPickupPoint"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdatePickupPoint">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdatePickupPoint"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateWarehouse">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdateWarehouse"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrdersStatusExternalRoute">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/SetOrdersStatusExternalRoute"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetCrewForExternalRoute">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/SetCrewForExternalRoute"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CreateExternalRoute">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/CreateExternalRoute"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderContactDetails">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderContactDetails"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderDateDelivery">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderDateDelivery"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderItems">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderItems"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDeliveryCost">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetDeliveryCost"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetReceiptsInfo">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/GetReceiptsInfo"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderDocuments">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderDocuments"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="SincSoap12"
+			type="tns:SincSoap">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetItemStocks">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetItemStocks"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrdersStatusHistory">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrdersStatusHistory"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetInternetShopID">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetInternetShopID"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetShopsID">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetShopsID"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetSdOrderID">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetSdOrderID"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterUser">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RegisterUser"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RegisterOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusOrders">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusOrders"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusSdOrderID">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusSdOrderID"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetStatusOrderByImportedID">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetStatusOrderByImportedID"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddItemsToOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/AddItemsToOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetNewOrders">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetNewOrders"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateDeliveOrderId">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdateDeliveOrderId"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderParams">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderParams"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RefuseOrder">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RefuseOrder"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderStatusByStrizhOrderID">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderStatusByStrizhOrderID"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderStatusFByStrizhOrderID">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderStatusFByStrizhOrderID"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderInf">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderInf"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterInternetShop">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RegisterInternetShop"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddLogo">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/AddLogo"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ConfirmOrderPackaging">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/ConfirmOrderPackaging"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterChildInternetShop">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RegisterChildInternetShop"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddAcceptanceReport">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/AddAcceptanceReport"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetServicesCost">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetServicesCost"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetCurrentStatuses">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetCurrentStatuses"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetFinalStatuses">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetFinalStatuses"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetCurStatusWithSetDate">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetCurStatusWithSetDate"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetFinStatusWithSetDate">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetFinStatusWithSetDate"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetRefusedOrderItems">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetRefusedOrderItems"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetSoldOrderItems">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetSoldOrderItems"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateShopPhone">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdateShopPhone"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderBarcodes">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderBarcodes"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterOrderExtended">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RegisterOrderExtended"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetActiveTerminals">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetActiveTerminals"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDeliveredOrders">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetDeliveredOrders"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOpenDeliveredOrders">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOpenDeliveredOrders"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderStatusInit">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderStatusInit"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeOrderStatus">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/ChangeOrderStatus"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetTransCancelReasons">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetTransCancelReasons"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderTrack">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderTrack"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CreatePickingTask">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/CreatePickingTask"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderExtended">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderExtended"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderIDAdditional">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderIDAdditional"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetOrderPlaceInf">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetOrderPlaceInf"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetTerminalsForIntake">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/SetTerminalsForIntake"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="AddCarriage">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/AddCarriage"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterWarehouse">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RegisterWarehouse"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="RegisterPickupPoint">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/RegisterPickupPoint"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdatePickupPoint">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdatePickupPoint"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateWarehouse">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdateWarehouse"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrdersStatusExternalRoute">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/SetOrdersStatusExternalRoute"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetCrewForExternalRoute">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/SetCrewForExternalRoute"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CreateExternalRoute">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/CreateExternalRoute"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderContactDetails">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderContactDetails"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderDateDelivery">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderDateDelivery"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateOrderItems">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/UpdateOrderItems"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDeliveryCost">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetDeliveryCost"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetReceiptsInfo">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/GetReceiptsInfo"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetOrderDocuments">
+			<soap12bind:operation style="document"
+					soapAction="http://tempuri.org/SetOrderDocuments"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Sinc">
+		<port name="SincSoap"
+				binding="tns:SincSoap">
+			<soapbind:address location="http://adminka.strizh-logistic.ru/services/v2/sinc.asmx"/>
+		</port>
+		<port name="SincSoap12"
+				binding="tns:SincSoap12">
+			<soap12bind:address location="http://adminka.strizh-logistic.ru/services/v2/sinc.asmx"/>
+		</port>
+	</service>
+</definitions>

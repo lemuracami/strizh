@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1f013007-351f-453a-9df5-9d2aa2cde58e">
+  <producedTypes>
+    <selectionType typeId="7fa90adc-aa8d-4c75-84d3-5765b9cd5c00" valueTypeId="90c9eb74-bad4-4cde-a5aa-c3433265b3ff"/>
+    <listType typeId="eed39921-40eb-4781-8850-f94b8fedc374" valueTypeId="d5187f8f-762f-4e9a-b5e2-7265fe558951"/>
+    <managerType typeId="bc59adb6-ed50-45a0-8a10-a9b50f9f29a4" valueTypeId="0a3cdfdd-f738-4b0a-8e1d-5636d0f90686"/>
+    <recordSetType typeId="2d4230bc-b6d6-4f02-920a-34050ccad838" valueTypeId="76a28059-8e2a-45ca-b7e4-ec9b40e71a97"/>
+    <recordKeyType typeId="db8da682-8f88-4b8c-b3d7-5a89690903c6" valueTypeId="f79e0c48-cd23-4821-93d8-90b26f84436b"/>
+    <recordType typeId="6808acfb-46c3-431d-8ce0-f363f6596980" valueTypeId="eb47bacd-3e05-46b3-aea2-0c48c2452198"/>
+  </producedTypes>
+  <name>ВзаиморасчетыСКомитентамиПоЗаказам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Взаиморасчеты с комитентами по заказам</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.ВзаиморасчетыСКомитентамиПоЗаказам.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="6ebaef15-8412-44e6-bc2d-0e1772ee07f5">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="1f7524d1-7391-4a71-bbf2-f1ccacaf5f70">
+    <name>Корректировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="5b9006ec-3a4c-4692-b29c-bc31dbc2de62">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2e55cbb4-b290-4f95-99fa-04f1b6995376">
+    <name>Комитент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комитент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="956ccea7-06dc-49ae-800f-9844af5de794">
+    <name>ДатаВозникновенияЗадолженности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата возникновения задолженности</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b7c9aced-71e9-4837-94f5-4e05c7dfced3">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0f71ab15-a03c-4ae3-aaa1-a360ee7830b4">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="93c20a2e-48d5-4ebf-bdf3-b64b6f680e62">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3313e3a4-d69e-41df-b731-87a6ebb5747d">
+  <producedTypes>
+    <selectionType typeId="7cb9d7ab-d2e1-48e4-9b1a-5080acd33555" valueTypeId="cbdad94e-66d5-4308-b9b3-cf7392e2796b"/>
+    <listType typeId="0683f233-606f-430f-8fc8-f8966e8345d0" valueTypeId="852f5391-1bc6-4ed7-80b1-44d17c59d4f0"/>
+    <managerType typeId="4cd167e6-e831-4c9e-84d0-ff7ebae1e36a" valueTypeId="600c9480-18b3-485c-9b10-4b10fa45d728"/>
+    <recordSetType typeId="6475b984-79fe-418e-99b6-81ffd1afe15a" valueTypeId="67bd5167-6580-403f-8f62-a2cdaf768a0f"/>
+    <recordKeyType typeId="f7ee9182-0186-47bf-9fce-9dceb1197e52" valueTypeId="dc598031-afe6-4a72-bee7-0f84fbd476e0"/>
+    <recordType typeId="65f5935a-480b-4769-82e9-2401cf2713fb" valueTypeId="792de4a9-e0bb-419d-92e3-d3e0e8521dfe"/>
+    <recordManagerType typeId="f81583a9-4d16-40be-9549-eec1b10a943b" valueTypeId="f2844d9d-538c-4f0b-b4d1-acd53359c0b1"/>
+  </producedTypes>
+  <name>ПолигоныИКатегорииЗаказовДляРейсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Полигоны и категории заказов для рейсов</value>
+  </synonym>
+  <dataHistory>Use</dataHistory>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ПолигоныИКатегорииЗаказовДляРейсов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ПолигоныИКатегорииЗаказовДляРейсов.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="0f9c58c1-342b-417e-9f54-eb12489d2930">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="8d3894f0-6498-4d76-b2a7-808923bcef6d">
+    <name>Смена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Смены</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="04925de7-3b98-41cd-a9dc-15ef94448ce0">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="da5438ce-d8ed-4ee7-a2ae-11d76b4d4a8f">
+    <name>Полигон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полигон</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПолигоныМаршрутизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9da0630c-c8dd-4f5c-911e-755007405f9d">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0938f4ba-0bf8-49ba-a127-6eea883c5ade">
+    <name>КатегорияЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория заказа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЛогистическиеБрейки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="fcb330ab-0eab-4cfb-8ca7-d8c6047f46d7">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e7eac6f6-6b7f-4558-9f17-d8d3f508071a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

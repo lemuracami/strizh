@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3dcedfcd-2b78-45ed-ae9b-7c28464bb0e9">
+  <producedTypes>
+    <selectionType typeId="d27f2d8e-3c91-4bba-b0fc-14123006bd72" valueTypeId="013c86ec-2841-4736-a26c-2c60f5a02932"/>
+    <listType typeId="fdf538cb-21bd-4092-9b69-6887e7f15ebe" valueTypeId="22cfc76f-180c-45ec-a549-0c3cd47bbd2a"/>
+    <managerType typeId="c9f7be5a-7974-4ea4-aa1a-9f085cdee038" valueTypeId="ce66b35b-7142-4412-acea-cc66a827cf13"/>
+    <recordSetType typeId="ddf59069-0455-4a3a-a04f-bf46b24a247f" valueTypeId="09b42014-a7dc-487a-aa17-a684cf61d05a"/>
+    <recordKeyType typeId="7ae77e9d-3c97-44ba-b2ec-5ae2303c6d6a" valueTypeId="3bc49c9b-2106-43f5-974e-6c580dc7d8c6"/>
+    <recordType typeId="d9562359-881c-4c8e-bb73-d93f3a84fb9a" valueTypeId="6e5c7a5d-1cd6-473f-868a-b027e5c12d39"/>
+    <recordManagerType typeId="a4ea55c5-d4e3-4e03-a227-924aa04e8656" valueTypeId="f47d53f0-91c5-41f7-9dad-d08a1f03ecf6"/>
+  </producedTypes>
+  <name>ПланируемыйГрафикРаботыСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планируемый график работы сотрудников</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="2525a17a-c993-4c47-8ebe-61642fa2159b">
+    <name>ВидОтработанногоВремени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид отработанного времени</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлассификаторИспользованияРабочегоВремени</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="9e04b1c7-23ff-4218-bbc4-f3bda24eb518">
+    <name>РольСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль сотрудника</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="461f51b7-9b02-4e70-b55b-219d7e239b54">
+    <name>Терминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3ef2a1fa-f637-4bdd-9ec4-c97ffc40052a">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физ лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dee65fd8-af5e-4867-a65d-e6dbbaad6b14">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="619b7ad3-d60f-49e2-b229-aecfaff8a6d6">
+    <name>ВидЗанятости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид занятости</value>
+    </synonym>
+    <type>
+      <types>EnumRef.зпВидыЗанятости</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.зпВидыЗанятости.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

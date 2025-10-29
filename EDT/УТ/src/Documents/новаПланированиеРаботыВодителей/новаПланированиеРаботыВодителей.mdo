@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0e7009ed-3d08-4f69-b6af-7f698e114be7">
+  <producedTypes>
+    <objectType typeId="109b25ca-a727-4916-a779-c96f21c87a58" valueTypeId="336acec5-d19e-4966-872a-9d9a22706bf6"/>
+    <refType typeId="a2999a39-59a5-4040-94af-0ee45d777508" valueTypeId="580ec5f9-a705-48a9-9225-9e3402434424"/>
+    <selectionType typeId="7d15ff72-2263-489e-bded-0814742b327a" valueTypeId="f9315edc-412f-4574-b181-7465e0ca16bd"/>
+    <listType typeId="5ef04dae-adcc-42a2-8fe1-49eb5a75b3e2" valueTypeId="f5f3f7f3-09fd-4f7b-8f48-f244e677e73b"/>
+    <managerType typeId="0d56eca7-696a-4165-8e15-9f5ea674563b" valueTypeId="28c76261-7abe-4701-b2b3-4c9650f48889"/>
+  </producedTypes>
+  <name>новаПланированиеРаботыВодителей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планирование работы водителей</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.новаПланированиеРаботыВодителей.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>6</numberLength>
+  <autonumbering>true</autonumbering>
+  <defaultListForm>Document.новаПланированиеРаботыВодителей.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <attributes uuid="dc92ad9d-619a-4902-b08a-ad6073135f9b">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаПользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="12e3e622-a0fb-4c8c-9c38-1c13da3b39a0">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="7ead4cd3-f140-4f54-b9fb-158f23c8e2b2">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="df3d01a1-11a1-4c01-964b-d7259c543c36">
+    <name>ФормаБыстрогоВвода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма быстрого ввода</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="847d2ec9-665e-444e-88b1-8b1712d2391a">
+    <producedTypes>
+      <objectType typeId="a472b55b-32a2-4c5e-bd92-9e1b34dbc8a5" valueTypeId="c8e90ad9-f16c-429f-80d2-5a84c213e398"/>
+      <rowType typeId="2b55f6dc-0383-47b4-8d86-a932ef6cf706" valueTypeId="7e6a6132-202e-4e3f-9677-86f526ee7380"/>
+    </producedTypes>
+    <name>РаботаВодителей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Работа водителей</value>
+    </synonym>
+    <attributes uuid="e5ec9136-607b-4482-98f7-74f7d8ab23e5">
+      <name>Водитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Водитель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="8bda0095-9aa5-4a19-a246-ee5cd84a4f3f">
+      <name>Транспорт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаТранспорт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="74cf68d9-2716-4476-9e2a-2af46de41d15">
+      <name>НачалоПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начало периода</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ed392743-b9c7-440a-9cef-97d9f18ad4d9">
+      <name>КонецПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Конец периода</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c84f97d7-37eb-4171-919f-711de609a087">
+      <name>ГрафикРаботы</name>
+      <synonym>
+        <key>ru</key>
+        <value>График работы</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаГрафикиРаботы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="621bc440-30b3-4092-a6a6-ac12693070d8">
+      <name>Экспедитор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Экспедитор</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаЭкспедиторы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

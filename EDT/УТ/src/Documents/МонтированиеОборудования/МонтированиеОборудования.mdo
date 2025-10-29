@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="40e166ea-5382-450e-a3e6-3c877d1f9fc0">
+  <producedTypes>
+    <objectType typeId="f0119bc7-d919-46c6-8ba8-ef86fd3b2edd" valueTypeId="2aaaa79a-7722-426d-b2f9-f271ab765db2"/>
+    <refType typeId="80e92170-2d1b-4ca6-9b8d-3c9eb3951ca9" valueTypeId="bd9f93bf-a250-47d4-a0b2-ebbd215af758"/>
+    <selectionType typeId="7c08708a-5c20-4402-8b61-338a21c77ab7" valueTypeId="28428bfe-eed6-46f2-bf79-6835a653760b"/>
+    <listType typeId="4e238e10-01b1-4d8d-b54e-252a3bdbdbd7" valueTypeId="caaedbfb-4ffd-4ebe-ad51-57cfa8a1eb40"/>
+    <managerType typeId="4e79f5fb-061a-4424-9805-4be2e828318f" valueTypeId="58f0ebaf-ee66-44e4-b996-e7edcc189a84"/>
+  </producedTypes>
+  <name>МонтированиеОборудования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Монтирование оборудования</value>
+  </synonym>
+  <inputByString>Document.МонтированиеОборудования.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.МонтированиеОборудования.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.МонтированиеОборудования.Form.ФормаСписка</defaultListForm>
+  <registerRecords>InformationRegister.СвязанноеОборудование</registerRecords>
+  <attributes uuid="9bfda3ac-5fbf-4b24-b0bf-da5512f6d4d1">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1950d81d-f866-4311-a62e-0219dc741ac5">
+    <name>РегиональныйТерминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Региональный терминал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3e7cb728-8698-4e8a-aea8-c1f2ac0d56ea">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="722a5cc9-a467-4d18-a8b7-2c363766c831">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c704598b-3b5d-4b1a-a27e-a85cacca3aa2">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="e5800609-0109-4ed2-bd7e-91b81023704a">
+    <producedTypes>
+      <objectType typeId="abdbb659-b126-484f-ad1b-7af44ac3af7c" valueTypeId="e5ff011c-c667-4d24-bc73-4fb61a6c31c3"/>
+      <rowType typeId="bc93cac1-be61-4335-976d-8996a86321cb" valueTypeId="22c5f275-a5b4-44a9-8bc4-12a8e01d9c3e"/>
+    </producedTypes>
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <attributes uuid="b9227b42-efd8-4eb2-8765-a05ee21ef78d">
+      <name>ОборудованиеВладелец</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оборудование владелец</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Оборудование</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="eec598b9-24b6-4016-b1ea-8ec89e738040">
+      <name>ОборудованиеПодчиненное</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оборудование подчиненное</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Оборудование</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="03f03528-7863-48cb-989a-198d61087696">
+      <name>СтатусМонтирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус монтирования</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СтатусыМонтированияОборудования</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

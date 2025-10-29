@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dfa7d5b4-3ccf-4f42-8577-fdddaae09820">
+  <producedTypes>
+    <selectionType typeId="44aebaac-a153-44e5-9195-f10a15bc2821" valueTypeId="d7c2417d-7f0a-4f3d-b9af-c2eeafec636e"/>
+    <listType typeId="5b67a4da-a3eb-4638-a9f6-9fa2b6bab56b" valueTypeId="ea651d98-e478-4c4d-89b5-7d0708ec3abb"/>
+    <managerType typeId="633c71c5-bf67-4da9-8bcb-c17f67f3d1e7" valueTypeId="3f57d51a-7808-48df-b915-8b5ee274af8e"/>
+    <recordSetType typeId="0b18a89c-7e46-4d8d-bb5b-8a993f1e182d" valueTypeId="ba587b95-e578-469b-a4d6-bee929585c39"/>
+    <recordKeyType typeId="4821c433-1cff-4dd3-afc3-ac3570539fac" valueTypeId="e0a23961-212a-472a-b7c5-8c2e12992014"/>
+    <recordType typeId="c30a83f6-57ee-4c65-81fe-2805183f274b" valueTypeId="6a48a287-24b6-47d9-b314-14319cb19e92"/>
+    <recordManagerType typeId="2b9e7aec-cffa-44bb-8c04-efe769921189" valueTypeId="24a5639f-bdde-4f47-a704-1bca371af661"/>
+  </producedTypes>
+  <name>ОчередьОтчетовКОтправке</name>
+  <synonym>
+    <key>ru</key>
+    <value>Очередь отчетов к отправке</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="b9409bfb-9bad-409e-b527-284947ab177c">
+    <name>ЭтапОтправки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап отправки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ЭтапыОтправкиОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="86993821-11d6-4372-a148-e0d10e932f3e">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="5270e8e6-4977-4413-a875-144091be39c4">
+    <name>Отчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОтчетВОчередиОтправкиОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

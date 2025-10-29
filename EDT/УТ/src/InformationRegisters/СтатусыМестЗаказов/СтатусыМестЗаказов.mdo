@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7cc3bbdb-f710-47f0-a72f-ea4ae5079908">
+  <producedTypes>
+    <selectionType typeId="11892a22-674e-4020-9dbc-51ee71a8713e" valueTypeId="f32345ad-9d7b-4955-89f4-9a23144d23e0"/>
+    <listType typeId="2e0bd9a2-1ad4-4bf7-af02-45f47b488279" valueTypeId="eded9b75-b0c5-4d52-af4d-723f978cbec5"/>
+    <managerType typeId="ae3f4512-0839-47a7-9843-79f7b34df634" valueTypeId="2fa4b724-ce4e-4a5b-8c1c-007a4d272cb5"/>
+    <recordSetType typeId="6f30832c-7df4-4f7d-af30-28179aee7209" valueTypeId="be97bce6-4514-47f2-8811-9e30a6814e2b"/>
+    <recordKeyType typeId="90b32b62-4410-477b-96b2-7501e300990d" valueTypeId="40d923d2-ced3-45f2-ae69-7e12943d3b07"/>
+    <recordType typeId="7ecb96a6-1c12-4f80-91d9-f65c72739f5d" valueTypeId="1ace83d9-0b08-44bc-842c-73e2da200361"/>
+    <recordManagerType typeId="2611086b-a33e-43e6-9f50-8f045486c5c7" valueTypeId="9917592c-c418-4f46-b6a2-7dfccaf1c5e3"/>
+  </producedTypes>
+  <name>СтатусыМестЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы мест заказов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="57c1a7e9-e87c-4e76-be35-dd291a7770dc">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="3eecf45d-4cd8-43d6-9f53-cc9e8bff94b2">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВозвратЗаказовОтВодителя</types>
+      <types>DocumentRef.ЗагрузкаСТСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="83b123af-bb2a-4834-9a61-d0ec0180c954">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="89f2ede3-710d-47d4-b979-898eef7780fb">
+    <name>МестоЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место заказа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МестаПоЗаказам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="52a61624-fe39-4260-986c-1491e96a6f1c">
+    <name>ТерминалОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал обработки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

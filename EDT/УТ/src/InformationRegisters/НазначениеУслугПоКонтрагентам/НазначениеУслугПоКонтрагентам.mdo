@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7bc09f3e-d042-418a-8607-6dca62bf073d">
+  <producedTypes>
+    <selectionType typeId="f7c3afdc-d63a-4dcc-994a-c56d7404c23b" valueTypeId="c8cd11d1-6aab-4b08-b69a-17ead6f55390"/>
+    <listType typeId="a9972fad-3631-47b4-9e44-980d01be0e98" valueTypeId="316d268c-c797-4a30-a066-c36e1b38ca83"/>
+    <managerType typeId="1ccf1974-7d8d-419a-95e1-dec979cf95cd" valueTypeId="303f5367-5ea8-4e48-b4b2-9fd290f0e1c6"/>
+    <recordSetType typeId="24ae32b0-81d8-44f7-9486-bd7bf53f48a0" valueTypeId="dd5120f2-09a3-4aba-a844-48e3ffa1031c"/>
+    <recordKeyType typeId="8083b3b9-b263-41b4-9d19-165988c6636e" valueTypeId="0e0fb122-5216-4e48-a2fb-eaf895a6e47e"/>
+    <recordType typeId="0f01810b-c13e-4c70-854c-e0be268a6fdd" valueTypeId="fc767790-8fa9-4f3b-a23b-aff4f34820a7"/>
+    <recordManagerType typeId="3ab1b375-afe4-4e0c-b4b5-590c6781481f" valueTypeId="2960bec1-6644-42e7-a1e5-f081ec494e71"/>
+  </producedTypes>
+  <name>НазначениеУслугПоКонтрагентам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначение услуг по контрагентам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <resources uuid="047089e4-85c4-4318-8be8-ef4a475dd022">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="03548338-1f58-4ebb-ba07-8a2038f1ea4f">
+    <name>ПроцентОтРасчетнойБазы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент от расчетной базы</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>6</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="31b8687f-b55d-4114-8142-8c9549ae5e3d">
+    <name>РасчетнаяБаза</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчетная база</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РасчетнаяБазаУслугСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="4bf72f6e-4116-4a1a-b480-ffdaf86e6057">
+    <name>ВариантРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант расчета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыРасчетаУслугПоВозвратуПоставщику</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="49e27507-d8e3-48e6-8c31-0fb243e3aa56">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1c8476a9-2109-4069-a11d-32890d0fb814">
+    <name>Показатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПоказателиРасчетаУслугСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

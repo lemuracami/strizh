@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c1fb1cf1-941f-4928-a777-40401a984092">
+  <producedTypes>
+    <objectType typeId="58cc8c16-60e7-4fd1-905d-9cce521c733f" valueTypeId="5f419afd-04f5-487d-8f02-a707a51aa500"/>
+    <managerType typeId="5ba2f227-8c9d-4486-b7ea-86b9a524fba5" valueTypeId="9fd1da6d-73e4-48d8-9aed-e5e8983d9639"/>
+  </producedTypes>
+  <name>ВыгрузкаДанныхШКВСерверСканирования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выгрузка данных ШК в сервер сканирования</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ВыгрузкаДанныхШКВСерверСканирования.Form.Форма</defaultForm>
+  <attributes uuid="de70a0b7-80ca-44fa-81e3-733ac9dd903c">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="380ed045-9616-49bf-a444-601c004f7ef4">
+    <name>ДатаОкончания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2beee7d4-289e-4cf1-a1b7-6fe939b920cf">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0d9c06ea-4a64-4dcf-8285-1da201c90d5c">
+    <name>УдалятьДублиШК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалять дубли ШК</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="34fd05c8-776a-4c69-9e80-8a3bc018a3ef">
+    <producedTypes>
+      <objectType typeId="73f94393-c831-4d6b-9d2d-afe0efd51815" valueTypeId="637e6f16-2f23-42f5-993c-ac0809dc941a"/>
+      <rowType typeId="0953d8c7-feee-4b1a-aa4f-a4e71aacf1ce" valueTypeId="15de1694-7d13-46fb-a157-b277b5fdd4b4"/>
+    </producedTypes>
+    <name>РегиональныеТерминалы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Региональные терминалы</value>
+    </synonym>
+    <attributes uuid="7b8a4067-3123-47a3-839f-13a95ade5bb2">
+      <name>РегиональныйТерминал</name>
+      <synonym>
+        <key>ru</key>
+        <value>Региональный терминал</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РегиональныеТерминалы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ab1e4624-dd83-49bc-9a4e-002d89a8e26f">
+      <name>Выгружать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Выгружать</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="6b83bfcb-40f1-4ca2-839d-8d9f2bf216de">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

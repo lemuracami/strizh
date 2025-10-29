@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1990c753-bbe9-4bc7-a858-c99d9643611d">
+  <producedTypes>
+    <selectionType typeId="2e57670f-e186-4e18-8960-ae32bdc0db0f" valueTypeId="f228af09-fa6c-43e3-ba59-78403d740846"/>
+    <listType typeId="c64f6ef6-4abd-4e54-a8d1-f892741efbe8" valueTypeId="5f45d621-4f4c-4adb-9cd7-2dc3e416cff9"/>
+    <managerType typeId="12673a3d-1c7f-4b5b-9504-868cf666a3f6" valueTypeId="fd401e47-044d-47d9-9f2f-96cec063edc1"/>
+    <recordSetType typeId="ed1b3673-bb1f-43aa-9037-cb286f946736" valueTypeId="cfa3d11f-ac97-4bf3-9a25-f5fe13f6ca96"/>
+    <recordKeyType typeId="da37a932-28ee-434d-b0cb-f03071e68459" valueTypeId="1b68c5a7-1780-4049-a338-6c6703674941"/>
+    <recordType typeId="abee9640-b6d5-4398-8743-8426f2bd14f1" valueTypeId="7424c20b-15d2-4f58-9ee5-a63ea9f75e39"/>
+    <recordManagerType typeId="54bc4d99-5c96-44f3-be9b-63c5dea4bcb1" valueTypeId="b1d0df59-13e4-43b7-830a-3aab0e95fbb4"/>
+  </producedTypes>
+  <name>СтавкиТарифовДополнительныхУслуг</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ставки тарифов дополнительных услуг</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="cc872d0e-9118-4c01-b388-4bd21f5e41ac">
+    <name>Ставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="6b7acd41-c156-452f-a5ca-38dec5b8f796">
+    <name>Тариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТарифыДополнительныхУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ac64183b-46a5-4b50-905c-4e42320c520a">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d8b3d904-45e9-4fa1-bf3b-eaac00ee71a4">
+    <name>Услуга</name>
+    <synonym>
+      <key>ru</key>
+      <value>Услуга</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПоказателиРасчетаУслугСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

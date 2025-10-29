@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="de18310d-ee1e-4cc1-83dd-aa9883ff2f9c">
+  <producedTypes>
+    <selectionType typeId="c25d562f-034f-45c7-9c18-1d0b4f0a09fb" valueTypeId="bb8f2044-3e10-47a6-944c-542a42dc0b1d"/>
+    <listType typeId="fe2b8725-b917-4ffc-a538-60064cac0c18" valueTypeId="e27c22c8-0466-4024-a7f4-42899c95f1f6"/>
+    <managerType typeId="4daa289b-f4bc-4479-9991-acb24735c825" valueTypeId="07aa6575-d1cf-49ba-b200-24b4c6489db6"/>
+    <recordSetType typeId="6bb2b765-bc82-41a7-a871-ca3df99cef0b" valueTypeId="5e58d1f5-623f-4640-9427-ca6389ab8978"/>
+    <recordKeyType typeId="086021bb-12f2-4265-9471-d9ac0c876f0c" valueTypeId="7324d534-2136-4e8e-aa4b-cf3b339bf74f"/>
+    <recordType typeId="e1e07a74-aa93-41b2-a041-469516601758" valueTypeId="ed9820e0-2fab-437a-a1ab-4875c6569281"/>
+    <recordManagerType typeId="259dcee7-0108-4567-97d1-1d0015fa183e" valueTypeId="05c77686-c620-4b06-8ab3-8b0a38705826"/>
+  </producedTypes>
+  <name>СведенияОДоходахКомпании</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сведения о доходах компании</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="726746fd-a631-47f8-b784-a1cdc1e47802">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="19baf0e1-4717-4557-b4b5-59ed094f56e2">
+    <name>Юрлицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Юрлицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="eba032e0-2c62-4fbc-961f-106cac2fe5d2">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="576dec28-5691-45cf-a7b5-b10e00cf2732">
+    <name>СтатьяДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья доходов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиДоходовКомпании</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="be5e41ba-f42f-4eba-8be2-7b46511890b8">
+    <name>КатегорияДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КатегорииДоставки2014</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bc8d2aa2-3fad-4dcb-af05-637dc927f86a">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

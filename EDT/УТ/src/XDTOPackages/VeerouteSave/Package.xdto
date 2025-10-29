@@ -1,0 +1,73 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://veeroute.com/">
+	<objectType name="apiRequest">
+		<property name="sessionID" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="orders" type="d3p1:orders"/>
+	</objectType>
+	<objectType name="order">
+		<property name="orderReference" type="xs:string"/>
+		<property name="areaOfControl" type="xs:string"/>
+		<property name="date" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="client" type="d3p1:client"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="location" type="d3p1:location"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="type" type="d3p1:type" upperBound="-1"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="dropWindows" type="d3p1:dropWindows" upperBound="-1"/>
+		<property name="priority" type="xs:int"/>
+		<property name="durationDrop" type="xs:string"/>
+		<property name="price" type="xs:int"/>
+		<property name="capacity" type="xs:string"/>
+		<property name="volume" type="xs:float"/>
+		<property name="collection" type="xs:boolean"/>
+		<property name="additionalinstructions" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="orderItems" type="d3p1:orderItems" upperBound="-1"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="dynamicAttributes" type="d3p1:dynamicAttributes" upperBound="-1"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="vehicleRequirements" type="d3p1:vehicleRequirements"/>
+	</objectType>
+	<objectType name="client">
+		<property name="name" type="xs:string"/>
+		<property name="contactPerson" type="xs:string"/>
+		<property name="contactNumber" type="xs:string"/>
+	</objectType>
+	<objectType name="orders">
+		<property xmlns:d3p1="http://veeroute.com/" name="order" type="d3p1:order" upperBound="-1"/>
+	</objectType>
+	<objectType name="location">
+		<property name="name" type="xs:string"/>
+		<property name="address" type="xs:string"/>
+		<property name="latitude" type="xs:double"/>
+		<property name="longitude" type="xs:double"/>
+	</objectType>
+	<objectType name="dropWindows">
+		<property xmlns:d3p1="http://veeroute.com/" name="dropWindow" type="d3p1:dropWindow" upperBound="-1"/>
+	</objectType>
+	<objectType name="dropWindow">
+		<property name="start" type="xs:string"/>
+		<property name="end" type="xs:string"/>
+	</objectType>
+	<objectType name="type">
+		<property name="name" type="xs:string"/>
+		<property xmlns:d3p1="http://veeroute.com/" name="attributes" type="d3p1:attributes" upperBound="-1"/>
+	</objectType>
+	<objectType name="attributes">
+		<property name="attribute" type="xs:string"/>
+	</objectType>
+	<objectType name="orderItems">
+		<property xmlns:d3p1="http://veeroute.com/" name="orderItem" type="d3p1:orderItem" upperBound="-1"/>
+	</objectType>
+	<objectType name="orderItem">
+		<property name="name" type="xs:string"/>
+		<property name="barcode" type="xs:string"/>
+	</objectType>
+	<objectType name="dynamicAttributes">
+		<property xmlns:d3p1="http://veeroute.com/" name="attribute" type="d3p1:attribute" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="attribute">
+		<property name="name" type="xs:string" form="Attribute"/>
+		<property name="value" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="vehicleRequirement">
+		<property name="name" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="vehicleRequirements">
+		<property xmlns:d3p1="http://veeroute.com/" name="vehicleRequirement" type="d3p1:vehicleRequirement" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8a2d14a8-68cd-4986-8b39-3f0937dc8de9">
+  <producedTypes>
+    <selectionType typeId="010e9cab-fd46-4da6-8f29-265ab958ba32" valueTypeId="e6027996-32a6-4130-8ebb-66419e3f3535"/>
+    <listType typeId="a9033e3b-6dec-4a9a-b335-cbeaa971833f" valueTypeId="04b7680f-fb14-437a-b776-6c9066b3d8e3"/>
+    <managerType typeId="2ea59152-24f8-4e63-a583-2a5e88f266f7" valueTypeId="3a591c59-baa3-48c0-84fb-ab42a33ae1a0"/>
+    <recordSetType typeId="9957cff2-890a-4555-bf47-768c7c72db81" valueTypeId="073585d7-db47-4f8b-9a05-929b1a500ca9"/>
+    <recordKeyType typeId="aa53caf9-4688-4b86-ae1e-c1ff952fd9f7" valueTypeId="15e7e48e-4482-480d-ad7e-b110a6128c20"/>
+    <recordType typeId="b6b906ea-c353-40b8-9b9f-90bf3212565e" valueTypeId="3e12f0d9-0adf-45cc-8140-f150381fd14d"/>
+  </producedTypes>
+  <name>новаРейтингПеревозчиков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Рейтинг перевозчиков</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="5a39d564-b757-42fb-9001-ee00341491d4">
+    <name>НачисленныеБаллы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начисленные баллы</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a82c264f-9f73-48f1-8830-fecdd6a94f71">
+    <name>ШтрафныеБаллы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрафные баллы</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="7600791d-c0e7-41e3-9b2e-98e8fe84beac">
+    <name>ВидПретензии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид претензии</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВидыПретензийПеревозчикам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="7d313af0-329c-4fd0-ac1b-bd06b24c2e46">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="75c23f8f-095d-43a9-b78c-d4107e91f395">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаКонтрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

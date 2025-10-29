@@ -1,0 +1,23 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/1C/AcceptanceAkt">
+	<objectType name="AcceptanceAkt">
+		<property name="Number" type="xs:string" nillable="true"/>
+		<property name="Date" type="xs:dateTime" nillable="true"/>
+		<property name="Login" type="xs:string"/>
+		<property name="Password" type="xs:string" nillable="true"/>
+		<property name="OrdersTable">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://www.strizh-logistic.ru/1C/AcceptanceAkt" name="Row" type="d5p1:AcceptanceAktRow" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="AcceptanceAktRow">
+		<property name="NumberOrder" type="xs:string" nillable="true"/>
+		<property name="NumberOutsideOrder" type="xs:string"/>
+		<property name="QuantityPlaces" type="xs:integer"/>
+	</objectType>
+	<objectType name="Report">
+		<property name="Result" type="xs:boolean" nillable="true"/>
+		<property name="Error" type="xs:string" nillable="true"/>
+		<property name="NumberAcceptanceAkt" type="xs:string" nillable="true"/>
+	</objectType>
+</package>

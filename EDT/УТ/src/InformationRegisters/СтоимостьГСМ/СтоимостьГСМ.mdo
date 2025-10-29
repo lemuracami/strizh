@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="68b97e36-cb5e-41f2-8529-e36c797d113a">
+  <producedTypes>
+    <selectionType typeId="0a51b7e6-dda4-4003-8061-ec8cf15070c3" valueTypeId="67e6ee29-56b5-4882-bba8-68ccaf7f9855"/>
+    <listType typeId="15bbad90-a20f-461b-8fc9-f72f22e6cc2c" valueTypeId="c426c1d1-b0e3-49b9-a98c-c3c1207112d9"/>
+    <managerType typeId="7fe20245-6271-4a2b-ac81-676312f57a3b" valueTypeId="5bafc31a-e2c8-4079-849a-dfaa499e8f7d"/>
+    <recordSetType typeId="4f78e4e5-acd4-4c80-ac2c-59d2b37f858f" valueTypeId="1d978388-86dd-4a75-93ba-20bffb806402"/>
+    <recordKeyType typeId="80c8b80b-d091-4e29-bfc5-707c97db6ade" valueTypeId="830ddf04-bbe6-4acb-aec3-b52273272644"/>
+    <recordType typeId="c70dda67-5263-4da1-b82d-aa018407ef0a" valueTypeId="11f29cab-f90c-431a-b675-209ad8bca8d2"/>
+    <recordManagerType typeId="4a848362-b699-4e2a-b23d-c234cec53e00" valueTypeId="8e7a5558-2c1d-4f8a-9bc1-5540759822ba"/>
+  </producedTypes>
+  <name>СтоимостьГСМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Стоимость ГСМ</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="56e0a8d1-5b2d-4494-8821-aa7624b71514">
+    <name>Стоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c51dc9a9-fd7c-433e-9ee3-7b9c9cd86149">
+    <name>ТипГСМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип ГСМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТипыГСМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ba8b5350-5ca1-447c-9334-7ae7b78d50f1">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

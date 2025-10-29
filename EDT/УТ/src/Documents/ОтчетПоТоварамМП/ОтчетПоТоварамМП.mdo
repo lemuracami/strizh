@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="85f6ccce-eb5e-45c2-9cf1-3d8f5de8bff4">
+  <producedTypes>
+    <objectType typeId="233facf1-c01b-480f-8e90-b064308a7607" valueTypeId="ac47c9c0-dfd4-4af0-a5d8-12c7817f27ec"/>
+    <refType typeId="ac415956-1b8d-4489-b5b7-e757143565f5" valueTypeId="d560cbf2-0225-465e-9a5a-829de119e31e"/>
+    <selectionType typeId="04423d25-60da-40fa-98f5-48b955b2245b" valueTypeId="bef80b72-8376-4eea-8daa-2338ea1c070a"/>
+    <listType typeId="d3e3b2ad-4f4c-4fe4-be39-397da63635ee" valueTypeId="9fc32ece-c556-42df-aea3-6c2cd8a59f5f"/>
+    <managerType typeId="5387b25b-dc96-44b6-8984-9c8263c6564a" valueTypeId="1084502b-df23-4029-baa1-b1c27d0036c5"/>
+  </producedTypes>
+  <name>ОтчетПоТоварамМП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отчет по товарам МП</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ОтчетПоТоварамМП.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ОтчетПоТоварамМП.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ОтчетПоТоварамМП.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>InformationRegister.СостояниеЗаказовНаСкладеПриУдаленномЗакрытии</registerRecords>
+  <attributes uuid="d85a1563-e84f-4321-a30c-62dccf9f47c8">
+    <name>НомерМП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер МП</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>11</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="336cbdb5-c8d3-4531-acca-01255d43fe66">
+    <name>МП</name>
+    <synonym>
+      <key>ru</key>
+      <value>МП</value>
+    </synonym>
+    <type>
+      <types>ExchangePlanRef.ИзмененияДляМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e488d0aa-2b97-4442-b92f-3aebe79ddc5e">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6668f18e-877e-479a-b1aa-25381e16c014">
+    <name>ЭкипажСогласенСДанными</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экипаж согласен с данными</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="76f926ac-a54e-4471-a449-533b8cb9da1e">
+    <name>ДатаРейса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата рейса</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="34bbf1a7-5b14-4e15-8d85-9675d7faf93a">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6890a573-e013-4606-9800-a2340e1608ab">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="cbdbd109-7fb9-44c0-8365-5f40861d2686">
+    <producedTypes>
+      <objectType typeId="8bb9ba84-6fcc-456d-8853-7b3b61b616bd" valueTypeId="ba633a73-a4e6-4000-a33f-21b07b09e39d"/>
+      <rowType typeId="9dce7694-32a7-4d7c-818c-6bfd9ba00d69" valueTypeId="2fb7a374-0ff8-464f-8453-1b8e73143085"/>
+    </producedTypes>
+    <name>Товары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары</value>
+    </synonym>
+    <attributes uuid="81e32f07-e89d-4a0b-8a41-62360f708a23">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2947f4fa-071b-40c5-9ac4-fac5842153b3">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2b89123b-f155-4ddc-8c0c-7bdfa0644162">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="62053862-5c6f-4daa-9555-b2b082bf6e7c">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c4819824-6ad1-4a3e-abe0-e54d136a7fb0">
+      <name>ШтрихкодТовара</name>
+      <synonym>
+        <key>ru</key>
+        <value>Штрихкод товара</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ШтрихкодыТоваров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="03eb2f2d-d731-4c2a-9753-fe9978b67621">
+      <name>КодМаркировки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код маркировки</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

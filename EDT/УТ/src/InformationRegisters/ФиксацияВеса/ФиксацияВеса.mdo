@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="27d7beb4-bd52-4edc-bf32-18d941e471c9">
+  <producedTypes>
+    <selectionType typeId="766ece60-c7e7-4aed-99f5-c4992dd80671" valueTypeId="6b1f5d42-97bc-4d19-8088-5962206c00cc"/>
+    <listType typeId="e68fad4f-395a-4d69-a390-564acc7558fe" valueTypeId="dfdccf4c-0b45-4bcc-8dd5-daab3f7e17e2"/>
+    <managerType typeId="3c467e5f-f610-4eef-8bb7-cee59b4e971e" valueTypeId="02cd1c32-e98a-402e-849a-13ed4cd41fe4"/>
+    <recordSetType typeId="d2f02184-f18a-4a33-ae01-4d330698a20d" valueTypeId="baabf98a-937c-47f5-99bb-7d1e48dcf093"/>
+    <recordKeyType typeId="aacaab87-e10f-4d29-92a4-eb60ba968075" valueTypeId="57d47978-492d-4711-83ef-146e7a5f286b"/>
+    <recordType typeId="0ce3692c-c838-425f-be87-841aa19535c8" valueTypeId="2d6895e2-25c7-44d9-a18d-386032af97ba"/>
+    <recordManagerType typeId="1789f4b8-2947-4389-871e-c440dd2a1701" valueTypeId="2918c49a-a9bc-455a-b39b-7fe39df76301"/>
+  </producedTypes>
+  <name>ФиксацияВеса</name>
+  <synonym>
+    <key>ru</key>
+    <value>Фиксация веса</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="99a867e1-bcbc-469e-89a0-6f3a0ad8b3d5">
+    <name>Вес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вес</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c8061680-c82a-4ac9-bc46-829c3c2d55b8">
+    <name>Весы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Весы</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭлектронныеВесы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c8c19d08-5b0a-46c3-9fe3-dafd35d04506">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4412a9c3-2cf8-4aff-af6d-54a484290edc">
+    <name>МестоЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место заказа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МестаПоЗаказам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

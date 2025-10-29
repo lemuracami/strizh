@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4b0509ef-3cc0-4223-ae74-031c9628e75f">
+  <producedTypes>
+    <objectType typeId="577f0291-3ba8-4702-bb64-9abd7e5bb922" valueTypeId="b68f776c-e8b9-46c0-9e24-2339701ccc2b"/>
+    <refType typeId="5e547a27-9682-4ce6-8c95-65052ba53c27" valueTypeId="1dffeded-46c9-4856-8ad6-2ee9c26d8b90"/>
+    <selectionType typeId="e9b39a3a-e00d-4ff4-b49e-c33ade6e65d4" valueTypeId="efa1283f-1694-4405-807e-2e47c566500b"/>
+    <listType typeId="6dbe5542-e6eb-466b-8dc3-def2f98b3fa1" valueTypeId="79a2e4d4-7d4c-4372-9055-ef1d62710635"/>
+    <managerType typeId="90c543c4-391f-4b9d-81f5-588e864cba38" valueTypeId="8bf2bdd3-ad14-45f6-86a7-4a642beaca72"/>
+  </producedTypes>
+  <name>СвязкиККМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Связки ККМ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.СвязкиККМ.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.СвязкиККМ.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>11</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <quickChoice>true</quickChoice>
+  <choiceMode>QuickChoice</choiceMode>
+  <defaultObjectForm>Catalog.СвязкиККМ.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.СвязкиККМ.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="fb2ecbdf-61c7-4e45-84e9-8b025c8a6d54">
+    <name>РежимРаботыСвязки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим работы связки</value>
+    </synonym>
+    <comment>0 - связка по рабочим местам, 1 - связка организаций по терминалам, 2 - связка ККМ по пользователям</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="166c07cf-64e3-406b-bc79-b39fae079b2e">
+    <producedTypes>
+      <objectType typeId="5888e259-e687-483d-bbb7-386fd8e63f51" valueTypeId="dbc70cc5-79ef-4bf6-8271-3aba45c64b6b"/>
+      <rowType typeId="9e7b7f25-3dae-4b74-a114-e39d9f6efbae" valueTypeId="54d26639-1a23-4c73-b1a3-df6b9d57206c"/>
+    </producedTypes>
+    <name>ККМПоРабочимМестам</name>
+    <synonym>
+      <key>ru</key>
+      <value>ККМПо рабочим местам</value>
+    </synonym>
+    <attributes uuid="7be90d36-a4eb-4f69-ba5a-8a3d0b05b07b">
+      <name>РабочееМесто</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочее место</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РабочиеМеста</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="bcb9f605-8e17-44ab-8cfe-6b4c76ed49cb">
+      <name>ККМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>ККМ</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КассыККМ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="87905bfb-44ca-4628-970d-a2e4e6f07882">
+    <producedTypes>
+      <objectType typeId="59b899f5-5913-49a5-a439-166cca98868f" valueTypeId="1757b50d-b067-4754-8d46-cdf6da97fb72"/>
+      <rowType typeId="0bfc8255-106a-494b-a319-2112aec664c9" valueTypeId="da189196-d311-4253-919a-60bf3278e528"/>
+    </producedTypes>
+    <name>ОрганизацииПоТерминалам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организации по терминалам</value>
+    </synonym>
+    <attributes uuid="d9f9a97c-6bad-4f1a-88ce-c9c59171138a">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3232b1c1-52eb-4d81-b796-e15072a5f943">
+      <name>Терминал</name>
+      <synonym>
+        <key>ru</key>
+        <value>Терминал</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РегиональныеТерминалы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="90738c72-72bb-4642-82bc-fbf40fea9fee">
+    <producedTypes>
+      <objectType typeId="d8d13bb9-ba4f-4910-b64f-a1e646a4dbd6" valueTypeId="274b7adb-565b-4190-98b3-8993d23b471f"/>
+      <rowType typeId="ceed4130-50ca-4e11-8929-eaaa3837f07a" valueTypeId="51b2d92d-74a1-4e94-8eb6-a55ebc75c5a0"/>
+    </producedTypes>
+    <name>ККМПоПользователям</name>
+    <synonym>
+      <key>ru</key>
+      <value>ККМПо пользователям</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="af7a5e47-b617-41f4-98c1-7350b7e66fe5">
+      <name>Пользователь</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пользователь</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="579a606e-2972-4fd3-94d0-83a423cfb6c9">
+      <name>ККМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>ККМ</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КассыККМ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="e84fc6f6-1564-412b-8d08-6afeb499010b">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="35494dd1-ddbb-46ed-9ca0-56fb1a1d8141">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

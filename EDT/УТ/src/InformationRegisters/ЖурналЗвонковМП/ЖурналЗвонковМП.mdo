@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="14835397-c9c2-48fe-82d3-342ec697c7b9">
+  <producedTypes>
+    <selectionType typeId="f07c563e-b2ad-4bcd-9fbe-2e1fc2671882" valueTypeId="c2db795e-aba6-44f8-a2f4-3ce05da4ec16"/>
+    <listType typeId="3483a424-e15e-4327-a8bc-144488752b65" valueTypeId="8cd357a7-f416-41f5-97b8-4a6d37c86cad"/>
+    <managerType typeId="24e255f0-18be-450e-9238-14d8cce4f401" valueTypeId="39f67941-f8f5-43d1-83d6-44b1eb70a97b"/>
+    <recordSetType typeId="041840ef-6026-4d91-b70c-6d4e05f9a4e6" valueTypeId="c04ec2b5-aa17-4188-8792-13686b63b57d"/>
+    <recordKeyType typeId="a6fc39be-af81-4c11-8518-e7fc3245895c" valueTypeId="88ad2e2c-59c1-440b-8a99-95af6c90be71"/>
+    <recordType typeId="886322b7-0b1f-4c44-b1cf-c2bb94e1c551" valueTypeId="810f757d-12fe-4d65-80df-8ce6247ca548"/>
+    <recordManagerType typeId="9443a599-9642-448d-9ed1-3eff420b41a7" valueTypeId="33210cde-3632-4c03-a36e-6b85aee8ffae"/>
+  </producedTypes>
+  <name>ЖурналЗвонковМП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Журнал звонков МП</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ЖурналЗвонковМП.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ЖурналЗвонковМП.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="c8d98f68-c404-4256-b6c2-34337f98a29e">
+    <name>НомерТелефона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер телефона</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="3a6e8735-f495-490d-afff-20f52d163062">
+    <name>Продолжительность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Продолжительность</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="66bf69be-c226-4061-abe9-03d63617dd2c">
+    <name>ТипЗвонка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип звонка</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗвонковМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="feb09ae8-2064-45a0-bfd3-b6668b965da8">
+    <name>МП</name>
+    <synonym>
+      <key>ru</key>
+      <value>МП</value>
+    </synonym>
+    <type>
+      <types>ExchangePlanRef.ИзмененияДляМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="6a247d42-1448-473c-99b6-fd4834d38a8a">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c8d6b315-0dec-4238-a9ee-3e9f86230581">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

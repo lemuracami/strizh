@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="92778c18-1d6a-440c-89cc-320d462fda4d">
+  <producedTypes>
+    <selectionType typeId="c1d28e84-34da-4293-9009-f29e33820352" valueTypeId="0e1f17f0-1c86-4e92-982a-38aa001ef520"/>
+    <listType typeId="17b92ca7-7a1b-477b-97cc-6635b788e375" valueTypeId="04e16feb-a0c0-49cd-93e4-9c915bfb1773"/>
+    <managerType typeId="01ae5ce6-2ee0-40b7-b4ed-b81ac5afe724" valueTypeId="cdc716b6-d14b-4c11-ad74-e4f83ebc11f9"/>
+    <recordSetType typeId="fad788d7-2b90-4a3a-9d8c-2c2cb348bc64" valueTypeId="bda5b0b9-ba18-4f73-a6fc-1d32133b478b"/>
+    <recordKeyType typeId="197441e2-680a-45eb-9abd-86874704f616" valueTypeId="b1118243-b16b-4717-ba0b-725c6089d146"/>
+    <recordType typeId="0e35d99c-6b15-42f8-9d62-ea48b661dd4f" valueTypeId="99785bdc-c6dd-48b5-a668-002d7bd0c613"/>
+    <recordManagerType typeId="41fb7922-1961-48d4-a730-501fa8b75775" valueTypeId="98c1887f-7351-4307-9219-fa934bf2c3b2"/>
+  </producedTypes>
+  <name>ПодъёмыНаБланкахЗаказа</name>
+  <synonym>
+    <key>ru</key>
+    <value>Подъёмы на бланках заказа</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultRecordForm>InformationRegister.ПодъёмыНаБланкахЗаказа.Form.ФормаЗаписи</defaultRecordForm>
+  <resources uuid="2c7ee2ee-5da2-454c-9262-4fe8c1667fc9">
+    <name>Наименование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>500</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="0e4d30b7-d902-4948-9830-78bb9c1c89df">
+    <name>СтоимостьПодъема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость подъема</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="261f5c2e-c90d-4f54-8021-2c9ba8cffac8">
+    <name>ВариантТаблицыПодъемов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант таблицы подъемов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВариантыТаблицыПодъемов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7a75ed6c-30f8-4506-9aa8-81757081f713">
+    <name>НомерПункта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер пункта</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="66378a11-9010-4096-9ea4-38c445b59034">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

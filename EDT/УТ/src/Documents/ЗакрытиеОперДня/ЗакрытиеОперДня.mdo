@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c9e1ab88-5239-4438-9dd0-74d8fc4e434c">
+  <producedTypes>
+    <objectType typeId="1244b52a-280f-4147-a49a-da4073907911" valueTypeId="628d1471-7e8e-4cd0-be12-d0dfb6e55ca9"/>
+    <refType typeId="ce8e0777-e0cc-4b11-812b-caf29e216a2d" valueTypeId="194db80c-1077-49b0-8b40-4035683c13d1"/>
+    <selectionType typeId="4a615dbd-9c07-4f4f-a0e5-ea9cd7a34028" valueTypeId="fdc6c899-6169-4d87-9e91-1be25ba73e86"/>
+    <listType typeId="eb7ebbf6-ed96-44cd-82e0-d4061cce080c" valueTypeId="81c1d394-9d33-48f2-88f9-0f53268ce9fa"/>
+    <managerType typeId="a870bf6c-15d5-443c-ad46-4aa5d8ec3dcc" valueTypeId="725878b2-72ec-4d21-bb04-f18f9abb0473"/>
+  </producedTypes>
+  <name>ЗакрытиеОперДня</name>
+  <synonym>
+    <key>ru</key>
+    <value>Закрытие опер дня</value>
+  </synonym>
+  <inputByString>Document.ЗакрытиеОперДня.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <tabularSections uuid="26c4eaa0-1f10-472b-932c-0eac5c56bd12">
+    <producedTypes>
+      <objectType typeId="edbe9efc-135a-45d8-9168-b9a829859f5d" valueTypeId="ce070a05-894f-438f-b832-cc9be24eb1fc"/>
+      <rowType typeId="b18f37a4-672b-4d29-a41e-df628e9e3a06" valueTypeId="622ddf36-1e4f-424c-a9f0-ed4c4974e104"/>
+    </producedTypes>
+    <name>ФактическийПриход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фактический приход</value>
+    </synonym>
+    <attributes uuid="7f5eac00-0c2e-4c11-8465-dc64be49a8a6">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c0eb4da6-67f6-4a5b-a356-145619a171e0">
+      <name>КоличествоЗаказов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество заказов</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="58798e55-e050-4875-ad3a-213c66c230cc">
+      <name>ДокументПрихода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ прихода</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ФактическийПриходЗаказовНаСклад</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="020babbc-e34c-4b60-be6a-198ebb3538b3">
+      <name>СкладМагазина</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад магазина</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СкладыМагазинов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="deb5ea92-e6e0-48f8-bc4f-33a905717d31">
+      <name>ТерминалПриема</name>
+      <synonym>
+        <key>ru</key>
+        <value>Терминал приема</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РегиональныеТерминалы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2604845e-7eb9-4c09-9f35-522ecc9b9465">
+      <name>ТерминалДоставки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Терминал доставки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РегиональныеТерминалы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

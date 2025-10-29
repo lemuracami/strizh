@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://tempuri.org/"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"
+		xmlns:xsd2="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+		xmlns:xsd3="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration.Managers"
+		xmlns:xsd4="http://schemas.microsoft.com/2003/10/Serialization/"
+		xmlns:xsd5="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+		xmlns:xsd6="http://tempuri.org/"
+		xmlns:xsd7="http://tempuri.org/Imports"
+		name="DCIntegrationService"
+		targetNamespace="http://tempuri.org/">
+	<wsp:Policy wsu:Id="BasicHttpBinding_IDCIntegration_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<pass:TransportBinding xmlns:pass="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy"/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<types>
+		<xsd:schema xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:ns1="http://schemas.microsoft.com/2003/10/Serialization/"
+				xmlns:ns2="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"
+				xmlns:ns3="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration.Managers"
+				xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+				xmlns:ns5="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tns="http://tempuri.org/Imports"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				xmlns:xsd2="http://schemas.microsoft.com/2003/10/Serialization/"
+				xmlns:xsd3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+				xmlns:xsd4="http://tempuri.org/Imports"
+				xmlns:xsd5="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration.Managers"
+				xmlns:xsd7="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+				targetNamespace="http://tempuri.org/Imports">
+			<xsd:import schemaLocation="file://1.xsd"
+					namespace="http://tempuri.org/"/>
+			<xsd:import schemaLocation="file://3.xsd"
+					namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="file://2.xsd"
+					namespace="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"/>
+			<xsd:import schemaLocation="file://4.xsd"
+					namespace="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration.Managers"/>
+			<xsd:import schemaLocation="file://5.xsd"
+					namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+			<xsd:import schemaLocation="file://6.xsd"
+					namespace="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"/>
+		</xsd:schema>
+	</types>
+	<message name="IDCIntegration_Ping_InputMessage">
+		<part name="parameters"
+				element="tns:Ping"/>
+	</message>
+	<message name="IDCIntegration_Ping_OutputMessage">
+		<part name="parameters"
+				element="tns:PingResponse"/>
+	</message>
+	<message name="IDCIntegration_GetLastDeliveryRequests_InputMessage">
+		<part name="parameters"
+				element="tns:GetLastDeliveryRequests"/>
+	</message>
+	<message name="IDCIntegration_GetLastDeliveryRequests_OutputMessage">
+		<part name="parameters"
+				element="tns:GetLastDeliveryRequestsResponse"/>
+	</message>
+	<message name="IDCIntegration_GetLastDeliveryRequestsWithOrderInfo_InputMessage">
+		<part name="parameters"
+				element="tns:GetLastDeliveryRequestsWithOrderInfo"/>
+	</message>
+	<message name="IDCIntegration_GetLastDeliveryRequestsWithOrderInfo_OutputMessage">
+		<part name="parameters"
+				element="tns:GetLastDeliveryRequestsWithOrderInfoResponse"/>
+	</message>
+	<message name="IDCIntegration_GetDeliveryRequests_InputMessage">
+		<part name="parameters"
+				element="tns:GetDeliveryRequests"/>
+	</message>
+	<message name="IDCIntegration_GetDeliveryRequests_OutputMessage">
+		<part name="parameters"
+				element="tns:GetDeliveryRequestsResponse"/>
+	</message>
+	<message name="IDCIntegration_GetCancelledOrders_InputMessage">
+		<part name="parameters"
+				element="tns:GetCancelledOrders"/>
+	</message>
+	<message name="IDCIntegration_GetCancelledOrders_OutputMessage">
+		<part name="parameters"
+				element="tns:GetCancelledOrdersResponse"/>
+	</message>
+	<message name="IDCIntegration_GetShipmentNotifications_InputMessage">
+		<part name="parameters"
+				element="tns:GetShipmentNotifications"/>
+	</message>
+	<message name="IDCIntegration_GetShipmentNotifications_OutputMessage">
+		<part name="parameters"
+				element="tns:GetShipmentNotificationsResponse"/>
+	</message>
+	<message name="IDCIntegration_UpdateDeliveryRequests_InputMessage">
+		<part name="parameters"
+				element="tns:UpdateDeliveryRequests"/>
+	</message>
+	<message name="IDCIntegration_UpdateDeliveryRequests_OutputMessage">
+		<part name="parameters"
+				element="tns:UpdateDeliveryRequestsResponse"/>
+	</message>
+	<message name="IDCIntegration_UpdateDeliveryRequest_InputMessage">
+		<part name="parameters"
+				element="tns:UpdateDeliveryRequest"/>
+	</message>
+	<message name="IDCIntegration_UpdateDeliveryRequest_OutputMessage">
+		<part name="parameters"
+				element="tns:UpdateDeliveryRequestResponse"/>
+	</message>
+	<message name="IDCIntegration_Approve_InputMessage">
+		<part name="parameters"
+				element="tns:Approve"/>
+	</message>
+	<message name="IDCIntegration_Approve_OutputMessage">
+		<part name="parameters"
+				element="tns:ApproveResponse"/>
+	</message>
+	<message name="IDCIntegration_ApproveRequests_InputMessage">
+		<part name="parameters"
+				element="tns:ApproveRequests"/>
+	</message>
+	<message name="IDCIntegration_ApproveRequests_OutputMessage">
+		<part name="parameters"
+				element="tns:ApproveRequestsResponse"/>
+	</message>
+	<message name="IDCIntegration_ApproveById_InputMessage">
+		<part name="parameters"
+				element="tns:ApproveById"/>
+	</message>
+	<message name="IDCIntegration_ApproveById_OutputMessage">
+		<part name="parameters"
+				element="tns:ApproveByIdResponse"/>
+	</message>
+	<message name="IDCIntegration_ApproveRequestsById_InputMessage">
+		<part name="parameters"
+				element="tns:ApproveRequestsById"/>
+	</message>
+	<message name="IDCIntegration_ApproveRequestsById_OutputMessage">
+		<part name="parameters"
+				element="tns:ApproveRequestsByIdResponse"/>
+	</message>
+	<message name="IDCIntegration_Decline_InputMessage">
+		<part name="parameters"
+				element="tns:Decline"/>
+	</message>
+	<message name="IDCIntegration_Decline_OutputMessage">
+		<part name="parameters"
+				element="tns:DeclineResponse"/>
+	</message>
+	<message name="IDCIntegration_DeclineRequests_InputMessage">
+		<part name="parameters"
+				element="tns:DeclineRequests"/>
+	</message>
+	<message name="IDCIntegration_DeclineRequests_OutputMessage">
+		<part name="parameters"
+				element="tns:DeclineRequestsResponse"/>
+	</message>
+	<message name="IDCIntegration_DeclineById_InputMessage">
+		<part name="parameters"
+				element="tns:DeclineById"/>
+	</message>
+	<message name="IDCIntegration_DeclineById_OutputMessage">
+		<part name="parameters"
+				element="tns:DeclineByIdResponse"/>
+	</message>
+	<message name="IDCIntegration_DeclineRequestsById_InputMessage">
+		<part name="parameters"
+				element="tns:DeclineRequestsById"/>
+	</message>
+	<message name="IDCIntegration_DeclineRequestsById_OutputMessage">
+		<part name="parameters"
+				element="tns:DeclineRequestsByIdResponse"/>
+	</message>
+	<message name="IDCIntegration_SetDeliveryStatus_InputMessage">
+		<part name="parameters"
+				element="tns:SetDeliveryStatus"/>
+	</message>
+	<message name="IDCIntegration_SetDeliveryStatus_OutputMessage">
+		<part name="parameters"
+				element="tns:SetDeliveryStatusResponse"/>
+	</message>
+	<message name="IDCIntegration_SetDeliveryStatuses_InputMessage">
+		<part name="parameters"
+				element="tns:SetDeliveryStatuses"/>
+	</message>
+	<message name="IDCIntegration_SetDeliveryStatuses_OutputMessage">
+		<part name="parameters"
+				element="tns:SetDeliveryStatusesResponse"/>
+	</message>
+	<message name="IDCIntegration_ApproveCancelledOrders_InputMessage">
+		<part name="parameters"
+				element="tns:ApproveCancelledOrders"/>
+	</message>
+	<message name="IDCIntegration_ApproveCancelledOrders_OutputMessage">
+		<part name="parameters"
+				element="tns:ApproveCancelledOrdersResponse"/>
+	</message>
+	<message name="IDCIntegration_ApproveShipmentNotifications_InputMessage">
+		<part name="parameters"
+				element="tns:ApproveShipmentNotifications"/>
+	</message>
+	<message name="IDCIntegration_ApproveShipmentNotifications_OutputMessage">
+		<part name="parameters"
+				element="tns:ApproveShipmentNotificationsResponse"/>
+	</message>
+	<portType name="IDCIntegration">
+		<operation name="Ping">
+			<input name="PingRequest"
+					message="tns:IDCIntegration_Ping_InputMessage"/>
+			<output name="PingResponse"
+					message="tns:IDCIntegration_Ping_OutputMessage"/>
+		</operation>
+		<operation name="GetLastDeliveryRequests">
+			<input name="GetLastDeliveryRequestsRequest"
+					message="tns:IDCIntegration_GetLastDeliveryRequests_InputMessage"/>
+			<output name="GetLastDeliveryRequestsResponse"
+					message="tns:IDCIntegration_GetLastDeliveryRequests_OutputMessage"/>
+		</operation>
+		<operation name="GetLastDeliveryRequestsWithOrderInfo">
+			<input name="GetLastDeliveryRequestsWithOrderInfoRequest"
+					message="tns:IDCIntegration_GetLastDeliveryRequestsWithOrderInfo_InputMessage"/>
+			<output name="GetLastDeliveryRequestsWithOrderInfoResponse"
+					message="tns:IDCIntegration_GetLastDeliveryRequestsWithOrderInfo_OutputMessage"/>
+		</operation>
+		<operation name="GetDeliveryRequests">
+			<input name="GetDeliveryRequestsRequest"
+					message="tns:IDCIntegration_GetDeliveryRequests_InputMessage"/>
+			<output name="GetDeliveryRequestsResponse"
+					message="tns:IDCIntegration_GetDeliveryRequests_OutputMessage"/>
+		</operation>
+		<operation name="GetCancelledOrders">
+			<input name="GetCancelledOrdersRequest"
+					message="tns:IDCIntegration_GetCancelledOrders_InputMessage"/>
+			<output name="GetCancelledOrdersResponse"
+					message="tns:IDCIntegration_GetCancelledOrders_OutputMessage"/>
+		</operation>
+		<operation name="GetShipmentNotifications">
+			<input name="GetShipmentNotificationsRequest"
+					message="tns:IDCIntegration_GetShipmentNotifications_InputMessage"/>
+			<output name="GetShipmentNotificationsResponse"
+					message="tns:IDCIntegration_GetShipmentNotifications_OutputMessage"/>
+		</operation>
+		<operation name="UpdateDeliveryRequests">
+			<input name="UpdateDeliveryRequestsRequest"
+					message="tns:IDCIntegration_UpdateDeliveryRequests_InputMessage"/>
+			<output name="UpdateDeliveryRequestsResponse"
+					message="tns:IDCIntegration_UpdateDeliveryRequests_OutputMessage"/>
+		</operation>
+		<operation name="UpdateDeliveryRequest">
+			<input name="UpdateDeliveryRequestRequest"
+					message="tns:IDCIntegration_UpdateDeliveryRequest_InputMessage"/>
+			<output name="UpdateDeliveryRequestResponse"
+					message="tns:IDCIntegration_UpdateDeliveryRequest_OutputMessage"/>
+		</operation>
+		<operation name="Approve">
+			<input name="ApproveRequest"
+					message="tns:IDCIntegration_Approve_InputMessage"/>
+			<output name="ApproveResponse"
+					message="tns:IDCIntegration_Approve_OutputMessage"/>
+		</operation>
+		<operation name="ApproveRequests">
+			<input name="ApproveRequestsRequest"
+					message="tns:IDCIntegration_ApproveRequests_InputMessage"/>
+			<output name="ApproveRequestsResponse"
+					message="tns:IDCIntegration_ApproveRequests_OutputMessage"/>
+		</operation>
+		<operation name="ApproveById">
+			<input name="ApproveByIdRequest"
+					message="tns:IDCIntegration_ApproveById_InputMessage"/>
+			<output name="ApproveByIdResponse"
+					message="tns:IDCIntegration_ApproveById_OutputMessage"/>
+		</operation>
+		<operation name="ApproveRequestsById">
+			<input name="ApproveRequestsByIdRequest"
+					message="tns:IDCIntegration_ApproveRequestsById_InputMessage"/>
+			<output name="ApproveRequestsByIdResponse"
+					message="tns:IDCIntegration_ApproveRequestsById_OutputMessage"/>
+		</operation>
+		<operation name="Decline">
+			<input name="DeclineRequest"
+					message="tns:IDCIntegration_Decline_InputMessage"/>
+			<output name="DeclineResponse"
+					message="tns:IDCIntegration_Decline_OutputMessage"/>
+		</operation>
+		<operation name="DeclineRequests">
+			<input name="DeclineRequestsRequest"
+					message="tns:IDCIntegration_DeclineRequests_InputMessage"/>
+			<output name="DeclineRequestsResponse"
+					message="tns:IDCIntegration_DeclineRequests_OutputMessage"/>
+		</operation>
+		<operation name="DeclineById">
+			<input name="DeclineByIdRequest"
+					message="tns:IDCIntegration_DeclineById_InputMessage"/>
+			<output name="DeclineByIdResponse"
+					message="tns:IDCIntegration_DeclineById_OutputMessage"/>
+		</operation>
+		<operation name="DeclineRequestsById">
+			<input name="DeclineRequestsByIdRequest"
+					message="tns:IDCIntegration_DeclineRequestsById_InputMessage"/>
+			<output name="DeclineRequestsByIdResponse"
+					message="tns:IDCIntegration_DeclineRequestsById_OutputMessage"/>
+		</operation>
+		<operation name="SetDeliveryStatus">
+			<input name="SetDeliveryStatusRequest"
+					message="tns:IDCIntegration_SetDeliveryStatus_InputMessage"/>
+			<output name="SetDeliveryStatusResponse"
+					message="tns:IDCIntegration_SetDeliveryStatus_OutputMessage"/>
+		</operation>
+		<operation name="SetDeliveryStatuses">
+			<input name="SetDeliveryStatusesRequest"
+					message="tns:IDCIntegration_SetDeliveryStatuses_InputMessage"/>
+			<output name="SetDeliveryStatusesResponse"
+					message="tns:IDCIntegration_SetDeliveryStatuses_OutputMessage"/>
+		</operation>
+		<operation name="ApproveCancelledOrders">
+			<input name="ApproveCancelledOrdersRequest"
+					message="tns:IDCIntegration_ApproveCancelledOrders_InputMessage"/>
+			<output name="ApproveCancelledOrdersResponse"
+					message="tns:IDCIntegration_ApproveCancelledOrders_OutputMessage"/>
+		</operation>
+		<operation name="ApproveShipmentNotifications">
+			<input name="ApproveShipmentNotificationsRequest"
+					message="tns:IDCIntegration_ApproveShipmentNotifications_InputMessage"/>
+			<output name="ApproveShipmentNotificationsResponse"
+					message="tns:IDCIntegration_ApproveShipmentNotifications_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_IDCIntegration"
+			type="tns:IDCIntegration">
+		<wsp:PolicyReference URI="#BasicHttpBinding_IDCIntegration_policy"/>
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Ping">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IPingable/Ping"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetLastDeliveryRequests">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/GetLastDeliveryRequests"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetLastDeliveryRequestsWithOrderInfo">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/GetLastDeliveryRequestsWithOrderInfo"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDeliveryRequests">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/GetDeliveryRequests"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetCancelledOrders">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/GetCancelledOrders"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetShipmentNotifications">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/GetShipmentNotifications"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateDeliveryRequests">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/UpdateDeliveryRequests"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UpdateDeliveryRequest">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/UpdateDeliveryRequest"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="Approve">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/Approve"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ApproveRequests">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/ApproveRequests"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ApproveById">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/ApproveById"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ApproveRequestsById">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/ApproveRequestsById"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="Decline">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/Decline"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeclineRequests">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/DeclineRequests"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeclineById">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/DeclineById"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeclineRequestsById">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/DeclineRequestsById"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetDeliveryStatus">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/SetDeliveryStatus"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SetDeliveryStatuses">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/SetDeliveryStatuses"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ApproveCancelledOrders">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/ApproveCancelledOrders"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ApproveShipmentNotifications">
+			<soapbind:operation style="document"
+					soapAction="http://tempuri.org/IDCIntegration/ApproveShipmentNotifications"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="DCIntegrationService">
+		<port name="BasicHttpBinding_IDCIntegration"
+				binding="tns:BasicHttpBinding_IDCIntegration">
+			<soapbind:address location="https://dci.mmr.ms:8046/DCIntegration.svc"/>
+		</port>
+	</service>
+</definitions>

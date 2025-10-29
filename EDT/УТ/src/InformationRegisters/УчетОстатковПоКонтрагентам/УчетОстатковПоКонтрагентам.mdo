@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="24b48aac-0a8d-470b-ac75-4e8c8274601c">
+  <producedTypes>
+    <selectionType typeId="cc40b9e7-d9fb-4e4e-bc6a-c97020834cd3" valueTypeId="36cb1840-7ff4-4027-9f67-c4205509f261"/>
+    <listType typeId="61bfac60-0956-47a1-8231-67a0408b67ff" valueTypeId="401f92fa-b3c8-455d-953b-89489246f090"/>
+    <managerType typeId="d64b23c0-7de5-46e8-9532-920b7d9fa9dc" valueTypeId="32035740-e2d2-4438-9e18-a6562f568510"/>
+    <recordSetType typeId="6a74c712-403b-4c12-bff6-e798efc3e475" valueTypeId="50199e71-c6af-4e64-af54-51cc978cc156"/>
+    <recordKeyType typeId="ece2e35f-5bbe-4833-901b-efe6f9eaf53c" valueTypeId="d1972690-b039-4379-ba6e-4288a018e78e"/>
+    <recordType typeId="a92b1417-2f64-4875-bf58-e0bc1c696bd0" valueTypeId="56f30c4f-dfbd-42fa-99b8-9052c3f3d4dc"/>
+    <recordManagerType typeId="11ee50b1-efe9-4e71-9c04-33a5bdc3f21b" valueTypeId="24284289-ffbb-413f-af96-cd712d3dbf3c"/>
+  </producedTypes>
+  <name>УчетОстатковПоКонтрагентам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет остатков по контрагентам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <resources uuid="63b9c38c-cd37-4e85-9e57-8b84c5165c66">
+    <name>ДатаНачалаУчетаОстатков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала учета остатков</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="aba7810c-f3dc-4a60-a59b-220c51f6f69b">
+    <name>УчитыватьОстатки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учитывать остатки</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="395fe9ec-61ef-4321-ae72-45c1963584e9">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="192dbfd9-095a-438b-b386-24db457d7aa1">
+  <producedTypes>
+    <selectionType typeId="924c5dc0-a9e8-491e-bc10-5001ce0de007" valueTypeId="db8e60f8-a815-4243-8a14-6be76c0f4732"/>
+    <listType typeId="bc98c47a-d649-4530-8a3c-4ae25b36c4b0" valueTypeId="b6070f26-9dd1-4ba5-b8fe-7130be9f9bed"/>
+    <managerType typeId="3da0fae2-88d1-48f0-9f63-b43b0e7873a0" valueTypeId="f4263286-da4b-42e2-afc1-38d12bdfd819"/>
+    <recordSetType typeId="1efe8dba-f6c4-4755-9a85-bf3072c19af8" valueTypeId="28f71c98-244b-4a45-b86c-518715a47313"/>
+    <recordKeyType typeId="2c56b3a1-f935-4e38-9720-b08f83a596e7" valueTypeId="404ec183-26b8-4f27-9108-3ff75df36714"/>
+    <recordType typeId="9b09e85a-b6df-43bf-8abe-63b212756b9a" valueTypeId="33b13cf7-d3f6-45ee-a305-23380e17c983"/>
+    <recordManagerType typeId="8cfe2864-d594-4b18-9d8f-d5fc28dea255" valueTypeId="77a39cbe-6bad-4a9a-8ac6-8178aa6bb218"/>
+  </producedTypes>
+  <name>СформированныйГрафикПоТранспорту</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сформированный график по транспорту</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="cc634dc2-9da6-455e-b0d6-5bf36c6cff13">
+    <name>ТранспортВыйдетВРейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт выйдет в рейс</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="35dc53fc-5289-4603-bdde-84304ea17d0f">
+    <name>СформированныйРейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сформированный рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="85c3d718-acb8-414c-9235-b73893bc2293">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="289d5464-66d3-49de-977b-e441ccc3cd3e">
+    <name>Экспедитор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экспедитор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="01de80bd-7c33-4248-a120-a9ad2d8d0fdb">
+    <name>РольРейса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль рейса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиТранспорта</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="a5fb0f45-7c4f-4c3e-a879-2b4d84357c5d">
+    <name>СменаРейса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена рейса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Смены</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="19e010a8-17cf-4589-b2d0-10948536ebc1">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2954502f-a215-4775-b820-665e3767bba4">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c019ec3f-604f-433b-9ba4-b5f9aa49b754">
+    <name>ГрафикЭкипажей</name>
+    <synonym>
+      <key>ru</key>
+      <value>График экипажей</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ГрафикЭкипажей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="89b7fc12-9aa8-4a6b-8483-82ad277edc1f">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9c97d0b4-af4b-4123-b460-ca874f91fa23">
+    <name>ДатаРейса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата рейса</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="50c32dbb-a596-4c89-a460-4faa928728e7">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

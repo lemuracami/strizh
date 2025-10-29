@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Доставка</dataPath>
+			<field>Доставка</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаНеВыполнения</dataPath>
+			<field>ПричинаНеВыполнения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказНомер</dataPath>
+			<field>ЗаказНомер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаОтказа</dataPath>
+			<field>ПричинаОтказа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПереноса</dataPath>
+			<field>ДатаПереноса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РезультатДоставки</dataPath>
+			<field>РезультатДоставки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водитель</dataPath>
+			<field>Водитель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водитель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Транспорт</dataPath>
+			<field>Транспорт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Транспорт</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Экспедитор</dataPath>
+			<field>Экспедитор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспедитор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТелефонКлиента</dataPath>
+			<field>ТелефонКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Телефон</dataPath>
+			<field>Телефон</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВремяПроставления</dataPath>
+			<field>ВремяПроставления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время проставления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рейс</dataPath>
+			<field>Рейс</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Магазин</dataPath>
+			<field>Магазин</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Магазин</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВременнойИнтервал</dataPath>
+			<field>ВременнойИнтервал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Временной интервал</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВремяС</dataPath>
+			<field>ВремяС</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время С</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Time</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВремяПо</dataPath>
+			<field>ВремяПо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время по</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Time</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗонаТарификации</dataPath>
+			<field>ЗонаТарификации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зона тарификации</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеСтажа</dataPath>
+			<field>ЗначениеСтажа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение стажа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодичностьСтажа</dataPath>
+			<field>ПериодичностьСтажа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Периодичность стажа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВЫРАЗИТЬ(СостоянияЗаказов.Регистратор КАК Документ.новаОтчетВодителя).Рейс.Дата КАК Период,
+	СостоянияЗаказов.Доставка КАК Доставка,
+	СостоянияЗаказов.Заказ КАК Заказ,
+	СостоянияЗаказов.РезультатДоставки КАК РезультатДоставки,
+	СостоянияЗаказов.ПричинаНеВыполнения КАК ПричинаНеВыполнения,
+	СостоянияЗаказов.ПричинаОтказа КАК ПричинаОтказа,
+	СостоянияЗаказов.ДатаПереноса КАК ДатаПереноса,
+	СостоянияЗаказов.Заказ.Номер КАК ЗаказНомер,
+	СостоянияЗаказов.Регистратор КАК Регистратор,
+	СостоянияЗаказов.Регистратор.Водитель КАК Водитель,
+	СостоянияЗаказов.Регистратор.Транспорт КАК Транспорт,
+	СостоянияЗаказов.Регистратор.Экспедитор КАК Экспедитор,
+	ЕСТЬNULL(ОперативноеНазначениеТАНаРейсСрезПоследних.ТА, ТелефонныеАппаратыТранспортаСрезПоследних.ТА.Телефон) КАК Телефон,
+	СостоянияЗаказов.Заказ.Телефон КАК ТелефонКлиента,
+	СостоянияЗаказов.Заказ.ВладелецТовара КАК Магазин,
+	СостоянияЗаказов.Доставка.ВремяПрибытияПо КАК ВременнойИнтервал,
+	СостоянияЗаказов.Доставка.ВремяПрибытияС КАК ДоставкаВремяПрибытияС,
+	СостоянияЗаказов.Доставка.ВремяПрибытияПо КАК ДоставкаВремяПрибытияПо,
+	ЕСТЬNULL(ПараметрыТарифаЗаказаСрезПоследних.ЗонаТарификации, ЗНАЧЕНИЕ(Справочник.ГруппыРайонов.ПустаяСсылка)) КАК ЗаказЗонаТарификации,
+	ВЫБОР
+		КОГДА СостоянияЗаказов.Регистратор.Экспедитор = ЗНАЧЕНИЕ(Справочник.новаЭкспедиторы.ПустаяСсылка)
+			ТОГДА СостоянияЗаказов.Регистратор.Водитель.ДатаПриемаНаРаботу
+		ИНАЧЕ СостоянияЗаказов.Регистратор.Экспедитор.ДатаПриемаНаРаботу
+	КОНЕЦ КАК ДатаПриемаНаРаботу
+ПОМЕСТИТЬ ВТ
+ИЗ
+	РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ТелефонныеАппаратыТранспорта.СрезПоследних КАК ТелефонныеАппаратыТранспортаСрезПоследних
+		ПО СостоянияЗаказов.Регистратор.Транспорт = ТелефонныеАппаратыТранспортаСрезПоследних.Транспорт
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ОперативноеНазначениеТАНаРейс.СрезПоследних КАК ОперативноеНазначениеТАНаРейсСрезПоследних
+		ПО СостоянияЗаказов.Регистратор.Рейс = ОперативноеНазначениеТАНаРейсСрезПоследних.Рейс.РейсМестнойДоставки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыТарифаЗаказа.СрезПоследних({(&amp;ПериодСреза)}, ) КАК ПараметрыТарифаЗаказаСрезПоследних
+		ПО СостоянияЗаказов.Заказ = ПараметрыТарифаЗаказаСрезПоследних.Заказ
+ГДЕ
+	СостоянияЗаказов.Регистратор ССЫЛКА Документ.новаОтчетВодителя
+	И СостоянияЗаказов.РезультатДоставки = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НеВыполнена)
+	И ВЫРАЗИТЬ(СостоянияЗаказов.Регистратор КАК Документ.новаОтчетВодителя).Рейс.Дата МЕЖДУ &amp;Период1 И &amp;Период2
+	И СостоянияЗаказов.Заказ.ТерминалДоставки = &amp;Терминал
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДанныеЗаказаВодителя.Реализация КАК Реализация,
+	МАКСИМУМ(ДанныеЗаказаВодителя.Дата) КАК Дата,
+	ДанныеЗаказаВодителя.ПричинаНеВыполненияДоставки КАК ПричинаНеВыполненияДоставки,
+	ДанныеЗаказаВодителя.ПричинаОтказаПереноса КАК ПричинаОтказаПереноса,
+	ДанныеЗаказаВодителя.Водитель КАК Водитель
+ПОМЕСТИТЬ ВТ_ДанныеВодителя
+ИЗ
+	Документ.ДанныеЗаказаВодителя КАК ДанныеЗаказаВодителя
+ГДЕ
+	ДанныеЗаказаВодителя.Реализация В
+			(ВЫБРАТЬ
+				ВТ.Заказ
+			ИЗ
+				ВТ КАК ВТ)
+	И ДанныеЗаказаВодителя.Дата МЕЖДУ &amp;Период1 И &amp;Период2
+
+СГРУППИРОВАТЬ ПО
+	ДанныеЗаказаВодителя.Реализация,
+	ДанныеЗаказаВодителя.Водитель,
+	ДанныеЗаказаВодителя.ПричинаОтказаПереноса,
+	ДанныеЗаказаВодителя.ПричинаНеВыполненияДоставки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ.Период КАК Период,
+	ВТ.Доставка КАК Доставка,
+	ВТ.Заказ КАК Заказ,
+	ВТ.РезультатДоставки КАК РезультатДоставки,
+	ВТ.ПричинаНеВыполнения КАК ПричинаНеВыполнения,
+	ВТ.ПричинаОтказа КАК ПричинаОтказа,
+	ВТ.ДатаПереноса КАК ДатаПереноса,
+	ВТ.ЗаказНомер КАК ЗаказНомер,
+	ВТ.Регистратор КАК Регистратор,
+	ВТ.Водитель КАК Водитель,
+	ВТ.Транспорт КАК Транспорт,
+	ВТ.Экспедитор КАК Экспедитор,
+	ВТ.Телефон КАК Телефон,
+	ВТ.ТелефонКлиента КАК ТелефонКлиента,
+	ЕСТЬNULL(ВТ_ДанныеВодителя.Дата, ВТ.Период) КАК ВремяПроставления,
+	ВТ.Магазин КАК Магазин,
+	ВТ.ВременнойИнтервал КАК ВременнойИнтервал,
+	ВТ.ДоставкаВремяПрибытияС КАК ВремяС,
+	ВТ.ДоставкаВремяПрибытияПо КАК ВремяПо,
+	ВТ.ЗаказЗонаТарификации КАК ЗонаТарификации,
+	ВЫБОР
+		КОГДА ВТ.ДатаПриемаНаРаботу = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)
+				ИЛИ ВТ.ДатаПриемаНаРаботу ЕСТЬ NULL
+			ТОГДА ""
+		КОГДА РАЗНОСТЬДАТ(ВТ.ДатаПриемаНаРаботу, &amp;ТекущаяДата, ДЕНЬ) &gt;= 365
+			ТОГДА ВЫРАЗИТЬ(РАЗНОСТЬДАТ(ВТ.ДатаПриемаНаРаботу, &amp;ТекущаяДата, ДЕНЬ) / 365 КАК ЧИСЛО(3, 1))
+		ИНАЧЕ ВЫРАЗИТЬ(РАЗНОСТЬДАТ(ВТ.ДатаПриемаНаРаботу, &amp;ТекущаяДата, ДЕНЬ) / 30 КАК ЧИСЛО(2, 0))
+	КОНЕЦ КАК ЗначениеСтажа,
+	ВЫБОР
+		КОГДА ВТ.ДатаПриемаНаРаботу = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)
+				ИЛИ ВТ.ДатаПриемаНаРаботу ЕСТЬ NULL
+			ТОГДА ""
+		КОГДА РАЗНОСТЬДАТ(ВТ.ДатаПриемаНаРаботу, &amp;ТекущаяДата, ДЕНЬ) &gt;= 365
+			ТОГДА " год."
+		ИНАЧЕ " мес."
+	КОНЕЦ КАК ПериодичностьСтажа
+ИЗ
+	ВТ КАК ВТ
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДанныеВодителя КАК ВТ_ДанныеВодителя
+		ПО ВТ.Заказ = ВТ_ДанныеВодителя.Реализация
+			И ВТ.ПричинаНеВыполнения = ВТ_ДанныеВодителя.ПричинаНеВыполненияДоставки
+			И ВТ.ПричинаОтказа = ВТ_ДанныеВодителя.ПричинаОтказаПереноса
+			И (ВТ_ДанныеВодителя.Дата МЕЖДУ НАЧАЛОПЕРИОДА(ВТ.Период, ДЕНЬ) И КОНЕЦПЕРИОДА(ВТ.Период, ДЕНЬ))</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Стаж</dataPath>
+		<expression>Строка(ЗначениеСтажа) + ПериодичностьСтажа</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стаж</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>Период1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НАЧАЛОПЕРИОДА(&amp;СтПериод.ДатаНачала, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>Период2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(&amp;СтПериод.ДатаОкончания, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>СтПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Терминал</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Терминал</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РегиональныеТерминалы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодСреза</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период среза</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПричинаОтказа</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>c29b2e7e-c368-468c-9392-07b214aa5549</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Водитель</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>f9ecaa5f-3630-41bd-a82a-16d784ee8244</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Экспедитор</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>73099df6-057a-4fbf-bb96-3c6174691e7a</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Магазин</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:userSettingID>98c39b05-e969-4a95-b5bf-215fd6ebee34</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Yesterday</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>473418b0-c5ce-4554-b09b-2a1a011c8478</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Терминал</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.РегиональныеТерминалы.МоскваСтриж</dcscor:value>
+					<dcsset:userSettingID>4c863084-c159-467e-ab60-b1f829b51ef4</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ВременнойИнтервал</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Период</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВременнойИнтервал</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВремяС</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВремяПо</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Магазин</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВремяПроставления</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Время данных водителя</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>Период</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Время статуса</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаказНомер</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Номер заказа</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Заказ.НомерВнешнегоЗаказа</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Внешний номер</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПричинаНеВыполнения</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Причина невыполнения</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПричинаОтказа</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Причина отказа</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Транспорт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Водитель</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Экспедитор</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Телефон</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тел. экипажа</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ТелефонКлиента</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тел. клиента</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗонаТарификации</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Стаж</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

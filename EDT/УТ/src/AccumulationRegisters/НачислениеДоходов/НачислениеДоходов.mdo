@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bcf84bb3-b879-4c12-a200-c3f66e52af74">
+  <producedTypes>
+    <selectionType typeId="5bbcc724-d4e5-4bee-ae67-18b9ee6d6488" valueTypeId="72eead20-f9ed-4d30-b817-bee350e26251"/>
+    <listType typeId="09c02376-b3f1-4b02-90e0-4687dafb1e28" valueTypeId="8fe753d7-421b-49e9-b1d1-c312681cc28d"/>
+    <managerType typeId="4c39b31d-f9e1-4f96-806b-3f39541b036a" valueTypeId="a387fab7-0aa1-4f37-8eed-bd75eef13074"/>
+    <recordSetType typeId="f99fa0c0-68a8-47e1-b2e2-7e543de82be1" valueTypeId="0c98fa40-c79a-4951-909e-ea20f552b328"/>
+    <recordKeyType typeId="20015c1d-1bf6-4409-975d-f2fd2a26619b" valueTypeId="4cff2ecb-dd95-425b-be37-abe7c768ca62"/>
+    <recordType typeId="b618cce4-620e-4cff-ab44-4e7dbe8cefc0" valueTypeId="1955d180-1916-43e3-834c-8eec7fb86784"/>
+  </producedTypes>
+  <name>НачислениеДоходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Начисление доходов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="097bba74-e85e-46dc-9f50-7723d152a9c5">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="88b4096a-264a-424e-a162-4a1abd57c531">
+    <name>Юрлицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Юрлицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="838b1bf3-58d0-4b68-8d1a-ec30437f974b">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="64b2bd74-23cb-4b5f-9866-60e735d6bd1f">
+    <name>СтатьяДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья доходов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиДоходовКомпании</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d276079d-0a0e-4eba-bb85-c1cfe117810c">
+    <name>КатегорияДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КатегорииДоставки2014</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c61c5d00-baf6-49ad-81a8-85fb320297ec">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

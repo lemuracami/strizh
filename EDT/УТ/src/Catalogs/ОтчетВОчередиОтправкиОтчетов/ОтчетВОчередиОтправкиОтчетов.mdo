@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="68d47271-556e-490d-b123-7e37430d2051">
+  <producedTypes>
+    <objectType typeId="0d988f1d-bcd5-42b7-bd50-b947c5a0581d" valueTypeId="65a8dbe6-891d-43dc-b8d9-12d76f951951"/>
+    <refType typeId="29b7c4dd-210a-48d8-9449-9cccbf89a41c" valueTypeId="d6d3471d-20f7-4fdf-87fd-cec757a15e33"/>
+    <selectionType typeId="1ff09a1c-17f1-43be-a75b-b9c5ad251035" valueTypeId="b61b81a3-a3ba-4cbe-a5ba-1bee6b56a8fd"/>
+    <listType typeId="c2e543b3-d694-42d4-8c26-86219962dbc1" valueTypeId="78390d5d-1124-4ef3-b221-d85ebf1d17c9"/>
+    <managerType typeId="b595b4e3-6611-41ca-8745-4f7de82b030d" valueTypeId="9c19ecd1-d2d9-436e-bf13-4f90b09f644d"/>
+  </producedTypes>
+  <name>ОтчетВОчередиОтправкиОтчетов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отчет в очереди отправки отчетов</value>
+  </synonym>
+  <inputByString>Catalog.ОтчетВОчередиОтправкиОтчетов.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>11</codeLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="dfae1d3c-3628-44c9-9810-e4805f16d314">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ade25c10-0cf2-4d15-8a53-8f6a3525e5b0">
+    <name>ВидОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид отчета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыОтправляемыхОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="80c49059-73b6-40c4-adc1-9cff30bc6b8f">
+    <name>ТипРассылки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип рассылки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыРассылки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="d6c8de7c-65a5-4766-9a0f-3c30a02d03a0">
+    <producedTypes>
+      <objectType typeId="9cce3d94-00b8-40d2-afae-7041d2ed9993" valueTypeId="532773b7-b80e-4ea7-869d-afab5a7a64b1"/>
+      <rowType typeId="36042363-4a7d-4734-a26d-456cd80c734e" valueTypeId="1fe679ae-97e3-4142-bfde-9ddbfcc44a2d"/>
+    </producedTypes>
+    <name>ПараметрыОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Параметры отчета</value>
+    </synonym>
+    <attributes uuid="929f3061-3612-4446-bde3-8f656e9400ea">
+      <name>Параметр</name>
+      <synonym>
+        <key>ru</key>
+        <value>Параметр</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c12d8631-ee48-4b92-91c4-f64b46292925">
+      <name>Значение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <types>AnyRef</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

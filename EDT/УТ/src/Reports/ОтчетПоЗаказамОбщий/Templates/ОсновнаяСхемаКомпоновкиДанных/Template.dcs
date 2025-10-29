@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаКалендаря</dataPath>
+			<field>ДатаКалендаря</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЗаказа</dataPath>
+			<field>СуммаЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЧислоПозиций</dataPath>
+			<field>ЧислоПозиций</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Число позиций</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаЗаказа</dataPath>
+			<field>ДатаЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Транспорт</dataPath>
+			<field>Транспорт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автопарк</dataPath>
+			<field>Автопарк</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автопарк</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Водитель</dataPath>
+			<field>Водитель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водитель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Экспедитор</dataPath>
+			<field>Экспедитор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспедитор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерЗаказа</dataPath>
+			<field>НомерЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря КАК ДатаКалендаря
+ПОМЕСТИТЬ ВТ_ТаблицаДат
+ИЗ
+	РегистрСведений.РегламентированныйПроизводственныйКалендарь КАК РегламентированныйПроизводственныйКалендарь
+ГДЕ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(новаЗаданияРейсов.Рейс) КАК Рейс,
+	новаЗаданияРейсов.Доставка
+ПОМЕСТИТЬ ВТ_Рейс_МестнаяДоставка
+ИЗ
+	РегистрСведений.новаЗаданияРейсов КАК новаЗаданияРейсов
+
+СГРУППИРОВАТЬ ПО
+	новаЗаданияРейсов.Доставка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РеализацияТоваровУслугТовары.Номенклатура,
+	РеализацияТоваровУслугТовары.Сумма,
+	РеализацияТоваровУслугТовары.Ссылка.Номер КАК Номер,
+	РеализацияТоваровУслугТовары.Ссылка.Дата
+ПОМЕСТИТЬ РеализацияБезВозвратов
+ИЗ
+	Документ.РеализацияТоваровУслуг.Товары КАК РеализацияТоваровУслугТовары
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+		ПО РеализацияТоваровУслугТовары.Ссылка.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+ГДЕ
+	НЕ РеализацияТоваровУслугТовары.Ссылка.Номер В
+				(ВЫБРАТЬ
+					ВозвратТоваровОтПокупателя.Номер
+				ИЗ
+					Документ.ВозвратТоваровОтПокупателя КАК ВозвратТоваровОтПокупателя
+				ГДЕ
+					ВозвратТоваровОтПокупателя.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+	И РеализацияТоваровУслугТовары.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	NULL,
+	РеализацияТоваровУслугУслуги.Сумма,
+	РеализацияТоваровУслугУслуги.Ссылка.Номер,
+	РеализацияТоваровУслугУслуги.Ссылка.Дата
+ИЗ
+	Документ.РеализацияТоваровУслуг.Услуги КАК РеализацияТоваровУслугУслуги
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+		ПО РеализацияТоваровУслугУслуги.Ссылка.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+ГДЕ
+	НЕ РеализацияТоваровУслугУслуги.Ссылка.Номер В
+				(ВЫБРАТЬ
+					ВозвратТоваровОтПокупателя.Номер
+				ИЗ
+					Документ.ВозвратТоваровОтПокупателя КАК ВозвратТоваровОтПокупателя
+				ГДЕ
+					ВозвратТоваровОтПокупателя.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+	И РеализацияТоваровУслугУслуги.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РеализацияТоваровУслугПодарочныеПозиции.Номенклатура,
+	РеализацияТоваровУслугПодарочныеПозиции.Сумма,
+	РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер,
+	РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Дата
+ИЗ
+	Документ.РеализацияТоваровУслуг.ПодарочныеПозиции КАК РеализацияТоваровУслугПодарочныеПозиции
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+		ПО РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+ГДЕ
+	НЕ РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер В
+				(ВЫБРАТЬ
+					ВозвратТоваровОтПокупателя.Номер
+				ИЗ
+					Документ.ВозвратТоваровОтПокупателя КАК ВозвратТоваровОтПокупателя
+				ГДЕ
+					ВозвратТоваровОтПокупателя.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+	И РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РеализацииВозврат.Номенклатура,
+	МАКСИМУМ(РеализацииВозврат.Сумма) КАК Сумма,
+	РеализацииВозврат.Номер,
+	МАКСИМУМ(РеализацииВозврат.Дата) КАК Дата
+ПОМЕСТИТЬ РеализацияВозврат
+ИЗ
+	(ВЫБРАТЬ
+		РеализацияТоваровУслугТовары.Номенклатура КАК Номенклатура,
+		РеализацияТоваровУслугТовары.Сумма КАК Сумма,
+		РеализацияТоваровУслугТовары.Ссылка.Номер КАК Номер,
+		РеализацияТоваровУслугТовары.Ссылка.Дата КАК Дата
+	ИЗ
+		Документ.РеализацияТоваровУслуг.Товары КАК РеализацияТоваровУслугТовары
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+			ПО РеализацияТоваровУслугТовары.Ссылка.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+	ГДЕ
+		РеализацияТоваровУслугТовары.Ссылка.Номер В
+				(ВЫБРАТЬ
+					ВозвратТоваровОтПокупателя.Номер
+				ИЗ
+					Документ.ВозвратТоваровОтПокупателя КАК ВозвратТоваровОтПокупателя
+				ГДЕ
+					ВозвратТоваровОтПокупателя.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+		И РеализацияТоваровУслугТовары.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		NULL,
+		РеализацияТоваровУслугУслуги.Сумма,
+		РеализацияТоваровУслугУслуги.Ссылка.Номер,
+		РеализацияТоваровУслугУслуги.Ссылка.Дата
+	ИЗ
+		Документ.РеализацияТоваровУслуг.Услуги КАК РеализацияТоваровУслугУслуги
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+			ПО РеализацияТоваровУслугУслуги.Ссылка.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+	ГДЕ
+		РеализацияТоваровУслугУслуги.Ссылка.Номер В
+				(ВЫБРАТЬ
+					ВозвратТоваровОтПокупателя.Номер
+				ИЗ
+					Документ.ВозвратТоваровОтПокупателя КАК ВозвратТоваровОтПокупателя
+				ГДЕ
+					ВозвратТоваровОтПокупателя.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+		И РеализацияТоваровУслугУслуги.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РеализацияТоваровУслугПодарочныеПозиции.Номенклатура,
+		РеализацияТоваровУслугПодарочныеПозиции.Сумма,
+		РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер,
+		РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Дата
+	ИЗ
+		Документ.РеализацияТоваровУслуг.ПодарочныеПозиции КАК РеализацияТоваровУслугПодарочныеПозиции
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+			ПО РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+	ГДЕ
+		РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Номер В
+				(ВЫБРАТЬ
+					ВозвратТоваровОтПокупателя.Номер
+				ИЗ
+					Документ.ВозвратТоваровОтПокупателя КАК ВозвратТоваровОтПокупателя
+				ГДЕ
+					ВозвратТоваровОтПокупателя.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+		И РеализацияТоваровУслугПодарочныеПозиции.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ВозвратТоваровОтПокупателяТовары.Номенклатура,
+		ВозвратТоваровОтПокупателяТовары.Сумма,
+		ВозвратТоваровОтПокупателяТовары.Ссылка.Номер,
+		ВозвратТоваровОтПокупателяТовары.Ссылка.Дата
+	ИЗ
+		Документ.ВозвратТоваровОтПокупателя.Товары КАК ВозвратТоваровОтПокупателяТовары
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+			ПО ВозвратТоваровОтПокупателяТовары.Ссылка.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+	ГДЕ
+		ВозвратТоваровОтПокупателяТовары.Ссылка.Номер В
+				(ВЫБРАТЬ
+					ВозвратТоваровОтПокупателя.Номер
+				ИЗ
+					Документ.ВозвратТоваровОтПокупателя КАК ВозвратТоваровОтПокупателя
+				ГДЕ
+					ВозвратТоваровОтПокупателя.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+		И ВозвратТоваровОтПокупателяТовары.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода) КАК РеализацииВозврат
+
+СГРУППИРОВАТЬ ПО
+	РеализацииВозврат.Номенклатура,
+	РеализацииВозврат.Номер
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(ОбъединениеРеализаций.Номенклатура) КАК Номенклатура,
+	СУММА(ОбъединениеРеализаций.Сумма) КАК Сумма,
+	ОбъединениеРеализаций.Номер,
+	ВТ_Рейс_МестнаяДоставка.Рейс.Транспорт КАК РейсТранспорт,
+	МАКСИМУМ(ВТ_Рейс_МестнаяДоставка.Доставка.СтоимостьДоставкиДоМКАД) КАК ДоставкаСтоимостьДоставкиДоМКАД,
+	МАКСИМУМ(ВТ_Рейс_МестнаяДоставка.Доставка.СтоимостьДоставкиЗаМКАД) КАК ДоставкаСтоимостьДоставкиЗаМКАД,
+	МАКСИМУМ(ОбъединениеРеализаций.Дата) КАК Дата,
+	ВТ_Рейс_МестнаяДоставка.Рейс.Экспедитор,
+	ВТ_Рейс_МестнаяДоставка.Рейс.Водитель
+ПОМЕСТИТЬ ИтогРеализация
+ИЗ
+	(ВЫБРАТЬ
+		РеализацияБезВозвратов.Номенклатура КАК Номенклатура,
+		РеализацияБезВозвратов.Сумма КАК Сумма,
+		РеализацияБезВозвратов.Номер КАК Номер,
+		РеализацияБезВозвратов.Дата КАК Дата
+	ИЗ
+		РеализацияБезВозвратов КАК РеализацияБезВозвратов
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РеализацияВозврат.Номенклатура,
+		РеализацияВозврат.Сумма,
+		РеализацияВозврат.Номер,
+		РеализацияВозврат.Дата
+	ИЗ
+		РеализацияВозврат КАК РеализацияВозврат) КАК ОбъединениеРеализаций
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Рейс_МестнаяДоставка КАК ВТ_Рейс_МестнаяДоставка
+		ПО ОбъединениеРеализаций.Номер = ВТ_Рейс_МестнаяДоставка.Доставка.Номер
+
+СГРУППИРОВАТЬ ПО
+	ОбъединениеРеализаций.Номер,
+	ВТ_Рейс_МестнаяДоставка.Рейс.Экспедитор,
+	ВТ_Рейс_МестнаяДоставка.Рейс.Водитель,
+	ВТ_Рейс_МестнаяДоставка.Рейс.Транспорт
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(ДанныеЗаказаСамовывозаДоставленныеТовары.Номенклатура) КАК Номенклатура,
+	СУММА(ДанныеЗаказаСамовывозаДоставленныеТовары.Сумма) КАК Сумма,
+	ДанныеЗаказаСамовывозаДоставленныеТовары.Ссылка.Номер,
+	МАКСИМУМ(ДанныеЗаказаСамовывозаДоставленныеТовары.Ссылка.Дата) КАК Дата
+ПОМЕСТИТЬ ИтогСамовывоз
+ИЗ
+	Документ.ДанныеЗаказаСамовывоза.ДоставленныеТовары КАК ДанныеЗаказаСамовывозаДоставленныеТовары
+ГДЕ
+	ДанныеЗаказаСамовывозаДоставленныеТовары.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	ДанныеЗаказаСамовывозаДоставленныеТовары.Ссылка.Номер
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(ЗаборТовараТовары.Номенклатура) КАК Номенклатура,
+	СУММА(ЗаборТовараТовары.Сумма) КАК Сумма,
+	ЗаборТовараТовары.Ссылка.Номер,
+	ЗаборТовараТовары.Ссылка.Транспорт КАК Транспорт,
+	МАКСИМУМ(ЗаборТовараТовары.Ссылка.Дата) КАК Дата,
+	ЗаборТовараТовары.Ссылка.Водитель,
+	ЗаборТовараТовары.Ссылка.Экспедитор
+ПОМЕСТИТЬ ИтогЗабор
+ИЗ
+	Документ.ЗаборТовара.Товары КАК ЗаборТовараТовары
+ГДЕ
+	ЗаборТовараТовары.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	ЗаборТовараТовары.Ссылка.Номер,
+	ЗаборТовараТовары.Ссылка.Транспорт,
+	ЗаборТовараТовары.Ссылка.Водитель,
+	ЗаборТовараТовары.Ссылка.Экспедитор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИтогРеализация.Номер,
+	ИтогРеализация.Номенклатура КАК ЧислоПозиций,
+	ИтогРеализация.Сумма + ИтогРеализация.ДоставкаСтоимостьДоставкиДоМКАД + ИтогРеализация.ДоставкаСтоимостьДоставкиЗаМКАД КАК СуммаЗаказа,
+	ИтогРеализация.Дата,
+	ИтогРеализация.РейсТранспорт КАК Транспорт,
+	ИтогРеализация.РейсВодитель КАК Водитель,
+	ИтогРеализация.РейсЭкспедитор КАК Экспедитор
+ПОМЕСТИТЬ ВТ_Итоговая
+ИЗ
+	ИтогРеализация КАК ИтогРеализация
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ИтогСамовывоз.Номер,
+	ИтогСамовывоз.Номенклатура,
+	ИтогСамовывоз.Сумма,
+	ИтогСамовывоз.Дата,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ИтогСамовывоз КАК ИтогСамовывоз
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ИтогЗабор.Номер,
+	ИтогЗабор.Номенклатура,
+	ИтогЗабор.Сумма,
+	ИтогЗабор.Дата,
+	ИтогЗабор.Транспорт,
+	ИтогЗабор.Водитель,
+	ИтогЗабор.Экспедитор
+ИЗ
+	ИтогЗабор КАК ИтогЗабор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Итоговая.Номер КАК Номер,
+	ВТ_Итоговая.ЧислоПозиций,
+	ВТ_Итоговая.СуммаЗаказа,
+	ВТ_Итоговая.Дата КАК ДатаЗаказа,
+	ВТ_ТаблицаДат.ДатаКалендаря КАК ДатаКалендаря,
+	ВТ_Итоговая.Транспорт КАК Транспорт,
+	ВЫБОР
+		КОГДА ВТ_Итоговая.Водитель = ЗНАЧЕНИЕ(Справочник.НоваВодители.ПустаяСсылка)
+			ТОГДА NULL
+		ИНАЧЕ ВТ_Итоговая.Водитель
+	КОНЕЦ КАК Водитель,
+	ВЫБОР
+		КОГДА ВТ_Итоговая.Экспедитор = ЗНАЧЕНИЕ(Справочник.НоваЭкспедиторы.ПустаяСсылка)
+			ТОГДА NULL
+		ИНАЧЕ ВТ_Итоговая.Экспедитор
+	КОНЕЦ КАК Экспедитор,
+	80 КАК Автопарк,
+	ВТ_Итоговая.Номер КАК НомерЗаказа
+ИЗ
+	ВТ_ТаблицаДат КАК ВТ_ТаблицаДат
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Итоговая КАК ВТ_Итоговая
+		ПО (ВТ_ТаблицаДат.ДатаКалендаря = НАЧАЛОПЕРИОДА(ВТ_Итоговая.Дата, ДЕНЬ))</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Номер</dataPath>
+		<expression>Количество(Номер)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаЗаказа</dataPath>
+		<expression>Сумма(СуммаЗаказа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЧислоПозиций</dataPath>
+		<expression>Среднее(ЧислоПозиций)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Автопарк</dataPath>
+		<expression>Максимум(Автопарк)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Транспорт</dataPath>
+		<expression>Количество(Различные Транспорт)</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле1</dcsset:dataPath>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество человек</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:detailExpression>Строка(Водитель) + ", " + Строка(Экспедитор)</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Строка(Водитель) + ", " + Строка(Экспедитор)</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Количество(Различные Водитель) + Количество(Различные Экспедитор)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Количество(Различные Водитель) + Количество(Различные Экспедитор)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+			</dcsset:userFields>
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номер</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Число заказов, шт</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаЗаказа</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общая сумму заказов, руб.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЧислоПозиций</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общее число позиций в заказе, шт.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Транспорт</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Число авто на доставках, шт.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Автопарк</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автопарк всего, шт.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Экипажи на доставках всего, чел</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Yesterday</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>5621aa23-6e86-4308-8108-577752ccbc24</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЧислоПозиций</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧЦ=18; ЧДЦ=5; ЧГ=0</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ДатаКалендаря</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДЛФ=DD</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДатаКалендаря</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

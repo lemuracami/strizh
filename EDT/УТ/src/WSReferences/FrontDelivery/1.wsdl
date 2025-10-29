@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="strizh-logistic.ru/services"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+		xmlns:xsd10="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+		xmlns:xsd2="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder"
+		xmlns:xsd3="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.sinc"
+		xmlns:xsd4="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.terminalOrder"
+		xmlns:xsd5="http://schemas.microsoft.com/2003/10/Serialization/"
+		xmlns:xsd6="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+		xmlns:xsd7="strizh-logistic.ru/contracts"
+		xmlns:xsd8="strizh-logistic.ru/services"
+		xmlns:xsd9="strizh-logistic.ru/services/Imports"
+		targetNamespace="strizh-logistic.ru/services">
+	<types>
+		<xsd:schema xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:ns1="http://schemas.microsoft.com/2003/10/Serialization/"
+				xmlns:ns2="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"
+				xmlns:ns3="strizh-logistic.ru/contracts"
+				xmlns:ns4="strizh-logistic.ru/services/v2/sinc/RegionOrder"
+				xmlns:ns5="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+				xmlns:ns6="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.sinc"
+				xmlns:ns7="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.terminalOrder"
+				xmlns:ns8="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tns="strizh-logistic.ru/services/Imports"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				targetNamespace="strizh-logistic.ru/services/Imports">
+			<xsd:import schemaLocation="file://1.xsd"
+					namespace="strizh-logistic.ru/services"/>
+			<xsd:import schemaLocation="file://9.xsd"
+					namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="file://2.xsd"
+					namespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.Authorization"/>
+			<xsd:import schemaLocation="file://3.xsd"
+					namespace="strizh-logistic.ru/contracts"/>
+			<xsd:import schemaLocation="file://4.xsd"
+					namespace="strizh-logistic.ru/services/v2/sinc/RegionOrder"/>
+			<xsd:import schemaLocation="file://5.xsd"
+					namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+			<xsd:import schemaLocation="file://6.xsd"
+					namespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.sinc"/>
+			<xsd:import schemaLocation="file://7.xsd"
+					namespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.terminalOrder"/>
+			<xsd:import schemaLocation="file://8.xsd"
+					namespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.regionOrder"/>
+		</xsd:schema>
+	</types>
+	<message name="IService1C_IsRegisterLoadedForOrder_InputMessage">
+		<part name="parameters"
+				element="tns:IsRegisterLoadedForOrder"/>
+	</message>
+	<message name="IService1C_IsRegisterLoadedForOrder_OutputMessage">
+		<part name="parameters"
+				element="tns:IsRegisterLoadedForOrderResponse"/>
+	</message>
+	<message name="IService1C_SetStatusSC_InputMessage">
+		<part name="parameters"
+				element="tns:SetStatusSC"/>
+	</message>
+	<message name="IService1C_SetStatusSC_OutputMessage">
+		<part name="parameters"
+				element="tns:SetStatusSCResponse"/>
+	</message>
+	<message name="IService1C_AddAcceptanceReportToIntake_InputMessage">
+		<part name="parameters"
+				element="tns:AddAcceptanceReportToIntake"/>
+	</message>
+	<message name="IService1C_AddAcceptanceReportToIntake_OutputMessage">
+		<part name="parameters"
+				element="tns:AddAcceptanceReportToIntakeResponse"/>
+	</message>
+	<message name="IService1C_GetIntakesToWH_InputMessage">
+		<part name="parameters"
+				element="tns:GetIntakesToWH"/>
+	</message>
+	<message name="IService1C_GetIntakesToWH_OutputMessage">
+		<part name="parameters"
+				element="tns:GetIntakesToWHResponse"/>
+	</message>
+	<message name="IService1C_SetWHForIntake_InputMessage">
+		<part name="parameters"
+				element="tns:SetWHForIntake"/>
+	</message>
+	<message name="IService1C_SetWHForIntake_OutputMessage">
+		<part name="parameters"
+				element="tns:SetWHForIntakeResponse"/>
+	</message>
+	<message name="IService1C_UpdateWHSender_InputMessage">
+		<part name="parameters"
+				element="tns:UpdateWHSender"/>
+	</message>
+	<message name="IService1C_UpdateWHSender_OutputMessage">
+		<part name="parameters"
+				element="tns:UpdateWHSenderResponse"/>
+	</message>
+	<message name="IService1C_GetExtendedOrders_InputMessage">
+		<part name="parameters"
+				element="tns:GetExtendedOrders"/>
+	</message>
+	<message name="IService1C_GetExtendedOrders_OutputMessage">
+		<part name="parameters"
+				element="tns:GetExtendedOrdersResponse"/>
+	</message>
+	<message name="IService1C_GetModifiedTerminals_InputMessage">
+		<part name="parameters"
+				element="tns:GetModifiedTerminals"/>
+	</message>
+	<message name="IService1C_GetModifiedTerminals_OutputMessage">
+		<part name="parameters"
+				element="tns:GetModifiedTerminalsResponse"/>
+	</message>
+	<message name="IService1C_LoadPostingItems_InputMessage">
+		<part name="parameters"
+				element="tns:LoadPostingItems"/>
+	</message>
+	<message name="IService1C_LoadPostingItems_OutputMessage">
+		<part name="parameters"
+				element="tns:LoadPostingItemsResponse"/>
+	</message>
+	<message name="IService1C_LoadPostingItems_test_InputMessage">
+		<part name="parameters"
+				element="tns:LoadPostingItems_test"/>
+	</message>
+	<message name="IService1C_LoadPostingItems_test_OutputMessage">
+		<part name="parameters"
+				element="tns:LoadPostingItems_testResponse"/>
+	</message>
+	<message name="IService1C_GetModifiedShops_InputMessage">
+		<part name="parameters"
+				element="tns:GetModifiedShops"/>
+	</message>
+	<message name="IService1C_GetModifiedShops_OutputMessage">
+		<part name="parameters"
+				element="tns:GetModifiedShopsResponse"/>
+	</message>
+	<message name="IService1C_GetOrdersForRegion_InputMessage">
+		<part name="parameters"
+				element="tns:GetOrdersForRegion"/>
+	</message>
+	<message name="IService1C_GetOrdersForRegion_OutputMessage">
+		<part name="parameters"
+				element="tns:GetOrdersForRegionResponse"/>
+	</message>
+	<message name="IService1C_GetModifiedPickPoints_InputMessage">
+		<part name="parameters"
+				element="tns:GetModifiedPickPoints"/>
+	</message>
+	<message name="IService1C_GetModifiedPickPoints_OutputMessage">
+		<part name="parameters"
+				element="tns:GetModifiedPickPointsResponse"/>
+	</message>
+	<message name="IService1C_AddressSuggest_InputMessage">
+		<part name="parameters"
+				element="tns:AddressSuggest"/>
+	</message>
+	<message name="IService1C_AddressSuggest_OutputMessage">
+		<part name="parameters"
+				element="tns:AddressSuggestResponse"/>
+	</message>
+	<message name="IService1C_AddressSuggestStr_InputMessage">
+		<part name="parameters"
+				element="tns:AddressSuggestStr"/>
+	</message>
+	<message name="IService1C_AddressSuggestStr_OutputMessage">
+		<part name="parameters"
+				element="tns:AddressSuggestStrResponse"/>
+	</message>
+	<portType name="IService1C">
+		<operation name="IsRegisterLoadedForOrder">
+			<input name="IsRegisterLoadedForOrderRequest"
+					message="tns:IService1C_IsRegisterLoadedForOrder_InputMessage"/>
+			<output name="IsRegisterLoadedForOrderResponse"
+					message="tns:IService1C_IsRegisterLoadedForOrder_OutputMessage"/>
+		</operation>
+		<operation name="SetStatusSC">
+			<input name="SetStatusSCRequest"
+					message="tns:IService1C_SetStatusSC_InputMessage"/>
+			<output name="SetStatusSCResponse"
+					message="tns:IService1C_SetStatusSC_OutputMessage"/>
+		</operation>
+		<operation name="AddAcceptanceReportToIntake">
+			<input name="AddAcceptanceReportToIntakeRequest"
+					message="tns:IService1C_AddAcceptanceReportToIntake_InputMessage"/>
+			<output name="AddAcceptanceReportToIntakeResponse"
+					message="tns:IService1C_AddAcceptanceReportToIntake_OutputMessage"/>
+		</operation>
+		<operation name="GetIntakesToWH">
+			<input name="GetIntakesToWHRequest"
+					message="tns:IService1C_GetIntakesToWH_InputMessage"/>
+			<output name="GetIntakesToWHResponse"
+					message="tns:IService1C_GetIntakesToWH_OutputMessage"/>
+		</operation>
+		<operation name="SetWHForIntake">
+			<input name="SetWHForIntakeRequest"
+					message="tns:IService1C_SetWHForIntake_InputMessage"/>
+			<output name="SetWHForIntakeResponse"
+					message="tns:IService1C_SetWHForIntake_OutputMessage"/>
+		</operation>
+		<operation name="UpdateWHSender">
+			<input name="UpdateWHSenderRequest"
+					message="tns:IService1C_UpdateWHSender_InputMessage"/>
+			<output name="UpdateWHSenderResponse"
+					message="tns:IService1C_UpdateWHSender_OutputMessage"/>
+		</operation>
+		<operation name="GetExtendedOrders">
+			<input name="GetExtendedOrdersRequest"
+					message="tns:IService1C_GetExtendedOrders_InputMessage"/>
+			<output name="GetExtendedOrdersResponse"
+					message="tns:IService1C_GetExtendedOrders_OutputMessage"/>
+		</operation>
+		<operation name="GetModifiedTerminals">
+			<input name="GetModifiedTerminalsRequest"
+					message="tns:IService1C_GetModifiedTerminals_InputMessage"/>
+			<output name="GetModifiedTerminalsResponse"
+					message="tns:IService1C_GetModifiedTerminals_OutputMessage"/>
+		</operation>
+		<operation name="LoadPostingItems">
+			<input name="LoadPostingItemsRequest"
+					message="tns:IService1C_LoadPostingItems_InputMessage"/>
+			<output name="LoadPostingItemsResponse"
+					message="tns:IService1C_LoadPostingItems_OutputMessage"/>
+		</operation>
+		<operation name="LoadPostingItems_test">
+			<input name="LoadPostingItems_testRequest"
+					message="tns:IService1C_LoadPostingItems_test_InputMessage"/>
+			<output name="LoadPostingItems_testResponse"
+					message="tns:IService1C_LoadPostingItems_test_OutputMessage"/>
+		</operation>
+		<operation name="GetModifiedShops">
+			<input name="GetModifiedShopsRequest"
+					message="tns:IService1C_GetModifiedShops_InputMessage"/>
+			<output name="GetModifiedShopsResponse"
+					message="tns:IService1C_GetModifiedShops_OutputMessage"/>
+		</operation>
+		<operation name="GetOrdersForRegion">
+			<input name="GetOrdersForRegionRequest"
+					message="tns:IService1C_GetOrdersForRegion_InputMessage"/>
+			<output name="GetOrdersForRegionResponse"
+					message="tns:IService1C_GetOrdersForRegion_OutputMessage"/>
+		</operation>
+		<operation name="GetModifiedPickPoints">
+			<input name="GetModifiedPickPointsRequest"
+					message="tns:IService1C_GetModifiedPickPoints_InputMessage"/>
+			<output name="GetModifiedPickPointsResponse"
+					message="tns:IService1C_GetModifiedPickPoints_OutputMessage"/>
+		</operation>
+		<operation name="AddressSuggest">
+			<input name="AddressSuggestRequest"
+					message="tns:IService1C_AddressSuggest_InputMessage"/>
+			<output name="AddressSuggestResponse"
+					message="tns:IService1C_AddressSuggest_OutputMessage"/>
+		</operation>
+		<operation name="AddressSuggestStr">
+			<input name="AddressSuggestStrRequest"
+					message="tns:IService1C_AddressSuggestStr_InputMessage"/>
+			<output name="AddressSuggestStrResponse"
+					message="tns:IService1C_AddressSuggestStr_OutputMessage"/>
+		</operation>
+	</portType>
+</definitions>

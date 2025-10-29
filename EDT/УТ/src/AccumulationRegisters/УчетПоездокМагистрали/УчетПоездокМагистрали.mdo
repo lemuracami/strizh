@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="59d91053-3bf7-4a21-bb84-f1a72165f8ea">
+  <producedTypes>
+    <selectionType typeId="ad2dc1e7-0142-44d4-999a-a246b919041e" valueTypeId="9b7a419a-598e-4db3-8361-aa0c4472b89d"/>
+    <listType typeId="983dd7b2-a882-4c5b-a7ed-3c57894d0d77" valueTypeId="3e307718-05b8-4524-9015-8a0a34f917b8"/>
+    <managerType typeId="b9042ce7-df44-464b-ad9e-211a25ea2d3b" valueTypeId="582a9b24-e90a-4ab9-8761-242865b84a8e"/>
+    <recordSetType typeId="67220363-334f-4a1d-8565-3575ae5a97e5" valueTypeId="88dc45e0-a059-4c24-a2eb-8c12eaba52ea"/>
+    <recordKeyType typeId="fb17f336-6eb0-42e3-85d5-f1aa13eeca19" valueTypeId="b280dba5-8063-487c-bec6-b8429d34b6c2"/>
+    <recordType typeId="62353e18-4fbf-4d87-95fb-4a089cc33b22" valueTypeId="99b2453e-aecf-4e4a-a1f0-d9f060c342cb"/>
+  </producedTypes>
+  <name>УчетПоездокМагистрали</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет поездок магистрали</value>
+  </synonym>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="c8eef89e-4f4b-429e-9831-f7589f917c2c">
+    <name>ПоездкаСорвана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поездка сорвана</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="8b8fecb5-4ab2-45e8-a99c-4f8a8f4d3b97">
+    <name>ПоездкаВыполнена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поездка выполнена</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="ec570d4d-1021-403a-8e4b-3f4bb358440b">
+    <name>РегионОтправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион отправления</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bca01ed7-86bc-4976-90e7-d04520defc42">
+    <name>РегионПрибытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион прибытия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a4ecabcd-6db3-4973-8d08-fa54fd75a7b8">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="56f25516-9101-4da5-9641-9bf32c40ea5a">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

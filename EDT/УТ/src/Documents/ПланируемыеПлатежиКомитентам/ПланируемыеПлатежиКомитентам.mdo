@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cd92113a-1454-488a-adf5-8856f9dbcc7c">
+  <producedTypes>
+    <objectType typeId="ceafd8d5-7ab9-4b7d-8f8f-8be695af924a" valueTypeId="1697bc82-d918-476a-9b10-89fe92020d83"/>
+    <refType typeId="164b247f-24f4-4aa6-ae5b-55cd403e8bb6" valueTypeId="c743b5a0-bba2-465d-a1ee-20c940b300ba"/>
+    <selectionType typeId="5d3593c2-7832-4b48-9902-7d43018e5e2b" valueTypeId="44f77752-bae4-465d-b26a-e95e7c2bfe47"/>
+    <listType typeId="ffa4b18a-e38c-4825-b099-8fd2a8edfbd9" valueTypeId="438f752d-3550-4128-ad1e-5141ce01939b"/>
+    <managerType typeId="99ef7d59-5f77-46a6-9882-c85cdfb7a0f6" valueTypeId="19b694c0-52be-4f16-bea5-2939baa399f4"/>
+  </producedTypes>
+  <name>ПланируемыеПлатежиКомитентам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планируемые платежи комитентам</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ПланируемыеПлатежиКомитентам.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ПланируемыеПлатежиКомитентам.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ПланируемыеПлатежиКомитентам.Form.ФормаСписка</defaultListForm>
+  <posting>Deny</posting>
+  <attributes uuid="eff69143-d01a-41cc-af56-eab9ede88c67">
+    <name>ДатаПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата платежа</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="290fcbee-f05a-4ae0-b2f7-0722aec1d431">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b5ff45fc-7167-42dc-a6b4-e84fd4886507">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>500</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e14b30dc-589a-4dc1-8b80-2c41bc3517a9">
+    <name>СуммаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма документа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c0965e92-18bb-4888-a37b-6a20c84a68fa">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0ddef7f2-1021-4516-a530-905877c4d21b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="14c4bbb3-efee-4e04-829d-c4bb481d3587">
+    <producedTypes>
+      <objectType typeId="91019e1a-58c4-4bd4-8770-0859e48e165a" valueTypeId="5d3a7076-8a86-42b5-8474-a87a2a12079f"/>
+      <rowType typeId="7de5b813-73be-4ebc-8e71-9987bc1e3f82" valueTypeId="0c1cdaf3-129f-4aa3-99ad-52b76f7c72fe"/>
+    </producedTypes>
+    <name>ПлатежиКИсполнению</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежи к исполнению</value>
+    </synonym>
+    <attributes uuid="1265538d-e02d-483b-90fc-19ac1c0073af">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="fd14d2b5-8be7-4042-9c2f-3655516a4d7c">
+      <name>Комитент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комитент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ac36424f-3edf-4230-8176-8dd648d94ee4">
+      <name>ДатаЗадолженности</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата задолженности</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e7f12cab-6413-4a93-82d5-648b1a770b80">
+      <name>Просрочена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Просрочена</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="607c1cab-c905-4c28-92ed-c63c2ac008da">
+      <name>СуммаЗадолженности</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма задолженности</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="cba93d1f-4b7d-4163-8edd-496e3846292f">
+      <name>РасчетныйСчет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расчетный счет</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.БанковскиеСчета</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c5c83d28-f2b9-4d69-9a0d-16c20ccab875">
+      <name>Оплачивать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оплачивать</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="23384a1b-5ef4-4871-992c-f250cc4bd840">
+      <name>ДнейПросрочено</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дней просрочено</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2317e5d7-51cb-4a42-a4c3-6f81dd0b7123">
+      <name>СуммаУменьшенияПлатежа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма уменьшения платежа</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="18312b79-1db6-411f-b00e-b80ab0c9dce1">
+      <name>СтатьяРасчетовСКомитентами</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья расчетов с комитентами</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатьиРасчетовСКомитентами</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="2b9e5330-337d-4d78-bf6e-b064a5e0feda">
+    <producedTypes>
+      <objectType typeId="0ad3a863-1c50-4dd7-8117-4a1edace29e9" valueTypeId="208d17b7-4c4c-4d20-8aee-6ffe31650783"/>
+      <rowType typeId="9927214b-12cb-4674-8fdd-357af6c12ed0" valueTypeId="02b9b44d-da4c-4013-afc6-d3e7ef7ea649"/>
+    </producedTypes>
+    <name>ДоступныеРасчетныеСчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные расчетные счета</value>
+    </synonym>
+    <attributes uuid="12507249-c992-4ad3-a9e0-e77880dc7b6d">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="075c2b9d-39a5-46c1-8be7-14b2906c1a22">
+      <name>РасчетныйСчет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расчетный счет</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.БанковскиеСчета</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Организация</name>
+        <field>Document.ПланируемыеПлатежиКомитентам.TabularSection.ДоступныеРасчетныеСчета.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

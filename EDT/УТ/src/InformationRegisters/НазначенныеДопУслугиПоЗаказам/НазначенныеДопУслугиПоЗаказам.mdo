@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a083bb0d-7708-4e54-b0e9-e88ebf55048b">
+  <producedTypes>
+    <selectionType typeId="8cce28a2-bc26-486f-b5dd-01af53a2cfdd" valueTypeId="42a3712f-11d6-4c1e-9f0c-e032ab6e14da"/>
+    <listType typeId="b3e0b2f8-73cd-40e8-8f79-d36075a11432" valueTypeId="cf324482-afb6-472f-ba76-6795d10bbbe3"/>
+    <managerType typeId="d1c71d12-5209-4851-abec-1d99407bcb21" valueTypeId="da70ae62-c34d-480c-9232-987ab40cfdee"/>
+    <recordSetType typeId="7ad966f9-b602-4d2b-b952-16654422b5eb" valueTypeId="d753e12c-3670-458b-8778-41e89da14bac"/>
+    <recordKeyType typeId="74570abd-cdc3-4eff-926a-f679680eb94c" valueTypeId="e93d86f8-a887-4dd2-a2e8-cae4fd45217b"/>
+    <recordType typeId="d5d583f7-aac4-4d75-8c17-cab24daab5b7" valueTypeId="f16b7ee7-0993-4251-a070-254b8c7d820b"/>
+    <recordManagerType typeId="901b944f-c3a1-4061-8a77-af62f662134c" valueTypeId="d7f86a3d-2923-4472-a0fe-800f64a4e193"/>
+  </producedTypes>
+  <name>НазначенныеДопУслугиПоЗаказам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначенные доп. услуги по заказам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="451243e7-d038-4148-ae02-a8a897b3a73d">
+    <name>Ставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5663f8d4-151c-42cf-b561-0b2829120985">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2beadf41-d303-4a4b-ba19-64ae8bf25e99">
+    <name>Тариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТарифыДополнительныхУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e5f50cba-92a2-4254-9254-42adae12ae07">
+    <name>ДопУслуга</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доп услуга</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПоказателиРасчетаУслугСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

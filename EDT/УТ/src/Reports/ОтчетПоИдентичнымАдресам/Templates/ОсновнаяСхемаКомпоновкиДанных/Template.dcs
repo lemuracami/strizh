@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Полигон</dataPath>
+			<field>Полигон</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полигон</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПолигонМаршрутизации</dataPath>
+			<field>ПолигонМаршрутизации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗаказа</dataPath>
+			<field>ТипЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтервалДоставкиПо</dataPath>
+			<field>ИнтервалДоставкиПо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интервал доставки по</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтервалДоставкиС</dataPath>
+			<field>ИнтервалДоставкиС</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интервал доставки С</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АдресДоставки</dataPath>
+			<field>АдресДоставки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес доставки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВесЗаказаОбъемЗабора</dataPath>
+			<field>ВесЗаказаОбъемЗабора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес заказа объем забора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗапланированноеАвто</dataPath>
+			<field>ЗапланированноеАвто</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запланированное авто</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Широта5</dataPath>
+			<field>Широта5</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Широта (5)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Долгота5</dataPath>
+			<field>Долгота5</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Долгота (5)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ДополнительныеПараметрыЗаказа.Заказ КАК Заказ,
+	ВЫРАЗИТЬ(ДополнительныеПараметрыЗаказа.Доставка.ТочкаПрибытия.Адрес.Широта - 0.000005 КАК ЧИСЛО(15, 5)) КАК Широта,
+	ВЫРАЗИТЬ(ДополнительныеПараметрыЗаказа.Доставка.ТочкаПрибытия.Адрес.Долгота - 0.000005 КАК ЧИСЛО(15, 5)) КАК Долгота
+ПОМЕСТИТЬ ВТ_ВсеЗаказы
+ИЗ
+	Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ДополнительныеПараметрыЗаказа КАК ДополнительныеПараметрыЗаказа
+		ПО (РеализацияТоваровУслуг.Дата МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода)
+			И (РеализацияТоваровУслуг.СтатусИнтернетМагазина = 2)
+			И (РеализацияТоваровУслуг.ТерминалДоставки = &amp;ТерминалДоставки)
+			И РеализацияТоваровУслуг.Ссылка = ДополнительныеПараметрыЗаказа.Заказ
+			И (ДополнительныеПараметрыЗаказа.Доставка &lt;&gt; ЗНАЧЕНИЕ(БизнесПроцесс.новаМестнаяДоставка.ПустаяСсылка))
+			И (ДополнительныеПараметрыЗаказа.Доставка.ТочкаПрибытия.Адрес.Широта &gt; 0)
+			И (ДополнительныеПараметрыЗаказа.Доставка.ТочкаПрибытия.Адрес.Долгота &gt; 0)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ЗаборТовара.Ссылка,
+	ВЫРАЗИТЬ(ЗаборТовара.ТочкаДоставки.Адрес.Широта - 0.000005 КАК ЧИСЛО(15, 5)),
+	ВЫРАЗИТЬ(ЗаборТовара.ТочкаДоставки.Адрес.Долгота - 0.000005 КАК ЧИСЛО(15, 5))
+ИЗ
+	Документ.ЗаборТовара КАК ЗаборТовара
+ГДЕ
+	ЗаборТовара.Дата МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+	И ЗаборТовара.СтатусИнтернетМагазина = 2
+	И ЗаборТовара.ТерминалДоставки = &amp;ТерминалДоставки
+	И ЗаборТовара.ТочкаДоставки.Адрес.Широта &gt; 0
+	И ЗаборТовара.ТочкаДоставки.Адрес.Долгота &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТ_ВсеЗаказы1.Заказ КАК Заказ,
+	ВТ_ВсеЗаказы1.Широта КАК Широта,
+	ВТ_ВсеЗаказы1.Долгота КАК Долгота
+ПОМЕСТИТЬ ВТ_Заказы
+ИЗ
+	ВТ_ВсеЗаказы КАК ВТ_ВсеЗаказы1
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ВсеЗаказы КАК ВТ_ВсеЗаказы2
+		ПО ВТ_ВсеЗаказы1.Широта = ВТ_ВсеЗаказы2.Широта
+			И ВТ_ВсеЗаказы1.Долгота = ВТ_ВсеЗаказы2.Долгота
+			И ВТ_ВсеЗаказы1.Заказ &lt;&gt; ВТ_ВсеЗаказы2.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Заказы.Заказ КАК Заказ,
+	МАКСИМУМ(Рейс.ДатаРейса) КАК ДатаРейса
+ПОМЕСТИТЬ ВТ_МаксДатыРейсов
+ИЗ
+	Документ.Рейс.Заказы КАК РейсЗаказы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Рейс КАК Рейс
+		ПО (Рейс.ДатаРейса МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода)
+			И РейсЗаказы.Ссылка = Рейс.Ссылка
+			И (НЕ Рейс.ПометкаУдаления)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Заказы КАК ВТ_Заказы
+		ПО РейсЗаказы.Заказ = ВТ_Заказы.Заказ
+			И (НЕ РейсЗаказы.УдаленИзРейса)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Заказы.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_МаксДатыРейсов.Заказ КАК Заказ,
+	ВТ_МаксДатыРейсов.ДатаРейса КАК ДатаРейса,
+	МАКСИМУМ(РейсЗаказы.Ссылка.Дата) КАК Дата
+ПОМЕСТИТЬ ВТ_МаксДатыДокументаРейс
+ИЗ
+	Документ.Рейс.Заказы КАК РейсЗаказы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_МаксДатыРейсов КАК ВТ_МаксДатыРейсов
+		ПО РейсЗаказы.Заказ = ВТ_МаксДатыРейсов.Заказ
+			И (НЕ РейсЗаказы.УдаленИзРейса)
+			И РейсЗаказы.Ссылка.ДатаРейса = ВТ_МаксДатыРейсов.ДатаРейса
+			И (НЕ РейсЗаказы.Ссылка.ПометкаУдаления)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_МаксДатыРейсов.Заказ,
+	ВТ_МаксДатыРейсов.ДатаРейса
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_МаксДатыДокументаРейс.Заказ КАК Заказ,
+	МАКСИМУМ(РейсЗаказы.Ссылка) КАК Рейс
+ПОМЕСТИТЬ ВТ_Рейсы
+ИЗ
+	Документ.Рейс.Заказы КАК РейсЗаказы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_МаксДатыДокументаРейс КАК ВТ_МаксДатыДокументаРейс
+		ПО РейсЗаказы.Заказ = ВТ_МаксДатыДокументаРейс.Заказ
+			И (НЕ РейсЗаказы.УдаленИзРейса)
+			И РейсЗаказы.Ссылка.ДатаРейса = ВТ_МаксДатыДокументаРейс.ДатаРейса
+			И РейсЗаказы.Ссылка.Дата = ВТ_МаксДатыДокументаРейс.Дата
+			И (НЕ РейсЗаказы.Ссылка.ПометкаУдаления)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_МаксДатыДокументаРейс.Заказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Заказы.Широта КАК Широта,
+	ВТ_Заказы.Долгота КАК Долгота,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЕСТЬNULL(ПривязкаМашинКРейсамСрезПоследних.Транспорт, ЗНАЧЕНИЕ(Справочник.новаТранспорт.ПустаяСсылка))) КАК Транспорт,
+	МАКСИМУМ(ПривязкаМашинКРейсамСрезПоследних.Транспорт ЕСТЬ NULL) КАК БезМашины
+ПОМЕСТИТЬ ВТ_Группы
+ИЗ
+	ВТ_Заказы КАК ВТ_Заказы
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Рейсы КАК ВТ_Рейсы
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПривязкаМашинКРейсам.СрезПоследних КАК ПривязкаМашинКРейсамСрезПоследних
+			ПО ВТ_Рейсы.Рейс = ПривязкаМашинКРейсамСрезПоследних.Рейс
+		ПО ВТ_Заказы.Заказ = ВТ_Рейсы.Заказ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Заказы.Широта,
+	ВТ_Заказы.Долгота
+
+ИМЕЮЩИЕ
+	(КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЕСТЬNULL(ПривязкаМашинКРейсамСрезПоследних.Транспорт, ЗНАЧЕНИЕ(Справочник.новаТранспорт.ПустаяСсылка))) &gt; 1
+		ИЛИ МАКСИМУМ(ПривязкаМашинКРейсамСрезПоследних.Транспорт ЕСТЬ NULL))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПолигоныМаршрутизацииЗаказовСрезПоследних.ПолигонМаршрутизации КАК Полигон,
+	ВТ_Заказы.Заказ КАК Заказ,
+	ЕСТЬNULL(РеализацияТоваровУслуг.Номер, ЗаборТовара.Номер) КАК Номер,
+	ВЫБОР
+		КОГДА РеализацияТоваровУслуг.Ссылка ЕСТЬ NULL
+			ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+		ИНАЧЕ ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+	КОНЕЦ КАК ТипЗаказа,
+	ЕСТЬNULL(РеализацияТоваровУслуг.ВладелецТовара, ЗаборТовара.Контрагент) КАК Партнер,
+	ЕСТЬNULL(ДополнительныеПараметрыЗаказа.Доставка.ТочкаПрибытия, ЗаборТовара.ТочкаДоставки) КАК АдресДоставки,
+	ЕСТЬNULL(РеализацияТоваровУслуг.ОбщийВес, ЗаборТовара.ОбъемЗабора) КАК ВесЗаказаОбъемЗабора,
+	ЕСТЬNULL(ДополнительныеПараметрыЗаказа.Доставка.ВремяПрибытияС, ЗаборТовара.ВремяДоставкиС) КАК ИнтервалДоставкиС,
+	ЕСТЬNULL(ДополнительныеПараметрыЗаказа.Доставка.ВремяПрибытияПо, ЗаборТовара.ВремяДоставкиПо) КАК ИнтервалДоставкиПо,
+	ПривязкаМашинКРейсамСрезПоследних.Транспорт КАК ЗапланированноеАвто,
+	ВТ_Заказы.Широта КАК Широта5,
+	ВТ_Заказы.Долгота КАК Долгота5
+{ВЫБРАТЬ
+	Полигон.*,
+	Заказ.*,
+	Номер,
+	ТипЗаказа.*,
+	Партнер.*,
+	АдресДоставки.*,
+	ВесЗаказаОбъемЗабора,
+	ИнтервалДоставкиС,
+	ИнтервалДоставкиПо,
+	ЗапланированноеАвто.*,
+	Широта5,
+	Долгота5}
+ИЗ
+	ВТ_Заказы КАК ВТ_Заказы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Группы КАК ВТ_Группы
+		ПО ВТ_Заказы.Широта = ВТ_Группы.Широта
+			И ВТ_Заказы.Долгота = ВТ_Группы.Долгота
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПолигоныМаршрутизацииЗаказов.СрезПоследних КАК ПолигоныМаршрутизацииЗаказовСрезПоследних
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.АктивнаяСхемаПолигональнойМаршрутизации.СрезПоследних(, РегиональныйТерминал = &amp;ТерминалДоставки) КАК АктивнаяСхемаПолигональнойМаршрутизацииСрезПоследних
+			ПО ПолигоныМаршрутизацииЗаказовСрезПоследних.СхемаМаршрутизации = АктивнаяСхемаПолигональнойМаршрутизацииСрезПоследних.СхемаПолигональнойМаршрутизации
+		ПО ВТ_Заказы.Заказ = ПолигоныМаршрутизацииЗаказовСрезПоследних.Заказ
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ДополнительныеПараметрыЗаказа КАК ДополнительныеПараметрыЗаказа
+		ПО ВТ_Заказы.Заказ = ДополнительныеПараметрыЗаказа.Заказ
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаборТовара КАК ЗаборТовара
+		ПО ВТ_Заказы.Заказ = ЗаборТовара.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ПО ВТ_Заказы.Заказ = РеализацияТоваровУслуг.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Рейсы КАК ВТ_Рейсы
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПривязкаМашинКРейсам.СрезПоследних КАК ПривязкаМашинКРейсамСрезПоследних
+			ПО ВТ_Рейсы.Рейс = ПривязкаМашинКРейсамСрезПоследних.Рейс
+		ПО ВТ_Заказы.Заказ = ВТ_Рейсы.Заказ
+{ГДЕ
+	ПолигоныМаршрутизацииЗаказовСрезПоследних.ПолигонМаршрутизации.*,
+	ВТ_Заказы.Заказ.*,
+	(ЕСТЬNULL(РеализацияТоваровУслуг.Номер, ЗаборТовара.Номер)) КАК Номер,
+	(ВЫБОР
+			КОГДА РеализацияТоваровУслуг.Ссылка ЕСТЬ NULL
+				ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ИНАЧЕ ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+		КОНЕЦ).* КАК ТипЗаказа,
+	(ЕСТЬNULL(РеализацияТоваровУслуг.ВладелецТовара, ЗаборТовара.Контрагент)).* КАК Партнер,
+	(ЕСТЬNULL(ДополнительныеПараметрыЗаказа.Доставка.ТочкаПрибытия, ЗаборТовара.ТочкаДоставки)).* КАК АдресДоставки,
+	(ЕСТЬNULL(РеализацияТоваровУслуг.ОбщийВес, ЗаборТовара.ОбъемЗабора)) КАК ВесЗаказаОбъемЗабора,
+	(ЕСТЬNULL(ДополнительныеПараметрыЗаказа.Доставка.ВремяПрибытияС, ЗаборТовара.ВремяДоставкиС)) КАК ИнтервалДоставкиС,
+	(ЕСТЬNULL(ДополнительныеПараметрыЗаказа.Доставка.ВремяПрибытияПо, ЗаборТовара.ВремяДоставкиПо)) КАК ИнтервалДоставкиПо,
+	ПривязкаМашинКРейсамСрезПоследних.Транспорт.* КАК ЗапланированноеАвто,
+	ВТ_Заказы.Широта КАК Широта5,
+	ВТ_Заказы.Долгота КАК Долгота5}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<calculatedField>
+		<dataPath>НомерСтриж</dataPath>
+		<expression>Заказ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номер Стриж</v8:content>
+			</v8:item>
+		</title>
+		<presentationExpression>Номер</presentationExpression>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ИнтервалДоставки</dataPath>
+		<expression>Формат(ИнтервалДоставкиС, "ДФ=HH:mm") + "-" + Формат(ИнтервалДоставкиПо, "ДФ=HH:mm")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Интервал доставки</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОкончаниеПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Окончание периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТерминалДоставки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Терминал доставки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РегиональныеТерминалы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Широта5</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Широта</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Долгота5</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Долгота</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Полигон</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерСтриж</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Партнер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АдресДоставки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВесЗаказаОбъемЗабора</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес заказа/Объем забора</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнтервалДоставки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗапланированноеАвто</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ЗапланированноеАвто</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентичные адреса заказов</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Широта5</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Долгота5</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

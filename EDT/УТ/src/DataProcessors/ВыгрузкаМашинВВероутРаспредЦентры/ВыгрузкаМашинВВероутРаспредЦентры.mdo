@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6f310b57-d067-4b48-9373-744bec30f45f">
+  <producedTypes>
+    <objectType typeId="28b556bf-1a71-4536-a7fc-7ad446610f21" valueTypeId="d03da1fb-b625-494c-8ef2-9c6ce42db9b6"/>
+    <managerType typeId="dbeaa06c-ad2f-4e1f-9c73-0e7a15433514" valueTypeId="fb753f3a-e140-4411-bdd4-dd867dd24398"/>
+  </producedTypes>
+  <name>ВыгрузкаМашинВВероутРаспредЦентры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выгрузка машин в вероут (по распределительным центрам)</value>
+  </synonym>
+  <defaultForm>DataProcessor.ВыгрузкаМашинВВероутРаспредЦентры.Form.ФормаУправляемая</defaultForm>
+  <attributes uuid="cb537e8a-2922-4027-b3bb-f55e72a593d1">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="18281a37-2320-4b9a-91b8-9d9d2e2bd4e7">
+    <name>Смена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Смены</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6971a271-c0d1-4c88-8cc3-bf01a9209980">
+    <name>АдресФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес файла</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9897d653-e605-4e16-aed2-02e8860dd18d">
+    <name>ВидСервера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид сервера</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="06cdbb5b-2984-4f53-b351-9451613c89c2">
+    <name>ПропускЗагрузкиЗаказовСДатойДоставкиОтличнойОтДатыРейсов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пропуск загрузки заказов с датой доставки отличной от даты рейсов</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2d77e462-8713-4e88-9246-bfecb7b1f02b">
+    <name>ВидВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид выгрузки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d9689a8b-e0ef-4892-9a27-b8979fc94897">
+    <name>ЗаказКВыгрузке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ к выгрузке</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bc5e48a6-25b3-4730-8730-21ac166e38e0">
+    <name>НомераЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номера заказов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <multiLine>true</multiLine>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e56d72ae-1bfb-4836-a95d-e780f2d11188">
+    <name>СхемаПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема планирования</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СхемыПланированияVeeroute</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="3b1bbc73-b464-4ebb-b46e-43f651950047">
+    <producedTypes>
+      <objectType typeId="60be9a71-74e8-4db5-86ff-b80692f8642a" valueTypeId="28d191c9-3e52-40a6-aac0-a4ebcc4831b5"/>
+      <rowType typeId="91441687-c891-4c1e-b2e6-86b620ab80c2" valueTypeId="4cf0d364-d5c7-4e6e-8ecd-dcbd95679a8c"/>
+    </producedTypes>
+    <name>РаспределительныеЦентры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распределительные центры</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="64111f2a-4bb7-4c78-acef-28d2c9917a4b">
+      <name>Выбран</name>
+      <synonym>
+        <key>ru</key>
+        <value>Выбран</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="630088c1-d7ea-41e9-9232-f1dc9fcb1b4c">
+      <name>РаспределительныйЦентр</name>
+      <synonym>
+        <key>ru</key>
+        <value>Распределительный центр</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РаспределительныеЦентрыVeeroute</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="ec86fab2-8971-4256-a565-506a2ff7d31b">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9caddde9-ae60-40b0-a7de-b5fadbf5f2df">
+    <name>ФормаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма управляемая</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2b6c89e5-633d-4465-80ae-20a8cfcbb8f4">
+    <name>ФормаЗаполненияРеквизитовТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма заполнения реквизитов транспорта</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="287c79a0-a782-419e-bc58-59158ef86c30">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="42e6666b-6015-4200-b31e-d6edfbe94af3">
+    <name>ШаблонПКЭкспресс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон ПКЭкспресс</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

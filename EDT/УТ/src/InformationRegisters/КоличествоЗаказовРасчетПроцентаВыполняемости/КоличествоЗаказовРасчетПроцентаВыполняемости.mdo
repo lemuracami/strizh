@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2a6e7391-6104-4fc0-990e-bde7959e24f2">
+  <producedTypes>
+    <selectionType typeId="ebddb923-9052-4fce-9e9d-a0f75f7377e3" valueTypeId="dab20847-97e2-4fd5-8fca-e0dbbeeb3947"/>
+    <listType typeId="be82f0ce-8ff0-4549-a00a-3d345414aec5" valueTypeId="fc3685f4-025a-4a3b-b450-7207c8f8d0b2"/>
+    <managerType typeId="e1d9678c-322a-4c8f-a24e-d94a42d862f0" valueTypeId="b1c6fc65-e859-419d-a4ac-5adba3825d50"/>
+    <recordSetType typeId="1afae291-cfa4-4e31-9b32-5384d1accdea" valueTypeId="ec107392-e430-4550-b846-68efa1b15fde"/>
+    <recordKeyType typeId="7806af2a-8b88-4dc2-a497-9e0c5efd2df5" valueTypeId="4680b700-0dfb-4b55-8ca4-bf2029b6ca51"/>
+    <recordType typeId="e2d44755-c926-437e-9ae3-f1bc21233de3" valueTypeId="73bf2e33-f60f-466e-a224-4c688ca7cc35"/>
+    <recordManagerType typeId="f563dbed-e90d-46d8-998a-c0e601acc895" valueTypeId="d0d32362-5c68-42ff-9f01-4c8043c19461"/>
+  </producedTypes>
+  <name>КоличествоЗаказовРасчетПроцентаВыполняемости</name>
+  <synonym>
+    <key>ru</key>
+    <value>Количество заказов расчет процента выполняемости</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="d2f58fe7-1616-4045-a7ec-ec714674d564">
+    <name>КоличествоЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество заказов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="e73daced-1268-4ff3-9b8f-8434b62c77f6">
+    <name>СпособРасчетаВыполняемости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ расчета выполняемости</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыРасчетаПроцентаВыполняемости</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="34d076c9-aeed-4208-a21a-ee693ff109f0">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="079a43f9-fe1a-4105-afa3-7b6e7452a887">
+    <name>РезультатДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаРезультатМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ea5f1621-22d5-4a72-a3f2-f60b12f1ff2c">
+    <name>ПричинаНеВыполненияДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина не выполнения доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныНеВыполненияДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8c1f4d0b-48f7-412d-a9e2-00e730fdbe7e">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

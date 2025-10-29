@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>dateEvent</dataPath>
+			<field>dateEvent</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>responseXML</dataPath>
+			<field>responseXML</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>APIType</dataPath>
+			<field>APIType</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>accessKey</dataPath>
+			<field>accessKey</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>responseDescription</dataPath>
+			<field>responseDescription</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>APIMethod</dataPath>
+			<field>APIMethod</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>isError</dataPath>
+			<field>isError</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>isServerError</dataPath>
+			<field>isServerError</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>errorDescription</dataPath>
+			<field>errorDescription</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>numberObjects</dataPath>
+			<field>numberObjects</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>noData</dataPath>
+			<field>noData</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>responseCode</dataPath>
+			<field>responseCode</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>eventSourceType</dataPath>
+			<field>eventSourceType</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>orderNumber</dataPath>
+			<field>orderNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>eventSourceCode</dataPath>
+			<field>eventSourceCode</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>isTest</dataPath>
+			<field>isTest</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>region</dataPath>
+			<field>region</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>baseID</dataPath>
+			<field>baseID</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>requestXML</dataPath>
+			<field>requestXML</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	dbo_WebServiceRequests.dateEvent КАК dateEvent,
+	dbo_WebServiceRequests.APIType КАК APIType,
+	dbo_WebServiceRequests.APIMethod КАК APIMethod,
+	dbo_WebServiceRequests.accessKey КАК accessKey,
+	dbo_WebServiceRequests.requestXML КАК requestXML,
+	dbo_WebServiceRequests.responseXML КАК responseXML,
+	dbo_WebServiceRequests.isError КАК isError,
+	dbo_WebServiceRequests.isServerError КАК isServerError,
+	dbo_WebServiceRequests.errorDescription КАК errorDescription,
+	dbo_WebServiceRequests.numberObjects КАК numberObjects,
+	dbo_WebServiceRequests.noData КАК noData,
+	dbo_WebServiceRequests.responseCode КАК responseCode,
+	dbo_WebServiceRequests.responseDescription КАК responseDescription,
+	ПРЕДСТАВЛЕНИЕ(dbo_WebServiceRequests.orderNumber) КАК orderNumber,
+	dbo_WebServiceRequests.eventSourceType КАК eventSourceType,
+	dbo_WebServiceRequests.eventSourceCode КАК eventSourceCode,
+	dbo_WebServiceRequests.isTest КАК isTest,
+	dbo_WebServiceRequests.region КАК region,
+	dbo_WebServiceRequests.baseID КАК baseID
+ИЗ
+	ВнешнийИсточникДанных.ВнешнийЛог.Таблица.dbo_WebServiceRequests КАК dbo_WebServiceRequests
+ГДЕ
+	dbo_WebServiceRequests.dateEvent МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>Код</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>Наименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Логирование</dataPath>
+			<field>Логирование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>API</dataPath>
+			<field>API</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>API</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	API.Код КАК Код,
+	API.Наименование КАК Наименование,
+	API.Партнер КАК Партнер,
+	API.Логирование КАК Логирование,
+	API.Ссылка КАК API
+ИЗ
+	Справочник.API КАК API</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных3</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>Код</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>Наименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МетодAPI</dataPath>
+			<field>МетодAPI</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Метод API</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	МетодыAPI.Код КАК Код,
+	МетодыAPI.Наименование КАК Наименование,
+	//МетодыAPI.API КАК API,
+	МетодыAPI.Ссылка КАК МетодAPI
+ИЗ
+	Справочник.МетодыAPI КАК МетодыAPI</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных4</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>Код</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регион</dataPath>
+			<field>Регион</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регион</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РегиональныеТерминалы.Ссылка КАК Регион,
+	РегиональныеТерминалы.Код КАК Код
+ИЗ
+	Справочник.РегиональныеТерминалы КАК РегиональныеТерминалы</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных1</sourceDataSet>
+		<destinationDataSet>НаборДанных2</destinationDataSet>
+		<sourceExpression>APIType</sourceExpression>
+		<destinationExpression>Код</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных1</sourceDataSet>
+		<destinationDataSet>НаборДанных3</destinationDataSet>
+		<sourceExpression>APIMethod</sourceExpression>
+		<destinationExpression>Код</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных1</sourceDataSet>
+		<destinationDataSet>НаборДанных4</destinationDataSet>
+		<sourceExpression>region</sourceExpression>
+		<destinationExpression>Код</destinationExpression>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>Заказ</dataPath>
+		<expression>ВнешниеИсточникиДанных.ВнешнийЛог.Таблицы.dbo_WebServiceRequests.ВернутьЗаказПоНомеру(orderNumber, dateEvent)
+</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказ</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодФормирования.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодФормирования.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодФормирования</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период формирования</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>dateEvent</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>API</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МетодAPI</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Регион</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>accessKey</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запрос/ответ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>requestXML</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>responseXML</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>noData</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>isError</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>isServerError</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Событие</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>eventSourceCode</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>eventSourceType</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>errorDescription</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>responseDescription</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>numberObjects</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заказ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>baseID</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>isTest</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коды</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>APIType</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>APIMethod</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>orderNumber</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>region</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>requestXML</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>responseXML</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

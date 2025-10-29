@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bcc64d61-bd60-4f0c-9fdf-8796b5e17ed8">
+  <producedTypes>
+    <objectType typeId="23f327b0-b2d7-40e3-be26-00127aca12a1" valueTypeId="7cbe68af-e227-4614-bd91-b0ac38de6c58"/>
+    <refType typeId="e46f7722-8779-4e61-a15f-c2c6ef46d546" valueTypeId="298cd6a6-b81a-4ca1-b1be-64a9a676e99c"/>
+    <selectionType typeId="b1c7bde5-74d1-4562-927a-d81f4970a141" valueTypeId="9122a00d-601d-41e4-8750-c3b32680023d"/>
+    <listType typeId="292a6d2f-16f6-4c74-a981-d5bed16cb1cc" valueTypeId="5dd34417-f764-42eb-b939-82b1ceb9d532"/>
+    <managerType typeId="77423495-8100-4728-8ea4-79b5a223d39d" valueTypeId="2bff3eac-83ed-4949-86ca-5f7ddb56f370"/>
+  </producedTypes>
+  <name>УстановкаСтатусовСкладскогоУчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка статусов складского учета</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.УстановкаСтатусовСкладскогоУчета.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.УстановкаСтатусовСкладскогоУчета.Form.ФормаДокумента</defaultObjectForm>
+  <registerRecords>InformationRegister.СтатусыСкладскогоУчета</registerRecords>
+  <registerRecords>InformationRegister.СостоянияЗаказов</registerRecords>
+  <attributes uuid="9d0c0f82-35ca-4929-a8dd-d97526054a45">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="59a7bf54-4b51-4566-b0ba-d469a0c0c250">
+    <name>СтатусСкладскогоУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус складского учета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыСкладскогоУчета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="562a312d-4259-4109-8096-987176ee880c">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6a6a5a88-8670-441c-8c25-6dc2fc962b74">
+    <name>РезультатДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаРезультатМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="21c56afe-a447-4e19-8790-63bcdd300f96">
+    <name>ПричинаНевыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина невыполнения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныНеВыполненияДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="60962ff7-fae3-464c-999e-8c4808d68311">
+    <name>ТерминалОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал обработки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b93758c1-ff25-4d86-9965-25839e6c6ef4">
+    <name>axi</name>
+    <synonym>
+      <key>ru</key>
+      <value>Axi</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2d96cdd3-f379-4f14-a451-263bb39518e5">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="4a0dff70-39df-4447-8b25-1d3532f49666">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

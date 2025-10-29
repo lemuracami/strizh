@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="64efeeb3-27bc-4635-a941-6a52da6a552b">
+  <name>ПриЗаписиКД</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи КД</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.ПриходныйКассовыйОрдер</types>
+    <types>DocumentObject.РасходныйКассовыйОрдер</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.lem.ЗарегитьДокументУТЛ</handler>
+</mdclass:EventSubscription>

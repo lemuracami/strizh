@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="060db6c9-f32e-44ec-8e65-5c7f3a5ab87f">
+  <producedTypes>
+    <objectType typeId="397f7343-898c-461e-9d29-6f0efc7193c5" valueTypeId="dc9823be-58b2-4af2-abd1-ebb5b66ad354"/>
+    <refType typeId="f59030f5-ab01-46be-9c67-604a114686d3" valueTypeId="f8b152e5-af3e-48da-a286-9dbe34df9e4e"/>
+    <selectionType typeId="30f68c60-0fe7-4bb0-89a3-8c14dbb59ee4" valueTypeId="0e36d888-6688-417d-8b3c-3bbda7f6aa75"/>
+    <listType typeId="f4c28ea5-91d1-40d3-b210-b2068619c650" valueTypeId="2a40289e-9aae-482b-8068-14f8bc57e8b1"/>
+    <managerType typeId="6fa2c7ca-3c04-41ac-9397-d15674b6d94c" valueTypeId="6eaa7300-d3cf-4217-957b-6af8c42e5810"/>
+  </producedTypes>
+  <name>АннулированиеЧеков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аннулирование чеков</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.АннулированиеЧеков.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.АннулированиеЧеков.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.АннулированиеЧеков.Form.ФормаСписка</defaultListForm>
+  <registerRecords>AccumulationRegister.ЖурналККМ</registerRecords>
+  <attributes uuid="887e6bf2-ccce-4e2f-8285-da4398cef148">
+    <name>ПериодФормированияДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период формирования данных</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="187ab85d-839b-44d9-930e-53011943fd6a">
+    <name>Оператор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f883730f-8abc-46cc-82dd-d48d23fb0c2f">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="6c5e11c3-1e5e-4135-97e4-9cf1a8d0b7e1">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="553abb59-86c9-43d2-84b5-d3566af81939">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="1ff0e00d-f312-46b2-b9bd-93e21a8b5778">
+    <producedTypes>
+      <objectType typeId="4a9fc31c-3598-40b9-881e-0c370bb3fe09" valueTypeId="e5eee1b7-cc70-4928-94da-9030c8e075ea"/>
+      <rowType typeId="c361bcab-a246-4685-a004-93ffa522cfe6" valueTypeId="25f30629-6b42-4a90-9b6d-bb9475eddaa2"/>
+    </producedTypes>
+    <name>Заказы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы</value>
+    </synonym>
+    <attributes uuid="e2c2a81a-0d58-4bcd-9960-5b853a3926a5">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c56d84b0-bb67-43bb-b28a-7f7c5c8ac704">
+      <name>РезультатДоставки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Результат доставки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаРезультатМестнойДоставки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a7e3e954-0696-47eb-9e93-d63066bbebc5">
+      <name>ПричинаНевыполнения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Причина невыполнения</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПричиныНеВыполненияДоставки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f7d55fb6-617a-4618-9f94-f345af62c04d">
+      <name>ПричинаАннулированияЧеков</name>
+      <synonym>
+        <key>ru</key>
+        <value>Причина аннулирования чеков</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ПричиныАннулированияЧеков</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="fc433ada-2e51-47ea-b114-ae55318bc242">
+    <producedTypes>
+      <objectType typeId="98b5f045-2fe0-4745-9669-c00688c8cf19" valueTypeId="910a9643-96bd-4bb8-af59-2fddcc03be74"/>
+      <rowType typeId="0793f572-a875-4d60-913f-039412fcf3f5" valueTypeId="97415710-2ede-4921-84ce-07fc1e6ea3a9"/>
+    </producedTypes>
+    <name>ЧекиКАннулированию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чеки к аннулированию</value>
+    </synonym>
+    <attributes uuid="603af339-38df-49ca-96f1-a7b342710550">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e86af24f-1883-4168-8a30-b568420c8689">
+      <name>Чек</name>
+      <synonym>
+        <key>ru</key>
+        <value>Чек</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЧекККМ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="fab29498-0b22-44c0-bac7-d6a7bd737dad">
+      <name>ПоДаннымЗаполнения</name>
+      <synonym>
+        <key>ru</key>
+        <value>По данным заполнения</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5cfd7bb8-6b7b-45fe-938d-b832c1b966a7">
+      <name>КАннулированию</name>
+      <synonym>
+        <key>ru</key>
+        <value>К аннулированию</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f06d1310-d08d-49fe-a259-7eb8179188d2">
+      <name>ДокументПечатиЧеков</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ печати чеков</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПечатьЧековПоДоставкам</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6475622d-3947-4426-bdc2-35fea10afcfe">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="01257b33-b643-41af-9f66-d843dbf86a79">
+    <producedTypes>
+      <objectType typeId="fad91bf4-0fc5-42a4-9b00-22488511f193" valueTypeId="a95720df-1ffe-4d19-84ea-596dbe2a8347"/>
+      <rowType typeId="563212fd-cef8-4f19-936b-b44c7c6e4823" valueTypeId="829e1311-7cca-466f-9321-883467f4b7a8"/>
+    </producedTypes>
+    <name>ВозвратныеЧеки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возвратные чеки</value>
+    </synonym>
+    <attributes uuid="2e28395d-ed02-496a-88a9-2b21e4ac314f">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e4f144d1-6823-409f-8ff5-4c95e906704a">
+      <name>Чек</name>
+      <synonym>
+        <key>ru</key>
+        <value>Чек</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЧекККМ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="43122d62-e686-4e64-b6c6-78d7557dad57">
+      <name>ВозвратныйЧек</name>
+      <synonym>
+        <key>ru</key>
+        <value>Возвратный чек</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЧекККМ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

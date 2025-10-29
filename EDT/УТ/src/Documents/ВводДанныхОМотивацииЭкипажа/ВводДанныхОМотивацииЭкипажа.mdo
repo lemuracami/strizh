@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b3aa4fcd-0552-432f-8e43-59b39944180c">
+  <producedTypes>
+    <objectType typeId="8182a3e7-80e4-4c98-adda-6c844d4476eb" valueTypeId="491ad29d-72cd-4358-b830-2e12fcb22087"/>
+    <refType typeId="8445d877-b84b-4e1a-9f98-015d10fba771" valueTypeId="a73ec266-c8a3-4b04-8b8e-be68f67fb859"/>
+    <selectionType typeId="f8468b2c-caa0-4922-8a5e-3ea573b10534" valueTypeId="77202165-af09-496f-aa02-27c169866165"/>
+    <listType typeId="4de0a256-8647-4900-9d14-2b270c69ad21" valueTypeId="5e10618f-b408-4a5e-9d99-2667ceff2fd4"/>
+    <managerType typeId="c7f2f893-5bbd-4037-8a62-d906385b274f" valueTypeId="cd26c00e-dda9-4242-a942-5f8011e1f5ab"/>
+  </producedTypes>
+  <name>ВводДанныхОМотивацииЭкипажа</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ввод данных о мотивации экипажа</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ВводДанныхОМотивацииЭкипажа.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ВводДанныхОМотивацииЭкипажа.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ВводДанныхОМотивацииЭкипажа.Form.ФормаСписка</defaultListForm>
+  <registerRecords>InformationRegister.НУЭкипажей</registerRecords>
+  <attributes uuid="39184c49-68bb-4a86-aede-dba9b08dffc4">
+    <name>МесяцРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц расчета</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="09fc96c4-3998-4390-8634-e23ca44f849b">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="cb56366c-67ec-4392-8010-262055cd750f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="ad6adf87-167a-481a-8a1a-2d3f0acf55fa">
+    <producedTypes>
+      <objectType typeId="6e8a3a07-4922-4120-995f-e797a4a2a8e7" valueTypeId="9f8ef6f6-2152-43c7-97cb-42482f625e23"/>
+      <rowType typeId="205b5cfc-4225-45d6-a7d4-2d5923a7b545" valueTypeId="cfd87aee-ebf4-4418-93e4-14bd219d5451"/>
+    </producedTypes>
+    <name>СтатьиНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статьи НУ</value>
+    </synonym>
+    <attributes uuid="22f04801-e971-4b4f-ac8c-782690628727">
+      <name>ФизЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Физ лицо</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаЭкспедиторы</types>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="703f8704-7203-4f32-9d96-81d5af3c5a4c">
+      <name>СтатьяНУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья НУ</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.НачисленияУдержанияЭкипажей</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="110f0af9-0ade-4420-ba2b-ec30b5b8f840">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f71d2e5a-b6cb-4a61-bd81-7e5382a86b35">
+      <name>Процент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Процент</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c09cf3ba-5805-4289-a08a-3d21da9d6959">
+      <name>ТипРасчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип расчета</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВариантыРасчетаНУЭкипажей</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4927661a-7d59-40a5-8a2b-644432d0d10a">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="03afede3-3874-4dbb-b103-9b19cd3fad40">
+      <name>МесяцРасчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Месяц расчета</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

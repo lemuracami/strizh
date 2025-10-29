@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="df5bc32d-07f9-4e6c-ad33-5bdb042b1751">
+  <producedTypes>
+    <selectionType typeId="2625aa35-9ff6-492f-9320-b20d3e81cc0c" valueTypeId="07cc641f-986e-4b8e-acf2-ced85d4d3207"/>
+    <listType typeId="03a4604b-ac02-46b9-a146-eec0cf7567d0" valueTypeId="011d3955-8dfc-4dba-b701-8c5d1c504713"/>
+    <managerType typeId="cbadc146-49bd-4965-85dc-d6ff86d99c30" valueTypeId="4b7c8c68-6462-4be9-9714-15a28eff3ec4"/>
+    <recordSetType typeId="2585ee19-938d-4a25-beec-8c1a6a8dbfe2" valueTypeId="98843a88-c3db-4d33-919f-a7358b403aeb"/>
+    <recordKeyType typeId="aaa74794-8797-4126-bcad-b421ac057a55" valueTypeId="11afc34e-a9c3-4236-bc00-d3cec066b5b1"/>
+    <recordType typeId="3df165d3-6ad5-4378-ba19-d713883cfcd4" valueTypeId="5f4d13d6-5663-4196-b874-3f0d2dc655dc"/>
+    <recordManagerType typeId="3de5ca73-879e-4a1e-9742-0092fa2d086f" valueTypeId="347dcb00-d438-45d5-a401-aeb08babbbc7"/>
+  </producedTypes>
+  <name>МатрицаТарификацииПоСтатусам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Матрица тарификации по статусам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="deb41fec-f909-4909-9384-0e63fef12d1e">
+    <name>Рассчитывать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рассчитывать</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="8ea6d3e5-4f89-4c60-96ef-dca483b90e80">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="0e8515da-83ff-4317-b354-d0a56986e409">
+    <name>СхемаМатрицыТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема матрицы тарификации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СхемыМатрицыТарификации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="07853ade-77f4-492d-b973-365ba08354f8">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fd5498c0-96c4-463b-b7b6-6025415fe6c0">
+    <name>КомпонентаТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Компонента тарификации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПоказателиРасчетаУслугСД</types>
+      <types>CatalogRef.КомпонентыТарификации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9232f819-a219-4def-b3c6-babdb06c91b6">
+    <name>ФинальныйСтатусЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Финальный статус заказа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="03b8c867-c3d9-4dda-81c5-ff13ba333f6d">
+    <name>ФормаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма упр</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="d3434aad-802e-4db3-897e-8aa7a55b4a3b">
+    <name>Редактировать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактировать</value>
+    </synonym>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

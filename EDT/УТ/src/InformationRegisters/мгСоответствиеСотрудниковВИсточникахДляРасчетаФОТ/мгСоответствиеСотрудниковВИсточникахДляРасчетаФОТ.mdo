@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1a49732d-5ceb-4394-b6ec-612def3b5bab">
+  <producedTypes>
+    <selectionType typeId="947a58c6-a79d-453a-a793-22d508a60de7" valueTypeId="f0d52d80-3743-4688-8886-172c74ab14e1"/>
+    <listType typeId="5a4d0e56-d48c-49dd-9cb0-7c5ed9bf7a9e" valueTypeId="efd08f1e-6db7-4a0a-875f-7ad201784d12"/>
+    <managerType typeId="4413cdae-009d-4025-9510-8d8163c5911b" valueTypeId="aa461cfa-da15-4f0b-98fb-b42d71436a57"/>
+    <recordSetType typeId="a2ad372b-23e0-4da1-bd33-606cd6b1efa8" valueTypeId="e0365c08-1cef-4483-8233-2761ab5d2345"/>
+    <recordKeyType typeId="8c3056b9-3a9d-453d-b342-70fd90af8563" valueTypeId="c7d455a0-b436-4371-afdd-3841f02a3acd"/>
+    <recordType typeId="032ec3aa-ff36-42e0-ae50-54c81001e8f5" valueTypeId="63a909b6-f98c-407d-889b-c0b87cfe90fe"/>
+    <recordManagerType typeId="b078d48a-cb9e-4f11-8720-9c5ce82507b9" valueTypeId="5982e672-fbd9-47d5-bdf5-caf83e76b704"/>
+  </producedTypes>
+  <name>мгСоответствиеСотрудниковВИсточникахДляРасчетаФОТ</name>
+  <synonym>
+    <key>ru</key>
+    <value>(Миго) Соответствие сотрудников в источниках для расчета ФОТ</value>
+  </synonym>
+  <comment>(Миго-Групп)</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="91de95f8-dbd7-4d93-9947-62195e4435e8">
+    <name>ТабельныйНомерВИсточнике</name>
+    <synonym>
+      <key>ru</key>
+      <value>Табельный номер в источнике</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="b8b9bb13-3435-4541-9476-9e767bcbd4b4">
+    <name>ИсточникДанныхДляРасчетаФОТ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник данных для расчета ФОТ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.мгИсточникиДанныхДляРасчетаФОТ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f3445288-c75b-4745-9711-52d94fb1239e">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудники</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9ca061e6-9dcb-41ec-9e01-a0400d129a08">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

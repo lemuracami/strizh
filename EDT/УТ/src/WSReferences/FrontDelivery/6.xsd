@@ -1,0 +1,73 @@
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.sinc"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="http://schemas.datacontract.org/2004/07/MainSales.WebUtility.objects.sinc">
+	<xs:complexType name="ArrayOfSystemOption">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="SystemOption"
+					nillable="true"
+					type="tns:SystemOption"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfSystemOption"
+			nillable="true"
+			type="tns:ArrayOfSystemOption"/>
+	<xs:complexType name="SystemOption">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="Name"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="Value"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SystemOption"
+			nillable="true"
+			type="tns:SystemOption"/>
+	<xs:complexType name="ArrayOfPieceBarcode">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					maxOccurs="unbounded"
+					name="PieceBarcode"
+					nillable="true"
+					type="tns:PieceBarcode"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPieceBarcode"
+			nillable="true"
+			type="tns:ArrayOfPieceBarcode"/>
+	<xs:complexType name="PieceBarcode">
+		<xs:sequence>
+			<xs:element minOccurs="0"
+					name="barcode"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="labelContent"
+					nillable="true"
+					type="xs:string"/>
+			<xs:element minOccurs="0"
+					name="piece"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					name="printFormat"
+					nillable="true"
+					type="xs:int"/>
+			<xs:element minOccurs="0"
+					name="printFormatSpecified"
+					type="xs:boolean"/>
+			<xs:element minOccurs="0"
+					name="type"
+					nillable="true"
+					type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PieceBarcode"
+			nillable="true"
+			type="tns:PieceBarcode"/>
+</xs:schema>

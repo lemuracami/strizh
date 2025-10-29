@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2381b438-a1c1-49d7-afc8-b6fd0988b476">
+  <producedTypes>
+    <selectionType typeId="478cedc7-0f4f-47f3-a2fe-cb58692087d9" valueTypeId="5a23c653-2dab-47d5-9f29-8b9693d75894"/>
+    <listType typeId="3de657e7-9c9d-4852-b44d-f68de5adb7de" valueTypeId="9588ca56-282f-4fa1-b1ea-5d3d9209a6ab"/>
+    <managerType typeId="5573a2e6-c4d6-4e93-b181-7480679110c9" valueTypeId="736e92c0-cc2f-48bf-b2f1-eeabf4327acc"/>
+    <recordSetType typeId="942af948-98b4-4c7d-8b04-de82e657bf4b" valueTypeId="c8974ed2-9b8e-4c1f-9836-62b8f788c77c"/>
+    <recordKeyType typeId="ebe8da37-a1c0-4111-ac25-edea4452d6b2" valueTypeId="ace1ac4e-004f-4e34-8614-8db2bd97ee40"/>
+    <recordType typeId="d20c5bef-dc43-480a-991c-58e26f45d131" valueTypeId="4ebaa3d9-b9b4-4118-b4f5-2eb63f1ac9b5"/>
+  </producedTypes>
+  <name>РасходГСМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расход ГСМ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="22869acc-70f2-4490-80fe-897b8090aca7">
+    <name>РасходГСМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расход ГСМ</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1b482361-67ac-4472-92f3-3ee2e122d54a">
+    <name>СуммаЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма затрат</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="8f11fdda-75c0-4daa-9211-be135c30013b">
+    <name>ПоказанияОдометраНаНачалоДня</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показания одометра на начало дня</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7cbada99-3280-4520-94a1-8417c194152b">
+    <name>ПоказанияОдометраНаКонецДня</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показания одометра на конец дня</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="ef55177e-1365-48fb-8eb2-5b042b2ff6f0">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2b374102-4504-4844-b631-6c3a95728ed9">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="5a1cece1-96fd-43d4-bacb-0d38a8a621ab">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e36547ef-51f5-4229-9c77-04bf30271995">
+    <name>ТерминалДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

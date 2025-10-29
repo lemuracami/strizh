@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2d790706-e7f0-484b-872c-6b03e9821bb6">
+  <producedTypes>
+    <selectionType typeId="46384c5c-8e42-445c-8d06-d6d18c83feed" valueTypeId="0119b97c-f068-4465-aa1c-7c6dbe87c4cd"/>
+    <listType typeId="89907726-1008-49b7-b9fb-83d6b4472e69" valueTypeId="9be6ae62-570b-4ef6-934a-0c4f1c37cb79"/>
+    <managerType typeId="beca5494-a33c-48e9-bf4f-52850e142343" valueTypeId="d62c433b-54c7-4d43-b2cd-00cfb9eead59"/>
+    <recordSetType typeId="b0633ced-8156-44c7-8663-6ad797f9970a" valueTypeId="800371e8-f0c1-4ccc-a620-49d4818ab9de"/>
+    <recordKeyType typeId="e09b8759-2bd7-43b6-9a75-f55290045e3b" valueTypeId="e241124c-34be-4262-a474-9a07f4f3b6ff"/>
+    <recordType typeId="308b8be3-e8c2-4a66-982b-36c1647aea87" valueTypeId="37954fe6-da95-4dea-9e7b-d7fcdc83be7b"/>
+    <recordManagerType typeId="f9fec558-64e4-4417-9193-a80398d67538" valueTypeId="0123274a-a217-4512-a28d-c20e07379db5"/>
+  </producedTypes>
+  <name>УчетПоступленияМногоместныхЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет поступления многоместных заказов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="fe8a7fde-03c0-4c7b-be2e-1b75399f98d0">
+    <name>ПолностьюПоступил</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полностью поступил</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="572a9b0a-0a67-4e44-8b10-707882abf28a">
+    <name>КоличествоМест</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество мест</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="fb22c801-b707-4187-9d48-4cae04303989">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗагрузкаСТСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="1dccf498-7dcd-44d3-9363-803b13021371">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

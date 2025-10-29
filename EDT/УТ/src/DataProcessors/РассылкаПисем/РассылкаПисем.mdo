@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e8d048b-6d38-479e-bcfe-db5de568d66b">
+  <producedTypes>
+    <objectType typeId="68e5c651-794e-4011-999a-d416ece33b55" valueTypeId="726c79b6-089d-41d5-b417-3f62d27b3013"/>
+    <managerType typeId="af658ed3-da55-4cf8-9c6f-849134124334" valueTypeId="d7da606c-24ec-4cc3-88f7-111101de7b7a"/>
+  </producedTypes>
+  <name>РассылкаПисем</name>
+  <synonym>
+    <key>ru</key>
+    <value>Рассылка писем</value>
+  </synonym>
+  <defaultForm>DataProcessor.РассылкаПисем.Form.Форма</defaultForm>
+  <attributes uuid="3ff91157-dbfb-4c82-a093-b485b16e2ff5">
+    <name>ТипРассылки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип рассылки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыРассылки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7f2db260-9494-4b38-82d4-5a12e5a778a2">
+    <name>Текст</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d7a5f0e1-eabe-47eb-94b3-5f918aabb3da">
+    <name>ТемаПисьма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема письма</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="33556b07-d5f0-4d72-824c-ae8165393c2e">
+    <name>ОтКого</name>
+    <synonym>
+      <key>ru</key>
+      <value>От кого</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="92863157-a98a-4b0c-9248-ebbbe85c7743">
+    <producedTypes>
+      <objectType typeId="f5c2b538-929a-48c0-b906-7186662af284" valueTypeId="7143ab80-5bb1-4a47-be13-0c0a680943b1"/>
+      <rowType typeId="4956dd64-9f53-47ee-a85d-92251dd02e89" valueTypeId="e090cd82-6de5-4834-93ef-746911c51ac8"/>
+    </producedTypes>
+    <name>Контрагенты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагенты</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="f90fb9aa-e634-4c0d-af3d-fb4abf7895c0">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6c449468-4f19-4dc3-ac96-26c123220d79">
+      <name>Пометка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="51e72962-ed75-44fd-8a9d-d92d0014c396">
+      <name>ОсновнойМагазин</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основной магазин</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="6d472937-969f-48e7-9cec-6bb3bffa6632">
+    <producedTypes>
+      <objectType typeId="262b5501-187c-4080-8482-41bb58daea08" valueTypeId="de20f2a1-ab2c-4e34-83c9-19cf3d98f744"/>
+      <rowType typeId="1b45c224-e88e-4c3e-a968-87a4644a6b01" valueTypeId="cc2512fe-e2d2-4056-b005-5a3e790257cb"/>
+    </producedTypes>
+    <name>Файлы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Файлы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2316f3b7-5824-443d-bb95-281d8bb75873">
+      <name>ИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="23f9f6b5-73ab-48d0-93d3-6340ed23f46a">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

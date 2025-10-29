@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="140f20b6-4243-420d-93e7-c0c1f32a3730">
+  <producedTypes>
+    <selectionType typeId="177d83f9-356b-467b-a27c-a9a8ba8d7470" valueTypeId="3e5b899e-31e8-40c0-bad4-40c65d2cfe79"/>
+    <listType typeId="a4bb57cd-bbcb-4439-8fb5-bb9855f0ff3b" valueTypeId="a438b1de-b856-4e08-9e9b-f90960c95d70"/>
+    <managerType typeId="0f2d695a-34d1-4bc3-9d40-5da1f4ec6c9c" valueTypeId="81987d44-7f7e-4ee6-bfe6-4f50c28a1fd3"/>
+    <recordSetType typeId="29f66d3d-b920-4212-9f6b-9e2996c4766c" valueTypeId="fbad8b85-8b52-4a4d-a8a3-738e64fa81ae"/>
+    <recordKeyType typeId="f38d1f8f-6721-4981-b267-6e79149687c1" valueTypeId="ff5253b5-6526-48cb-b273-32f8fbd1e8ac"/>
+    <recordType typeId="c206866d-6715-431b-956f-678c36d59224" valueTypeId="16aeb298-ad5d-4f17-9656-6c0b704d963a"/>
+    <recordManagerType typeId="d8200572-ac61-4469-9271-68af7ed23b1b" valueTypeId="20fa4e4c-2b0b-47b4-a6e6-331a6653bcfd"/>
+  </producedTypes>
+  <name>СтатусыСогласованияГрафикаССотрудниками</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы согласования графика с сотрудниками</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="b06b0f5a-55c4-4f54-bf43-bd3b526864f7">
+    <name>ГрафикСогласован</name>
+    <synonym>
+      <key>ru</key>
+      <value>График согласован</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="862ee407-32a3-4d5d-9ec5-34cb37f8a693">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="13066587-7d1b-4448-a699-918bc19a1f59">
+    <name>График</name>
+    <synonym>
+      <key>ru</key>
+      <value>График</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ГрафикРаботыСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="481771f5-d99e-4303-a6df-10b5d23fd05a">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физ лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

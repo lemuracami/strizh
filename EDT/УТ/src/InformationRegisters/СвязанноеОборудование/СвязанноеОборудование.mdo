@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="da3c2a15-7a9c-4e39-b888-40186aeb2c1d">
+  <producedTypes>
+    <selectionType typeId="52b0da04-36ce-4515-ad0b-5e78345377d7" valueTypeId="b900297e-d297-4681-bc8b-8269cb43348d"/>
+    <listType typeId="5592f081-f3fa-46d9-a164-9e28c8df0e4d" valueTypeId="0b14e0da-8b24-4a5b-846b-64d6192fc67c"/>
+    <managerType typeId="033ced60-7ed3-4daf-a348-fcba17ed94f7" valueTypeId="8c9c7f22-996f-4632-b150-06164fb864a9"/>
+    <recordSetType typeId="b3e3be0f-e6ec-4cad-ae6c-c070f7251f33" valueTypeId="a576fe7e-a493-4986-a0dd-e63597f4c121"/>
+    <recordKeyType typeId="29815346-6e3e-4fab-807b-a691c1eeb99b" valueTypeId="27b8037c-2f47-4183-88fd-9fa6545f54f5"/>
+    <recordType typeId="aea16b83-9162-4fa1-a61c-0de7c2283574" valueTypeId="e11a178c-bdc6-476f-8bca-3d6beda9cc0f"/>
+    <recordManagerType typeId="4bcebfef-d40b-4248-b9b8-b86678537935" valueTypeId="5cbd0027-7b6d-415a-9eab-c84d1dfb5852"/>
+  </producedTypes>
+  <name>СвязанноеОборудование</name>
+  <synonym>
+    <key>ru</key>
+    <value>Связанное оборудование</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="eef6f058-243f-4b27-838f-6c0cf35f9862">
+    <name>СтатусМонтирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус монтирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыМонтированияОборудования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="ac40515f-a401-4814-ab69-29f127ab4d81">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="b2bf4ef4-3940-4783-807b-e233e80526d3">
+    <name>ОборудованиеВладелец</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование владелец</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Оборудование</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="71977f46-afd5-45c1-88f8-9e7a79a9ac31">
+    <name>ОборудованиеПодчиненное</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование подчиненное</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Оборудование</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

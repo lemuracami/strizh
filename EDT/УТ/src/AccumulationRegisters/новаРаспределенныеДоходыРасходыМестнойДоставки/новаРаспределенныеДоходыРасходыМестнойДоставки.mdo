@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3911d0b5-b6c9-414e-a192-af36e54563a2">
+  <producedTypes>
+    <selectionType typeId="7e6f261c-a48e-46cd-8c23-8bb12662509a" valueTypeId="d9569f8b-6b8a-4d10-9052-1747b1b12838"/>
+    <listType typeId="303a4652-2a12-4cfd-9db4-688481b65a4c" valueTypeId="0deaca36-5dd4-4110-8177-5f970a8ea1ce"/>
+    <managerType typeId="83a7d92b-95c7-47e1-9d1f-93ae5ce91cbc" valueTypeId="f6c46173-94c4-4cde-9864-6feec1571778"/>
+    <recordSetType typeId="e7ab9863-c5fb-4c25-a9a9-96708eeeb3b8" valueTypeId="fa8ca84d-b0ed-4817-909e-5a13fd439e59"/>
+    <recordKeyType typeId="8f3b19ed-3315-4b1a-a1e4-2433ad6ec49c" valueTypeId="46fc7c5a-e40b-480c-9489-323f1d729b2a"/>
+    <recordType typeId="d68f9ff0-51cd-4453-9193-ad6804ee78e7" valueTypeId="73828584-fe08-4694-981b-aad6af79117f"/>
+  </producedTypes>
+  <name>новаРаспределенныеДоходыРасходыМестнойДоставки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределенные доходы и расходы местной доставки</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="395dff17-8116-4069-b90f-13fc8078a4b1">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="c8ff8ff4-9d11-4c15-b8a7-83f470bf3a4a">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2b6dde65-8836-4790-8d82-a7ce9620c16a">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="79b35bb8-f767-4f02-acca-c37bae976f22">
+    <name>Экспедитор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экспедитор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаЭкспедиторы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a51a11ff-410d-4d88-83ca-2fe2ba7665fc">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаКонтрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="89cfbb40-3080-4cd4-962a-516587cf3322">
+    <name>Показатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаСтатьиДоходовРасходов</types>
+      <types>EnumRef.новаПоказателиРаспределенныхДоходовРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

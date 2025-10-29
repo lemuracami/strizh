@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипСотрудника</dataPath>
+			<field>ТипСотрудника</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип сотрудника</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПереносСЗаездом</dataPath>
+			<field>ПереносСЗаездом</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенос с заездом</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Выполнено</dataPath>
+			<field>Выполнено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтказБезЗаезда</dataPath>
+			<field>ОтказБезЗаезда</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказ без заезда</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтказСЗаездом</dataPath>
+			<field>ОтказСЗаездом</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказ с заездом</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Всего</dataPath>
+			<field>Всего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отказ</dataPath>
+			<field>Отказ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Перенос</dataPath>
+			<field>Перенос</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенос</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПереносБезЗаезда</dataPath>
+			<field>ПереносБезЗаезда</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенос без заезда</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РейсыПоЗаказам.Период,
+	РейсыПоЗаказам.Регистратор,
+	РейсыПоЗаказам.Активность,
+	РейсыПоЗаказам.Заказ,
+	РейсыПоЗаказам.ОтчетВодителя,
+	РейсыПоЗаказам.ВодительРесурс КАК Водитель,
+	РейсыПоЗаказам.ЭкспедиторРесурс КАК Экспедитор,
+	РейсыПоЗаказам.ТранспортРесурс КАК Транспорт,
+	РейсыПоЗаказам.РезультатДоставки,
+	РейсыПоЗаказам.ПричинаНеВыполненияДоставки,
+	РейсыПоЗаказам.ПричинаОтказаПереноса,
+	РейсыПоЗаказам.СторонаПретензии
+ПОМЕСТИТЬ ВТ_Всего
+ИЗ
+	РегистрСведений.РейсыПоЗаказам КАК РейсыПоЗаказам
+ГДЕ
+	РейсыПоЗаказам.Период МЕЖДУ &amp;Дата1 И &amp;Дата2
+	И РейсыПоЗаказам.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Всего.Период,
+	ВТ_Всего.Регистратор,
+	ВТ_Всего.Заказ,
+	ВТ_Всего.Водитель КАК Сотрудник,
+	ВТ_Всего.РезультатДоставки,
+	ВТ_Всего.ПричинаНеВыполненияДоставки,
+	ВТ_Всего.ПричинаОтказаПереноса,
+	"Водитель" КАК ТипСотрудника,
+	1 КАК Количество
+ПОМЕСТИТЬ ВТ_Общая
+ИЗ
+	ВТ_Всего КАК ВТ_Всего
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Всего.РезультатДоставки,
+	ВТ_Всего.Период,
+	ВТ_Всего.Регистратор,
+	ВТ_Всего.Заказ,
+	ВТ_Всего.Водитель,
+	ВТ_Всего.ПричинаНеВыполненияДоставки,
+	ВТ_Всего.ПричинаОтказаПереноса
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Всего.Период,
+	ВТ_Всего.Регистратор,
+	ВТ_Всего.Заказ,
+	ВТ_Всего.Экспедитор,
+	ВТ_Всего.РезультатДоставки,
+	ВТ_Всего.ПричинаНеВыполненияДоставки,
+	ВТ_Всего.ПричинаОтказаПереноса,
+	"Экспедитор",
+	1
+ИЗ
+	ВТ_Всего КАК ВТ_Всего
+ГДЕ
+	ВТ_Всего.Экспедитор &lt;&gt; ЗНАЧЕНИЕ(Справочник.новаЭкспедиторы.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Регистратор,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.РезультатДоставки,
+	ВТ_Общая.ПричинаНеВыполненияДоставки,
+	ВТ_Общая.ПричинаОтказаПереноса,
+	ВТ_Общая.ТипСотрудника,
+	1 КАК Количество
+ПОМЕСТИТЬ ВТ_Выполнена
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	(ВТ_Общая.РезультатДоставки = ЗНАЧЕНИЕ(справочник.новаРезультатМестнойДоставки.Выполнена)
+			ИЛИ ВТ_Общая.РезультатДоставки = ЗНАЧЕНИЕ(справочник.новаРезультатМестнойДоставки.ВыполненаЧастично))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Регистратор,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.РезультатДоставки,
+	ВТ_Общая.ПричинаНеВыполненияДоставки,
+	ВТ_Общая.ПричинаОтказаПереноса,
+	ВТ_Общая.ТипСотрудника,
+	ВТ_Общая.Количество
+ПОМЕСТИТЬ ВТ_Перенос
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	(ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Регистратор,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.РезультатДоставки,
+	ВТ_Общая.ПричинаНеВыполненияДоставки,
+	ВТ_Общая.ПричинаОтказаПереноса,
+	ВТ_Общая.ТипСотрудника
+ПОМЕСТИТЬ ВТ_ПереносБезЗаезда
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	(ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Регистратор,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.РезультатДоставки,
+	ВТ_Общая.ПричинаНеВыполненияДоставки,
+	ВТ_Общая.ПричинаОтказаПереноса,
+	ВТ_Общая.ТипСотрудника
+ПОМЕСТИТЬ ВТ_ПереносСЗаездом
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Регистратор,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.РезультатДоставки,
+	ВТ_Общая.ПричинаНеВыполненияДоставки,
+	ВТ_Общая.ПричинаОтказаПереноса,
+	ВТ_Общая.ТипСотрудника,
+	ВТ_Общая.Количество
+ПОМЕСТИТЬ ВТ_Отказ
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	(ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаБезЗаезда)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаСЗаездом)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.НеДоставлен)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.НетНаСкладе))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Регистратор,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.РезультатДоставки,
+	ВТ_Общая.ПричинаНеВыполненияДоставки,
+	ВТ_Общая.ПричинаОтказаПереноса,
+	ВТ_Общая.ТипСотрудника
+ПОМЕСТИТЬ ВТ_ОтказБезЗаезда
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	(ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаБезЗаезда)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.НеДоставлен)
+			ИЛИ ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.НетНаСкладе))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Регистратор,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.РезультатДоставки,
+	ВТ_Общая.ПричинаНеВыполненияДоставки,
+	ВТ_Общая.ПричинаОтказаПереноса,
+	ВТ_Общая.ТипСотрудника
+ПОМЕСТИТЬ ВТ_ОтказСЗаездом
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	ВТ_Общая.ПричинаНеВыполненияДоставки = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаСЗаездом)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Общая.Период,
+	ВТ_Общая.Заказ,
+	ВТ_Общая.Сотрудник,
+	ВТ_Общая.ТипСотрудника,
+	1 КАК Всего,
+	NULL КАК Выполнено,
+	NULL КАК ОтказСЗаездом,
+	NULL КАК ОтказБезЗаезда,
+	NULL КАК ПереносСЗаездом,
+	NULL КАК ПереносБезЗаезда,
+	NULL КАК Перенос,
+	NULL КАК Отказ
+ПОМЕСТИТЬ ВТ_Объединение
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Выполнена.Период,
+	ВТ_Выполнена.Заказ,
+	ВТ_Выполнена.Сотрудник,
+	ВТ_Выполнена.ТипСотрудника,
+	NULL,
+	1,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_Выполнена КАК ВТ_Выполнена
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ОтказСЗаездом.Период,
+	ВТ_ОтказСЗаездом.Заказ,
+	ВТ_ОтказСЗаездом.Сотрудник,
+	ВТ_ОтказСЗаездом.ТипСотрудника,
+	NULL,
+	NULL,
+	1,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ОтказСЗаездом КАК ВТ_ОтказСЗаездом
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ОтказБезЗаезда.Период,
+	ВТ_ОтказБезЗаезда.Заказ,
+	ВТ_ОтказБезЗаезда.Сотрудник,
+	ВТ_ОтказБезЗаезда.ТипСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	1,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ОтказБезЗаезда КАК ВТ_ОтказБезЗаезда
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ПереносСЗаездом.Период,
+	ВТ_ПереносСЗаездом.Заказ,
+	ВТ_ПереносСЗаездом.Сотрудник,
+	ВТ_ПереносСЗаездом.ТипСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	1,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ПереносСЗаездом КАК ВТ_ПереносСЗаездом
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ПереносБезЗаезда.Период,
+	ВТ_ПереносБезЗаезда.Заказ,
+	ВТ_ПереносБезЗаезда.Сотрудник,
+	ВТ_ПереносБезЗаезда.ТипСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	1,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ПереносБезЗаезда КАК ВТ_ПереносБезЗаезда
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Перенос.Период,
+	ВТ_Перенос.Заказ,
+	ВТ_Перенос.Сотрудник,
+	ВТ_Перенос.ТипСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	1,
+	NULL
+ИЗ
+	ВТ_Перенос КАК ВТ_Перенос
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Отказ.Период,
+	ВТ_Отказ.Заказ,
+	ВТ_Отказ.Сотрудник,
+	ВТ_Отказ.ТипСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	1
+ИЗ
+	ВТ_Отказ КАК ВТ_Отказ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Объединение.Период,
+	ВТ_Объединение.Заказ,
+	ВТ_Объединение.Сотрудник,
+	ВТ_Объединение.ТипСотрудника,
+	СУММА(ВТ_Объединение.Всего) КАК Всего,
+	СУММА(ВТ_Объединение.Выполнено) КАК Выполнено,
+	СУММА(ВТ_Объединение.ОтказСЗаездом) КАК ОтказСЗаездом,
+	СУММА(ВТ_Объединение.ОтказБезЗаезда) КАК ОтказБезЗаезда,
+	СУММА(ВТ_Объединение.ПереносСЗаездом) КАК ПереносСЗаездом,
+	СУММА(ВТ_Объединение.Перенос) КАК Перенос,
+	СУММА(ВТ_Объединение.Отказ) КАК Отказ,
+	СУММА(ВТ_Объединение.ПереносБезЗаезда) КАК ПереносБезЗаезда
+ИЗ
+	ВТ_Объединение КАК ВТ_Объединение
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Объединение.Период,
+	ВТ_Объединение.Заказ,
+	ВТ_Объединение.Сотрудник,
+	ВТ_Объединение.ТипСотрудника</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Всего</dataPath>
+		<expression>Сумма(Всего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Выполнено</dataPath>
+		<expression>Сумма(Выполнено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Отказ</dataPath>
+		<expression>Сумма(Отказ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтказБезЗаезда</dataPath>
+		<expression>Сумма(ОтказБезЗаезда)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтказСЗаездом</dataPath>
+		<expression>Сумма(ОтказСЗаездом)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Перенос</dataPath>
+		<expression>Сумма(Перенос)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПереносСЗаездом</dataPath>
+		<expression>Сумма(ПереносСЗаездом)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПереносБезЗаезда</dataPath>
+		<expression>Сумма(ПереносБезЗаезда)</expression>
+	</totalField>
+	<parameter>
+		<name>Дата1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НАЧАЛОПЕРИОДА(&amp;СтПериод.ДатаНачала, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>Дата2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(&amp;СтПериод.ДатаОкончания, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>СтПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заказ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Всего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Выполнено</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отказы</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Отказ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОтказБезЗаезда</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОтказСЗаездом</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Переносы</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Перенос</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПереносБезЗаезда</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПереносСЗаездом</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Сотрудник</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>f30926d0-7087-4b3d-b3b7-1d2e50114646</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Заказ.ТерминалДоставки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>68617710-c8e0-48f3-bcb5-3c335ddeca8a</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Терминал доставки</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>1265d9eb-a4a5-47d6-a5d3-367282c3b1e1</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">BeginAndEnd</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ТипСотрудника</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ТипСотрудника</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Всего</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Выполнено</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отказы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Отказ</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтказБезЗаезда</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтказСЗаездом</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переносы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Перенос</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПереносБезЗаезда</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПереносСЗаездом</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Сотрудник</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Сотрудник</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Всего</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Выполнено</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отказы</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Отказ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ОтказБезЗаезда</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ОтказСЗаездом</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Переносы</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Перенос</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПереносБезЗаезда</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПереносСЗаездом</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Период</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Заказ</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Всего</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Выполнено</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отказы</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Отказ</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтказБезЗаезда</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтказСЗаездом</dcsset:field>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Переносы</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Перенос</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПереносБезЗаезда</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПереносСЗаездом</dcsset:field>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

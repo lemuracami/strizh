@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5d470971-4dad-4884-a689-80bc4eb5bd3d">
+  <producedTypes>
+    <selectionType typeId="0143a20f-59e9-42dd-8078-10fdd7f2c486" valueTypeId="080f2e6b-1c04-4817-91e6-b2af7aea05c0"/>
+    <listType typeId="cc529d9f-491f-4d1c-a576-03beb997de00" valueTypeId="570e4290-9449-47b4-b80e-02cd203d5c55"/>
+    <managerType typeId="eea82520-9613-45f0-a53a-419a80ba9eb2" valueTypeId="2fe35a45-cb0e-4287-93b8-635a1b5499b1"/>
+    <recordSetType typeId="9378b24f-4148-4719-9caf-3561c85b18ab" valueTypeId="dd2a4fd6-2cf6-4481-9bd0-161aa8fa5bba"/>
+    <recordKeyType typeId="b696ae6d-29a3-4f0e-9273-a7db61b9ab71" valueTypeId="03966703-881c-40e4-89bb-c4e8ed941ecd"/>
+    <recordType typeId="b815e755-8e79-4d85-8d54-f34c1fd4e486" valueTypeId="1de8ec2f-273c-4ffe-be73-20fac21bd1ac"/>
+    <recordManagerType typeId="55afe7e3-4779-4da9-b38e-a7173a22619f" valueTypeId="5f54dbac-8a64-4605-b9a1-16ce5dcb6afb"/>
+  </producedTypes>
+  <name>ОтсутствующиеНаСкладеДоставки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отсутствующие на складе доставки</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="5c7646d4-0c5d-4b7f-9aa7-794cf3f6f54e">
+    <name>ОтсутствуетНаСкладе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отсутствует на складе</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b2a6cb1c-9d48-45c5-8197-72a977ee992c">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаРейсМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="ee8d6afb-46b0-414c-b896-83cdfd0c42e9">
+    <name>Доставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаМестнаяДоставка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

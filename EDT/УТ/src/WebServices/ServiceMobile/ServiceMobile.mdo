@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b6fc64e4-e194-45a6-a6d1-1d6293768f75">
+  <name>ServiceMobile</name>
+  <synonym>
+    <key>ru</key>
+    <value>Service mobile</value>
+  </synonym>
+  <namespace>http://www.strizh-logistic.ru/1Cmobile</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Cars</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.ReasonsOfCancellation</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.ClientOrderXDTO_</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.callsForMA</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.regionsForMA</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.OrdersTakingGoods</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.tariffForMA</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.ArrayOfString</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.ReasonsOfCancellationExtension</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.arrayOfServerAdress</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Nomenklature</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Parameters</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Orders</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.DataOfAuth</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Shop</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.CarMans</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.ServiceMobile</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Reason</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Klients</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.OrderActs</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.NomenklatureXDTO_</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:StringValue">
+    <value>http://v8.1c.ru/8.1/data/core</value>
+  </xdtoPackages>
+  <descriptorFileName>ServiceMobile.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="28aa13ac-bcb6-4e8b-a36d-cba0e27c873d">
+    <name>GetOrders</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get orders</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetClientOrders</procedureName>
+    <parameters uuid="2ffd8fc2-1695-4d87-abfb-1ba8df32c64b">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <xdtoValueType>
+        <name>date</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="bfa967a2-56c7-4439-87b9-8aa97d0b46d1">
+      <name>CarMan</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car man</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="879751c2-5858-48f5-b11a-4e6f154a96bb">
+    <name>GetCarMans</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get car mans</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetCarMans</procedureName>
+  </operations>
+  <operations uuid="56c5f0d5-02e4-4a30-a975-199490a2be76">
+    <name>SetOrderStatus</name>
+    <synonym>
+      <key>ru</key>
+      <value>Set order status</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>byte</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>SetOrderStatus</procedureName>
+    <parameters uuid="43f39977-9cc9-4049-ae9a-8061df392e76">
+      <name>Orders</name>
+      <synonym>
+        <key>ru</key>
+        <value>Orders</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="16958057-4754-4b06-b4a5-9ff65689f1b4">
+      <name>CarMan</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car man</value>
+      </synonym>
+      <xdtoValueType>
+        <name>CarMan</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/CarMans</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="24477c17-357b-48e9-a6cf-ef3b1711bdc1">
+    <name>GetCars</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get cars</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetCars</procedureName>
+  </operations>
+  <operations uuid="40a9478a-b2dc-4ec9-b002-e8d9f10ca4ad">
+    <name>GetOrdersByCars</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get orders by cars</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetOrdersByCars</procedureName>
+    <parameters uuid="4405264d-7c9b-4aca-a620-f7c2277883c5">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <xdtoValueType>
+        <name>date</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="c2bd3903-6ba0-4eab-a351-b0c34a65f0be">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="7a623b41-d7c8-4954-8b8d-71bbe3ca6608">
+    <name>SetOrderStatusByCars</name>
+    <synonym>
+      <key>ru</key>
+      <value>Set order status by cars</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>byte</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>SetOrderStatusByCars</procedureName>
+    <parameters uuid="cd3b7a9c-62ee-4afe-9d03-be3458ad2aa5">
+      <name>Orders</name>
+      <synonym>
+        <key>ru</key>
+        <value>Orders</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="545b06cc-f233-4259-b300-652b02903e1e">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>Car</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/Cars</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="ffea7f02-0c2f-4b31-9347-de260f09098b">
+    <name>GetDataOfAuth</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get data of auth</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>DataOfAuth</name>
+      <nsUri>http://www.strizh-logistic.ru/1CMobile/Auth</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetDataOfAuth</procedureName>
+    <parameters uuid="c8fe6a74-d557-47b0-a68b-23fb334ab230">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="b1bed5bf-d325-4320-b23a-d99d8ac2aa5a">
+      <name>Type</name>
+      <synonym>
+        <key>ru</key>
+        <value>Type</value>
+      </synonym>
+      <xdtoValueType>
+        <name>byte</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="c09d0c06-92ba-459d-9042-b4f389a3f3ef">
+    <name>GetPhoneOfSeniorOfLogicMan</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get phone of senior of logic man</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetPhoneOfSeniorOfLogicMan</procedureName>
+  </operations>
+  <operations uuid="a6472d4a-a0bd-4bc9-9b93-59b4866e33fd">
+    <name>GetReasonsOfCancellation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get reasons of cancellation</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetReasonsOfCancellation</procedureName>
+  </operations>
+  <operations uuid="fa4fd047-7884-4522-bb64-1a3d2ba3dc4c">
+    <name>GetPhoneNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get phone number</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetPhoneNumber</procedureName>
+    <parameters uuid="5dc4fde9-309f-4b54-b4c6-f376f4761a09">
+      <name>ID_trans</name>
+      <synonym>
+        <key>ru</key>
+        <value>I d trans</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="9a23bd28-ef71-418d-be70-17e82a8ea1f5">
+    <name>GetCarMansForID</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get car mans for ID</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetCarMansForID</procedureName>
+    <parameters uuid="9fb4d6af-4b59-4d30-be6d-ead3c1531662">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+  <operations uuid="5ec6a276-173c-4f47-8e4b-491663bc7e95">
+    <name>GetCarsForID</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get cars for ID</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetCarsForID</procedureName>
+    <parameters uuid="5973ecc9-15be-49ee-b990-f5b316d9f37e">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+  <operations uuid="98f507d4-a7c0-4e7a-921b-4834bcb5e859">
+    <name>GetParameters</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get parameters</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetParameters</procedureName>
+    <parameters uuid="9dc4cb32-a9c8-4556-94ff-0691e0d6a93c">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="ea1950da-5301-4282-8ec9-6ae4d36c1a22">
+    <name>GetReasonsOfCancellationExtension</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get reasons of cancellation extension</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetReasonsOfCancellationExtension</procedureName>
+  </operations>
+  <operations uuid="ad7bf1eb-d9fd-4cd1-90a8-3b3b599d0e60">
+    <name>GetShopUnperformedReasons</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get shop unperformed reasons</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetShopReasonByUnperformedOrders</procedureName>
+    <parameters uuid="06cf2717-7c6b-4f30-a0b6-ecc3708b6e45">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <xdtoValueType>
+        <name>date</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="195754f2-c456-4716-bcad-3a637da65ee9">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="1a1d4c0d-8912-43b1-9142-241eee4989a5">
+    <name>GetReason</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get reason</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetChangedReason</procedureName>
+    <parameters uuid="c063bc98-a57c-415f-9e9b-0f9e954ebd40">
+      <name>PlanID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Plan ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="9223b96d-aa13-4056-8ecb-17246dd183f1">
+    <name>DelReason</name>
+    <synonym>
+      <key>ru</key>
+      <value>Del reason</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>DelReason</procedureName>
+    <parameters uuid="be36231e-c760-4b41-ba55-378174d52ad5">
+      <name>Reasons</name>
+      <synonym>
+        <key>ru</key>
+        <value>Reasons</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ArrayOfString</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ArrayOfString</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="b3edc4da-c992-4724-9f1f-373f93d94fa1">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="33bcc0f7-2ade-4823-986c-979252dc029f">
+    <name>GetOrdersTakingGoodsByCars</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get orders taking goods by cars</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetClientOrdersTakingGoodsByCars</procedureName>
+    <parameters uuid="b6c4a9a7-8af5-41ac-8523-2772795ba684">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <xdtoValueType>
+        <name>date</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="539c4f96-f990-4579-b186-64bcabbb51a3">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="0af1d1d5-7e6d-4c4f-9d3e-652bbbdf1a55">
+    <name>getVolumeBreake</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get volume breake</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getVolumeBreake</procedureName>
+    <parameters uuid="2647be90-e5a1-4eea-8b8c-620c68bbbd43">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="899589b2-920b-4a2b-8847-b6355f92b08c">
+    <name>getVolumeBreakeDeleteRegistration</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get volume breake delete registration</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getVolumeBreakeDeleteRegistration</procedureName>
+    <parameters uuid="5a2b135d-d33c-4818-a5ac-4476dda2bd2c">
+      <name>tariffID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Tariff ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ArrayOfString</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ArrayOfString</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="a5c3157c-5e94-425a-b222-552b528cee74">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="a301c4df-92a5-4197-9ced-4354b3e6d3f7">
+    <name>getTransportSelectionMode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get transport selection mode</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>getTransportSelectionMode</procedureName>
+  </operations>
+  <operations uuid="e6af2c9c-bd17-41a4-acc3-04e0b9f77f65">
+    <name>SetOrderStatusByCarsAndID</name>
+    <synonym>
+      <key>ru</key>
+      <value>Set order status by cars and ID</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>byte</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>SetOrderStatusByCarsAndID</procedureName>
+    <parameters uuid="a69eb678-1990-4b2b-8fa7-b5540014edd9">
+      <name>Orders</name>
+      <synonym>
+        <key>ru</key>
+        <value>Orders</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="17618354-ee54-445d-a559-4ad8e42970b6">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>Car</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/Cars</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="484e4f23-910d-42f3-9527-39f5a675bd43">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="95048648-7cc5-4e3e-be18-76661b040f1a">
+    <name>UnloadCallsRecords</name>
+    <synonym>
+      <key>ru</key>
+      <value>Unload calls records</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>byte</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>UnloadCallsRecords</procedureName>
+    <parameters uuid="35858b26-bba3-49d6-b2bc-e8465539a52e">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="77309ae9-ce70-4b3b-ad9e-dcd427d828be">
+      <name>callsRecords</name>
+      <synonym>
+        <key>ru</key>
+        <value>Calls records</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="2cb22586-7a49-48f3-a952-de82fdf574b0">
+    <name>UnloadCallsRecordsForOrders</name>
+    <synonym>
+      <key>ru</key>
+      <value>Unload calls records for orders</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>byte</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>UnloadCallsRecordsForOrders</procedureName>
+    <parameters uuid="79be2f62-f925-4a9e-9702-6275a9f94508">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="4151d387-a231-4a06-9969-6db628c7c995">
+      <name>callsRecords</name>
+      <synonym>
+        <key>ru</key>
+        <value>Calls records</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="1078857d-f60b-465f-ac59-d172f4b7631a">
+    <name>getRegions</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get regions</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getRegions</procedureName>
+    <parameters uuid="6f47b9c4-1993-4543-8827-84aaf886c428">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="04f26424-ddc0-4eab-937f-6f58fb3a8bda">
+    <name>getRegionsDeleteRegistration</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get regions delete registration</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getRegionsDeleteRegistration</procedureName>
+    <parameters uuid="7ee0d326-e9c3-40b5-9c13-d6b018c5ca23">
+      <name>regionID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Region ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ArrayOfString</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ArrayOfString</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="88ea1cca-07cc-48eb-a93f-529aafb67458">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="6f7612ef-6413-4773-b876-48d60c7827fa">
+    <name>getCheckPrintingMode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get check printing mode</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>byte</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>getCheckPrintingMode</procedureName>
+  </operations>
+  <operations uuid="142d31ce-0063-4808-adab-07164da651ad">
+    <name>getServerAdresses</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get server adresses</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>arrayOfServerAdress</name>
+      <nsUri>http://www.strizh-logistic.ru/1CMobile/ArrayOfServerAdress</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getServerAdresses</procedureName>
+  </operations>
+  <operations uuid="0f9ff613-5b83-4389-a0fe-0b895600927a">
+    <name>registratedCars</name>
+    <synonym>
+      <key>ru</key>
+      <value>Registrated cars</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>registratedCars</procedureName>
+    <parameters uuid="7b1b4ee4-bc30-44a7-8ab0-ef776505b99c">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="1f54e598-ee89-4b16-8e6a-7041dc51107b">
+    <name>getCostOfLifting</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get cost of lifting</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>getCostOfLiftingResponse</name>
+      <nsUri>http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>getCostOfLifting</procedureName>
+    <parameters uuid="c49b8a9b-3e9a-43f0-850c-e80907ba2227">
+      <name>request</name>
+      <synonym>
+        <key>ru</key>
+        <value>Request</value>
+      </synonym>
+      <xdtoValueType>
+        <name>getCostOfLiftingRequest</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="054e86e6-580c-4cb5-8162-0ad5ee4e542f">
+    <name>getOrganizations</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get organizations</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getOrganizations</procedureName>
+    <parameters uuid="9502fc0f-9a5b-42c3-94f3-15a651b6dc88">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="6b9aff9b-547a-424c-bc0b-3495d17e821b">
+    <name>getOrganizationsDeleteRegistration</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get organizations delete registration</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getOrganizationsDeleteRegistration</procedureName>
+    <parameters uuid="466fdcb9-12ed-4dd3-877f-0ccfd85c2e21">
+      <name>organizationID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Organization ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ArrayOfString</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ArrayOfString</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="014aa7d7-3acd-43a3-944e-6db5d7638c61">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="4bb49769-0afc-4cd4-aebf-3e40b6880074">
+    <name>SetParametersMA</name>
+    <synonym>
+      <key>ru</key>
+      <value>Set parameters MA</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>SetParametersMA</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="479b8af4-b670-4dd5-873a-24b4b184a69f">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="077de4b1-8834-4d88-89f0-1a3ff68d53ff">
+      <name>Parameters</name>
+      <synonym>
+        <key>ru</key>
+        <value>Parameters</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="f957c916-e787-45bb-91d0-946af786ab43">
+    <name>getPartners</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get partners</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getPartners</procedureName>
+    <parameters uuid="255e7a0d-d348-4797-8603-addb4f91f4eb">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="2b8c90c3-d4d1-4c7a-b3b6-8951b2f40cdd">
+    <name>deleteRegistration</name>
+    <synonym>
+      <key>ru</key>
+      <value>Delete registration</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>deleteRegistration</procedureName>
+    <parameters uuid="d56afa88-ddf6-4150-aa98-b75b3d577bea">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="3a7ec2aa-b83c-484e-af9a-38f11a788bf0">
+      <name>metaData</name>
+      <synonym>
+        <key>ru</key>
+        <value>Meta data</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="66d7c018-3745-402e-b1d0-14a7e48849b1">
+      <name>ArrayOfNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>Array of number</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ArrayOfString</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ArrayOfString</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="f7a6f05e-1b63-40a0-bab6-502f870e6f98">
+    <name>getTrips</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get trips</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getTrips</procedureName>
+    <parameters uuid="88b34c0f-e1d5-418c-a64d-473379f4b335">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="519da4fc-2720-472e-a08b-836b42d31b77">
+    <name>unloadErrorLog</name>
+    <synonym>
+      <key>ru</key>
+      <value>Unload error log</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>unloadErrorLog</procedureName>
+    <parameters uuid="77257f1e-810d-491a-b160-5eb545d26678">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="8bf23502-d0ee-4ada-aa8a-bc86d325f3f1">
+      <name>errorLog</name>
+      <synonym>
+        <key>ru</key>
+        <value>Error log</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="4fe198a6-f751-4244-b70e-e8d31234ff46">
+      <name>carId</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car id</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="4f0245a6-128a-41b9-9253-1d3a6bd22b40">
+    <name>getNotifications</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get notifications</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getNotifications</procedureName>
+    <parameters uuid="de73936e-2509-48ee-a0f0-94003cd66556">
+      <name>Car</name>
+      <synonym>
+        <key>ru</key>
+        <value>Car</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="29a71170-e039-4c28-9d93-76df41266b21">
+    <name>getSMSTemplates</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get SMSTemplates</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getSMSTemplates</procedureName>
+    <parameters uuid="f2dde56d-47ac-45ce-99ee-7e6e519e3077">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="d2d385ce-e7fe-4bf1-85e4-3b0244521e19">
+    <name>UnloadSMSSendingLog</name>
+    <synonym>
+      <key>ru</key>
+      <value>Unload SMS Sending log</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>byte</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>UnloadSMSSendingLog</procedureName>
+    <parameters uuid="9c9e7f2e-f523-4f1c-a5f7-09049afa6554">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="93cd28db-f338-4424-95c6-fa6f4e47f943">
+      <name>SMSSendingLog</name>
+      <synonym>
+        <key>ru</key>
+        <value>SMSSending log</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="4a5b4f85-1752-42a3-a3dd-97a00cdefc6a">
+    <name>getForwarders</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get forwarders</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getForwarders</procedureName>
+    <parameters uuid="a787927b-6d82-40f0-89de-75b0eb48a4b2">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="a1c312bd-95b2-422f-adb2-d18060eb3747">
+    <name>requestForTransferOfOrders</name>
+    <synonym>
+      <key>ru</key>
+      <value>Request for transfer of orders</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>transferOfOrdersResponse</name>
+      <nsUri>http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>requestForTransferOfOrders</procedureName>
+    <parameters uuid="85bab578-9365-48c6-8e49-0d3efb2d252a">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="7189bdfd-d71d-4da4-b27e-e0610d8dd256">
+      <name>request</name>
+      <synonym>
+        <key>ru</key>
+        <value>Request</value>
+      </synonym>
+      <xdtoValueType>
+        <name>requestForTransferOfOrdersRequest</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="cfbc6b06-56a4-433a-b205-5f0e99eb0698">
+    <name>acceptForTransferOfOrders</name>
+    <synonym>
+      <key>ru</key>
+      <value>Accept for transfer of orders</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>transferOfOrdersResponse</name>
+      <nsUri>http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>acceptForTransferOfOrders</procedureName>
+    <parameters uuid="6a303cf4-d25a-481a-8274-74861ef1de5e">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="000a5839-17bd-4b25-ab23-ef80221264f3">
+      <name>request</name>
+      <synonym>
+        <key>ru</key>
+        <value>Request</value>
+      </synonym>
+      <xdtoValueType>
+        <name>acceptForTransferOfOrdersRequest</name>
+        <nsUri>http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="1295ba84-8a37-45fa-885a-57a964bec9f5">
+    <name>getTypesOfAttachedDocs</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get types of attached docs</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>arrayOfTypesOfAttachedDocs</name>
+      <nsUri>http://www.strizh-logistic.ru/1CMobile/ServiceMobileXDTO</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>getTypesOfAttachedDocs</procedureName>
+    <parameters uuid="bf92aec8-c09b-4cf0-8778-da1d5db27380">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="6c9f7c3e-db48-437c-ae4a-a22aae854e42">
+    <name>unloadAttachedDocs</name>
+    <synonym>
+      <key>ru</key>
+      <value>Unload attached docs</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>unloadAttachedDocs</procedureName>
+    <parameters uuid="da7c4490-8014-41cb-9bee-ef8ab29f8438">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="d1dd5ead-f35a-4f08-979f-c8900bfa7484">
+      <name>attachedDoc</name>
+      <synonym>
+        <key>ru</key>
+        <value>Attached doc</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="d6b92de7-68f5-4e7a-9758-2dff3ff3e6eb">
+    <name>setPushNotificationSubscriberId</name>
+    <synonym>
+      <key>ru</key>
+      <value>Set push notification subscriber id</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>boolean</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>setPushNotificationSubscriberId</procedureName>
+    <parameters uuid="21f83af1-04bc-4801-ba31-0950beee8303">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="5acfaaf3-b226-4d9a-87f2-860448e22518">
+      <name>pushNotificationSubscriberId</name>
+      <synonym>
+        <key>ru</key>
+        <value>Push notification subscriber id</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="13f02794-a203-4dd0-8de5-1a5f87d18aa7">
+    <name>GetReasonsOfCancellationExtension_v2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get reasons of cancellation extension v2</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetReasonsOfCancellationExtension_v2</procedureName>
+    <parameters uuid="32fa35cf-4959-4151-bc47-66c26d2893e1">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+</mdclass:WebService>

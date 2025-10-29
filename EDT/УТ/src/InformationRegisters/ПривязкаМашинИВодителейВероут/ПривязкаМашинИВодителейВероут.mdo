@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cba9b21d-468a-4c74-96f9-ca4bc2cbcf8f">
+  <producedTypes>
+    <selectionType typeId="6aa0c5eb-8ce7-400a-8151-09d0a58e3155" valueTypeId="c1a83ec9-2fd4-4aed-b324-d513919e5ebc"/>
+    <listType typeId="df24a281-e3d6-4fcd-9606-e9cf70b2309a" valueTypeId="34f3dc43-e693-41c7-ab54-7c85526157f5"/>
+    <managerType typeId="b41ad2f3-e22c-40d3-a0b5-e594a99136c0" valueTypeId="ac6a4c86-e586-49bd-9d6a-7db63d5da28c"/>
+    <recordSetType typeId="3f2699f2-7a59-4354-b733-7f89c4b65032" valueTypeId="0c071785-3f57-4f5c-96d6-3538451a65dc"/>
+    <recordKeyType typeId="d4eb6925-9e1e-4bb4-a050-033cab6b449f" valueTypeId="6928a279-be3b-4553-8b70-2b8cf42d9d46"/>
+    <recordType typeId="d36e57cc-0258-4e35-bd5f-942941023733" valueTypeId="730d28df-c9ec-49de-96ba-18f0659ab0dc"/>
+    <recordManagerType typeId="6fa0ff76-801f-4424-af06-3267dd621162" valueTypeId="a70ca047-677d-46f6-b4cc-75329dd2b8d2"/>
+  </producedTypes>
+  <name>ПривязкаМашинИВодителейВероут</name>
+  <synonym>
+    <key>ru</key>
+    <value>Привязка машин и водителей (Вероут)</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="3c7bdce4-afbc-4641-9cf7-000d28e98227">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВодителиВероут</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.ПривязкаМашинИВодителейВероут.Dimension.РаспределительныйЦентр</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="ed51d2e4-1a5c-4878-8f6e-131d1560156b">
+    <name>РаспределительныйЦентр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распределительный центр</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РаспределительныеЦентрыVeeroute</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bebc99c3-acab-41ef-a2cb-923dcb86d308">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТипыТранспортовВероут</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.ПривязкаМашинИВодителейВероут.Dimension.РаспределительныйЦентр</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

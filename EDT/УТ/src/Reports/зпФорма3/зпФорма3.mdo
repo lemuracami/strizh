@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e559b3e9-e225-4348-a860-bb147d03b337">
+  <producedTypes>
+    <objectType typeId="11229293-af21-48f1-b7cb-00b3c3c75d9b" valueTypeId="2b7f46ea-6e66-4723-838d-dcd23d32cb5d"/>
+    <managerType typeId="db0e1880-4994-4333-9329-4d02a44801d7" valueTypeId="20ee79eb-8745-4101-9926-b408c90cbb33"/>
+  </producedTypes>
+  <name>зпФорма3</name>
+  <synonym>
+    <key>ru</key>
+    <value>з/п Форма-3</value>
+  </synonym>
+  <defaultForm>Report.зпФорма3.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.зпФорма3.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <attributes uuid="1acface5-0ebf-4914-8d63-dea2887a49fe">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="bc30118c-d1b0-4624-b30d-8d00db2a22be">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.ТерминалДоставки</name>
+      <field>Report.зпФорма3.Attribute.Регион</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="559138a0-d784-405c-8b47-c633bf1f02fb">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физ лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <forms uuid="e7cd4ca3-50ad-4986-84f5-8c3bd47f14b6">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="bdcf0aa8-a3fe-46b2-b948-f15772776484">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

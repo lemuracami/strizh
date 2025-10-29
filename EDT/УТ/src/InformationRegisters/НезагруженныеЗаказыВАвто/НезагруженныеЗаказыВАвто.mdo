@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1131b75a-64a2-4eb4-8f2c-0bcfd4abd60b">
+  <producedTypes>
+    <selectionType typeId="5f2f0f35-bf9a-4a11-a464-dc48159a891d" valueTypeId="129f28d1-c398-4235-aff3-fa0bf76ed31e"/>
+    <listType typeId="6a803dbf-14cd-4c4f-bbfc-515940e302d9" valueTypeId="0f5434dd-85e4-4c0c-9ba5-32bb72864693"/>
+    <managerType typeId="c5c52c49-1b49-45a6-a74b-0ca5b6cd892f" valueTypeId="4d5c30c4-700b-4102-8c29-5ef25341654e"/>
+    <recordSetType typeId="22979dbb-90b9-4254-8975-d25e234a5cda" valueTypeId="16ac4d07-4886-482f-8bb3-7dad9970b5ee"/>
+    <recordKeyType typeId="0648c4fe-036c-4a35-b574-66e32630d1bc" valueTypeId="880e968f-e904-48ac-a1b1-5f149490dfd5"/>
+    <recordType typeId="dc784701-3baa-483e-9149-f65528dbfc24" valueTypeId="34d6377b-0439-4261-9a89-1dcecff8bcb7"/>
+    <recordManagerType typeId="e6c7455c-2690-425b-9a2c-73160e8c6085" valueTypeId="23ccf28d-8ead-47cb-a40c-a286b3d346aa"/>
+  </producedTypes>
+  <name>НезагруженныеЗаказыВАвто</name>
+  <synonym>
+    <key>ru</key>
+    <value>Незагруженные заказы в авто</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.НезагруженныеЗаказыВАвто.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="1717cdbd-7093-4767-89f2-0fde2bd0087a">
+    <name>СтатусПогрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус погрузки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПогрузкиЗаказовВАвто</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="b54fa635-8798-4ca1-8a74-a5ca4788c88a">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="dc082e7a-8ee4-4ac7-935b-a2f87764eabf">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="e14ae830-4d30-4f82-aa03-bcef9f96e3d1">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

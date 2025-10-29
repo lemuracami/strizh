@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2a5a6151-0020-42d8-980b-ca02faaa1d55">
+  <producedTypes>
+    <selectionType typeId="e2c1e7ca-4ef2-43dd-ab43-6aad9bb47946" valueTypeId="f9bd9ff1-f4b7-43c4-87cb-4089c816fdc1"/>
+    <listType typeId="82ab47be-27d8-4436-ad13-e4f21782d26c" valueTypeId="18e48279-2fb1-48ad-a44a-f34337889e3b"/>
+    <managerType typeId="70abf986-150a-4bb7-a073-d2c5a9cdde06" valueTypeId="9aefa2d5-516e-4a31-8622-ea66858a4348"/>
+    <recordSetType typeId="e110b27a-2d06-4409-ba4f-9751d8a4cfea" valueTypeId="8bd06d24-d4e2-469e-93f7-4222635b8d92"/>
+    <recordKeyType typeId="6fab4d72-94e8-466a-8076-71983d5cfcdc" valueTypeId="6cb43964-e481-457c-89ca-ddd38f833a3c"/>
+    <recordType typeId="e5db079a-0b31-46c7-96b8-13f1c22aa5e6" valueTypeId="6ab74569-24d3-4350-87df-5d7d0cd83201"/>
+    <recordManagerType typeId="d84c5e5c-7dbc-4d7a-b7e3-829b87bee3d8" valueTypeId="4c300e3b-bb34-4ac0-b693-f51dad72fa0b"/>
+  </producedTypes>
+  <name>новаТочкиМаршрутаРейсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Точки маршрута рейсов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="98b58d25-7959-4c15-9535-34aefafe6a61">
+    <name>КодТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код точки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="064a9994-66d5-4cfc-973d-bfba8e68194e">
+    <name>Действие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действие</value>
+    </synonym>
+    <type>
+      <types>EnumRef.новаДействияВТочкеРейсаМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c2dbdc20-5cd2-405b-8897-9f465bed2d58">
+    <name>ТочкаМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка маршрута</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТочкиДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="77d6ad61-ff42-4ad2-aded-8c5655d8fbad">
+    <name>ПлановаяДатаПосещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плановая дата посещения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="33b1570b-025b-42da-98ef-5e134af0f22c">
+    <name>ПлановоеВремяПосещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плановое время посещения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Time</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="39bfaaac-2fb9-4a7e-9649-e84379a12d60">
+    <name>ПлановоеВремяПосещенияУказаноВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плановое время посещения указано вручную</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6818f647-823d-40f6-ba30-6b0978cab00a">
+    <name>ДатаПрибытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата прибытия</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="dcb38775-c6a6-4491-8252-67cf4a4d4b52">
+    <name>ДатаУбытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата убытия</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="22cf70a6-d450-49e7-b189-de0d5ca6df2e">
+    <name>КодУчасткаТрекаКТочке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код участка трека к точке</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7b21b95f-c9ff-4352-8819-a1f0b14100d5">
+    <name>КодУчасткаТрекаОтТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код участка трека от точки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6970fb36-a3a3-4003-a7ca-3ec25e1653dc">
+    <name>РасстояниеКТочке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расстояние к точке</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="77b5e071-9a5a-47f1-baa8-7f4763056f08">
+    <name>РасстояниеОтТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расстояние от точки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="10ffa0a8-0fee-45b3-9876-dc6d11507f92">
+    <name>ВремяКТочке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время к точке</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bf10559d-b075-45f3-a370-9ea2c774fa1d">
+    <name>ВремяОтТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время от точки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="66af26c6-44be-4664-88ab-5714f9063404">
+    <name>ИдТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ид точки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>40</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d8c034a7-eb69-41ae-994f-7b4a47391e32">
+    <name>ФактическоеВремяПосещенияУказаноВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фактическое время посещения указано вручную</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="39f22148-b2fd-4d42-98da-9ddf761d72fc">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаРейсМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9c313e72-b993-48a9-83fc-dd9c1977a0ae">
+    <name>НомерТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер точки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b922fc36-91da-4bcc-a45a-7cd15c1bff2e">
+    <name>МаршрутСопровождения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маршрут сопровождения</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

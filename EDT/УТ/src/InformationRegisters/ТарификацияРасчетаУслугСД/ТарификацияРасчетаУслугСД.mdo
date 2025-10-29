@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0267e3fd-9dce-4c31-912c-ace6f8a85809">
+  <producedTypes>
+    <selectionType typeId="c5e72504-72ae-49c9-8adf-43d29e1828b7" valueTypeId="878f9bca-1624-4c61-a350-287b4d9e61e1"/>
+    <listType typeId="9fd304b9-1517-4124-836e-88f4cff20675" valueTypeId="fec634a1-46bf-467b-a8e1-cd8e808b87c1"/>
+    <managerType typeId="aac67bd9-370f-49d3-9397-41aa4a977a59" valueTypeId="af4c9313-fa13-4b74-824d-78e2bd099fd0"/>
+    <recordSetType typeId="15a1c010-2748-481e-8ff9-c19800f400ea" valueTypeId="4400a5fa-f44b-40e5-a829-dbfc369f8718"/>
+    <recordKeyType typeId="f710e9ac-da82-496a-a999-2629fe759e18" valueTypeId="675933d6-aab2-40ae-9621-5a7f349080fe"/>
+    <recordType typeId="8e69ed2d-086b-4f90-8eb9-3a7dbe646765" valueTypeId="099c4dee-b323-4247-8b4c-91b4f32ed1ba"/>
+    <recordManagerType typeId="8df1a5a8-fde3-455f-aecb-1366d1b1dd01" valueTypeId="d8f72079-0e21-4dd2-9f74-f3564cc49101"/>
+  </producedTypes>
+  <name>ТарификацияРасчетаУслугСД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тарификация расчета услуг СД</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ТарификацияРасчетаУслугСД.Form.ФормаЗаписи</defaultRecordForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="c7c921bf-eca4-4c55-977b-9d371ef82654">
+    <name>СтоимостьУслугиСД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость услуги СД</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="1919eb75-e70f-4166-aec3-6cbcbb0d61f6">
+    <name>Тариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТарифныеПланы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="487a58c6-301d-4838-8666-faea23bdf7f6">
+    <name>РасчетныйБрейк</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчетный брейк</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РасчетныеБрейки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d5aa675d-4425-4230-954f-b6bab8c2bad2">
+    <name>ЗонаДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зона доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыРайонов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dd6766e0-7289-4448-98c9-df9e47efb7d9">
+    <name>ТипЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="c500016f-2709-41d0-abcc-640c9a8fd641">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

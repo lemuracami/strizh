@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9eeaa81b-af4a-445a-8f53-ffc2de91256f">
+  <producedTypes>
+    <selectionType typeId="77a70cb8-8c46-4c12-8b77-e42bd1b56391" valueTypeId="fe85d314-811e-4a2b-93bb-19f4e02a99fb"/>
+    <listType typeId="a3a6b77e-6a8e-4e18-9da8-d65aee893715" valueTypeId="6846b97b-3e83-42b6-bda5-71faa8a5e6f7"/>
+    <managerType typeId="9f7597a7-4a25-4479-9a3c-edc214e921c4" valueTypeId="93d8ba3a-16ea-4144-b691-0ed9705cd21e"/>
+    <recordSetType typeId="94406cc8-d129-4e87-912d-38e19694cb7b" valueTypeId="0c44145e-8708-4c12-b7f5-1e020a841425"/>
+    <recordKeyType typeId="039107a0-f056-49c3-8588-18134d84a551" valueTypeId="0520560c-fdee-46d3-b611-d7290b77c5b8"/>
+    <recordType typeId="cdb858d1-f749-4082-b4fe-7222930b36f7" valueTypeId="caaf8d46-acae-40ea-a543-7153e1d9f50d"/>
+    <recordManagerType typeId="20911964-c2c3-40d9-ab8a-9ebe1bbc6eb1" valueTypeId="b48bb607-cd63-4797-aeaf-313266ae2343"/>
+  </producedTypes>
+  <name>ИсторияСменыАдреса</name>
+  <synonym>
+    <key>ru</key>
+    <value>История смены адреса</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="0ab44e02-face-435e-ac6c-5f006ab6b098">
+    <name>ТочкаДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка до</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТочкиДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2df9c98c-edb4-4c2a-acc0-1f95828645ad">
+    <name>ТочкаПосле</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка после</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТочкиДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ad34af0f-5dab-4992-9130-78934583dd7e">
+    <name>АдресДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес до</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="55fe3ce6-8531-4d6b-8c1a-0cc2741ce787">
+    <name>АдресПосле</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес после</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="4b40dffb-af99-4c20-90b0-c5fb1ec2d862">
+    <name>ИсточникИзменений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник изменений</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.новаОтчетВодителя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="f6d2cc10-9802-410c-9add-74a44e1efab0">
+    <name>Задание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задание</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаМестнаяДоставка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

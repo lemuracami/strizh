@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7fca8812-363f-4eac-af63-d0022450b075">
+  <producedTypes>
+    <selectionType typeId="8cab2ed2-9db2-4e51-b60c-26d783c451d9" valueTypeId="3206f54e-f8c2-47c1-9256-746b44578390"/>
+    <listType typeId="b53ed779-2a0b-4e18-a0c5-53e064b39ed5" valueTypeId="c1befc0c-ff90-4dad-8842-7b5a7367f69b"/>
+    <managerType typeId="e006d0d4-47d8-4f8b-aed0-3ca3ed7c0540" valueTypeId="295b81ef-2034-49a5-b603-7a7c2cb6ca90"/>
+    <recordSetType typeId="87c2b364-1e92-4e45-bb2c-5a7326e00681" valueTypeId="8b297d6b-793b-4493-a411-074fd6e4b47b"/>
+    <recordKeyType typeId="89978c48-a2a2-4a2b-90f6-0978b6136daf" valueTypeId="2d200016-ffb8-4e91-b920-db0d24f8159a"/>
+    <recordType typeId="90deb729-8bbf-4b76-845d-420d6c72dafa" valueTypeId="54866fb1-4b3b-4d2b-866d-9e71dab66aae"/>
+    <recordManagerType typeId="85d8b9e3-0a86-4807-9964-bc9a8e58098e" valueTypeId="75b58223-cbc2-4007-9216-acc2e7585a3d"/>
+  </producedTypes>
+  <name>ЗаказыКОтвязкеОтРейсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заказы к отвязке от рейсов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ЗаказыКОтвязкеОтРейсов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ЗаказыКОтвязкеОтРейсов.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="8a46352f-5a6a-44a2-9839-e7e48ab6ba2a">
+    <name>ЗаказНайден</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ найден</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="e661fb94-f706-4eba-b173-3baaec4f05fe">
+    <name>ВосстановлениеРегламентом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Восстановление регламентом</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c0a75068-b764-429f-83e1-113f7f3a3e75">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ae093924-fec2-43a5-b02e-0cadb1a83040">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ДоставкиСОтклонениямиКоличестваСписком</types>
+      <types>DocumentRef.ПогрузкаВАвто</types>
+      <types>DocumentRef.новаОтчетВодителя</types>
+      <types>DocumentRef.ПредварительноеЗакрытиеРейса</types>
+      <types>DocumentRef.КорректировкаПогрузкиЗаказовВАвто</types>
+      <types>DocumentRef.ЗагрузкаСТСД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="9067faea-4cc6-45fe-b1f8-73ecf6ac22f1">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="743d1b92-6cdf-4914-81ae-0e250a1e2ec9">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d0cdaf98-89d2-4363-b205-98791836f756">
+    <name>ТипОтвязки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип отвязки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыОтвязкиЗаказовОтМашин</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="ba48ee44-c64f-41d5-af74-4022b84b791a">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9d123992-5fe9-4d26-abd3-e61cd93ffc26">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

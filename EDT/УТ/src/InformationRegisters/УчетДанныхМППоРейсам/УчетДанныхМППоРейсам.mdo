@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3a61ee6f-d1bb-47a0-b833-e885275f9e65">
+  <producedTypes>
+    <selectionType typeId="a1243e89-30e0-49e0-9a48-ac412db0a40c" valueTypeId="e361c78e-afdd-488f-a1dd-40805a426380"/>
+    <listType typeId="16228783-24a6-4aa3-b4d4-e1b58cd93b18" valueTypeId="8d6cd801-9862-4384-81a9-456f9444c6a6"/>
+    <managerType typeId="e341eb5f-759f-4275-a395-8fb71690ff9a" valueTypeId="d03de781-3910-47b7-8884-8e6aebe16d90"/>
+    <recordSetType typeId="b98010ef-a64b-452e-9341-4d83acaf183f" valueTypeId="2387f167-14bc-414e-8639-1a897d695e28"/>
+    <recordKeyType typeId="98a5ef10-db9e-4c76-8476-0a96ae459dba" valueTypeId="7ba4ae8e-7536-4777-acae-f2d0b6228c43"/>
+    <recordType typeId="d8d4ec49-2c0b-41fe-ab7d-1f4203dbb86e" valueTypeId="c7aaa0bd-325e-47b0-936f-13a865207718"/>
+    <recordManagerType typeId="c5d2b125-b7b6-4f05-9e5a-be87883e1b28" valueTypeId="9bfc9cc5-c727-4ad0-87df-8351eefaf6aa"/>
+  </producedTypes>
+  <name>УчетДанныхМППоРейсам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет данных МППо рейсам</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.УчетДанныхМППоРейсам.Form.ФормаЗаписи</defaultRecordForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="001dc64a-f4b4-457b-b81c-b8de4aeff7bb">
+    <name>ЭтапОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап обработки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ЭтапыОбработкиДанныхМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="e125ecca-9157-4ba0-b982-174c3b3f4a12">
+    <name>ДокументКОбработке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ к обработке</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВозвратЗаказовОтВодителя</types>
+      <types>DocumentRef.новаОтчетВодителя</types>
+      <types>DocumentRef.ПриходДСПоОтчетуВодителя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="4f7f40a6-624c-4f25-85d8-43f96d72df2a">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="6137d47e-dfb1-47fc-8956-f794375ef130">
+    <name>ДокументМП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ МП</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ОтчетПоДСМП</types>
+      <types>DocumentRef.ОтчетПоТоварамМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="56470c7a-52b9-45f0-986e-7424049b1031">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="55a8d9f4-4b45-40c3-82d4-9e2c1e724e5a">
+    <name>ТипДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип документа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:StringValue">
+      <value>2</value>
+    </maxValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8ce8daad-3a17-4650-92ea-a41068f43e0c">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8fd83177-258a-4105-843d-f49875947ebc">
+  <producedTypes>
+    <selectionType typeId="93dbc19b-2b6e-440c-b142-fb1971df03cc" valueTypeId="c909ded3-ca0e-4221-896c-68e3b9f519a4"/>
+    <listType typeId="76259d41-266f-436f-9a57-ac8675b22b55" valueTypeId="d5700b94-97ca-413b-b227-9b08712ba966"/>
+    <managerType typeId="1f9e64e6-65ff-4347-b2a8-dc957e4712b8" valueTypeId="175053f6-0b47-48d1-945a-c89d608f7935"/>
+    <recordSetType typeId="0833148f-4a76-456f-be4e-8c1a38fc1a9e" valueTypeId="a743bec6-aded-41e8-9d10-59daec4d3d1f"/>
+    <recordKeyType typeId="d5306fa3-9c5e-41ca-809f-a29f97dc6579" valueTypeId="9b709fa7-2be1-4350-a55e-6c7d4078efb7"/>
+    <recordType typeId="e3760e9d-78fe-455a-bbc9-645c42f0ea4d" valueTypeId="738405e0-c1b6-44d9-94c7-216c94cf8778"/>
+    <recordManagerType typeId="765d4e77-25d3-41ae-8f47-422a8fdcb4e2" valueTypeId="967f045e-9723-4163-ad9c-8181b11d4453"/>
+  </producedTypes>
+  <name>ОперативныеСтатусыЗаказовПоДаннымМП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оперативные статусы заказов по данным МП</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ОперативныеСтатусыЗаказовПоДаннымМП.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f471eff9-4bd3-4e8c-a2c7-dd4d415e2e0d">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="536edff8-eb95-4196-8789-61c8fc9c1a7f">
+    <name>РезультатДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаРезультатМестнойДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="0f518db4-8893-4500-881b-921434bf4a7f">
+    <name>ПричинаНеВыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина не выполнения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныНеВыполненияДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="3ebd608f-dc4f-48d6-9555-c2d92b35871e">
+    <name>ПричинаОтказаПереноса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отказа переноса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПричиныОтказаПереноса</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="c7104b0c-d7a3-4185-a624-90187b23f7d3">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="e2d2bd97-42a9-401e-a8df-7a39d82f6ee1">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

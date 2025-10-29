@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3f378eb1-cd14-4959-9b83-53e37c3fa51b">
+  <producedTypes>
+    <selectionType typeId="4beb8faf-fb58-49c1-8dca-cf9f86ddd40e" valueTypeId="8f402d6c-fbde-44f9-9567-6f3c47f78b6b"/>
+    <listType typeId="06676d07-7109-43da-b262-ae1f50116cf6" valueTypeId="ed9b0753-3637-40a9-947a-e49b90866892"/>
+    <managerType typeId="dcf8793e-40c5-4cb0-94d6-0f976917fb33" valueTypeId="2e23a594-313b-476b-a9f8-eceb01d2c94b"/>
+    <recordSetType typeId="58dc8b05-aca1-4543-b67c-03fa218ef4f6" valueTypeId="329a3507-56a5-49e1-9a7c-7663c88068e3"/>
+    <recordKeyType typeId="7eed3f0e-5e15-47b4-81bd-3e87e241d878" valueTypeId="077144c6-9d28-4cfd-bc6a-0d6c93059bba"/>
+    <recordType typeId="3aae07d0-f9c4-44c5-a8ab-64cc90e70769" valueTypeId="f2020021-0a64-427b-bed2-6cbed0116e6a"/>
+    <recordManagerType typeId="90ea5ab0-ca34-4f57-8eef-5d60a387dfae" valueTypeId="1157e0b1-a0d3-4156-be5c-bc97a79cf3f9"/>
+  </producedTypes>
+  <name>ЛогЗахватаККМНаСервереККМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лог захвата ККМНа сервере ККМ</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="47eff4ab-e478-47a8-a1d0-9fca0f6c9c43">
+    <name>СтатусЗахвата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус захвата</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыЗахватаККМНаСервереККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="da402413-0483-49e8-b459-ff9036800722">
+    <name>Ошибка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="00e770da-e773-4acf-99a1-2c37db18aca7">
+    <name>СтатусИзмененРегламентом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус изменен регламентом</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="4fd85dd1-6a6f-4fcc-ac87-bd97ffe8b5bd">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПриходДСПоОтчетуВодителя</types>
+      <types>DocumentRef.ЧекКоррекции</types>
+      <types>DocumentRef.ПечатьЧековПоДоставкам</types>
+      <types>DocumentRef.АннулированиеЧеков</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="16b5ff8b-c857-43bd-ac0d-4bfa14bad04f">
+    <name>ТекстОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="7306aac5-b371-4dfd-b010-921326afc443">
+    <name>СерверККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сервер ККМ</value>
+    </synonym>
+    <type>
+      <types>ExchangePlanRef.ОбменСКассовымСервером</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="70d9d95a-61b6-4f67-bb38-2e86eeeb42c5">
+    <name>ККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>ККМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КассыККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

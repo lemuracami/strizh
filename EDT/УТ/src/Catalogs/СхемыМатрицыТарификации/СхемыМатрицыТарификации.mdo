@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="465e9703-dfb2-4452-b403-0996848b2e8f">
+  <producedTypes>
+    <objectType typeId="ae9ffd10-f9f8-4237-8beb-eb4ef37ab929" valueTypeId="c2fafcbf-31db-452f-8686-ad0a2431b45f"/>
+    <refType typeId="98e38ea0-b0c9-4169-b828-cb40a3e065d2" valueTypeId="94c7f853-57d0-4150-80e8-912c65de1599"/>
+    <selectionType typeId="877fc980-13e5-4941-933a-bd3dd5e9a9b1" valueTypeId="d37a19e8-efe4-4c1e-b1cd-67f300c0f519"/>
+    <listType typeId="81d8c2fa-fca7-4a19-9bb6-47dcec367451" valueTypeId="c6094d51-ce16-4681-afc2-be84fe8ac2bb"/>
+    <managerType typeId="1d65679e-e096-439c-b825-a4cec089362d" valueTypeId="dcda1954-c3c0-4e8c-908e-bd0935ade872"/>
+  </producedTypes>
+  <name>СхемыМатрицыТарификации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Схемы матрицы тарификации</value>
+  </synonym>
+  <inputByString>Catalog.СхемыМатрицыТарификации.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.СхемыМатрицыТарификации.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>11</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <tabularSections uuid="bcab558d-dea2-482d-ad9f-4d2eee3ac90d">
+    <producedTypes>
+      <objectType typeId="3f162d0a-9f97-4f49-aee3-31bbe4833258" valueTypeId="a221788a-4c1c-485a-a9fd-deba9c8effd7"/>
+      <rowType typeId="1eaa9b18-caf1-4ccb-a890-99cc4bd67632" valueTypeId="f7651589-8d9d-4401-a9e4-820d478688c9"/>
+    </producedTypes>
+    <name>ДоступныеТипыЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные типы заказов</value>
+    </synonym>
+    <attributes uuid="721f2640-34d2-4a2a-8aa3-904eba62a129">
+      <name>ТипЗаказа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип заказа</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ТипыЗаказов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="5397a59e-bf34-4533-997b-e72490d3bcef">
+    <producedTypes>
+      <objectType typeId="57c3c888-f620-42ca-8f16-ae3de7eb7850" valueTypeId="13ca1044-bc1b-46f1-9bd0-228ac7e8b3d1"/>
+      <rowType typeId="fa0744b8-9701-4421-b2ea-dc3c49ff91c6" valueTypeId="2777ac00-5c16-4fb5-91a4-4be7d56bbeb6"/>
+    </producedTypes>
+    <name>ДоступныеКомпонентыТарификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные компоненты тарификации</value>
+    </synonym>
+    <attributes uuid="8b496dab-bbab-4a6b-8333-53968fd8ad34">
+      <name>КомпонентаТарификации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Компонента тарификации</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПоказателиРасчетаУслугСД</types>
+        <types>CatalogRef.КомпонентыТарификации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="dff246a9-7c96-4791-8fd4-4e3d48d483ed">
+    <producedTypes>
+      <objectType typeId="6084e4b1-cd10-4460-8baa-9d03958eabff" valueTypeId="46b0f5bb-aa33-498e-9b34-322659b6548c"/>
+      <rowType typeId="f246774a-bdd0-47e4-a845-342e2afed0d7" valueTypeId="f13081fc-bad7-49b0-b50c-9ddc56d241d3"/>
+    </producedTypes>
+    <name>ДоступныеФинальныеСтатусы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступные финальные статусы</value>
+    </synonym>
+    <attributes uuid="d5d3b171-5cbe-4fd3-9e6b-1929bb506cae">
+      <name>ФинальныйСтатус</name>
+      <synonym>
+        <key>ru</key>
+        <value>Финальный статус</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатусыЗаказов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

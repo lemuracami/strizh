@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3007de63-921f-408a-b7e8-c46a2ab4fcae">
+  <producedTypes>
+    <selectionType typeId="939500dd-c802-4835-a340-728d77f72f79" valueTypeId="0b61899e-c6ca-4a03-b937-980417bd9bbc"/>
+    <listType typeId="eae9c93d-d98c-48ea-9c60-5e3e6117fbc3" valueTypeId="4fc679d2-9ec7-484a-96be-a5eb88d893f3"/>
+    <managerType typeId="74952d8c-3b67-4748-92cb-a9984cefd15e" valueTypeId="7cef36fd-c8bf-449a-9aa5-9057682faeb3"/>
+    <recordSetType typeId="90a52bc1-470a-40da-8ce3-481a23847c0b" valueTypeId="b6ba194e-5e42-4ab4-bcf9-5c7b9b0a7b63"/>
+    <recordKeyType typeId="c90e2a33-5bca-4704-aa1d-6c6ff46eacc5" valueTypeId="f9ed1eae-58b3-4626-ac38-f530da9f522e"/>
+    <recordType typeId="1938e46b-ad78-4e4d-98a5-82fdb5f5eb55" valueTypeId="65b53d03-c098-4252-ac35-d7dbdaf1f723"/>
+    <recordManagerType typeId="adaa3dcb-8c63-48ba-bc9d-e2f1fe773df4" valueTypeId="50965f6b-339d-41e4-85c5-0fde98bf4fff"/>
+  </producedTypes>
+  <name>ИнформированиеЭкипажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Информирование экипажей</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="82c280d3-0032-4707-a8a5-98125da34fe3">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыВзаимодействия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="ae64117b-ac18-451e-822b-db6ebccbc527">
+    <name>ДатаСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата события</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="7b72eeba-3551-48b1-bccf-bfd176aeb9a8">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="98b01bce-8164-4417-862a-6fe498743d1a">
+    <name>ПереносРегламентом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перенос регламентом</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="26ed3022-3592-40dc-9df3-ade486d1d64f">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,13 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/1CMobile/Cars">
+	<objectType name="Car">
+		<property name="Name" type="xs:string"/>
+		<property name="Code" type="xs:string"/>
+		<property name="Number" type="xs:string"/>
+		<property name="Password" type="xs:string"/>
+		<property name="codeRegion" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="deletionMark" type="xs:boolean" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ArrayOfCars">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Cars" name="Car" type="d3p1:Car" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

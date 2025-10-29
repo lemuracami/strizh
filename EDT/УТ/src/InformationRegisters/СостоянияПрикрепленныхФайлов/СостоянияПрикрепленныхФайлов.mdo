@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ec5286d2-310b-466a-adb6-bcbb817df69b">
+  <producedTypes>
+    <selectionType typeId="8c2f46f7-0fdc-425f-bcb5-0e8cc78eb0fa" valueTypeId="8ede5758-aab5-42da-8ef0-976a1572f2fa"/>
+    <listType typeId="ce5d7c79-3770-4501-bff8-1b5a45f1d2cc" valueTypeId="3def6a54-8dda-422d-93ca-a71a86af4a3a"/>
+    <managerType typeId="00f8f40d-4fbe-4ddc-8d2c-1ddbdd486acb" valueTypeId="6b1ab462-78de-4635-ac45-3d15d94ea1cb"/>
+    <recordSetType typeId="41fb7b88-2670-4716-aedf-4e48ae99fe01" valueTypeId="1a682a99-88ad-4e8d-a790-38422b487777"/>
+    <recordKeyType typeId="09f4ce5a-df32-412a-afe4-d88459156b01" valueTypeId="5121492e-33fb-4b5c-9746-469368747009"/>
+    <recordType typeId="d8d8006c-8a5a-42c8-81a5-6735b13fe1e0" valueTypeId="83d3b37f-89bc-49de-a0fd-0ebdb26ed35b"/>
+    <recordManagerType typeId="3eba4c76-a262-4f49-98ab-13bca7f892c8" valueTypeId="d58eba80-3466-4334-a255-8123b846dc16"/>
+  </producedTypes>
+  <name>СостоянияПрикрепленныхФайлов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния прикрепленных файлов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="859f6743-f736-4e05-88b1-0ec883719c92">
+    <name>СостояниеФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние файла</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияПрикрепленныхФайлов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4f60d619-3e74-4355-ab7f-7236753d0fbb">
+    <name>ИдентификаторФайлаНаСервереАдминки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор файла на сервере админки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="cbe5b209-50d8-4bf0-9980-00a81ed30fa7">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="5f91141e-29e9-4cfd-a225-803c984e01f8">
+    <name>ПрикрепленныйФайл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прикрепленный файл</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПрикрепленныеФайлы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ca8b306b-518b-457f-862e-27a7fe1f68d8">
+    <name>ИдентификаторВнешнихДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор внешних данных</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

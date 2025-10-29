@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="621e9d43-02a9-47cc-876a-3a476ecebceb">
+  <producedTypes>
+    <selectionType typeId="38183c76-0459-4fbb-a07a-19c6d6db713d" valueTypeId="e8df471f-3e44-4a78-89e8-fffe03ba4d66"/>
+    <listType typeId="4ba8a1ee-c739-43f3-a1b9-e11e1c38c3cf" valueTypeId="f80b9a4b-c881-467d-a9c1-48cb325ebceb"/>
+    <managerType typeId="c3055953-1fe2-40e6-b3ae-7117ed4495de" valueTypeId="1030582e-3f71-4723-8a8e-8cc871add3b0"/>
+    <recordSetType typeId="f8ae8bd4-5735-453b-aded-db475970dd46" valueTypeId="7c984510-a6c4-4d07-99a4-d2a1c6c36795"/>
+    <recordKeyType typeId="f70e125f-fc3b-4186-b60b-0134407df3ab" valueTypeId="6e7aeb02-78b9-4397-a204-f6378893743e"/>
+    <recordType typeId="b783b7bd-8d16-4138-b0af-7234b2bbda8f" valueTypeId="056dbcd9-02c7-4098-aa18-e7536f61bc28"/>
+    <recordManagerType typeId="9d9dfad5-9ab5-449b-b0ce-6a00a718f3b3" valueTypeId="7386e087-d17a-48b1-9447-61bd9d41f821"/>
+  </producedTypes>
+  <name>ЛогОбменаСКассовымСервером</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лог обмена с кассовым сервером</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ЛогОбменаСКассовымСервером.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ЛогОбменаСКассовымСервером.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="ac2ec630-b2be-425c-bb7b-b921ef80a4e2">
+    <name>ОбменВыполнен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обмен выполнен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ef2add0a-55d4-4db6-a800-7f499399a491">
+    <name>НетДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нет данных</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="390b0dce-e28c-4969-8100-4b24f4ee3a1e">
+    <name>Ошибка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="0b85cca3-3645-48a6-84b3-19374e2a5872">
+    <name>КоличествоОбъектов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество объектов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="050384ac-15fb-4ca7-be42-c282ba52e419">
+    <name>Узел</name>
+    <synonym>
+      <key>ru</key>
+      <value>Узел</value>
+    </synonym>
+    <type>
+      <types>ExchangePlanRef.ОбменСКассовымСервером</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="86517055-2fc7-433e-b8c8-16b42fbc8832">
+    <name>ЭтапОбмена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап обмена</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ЭтапыОбменаСКассовымСервером</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="7a0f01b0-2a39-4b32-863d-cae5a58dceb8">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ba4323a6-99d8-4bf6-b096-753be6eb4a68">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

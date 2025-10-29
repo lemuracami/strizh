@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+    <html xmlns="http://www.w3.org/1999/xhtml">                                                                                                                                                                   
+    <head>
+        <title>Примеры. Геокодирование.</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="http://api-maps.yandex.ru/1.1/index.xml?key=AHLBrFABAAAAukhYRgIAE7zM4IPBd6xdnMtNA9ARJwIb31QAAAAAAAAAAABCIxbzmJnO_t4JsBZg0OdMCJiWqg==" type="text/javascript"></script> 
+        <!--Строка подключения сгенерированного скрипта,нужно понять куда его сохранять чтобы иметь полную ссылку-->
+        <!--Сейчас ссылается на папку,где находится основаня страница-->
+        <script src="http://back-office.strizh-logistic.ru/MapUtils.js?112" type="text/javascript"></script> 
+        <script src="http://back-office.strizh-logistic.ru/Selection.js?333" type="text/javascript"></script>
+        <script src="http://back-office.strizh-logistic.ru/MapPolygons.js" type="text/javascript"></script>
+		<script src="http://back-office.strizh-logistic.ru/external/jquery/jquery.js"></script>
+  		<script src="http://back-office.strizh-logistic.ru/jquery-ui.js"></script>
+  		<link href="http://back-office.strizh-logistic.ru/jquery-ui.css" rel="stylesheet">        
+ 		<script type="text/javascript"> 
+        var router;
+        var select;
+        var xForm1C;
+        var myPoints = new Array();
+        var myRouts = new Array();
+        var strOpen = "OPEN";
+        var strKontr = "Kontragent";
+        var t = new YMaps.Template('<b style="color: white"><a name="top"></b><a href="#" onclick="document.title = strOpen;return false;"><div id="docID" style="color: blue"<b>Открыть документ продажи</b></div></a><a href="#" onclick="document.title = strKontr;return false;"><div id="otchetID" style="color: blue"<b>Открыть карточку контрагента</b></div></a><div id="nameID" style="color: white">$[name]</div><div id="descrID" >$[description]</div>');	
+        YMaps.Templates.add("my#template", t);
+        var KopdinatShirota = 0;
+        var KopdinatDolgota  = 0;
+        var UID_Zakaza  = "";
+        /*vstavkaStiley;
+        var map, geoResult;
+         YMaps.jQuery(function () {
+                map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
+                map.setCenter(new YMaps.GeoPoint(37.62, 55.75), 12);
+                //Инициализация
+                MapUtils.Init(map);
+                //Отрисовка
+                MapUtils.DrawPolygons(^ПараметрИдСхемы^);
+               // Selection.Init(map,myPoints,MapUtils.polygons,onSelectionEnd);
+    			//Selection.Enable();                
+				select = new STZ.Selection(map,myPoints,MapUtils._polygons,onSelectionEnd);
+				select.Enable();    			
+                map.enableScrollZoom();
+            });
+        function showAddress (value, contrag, Styles, UID) {
+               var geocoder = new YMaps.Geocoder(value, {results: 1, boundedBy: map.getBounds()});
+               YMaps.Events.observe(geocoder, geocoder.Events.Load, function () {
+                   if (this.length()) {
+                       geoResult = this.get(0);
+            var point = new YMaps.GeoPoint(geoResult._point.__lng, geoResult._point.__lat);   
+          var placemark = new YMaps.Placemark(point, {style: Styles});
+            placemark.name = UID; 
+           placemark.description = contrag;
+   	    	myPoints.push(placemark);
+                      map.addOverlay(placemark);
+      				  return placemark; 
+    }else {
+                }
+            });
+           YMaps.Events.observe(geocoder, geocoder.Events.Fault, function (geocoder, error) {
+              alert("Произошла ошибка: " + error);
+              return null;
+         })
+    }
+        function showAddressCoord(shirota, dolgota, contrag, Styles, UID) {
+    var point = new YMaps.GeoPoint(dolgota, shirota);
+    var placemark = new YMaps.Placemark(point, GetPlaceMarkOptions());
+
+    placemark.name = UID;
+    placemark.description = contrag;
+    placemark.setStyle(Styles);
+  YMaps.Events.observe(placemark,
+            map.Events.BalloonOpen,
+            function (e, f) { 
+       select.PlaceMarkCliked = true;
+    }
+   );    
+    myPoints.push(placemark);
+    map.addOverlay(placemark);
+
+    return placemark;
+}
+    
+    function removeAllOverlays () {
+     	map.removeAllOverlays();
+     	MapUtils.DrawPolygons(^ПараметрИдСхемы^);
+    }
+    function AddRoute(wayPoint1, wayPoint2, tagPoint1, tagPoint2)	{
+        //if (myRouts.length>0) {lastRouter = myRouts[myRouts.length-1]; map.removeOverlay(lastRouter)};
+    	var myRouter = new YMaps.Router([wayPoint1, wayPoint2], [], {viewAutoApply: true});
+        map.addOverlay(myRouter);
+        YMaps.Events.observe(myRouter, myRouter.Events.Success, function (myRouter) {
+            myRouter.getWayPoint(0).setIconContent(tagPoint1);
+            myRouter.getWayPoint(1).setIconContent(tagPoint2);
+            dlMar = myRouter.getDistance()/1000;
+            document.title = 'Дистанция: '+ dlMar.toFixed(2);
+            });  
+        myRouts.push(myRouter);
+        return true;
+        }
+        
+    function mapRazmer(map, SentrSh, SentrDlg, razmer) {
+    	map.setCenter(new YMaps.GeoPoint(SentrSh, SentrDlg), razmer);   
+    }
+
+   function changeStyle(numTochki, imStyle){
+   
+   		var restoreDefault = true;
+   
+   		tochka = myPoints[numTochki];
+   	    tochka.setOptions({style: imStyle}, restoreDefault);
+   	    point = tochka.getCoordPoint();
+        map.setCenter(new YMaps.GeoPoint(point.__lng, point.__lat), 12);
+        map.redraw();
+        
+        return tochka.description;
+   } 
+function changeStyleByUID(UID, imStyle) {
+ try{
+  var restoreDefault = true;
+  var tochka;
+  for(var i=0;i<myPoints.length;i++)
+  { 
+   var tempPoint =myPoints[i];
+   if(tempPoint.name == UID){
+    tochka = tempPoint;
+    break;
+   }
+  }
+  //tochka = myPoints[numTochki];
+  tochka.setOptions({
+   style: imStyle
+  }, restoreDefault);
+  point = tochka.getCoordPoint();
+  map.setCenter(new YMaps.GeoPoint(point.__lng, point.__lat), 12);
+  map.redraw();
+
+  return tochka.description;
+ }
+ catch(e)
+ {
+  alert(e.message);
+ }
+}   
+function removePoint(numTochki)
+ {
+  var tochka = myPoints[numTochki];
+  map.removeOverlay(tochka );
+  myPoints.splice(numTochki, 1);
+ }
+ function removePointByUID(UID)
+ {
+  for(var i=0;i<myPoints.length;i++)
+  {
+   var placemark =myPoints[i];
+   if(placemark.name == UID)
+   {
+    map.removeOverlay(placemark);
+    myPoints.splice(i, 1);
+    return;
+   }
+  }
+ }
+function removePointByUIDArray(UIDArray) {
+    for (var j = 0; j < UIDArray.length; j++) {
+       removePointByUID(UIDArray[j]);
+    }
+} 
+function onSelectionEnd(points)
+ {
+ var pp = concatPoints(points);
+  xForm1C.СобытиеНТМЛ(pp);
+ }
+function concatPoints(points)
+ {
+  var uids="";
+  for(var i=0;i<points.length;i++)
+  {
+   var point =points[i];
+   uids+=point.name +",";
+  }
+  uids = uids.substring(0,uids.length-1);
+  return uids;
+ } 
+function SetForm1C(Form1C)
+{
+  xForm1C = Form1C;
+} 
+function CreateIconStyle(name, href) {
+    var st = new YMaps.Style();
+    st.iconStyle = new YMaps.IconStyle();
+    st.iconStyle.offset = new YMaps.Point(-12, -12);
+    st.iconStyle.href = href; //"/cr1_1.gif";
+    st.iconStyle.size = new YMaps.Point(20, 20);
+    st.hideIcon = false;
+    st.balloonContentStyle = new YMaps.BalloonContentStyle("my#template");
+    YMaps.Styles.add(name, st);
+}
+
+function GetPlaceMarkOptions() {
+    var options = {
+        draggable: false,
+        hasBalloon: true,
+        hideIcon: false,
+        hintOptions: {
+            maxWidth: 100,
+            offset: new YMaps.Point(5, 5)
+        }
+    };
+    return options;
+}
+    </script>
+    </head>
+    <body //~~onload~~> 
+      	<div id="YMapsID" style="width:100%;height:100%"></div>
+		<ul style="width:100px;display:none;position:absolute;  top: 0; left: 0;   right: 0;    bottom: 0;z-index:1;height:100px;" id="menu">
+		 <li>
+	 	<div>Рейс</div>
+		<ul id="subMenu"></ul>
+	  	</li>
+	 	</ul>              	
+    </form>
+    </body>
+         
+    </html>

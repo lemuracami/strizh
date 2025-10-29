@@ -1,0 +1,344 @@
+<xs:schema xmlns:ns1="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"
+		xmlns:ns2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+		xmlns:ns3="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+		xmlns:tns="http://tempuri.org/"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified"
+		targetNamespace="http://tempuri.org/">
+	<xs:import schemaLocation="file://2.xsd"
+			namespace="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"/>
+	<xs:import schemaLocation="file://4.xsd"
+			namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+	<xs:import schemaLocation="file://5.xsd"
+			namespace="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"/>
+	<xs:element name="Ping">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PingResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="PingResult"
+						nillable="true"
+						type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetLastDeliveryRequests">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetLastDeliveryRequestsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"
+						minOccurs="0"
+						name="GetLastDeliveryRequestsResult"
+						nillable="true"
+						type="q1:ArrayOfDeliveryRequest"/>
+				<xs:element minOccurs="0"
+						name="lastSequenceId"
+						type="xs:long"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetDeliveryRequests">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="since"
+						type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetDeliveryRequestsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"
+						minOccurs="0"
+						name="GetDeliveryRequestsResult"
+						nillable="true"
+						type="q2:ArrayOfDeliveryRequest"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCancelledOrders">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCancelledOrdersResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+						minOccurs="0"
+						name="GetCancelledOrdersResult"
+						nillable="true"
+						type="q3:ArrayOfstring"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetShipmentNotifications">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetShipmentNotificationsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+						minOccurs="0"
+						name="GetShipmentNotificationsResult"
+						nillable="true"
+						type="q4:ArrayOfActOfAcceptance"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateDeliveryRequests">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"
+						minOccurs="0"
+						name="requests"
+						nillable="true"
+						type="q5:ArrayOfDeliveryRequest"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateDeliveryRequestsResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateDeliveryRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MMS.Storage.DataModel"
+						minOccurs="0"
+						name="request"
+						nillable="true"
+						type="q6:DeliveryRequest"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateDeliveryRequestResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Approve">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="requestId"
+						nillable="true"
+						type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveRequests">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+						minOccurs="0"
+						name="requestIds"
+						nillable="true"
+						type="q7:ArrayOfstring"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveRequestsResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveById">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+						minOccurs="0"
+						name="item"
+						nillable="true"
+						type="q8:ApproveStatusByIdItem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveByIdResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveRequestsById">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+						minOccurs="0"
+						name="items"
+						nillable="true"
+						type="q9:ArrayOfApproveStatusByIdItem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveRequestsByIdResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Decline">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="requestId"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element minOccurs="0"
+						name="errorCode"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element minOccurs="0"
+						name="errorText"
+						nillable="true"
+						type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeclineResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeclineRequests">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+						minOccurs="0"
+						name="requests"
+						nillable="true"
+						type="q10:ArrayOfDeclineStatusItem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeclineRequestsResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeclineById">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+						minOccurs="0"
+						name="item"
+						nillable="true"
+						type="q11:DeclineStatusByIdItem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeclineByIdResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeclineRequestsById">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+						minOccurs="0"
+						name="items"
+						nillable="true"
+						type="q12:ArrayOfDeclineStatusByIdItem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeclineRequestsByIdResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetDeliveryStatus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0"
+						name="requestId"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element minOccurs="0"
+						name="status"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element minOccurs="0"
+						name="customStatus"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element minOccurs="0"
+						name="comment"
+						nillable="true"
+						type="xs:string"/>
+				<xs:element minOccurs="0"
+						name="date"
+						type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetDeliveryStatusResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetDeliveryStatuses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ZZT.DCIntegration"
+						minOccurs="0"
+						name="statuses"
+						nillable="true"
+						type="q13:ArrayOfSetDeliveryStatusItem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SetDeliveryStatusesResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveCancelledOrders">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+						minOccurs="0"
+						name="numbers"
+						nillable="true"
+						type="q14:ArrayOfstring"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveCancelledOrdersResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveShipmentNotifications">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+						minOccurs="0"
+						name="actNumbers"
+						nillable="true"
+						type="q15:ArrayOfstring"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApproveShipmentNotificationsResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

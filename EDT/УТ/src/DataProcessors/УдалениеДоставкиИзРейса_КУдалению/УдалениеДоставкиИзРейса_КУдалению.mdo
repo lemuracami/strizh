@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4206f002-9824-48ba-8b7d-15e3899bb8b3">
+  <producedTypes>
+    <objectType typeId="1bb51f9c-ab5b-42a1-8170-e806e381d762" valueTypeId="8b692d37-d052-4e06-a00a-36dbb73eebdb"/>
+    <managerType typeId="187494cb-aa79-466d-aed5-e1f58be714dd" valueTypeId="cea661c8-4552-4a97-8a4c-80ca459c49cc"/>
+  </producedTypes>
+  <name>УдалениеДоставкиИзРейса_КУдалению</name>
+  <synonym>
+    <key>ru</key>
+    <value>Удаление доставки из рейса к удалению</value>
+  </synonym>
+  <defaultForm>DataProcessor.УдалениеДоставкиИзРейса_КУдалению.Form.Форма</defaultForm>
+  <attributes uuid="ad64c42f-0d28-415f-b3e7-a57535ed373f">
+    <name>ВыбДата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выб дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2c4f82eb-2b06-4cba-a520-855cf4c91fe7">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9f04a83b-40cb-4e4d-9669-e94f51ea0848">
+    <name>РейсыИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейсы источник</value>
+    </synonym>
+    <type>
+      <types>ValueTree</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="de41e900-3f30-444a-b261-75b8be09077a">
+    <name>РейсыПриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейсы приемник</value>
+    </synonym>
+    <type>
+      <types>ValueTree</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="aff45776-559b-4d28-b938-87ad2c62cb9f">
+    <producedTypes>
+      <objectType typeId="761d3975-bc17-4f9c-b9ef-c966bd3b25af" valueTypeId="ddab907a-be6d-4b25-b264-1ac8fffc53ab"/>
+      <rowType typeId="fa74ad6f-baf0-4993-abe5-a8bccc520c13" valueTypeId="dba5616e-fa9e-4c52-b643-a85783bb033e"/>
+    </producedTypes>
+    <name>Перемещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перемещения</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="fd61ca8d-b7cd-4319-82cf-471d25c5c2d1">
+      <name>РейсИсточник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рейс источник</value>
+      </synonym>
+      <type>
+        <types>BusinessProcessRef.новаРейсМестнойДоставки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5854411b-3044-4253-bbbe-a0945567c59a">
+      <name>РейсПриемник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рейс приемник</value>
+      </synonym>
+      <type>
+        <types>BusinessProcessRef.новаРейсМестнойДоставки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cdaf202e-8fde-4407-ad26-e6c50db3b330">
+      <name>Доставка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доставка</value>
+      </synonym>
+      <type>
+        <types>BusinessProcessRef.новаМестнаяДоставка</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="f5e07cc2-3e7d-4304-ade1-66f952318da7">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

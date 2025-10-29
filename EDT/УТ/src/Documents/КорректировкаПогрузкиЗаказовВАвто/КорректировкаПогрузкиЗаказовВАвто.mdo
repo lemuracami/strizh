@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="10bf74d4-da2a-4c3f-b5e7-c3235add6f56">
+  <producedTypes>
+    <objectType typeId="adfea556-6b4e-45ee-9252-cc9ce46608ce" valueTypeId="ace7a1ec-b7a6-47fb-88d3-52c3d8dee135"/>
+    <refType typeId="8bc0eb05-ad92-4eb3-bfdb-6ed6e8b56490" valueTypeId="10a0ec80-3766-4ca6-be3e-76d3c93e62fd"/>
+    <selectionType typeId="16d0f031-07f9-4fc1-b878-0805f02aef24" valueTypeId="300cb42f-f347-46c2-b448-936fa0077569"/>
+    <listType typeId="2997e73a-ae52-4431-820b-bf97d6482e17" valueTypeId="76a38ff8-6e2c-4a97-a516-b91e9e06e41b"/>
+    <managerType typeId="4a370e9c-031b-46bb-8f78-c772ebe176e6" valueTypeId="c9d4b459-659d-4bf1-9317-5921c3af992e"/>
+  </producedTypes>
+  <name>КорректировкаПогрузкиЗаказовВАвто</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корректировка погрузки заказов в авто</value>
+  </synonym>
+  <inputByString>Document.КорректировкаПогрузкиЗаказовВАвто.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>InformationRegister.НезагруженныеЗаказыВАвто</registerRecords>
+  <attributes uuid="a0c9cc58-82df-471d-bfd6-d73b659a75e3">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="6dc02a78-1c79-44bf-ae83-dba6fb0c2540">
+    <producedTypes>
+      <objectType typeId="b6cfcceb-33a1-468e-89ac-0877e35ec4f2" valueTypeId="ff94c84d-6877-4fdb-9ad5-d6a3d952742a"/>
+      <rowType typeId="8a7e1f75-8c81-446e-a8b2-e004445c1bf1" valueTypeId="1c25d4d0-ce9c-4b65-a9e4-938e6e26e615"/>
+    </producedTypes>
+    <name>Заказы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы</value>
+    </synonym>
+    <attributes uuid="eee2d3e2-7fac-42ca-bda5-6a9a38b80bc8">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a4b75bcd-5476-4c33-8783-0dd6d25e8d2f">
+      <name>ПогрузкаИсточник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Погрузка источник</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПогрузкаВАвто</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="011d7158-5ed2-4784-9cca-481409b51b6c">
+      <name>ПогрузкаПриемник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Погрузка приемник</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПогрузкаВАвто</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="354f48a7-f60d-47b4-b390-297be17c29da">
+      <name>РежимМодификации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Режим модификации</value>
+      </synonym>
+      <type>
+        <types>EnumRef.РежимыМодификацииПогрузкиВАвто</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2418aa4d-b244-441f-b62e-3f1cd4742c75">
+      <name>КоличествоМест</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество мест</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

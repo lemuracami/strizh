@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6b5ac923-9b1c-4ba0-9649-0ace53c341d2">
+  <producedTypes>
+    <selectionType typeId="68a32dfa-bae7-46d1-83d2-b7a5d89f976f" valueTypeId="b859f64e-82f8-4d8d-8a56-43e386134ef9"/>
+    <listType typeId="9c8ab5c0-9ade-4ea9-98fe-1e3989e1f0a1" valueTypeId="01c9dc81-d5da-4226-be20-fed39d7f29e3"/>
+    <managerType typeId="503bb5c3-4334-4bce-acb8-5bcfc5f1895c" valueTypeId="3e35478e-32ad-41b1-8370-4f37cb8c229c"/>
+    <recordSetType typeId="04c00c22-3014-476c-9cc1-45c708f67374" valueTypeId="fd9f7cd6-d8d2-4037-b826-995f5ff0467b"/>
+    <recordKeyType typeId="ffe15bb4-f57c-4d8f-aee8-7d985b48a837" valueTypeId="44a650e1-3dd3-49d9-9340-af435769f6f6"/>
+    <recordType typeId="41bd05bb-b006-4c1a-9e1f-5f43a5450eb9" valueTypeId="793a2719-e37d-4a6b-ace3-fa195bb32871"/>
+    <recordManagerType typeId="d92bb2c1-3230-47b3-8800-c5f75685ef82" valueTypeId="494d3bdf-c2a1-415f-a8b7-8985655f81a8"/>
+  </producedTypes>
+  <name>ИсторияПрикрепленияЗаказаКРейсам</name>
+  <synonym>
+    <key>ru</key>
+    <value>История прикрепления заказа к рейсам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="32057646-67bf-483d-8e92-7add3b7f1832">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="790ad74a-3811-433f-b9ee-9a611712599a">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="99f421eb-2b25-43d4-b493-63bd2291c091">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="bc04002a-8b9f-4f45-8fad-ca9e3ac3c67a">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

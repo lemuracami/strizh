@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0a1e98a3-54b0-4be3-86a6-fab8f2a179ee">
+  <producedTypes>
+    <selectionType typeId="388d6dfb-36ac-4692-a684-4e181b5980b5" valueTypeId="465be821-590c-4a51-8708-01e60e7643dc"/>
+    <listType typeId="b593981c-1961-4d7b-9d70-527232e1ac16" valueTypeId="1818731d-75fe-4687-a8e2-e186bc915fe1"/>
+    <managerType typeId="4414daf2-e63e-4eff-8309-09c0bf49a631" valueTypeId="8155f87e-b9e9-41c6-9548-7d3b1c141359"/>
+    <recordSetType typeId="d2bd7872-35cd-4566-bf35-565908025383" valueTypeId="a46e4591-59da-4749-9189-ac4d1802c7ca"/>
+    <recordKeyType typeId="824bc864-d344-4cc9-8d7d-4d248b9c8a50" valueTypeId="708343d8-d60c-484a-83ab-bd0ed0b6541d"/>
+    <recordType typeId="b7be6b16-7e9b-4860-86f0-8487d76bf218" valueTypeId="8be33d9a-26a8-4cd8-a801-711f24f7a1c6"/>
+    <recordManagerType typeId="a96c1bd5-6af6-47b3-8eca-54fea89337f4" valueTypeId="0719cd07-e8da-49a7-a107-44e847980158"/>
+  </producedTypes>
+  <name>СтатусыДвиженияПриложенныхДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы движения приложенных документов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="880ae94c-9225-4513-9ea4-567b4314f6a9">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыДвиженияПриложенныхДокументов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="669cbb1a-4a2f-401f-8abd-2a66bca66629">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="e4526f52-db95-4dea-98a5-9d9c05c7bd8c">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6bacfa7f-9616-4300-83ed-d37ab9612e8a">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="35640b01-e4c3-43b4-b242-9063a45c9654">
+    <name>ВидПриложенногоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид приложенного документа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыПриложенныхДокументов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

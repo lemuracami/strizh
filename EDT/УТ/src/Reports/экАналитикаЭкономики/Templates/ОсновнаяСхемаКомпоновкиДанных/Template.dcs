@@ -1,0 +1,4568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КЗММСК</dataPath>
+			<field>КЗММСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КЗММСК</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияРасходы</dataPath>
+			<field>КатегорияРасходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Категория расходы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИтогоРасходы</dataPath>
+			<field>ИтогоРасходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итого расходы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодРасчета</dataPath>
+			<field>ПериодРасчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период расчета</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='MMMM yyyy'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасходыМагистраль</dataPath>
+			<field>РасходыМагистраль</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расходы магистраль</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачисленоПодъемДоходы</dataPath>
+			<field>НачисленоПодъемДоходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислено подъем доходы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачисленоВсегоРасходы</dataPath>
+			<field>НачисленоВсегоРасходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислено всего расходы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачисленоПодъемРасходы</dataPath>
+			<field>НачисленоПодъемРасходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислено подъем расходы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегионОтгрузки</dataPath>
+			<field>РегионОтгрузки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регион отгрузки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачисленоТарифДоходы</dataPath>
+			<field>НачисленоТарифДоходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислено тариф доходы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗонаРасходы</dataPath>
+			<field>ЗонаРасходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зона расходы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияДоходы</dataPath>
+			<field>КатегорияДоходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Категория доходы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОплаты</dataPath>
+			<field>ТипОплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КБММСК</dataPath>
+			<field>КБММСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КБММСК</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Маржа</dataPath>
+			<field>Маржа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Маржа</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗонаДоходы</dataPath>
+			<field>ЗонаДоходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зона доходы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Полигон</dataPath>
+			<field>Полигон</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полигон</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегионДоставки</dataPath>
+			<field>РегионДоставки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регион доставки</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УчетныйВесМагистраль</dataPath>
+			<field>УчетныйВесМагистраль</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетный вес магистраль</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВесФизический</dataPath>
+			<field>ВесФизический</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес физический</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОперацийСкладаСПБ</dataPath>
+			<field>ОперацийСкладаСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Операций склада СПБ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТарифицируемыйВес</dataPath>
+			<field>ТарифицируемыйВес</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тарифицируемый вес</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЗаказа</dataPath>
+			<field>ТипЗаказа</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РЗМСПБ</dataPath>
+			<field>РЗМСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>РЗМСПБ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объем</dataPath>
+			<field>Объем</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объем</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасходыАвтопарк</dataPath>
+			<field>РасходыАвтопарк</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расходы автопарк</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОперацийСкладаМСК</dataPath>
+			<field>ОперацийСкладаМСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Операций склада МСК</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасходыСклад</dataPath>
+			<field>РасходыСклад</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расходы склад</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УчетныйВесМСК</dataPath>
+			<field>УчетныйВесМСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетный вес МСК</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УчетныйВесСПБ</dataPath>
+			<field>УчетныйВесСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетный вес СПБ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РМММСК</dataPath>
+			<field>РМММСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>РМММСК</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВознаграждениеЗаПриемДСДоходы</dataPath>
+			<field>ВознаграждениеЗаПриемДСДоходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вознаграждение за прием ДС доходы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РБММСК</dataPath>
+			<field>РБММСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>РБММСК</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РЗММСК</dataPath>
+			<field>РЗММСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>РЗММСК</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РММСПБ</dataPath>
+			<field>РММСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>РММСПБ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РБМСПБ</dataPath>
+			<field>РБМСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>РБМСПБ</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КМММСК</dataPath>
+			<field>КМММСК</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КМММСК</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КММСПБ</dataPath>
+			<field>КММСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КММСПБ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КБМСПБ</dataPath>
+			<field>КБМСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КБМСПБ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КЗМСПБ</dataPath>
+			<field>КЗМСПБ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КЗМСПБ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПолученоСПолучателя</dataPath>
+			<field>ПолученоСПолучателя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получено с получателя</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасходыПоПлатежамКартой</dataPath>
+			<field>РасходыПоПлатежамКартой</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расходы по платежам картой</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10</dataPath>
+			<field>ЗаказовМКАД_10</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов МКАД10</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЦКАД_А108</dataPath>
+			<field>ЗаказовЦКАД_А108</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов ЦКАД А108</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовВсего</dataPath>
+			<field>ЗаказовВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД</dataPath>
+			<field>ЗаказовМКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов МКАД</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовА108_ГраницаМО</dataPath>
+			<field>ЗаказовА108_ГраницаМО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов А108 граница МО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДМеньше30</dataPath>
+			<field>ЗаказовЗаКАДМеньше30</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов за КАД&lt;30</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДМеньше30</dataPath>
+			<field>ЗаказовЗаМКАДМеньше30</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов за МКАД&lt;30</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДБольше30</dataPath>
+			<field>ЗаказовЗаМКАДБольше30</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов за МКАД&gt;30</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовКАД</dataPath>
+			<field>ЗаказовКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов КАД</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДБольше30</dataPath>
+			<field>ЗаказовЗаКАДБольше30</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов за КАД&gt;30</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10_ЦКАД</dataPath>
+			<field>ЗаказовМКАД_10_ЦКАД</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов МКАД10 ЦКАД</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСГТ</dataPath>
+			<field>ЗаказовСГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов СГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоКатегорииЗП.ЗаказовМГТ</dataPath>
+			<field>ЗаказовМГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов МГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоКатегорииЗП.ЗаказовКГТ</dataPath>
+			<field>ЗаказовКГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов КГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСКГТ</dataPath>
+			<field>ЗаказовСКГТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов СКГТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСТ</dataPath>
+			<field>ЗаказовСТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов СТ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыДоход</dataPath>
+			<field>ЗаказыДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы доход</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыМаржа</dataPath>
+			<field>ЗаказыМаржа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы маржа</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказовСОтрицательнойМаржой</dataPath>
+			<field>ЗаказовСОтрицательнойМаржой</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов с отрицательной маржой</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасход</dataPath>
+			<field>ЗаказыРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы расход</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходЗП</dataPath>
+			<field>ЗаказыРасходЗП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы расход ЗП</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходСклад</dataPath>
+			<field>ЗаказыРасходСклад</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы расход склад</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходАвтопарк</dataPath>
+			<field>ЗаказыРасходАвтопарк</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы расход автопарк</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходМагистраль</dataPath>
+			<field>ЗаказыРасходМагистраль</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы расход магистраль</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыТарифицируемыйВес</dataPath>
+			<field>ЗаказыТарифицируемыйВес</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы тарифицируемый вес</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыДоходПодъем</dataPath>
+			<field>ЗаказыДоходПодъем</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы доход подъем</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыРасходПодъем</dataPath>
+			<field>ЗаказыРасходПодъем</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы расход подъем</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОперацийСклада</dataPath>
+			<field>ОперацийСклада</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Операций склада</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыОперацийСклада</dataPath>
+			<field>ЗаказыОперацийСклада</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы операций склада</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рейсов</dataPath>
+			<field>Рейсов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рейсов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыРейсов</dataPath>
+			<field>ЗаказыРейсов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы рейсов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МСКиМО</dataPath>
+			<field>МСКиМО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>МСК и МО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СПБиЛО</dataPath>
+			<field>СПБиЛО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СПБ и ЛО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовСПБиЛО</dataPath>
+			<field>ЗаказовСПБиЛО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов СПБ и ЛО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовМСКиМО</dataPath>
+			<field>ЗаказовМСКиМО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов МСК и МО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыДоход</dataPath>
+			<field>ЗаборыДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы доход</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыРасход</dataPath>
+			<field>ЗаборыРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы расход</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыРасходЗП</dataPath>
+			<field>ЗаборыРасходЗП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы расход ЗП</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыРасходАвтопарк</dataPath>
+			<field>ЗаборыРасходАвтопарк</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы расход автопарк</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыМаржа</dataPath>
+			<field>ЗаборыМаржа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы маржа</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаборовВсего</dataPath>
+			<field>ЗаборовВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборов всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъемЗаказов</dataPath>
+			<field>ОбъемЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объем заказов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъемЗаборов</dataPath>
+			<field>ОбъемЗаборов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объем заборов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВесФизическийЗаказы</dataPath>
+			<field>ВесФизическийЗаказы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес физический заказы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВесФизическийЗаборы</dataPath>
+			<field>ВесФизическийЗаборы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес физический заборы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВесШкалыНиз</dataPath>
+			<field>ВесШкалыНиз</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес шкалы низ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВесШкалы</dataPath>
+			<field>ВесШкалы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес шкалы</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ВЫБОР
+КОГДА ВесШкалы &lt; 999999999
+ТОГДА Строка(ВесШкалы)
+ИНАЧЕ Строка(ВесШкалыНиз) + "+"
+КОНЕЦ</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаказовПоЗонеДоставки</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов по зоне доставки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаказовПоКатегорииЗП</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов по категории ЗП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаказовПоЗонеОтгрузки</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказов по зоне отгрузки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаказыАбсолютныеПоказатели</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы абсолютные показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаказыПоказателиНаЗаказ</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы показатели на заказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаказыПоказателиНаКГ</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы показатели на кг</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаборыАбсолютныеПоказатели</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы абсолютные показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаборыПоказателиНаЗабор</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы показатели на забор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЗаборыСогласованиеСДоставкой</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заборы согласование с доставкой</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	0 КАК Числа
+ПОМЕСТИТЬ ВТ_РядЧисел
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	1
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	2
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	3
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	4
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	5
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	6
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	7
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	8
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	9
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВложенныйЗапрос.Число КАК Число
+ПОМЕСТИТЬ ВТ_ШкалаВеса
+ИЗ
+	(ВЫБРАТЬ
+		ВТ_РядЧисел3.Числа * 100 + ВТ_РядЧисел2.Числа * 10 + ВТ_РядЧисел1.Числа КАК Число
+	ИЗ
+		ВТ_РядЧисел КАК ВТ_РядЧисел3,
+		ВТ_РядЧисел КАК ВТ_РядЧисел1,
+		ВТ_РядЧисел КАК ВТ_РядЧисел2
+	ГДЕ
+		ВТ_РядЧисел3.Числа * 100 + ВТ_РядЧисел2.Числа * 10 + ВТ_РядЧисел1.Числа В (&amp;ШкалаВеса)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		0.000001
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		999999999) КАК ВложенныйЗапрос
+ГДЕ
+	ВложенныйЗапрос.Число &lt;&gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ШкалаВеса_Низ.Число КАК Низ,
+	МИНИМУМ(ВТ_ШкалаВеса_Верх.Число) КАК Верх
+ПОМЕСТИТЬ ВТ_ИнтервалыВеса
+ИЗ
+	ВТ_ШкалаВеса КАК ВТ_ШкалаВеса_Низ
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ШкалаВеса КАК ВТ_ШкалаВеса_Верх
+		ПО ВТ_ШкалаВеса_Низ.Число &lt; ВТ_ШкалаВеса_Верх.Число
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ШкалаВеса_Низ.Число
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Рейс.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_Рейсы
+ИЗ
+	Документ.Рейс КАК Рейс
+ГДЕ
+	Рейс.ДатаРейса МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(эк_ЗатратыЗаработнаяПлатаСрезПоследних.Рейс.ДатаРейса, МЕСЯЦ) КАК ПериодРасчета,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.Регион КАК Регион,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.ДатаРасчета КАК ДатаРасчета,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.ТипЗаказа КАК ТипЗаказа,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.Заказ КАК Заказ,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.Начисление КАК Начисление,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.СуммаЗП КАК СуммаЗП,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.КатегорияЗаказа КАК КатегорияЗаказа,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.ВесЗаказа КАК ВесЗаказа,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.ЗонаДоставки КАК ЗонаДоставки,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.ПолигонМаршрутизацииЗаказа КАК ПолигонМаршрутизацииЗаказа,
+	эк_ЗатратыЗаработнаяПлатаСрезПоследних.СтатусЗаказа КАК СтатусЗаказа
+ПОМЕСТИТЬ ВТ_ЗатратыЗаработнаяПлата
+ИЗ
+	РегистрСведений.эк_ЗатратыЗаработнаяПлата.СрезПоследних(
+			,
+			Рейс В
+				(ВЫБРАТЬ
+					ВТ_Рейсы.Ссылка КАК Ссылка
+				ИЗ
+					ВТ_Рейсы КАК ВТ_Рейсы) {(Заказ).* КАК Заказ, (ВЫБОР
+			    КОГДА Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+			        ТОГДА ВЫРАЗИТЬ(Заказ КАК Документ.РеализацияТоваровУслуг).ВладелецТовара
+			    КОГДА Заказ ССЫЛКА Документ.ЗаборТовара
+			        ТОГДА ВЫРАЗИТЬ(Заказ КАК Документ.ЗаборТовара).Контрагент
+			    КОГДА Заказ ССЫЛКА Документ.Фрахт
+			        ТОГДА ВЫРАЗИТЬ(Заказ КАК Документ.Фрахт).Контрагент
+			КОНЕЦ).* КАК Партнер}) КАК эк_ЗатратыЗаработнаяПлатаСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗатратыЗаработнаяПлата.ПериодРасчета КАК ПериодРасчета,
+	ВТ_ЗатратыЗаработнаяПлата.Заказ КАК Заказ,
+	СУММА(ВТ_ЗатратыЗаработнаяПлата.СуммаЗП) КАК НачисленоВсего,
+	СУММА(ВЫБОР
+			КОГДА ВТ_ЗатратыЗаработнаяПлата.Начисление = ЗНАЧЕНИЕ(Справочник.зпНачисления.ОплатаПодъемаНаЭтажПриДоставкеЗаказа)
+				ТОГДА ВТ_ЗатратыЗаработнаяПлата.СуммаЗП
+			ИНАЧЕ 0
+		КОНЕЦ) КАК НачисленоПодъем,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.ДатаРасчета) КАК МаксДатаРасчета
+ПОМЕСТИТЬ ВТ_Расходы
+ИЗ
+	ВТ_ЗатратыЗаработнаяПлата КАК ВТ_ЗатратыЗаработнаяПлата
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗатратыЗаработнаяПлата.Заказ,
+	ВТ_ЗатратыЗаработнаяПлата.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗатратыЗаработнаяПлата.ПериодРасчета КАК ПериодРасчета,
+	ВТ_ЗатратыЗаработнаяПлата.Заказ КАК Заказ,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.КатегорияЗаказа) КАК КатегорияЗаказа,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.ЗонаДоставки) КАК ЗонаДоставки,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.ПолигонМаршрутизацииЗаказа) КАК ПолигонМаршрутизацииЗаказа,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.СтатусЗаказа) КАК СтатусЗаказа,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.Регион) КАК Регион,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.ВесЗаказа) КАК ВесЗаказа,
+	МАКСИМУМ(ВТ_ЗатратыЗаработнаяПлата.ТипЗаказа) КАК ТипЗаказа
+ПОМЕСТИТЬ ВТ_ДанныеРасходов
+ИЗ
+	ВТ_ЗатратыЗаработнаяПлата КАК ВТ_ЗатратыЗаработнаяПлата
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Расходы КАК ВТ_Расходы
+		ПО ВТ_ЗатратыЗаработнаяПлата.ПериодРасчета = ВТ_Расходы.ПериодРасчета
+			И ВТ_ЗатратыЗаработнаяПлата.Заказ = ВТ_Расходы.Заказ
+			И ВТ_ЗатратыЗаработнаяПлата.ДатаРасчета = ВТ_Расходы.МаксДатаРасчета
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗатратыЗаработнаяПлата.Заказ,
+	ВТ_ЗатратыЗаработнаяПлата.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.ПериодРасчета КАК ПериодРасчета,
+	ВложенныйЗапрос.Реализация КАК Реализация,
+	МАКСИМУМ(ВложенныйЗапрос.Период) КАК Период,
+	СУММА(ВложенныйЗапрос.НачисленоТариф) КАК НачисленоТариф,
+	СУММА(ВложенныйЗапрос.НачисленоПодъем) КАК НачисленоПодъем,
+	СУММА(ВложенныйЗапрос.ТарифицируемыйВес) КАК ТарифицируемыйВес,
+	СУММА(ВложенныйЗапрос.ТарифицируемыйОбъемныйВес) КАК ТарифицируемыйОбъемныйВес,
+	СУММА(ВложенныйЗапрос.ВознаграждениеЗаПриемДС) КАК ВознаграждениеЗаПриемДС,
+	СУММА(ВложенныйЗапрос.СуммаОценочная) КАК СуммаОценочная,
+	СУММА(ВложенныйЗапрос.СуммаВозврата) КАК СуммаВозврата,
+	СУММА(ВложенныйЗапрос.ОплаченоКлиентовНал) КАК ОплаченоКлиентовНал
+ПОМЕСТИТЬ ВТ_Доходы
+ИЗ
+	(ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(ЗакрытыеЗаказы.Период, МЕСЯЦ) КАК ПериодРасчета,
+		ЗакрытыеЗаказы.Реализация КАК Реализация,
+		ЗакрытыеЗаказы.Период КАК Период,
+		ЗакрытыеЗаказы.УслугиСДЧистые + ЗакрытыеЗаказы.КассовоеОбслуживание + ЗакрытыеЗаказы.БанковскаяКомиссия + ЗакрытыеЗаказы.СтраховойСбор + ЗакрытыеЗаказы.ВознаграждениеАгентаПоПредоплаченнымЗаказам КАК НачисленоТариф,
+		0 КАК НачисленоПодъем,
+		ЗакрытыеЗаказы.ТарифицируемыйВес КАК ТарифицируемыйВес,
+		ЗакрытыеЗаказы.ТарифицируемыйОбъемныйВес КАК ТарифицируемыйОбъемныйВес,
+		ЗакрытыеЗаказы.КассовоеОбслуживание + ЗакрытыеЗаказы.БанковскаяКомиссия + ЗакрытыеЗаказы.ВознаграждениеАгентаПоПредоплаченнымЗаказам КАК ВознаграждениеЗаПриемДС,
+		ЗакрытыеЗаказы.СуммаОценочная КАК СуммаОценочная,
+		ЗакрытыеЗаказы.СуммаВозврата КАК СуммаВозврата,
+		ЗакрытыеЗаказы.ОплаченоКлиентовНал КАК ОплаченоКлиентовНал
+	ИЗ
+		РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+	ГДЕ
+		ЗакрытыеЗаказы.Период МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+	{ГДЕ
+		ЗакрытыеЗаказы.Реализация.* КАК Заказ,
+		(ВЫБОР
+				КОГДА ЗакрытыеЗаказы.Реализация ССЫЛКА Документ.РеализацияТоваровУслуг
+					ТОГДА ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг).ВладелецТовара
+				КОГДА ЗакрытыеЗаказы.Реализация ССЫЛКА Документ.ЗаборТовара
+					ТОГДА ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.ЗаборТовара).Контрагент
+				КОГДА ЗакрытыеЗаказы.Реализация ССЫЛКА Документ.Фрахт
+					ТОГДА ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.Фрахт).Контрагент
+			КОНЕЦ).* КАК Партнер}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(РасчетУслугСД.Период, МЕСЯЦ),
+		РасчетУслугСД.Реализация,
+		РасчетУслугСД.Период,
+		РасчетУслугСД.Сумма,
+		ВЫБОР
+			КОГДА РасчетУслугСД.ПоказательУслуг = ЗНАЧЕНИЕ(Справочник.ПоказателиРасчетаУслугСД.Подъем)
+				ТОГДА РасчетУслугСД.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	ИЗ
+		РегистрНакопления.РасчетУслугСД КАК РасчетУслугСД
+	ГДЕ
+		РасчетУслугСД.Период МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+		И РасчетУслугСД.ПоказательУслуг &lt;&gt; ЗНАЧЕНИЕ(Справочник.ПоказателиРасчетаУслугСД.ОсновнаяЧасть)
+	{ГДЕ
+		РасчетУслугСД.Реализация.* КАК Заказ,
+		(ВЫБОР
+				КОГДА РасчетУслугСД.Реализация ССЫЛКА Документ.РеализацияТоваровУслуг
+					ТОГДА ВЫРАЗИТЬ(РасчетУслугСД.Реализация КАК Документ.РеализацияТоваровУслуг).ВладелецТовара
+				КОГДА РасчетУслугСД.Реализация ССЫЛКА Документ.ЗаборТовара
+					ТОГДА ВЫРАЗИТЬ(РасчетУслугСД.Реализация КАК Документ.ЗаборТовара).Контрагент
+				КОГДА РасчетУслугСД.Реализация ССЫЛКА Документ.Фрахт
+					ТОГДА ВЫРАЗИТЬ(РасчетУслугСД.Реализация КАК Документ.Фрахт).Контрагент
+			КОНЕЦ).* КАК Партнер}) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Реализация,
+	ВложенныйЗапрос.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Доходы.ПериодРасчета КАК ПериодРасчета,
+	ЗакрытыеЗаказы.Период КАК Период,
+	ЗакрытыеЗаказы.Реализация КАК Реализация,
+	МАКСИМУМ(ЗакрытыеЗаказы.Корректировка) КАК Корректировка
+ПОМЕСТИТЬ ВТ_ПризнакКорректировки
+ИЗ
+	ВТ_Доходы КАК ВТ_Доходы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ПО ВТ_Доходы.Период = ЗакрытыеЗаказы.Период
+			И ВТ_Доходы.Реализация = ЗакрытыеЗаказы.Реализация
+
+СГРУППИРОВАТЬ ПО
+	ЗакрытыеЗаказы.Период,
+	ЗакрытыеЗаказы.Реализация,
+	ВТ_Доходы.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПризнакКорректировки.ПериодРасчета КАК ПериодРасчета,
+	ЗакрытыеЗаказы.Реализация КАК Реализация,
+	МАКСИМУМ(ЗакрытыеЗаказы.КатегорияДоставки) КАК КатегорияДоставки,
+	МАКСИМУМ(ЗакрытыеЗаказы.ЗонаТарификации) КАК ЗонаТарификации,
+	МАКСИМУМ(ЗакрытыеЗаказы.СтатусЗаказа) КАК СтатусЗаказа,
+	МАКСИМУМ(ЗакрытыеЗаказы.ТерминалДоставки) КАК ТерминалДоставки,
+	МАКСИМУМ(ЗакрытыеЗаказы.ТипЗаказа) КАК ТипЗаказа,
+	МАКСИМУМ(ЗакрытыеЗаказы.СтатусИнтернетМагазина) КАК СтатусИнтернетМагазина,
+	МАКСИМУМ(ЗакрытыеЗаказы.ПричинаНевыполнения) КАК ПричинаНевыполнения,
+	МАКСИМУМ(ЗакрытыеЗаказы.ТипОплаты) КАК ТипОплаты
+ПОМЕСТИТЬ ВТ_ДанныеДоходов
+ИЗ
+	ВТ_ПризнакКорректировки КАК ВТ_ПризнакКорректировки
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ПО ВТ_ПризнакКорректировки.Период = ЗакрытыеЗаказы.Период
+			И ВТ_ПризнакКорректировки.Реализация = ЗакрытыеЗаказы.Реализация
+			И (ВЫБОР
+				КОГДА ВТ_ПризнакКорректировки.Корректировка
+					ТОГДА ЗакрытыеЗаказы.Регистратор ССЫЛКА Документ.КорректировкаУслугСД
+				ИНАЧЕ ИСТИНА
+			КОНЕЦ)
+
+СГРУППИРОВАТЬ ПО
+	ЗакрытыеЗаказы.Реализация,
+	ВТ_ПризнакКорректировки.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.ПериодРасчета КАК ПериодРасчета,
+	ВложенныйЗапрос.Заказ КАК Заказ,
+	СУММА(ВложенныйЗапрос.НачисленоВсегоРасходы) КАК НачисленоВсегоРасходы,
+	СУММА(ВложенныйЗапрос.НачисленоПодъемРасходы) КАК НачисленоПодъемРасходы,
+	СУММА(ВложенныйЗапрос.НачисленоТарифДоходы) КАК НачисленоТарифДоходы,
+	СУММА(ВложенныйЗапрос.НачисленоПодъемДоходы) КАК НачисленоПодъемДоходы,
+	МАКСИМУМ(ВложенныйЗапрос.КатегорияРасходы) КАК КатегорияРасходы,
+	МАКСИМУМ(ВложенныйЗапрос.ЗонаРасходы) КАК ЗонаРасходы,
+	МАКСИМУМ(ВложенныйЗапрос.КатегорияДоходы) КАК КатегорияДоходы,
+	МАКСИМУМ(ВложенныйЗапрос.ЗонаДоходы) КАК ЗонаДоходы,
+	МАКСИМУМ(ВложенныйЗапрос.Полигон) КАК Полигон,
+	МАКСИМУМ(ВложенныйЗапрос.СтатусРасходы) КАК СтатусРасходы,
+	МАКСИМУМ(ВложенныйЗапрос.РегионДоставки) КАК РегионДоставки,
+	МАКСИМУМ(ВложенныйЗапрос.ВесФизический) КАК ВесФизический,
+	МАКСИМУМ(ВложенныйЗапрос.ТарифицируемыйВес) КАК ТарифицируемыйВес,
+	МАКСИМУМ(ВложенныйЗапрос.ТипЗаказа) КАК ТипЗаказа,
+	МАКСИМУМ(ВложенныйЗапрос.СтатусДоходы) КАК СтатусДоходы,
+	СУММА(ВложенныйЗапрос.ВознаграждениеЗаПриемДСДоходы) КАК ВознаграждениеЗаПриемДСДоходы,
+	МАКСИМУМ(ВложенныйЗапрос.ТипОплаты) КАК ТипОплаты,
+	СУММА(ВложенныйЗапрос.ПолученоСПолучателя) КАК ПолученоСПолучателя,
+	СУММА(ВложенныйЗапрос.ПолученоСПолучателяТерминал) КАК ПолученоСПолучателяТерминал
+ПОМЕСТИТЬ ВТ_ДоходыРасходы
+ИЗ
+	(ВЫБРАТЬ
+		ВТ_Расходы.ПериодРасчета КАК ПериодРасчета,
+		ВТ_Расходы.Заказ КАК Заказ,
+		ВТ_Расходы.НачисленоВсего КАК НачисленоВсегоРасходы,
+		ВТ_Расходы.НачисленоПодъем КАК НачисленоПодъемРасходы,
+		0 КАК НачисленоТарифДоходы,
+		0 КАК НачисленоПодъемДоходы,
+		ВТ_ДанныеРасходов.КатегорияЗаказа КАК КатегорияРасходы,
+		ВТ_ДанныеРасходов.ЗонаДоставки КАК ЗонаРасходы,
+		NULL КАК КатегорияДоходы,
+		NULL КАК ЗонаДоходы,
+		ВТ_ДанныеРасходов.ПолигонМаршрутизацииЗаказа КАК Полигон,
+		ВТ_ДанныеРасходов.СтатусЗаказа КАК СтатусРасходы,
+		ВТ_ДанныеРасходов.Регион КАК РегионДоставки,
+		ВТ_ДанныеРасходов.ВесЗаказа КАК ВесФизический,
+		0 КАК ТарифицируемыйВес,
+		ВТ_ДанныеРасходов.ТипЗаказа КАК ТипЗаказа,
+		NULL КАК СтатусДоходы,
+		0 КАК ВознаграждениеЗаПриемДСДоходы,
+		NULL КАК ТипОплаты,
+		0 КАК ПолученоСПолучателя,
+		0 КАК ПолученоСПолучателяТерминал
+	ИЗ
+		ВТ_Расходы КАК ВТ_Расходы
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДанныеРасходов КАК ВТ_ДанныеРасходов
+			ПО ВТ_Расходы.Заказ = ВТ_ДанныеРасходов.Заказ
+				И ВТ_Расходы.ПериодРасчета = ВТ_ДанныеРасходов.ПериодРасчета
+			ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+				ВТ_ДанныеРасходов.Заказ КАК Заказ
+			ИЗ
+				ВТ_ДанныеРасходов КАК ВТ_ДанныеРасходов
+					ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыЗаказов КАК СтатусыЗаказов
+					ПО ВТ_ДанныеРасходов.Заказ = СтатусыЗаказов.Заказ
+						И (СтатусыЗаказов.Статус В (211, 212))
+			ГДЕ
+				ВТ_ДанныеРасходов.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И СтатусыЗаказов.Заказ ЕСТЬ NULL) КАК ВЗ_ИсключаемыеЗаказы
+			ПО ВТ_Расходы.Заказ = ВЗ_ИсключаемыеЗаказы.Заказ
+	ГДЕ
+		ВЗ_ИсключаемыеЗаказы.Заказ ЕСТЬ NULL
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ВТ_Доходы.ПериодРасчета,
+		ВТ_Доходы.Реализация,
+		0,
+		0,
+		ВТ_Доходы.НачисленоТариф,
+		ВТ_Доходы.НачисленоПодъем,
+		NULL,
+		NULL,
+		ВТ_ДанныеДоходов.КатегорияДоставки,
+		ВТ_ДанныеДоходов.ЗонаТарификации.КлассификаторЗоныТарификации,
+		NULL,
+		NULL,
+		ВТ_ДанныеДоходов.ТерминалДоставки,
+		ВТ_Доходы.ТарифицируемыйВес,
+		ВЫБОР
+			КОГДА ВТ_Доходы.ТарифицируемыйОбъемныйВес = 0
+				ТОГДА ВТ_Доходы.ТарифицируемыйВес
+			ИНАЧЕ ВТ_Доходы.ТарифицируемыйОбъемныйВес
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА ВТ_ДанныеДоходов.ТипЗаказа &lt;&gt; ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+				ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ИНАЧЕ ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+		КОНЕЦ,
+		ВЫБОР ВТ_ДанныеДоходов.СтатусЗаказа
+			КОГДА ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена)
+				ТОГДА ЗНАЧЕНИЕ(Справочник.СтатусыЗаказов.Выполнен)
+			КОГДА ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично)
+				ТОГДА ЗНАЧЕНИЕ(Справочник.СтатусыЗаказов.ВыполненЧастично)
+			КОГДА ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НеВыполнена)
+				ТОГДА ЗНАЧЕНИЕ(Справочник.СтатусыЗаказов.Отмена)
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА ВТ_ДанныеДоходов.ТипОплаты = ЗНАЧЕНИЕ(Справочник.ТипыОплат.Терминал)
+				ТОГДА ВТ_Доходы.ВознаграждениеЗаПриемДС
+			ИНАЧЕ 0
+		КОНЕЦ,
+		ВТ_ДанныеДоходов.ТипОплаты,
+		ВЫБОР
+			КОГДА ВТ_Доходы.СуммаОценочная = 0
+					ИЛИ ВТ_Доходы.СуммаВозврата = 0
+				ТОГДА ВТ_Доходы.ОплаченоКлиентовНал
+			ИНАЧЕ 0
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА ВТ_ДанныеДоходов.ТипОплаты = ЗНАЧЕНИЕ(Справочник.ТипыОплат.Терминал)
+					И (ВТ_Доходы.СуммаОценочная = 0
+						ИЛИ ВТ_Доходы.СуммаВозврата = 0)
+				ТОГДА ВТ_Доходы.ОплаченоКлиентовНал
+			ИНАЧЕ 0
+		КОНЕЦ
+	ИЗ
+		ВТ_Доходы КАК ВТ_Доходы
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДанныеДоходов КАК ВТ_ДанныеДоходов
+			ПО ВТ_Доходы.Реализация = ВТ_ДанныеДоходов.Реализация
+				И ВТ_Доходы.ПериодРасчета = ВТ_ДанныеДоходов.ПериодРасчета
+			ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+				ВТ_ДанныеДоходов.Реализация КАК Заказ
+			ИЗ
+				ВТ_ДанныеДоходов КАК ВТ_ДанныеДоходов
+					ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыЗаказов КАК СтатусыЗаказов
+					ПО ВТ_ДанныеДоходов.Реализация = СтатусыЗаказов.Заказ
+						И (СтатусыЗаказов.Статус В (211, 212))
+			ГДЕ
+				(ВТ_ДанныеДоходов.ТипЗаказа В (ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка), ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Самовывоз))
+							И СтатусыЗаказов.Заказ ЕСТЬ NULL
+						ИЛИ ВТ_ДанныеДоходов.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+							И ВТ_ДанныеДоходов.СтатусИнтернетМагазина = ЗНАЧЕНИЕ(Справочник.СтатусЗаказаИнтернетМагазина.ЗаказОтклонен)
+							И ВТ_ДанныеДоходов.ПричинаНевыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаБезЗаезда))) КАК ВЗ_ИсключаемыеЗаказы
+			ПО ВТ_Доходы.Реализация = ВЗ_ИсключаемыеЗаказы.Заказ
+	ГДЕ
+		ВЗ_ИсключаемыеЗаказы.Заказ ЕСТЬ NULL) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Заказ,
+	ВложенныйЗапрос.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(РеализацияТоваровУслуг.Дата, МЕСЯЦ) КАК ПериодРасчета,
+	РеализацияТоваровУслуг.Ссылка КАК Заказ,
+	СУММА(ВЫБОР
+			КОГДА экУчетПроизводственныхОпераций.ВидОперации.Родитель = ЗНАЧЕНИЕ(Справочник.экВидыПроизводственныхОпераций.СкладскиеОперации)
+					И экУчетПроизводственныхОпераций.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.МоскваСтриж)
+				ТОГДА экУчетПроизводственныхОпераций.ВесПроизводственнойОперации
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КоличествоОперацийМСК,
+	СУММА(ВЫБОР
+			КОГДА экУчетПроизводственныхОпераций.ВидОперации.Родитель = ЗНАЧЕНИЕ(Справочник.экВидыПроизводственныхОпераций.СкладскиеОперации)
+					И экУчетПроизводственныхОпераций.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.СПбСтриж)
+				ТОГДА экУчетПроизводственныхОпераций.ВесПроизводственнойОперации
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КоличествоОперацийСПБ,
+	СУММА(ВЫБОР
+			КОГДА экУчетПроизводственныхОпераций.ВидОперации.Родитель = ЗНАЧЕНИЕ(Справочник.экВидыПроизводственныхОпераций.ОперацииМагистраль)
+				ТОГДА экУчетПроизводственныхОпераций.ВесПроизводственнойОперации
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КоличествоОперацийМагистраль
+ПОМЕСТИТЬ ВТ_ПроизводственныеОперации
+ИЗ
+	РегистрСведений.экУчетПроизводственныхОпераций КАК экУчетПроизводственныхОпераций
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ПО (РеализацияТоваровУслуг.Дата МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода)
+			И (РеализацияТоваровУслуг.Ссылка = экУчетПроизводственныхОпераций.Заказ)
+{ГДЕ
+	РеализацияТоваровУслуг.Ссылка.* КАК Заказ,
+	РеализацияТоваровУслуг.ВладелецТовара.* КАК Партнер}
+
+СГРУППИРОВАТЬ ПО
+	РеализацияТоваровУслуг.Ссылка,
+	НАЧАЛОПЕРИОДА(РеализацияТоваровУслуг.Дата, МЕСЯЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.ПериодРасчета КАК ПериодРасчета,
+	ВложенныйЗапрос.Заказ КАК Заказ,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.МоскваСтриж)
+					И ВложенныйЗапрос.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.МалоеАвто)
+				ТОГДА ВложенныйЗапрос.КоличествоРейсов
+			ИНАЧЕ 0
+		КОНЕЦ) КАК МалоеАвтоМСК,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.МоскваСтриж)
+					И ВложенныйЗапрос.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.БольшоеАвто)
+				ТОГДА ВложенныйЗапрос.КоличествоРейсов
+			ИНАЧЕ 0
+		КОНЕЦ) КАК БольшоеАвтоМСК,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.МоскваСтриж)
+					И ВложенныйЗапрос.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.ЗаборноеАвто)
+				ТОГДА ВложенныйЗапрос.КоличествоРейсов
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ЗаборноеАвтоМСК,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.СПбСтриж)
+					И ВложенныйЗапрос.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.МалоеАвто)
+				ТОГДА ВложенныйЗапрос.КоличествоРейсов
+			ИНАЧЕ 0
+		КОНЕЦ) КАК МалоеАвтоСПБ,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.СПбСтриж)
+					И ВложенныйЗапрос.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.БольшоеАвто)
+				ТОГДА ВложенныйЗапрос.КоличествоРейсов
+			ИНАЧЕ 0
+		КОНЕЦ) КАК БольшоеАвтоСПБ,
+	СУММА(ВЫБОР
+			КОГДА ВложенныйЗапрос.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.СПбСтриж)
+					И ВложенныйЗапрос.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.ЗаборноеАвто)
+				ТОГДА ВложенныйЗапрос.КоличествоРейсов
+			ИНАЧЕ 0
+		КОНЕЦ) КАК ЗаборноеАвтоСПБ
+ПОМЕСТИТЬ ВТ_РейсыПоЗаказам
+ИЗ
+	(ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(РейсыПоЗаказам.Период, МЕСЯЦ) КАК ПериодРасчета,
+		РейсыПоЗаказам.Заказ КАК Заказ,
+		РейсыПоЗаказам.Регион КАК Регион,
+		РейсыПоЗаказам.ФорматАвтотранспорта КАК ФорматАвтотранспорта,
+		КОЛИЧЕСТВО(РАЗЛИЧНЫЕ РейсыПоЗаказам.Рейс) КАК КоличествоРейсов
+	ИЗ
+		РегистрСведений.РейсыПоЗаказам КАК РейсыПоЗаказам
+	ГДЕ
+		РейсыПоЗаказам.Период МЕЖДУ &amp;НачалоПериода И &amp;ОкончаниеПериода
+		И РейсыПоЗаказам.СтатусДоставки В (ЗНАЧЕНИЕ(Справочник.СтатусыЗаказов.Доставлен), ЗНАЧЕНИЕ(Справочник.СтатусыЗаказов.ДоставленЧастично), ЗНАЧЕНИЕ(Справочник.СтатусыЗаказов.ОтказСЗаездомОперативный), ЗНАЧЕНИЕ(Справочник.СтатусыЗаказов.ПереносСЗаездом))
+		И РейсыПоЗаказам.ЭтоШтатныйТранспорт
+	{ГДЕ
+		РейсыПоЗаказам.Заказ.*,
+		(ВЫБОР
+				КОГДА РейсыПоЗаказам.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+					ТОГДА ВЫРАЗИТЬ(РейсыПоЗаказам.Заказ КАК Документ.РеализацияТоваровУслуг).ВладелецТовара
+				КОГДА РейсыПоЗаказам.Заказ ССЫЛКА Документ.ЗаборТовара
+					ТОГДА ВЫРАЗИТЬ(РейсыПоЗаказам.Заказ КАК Документ.ЗаборТовара).Контрагент
+			КОНЕЦ).* КАК Партнер}
+	
+	СГРУППИРОВАТЬ ПО
+		РейсыПоЗаказам.Заказ,
+		РейсыПоЗаказам.ФорматАвтотранспорта,
+		РейсыПоЗаказам.Регион,
+		НАЧАЛОПЕРИОДА(РейсыПоЗаказам.Период, МЕСЯЦ)) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Заказ,
+	ВложенныйЗапрос.ПериодРасчета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВЗ_ЗакрытиеМесяца.ПериодРасчета, МЕСЯЦ) КАК ПериодРасчета,
+	ВЗ_ЗакрытиеМесяца.ЗакрытиеМСК.Склад_СтоимостьСкладскойОперации КАК СтоимостьСкладскойОперацииМСК,
+	ВЗ_ЗакрытиеМесяца.ЗакрытиеСПБ.Склад_СтоимостьСкладскойОперации КАК СтоимостьСкладскойОперацииСПБ,
+	ЕСТЬNULL(ВЗ_ЗакрытиеМесяца.ЗакрытиеМСК.Магистраль_СтоимостьОбработки_кг, ВЗ_ЗакрытиеМесяца.ЗакрытиеСПБ.Магистраль_СтоимостьОбработки_кг) КАК СтоимостьОбработки1кгМагистрали,
+	экЗакрытиеМесяцаЗатратыАвто_МСКМ.СтоимостьРейса КАК СтоимостьРейсаРМММСК,
+	экЗакрытиеМесяцаЗатратыАвто_СПБМ.СтоимостьРейса КАК СтоимостьРейсаРММСПБ,
+	экЗакрытиеМесяцаЗатратыАвто_МСКБ.СтоимостьРейса КАК СтоимостьРейсаРБММСК,
+	экЗакрытиеМесяцаЗатратыАвто_СПББ.СтоимостьРейса КАК СтоимостьРейсаРБМСПБ,
+	экЗакрытиеМесяцаЗатратыАвто_МСКЗ.СтоимостьРейса КАК СтоимостьРейсаРЗММСК,
+	экЗакрытиеМесяцаЗатратыАвто_СПБЗ.СтоимостьРейса КАК СтоимостьРейсаРЗМСПБ,
+	ЕСТЬNULL(ВЗ_ЗакрытиеМесяца.ЗакрытиеМСК.ПроцентЗатратНаОперацииТерминал, ВЗ_ЗакрытиеМесяца.ЗакрытиеСПБ.ПроцентЗатратНаОперацииТерминал) КАК ПроцентЗатратНаОперацииТерминал
+ПОМЕСТИТЬ ВТ_Параметры
+ИЗ
+	(ВЫБРАТЬ
+		экЗакрытиеМесяца.ПериодРасчета КАК ПериодРасчета,
+		МАКСИМУМ(ВЫБОР
+				КОГДА экЗакрытиеМесяца.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.МоскваСтриж)
+					ТОГДА экЗакрытиеМесяца.Ссылка
+			КОНЕЦ) КАК ЗакрытиеМСК,
+		МАКСИМУМ(ВЫБОР
+				КОГДА экЗакрытиеМесяца.Регион = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.СПбСтриж)
+					ТОГДА экЗакрытиеМесяца.Ссылка
+			КОНЕЦ) КАК ЗакрытиеСПБ
+	ИЗ
+		Документ.экЗакрытиеМесяца КАК экЗакрытиеМесяца
+	ГДЕ
+		экЗакрытиеМесяца.ПериодРасчета МЕЖДУ &amp;НачалоПериода И КОНЕЦПЕРИОДА(&amp;ОкончаниеПериода, МЕСЯЦ)
+		И экЗакрытиеМесяца.Проведен
+	
+	СГРУППИРОВАТЬ ПО
+		экЗакрытиеМесяца.ПериодРасчета) КАК ВЗ_ЗакрытиеМесяца
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.экЗакрытиеМесяца.ЗатратыАвто КАК экЗакрытиеМесяцаЗатратыАвто_МСКМ
+		ПО ВЗ_ЗакрытиеМесяца.ЗакрытиеМСК = экЗакрытиеМесяцаЗатратыАвто_МСКМ.Ссылка
+			И (экЗакрытиеМесяцаЗатратыАвто_МСКМ.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.МалоеАвто))
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.экЗакрытиеМесяца.ЗатратыАвто КАК экЗакрытиеМесяцаЗатратыАвто_МСКБ
+		ПО ВЗ_ЗакрытиеМесяца.ЗакрытиеМСК = экЗакрытиеМесяцаЗатратыАвто_МСКБ.Ссылка
+			И (экЗакрытиеМесяцаЗатратыАвто_МСКБ.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.БольшоеАвто))
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.экЗакрытиеМесяца.ЗатратыАвто КАК экЗакрытиеМесяцаЗатратыАвто_МСКЗ
+		ПО ВЗ_ЗакрытиеМесяца.ЗакрытиеМСК = экЗакрытиеМесяцаЗатратыАвто_МСКЗ.Ссылка
+			И (экЗакрытиеМесяцаЗатратыАвто_МСКЗ.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.ЗаборноеАвто))
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.экЗакрытиеМесяца.ЗатратыАвто КАК экЗакрытиеМесяцаЗатратыАвто_СПБМ
+		ПО ВЗ_ЗакрытиеМесяца.ЗакрытиеСПБ = экЗакрытиеМесяцаЗатратыАвто_СПБМ.Ссылка
+			И (экЗакрытиеМесяцаЗатратыАвто_СПБМ.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.МалоеАвто))
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.экЗакрытиеМесяца.ЗатратыАвто КАК экЗакрытиеМесяцаЗатратыАвто_СПББ
+		ПО ВЗ_ЗакрытиеМесяца.ЗакрытиеСПБ = экЗакрытиеМесяцаЗатратыАвто_СПББ.Ссылка
+			И (экЗакрытиеМесяцаЗатратыАвто_СПББ.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.БольшоеАвто))
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.экЗакрытиеМесяца.ЗатратыАвто КАК экЗакрытиеМесяцаЗатратыАвто_СПБЗ
+		ПО ВЗ_ЗакрытиеМесяца.ЗакрытиеСПБ = экЗакрытиеМесяцаЗатратыАвто_СПБЗ.Ссылка
+			И (экЗакрытиеМесяцаЗатратыАвто_СПБЗ.ФорматАвтотранспорта = ЗНАЧЕНИЕ(Справочник.ФорматыАвтотранспорта.ЗаборноеАвто))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ДоходыРасходы.ПериодРасчета КАК ПериодРасчета,
+	ВТ_ДоходыРасходы.Заказ КАК Заказ,
+	ВТ_ДоходыРасходы.НачисленоВсегоРасходы КАК НачисленоВсегоРасходы,
+	ВТ_ДоходыРасходы.НачисленоПодъемРасходы КАК НачисленоПодъемРасходы,
+	ВТ_ДоходыРасходы.НачисленоТарифДоходы КАК НачисленоТарифДоходы,
+	ВТ_ДоходыРасходы.НачисленоПодъемДоходы КАК НачисленоПодъемДоходы,
+	ВТ_ДоходыРасходы.КатегорияРасходы КАК КатегорияРасходы,
+	ВТ_ДоходыРасходы.ЗонаРасходы КАК ЗонаРасходы,
+	ВТ_ДоходыРасходы.КатегорияДоходы КАК КатегорияДоходы,
+	ВТ_ДоходыРасходы.ЗонаДоходы КАК ЗонаДоходы,
+	ВТ_ДоходыРасходы.Полигон КАК Полигон,
+	ВТ_ДоходыРасходы.РегионДоставки КАК РегионДоставки,
+	ВТ_ДоходыРасходы.ВесФизический КАК ВесФизический,
+	ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ТарифицируемыйВес,
+	ВТ_ДоходыРасходы.ТипЗаказа КАК ТипЗаказа,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).Номер
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).Номер
+		ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Номер
+	КОНЕЦ КАК Номер,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ВладелецТовара
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).Контрагент
+		ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Контрагент
+	КОНЕЦ КАК Партнер,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ОбъёмЗаказа
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ОбъемЗабора
+		ИНАЧЕ 0
+	КОНЕЦ КАК Объем,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ТерминалПриема
+		КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+			ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ТерминалПриемки
+		ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Терминал
+	КОНЕЦ КАК РегионОтгрузки,
+	ЕСТЬNULL(ВТ_ДоходыРасходы.СтатусДоходы, ВТ_ДоходыРасходы.СтатусРасходы) КАК Статус,
+	ВТ_ДоходыРасходы.НачисленоТарифДоходы - ВТ_ДоходыРасходы.НачисленоВсегоРасходы - (ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))) - (ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))) - (ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) + (ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2)))) КАК Маржа,
+	ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) КАК ОперацийСкладаМСК,
+	ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) КАК ОперацийСкладаСПБ,
+	ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2)) КАК РасходыСклад,
+	ВТ_ДоходыРасходы.НачисленоВсегоРасходы + (ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))) + (ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) + (ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2))) КАК ИтогоРасходы,
+	ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК УчетныйВесМСК,
+	ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК УчетныйВесСПБ,
+	ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2)) КАК РасходыМагистраль,
+	ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК УчетныйВесМагистраль,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) КАК РМММСК,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) КАК РБММСК,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) КАК РЗММСК,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) КАК РММСПБ,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) КАК РБМСПБ,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) КАК РЗМСПБ,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) КАК РасходыАвтопарк,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) КАК КМММСК,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) КАК КБММСК,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) КАК КЗММСК,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) КАК КММСПБ,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) КАК КБМСПБ,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) КАК КЗМСПБ,
+	ВТ_ДоходыРасходы.ВознаграждениеЗаПриемДСДоходы КАК ВознаграждениеЗаПриемДСДоходы,
+	ВТ_ДоходыРасходы.ТипОплаты КАК ТипОплаты,
+	ВТ_ДоходыРасходы.ПолученоСПолучателя КАК ПолученоСПолучателя,
+	ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2)) КАК РасходыПоПлатежамКартой,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовВсего,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.МКАД)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовМКАД,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.заМКАДМеньше30)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовЗаМКАДМеньше30,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.заМКАДБольше30)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовЗаМКАДБольше30,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.КАД)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовКАД,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.заКАДМеньше30)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовЗаКАДМеньше30,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.заКАДБольше30)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовЗаКАДБольше30,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.МКАД_10)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовМКАД_10,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.МКАД_10_ЦКАД)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовМКАД_10_ЦКАД,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.ЦКАД_А108)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовЦКАД_А108,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.ЗонаДоходы = ЗНАЧЕНИЕ(Справочник.КлассификаторЗонТарификации.А108_ГраницаМО)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовА108_ГраницаМО,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.КатегорияРасходы.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.МГТ)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовМГТ,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.КатегорияРасходы.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.СГТ)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовСГТ,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.КатегорияРасходы.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.КГТ)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовКГТ,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.КатегорияРасходы.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.СКГТ)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовСКГТ,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.КатегорияРасходы.КатегорияДоставкиДляАналитики = ЗНАЧЕНИЕ(Перечисление.зпКлассификаторКатегорийДоставки.СТ)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовСТ,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоТарифДоходы
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыДоход,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоПодъемДоходы
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыДоходПодъем,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоТарифДоходы - ВТ_ДоходыРасходы.НачисленоВсегоРасходы - (ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))) - (ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))) - (ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) + (ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2))))
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыМаржа,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВТ_ДоходыРасходы.НачисленоТарифДоходы - ВТ_ДоходыРасходы.НачисленоВсегоРасходы - (ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))) - (ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))) - (ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) + (ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2)))) &lt; 0
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовСОтрицательнойМаржой,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоВсегоРасходы + (ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))) + (ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) + (ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2)))
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыРасход,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоВсегоРасходы
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыРасходЗП,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыРасходСклад,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыРасходАвтопарк,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыРасходМагистраль,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.ТарифицируемыйВес
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыТарифицируемыйВес,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоПодъемРасходы
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыРасходПодъем,
+	ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) КАК ОперацийСклада,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыОперацийСклада,
+	ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) КАК Рейсов,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказыРейсов,
+	ВЫБОР
+		КОГДА ВЫБОР
+				КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+					ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ТерминалПриема
+				КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+					ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ТерминалПриемки
+				ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Терминал
+			КОНЕЦ = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.МоскваСтриж)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК МСКиМО,
+	ВЫБОР
+		КОГДА ВЫБОР
+				КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+					ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ТерминалПриема
+				КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+					ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ТерминалПриемки
+				ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Терминал
+			КОНЕЦ = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.СПбСтриж)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК СПБиЛО,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВЫБОР
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ТерминалПриема
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ТерминалПриемки
+					ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Терминал
+				КОНЕЦ = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.МоскваСтриж)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовМСКиМО,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+				И ВЫБОР
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ТерминалПриема
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ТерминалПриемки
+					ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Терминал
+				КОНЕЦ = ЗНАЧЕНИЕ(Справочник.РегиональныеТерминалы.СПбСтриж)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаказовСПБиЛО,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоТарифДоходы
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаборыДоход,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоВсегоРасходы + (ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))) + (ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) + (ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2)))
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаборыРасход,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоВсегоРасходы
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаборыРасходЗП,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаборыРасходАвтопарк,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА ВТ_ДоходыРасходы.НачисленоТарифДоходы - ВТ_ДоходыРасходы.НачисленоВсегоРасходы - (ВЫРАЗИТЬ((ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииМСК, 0) + ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьСкладскойОперацииСПБ, 0)) * ВТ_ДоходыРасходы.ТарифицируемыйВес КАК ЧИСЛО(15, 2))) - (ВЫРАЗИТЬ(ЕСТЬNULL(ВТ_ПроизводственныеОперации.КоличествоОперацийМагистраль, 0) * ВТ_ДоходыРасходы.ТарифицируемыйВес * ЕСТЬNULL(ВТ_Параметры.СтоимостьОбработки1кгМагистрали, 0) КАК ЧИСЛО(15, 2))) - (ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРМММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоМСК, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗММСК, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.МалоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРММСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.БольшоеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРБМСПБ, 0) + ЕСТЬNULL(ВТ_РейсыПоЗаказам.ЗаборноеАвтоСПБ, 0) * ЕСТЬNULL(ВТ_Параметры.СтоимостьРейсаРЗМСПБ, 0) + (ВЫРАЗИТЬ(ВТ_ДоходыРасходы.ПолученоСПолучателяТерминал * ЕСТЬNULL(ВТ_Параметры.ПроцентЗатратНаОперацииТерминал, 0) / 100 КАК ЧИСЛО(15, 2))))
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаборыМаржа,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЗаборовВсего,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВЫБОР
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ОбъёмЗаказа
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ОбъемЗабора
+					ИНАЧЕ 0
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбъемЗаказов,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА ВЫБОР
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ОбъёмЗаказа
+					КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+						ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ОбъемЗабора
+					ИНАЧЕ 0
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбъемЗаборов,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Доставка)
+			ТОГДА ВТ_ДоходыРасходы.ВесФизический
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВесФизическийЗаказы,
+	ВЫБОР
+		КОГДА ВТ_ДоходыРасходы.ТипЗаказа = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказов.Забор)
+			ТОГДА ВТ_ДоходыРасходы.ВесФизический
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВесФизическийЗаборы,
+	ЕСТЬNULL(ВТ_ИнтервалыВеса.Низ, 0) КАК ВесШкалыНиз,
+	ЕСТЬNULL(ВТ_ИнтервалыВеса.Верх, 0) КАК ВесШкалы
+{ВЫБРАТЬ
+	ПериодРасчета,
+	Заказ.*,
+	НачисленоВсегоРасходы,
+	НачисленоПодъемРасходы,
+	НачисленоТарифДоходы,
+	НачисленоПодъемДоходы,
+	КатегорияРасходы.*,
+	ЗонаРасходы.*,
+	КатегорияДоходы.*,
+	ЗонаДоходы.*,
+	Полигон.*,
+	РегионДоставки.*,
+	ВесФизический,
+	ТарифицируемыйВес,
+	ТипЗаказа.*,
+	Номер,
+	Партнер.*,
+	Объем,
+	РегионОтгрузки.*,
+	Статус.*,
+	Маржа,
+	ОперацийСкладаМСК,
+	ОперацийСкладаСПБ,
+	РасходыСклад,
+	ИтогоРасходы,
+	УчетныйВесМСК,
+	УчетныйВесСПБ,
+	РасходыМагистраль,
+	УчетныйВесМагистраль,
+	РМММСК,
+	РБММСК,
+	РЗММСК,
+	РММСПБ,
+	РБМСПБ,
+	РЗМСПБ,
+	РасходыАвтопарк,
+	КМММСК,
+	КБММСК,
+	КЗММСК,
+	КММСПБ,
+	КБМСПБ,
+	КЗМСПБ,
+	ВознаграждениеЗаПриемДСДоходы,
+	ТипОплаты.*,
+	ПолученоСПолучателя,
+	РасходыПоПлатежамКартой,
+	ЗаказовВсего,
+	ЗаказовМКАД,
+	ЗаказовЗаМКАДМеньше30,
+	ЗаказовЗаМКАДБольше30,
+	ЗаказовКАД,
+	ЗаказовЗаКАДМеньше30,
+	ЗаказовЗаКАДБольше30,
+	ЗаказовМКАД_10,
+	ЗаказовМКАД_10_ЦКАД,
+	ЗаказовЦКАД_А108,
+	ЗаказовА108_ГраницаМО,
+	ЗаказовМГТ,
+	ЗаказовСГТ,
+	ЗаказовКГТ,
+	ЗаказовСКГТ,
+	ЗаказовСТ,
+	ЗаказыДоход,
+	ЗаказыДоходПодъем,
+	ЗаказыМаржа,
+	ЗаказовСОтрицательнойМаржой,
+	ЗаказыРасход,
+	ЗаказыРасходЗП,
+	ЗаказыРасходСклад,
+	ЗаказыРасходАвтопарк,
+	ЗаказыРасходМагистраль,
+	ЗаказыТарифицируемыйВес,
+	ЗаказыРасходПодъем,
+	ОперацийСклада,
+	ЗаказыОперацийСклада,
+	Рейсов,
+	ЗаказыРейсов,
+	МСКиМО,
+	СПБиЛО,
+	ЗаказовМСКиМО,
+	ЗаказовСПБиЛО,
+	ЗаборыДоход,
+	ЗаборыРасход,
+	ЗаборыРасходЗП,
+	ЗаборыРасходАвтопарк,
+	ЗаборыМаржа,
+	ЗаборовВсего,
+	ОбъемЗаказов,
+	ОбъемЗаборов,
+	ВесФизическийЗаказы,
+	ВесФизическийЗаборы,
+	ВесШкалыНиз,
+	ВесШкалы}
+ИЗ
+	ВТ_ДоходыРасходы КАК ВТ_ДоходыРасходы
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПроизводственныеОперации КАК ВТ_ПроизводственныеОперации
+		ПО ВТ_ДоходыРасходы.Заказ = ВТ_ПроизводственныеОперации.Заказ
+			И ВТ_ДоходыРасходы.ПериодРасчета = ВТ_ПроизводственныеОперации.ПериодРасчета
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_РейсыПоЗаказам КАК ВТ_РейсыПоЗаказам
+		ПО ВТ_ДоходыРасходы.Заказ = ВТ_РейсыПоЗаказам.Заказ
+			И ВТ_ДоходыРасходы.ПериодРасчета = ВТ_РейсыПоЗаказам.ПериодРасчета
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Параметры КАК ВТ_Параметры
+		ПО ВТ_ДоходыРасходы.ПериодРасчета = ВТ_Параметры.ПериодРасчета
+		{ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИнтервалыВеса КАК ВТ_ИнтервалыВеса
+		ПО ВТ_ДоходыРасходы.ТарифицируемыйВес &gt; ВТ_ИнтервалыВеса.Низ
+			И ВТ_ДоходыРасходы.ТарифицируемыйВес &lt;= ВТ_ИнтервалыВеса.Верх}
+{ГДЕ
+	ВТ_ДоходыРасходы.ТипЗаказа.*,
+	ВТ_ДоходыРасходы.РегионДоставки.*,
+	(ВЫБОР
+			КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.РеализацияТоваровУслуг
+				ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.РеализацияТоваровУслуг).ТерминалПриема
+			КОГДА ВТ_ДоходыРасходы.Заказ ССЫЛКА Документ.ЗаборТовара
+				ТОГДА ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.ЗаборТовара).ТерминалПриемки
+			ИНАЧЕ ВЫРАЗИТЬ(ВТ_ДоходыРасходы.Заказ КАК Документ.Фрахт).Терминал
+		КОНЕЦ).* КАК РегионОтгрузки,
+	ВТ_ДоходыРасходы.КатегорияРасходы.*}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Количество</dataPath>
+		<expression>1</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентМаржиОтДохода</dataPath>
+		<expression>ВЫБОР
+КОГДА НачисленоТарифДоходы &gt; 0
+ТОГДА 100 * Маржа / НачисленоТарифДоходы
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент маржи от дохода</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАДПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовМКАД / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов МКАД %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДМеньше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДМеньше30 / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов за МКАД&lt;30 %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДБольше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДБольше30 / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов за МКАД&gt;30 %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовКАДПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовКАД / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов КАД %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДМеньше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовЗаКАДМеньше30 / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов за КАД&lt;30 %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДБольше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовЗаКАДБольше30 / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов за КАД&gt;30 %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовМКАД_10 / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов МКАД10 %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10_ЦКАДПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовМКАД_10_ЦКАД / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов МКАД10 ЦКАД %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЦКАД_А108Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовЦКАД_А108 / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов ЦКАД А108 %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовА108_ГраницаМОПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеДоставки.ЗаказовА108_ГраницаМО / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов А108 граница МО %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовМГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоКатегорииЗП.ЗаказовМГТ / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов МГТ %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоКатегорииЗП.ЗаказовСГТ / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов СГТ %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовКГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоКатегорииЗП.ЗаказовКГТ / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов КГТ %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСКГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоКатегорииЗП.ЗаказовСКГТ / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов СКГТ %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоКатегорииЗП.ЗаказовСТ / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов СТ %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыПроцентМаржиОтДохода</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказыАбсолютныеПоказатели.ЗаказыДоход &gt; 0
+ТОГДА 100 * ЗаказыАбсолютныеПоказатели.ЗаказыМаржа / ЗаказыАбсолютныеПоказатели.ЗаказыДоход
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказы процент маржи от дохода</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.СреднийВесНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыТарифицируемыйВес / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Средний вес на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=3</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.ДоходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыДоход / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Доход на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасход / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходЗПНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасходЗП / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход ЗП на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходПодъемНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыРасходПодъем / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход подъем на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.ДоходПодъемНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыДоходПодъем / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Доход подъем на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходСкладНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасходСклад / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход склад на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходАвтопаркНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасходАвтопарк / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход автопарк на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходМагистральНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасходМагистраль / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход магистраль на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.МаржаНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыМаржа / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Маржа на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.ОперацийСкладаНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыОперацийСклада / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Операций склада на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РейсовНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаказыРейсов / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Рейсов на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовМСКиМОПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеОтгрузки.ЗаказовМСКиМО / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов МСК и МО %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовСПБиЛОПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА 100 * ЗаказовПоЗонеОтгрузки.ЗаказовСПБиЛО / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов СПБ и ЛО %</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыДоходНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА ТарифицируемыйВес &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыДоход / ЗаказыТарифицируемыйВес
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказы доход на кг</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА ТарифицируемыйВес &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасход / ЗаказыТарифицируемыйВес
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказы расход на кг</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходМагистральНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА ТарифицируемыйВес &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасходМагистраль / ЗаказыТарифицируемыйВес
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказы расход магистраль на кг</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходСкладНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА ТарифицируемыйВес &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасходСклад / ЗаказыТарифицируемыйВес
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказы расход склад на кг</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходЗПНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА ТарифицируемыйВес &gt; 0
+ТОГДА ЗаказыАбсолютныеПоказатели.ЗаказыРасходЗП / ЗаказыТарифицируемыйВес
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказы расход ЗП на кг</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыПроцентМаржиОтДохода</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборыАбсолютныеПоказатели.ЗаборыДоход &gt; 0
+ТОГДА 100 * ЗаборыАбсолютныеПоказатели.ЗаборыМаржа / ЗаборыАбсолютныеПоказатели.ЗаборыДоход
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заборы процент маржи от дохода</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыПоказателиНаЗабор.ДоходНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ЗаборыАбсолютныеПоказатели.ЗаборыДоход / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Доход на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыПоказателиНаЗабор.РасходНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ЗаборыАбсолютныеПоказатели.ЗаборыРасход / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыПоказателиНаЗабор.РасходЗПНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ЗаборыАбсолютныеПоказатели.ЗаборыРасходЗП / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход ЗП на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыПоказателиНаЗабор.РасходАвтопаркНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ЗаборыАбсолютныеПоказатели.ЗаборыРасходАвтопарк / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расход автопарк на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыПоказателиНаЗабор.МаржаНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ЗаборыАбсолютныеПоказатели.ЗаборыМаржа / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Маржа на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыПоказателиНаЗабор.СреднийОбъемНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ОбъемЗаборов / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Средний объем на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ЗаказовНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ЗаказовВсего / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заказов на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ВесЗаказовНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ВесФизическийЗаказы / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вес заказов на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ОбъемЗаказовНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаборовВсего &gt; 0
+ТОГДА ОбъемЗаказов / ЗаборовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Объем заказов на забор</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ЗаборыРасходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаборыАбсолютныеПоказатели.ЗаборыРасход / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заборы расход на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ЗаборыДоходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА ЗаказовВсего &gt; 0
+ТОГДА ЗаборыАбсолютныеПоказатели.ЗаборыДоход / ЗаказовВсего
+КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заборы доход на заказ</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Маржа</dataPath>
+		<expression>Сумма(Маржа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НачисленоТарифДоходы</dataPath>
+		<expression>Сумма(НачисленоТарифДоходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НачисленоПодъемДоходы</dataPath>
+		<expression>Сумма(НачисленоПодъемДоходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентМаржиОтДохода</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(НачисленоТарифДоходы) &gt; 0
+ТОГДА 100 * Сумма(Маржа) / Сумма(НачисленоТарифДоходы)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОперацийСкладаМСК</dataPath>
+		<expression>Сумма(ОперацийСкладаМСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОперацийСкладаСПБ</dataPath>
+		<expression>Сумма(ОперацийСкладаСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасходыСклад</dataPath>
+		<expression>Сумма(РасходыСклад)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИтогоРасходы</dataPath>
+		<expression>Сумма(ИтогоРасходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УчетныйВесМСК</dataPath>
+		<expression>Сумма(УчетныйВесМСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УчетныйВесСПБ</dataPath>
+		<expression>Сумма(УчетныйВесСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасходыМагистраль</dataPath>
+		<expression>Сумма(РасходыМагистраль)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УчетныйВесМагистраль</dataPath>
+		<expression>Сумма(УчетныйВесМагистраль)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РБММСК</dataPath>
+		<expression>Сумма(РБММСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РЗММСК</dataPath>
+		<expression>Сумма(РЗММСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РМММСК</dataPath>
+		<expression>Сумма(РМММСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РБМСПБ</dataPath>
+		<expression>Сумма(РБМСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РЗМСПБ</dataPath>
+		<expression>Сумма(РЗМСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РММСПБ</dataPath>
+		<expression>Сумма(РММСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасходыАвтопарк</dataPath>
+		<expression>Сумма(РасходыАвтопарк)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КБММСК</dataPath>
+		<expression>Сумма(КБММСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КБМСПБ</dataPath>
+		<expression>Сумма(КБМСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КЗММСК</dataPath>
+		<expression>Сумма(КЗММСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КЗМСПБ</dataPath>
+		<expression>Сумма(КЗМСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КМММСК</dataPath>
+		<expression>Сумма(КМММСК)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КММСПБ</dataPath>
+		<expression>Сумма(КММСПБ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВознаграждениеЗаПриемДСДоходы</dataPath>
+		<expression>Сумма(ВознаграждениеЗаПриемДСДоходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПолученоСПолучателя</dataPath>
+		<expression>Сумма(ПолученоСПолучателя)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РасходыПоПлатежамКартой</dataPath>
+		<expression>Сумма(РасходыПоПлатежамКартой)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВесФизический</dataPath>
+		<expression>Сумма(ВесФизический)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НачисленоВсегоРасходы</dataPath>
+		<expression>Сумма(НачисленоВсегоРасходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НачисленоПодъемРасходы</dataPath>
+		<expression>Сумма(НачисленоПодъемРасходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Объем</dataPath>
+		<expression>Сумма(Объем)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ТарифицируемыйВес</dataPath>
+		<expression>Сумма(ТарифицируемыйВес)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовВсего</dataPath>
+		<expression>Сумма(ЗаказовВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДБольше30</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаКАДБольше30)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДМеньше30</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаКАДМеньше30)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДБольше30</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДБольше30)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДМеньше30</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДМеньше30)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовКАД</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовМКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовМКАД_10)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10_ЦКАД</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовМКАД_10_ЦКАД)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЦКАД_А108</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовЦКАД_А108)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДМеньше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДМеньше30) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДБольше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаМКАДБольше30) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовА108_ГраницаМО</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеДоставки.ЗаказовА108_ГраницаМО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовКАДПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовКАД) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДМеньше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаКАДМеньше30) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЗаКАДБольше30Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовЗаКАДБольше30) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовМКАД_10) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАД_10_ЦКАДПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовМКАД_10_ЦКАД) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовЦКАД_А108Процент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовЦКАД_А108) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовА108_ГраницаМОПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовА108_ГраницаМО) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовМГТ</dataPath>
+		<expression>Сумма(ЗаказовПоКатегорииЗП.ЗаказовМГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСГТ</dataPath>
+		<expression>Сумма(ЗаказовПоКатегорииЗП.ЗаказовСГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовКГТ</dataPath>
+		<expression>Сумма(ЗаказовПоКатегорииЗП.ЗаказовКГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСКГТ</dataPath>
+		<expression>Сумма(ЗаказовПоКатегорииЗП.ЗаказовСКГТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСТ</dataPath>
+		<expression>Сумма(ЗаказовПоКатегорииЗП.ЗаказовСТ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоКатегорииЗП.ЗаказовСГТ) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовКГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоКатегорииЗП.ЗаказовКГТ) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСКГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоКатегорииЗП.ЗаказовСКГТ) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовСТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоКатегорииЗП.ЗаказовСТ) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыДоход</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыМаржа</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыМаржа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыПроцентМаржиОтДохода</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыДоход) &gt; 0
+ТОГДА 100 * Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыМаржа) / Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыДоход)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказовСОтрицательнойМаржой</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказовСОтрицательнойМаржой)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасход</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходЗП</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходЗП)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходСклад</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходСклад)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходАвтопарк</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходАвтопарк)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыРасходМагистраль</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходМагистраль)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.СреднийВесНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыТарифицируемыйВес) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыТарифицируемыйВес</dataPath>
+		<expression>Сумма(ЗаказыТарифицируемыйВес)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.ДоходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыДоход) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасход) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходЗПНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходЗП) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходПодъемНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыРасходПодъем) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыАбсолютныеПоказатели.ЗаказыДоходПодъем</dataPath>
+		<expression>Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыДоходПодъем)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыРасходПодъем</dataPath>
+		<expression>Сумма(ЗаказыРасходПодъем)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.ДоходПодъемНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыДоходПодъем) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходСкладНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходСклад) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходАвтопаркНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходАвтопарк) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РасходМагистральНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходМагистраль) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.МаржаНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыМаржа) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОперацийСклада</dataPath>
+		<expression>Сумма(ОперацийСклада)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыОперацийСклада</dataPath>
+		<expression>Сумма(ЗаказыОперацийСклада)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.ОперацийСкладаНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыОперацийСклада) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыРейсов</dataPath>
+		<expression>Сумма(ЗаказыРейсов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Рейсов</dataPath>
+		<expression>Сумма(Рейсов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаЗаказ.РейсовНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаказыРейсов) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>МСКиМО</dataPath>
+		<expression>Сумма(МСКиМО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СПБиЛО</dataPath>
+		<expression>Сумма(СПБиЛО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовМСКиМО</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеОтгрузки.ЗаказовМСКиМО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовСПБиЛО</dataPath>
+		<expression>Сумма(ЗаказовПоЗонеОтгрузки.ЗаказовСПБиЛО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовМСКиМОПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеОтгрузки.ЗаказовМСКиМО) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеОтгрузки.ЗаказовСПБиЛОПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеОтгрузки.ЗаказовСПБиЛО) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыДоходНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказыТарифицируемыйВес) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыДоход) / Сумма(ЗаказыТарифицируемыйВес)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказыТарифицируемыйВес) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасход) / Сумма(ЗаказыТарифицируемыйВес)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходМагистральНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказыТарифицируемыйВес) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходМагистраль) / Сумма(ЗаказыТарифицируемыйВес)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходСкладНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказыТарифицируемыйВес) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходСклад) / Сумма(ЗаказыТарифицируемыйВес)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказыПоказателиНаКГ.ЗаказыРасходЗПНаКГ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказыТарифицируемыйВес) &gt; 0
+ТОГДА Сумма(ЗаказыАбсолютныеПоказатели.ЗаказыРасходЗП) / Сумма(ЗаказыТарифицируемыйВес)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыДоход</dataPath>
+		<expression>Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыРасход</dataPath>
+		<expression>Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыРасходЗП</dataPath>
+		<expression>Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыРасходЗП)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыРасходАвтопарк</dataPath>
+		<expression>Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыРасходАвтопарк)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыМаржа</dataPath>
+		<expression>Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыМаржа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыАбсолютныеПоказатели.ЗаборыПроцентМаржиОтДохода</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыДоход) &gt; 0
+ТОГДА 100 * Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыМаржа) / Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыДоход)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборовВсего</dataPath>
+		<expression>Сумма(ЗаборовВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыПоказателиНаЗабор.ДоходНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыДоход) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыПоказателиНаЗабор.РасходНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыРасход) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыПоказателиНаЗабор.РасходЗПНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыРасходЗП) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыПоказателиНаЗабор.РасходАвтопаркНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыРасходАвтопарк) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыПоказателиНаЗабор.МаржаНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыМаржа) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбъемЗаборов</dataPath>
+		<expression>Сумма(ОбъемЗаборов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбъемЗаказов</dataPath>
+		<expression>Сумма(ОбъемЗаказов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыПоказателиНаЗабор.СреднийОбъемНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ОбъемЗаборов) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ЗаказовНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ЗаказовВсего) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВесФизическийЗаборы</dataPath>
+		<expression>Сумма(ВесФизическийЗаборы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВесФизическийЗаказы</dataPath>
+		<expression>Сумма(ВесФизическийЗаказы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ВесЗаказовНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ВесФизическийЗаказы) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ОбъемЗаказовНаЗабор</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаборовВсего) &gt; 0
+ТОГДА Сумма(ОбъемЗаказов) / Сумма(ЗаборовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ЗаборыРасходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыРасход) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаборыСогласованиеСДоставкой.ЗаборыДоходНаЗаказ</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА Сумма(ЗаборыАбсолютныеПоказатели.ЗаборыДоход) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоЗонеДоставки.ЗаказовМКАДПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоЗонеДоставки.ЗаказовМКАД) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаказовПоКатегорииЗП.ЗаказовМГТПроцент</dataPath>
+		<expression>ВЫБОР
+КОГДА Сумма(ЗаказовВсего) &gt; 0
+ТОГДА 100 * Сумма(ЗаказовПоКатегорииЗП.ЗаказовМГТ) / Сумма(ЗаказовВсего)
+КОНЕЦ</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ОкончаниеПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Окончание периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ШкалаВеса</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Шкала веса</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>3</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Кол.</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаказовВсего</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаборовВсего</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Vertically</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Партнер</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>dbde5d29-ba19-4978-9175-e131b28f8ef4</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ТипЗаказа</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>9446a93d-a251-4564-9982-1c193a50abfa</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РегионДоставки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>be189936-77cf-4176-952d-c06001eb0c3f</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РегионОтгрузки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ce16484a-1797-4b72-a784-8f4ba5d3aaa8</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">КатегорияРасходы</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>e553f2ef-ce1f-4e51-9a59-6219575a6665</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>96efc912-24a5-431d-b9ea-cb050a81e94a</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ШкалаВеса</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодРасчета</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Партнер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Количество</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПоВесу</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По весу</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаказовВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаказыАбсолютныеПоказатели.ЗаказыДоход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаказыАбсолютныеПоказатели.ЗаказыРасход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаказыАбсолютныеПоказатели.ЗаказыМаржа</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Партнер</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>dbde5d29-ba19-4978-9175-e131b28f8ef4</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ТипЗаказа</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>9446a93d-a251-4564-9982-1c193a50abfa</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РегионДоставки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>be189936-77cf-4176-952d-c06001eb0c3f</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РегионОтгрузки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ce16484a-1797-4b72-a784-8f4ba5d3aaa8</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">КатегорияРасходы</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>e553f2ef-ce1f-4e51-9a59-6219575a6665</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>96efc912-24a5-431d-b9ea-cb050a81e94a</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ШкалаВеса</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">2</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">4</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">5</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">40</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">45</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">50</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">60</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">70</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">80</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">90</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">100</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">110</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">120</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>9521e7fc-a836-4535-a881-10289e64f4af</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ВесШкалы</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

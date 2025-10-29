@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bd7076f5-ba07-4301-a16a-20c08fc2ae17">
+  <producedTypes>
+    <selectionType typeId="a98b4a69-6126-43ea-bd0e-bfb84425a6f3" valueTypeId="c92302a4-d9b3-4830-bd9f-f4958968cd4b"/>
+    <listType typeId="486a2906-7b49-48b7-9104-fc9f7b678857" valueTypeId="91096177-5aad-4fd4-9f6f-7a6724f84c9a"/>
+    <managerType typeId="8a4eff5e-217e-4f3e-97c0-2bd882c3c291" valueTypeId="ac68339a-5703-4184-8dbf-c161f1d1a086"/>
+    <recordSetType typeId="5c0ec752-3904-4758-a14b-97713313b25f" valueTypeId="2a160398-8766-47f6-a8bb-2f4cdabe8269"/>
+    <recordKeyType typeId="1b7aa8cf-0607-449d-9933-bbb681513ccd" valueTypeId="cc3513ef-9bf3-4370-aef7-52ab10f76e6e"/>
+    <recordType typeId="a502532d-0b51-450c-ab15-1b9268e12008" valueTypeId="e0431576-8af3-4038-bc37-7e58d7b146ca"/>
+    <recordManagerType typeId="721e27a3-fd63-4a19-aa8f-4f06575ce681" valueTypeId="6575cecc-0966-47b7-a809-138b15a88c54"/>
+  </producedTypes>
+  <name>ДополнительныеПараметрыФизЛиц</name>
+  <synonym>
+    <key>ru</key>
+    <value>Дополнительные параметры физ лиц</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3173a795-4470-4964-b5f8-e95b73788489">
+    <name>ОсновнаяРольСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная роль сотрудника</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="a36fc700-e195-4a59-afc7-06debcdb4127">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5e6160d5-2863-4680-aab7-1c81cfabdcea">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.КадровоеПеремещениеРаботниковОрганизаций</types>
+      <types>DocumentRef.ПриемНаРаботуВОрганизацию</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="8434f367-1aa9-4fb2-b169-e7e8a4f9a99d">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физ лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

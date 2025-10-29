@@ -1,0 +1,114 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://strizh.delivery">
+	<objectType name="responseSetStatus">
+		<property xmlns:d3p1="http://strizh.delivery" name="errors" type="d3p1:errors"/>
+	</objectType>
+	<objectType name="errors">
+		<property name="error" type="xs:string" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="responseGetOrderForms">
+		<property xmlns:d3p1="http://strizh.delivery" name="errors" type="d3p1:errors"/>
+		<property name="OrderForm" type="xs:base64Binary"/>
+	</objectType>
+	<objectType name="arrayOfOkeys">
+		<property name="okey" type="xs:string" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="responseLoadCashReport">
+		<property xmlns:d3p1="http://strizh.delivery" name="errors" type="d3p1:errors"/>
+		<property name="idDoc" type="xs:string"/>
+	</objectType>
+	<objectType name="requestLoadCashReport">
+		<property name="courier_id" type="xs:string"/>
+		<property name="date" type="xs:date"/>
+		<property name="idDoc" type="xs:string"/>
+		<property xmlns:d3p1="http://strizh.delivery" name="orders" type="d3p1:arrayOfOrderState"/>
+	</objectType>
+	<objectType name="orderState">
+		<property name="okey" type="xs:string" form="Element"/>
+		<property name="state" type="xs:integer" form="Element"/>
+		<property name="cash" type="xs:decimal" form="Element"/>
+		<property name="rejectionReason" type="xs:int" form="Element"/>
+		<property name="distanceFromKAD" type="xs:double" form="Element"/>
+		<property xmlns:d3p1="http://strizh.delivery" name="transferredGoods" type="d3p1:arrayOfGoodItem"/>
+	</objectType>
+	<objectType name="goodItem">
+		<property name="articul" type="xs:string" form="Element"/>
+		<property name="count" type="xs:integer" form="Element"/>
+		<property name="summa" type="xs:decimal"/>
+	</objectType>
+	<objectType name="arrayOfGoodItem">
+		<property xmlns:d3p1="http://strizh.delivery" name="goodItem" type="d3p1:goodItem" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfOrderState">
+		<property xmlns:d3p1="http://strizh.delivery" name="orderState" type="d3p1:orderState" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="arrayOfReturnOrders">
+		<property xmlns:d3p1="http://strizh.delivery" name="returnOrder" type="d3p1:returnOrder" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="returnOrder">
+		<property name="order" type="xs:string"/>
+		<property name="count" type="xs:int"/>
+	</objectType>
+	<objectType name="responseLoadReturnList">
+		<property xmlns:d3p1="http://strizh.delivery" name="errors" type="d3p1:errors"/>
+	</objectType>
+	<objectType name="requestAddShipment">
+		<property name="shipmentNumber" type="xs:string"/>
+		<property name="shipmentDate" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://strizh.delivery" name="rows" type="d3p1:arrayOfRowShipment"/>
+	</objectType>
+	<objectType name="rowShipment">
+		<property name="okey" type="xs:string"/>
+		<property name="piecesOfFreight" type="xs:byte"/>
+	</objectType>
+	<objectType name="arrayOfRowShipment">
+		<property xmlns:d3p1="http://strizh.delivery" name="rowShipment" type="d3p1:rowShipment" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="responseAddShipment">
+		<property name="shipmentId" type="xs:string"/>
+		<property xmlns:d3p1="http://strizh.delivery" name="errors" type="d3p1:errors"/>
+	</objectType>
+	<objectType name="parameter">
+		<property name="name" type="xs:string"/>
+		<property name="value" type="xs:string"/>
+	</objectType>
+	<objectType name="arrayOfParameters">
+		<property xmlns:d3p1="http://strizh.delivery" name="parameters" type="d3p1:parameter" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="responseGetReport">
+		<property xmlns:d3p1="http://strizh.delivery" name="errors" type="d3p1:errors"/>
+		<property name="report" type="xs:base64Binary"/>
+	</objectType>
+	<objectType name="externalRoute">
+		<property name="routingOperator" type="xs:int"/>
+		<property name="deliveryPlaceID" type="xs:int"/>
+		<property name="routingDate" type="xs:date"/>
+		<property name="routeId" type="xs:int"/>
+		<property name="orders" type="xs:int" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="commonResponse">
+		<property name="isError" type="xs:boolean"/>
+		<property name="errorText" type="xs:string"/>
+		<property name="idObject" type="xs:string"/>
+	</objectType>
+	<objectType name="crewExternalRoute">
+		<property name="routingOperator" type="xs:int"/>
+		<property name="deliveryPlaceID" type="xs:int"/>
+		<property name="routeId" type="xs:int"/>
+		<property name="routingDate" type="xs:date"/>
+		<property name="carId" type="xs:string"/>
+		<property name="carBrand" type="xs:string"/>
+		<property name="courierId" type="xs:string"/>
+		<property name="courierFullName" type="xs:string"/>
+	</objectType>
+	<objectType name="orderStatus">
+		<property name="routeId" type="xs:int"/>
+		<property name="routingDate" type="xs:date"/>
+		<property name="deliveryPlaceID" type="xs:int"/>
+		<property name="order" type="xs:int"/>
+		<property name="status" type="xs:int"/>
+	</objectType>
+	<objectType name="ordersStatusExternalRoute">
+		<property name="routingOperator" type="xs:int"/>
+		<property xmlns:d3p1="http://strizh.delivery" name="ordersStatus" type="d3p1:orderStatus" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

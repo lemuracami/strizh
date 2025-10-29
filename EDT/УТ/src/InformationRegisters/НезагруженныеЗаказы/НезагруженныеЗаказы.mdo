@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="57ab9932-fe51-4873-9314-7d47405d2134">
+  <producedTypes>
+    <selectionType typeId="d89c86c6-6b43-4c2f-8fbc-d9b3d12b81be" valueTypeId="e53d619d-eac9-4c8d-b3cf-a2836e179ed5"/>
+    <listType typeId="8aa0bd9f-00d7-42e6-a124-83feb5dab6a4" valueTypeId="c623010d-074d-452f-a056-1c9554a0b928"/>
+    <managerType typeId="4f428dbe-397a-429c-9e69-5c2ccca4cf07" valueTypeId="0b3e7289-4927-4d26-8121-efa39c510f33"/>
+    <recordSetType typeId="b24d2f66-d9cd-4050-80f9-9577feff69b2" valueTypeId="f4bae682-7b60-4cd3-9e40-49eff30f449b"/>
+    <recordKeyType typeId="48783308-7370-40ac-ad89-f0ba2764ad27" valueTypeId="f495b04d-02a8-4290-ad49-20213dd89b8d"/>
+    <recordType typeId="4daf76ee-a4d2-4156-8828-5a973928dc89" valueTypeId="bbcf174a-bf14-4e2d-b89b-9619453d502f"/>
+    <recordManagerType typeId="9a129c7a-bbde-4c4b-a85e-6d41c5e9a810" valueTypeId="8097f74a-050a-4bd7-9aea-606eb9a14b49"/>
+  </producedTypes>
+  <name>НезагруженныеЗаказы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Незагруженные заказы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.НезагруженныеЗаказы.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="3a88a79d-a7ef-4f63-afc6-213bb9300cf4">
+    <name>Ошибка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="e490bee8-ed8c-4fd7-ad7c-90ea4b7c71e4">
+    <name>Прогружен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прогружен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="b3db0055-276e-4355-b465-4a85f0e31461">
+    <name>ТипЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип загрузки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗагрузкиИзАдминки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cca1b122-e4c1-4d8d-803b-4d432c3188bd">
+    <name>НомерЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер заказа</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="f9fdcaff-466b-4f4d-bcf4-49a138c2f7bc">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

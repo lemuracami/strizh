@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="15eea7ab-2451-47d5-97ce-93ad01b08241">
+  <producedTypes>
+    <selectionType typeId="9a74e8dd-fe36-4782-a6f1-30fc0e7598d1" valueTypeId="4c8ab3e1-1534-41c0-9f95-eadc064eb4dd"/>
+    <listType typeId="b4a6dcbc-d38d-4d92-81e8-17f6c833e204" valueTypeId="d96defdd-22fc-4568-a1e0-000b4573bc35"/>
+    <managerType typeId="36459c00-9fbe-4796-8861-42a1ab920cf9" valueTypeId="d6730b83-b61f-4dce-b4b0-0574dc6c04fc"/>
+    <recordSetType typeId="089da03c-a1aa-49f3-9c75-3a517bd860ef" valueTypeId="76abbc52-22bf-4a1b-a218-5cabe5f02cb2"/>
+    <recordKeyType typeId="59a01a95-6bb8-4b01-8963-625dc008b1b2" valueTypeId="98ea0522-4a91-404e-883c-764ab8fdb6f1"/>
+    <recordType typeId="e1fe8a12-a6bf-447b-9199-508440e7572b" valueTypeId="a3adce7f-c94a-4d8a-9bfc-a71f6b55a79b"/>
+    <recordManagerType typeId="19e6757c-5590-4fe1-a4a9-e8749eb666c9" valueTypeId="24cb99f1-2c19-42af-9ebd-015f4eb5e33d"/>
+  </producedTypes>
+  <name>ПараметрыМобильнойСреды</name>
+  <synonym>
+    <key>ru</key>
+    <value>Параметры мобильной среды</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="400f71c3-1cff-4584-9b1a-eca56987dafd">
+    <name>МП</name>
+    <synonym>
+      <key>ru</key>
+      <value>МП</value>
+    </synonym>
+    <type>
+      <types>ExchangePlanRef.ИзмененияДляМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="799d0d9f-d887-4f52-a247-a33aaf3681d1">
+    <name>ВерсияМобильнойСреды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Версия мобильной среды</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВерсииМобильнойСреды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="a1c25eca-e427-4aa5-9609-6619d2afe864">
+    <name>РазмерОЗУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер ОЗУ</value>
+    </synonym>
+    <comment>Размер оперативной памяти, Гб</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="6402125b-4436-4ceb-ba87-19c839f2a4f6">
+    <name>Процессор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процессор</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="d3c25801-6294-4a46-92a4-6f7639d09cb3">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

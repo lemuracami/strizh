@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d542360d-4ba3-4625-b2db-7a2265606dee">
+  <producedTypes>
+    <selectionType typeId="d60c74d3-38bf-450e-8696-c4d39471435a" valueTypeId="592e3fc6-b76e-4524-8a2e-19db014ea39a"/>
+    <listType typeId="45603d07-3604-4a13-b21f-7c356c43e25b" valueTypeId="c8962227-f847-491c-8cd8-04954911f9be"/>
+    <managerType typeId="a4c9bf68-6611-49bc-a7b2-a88ac89619e4" valueTypeId="23cffffc-c084-42a1-bca9-dc883445040b"/>
+    <recordSetType typeId="b00f1d4b-ce78-46aa-9b12-102487531f32" valueTypeId="3ef746c7-33ce-4896-8cc6-d3feae66d47e"/>
+    <recordKeyType typeId="f247421c-d562-459e-93e8-4637c3dbe0f1" valueTypeId="9e6d087c-540b-4fca-a28c-c6add2edfdb0"/>
+    <recordType typeId="d2a8477e-0837-4207-9ea0-4f93bc43899f" valueTypeId="5496994f-6ba4-4a2e-afe3-655be343ecfe"/>
+    <recordManagerType typeId="85924b64-7b6a-459d-b684-69c9840ad6e9" valueTypeId="23eab39d-51f5-4981-b50f-9f4ffe0809f0"/>
+  </producedTypes>
+  <name>новаЗакрытияВозможныхРейсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Закрытия возможных рейсов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="800f6e9a-3227-4d80-92d8-9c1bbd959bc8">
+    <name>Закрыт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрыт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a2d46c55-409e-4c80-95c3-df3e11d8c24b">
+    <name>НовоеНачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новое начало периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1f2e2edd-0da7-4e27-bf3b-886dae3cfb06">
+    <name>НовыйКонецПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новый конец периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="22096253-a568-43a4-8bea-809477566fcb">
+    <name>НовоеНачалоРейса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новое начало рейса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТочкиДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="6eadc3ae-22dd-463c-a961-4f25393e5cf9">
+    <name>Транспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспорт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаТранспорт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2d7fe7e8-3147-4ced-b0df-921ae4e5467a">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.новаВодители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="19c1de14-6191-4a81-b114-bfbf80a252bf">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="22b2f196-8945-4d96-a77b-75432f7ddf86">
+    <name>НомерПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер периода</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

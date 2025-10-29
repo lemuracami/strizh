@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="ozon/api/subagent"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="ozon/api/subagent"
+		xmlns:xsd2="ozon/api/subagent/Imports"
+		name="ArticleService"
+		targetNamespace="ozon/api/subagent">
+	<types>
+		<xsd:schema xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tns="ozon/api/subagent/Imports"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				targetNamespace="ozon/api/subagent/Imports">
+			<xsd:import schemaLocation="file://1.xsd"
+					namespace="ozon/api/subagent"/>
+		</xsd:schema>
+	</types>
+	<message name="IArticleService_PostingReceive_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReceive"/>
+	</message>
+	<message name="IArticleService_PostingReceive_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReceiveResponse"/>
+	</message>
+	<message name="IArticleService_PostingGiveout_InputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveout"/>
+	</message>
+	<message name="IArticleService_PostingGiveout_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveoutResponse"/>
+	</message>
+	<message name="IArticleService_PostingReturn_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReturn"/>
+	</message>
+	<message name="IArticleService_PostingReturn_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReturnResponse"/>
+	</message>
+	<message name="IArticleService_PostingGiveoutToCourier_InputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveoutToCourier"/>
+	</message>
+	<message name="IArticleService_PostingGiveoutToCourier_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingGiveoutToCourierResponse"/>
+	</message>
+	<message name="IArticleService_PostingReturnFromCourier_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReturnFromCourier"/>
+	</message>
+	<message name="IArticleService_PostingReturnFromCourier_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReturnFromCourierResponse"/>
+	</message>
+	<message name="IArticleService_PostingReadyForGiveoutListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingReadyForGiveoutListGet"/>
+	</message>
+	<message name="IArticleService_PostingReadyForGiveoutListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingReadyForGiveoutListGetResponse"/>
+	</message>
+	<message name="IArticleService_PostingExpectedListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingExpectedListGet"/>
+	</message>
+	<message name="IArticleService_PostingExpectedListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingExpectedListGetResponse"/>
+	</message>
+	<message name="IArticleService_PostingLabelGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingLabelGet"/>
+	</message>
+	<message name="IArticleService_PostingLabelGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingLabelGetResponse"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedListGet_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedListGet"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedListGetResponse"/>
+	</message>
+	<message name="IArticleService_ArticleReturn_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturn"/>
+	</message>
+	<message name="IArticleService_ArticleReturn_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnResponse"/>
+	</message>
+	<message name="IArticleService_ArticleInfoGet_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleInfoGet"/>
+	</message>
+	<message name="IArticleService_ArticleInfoGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleInfoGetResponse"/>
+	</message>
+	<message name="IArticleService_ArticleTrack_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleTrack"/>
+	</message>
+	<message name="IArticleService_ArticleTrack_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleTrackResponse"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedSend_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedSend"/>
+	</message>
+	<message name="IArticleService_ArticleReturnedSend_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleReturnedSendResponse"/>
+	</message>
+	<message name="IArticleService_PostingDeliveryDateChange_InputMessage">
+		<part name="parameters"
+				element="tns:PostingDeliveryDateChange"/>
+	</message>
+	<message name="IArticleService_PostingDeliveryDateChange_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingDeliveryDateChangeResponse"/>
+	</message>
+	<message name="IArticleService_ArticlePostingSearch_InputMessage">
+		<part name="parameters"
+				element="tns:ArticlePostingSearch"/>
+	</message>
+	<message name="IArticleService_ArticlePostingSearch_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticlePostingSearchResponse"/>
+	</message>
+	<message name="IArticleService_ReturnBoxCreate_InputMessage">
+		<part name="parameters"
+				element="tns:ReturnBoxCreate"/>
+	</message>
+	<message name="IArticleService_ReturnBoxCreate_OutputMessage">
+		<part name="parameters"
+				element="tns:ReturnBoxCreateResponse"/>
+	</message>
+	<message name="IArticleService_TeleportInfoSet_InputMessage">
+		<part name="parameters"
+				element="tns:TeleportInfoSet"/>
+	</message>
+	<message name="IArticleService_TeleportInfoSet_OutputMessage">
+		<part name="parameters"
+				element="tns:TeleportInfoSetResponse"/>
+	</message>
+	<message name="IArticleService_ArticleAttributeSet_InputMessage">
+		<part name="parameters"
+				element="tns:ArticleAttributeSet"/>
+	</message>
+	<message name="IArticleService_ArticleAttributeSet_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticleAttributeSetResponse"/>
+	</message>
+	<message name="IArticleService_ArticlePostingRecipientAddressGet_InputMessage">
+		<part name="parameters"
+				element="tns:ArticlePostingRecipientAddressGet"/>
+	</message>
+	<message name="IArticleService_ArticlePostingRecipientAddressGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ArticlePostingRecipientAddressGetResponse"/>
+	</message>
+	<message name="IArticleService_ReturnListGetForCourier_InputMessage">
+		<part name="parameters"
+				element="tns:ReturnListGetForCourier"/>
+	</message>
+	<message name="IArticleService_ReturnListGetForCourier_OutputMessage">
+		<part name="parameters"
+				element="tns:ReturnListGetForCourierResponse"/>
+	</message>
+	<message name="IArticleService_PostingAvailableTimeSlotListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingAvailableTimeSlotListGet"/>
+	</message>
+	<message name="IArticleService_PostingAvailableTimeSlotListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingAvailableTimeSlotListGetResponse"/>
+	</message>
+	<message name="IArticleService_PostingUpdTimeSlotSet_InputMessage">
+		<part name="parameters"
+				element="tns:PostingUpdTimeSlotSet"/>
+	</message>
+	<message name="IArticleService_PostingUpdTimeSlotSet_OutputMessage">
+		<part name="parameters"
+				element="tns:PostingUpdTimeSlotSetResponse"/>
+	</message>
+	<portType name="IArticleService">
+		<operation name="PostingReceive">
+			<input name="PostingReceiveRequest"
+					message="tns:IArticleService_PostingReceive_InputMessage"/>
+			<output name="PostingReceiveResponse"
+					message="tns:IArticleService_PostingReceive_OutputMessage"/>
+		</operation>
+		<operation name="PostingGiveout">
+			<input name="PostingGiveoutRequest"
+					message="tns:IArticleService_PostingGiveout_InputMessage"/>
+			<output name="PostingGiveoutResponse"
+					message="tns:IArticleService_PostingGiveout_OutputMessage"/>
+		</operation>
+		<operation name="PostingReturn">
+			<input name="PostingReturnRequest"
+					message="tns:IArticleService_PostingReturn_InputMessage"/>
+			<output name="PostingReturnResponse"
+					message="tns:IArticleService_PostingReturn_OutputMessage"/>
+		</operation>
+		<operation name="PostingGiveoutToCourier">
+			<input name="PostingGiveoutToCourierRequest"
+					message="tns:IArticleService_PostingGiveoutToCourier_InputMessage"/>
+			<output name="PostingGiveoutToCourierResponse"
+					message="tns:IArticleService_PostingGiveoutToCourier_OutputMessage"/>
+		</operation>
+		<operation name="PostingReturnFromCourier">
+			<input name="PostingReturnFromCourierRequest"
+					message="tns:IArticleService_PostingReturnFromCourier_InputMessage"/>
+			<output name="PostingReturnFromCourierResponse"
+					message="tns:IArticleService_PostingReturnFromCourier_OutputMessage"/>
+		</operation>
+		<operation name="PostingReadyForGiveoutListGet">
+			<input name="PostingReadyForGiveoutListGetRequest"
+					message="tns:IArticleService_PostingReadyForGiveoutListGet_InputMessage"/>
+			<output name="PostingReadyForGiveoutListGetResponse"
+					message="tns:IArticleService_PostingReadyForGiveoutListGet_OutputMessage"/>
+		</operation>
+		<operation name="PostingExpectedListGet">
+			<input name="PostingExpectedListGetRequest"
+					message="tns:IArticleService_PostingExpectedListGet_InputMessage"/>
+			<output name="PostingExpectedListGetResponse"
+					message="tns:IArticleService_PostingExpectedListGet_OutputMessage"/>
+		</operation>
+		<operation name="PostingLabelGet">
+			<input name="PostingLabelGetRequest"
+					message="tns:IArticleService_PostingLabelGet_InputMessage"/>
+			<output name="PostingLabelGetResponse"
+					message="tns:IArticleService_PostingLabelGet_OutputMessage"/>
+		</operation>
+		<operation name="ArticleReturnedListGet">
+			<input name="ArticleReturnedListGetRequest"
+					message="tns:IArticleService_ArticleReturnedListGet_InputMessage"/>
+			<output name="ArticleReturnedListGetResponse"
+					message="tns:IArticleService_ArticleReturnedListGet_OutputMessage"/>
+		</operation>
+		<operation name="ArticleReturn">
+			<input name="ArticleReturnRequest"
+					message="tns:IArticleService_ArticleReturn_InputMessage"/>
+			<output name="ArticleReturnResponse"
+					message="tns:IArticleService_ArticleReturn_OutputMessage"/>
+		</operation>
+		<operation name="ArticleInfoGet">
+			<input name="ArticleInfoGetRequest"
+					message="tns:IArticleService_ArticleInfoGet_InputMessage"/>
+			<output name="ArticleInfoGetResponse"
+					message="tns:IArticleService_ArticleInfoGet_OutputMessage"/>
+		</operation>
+		<operation name="ArticleTrack">
+			<input name="ArticleTrackRequest"
+					message="tns:IArticleService_ArticleTrack_InputMessage"/>
+			<output name="ArticleTrackResponse"
+					message="tns:IArticleService_ArticleTrack_OutputMessage"/>
+		</operation>
+		<operation name="ArticleReturnedSend">
+			<input name="ArticleReturnedSendRequest"
+					message="tns:IArticleService_ArticleReturnedSend_InputMessage"/>
+			<output name="ArticleReturnedSendResponse"
+					message="tns:IArticleService_ArticleReturnedSend_OutputMessage"/>
+		</operation>
+		<operation name="PostingDeliveryDateChange">
+			<input name="PostingDeliveryDateChangeRequest"
+					message="tns:IArticleService_PostingDeliveryDateChange_InputMessage"/>
+			<output name="PostingDeliveryDateChangeResponse"
+					message="tns:IArticleService_PostingDeliveryDateChange_OutputMessage"/>
+		</operation>
+		<operation name="ArticlePostingSearch">
+			<input name="ArticlePostingSearchRequest"
+					message="tns:IArticleService_ArticlePostingSearch_InputMessage"/>
+			<output name="ArticlePostingSearchResponse"
+					message="tns:IArticleService_ArticlePostingSearch_OutputMessage"/>
+		</operation>
+		<operation name="ReturnBoxCreate">
+			<input name="ReturnBoxCreateRequest"
+					message="tns:IArticleService_ReturnBoxCreate_InputMessage"/>
+			<output name="ReturnBoxCreateResponse"
+					message="tns:IArticleService_ReturnBoxCreate_OutputMessage"/>
+		</operation>
+		<operation name="TeleportInfoSet">
+			<input name="TeleportInfoSetRequest"
+					message="tns:IArticleService_TeleportInfoSet_InputMessage"/>
+			<output name="TeleportInfoSetResponse"
+					message="tns:IArticleService_TeleportInfoSet_OutputMessage"/>
+		</operation>
+		<operation name="ArticleAttributeSet">
+			<input name="ArticleAttributeSetRequest"
+					message="tns:IArticleService_ArticleAttributeSet_InputMessage"/>
+			<output name="ArticleAttributeSetResponse"
+					message="tns:IArticleService_ArticleAttributeSet_OutputMessage"/>
+		</operation>
+		<operation name="ArticlePostingRecipientAddressGet">
+			<input name="ArticlePostingRecipientAddressGetRequest"
+					message="tns:IArticleService_ArticlePostingRecipientAddressGet_InputMessage"/>
+			<output name="ArticlePostingRecipientAddressGetResponse"
+					message="tns:IArticleService_ArticlePostingRecipientAddressGet_OutputMessage"/>
+		</operation>
+		<operation name="ReturnListGetForCourier">
+			<input name="ReturnListGetForCourierRequest"
+					message="tns:IArticleService_ReturnListGetForCourier_InputMessage"/>
+			<output name="ReturnListGetForCourierResponse"
+					message="tns:IArticleService_ReturnListGetForCourier_OutputMessage"/>
+		</operation>
+		<operation name="PostingAvailableTimeSlotListGet">
+			<input name="PostingAvailableTimeSlotListGetRequest"
+					message="tns:IArticleService_PostingAvailableTimeSlotListGet_InputMessage"/>
+			<output name="PostingAvailableTimeSlotListGetResponse"
+					message="tns:IArticleService_PostingAvailableTimeSlotListGet_OutputMessage"/>
+		</operation>
+		<operation name="PostingUpdTimeSlotSet">
+			<input name="PostingUpdTimeSlotSetRequest"
+					message="tns:IArticleService_PostingUpdTimeSlotSet_InputMessage"/>
+			<output name="PostingUpdTimeSlotSetResponse"
+					message="tns:IArticleService_PostingUpdTimeSlotSet_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_IArticleService"
+			type="tns:IArticleService">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="PostingReceive">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReceive"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingGiveout">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingGiveout"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingReturn">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReturn"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingGiveoutToCourier">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingGiveoutToCourier"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingReturnFromCourier">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReturnFromCourier"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingReadyForGiveoutListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingReadyForGiveoutListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingExpectedListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingExpectedListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingLabelGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingLabelGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleReturnedListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleReturnedListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleReturn">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleReturn"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleInfoGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleInfoGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleTrack">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleTrack"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleReturnedSend">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleReturnedSend"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingDeliveryDateChange">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingDeliveryDateChange"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticlePostingSearch">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticlePostingSearch"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReturnBoxCreate">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ReturnBoxCreate"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="TeleportInfoSet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/TeleportInfoSet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticleAttributeSet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticleAttributeSet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ArticlePostingRecipientAddressGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ArticlePostingRecipientAddressGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReturnListGetForCourier">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/ReturnListGetForCourier"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingAvailableTimeSlotListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingAvailableTimeSlotListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PostingUpdTimeSlotSet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IArticleService/PostingUpdTimeSlotSet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ArticleService">
+		<port name="BasicHttpBinding_IArticleService"
+				binding="tns:BasicHttpBinding_IArticleService">
+			<soapbind:address location="http://apitest.ozon-dostavka.ru/subagent/v2/ArticleService.svc"/>
+		</port>
+	</service>
+</definitions>

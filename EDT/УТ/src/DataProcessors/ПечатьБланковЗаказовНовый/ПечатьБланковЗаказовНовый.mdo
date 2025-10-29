@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8fe16a33-6367-49b0-916e-fc2d199f6f48">
+  <producedTypes>
+    <objectType typeId="ba15a0ff-c9d6-4b33-8a8e-44a4de21526a" valueTypeId="228db930-78a1-4009-9ae4-c1eb7e41fbb5"/>
+    <managerType typeId="ee850493-1231-4157-b057-9279f494994a" valueTypeId="f1530a02-2dc5-4248-a171-f138f41821b3"/>
+  </producedTypes>
+  <name>ПечатьБланковЗаказовНовый</name>
+  <synonym>
+    <key>ru</key>
+    <value>Печать бланков заказов (новый)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПечатьБланковЗаказовНовый.Form.ФормаУпр</defaultForm>
+  <attributes uuid="581315ee-e1ba-4bba-b931-9b49be9e2a8b">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="93648d2c-1c7c-4609-aaf7-ea1f6befeb9f">
+    <name>Доставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.новаМестнаяДоставка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="05563368-a0a8-4a71-8398-1268badd8bd8">
+    <name>НеПечататьБланкиЗаказовПоЗаказамДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не печатать бланки заказов по заказам доставки</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f0593c6c-dfd2-46c1-a111-8c9592072702">
+    <name>ПечатьБланковЗаказовКоличествоПозицийВЗаказе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печать бланков заказов количество позиций в заказе</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="325fd057-fd78-44cc-ba5f-ccd21ad57ca3">
+    <producedTypes>
+      <objectType typeId="4352bc7d-0fe7-4b1c-8fc7-af22a14b34c5" valueTypeId="8a876179-69a2-4201-a68d-c447cca4622a"/>
+      <rowType typeId="c9643327-86f5-448f-89e0-1731cecea7ac" valueTypeId="9abacc31-aead-4fd6-93d3-daa014d214f9"/>
+    </producedTypes>
+    <name>Заказы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы</value>
+    </synonym>
+    <attributes uuid="437e975c-9a28-4fae-9e31-bab712a79cc4">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаборТовара</types>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="ca1b6c52-8e35-49b2-b7a6-b22cf80c87a4">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b1f7f78d-91fb-4634-967e-be988406f7d5">
+    <name>ФормаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма управляемая</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1590b3b5-0190-4876-ac24-b5e110e9840b">
+    <name>ФормаПечатиПоГруппам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма печати по группам</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="33f80eb0-9bb8-46dd-9b95-a777136a581e">
+    <name>Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет</value>
+    </synonym>
+  </templates>
+  <templates uuid="e62196f4-96b8-4bd1-860b-81e42de1a078">
+    <name>Макет_ШК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет ШК</value>
+    </synonym>
+  </templates>
+  <templates uuid="c2b105ae-c06e-40fa-99c9-cb89c2cb760a">
+    <name>МакетНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет новый</value>
+    </synonym>
+  </templates>
+  <templates uuid="af8bad1c-9835-48e2-b8ac-aab142ce6304">
+    <name>МакетУрезанный_доУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный до упр</value>
+    </synonym>
+  </templates>
+  <templates uuid="f7f803b4-ce65-4aa7-865c-eac9fb28c8b6">
+    <name>МакетУрезанный2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный2</value>
+    </synonym>
+  </templates>
+  <templates uuid="45731ac2-dbb8-461e-8045-01e5828e9a23">
+    <name>МакетУрезанный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный</value>
+    </synonym>
+  </templates>
+  <templates uuid="d68385d7-95e7-49ba-b28c-2066c46f5b30">
+    <name>МакетУрезанный3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет урезанный3</value>
+    </synonym>
+  </templates>
+  <templates uuid="7245d281-896d-4889-874a-89d3b7907ce2">
+    <name>МакетСписокРейсовПоГруппам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет список рейсов по группам</value>
+    </synonym>
+  </templates>
+  <templates uuid="465796c6-8a95-46f4-aaf7-e22bd11a3977">
+    <name>БланкЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бланк заказов</value>
+    </synonym>
+  </templates>
+  <templates uuid="c8f09ec9-1ed6-4635-8d2d-d9e3fa81f4e4">
+    <name>ДоверенностьЗабора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доверенность забора</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

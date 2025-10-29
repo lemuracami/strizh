@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="836d81c8-d4f6-4588-9b2e-f90338454ceb">
+  <producedTypes>
+    <objectType typeId="43dcb99b-7066-423a-afda-080a5f6371f8" valueTypeId="507bf2f7-44c1-4fe4-9304-62b7c64a4c80"/>
+    <refType typeId="4ac5b27b-56d8-4ea8-8dda-50529a595fe7" valueTypeId="06cb7691-e467-426e-ab35-fa47d2475c4d"/>
+    <selectionType typeId="1556d313-98c2-41d6-94a3-81c7b34afa51" valueTypeId="c92f4f09-da1d-4592-a259-3abf1b19149e"/>
+    <listType typeId="9dbe7ac9-7734-46f6-87e4-319ed78c3d65" valueTypeId="9f96e67b-4d1b-44ce-8498-0e32c1eedf69"/>
+    <managerType typeId="0a73fd23-1809-4e80-b495-93ea2a9181dc" valueTypeId="5bc72c5d-b51c-4cc5-bd0d-58bf8e102484"/>
+  </producedTypes>
+  <name>новаНазначениеСхемыНачисленияЗарплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначение схемы начисления зарплаты</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.новаНазначениеСхемыНачисленияЗарплаты.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.новаНазначениеСхемыНачисленияЗарплаты.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>InformationRegister.новаСхемыНачисленияЗарплатыСотрудников</registerRecords>
+  <attributes uuid="5f581af8-7853-487a-8fce-92f91c0fc7a3">
+    <name>ДатаНазначения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата назначения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="53c335cf-13f3-4ce9-b869-033df4933dfe">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="96491139-4a3a-48c4-ae21-71cfc9c8f838">
+    <producedTypes>
+      <objectType typeId="5a99b398-bbfb-41f6-b403-b2e76824d880" valueTypeId="3ec76649-b8eb-4d60-b6f3-5eade4349ba1"/>
+      <rowType typeId="edfe6127-e0fe-4f08-8512-2f4ddf92cbf5" valueTypeId="aa705a1b-6cb8-4861-acfe-a2d0ee277733"/>
+    </producedTypes>
+    <name>Сотрудники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудники</value>
+    </synonym>
+    <attributes uuid="95fcf6a7-12cd-4a5f-87de-48adf16f7f7c">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаЭкспедиторы</types>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4d311863-ee43-4116-94ea-53190af97696">
+      <name>СхемаНачисленияЗарплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Схема начисления зарплаты</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаСхемыНачисленияЗарплаты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

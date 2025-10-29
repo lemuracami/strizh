@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="ozon/api/subagent"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="ozon/api/subagent"
+		xmlns:xsd2="ozon/api/subagent/Imports"
+		name="InformationService"
+		targetNamespace="ozon/api/subagent">
+	<types>
+		<xsd:schema xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+				xmlns:tns="ozon/api/subagent/Imports"
+				xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+				xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+				xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+				xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+				xmlns:xsd1="ozon/api/subagent/Imports"
+				xmlns:xsd2="ozon/api/subagent"
+				targetNamespace="ozon/api/subagent/Imports">
+			<xsd:import schemaLocation="file://1.xsd"
+					namespace="ozon/api/subagent"/>
+		</xsd:schema>
+	</types>
+	<message name="IInformationService_UserListGet_InputMessage">
+		<part name="parameters"
+				element="tns:UserListGet"/>
+	</message>
+	<message name="IInformationService_UserListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:UserListGetResponse"/>
+	</message>
+	<message name="IInformationService_ReturnReasonListGet_InputMessage">
+		<part name="parameters"
+				element="tns:ReturnReasonListGet"/>
+	</message>
+	<message name="IInformationService_ReturnReasonListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:ReturnReasonListGetResponse"/>
+	</message>
+	<message name="IInformationService_UserContractListGet_InputMessage">
+		<part name="parameters"
+				element="tns:UserContractListGet"/>
+	</message>
+	<message name="IInformationService_UserContractListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:UserContractListGetResponse"/>
+	</message>
+	<message name="IInformationService_DeliveryVariantListGet_InputMessage">
+		<part name="parameters"
+				element="tns:DeliveryVariantListGet"/>
+	</message>
+	<message name="IInformationService_DeliveryVariantListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:DeliveryVariantListGetResponse"/>
+	</message>
+	<message name="IInformationService_PlaceInformationListGet_InputMessage">
+		<part name="parameters"
+				element="tns:PlaceInformationListGet"/>
+	</message>
+	<message name="IInformationService_PlaceInformationListGet_OutputMessage">
+		<part name="parameters"
+				element="tns:PlaceInformationListGetResponse"/>
+	</message>
+	<portType name="IInformationService">
+		<operation name="UserListGet">
+			<input name="UserListGetRequest"
+					message="tns:IInformationService_UserListGet_InputMessage"/>
+			<output name="UserListGetResponse"
+					message="tns:IInformationService_UserListGet_OutputMessage"/>
+		</operation>
+		<operation name="ReturnReasonListGet">
+			<input name="ReturnReasonListGetRequest"
+					message="tns:IInformationService_ReturnReasonListGet_InputMessage"/>
+			<output name="ReturnReasonListGetResponse"
+					message="tns:IInformationService_ReturnReasonListGet_OutputMessage"/>
+		</operation>
+		<operation name="UserContractListGet">
+			<input name="UserContractListGetRequest"
+					message="tns:IInformationService_UserContractListGet_InputMessage"/>
+			<output name="UserContractListGetResponse"
+					message="tns:IInformationService_UserContractListGet_OutputMessage"/>
+		</operation>
+		<operation name="DeliveryVariantListGet">
+			<input name="DeliveryVariantListGetRequest"
+					message="tns:IInformationService_DeliveryVariantListGet_InputMessage"/>
+			<output name="DeliveryVariantListGetResponse"
+					message="tns:IInformationService_DeliveryVariantListGet_OutputMessage"/>
+		</operation>
+		<operation name="PlaceInformationListGet">
+			<input name="PlaceInformationListGetRequest"
+					message="tns:IInformationService_PlaceInformationListGet_InputMessage"/>
+			<output name="PlaceInformationListGetResponse"
+					message="tns:IInformationService_PlaceInformationListGet_OutputMessage"/>
+		</operation>
+	</portType>
+	<binding name="BasicHttpBinding_IInformationService"
+			type="tns:IInformationService">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="UserListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/UserListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReturnReasonListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/ReturnReasonListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UserContractListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/UserContractListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeliveryVariantListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/DeliveryVariantListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PlaceInformationListGet">
+			<soapbind:operation style="document"
+					soapAction="ozon/api/subagent/IInformationService/PlaceInformationListGet"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="InformationService">
+		<port name="BasicHttpBinding_IInformationService"
+				binding="tns:BasicHttpBinding_IInformationService">
+			<soapbind:address location="http://api.ocourier.ru/subagent/v2/test/InformationService.svc"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3c77b425-7430-41e5-9caf-5da03d045d66">
+  <producedTypes>
+    <objectType typeId="03ee60cd-d451-4c22-8e0d-0fc18ba67427" valueTypeId="df17ad19-b22c-47b9-b290-0df269007700"/>
+    <refType typeId="3a278328-ca28-4951-9ec3-5f2f92b1c00e" valueTypeId="211ef970-9c62-421b-9af9-c79c46612244"/>
+    <selectionType typeId="e07b2fba-50e1-4b64-b643-b8cd47d300ad" valueTypeId="c4443563-abe5-4633-ace6-9d0b0e9d612e"/>
+    <listType typeId="33ff8e6e-2163-4f3b-8372-d802384f486f" valueTypeId="fe74a23f-acd4-472a-bb68-70944f2a877c"/>
+    <managerType typeId="816b37d2-2812-4b12-85cb-6b89ef5a67fa" valueTypeId="809392df-973d-4bcd-8cce-f4e8a9f888d4"/>
+  </producedTypes>
+  <name>УстановкаСтатусаОборудования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка статуса оборудования</value>
+  </synonym>
+  <inputByString>Document.УстановкаСтатусаОборудования.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.УстановкаСтатусаОборудования.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>AccumulationRegister.УчетОстатковОборудования</registerRecords>
+  <registerRecords>InformationRegister.СтатусыОборудования</registerRecords>
+  <attributes uuid="0af761ae-0bce-42e2-8bfd-f1c96660c8d9">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fe41ae78-3818-4af8-b6f8-5115b5afe459">
+    <name>СтатусОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус оборудования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыЕдиницыОборудования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="05137a23-40cd-4ec7-998f-84245e9c3144">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="ad1f794c-ed7f-484c-8a74-e49ff82472f0">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="f182d0c5-5bd0-4cf0-8b72-9c968879e093">
+    <producedTypes>
+      <objectType typeId="6e084846-c5c4-4830-b999-01fd7b8d6059" valueTypeId="fd68f6d1-049c-4083-ae6c-c3bf984c1990"/>
+      <rowType typeId="a63d34ce-1ead-470a-8ae5-4a5e02887397" valueTypeId="d679acf1-8004-48af-8413-614304150c77"/>
+    </producedTypes>
+    <name>СписокОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список оборудования</value>
+    </synonym>
+    <attributes uuid="bd16d926-37d1-4e01-8ae6-ee6f7b82da44">
+      <name>Оборудование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оборудование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Оборудование</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

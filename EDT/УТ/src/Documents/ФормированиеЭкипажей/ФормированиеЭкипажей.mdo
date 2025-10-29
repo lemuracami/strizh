@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4ec048a1-bf8f-4388-984c-dbf3a5489a9d">
+  <producedTypes>
+    <objectType typeId="781110c2-718c-43e1-bfc8-6718821631fe" valueTypeId="496065e8-4e6a-4601-a1ee-0f261a9c4f3e"/>
+    <refType typeId="8c773cb3-4967-4dbb-9a50-29ac4ef973b4" valueTypeId="2d89764d-4244-41a7-945e-8e2dea3b6671"/>
+    <selectionType typeId="1f0dd010-6c14-4835-8c9f-0b3916160f39" valueTypeId="cfbc0d9e-c387-41a0-8b1e-ee08b89d512b"/>
+    <listType typeId="f105efe0-b10a-46db-8bf4-4c625bceb0c9" valueTypeId="6762b19b-753a-473a-9069-6f4bde03d2f7"/>
+    <managerType typeId="f1ccc6be-4adb-49c5-a21b-45ef72c4eb50" valueTypeId="e41a8777-63f3-40d9-9eb2-ab4e66169619"/>
+  </producedTypes>
+  <name>ФормированиеЭкипажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Формирование экипажей</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ФормированиеЭкипажей.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <dataHistory>Use</dataHistory>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ФормированиеЭкипажей.Form.ФормаДокумента</defaultObjectForm>
+  <registerRecords>InformationRegister.СформированныеЭкипажи</registerRecords>
+  <attributes uuid="3c6d8155-9daa-482a-9a09-5e7296ea1238">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="abbabd87-3e36-4c54-bd99-cd671ce655d6">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="4808d8c6-16ba-4362-8298-9c9bb0a9e33d">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="4af55576-82a8-4d72-aac5-2fc343f089b5">
+    <producedTypes>
+      <objectType typeId="67082baa-5f51-4156-9e34-dd3637f83762" valueTypeId="45faadaf-6d4c-4e26-81c4-fe1813ea7c58"/>
+      <rowType typeId="569fe028-bdbc-4cf6-ab9c-c585e15264a4" valueTypeId="d8fec1b3-3220-4acb-be8d-f8d552b86f5b"/>
+    </producedTypes>
+    <name>Экипажи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экипажи</value>
+    </synonym>
+    <attributes uuid="ece0ae87-b71f-4f3e-9098-e31a1fda8202">
+      <name>Транспорт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаТранспорт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="13f1994b-5fc8-4457-ac4a-bd43ff2d6c88">
+      <name>Водитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Водитель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="8425d898-1b79-4dfc-b12a-2c9bf66a2108">
+      <name>Экспедитор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Экспедитор</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаЭкспедиторы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

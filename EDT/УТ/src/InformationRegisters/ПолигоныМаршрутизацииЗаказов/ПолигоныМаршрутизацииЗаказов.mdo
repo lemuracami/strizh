@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cf45d372-03e7-4497-96a1-0ccd584b43f3">
+  <producedTypes>
+    <selectionType typeId="c7be0426-8769-4dcc-b660-720005f103b7" valueTypeId="be52325d-bc1a-43cc-86b7-da5636fc5029"/>
+    <listType typeId="5ebeb84b-38f6-49a6-be8a-12f0107424fd" valueTypeId="878c80ae-cd33-47f3-a1b7-5f8de9e078a7"/>
+    <managerType typeId="09b74dde-8c08-4785-a0e3-ce24a9462c73" valueTypeId="5d044cd4-636b-4b0b-b61c-86d9d6d53429"/>
+    <recordSetType typeId="2f4e8bdf-2a05-4a06-ac24-a08cb9827626" valueTypeId="31f2608e-0555-43fb-997c-93c40fb8d291"/>
+    <recordKeyType typeId="5fdbe063-6fdf-4d3b-a410-5ddfeae5d976" valueTypeId="4bb51bb2-d9d0-4d31-b371-25f99dcf889e"/>
+    <recordType typeId="29f62322-fe5c-414e-a3ae-bc721a27f28f" valueTypeId="f9d5ac67-a91a-49c5-ad76-546d831a9751"/>
+    <recordManagerType typeId="2c9d39e3-70f2-4ea1-952f-5e6ffdecd80e" valueTypeId="fdb478e5-1b8a-413d-b95a-20bb58030fe6"/>
+  </producedTypes>
+  <name>ПолигоныМаршрутизацииЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Полигоны маршрутизации заказов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="4ee0de0e-0680-44eb-a4d5-c261cc36d8fc">
+    <name>ПолигонМаршрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полигон маршрутизации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПолигоныМаршрутизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <attributes uuid="abcfa9c9-52ee-4325-9e5a-f55ffdddf961">
+    <name>Широта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Широта</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>20</precision>
+        <scale>13</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="511d2d98-1c09-487a-be3c-3a447d7837cf">
+    <name>Долгота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Долгота</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>20</precision>
+        <scale>13</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="83b49c0f-de89-45fb-bdb7-1c3824c58878">
+    <name>Расчет1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет1 С</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2f70939d-a0eb-4cd9-8fbd-fbee766dcbe1">
+    <name>ДатаДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата доставки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="6245d88f-f06f-42ad-b28f-b34de8875952">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаборТовара</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8b7c30ba-79b1-4630-8c7d-bf4bafd03631">
+    <name>СхемаМаршрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема маршрутизации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СхемыПолигональнойМаршрутизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

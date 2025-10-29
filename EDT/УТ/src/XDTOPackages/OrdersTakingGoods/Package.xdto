@@ -1,0 +1,24 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh-logistic.ru/1CMobile/OrderTakingGoods">
+	<import namespace="http://www.strizh-logistic.ru/1CMobile/Nomenklature"/>
+	<import namespace="http://www.strizh-logistic.ru/1CMobile/Klients"/>
+	<objectType name="OrderTakingGoods">
+		<property name="Number" type="xs:string"/>
+		<property name="NumberEx" type="xs:string" lowerBound="1" nillable="true"/>
+		<property name="Date" type="xs:dateTime"/>
+		<property name="Status" type="xs:short"/>
+		<property name="TimeOfDelivery" type="xs:string"/>
+		<property name="Dolgota" type="xs:string"/>
+		<property name="Shirota" type="xs:string"/>
+		<property name="Phone" type="xs:string" nillable="true"/>
+		<property name="Address" type="xs:string"/>
+		<property name="InternetShopID" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/Klients" name="Client" type="d3p1:Klients"/>
+		<property name="tariffID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VolumeImport" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="idRowOrder" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="tripId" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ArrayOfOrders">
+		<property xmlns:d3p1="http://www.strizh-logistic.ru/1CMobile/OrderTakingGoods" name="OrderTakingGoods" type="d3p1:OrderTakingGoods" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

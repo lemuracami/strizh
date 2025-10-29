@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Примеры. Геокодирование.</title>
+    
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <script src="https://api-maps.yandex.ru/2.1.oldie.1/?lang=ru_RU" type="text/javascript"></script>
+    <!--Строка подключения сгенерированного скрипта,нужно понять куда его сохранять чтобы иметь полную ссылку-->
+    <!--Сейчас ссылается на папку,где находится основаня страница-->
+   
+
+    <!--<script src="http://back-office.strizh-logistic.ru/external/jquery/jquery.js"></script>
+    <script src="http://back-office.strizh-logistic.ru/jquery-ui.js"></script>
+    <link href="http://back-office.strizh-logistic.ru/jquery-ui.css" rel="stylesheet" />-->
+
+    
+
+    <!--<script src="jquery.ui.position.js?123233" type="text/javascript"></script>
+    <script src="jquery.contextMenu.js?123233" type="text/javascript"></script>
+    <link href="jquery.contextMenu.css" rel="stylesheet" />-->
+    <script type="text/javascript">
+        var xForm1C;
+        //var myPoints = new Array();
+        var WebKitUsage;
+               
+        var map;
+        var points;
+        var mapIsLoad = false;
+        ymaps.ready(function () {
+             points=new ymaps.util.Storage();
+
+            map = new ymaps.Map("YMapsID", {
+                // Центр карты
+                center: [55.75, 37.62],
+                // Коэффициент масштабирования
+                zoom: 12,
+                // Тип карты
+                searchControlProvider: 'yandex#search',
+                state: { behaviors: [ "scrollZoom"] }
+            });
+            map.behaviors.disable([ 'rightMouseButtonMagnifier'])
+           // map.behaviors.disable('rightmousebuttonmagnifier');
+            //map = new ymaps.Map(YMaps.jQuery("#YMapsID")[0]);
+            
+            map.events.add("dblclick", function (e) {
+                var event;
+                try {
+                     event = e._sourceEvent.originalEvent.domEvent.originalEvent;
+                   
+                } catch (ex) {
+                    try {
+                        var event = e._sourceEvent._sourceEvent.originalEvent.domEvent.originalEvent;
+                        return event;
+                    } catch (exc) {
+                        var f = 0;
+                    }
+
+                    
+                }
+                //obj.GetGeoPointFromPixels(event.clientX, event.clientY)
+                var point = GetGeoPointFromPixels(event.clientX, event.clientY);
+                var myGeocoder = ymaps.geocode(point);
+                myGeocoder.then(
+                    function (res) {
+						if(WebKitUsage){
+							send_to_1C('SetLocation',point[0] + ";" + point[1] + ";" + res.geoObjects.get(0).getAddressLine());
+						}
+						else{
+							xForm1C.MapsFrom1C_SetLocation(point[0] + ";" + point[1] + ";" + res.geoObjects.get(0).getAddressLine());					
+						}                        
+                    },
+                    function (err) {
+                        // обработка ошибки
+                    }
+                );
+            });
+            //map.setCenter(new YMaps.GeoPoint(37.62, 55.75), 12);
+            //Инициализация
+            mapIsLoad = true;
+          
+        });
+   function showAddressCoord(shirota, dolgota, contrag, UID) {  
+   
+   var placemark = new ymaps.Placemark(
+       // Координаты метки
+       [shirota, dolgota],
+       // Данные метки
+       {
+           balloonContent: "<div style='white-space:normal;'>" + contrag + "</div>",
+           balloonContentHeader: "<div style='white-space:normal;'>" + contrag + "</div>",
+           balloonContentFooter: ''
+       },
+       // Опции метки
+       {
+           //'preset': preset,
+           hideIconOnBalloonOpen: false
+       }
+   );
+   placemark.properties.set("UID", UID);
+   map.geoObjects.add(placemark);
+  
+   points.add(UID, placemark);
+   map.panTo([shirota, dolgota]);
+   return placemark;
+}
+
+function removeAllPoints() {
+	for(var UID in points.hash) {
+	  removePointByUID(UID);
+	}
+}
+
+function removePointByUID(UID) { 
+   var point = points.get(UID);
+   map.geoObjects.remove(point);
+   points.remove(UID);
+}
+       
+        function SetForm1C(Form1C) {
+            xForm1C = Form1C;
+        }
+
+        function GetGeoPointFromPixels (x, y) {
+            var projection = map.options.get('projection');
+            var point = projection.fromGlobalPixels(
+                map.converter.pageToGlobal([x, y]),
+                map.getZoom());
+            return point;
+        }
+ 
+   function exec(script) {
+            try {
+                eval(script);
+            }
+            catch (e) {
+                alert(e.message);
+            }
+        } 
+		function send_to_1C(name,data){ 
+	document.getElementById('message_name').innerHTML  = name;
+	document.getElementById('message_data').innerHTML  = data;
+}
+
+    </script>
+</head>
+<body oncontextmenu="return false;">
+<div id='message_name' style='display: none'></div>
+<div id='message_data' style='display: none'></div>
+    <div id="YMapsID" style="width:1100px;height:650px"></div>
+    
+</body>
+
+</html>

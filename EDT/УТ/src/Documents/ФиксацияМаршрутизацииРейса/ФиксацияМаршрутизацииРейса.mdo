@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="724d5000-9361-425d-a802-8547ee270bca">
+  <producedTypes>
+    <objectType typeId="f2129e67-8a10-40d0-a8f3-95ca267caf8c" valueTypeId="1941063e-8a3c-4f93-8810-4f688736032e"/>
+    <refType typeId="d5f4fdc4-9063-4bd0-b040-5d0cd49ce65d" valueTypeId="62b94955-2a74-4b79-b6b7-f7ea495c0192"/>
+    <selectionType typeId="c147d3b2-b364-4ff2-824f-e21783927a1f" valueTypeId="aef5eeb4-dba4-41b6-847c-5a0cab7db04f"/>
+    <listType typeId="ee4e64ce-0b7c-4cfe-9231-416e85b8db7d" valueTypeId="68cebc2c-a778-4d0e-854f-cea272a4b07e"/>
+    <managerType typeId="bd9b8eeb-cf10-4d89-b513-1adbb81bc794" valueTypeId="5ba1101a-8a84-4d09-a1d2-772b84c6bf8e"/>
+  </producedTypes>
+  <name>ФиксацияМаршрутизацииРейса</name>
+  <synonym>
+    <key>ru</key>
+    <value>Фиксация маршрутизации рейса</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ФиксацияМаршрутизацииРейса.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ФиксацияМаршрутизацииРейса.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ФиксацияМаршрутизацииРейса.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="4e925c1d-e1f4-49d8-baee-9f9424350887">
+    <name>МП</name>
+    <synonym>
+      <key>ru</key>
+      <value>МП</value>
+    </synonym>
+    <type>
+      <types>ExchangePlanRef.ИзмененияДляМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="61462eb5-7e1c-40b7-9ce3-3c8647f0aec4">
+    <name>ИдентификаторЗапросаЯндекс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор запроса яндекс</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e2f6fdfc-0736-48d1-9ad1-c7d0b6e5fe35">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="995cd422-bd4a-439e-965c-7d0a680eb28e">
+    <name>Пробег</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пробег</value>
+    </synonym>
+    <comment>Пробег в километрах</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d2d76e6a-e057-4e3b-a130-411d0f7bbd1a">
+    <name>ОбщееВремяМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Общее время маршрута</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cedf9541-d2da-4cba-b32e-6fc92c4f74a1">
+    <name>ОбщееВремяОжидания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Общее время ожидания</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5e8cbfa7-202d-417c-8e82-b9fd3f939a8f">
+    <name>ОбщееВремяДвижения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Общее время движения</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="69a2490e-0be7-42d8-af0c-f8ed844fa296">
+    <name>ЯндексМаршрутизацияМП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Яндекс маршрутизация МП</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a5e42b56-91b0-4c27-84e5-7112f8048c6e">
+    <name>РучнаяМаршрутизацияМП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ручная маршрутизация МП</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="db427cc3-327a-44b9-8bae-b99e81f50367">
+    <name>ТипФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="52f71e26-a89f-4204-8713-d3c271a60f80">
+    <name>АдресФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="242ef621-2a92-4d9f-acf3-288bcd1a4b73">
+    <name>ШиротаФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Широта финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3facc4f1-83ad-4698-9a2b-53cb6c328f66">
+    <name>ДолготаФинальнойТочкиМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Долгота финальной точки маршрута</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d4eb3f4d-a470-4523-a6ea-c7afe8079559">
+    <name>МаршрутизацияНаРабочемМестеЭкипажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маршрутизация на рабочем месте экипажа</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="414f6a14-2047-43f2-bb92-ac6670a0c25f">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e23d2b02-ccad-45ae-82b2-38efb3a58338">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="aa3a14c1-f683-4c6e-897e-0eaebad0b1f3">
+    <producedTypes>
+      <objectType typeId="0341166c-ee3b-422a-bb04-401bdf209eae" valueTypeId="6df5b8aa-af8d-494a-bbef-acb9f4e5c6c5"/>
+      <rowType typeId="75bdd764-e82a-46b5-812e-ab0a9757648d" valueTypeId="8de28062-f3dd-4c13-832c-92ab3d990368"/>
+    </producedTypes>
+    <name>Заказы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы</value>
+    </synonym>
+    <attributes uuid="e9d6281d-db39-4435-a9a4-2acf38e7d7a7">
+      <name>Заказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаборТовара</types>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="af8d782a-2a4e-4f61-8905-724c8bbe2edf">
+      <name>ПорядокМаршрутизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Порядок маршрутизации</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d80a2884-7c01-42d2-8e05-fd9d6f770b1d">
+      <name>ВремяПрибытия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Время прибытия</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

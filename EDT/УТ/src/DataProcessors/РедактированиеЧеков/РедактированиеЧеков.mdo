@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="01bfd182-0ded-4a69-8d91-ebf3345bda1e">
+  <producedTypes>
+    <objectType typeId="ce636a68-8702-460a-b0f6-f08cafa412be" valueTypeId="301d4b93-f951-42b6-be36-62c583ad77d3"/>
+    <managerType typeId="62d820b1-9605-493d-91f1-e254010eaaad" valueTypeId="13a2a059-c74e-43ac-9c37-bf7186bcd7da"/>
+  </producedTypes>
+  <name>РедактированиеЧеков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Редактирование чеков</value>
+  </synonym>
+  <defaultForm>DataProcessor.РедактированиеЧеков.Form.Форма</defaultForm>
+  <attributes uuid="4f13ac22-03ff-4a32-9b5b-42d293295706">
+    <name>КассаККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Касса ККМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КассыККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="119e7a6d-0e1f-4fba-8132-89bc1786c356">
+    <name>НомерЧека</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер чека</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1ef1e4b3-bc42-4339-b9c3-4dc04175fcfc">
+    <name>ДатаЧека</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата чека</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a633e254-2955-4074-b9cf-5b8dfa552161">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="476562a4-7dc2-4fd4-af79-79d0054ed637">
+    <name>ЧекПробитОшибочно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чек пробит ошибочно</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c9c0e23c-ff5b-46af-bd8f-1bf57b5d7bc6">
+    <name>Чек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чек</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЧекККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5ecdf138-9340-48ce-9c71-ca8a3afb008c">
+    <name>ФормированиеЧеков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Формирование чеков</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПечатьЧековПоДоставкам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f3476d49-7226-4c4f-a08f-e784ed4a58d7">
+    <name>СуммаЧека</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма чека</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="383aed56-3d86-4bce-9376-78c842b0fa00">
+    <name>ИзмененнаяДатаЧека</name>
+    <synonym>
+      <key>ru</key>
+      <value>Измененная дата чека</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="736a4311-b812-4b5e-b1fb-8cf5b81fa5b4">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Выполнено</dataPath>
+			<field>Выполнено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнено</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КатегорияСотрудника</dataPath>
+			<field>КатегорияСотрудника</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Категория сотрудника</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ='MMMM yyyy'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Всего</dataPath>
+			<field>Всего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОтказБезЗаезда</dataPath>
+			<field>КоличествоОтказБезЗаезда</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество отказ без заезда</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОтказСЗаездом</dataPath>
+			<field>КоличествоОтказСЗаездом</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество отказ с заездом</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПереносБезЗаезда</dataPath>
+			<field>КоличествоПереносБезЗаезда</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество перенос без заезда</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПереносСЗаездом</dataPath>
+			<field>КоличествоПереносСЗаездом</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество перенос с заездом</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОтказ</dataPath>
+			<field>КоличествоОтказ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество отказ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПеренос</dataPath>
+			<field>КоличествоПеренос</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество перенос</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря,
+	РеализацияТоваровУслуг.Ссылка КАК Заказ,
+	новаЗаданияРейсов.Рейс.Водитель КАК Сотрудник,
+	"Водители" КАК КатегорияСотрудника
+ПОМЕСТИТЬ ВТ_ЗаказыВсего
+ИЗ
+	Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.новаЗаданияРейсов КАК новаЗаданияРейсов
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.РегламентированныйПроизводственныйКалендарь КАК РегламентированныйПроизводственныйКалендарь
+			ПО (ГОД(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = ГОД(новаЗаданияРейсов.Рейс.ДатаНачала))
+				И (МЕСЯЦ(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = МЕСЯЦ(новаЗаданияРейсов.Рейс.ДатаНачала))
+				И (ДЕНЬ(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = ДЕНЬ(новаЗаданияРейсов.Рейс.ДатаНачала))
+		ПО (новаЗаданияРейсов.Доставка.Номер = РеализацияТоваровУслуг.Номер)
+ГДЕ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И новаЗаданияРейсов.Рейс.ДатаНачала МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И новаЗаданияРейсов.Рейс.Водитель &lt;&gt; &amp;Водитель
+
+СГРУППИРОВАТЬ ПО
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря,
+	РеализацияТоваровУслуг.Ссылка,
+	новаЗаданияРейсов.Рейс.Водитель
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря,
+	РеализацияТоваровУслуг.Ссылка,
+	новаЗаданияРейсов.Рейс.Экспедитор,
+	"Экспедиторы"
+ИЗ
+	Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.новаЗаданияРейсов КАК новаЗаданияРейсов
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.РегламентированныйПроизводственныйКалендарь КАК РегламентированныйПроизводственныйКалендарь
+			ПО (ГОД(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = ГОД(новаЗаданияРейсов.Рейс.ДатаНачала))
+				И (МЕСЯЦ(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = МЕСЯЦ(новаЗаданияРейсов.Рейс.ДатаНачала))
+				И (ДЕНЬ(РегламентированныйПроизводственныйКалендарь.ДатаКалендаря) = ДЕНЬ(новаЗаданияРейсов.Рейс.ДатаНачала))
+		ПО (новаЗаданияРейсов.Доставка.Номер = РеализацияТоваровУслуг.Номер)
+ГДЕ
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И новаЗаданияРейсов.Рейс.ДатаНачала МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И новаЗаданияРейсов.Рейс.Экспедитор &lt;&gt; &amp;Экспедитор
+
+СГРУППИРОВАТЬ ПО
+	РегламентированныйПроизводственныйКалендарь.ДатаКалендаря,
+	РеализацияТоваровУслуг.Ссылка,
+	новаЗаданияРейсов.Рейс.Экспедитор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Сотрудник,
+	ВТ_ЗаказыВсего.КатегорияСотрудника,
+	СостоянияЗаказов.ПричинаНеВыполнения
+ПОМЕСТИТЬ ВТ_ЗаказыПеренос
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказов КАК СостоянияЗаказов
+		ПО ВТ_ЗаказыВсего.Заказ = СостоянияЗаказов.Заказ
+			И (СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки)
+				ИЛИ СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь)
+				ИЛИ СостоянияЗаказов.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом))
+			И (ГОД(ВТ_ЗаказыВсего.ДатаКалендаря) = ГОД(СостоянияЗаказов.Период))
+			И (МЕСЯЦ(ВТ_ЗаказыВсего.ДатаКалендаря) = МЕСЯЦ(СостоянияЗаказов.Период))
+			И (ДЕНЬ(ВТ_ЗаказыВсего.ДатаКалендаря) = ДЕНЬ(СостоянияЗаказов.Период))
+			И (ВЫБОР
+				КОГДА ВТ_ЗаказыВсего.КатегорияСотрудника = "Экспедиторы"
+					ТОГДА ВТ_ЗаказыВсего.Сотрудник = СостоянияЗаказов.Регистратор.Экспедитор
+				КОГДА ВТ_ЗаказыВсего.КатегорияСотрудника = "Водители"
+					ТОГДА ВТ_ЗаказыВсего.Сотрудник = СостоянияЗаказов.Регистратор.Водитель
+			КОНЕЦ)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Сотрудник,
+	ВТ_ЗаказыВсего.КатегорияСотрудника,
+	СостоянияЗаказов.ПричинаНеВыполнения
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыПеренос.ДатаКалендаря,
+	ВТ_ЗаказыПеренос.Заказ,
+	ВТ_ЗаказыПеренос.Сотрудник,
+	ВТ_ЗаказыПеренос.КатегорияСотрудника
+ПОМЕСТИТЬ ВТ_ЗаказыПереносБезЗаезда
+ИЗ
+	ВТ_ЗаказыПеренос КАК ВТ_ЗаказыПеренос
+ГДЕ
+	(ВТ_ЗаказыПеренос.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносДоставки)
+			ИЛИ ВТ_ЗаказыПеренос.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносНаВторуюОчередь))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыПеренос.ДатаКалендаря,
+	ВТ_ЗаказыПеренос.Заказ,
+	ВТ_ЗаказыПеренос.Сотрудник,
+	ВТ_ЗаказыПеренос.КатегорияСотрудника
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыПеренос.ДатаКалендаря,
+	ВТ_ЗаказыПеренос.Заказ,
+	ВТ_ЗаказыПеренос.Сотрудник,
+	ВТ_ЗаказыПеренос.КатегорияСотрудника
+ПОМЕСТИТЬ ВТ_ЗаказыПереносСЗаездом
+ИЗ
+	ВТ_ЗаказыПеренос КАК ВТ_ЗаказыПеренос
+ГДЕ
+	ВТ_ЗаказыПеренос.ПричинаНеВыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ПереносСЗаездом)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыПеренос.ДатаКалендаря,
+	ВТ_ЗаказыПеренос.Заказ,
+	ВТ_ЗаказыПеренос.Сотрудник,
+	ВТ_ЗаказыПеренос.КатегорияСотрудника
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Сотрудник,
+	ВТ_ЗаказыВсего.КатегорияСотрудника
+ПОМЕСТИТЬ ВТ_ЗакказыВыполнено
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ПО (ВТ_ЗаказыВсего.Заказ = (ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг)))
+			И (ЗакрытыеЗаказы.СтатусЗаказа = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.Выполнена)
+				ИЛИ ЗакрытыеЗаказы.СтатусЗаказа = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.ВыполненаЧастично))
+			И (ГОД(ВТ_ЗаказыВсего.ДатаКалендаря) = ГОД(ЗакрытыеЗаказы.Период))
+			И (МЕСЯЦ(ВТ_ЗаказыВсего.ДатаКалендаря) = МЕСЯЦ(ЗакрытыеЗаказы.Период))
+			И (ДЕНЬ(ВТ_ЗаказыВсего.ДатаКалендаря) = ДЕНЬ(ЗакрытыеЗаказы.Период))
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЗаказыПеренос КАК ВТ_ЗаказыПеренос
+		ПО ВТ_ЗаказыВсего.ДатаКалендаря = ВТ_ЗаказыПеренос.ДатаКалендаря
+			И ВТ_ЗаказыВсего.Заказ = ВТ_ЗаказыПеренос.Заказ
+			И ВТ_ЗаказыВсего.Сотрудник = ВТ_ЗаказыПеренос.Сотрудник
+ГДЕ
+	ЕСТЬNULL(ВТ_ЗаказыПеренос.Заказ, ИСТИНА) = ИСТИНА
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Сотрудник,
+	ВТ_ЗаказыВсего.КатегорияСотрудника
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Сотрудник,
+	ВТ_ЗаказыВсего.КатегорияСотрудника,
+	ЗакрытыеЗаказы.ПричинаНевыполнения
+ПОМЕСТИТЬ ВТ_ЗакказыНеВыполнено
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ЗакрытыеЗаказы КАК ЗакрытыеЗаказы
+		ПО (ВТ_ЗаказыВсего.Заказ = (ВЫРАЗИТЬ(ЗакрытыеЗаказы.Реализация КАК Документ.РеализацияТоваровУслуг)))
+			И (ГОД(ВТ_ЗаказыВсего.ДатаКалендаря) = ГОД(ЗакрытыеЗаказы.Период))
+			И (МЕСЯЦ(ВТ_ЗаказыВсего.ДатаКалендаря) = МЕСЯЦ(ЗакрытыеЗаказы.Период))
+			И (ДЕНЬ(ВТ_ЗаказыВсего.ДатаКалендаря) = ДЕНЬ(ЗакрытыеЗаказы.Период))
+			И (ЗакрытыеЗаказы.СтатусЗаказа = ЗНАЧЕНИЕ(Справочник.новаРезультатМестнойДоставки.НеВыполнена))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыВсего.ДатаКалендаря,
+	ВТ_ЗаказыВсего.Заказ,
+	ВТ_ЗаказыВсего.Сотрудник,
+	ВТ_ЗаказыВсего.КатегорияСотрудника,
+	ЗакрытыеЗаказы.ПричинаНевыполнения
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗакказыНеВыполнено.ДатаКалендаря,
+	ВТ_ЗакказыНеВыполнено.Заказ,
+	ВТ_ЗакказыНеВыполнено.Сотрудник,
+	ВТ_ЗакказыНеВыполнено.КатегорияСотрудника
+ПОМЕСТИТЬ ВТ_ЗакказыОтказКлиентаСЗаездом
+ИЗ
+	ВТ_ЗакказыНеВыполнено КАК ВТ_ЗакказыНеВыполнено
+ГДЕ
+	ВТ_ЗакказыНеВыполнено.ПричинаНевыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаСЗаездом)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗакказыНеВыполнено.ДатаКалендаря,
+	ВТ_ЗакказыНеВыполнено.Заказ,
+	ВТ_ЗакказыНеВыполнено.Сотрудник,
+	ВТ_ЗакказыНеВыполнено.КатегорияСотрудника
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗакказыНеВыполнено.ДатаКалендаря,
+	ВТ_ЗакказыНеВыполнено.Заказ,
+	ВТ_ЗакказыНеВыполнено.Сотрудник,
+	ВТ_ЗакказыНеВыполнено.КатегорияСотрудника
+ПОМЕСТИТЬ ВТ_ЗакказыОтказКлиентаБезЗаезда
+ИЗ
+	ВТ_ЗакказыНеВыполнено КАК ВТ_ЗакказыНеВыполнено
+ГДЕ
+	ВТ_ЗакказыНеВыполнено.ПричинаНевыполнения = ЗНАЧЕНИЕ(Справочник.ПричиныНеВыполненияДоставки.ОтказКлиентаБезЗаезда)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗакказыНеВыполнено.ДатаКалендаря,
+	ВТ_ЗакказыНеВыполнено.Заказ,
+	ВТ_ЗакказыНеВыполнено.Сотрудник,
+	ВТ_ЗакказыНеВыполнено.КатегорияСотрудника
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗаказыВсего.ДатаКалендаря, МЕСЯЦ) КАК Период,
+	ВТ_ЗаказыВсего.Заказ,
+	1 КАК Всего,
+	NULL КАК Выполнено,
+	ВТ_ЗаказыВсего.Сотрудник,
+	ВТ_ЗаказыВсего.КатегорияСотрудника,
+	NULL КАК КоличествоОтказСЗаездом,
+	NULL КАК КоличествоОтказБезЗаезда,
+	NULL КАК КоличествоПереносСЗаездом,
+	NULL КАК КоличествоПереносБезЗаезда,
+	NULL КАК КоличествоОтказ,
+	NULL КАК КоличествоПеренос
+ПОМЕСТИТЬ ВТ_ЗаказыОбъединение
+ИЗ
+	ВТ_ЗаказыВсего КАК ВТ_ЗаказыВсего
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗакказыВыполнено.ДатаКалендаря, МЕСЯЦ),
+	ВТ_ЗакказыВыполнено.Заказ,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗакказыВыполнено.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	ВТ_ЗакказыВыполнено.Сотрудник,
+	ВТ_ЗакказыВыполнено.КатегорияСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ЗакказыВыполнено КАК ВТ_ЗакказыВыполнено
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗакказыОтказКлиентаСЗаездом.ДатаКалендаря, МЕСЯЦ),
+	ВТ_ЗакказыОтказКлиентаСЗаездом.Заказ,
+	NULL,
+	NULL,
+	ВТ_ЗакказыОтказКлиентаСЗаездом.Сотрудник,
+	ВТ_ЗакказыОтказКлиентаСЗаездом.КатегорияСотрудника,
+	ВЫБОР
+		КОГДА ВТ_ЗакказыОтказКлиентаСЗаездом.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ЗакказыОтказКлиентаСЗаездом КАК ВТ_ЗакказыОтказКлиентаСЗаездом
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗакказыОтказКлиентаБезЗаезда.ДатаКалендаря, МЕСЯЦ),
+	ВТ_ЗакказыОтказКлиентаБезЗаезда.Заказ,
+	NULL,
+	NULL,
+	ВТ_ЗакказыОтказКлиентаБезЗаезда.Сотрудник,
+	ВТ_ЗакказыОтказКлиентаБезЗаезда.КатегорияСотрудника,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗакказыОтказКлиентаБезЗаезда.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ЗакказыОтказКлиентаБезЗаезда КАК ВТ_ЗакказыОтказКлиентаБезЗаезда
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗаказыПереносСЗаездом.ДатаКалендаря, МЕСЯЦ),
+	ВТ_ЗаказыПереносСЗаездом.Заказ,
+	NULL,
+	NULL,
+	ВТ_ЗаказыПереносСЗаездом.Сотрудник,
+	ВТ_ЗаказыПереносСЗаездом.КатегорияСотрудника,
+	NULL,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗаказыПереносСЗаездом.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ЗаказыПереносСЗаездом КАК ВТ_ЗаказыПереносСЗаездом
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗаказыПереносБезЗаезда.ДатаКалендаря, МЕСЯЦ),
+	ВТ_ЗаказыПереносБезЗаезда.Заказ,
+	NULL,
+	NULL,
+	ВТ_ЗаказыПереносБезЗаезда.Сотрудник,
+	ВТ_ЗаказыПереносБезЗаезда.КатегорияСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗаказыПереносБезЗаезда.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ЗаказыПереносБезЗаезда КАК ВТ_ЗаказыПереносБезЗаезда
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗакказыНеВыполнено.ДатаКалендаря, МЕСЯЦ),
+	ВТ_ЗакказыНеВыполнено.Заказ,
+	NULL,
+	NULL,
+	ВТ_ЗакказыНеВыполнено.Сотрудник,
+	ВТ_ЗакказыНеВыполнено.КатегорияСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗакказыНеВыполнено.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ,
+	NULL
+ИЗ
+	ВТ_ЗакказыНеВыполнено КАК ВТ_ЗакказыНеВыполнено
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ВТ_ЗаказыПеренос.ДатаКалендаря, МЕСЯЦ),
+	ВТ_ЗаказыПеренос.Заказ,
+	NULL,
+	NULL,
+	ВТ_ЗаказыПеренос.Сотрудник,
+	ВТ_ЗаказыПеренос.КатегорияСотрудника,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	ВЫБОР
+		КОГДА ВТ_ЗаказыПеренос.Заказ ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ
+ИЗ
+	ВТ_ЗаказыПеренос КАК ВТ_ЗаказыПеренос
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗаказыОбъединение.Заказ,
+	СУММА(ВТ_ЗаказыОбъединение.Всего) КАК Всего,
+	СУММА(ВТ_ЗаказыОбъединение.Выполнено) КАК Выполнено,
+	ВТ_ЗаказыОбъединение.Сотрудник,
+	ВТ_ЗаказыОбъединение.КатегорияСотрудника,
+	СУММА(ВТ_ЗаказыОбъединение.КоличествоОтказСЗаездом) КАК КоличествоОтказСЗаездом,
+	СУММА(ВТ_ЗаказыОбъединение.КоличествоОтказБезЗаезда) КАК КоличествоОтказБезЗаезда,
+	СУММА(ВТ_ЗаказыОбъединение.КоличествоПереносСЗаездом) КАК КоличествоПереносСЗаездом,
+	СУММА(ВТ_ЗаказыОбъединение.КоличествоПереносБезЗаезда) КАК КоличествоПереносБезЗаезда,
+	СУММА(ВТ_ЗаказыОбъединение.КоличествоОтказ) КАК КоличествоОтказ,
+	СУММА(ВТ_ЗаказыОбъединение.КоличествоПеренос) КАК КоличествоПеренос,
+	ВТ_ЗаказыОбъединение.Период
+ПОМЕСТИТЬ ВТ_Итоговая
+ИЗ
+	ВТ_ЗаказыОбъединение КАК ВТ_ЗаказыОбъединение
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗаказыОбъединение.Заказ,
+	ВТ_ЗаказыОбъединение.Сотрудник,
+	ВТ_ЗаказыОбъединение.КатегорияСотрудника,
+	ВТ_ЗаказыОбъединение.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Итоговая.Заказ,
+	ВТ_Итоговая.Всего,
+	ВТ_Итоговая.Выполнено,
+	ВТ_Итоговая.Сотрудник,
+	ВТ_Итоговая.КатегорияСотрудника,
+	ВТ_Итоговая.КоличествоОтказСЗаездом,
+	ВТ_Итоговая.КоличествоОтказБезЗаезда,
+	ВТ_Итоговая.КоличествоПереносСЗаездом,
+	ВТ_Итоговая.КоличествоПереносБезЗаезда,
+	ВТ_Итоговая.КоличествоОтказ,
+	ВТ_Итоговая.КоличествоПеренос,
+	ВТ_Итоговая.Период
+ИЗ
+	ВТ_Итоговая КАК ВТ_Итоговая</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Всего</dataPath>
+		<expression>Сумма(Всего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Выполнено</dataPath>
+		<expression>Сумма(Выполнено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОтказБезЗаезда</dataPath>
+		<expression>Сумма(КоличествоОтказБезЗаезда)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОтказСЗаездом</dataPath>
+		<expression>Сумма(КоличествоОтказСЗаездом)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПереносБезЗаезда</dataPath>
+		<expression>Сумма(КоличествоПереносБезЗаезда)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПереносСЗаездом</dataPath>
+		<expression>Сумма(КоличествоПереносСЗаездом)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОтказ</dataPath>
+		<expression>Сумма(КоличествоОтказ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПеренос</dataPath>
+		<expression>Сумма(КоличествоПеренос)</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Водитель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Водитель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.новаВодители</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.новаВодители.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Экспедитор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Экспедитор</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.новаЭкспедиторы</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.новаЭкспедиторы.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заказ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Всего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Выполнено</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отказы</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоОтказ</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Всего</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в т.ч</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоОтказСЗаездом</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>с заездом</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоОтказБезЗаезда</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>без заезда</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:placement>Horizontally</dcsset:placement>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Переносы</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПеренос</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Всего</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в т.ч.</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоПереносСЗаездом</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>с заездом</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоПереносБезЗаезда</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>без заезда</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:placement>Horizontally</dcsset:placement>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">КатегорияСотрудника</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>425272f6-8879-4539-b2b7-07d51cea56d3</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Сотрудник</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>10197493-89a7-40e9-a6af-e8d70cfb196a</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>54941cc5-55eb-4d95-b33b-40451ae22610</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Водитель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Экспедитор</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Период</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>КатегорияСотрудника</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Сотрудник</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

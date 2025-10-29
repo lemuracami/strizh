@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dc90f816-dae6-4c73-9df0-958f75590895">
+  <producedTypes>
+    <objectType typeId="dc809214-18b1-48de-ab35-60b53a5d2d18" valueTypeId="2f00af08-3765-4ef0-b3df-b383e6d829fe"/>
+    <managerType typeId="aa4cbae1-7458-4a14-a609-ea00ffcc5ef7" valueTypeId="67cbd582-4f65-4e2b-be47-a4aa8bed5667"/>
+  </producedTypes>
+  <name>РедактированиеГрафикаРейсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Редактирование графика рейсов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.РедактированиеГрафикаРейсов.Form.ФормаУпр</defaultForm>
+  <attributes uuid="6f202db1-66d5-4297-92df-91d5e50e22ac">
+    <name>ДатаРедактирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата редактирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2b19c50f-2d41-4609-832c-4557ee66db0e">
+    <name>Терминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Терминал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="39ab1592-a161-486d-899e-435489a2109a">
+    <producedTypes>
+      <objectType typeId="1556fe48-6180-4407-9d7e-d2035445cafe" valueTypeId="4404f4f1-286f-4498-bab7-7660d20bbfa8"/>
+      <rowType typeId="7e7170d9-c32a-4d84-a44b-e7122f96db30" valueTypeId="091ab672-93b2-4274-b763-9bf5cb2af291"/>
+    </producedTypes>
+    <name>тчГрафик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тч график</value>
+    </synonym>
+    <attributes uuid="f4c3e775-e4bb-4a2f-bfd4-3a2fecd301dc">
+      <name>Т</name>
+      <synonym>
+        <key>ru</key>
+        <value>Т</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="ccf77c24-f2f3-456d-9ed6-eb7eb20877b7">
+      <name>РольРейса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Роль рейса</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РолиТранспорта</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9a0b207e-cdf9-4473-b5b8-e713dfd8bc37">
+      <name>СменаПредыдущегоРейса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Смена предыдущего рейса</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Смены</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c75180d0-5ea3-4e52-9bb2-8a88c20edab8">
+      <name>Смена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Смена</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Смены</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d1f4c422-57d4-4a5f-acf1-47a5114e132e">
+      <name>Транспорт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаТранспорт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a8c1c144-cab2-4172-99f6-47c6d2e28ea2">
+      <name>Водитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Водитель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a0021aae-4e11-4fec-aacd-2e90f09e5d9c">
+      <name>Х</name>
+      <synonym>
+        <key>ru</key>
+        <value>Х</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="8ad377b3-1d05-4dbc-a412-ae59cd5fc6ae">
+      <name>Экспедитор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Экспедитор</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаЭкспедиторы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4bce5544-f3d0-4ead-ad74-c07ceab904cc">
+      <name>Э</name>
+      <synonym>
+        <key>ru</key>
+        <value>Э</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="620d7cec-6b4d-439f-9718-70b687323d11">
+      <name>СтарыйВодитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Старый водитель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаВодители</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="aef898b2-9184-4c14-b5b9-92c437273b89">
+      <name>СтарыйЭкспедитор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Старый экспедитор</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаЭкспедиторы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0f6d3ef4-e50f-48ea-950a-51ece5ce46c7">
+      <name>НачалоПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начало периода</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="10c10c08-cddc-4ac2-a29c-d43c222881e6">
+      <name>ТранспортВыйдетВРейс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Транспорт выйдет в рейс</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="74d99c43-05e7-42b5-a120-25acc878d517">
+      <name>МожноРедактировать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Можно редактировать</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="a74e6a69-8faa-4108-ab91-bc3b6817aa6d">
+    <producedTypes>
+      <objectType typeId="b213a31a-d748-4fea-abc1-13b527b2eb87" valueTypeId="870e594f-c1b3-48d6-abc6-89d5c462dda9"/>
+      <rowType typeId="61cd787c-77b6-497d-9133-1c4064e153fa" valueTypeId="7f4e109f-a4e1-45a3-994b-ba5d0b360000"/>
+    </producedTypes>
+    <name>Сотрудники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудники</value>
+    </synonym>
+    <attributes uuid="e7795584-66d5-4b4c-9a28-d697120e8e70">
+      <name>ФизЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Физ лицо</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="676a5741-edc5-4816-b9da-2393de3505f1">
+      <name>РольДо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Роль до</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РолиСотрудников</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1efd92ba-39f6-4b82-a9b6-1da2a7e7345b">
+      <name>ТарифДо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тариф до</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.зпНачисления</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="66df4e87-c5c6-47c1-b3c9-08d2513d9033">
+      <name>РольПосле</name>
+      <synonym>
+        <key>ru</key>
+        <value>Роль после</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РолиСотрудников</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0e74241d-1ec4-4698-8e87-68ee897e5a78">
+      <name>ТарифПосле</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тариф после</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.зпНачисления</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e00e53eb-0c1e-48eb-b4ee-7736618246c3">
+      <name>ДокументПеремещения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ перемещения</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.КадровоеПеремещениеРаботниковОрганизаций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="abb702f0-472e-451e-aa30-f7a95839ce7d">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e8395186-105f-466e-bf60-0d169fa53749">
+    <name>ФормаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма упр</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f7d41d4e-15a6-487c-a8c6-00b4dbc8c888">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b67b0ca0-5a59-4097-9196-282c073f2382">
+    <name>ФормаДобавленияСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма добавления сотрудника</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6bbae54c-de25-4815-b95e-fbcee5f6fd0f">
+    <name>ФормаВыбораФизЛиц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора физ лиц</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

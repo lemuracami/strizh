@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2cec6442-89a9-4680-97d7-11f3b0a8a800">
+  <producedTypes>
+    <objectType typeId="cd45d484-e2ce-4953-9e2d-667da049bff0" valueTypeId="50a4204d-6f68-43b2-9d16-0498e3942c75"/>
+    <refType typeId="7834ecab-c616-465b-9cfc-d45ce79e018c" valueTypeId="7946ba1e-0741-45f3-80d1-ff365870ee64"/>
+    <selectionType typeId="c8cad800-711f-48ad-840d-2f8bdb6f088c" valueTypeId="6b7ee62e-d4dc-4c87-baa1-134576928798"/>
+    <listType typeId="d29da1b3-6533-496c-b900-ad82d3a03ac8" valueTypeId="213cdbef-5915-4bdb-abf7-93a65ef207fe"/>
+    <managerType typeId="8e2d590f-2c33-48dc-8e06-0f40bd7612a4" valueTypeId="d052d6ae-11b8-49b1-b466-14bee028162a"/>
+  </producedTypes>
+  <name>новаНазначениеПоказателейРасчетаНачислений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначение показателей расчета начислений</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.новаНазначениеПоказателейРасчетаНачислений.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.новаНазначениеПоказателейРасчетаНачислений.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.новаНазначениеПоказателейРасчетаНачислений.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>InformationRegister.новаЗначенияПоказателейРасчетаНачислений</registerRecords>
+  <attributes uuid="3887cf92-590b-4f32-ac03-3628d22b6004">
+    <name>ДатаНазначения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата назначения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="de905f4a-0c39-4465-9aa3-574fb4c2d4d9">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="00995e45-e24d-4beb-ba1a-a0e764a4729e">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="2fc175ee-bdf8-4d7d-9121-468003faef16">
+    <producedTypes>
+      <objectType typeId="23828510-9916-473b-b971-25d2466e97f8" valueTypeId="4b9fdcee-b0cf-4d54-ab58-81b2a86626d2"/>
+      <rowType typeId="c71926fa-c37f-47bf-a8cf-743482dd5c1f" valueTypeId="d7028b27-b804-4ef8-bbf8-456e85e36909"/>
+    </producedTypes>
+    <name>Показатели</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатели</value>
+    </synonym>
+    <attributes uuid="80f1838c-e36a-4987-8409-f5030195a9fd">
+      <name>Показатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показатель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.новаПоказателиРасчетаНачислений</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b0ceebf0-d5af-4a85-a771-67c00e9f297f">
+      <name>Значение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>20</precision>
+          <scale>10</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="urn:DetMir.ru:TransComp:Common"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="urn:DetMir.ru:TransComp:Common"
+		name="TransComp_MvmtDoc_Out"
+		targetNamespace="urn:DetMir.ru:TransComp:Common">
+	<documentation> </documentation>
+	<types>
+		<xsd:schema xmlns="urn:DetMir.ru:TransComp:Common"
+				xmlns:p1="urn:DetMir.ru:TransComp:Common"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				targetNamespace="urn:DetMir.ru:TransComp:Common">
+			<xsd:element name="TransCompMvmtDoc"
+					type="xsd1:TransCompMvmtDoc"/>
+			<xsd:complexType name="TransCompMvmtDoc">
+				<xsd:annotation>
+					<xsd:appinfo source="http://sap.com/xi/VersionID">f9b9dbf8293911e593220000006ab3d2</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="DocType"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">30f3b193b2e511e49c5c00ff47e7e260</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="DocNumber"
+							type="xsd:string"
+							minOccurs="0">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">aadbfa2605de11e586a500ff98b164c9</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="IDLogistic"
+							type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">30f3b194b2e511e4b11c00ff47e7e260</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ReturnDate"
+							type="xsd:date">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">30f3b195b2e511e4983300ff47e7e260</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Storage"
+							type="xsd:string"
+							minOccurs="0"/>
+					<xsd:element name="Orders">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">30f3c800b2e511e4939200ff47e7e260</xsd:appinfo>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Order"
+										minOccurs="0"
+										maxOccurs="unbounded">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">30f3b19ab2e511e4c05b00ff47e7e260</xsd:appinfo>
+									</xsd:annotation>
+									<xsd:complexType>
+										<xsd:attribute name="ProductQTY"
+												type="xsd:decimal">
+											<xsd:annotation>
+												<xsd:appinfo source="http://sap.com/xi/TextID">30f3b196b2e511e4959200ff47e7e260</xsd:appinfo>
+											</xsd:annotation>
+										</xsd:attribute>
+										<xsd:attribute name="ProductName"
+												type="xsd:string">
+											<xsd:annotation>
+												<xsd:appinfo source="http://sap.com/xi/TextID">30f3b197b2e511e4b3ec00ff47e7e260</xsd:appinfo>
+											</xsd:annotation>
+										</xsd:attribute>
+										<xsd:attribute name="ProductID"
+												type="xsd:string">
+											<xsd:annotation>
+												<xsd:appinfo source="http://sap.com/xi/TextID">30f3b198b2e511e49a8d00ff47e7e260</xsd:appinfo>
+											</xsd:annotation>
+										</xsd:attribute>
+										<xsd:attribute name="ID"
+												type="xsd:string">
+											<xsd:annotation>
+												<xsd:appinfo source="http://sap.com/xi/TextID">30f3b199b2e511e4a8ad00ff47e7e260</xsd:appinfo>
+											</xsd:annotation>
+										</xsd:attribute>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</types>
+	<message name="TransCompMvmtDoc">
+		<documentation> </documentation>
+		<part name="TransCompMvmtDoc"
+				element="tns:TransCompMvmtDoc"/>
+	</message>
+	<portType name="TransComp_MvmtDoc_Out">
+		<documentation> </documentation>
+		<operation name="TransComp_MvmtDoc_Out">
+			<documentation> </documentation>
+			<input name="TransComp_MvmtDoc_Out"
+					message="tns:TransCompMvmtDoc"/>
+		</operation>
+	</portType>
+	<binding name="TransComp_MvmtDoc_OutBinding"
+			type="tns:TransComp_MvmtDoc_Out">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="TransComp_MvmtDoc_Out">
+			<soapbind:operation style="document"
+					soapAction="http://sap.com/xi/WebService/soap1.1"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+		</operation>
+	</binding>
+	<service name="TransComp_MvmtDoc_OutService">
+		<port name="HTTP_Port"
+				binding="tns:TransComp_MvmtDoc_OutBinding">
+			<soapbind:address location="http://sappi.detmir.ru:18503/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_TK&amp;receiverParty=&amp;receiverService=&amp;interface=TransComp_MvmtDoc_Out&amp;interfaceNamespace=urn:DetMir.ru:TransComp:Common"/>
+		</port>
+		<port name="HTTPS_Port"
+				binding="tns:TransComp_MvmtDoc_OutBinding">
+			<soapbind:address location="https://sappip.detmir-group.ru:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORT_COMPANIES_P&amp;receiverParty=&amp;receiverService=&amp;interface=TransComp_MvmtDoc_Out&amp;interfaceNamespace=urn:DetMir.ru:TransComp:Common"/>
+		</port>
+	</service>
+</definitions>
