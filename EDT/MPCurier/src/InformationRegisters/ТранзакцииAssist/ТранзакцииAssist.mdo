@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9df3180c-f5f0-4726-a269-74e59935ff3d">
+  <producedTypes>
+    <selectionType typeId="97b4b8ee-b259-4ff8-b652-171fd231d829" valueTypeId="9ce8f8ff-14ee-4eae-a9d6-52cb7cab4bed"/>
+    <listType typeId="a87c3f20-4c95-44fe-b2ee-9c368dc0cddc" valueTypeId="776f4968-5261-418d-947d-fab9f6b6504b"/>
+    <managerType typeId="498d0668-703a-4402-b36d-d8e172861b7d" valueTypeId="e1065ddb-0e39-42e5-9291-5c714de4497c"/>
+    <recordSetType typeId="e635b252-50dc-4524-b896-39123c6f74c9" valueTypeId="0d8a36be-a5c7-45dc-be36-01d44b819b57"/>
+    <recordKeyType typeId="80b82406-27ae-4248-9f0a-23e6ddaab1a6" valueTypeId="35d35d37-70ae-49ed-a64b-4a59b28535c6"/>
+    <recordType typeId="280a247e-e9aa-4038-b8a3-906f881a4aa8" valueTypeId="73a07f13-f369-427f-91a7-5d9c05410f34"/>
+    <recordManagerType typeId="f1709150-07be-4036-bbf8-9951d6c7b9df" valueTypeId="2289371b-8e39-4d22-8b48-baa8e8d6504a"/>
+  </producedTypes>
+  <name>ТранзакцииAssist</name>
+  <synonym>
+    <key>ru</key>
+    <value>Транзакции Assist</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ТранзакцииAssist.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ТранзакцииAssist.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="78ae77d1-23f9-4c9f-b8b0-dd1b9a04799b">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b730f566-58a2-4a87-8f15-5ac31928a872">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f38a0570-cd5b-4d0e-9b50-16fa8529bec1">
+    <name>billnumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Billnumber</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="b0743adb-f0e2-4fc1-9b3b-e3bcea0d1c3d">
+    <name>Оплачен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплачен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="1e444a8a-5be2-4136-b472-0a17b58bea5c">
+    <name>ДатаТранзакции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата транзакции</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3b273af2-4bd3-4d06-81d4-bf1e34c8054c">
+    <name>ТипОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип оплаты</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТипыОплат</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="716b40cc-8da9-4020-9cbc-2ef31cf42025">
+    <name>Рейс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейс</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Рейс</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f4b543cc-25cc-44d3-b85f-2196f5166bb5">
+    <name>merchant_id</name>
+    <synonym>
+      <key>ru</key>
+      <value>Merchant id</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cd2374f0-72ab-472e-9b1d-992239eeece3">
+    <name>Водитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Водитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Водители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="92b6e3fd-a3fc-4569-8339-2a7237f5a435">
+    <name>Экспедитор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экспедитор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Экспедиторы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="57a809c1-2660-48bf-a4ea-ce8d851d0efc">
+    <name>ТипОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип операции</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыОперацийAssist</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="bcff9d71-64fc-4a94-b4d6-333972dd3c90">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Заказ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8cbcd903-de1e-4edd-840e-6a18d4394178">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5a50032a-9c71-4659-af2d-ebbeb9594ccd">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4605492c-6990-4a27-99c4-bf83bd0389d8">
+  <producedTypes>
+    <selectionType typeId="001150e0-c2dc-45ea-befd-83335781b5c9" valueTypeId="0464b67f-7ef4-4cc3-bc65-efab49f43443"/>
+    <listType typeId="834f045e-9008-4adf-8b09-dc610a929cae" valueTypeId="94898a22-c65b-4073-a45b-1685a3bd39d9"/>
+    <managerType typeId="99d4b139-c15c-4bb9-87de-29d58041a903" valueTypeId="6eddb088-7ce3-44d9-96f7-37935052780a"/>
+    <recordSetType typeId="e01fa9eb-9469-4c5d-a6e9-79dd8198c73f" valueTypeId="fc66727d-1769-45a6-818c-7c945438377a"/>
+    <recordKeyType typeId="cebb52ac-85f1-4838-8ca7-5b36b7a77137" valueTypeId="2c3e191d-31b3-44cd-a3b6-d7bfc60070dd"/>
+    <recordType typeId="a50cf595-8e66-4040-a7b0-45d7d42b6f9b" valueTypeId="769b5ba3-b4e8-4dfc-b455-6c3c22792b91"/>
+    <recordManagerType typeId="f40133a1-c783-49d8-9de5-836ccbb26eef" valueTypeId="5320df72-b555-450e-9313-0f76962da5df"/>
+  </producedTypes>
+  <name>ТранзакцииСБП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Транзакции СБП</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="55356beb-0ebb-41ad-aba2-303a0210092c">
+    <name>ЭтапПроцессаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап процесса оплаты</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ЭтапыПроцессаОплатыСБП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="be130658-dcfc-427a-9947-ae43cdd30eb8">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="68eeaf55-14ea-4abb-9c84-2d7b56c10431">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="baf9c472-6731-4f46-9ad3-dc8765726d82">
+    <name>КодСообщения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код сообщения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>140</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="467dc813-30d7-470e-a3a0-3cb9291360a9">
+    <name>qrID</name>
+    <synonym>
+      <key>ru</key>
+      <value>QR ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>32</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="40d598be-7103-4d6a-ada2-326e3ca41b85">
+    <name>qrUrl</name>
+    <synonym>
+      <key>ru</key>
+      <value>Qr url</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="6e9809c3-4e7e-4325-8c4a-cb7457c5f01d">
+    <name>СтатусПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус платежа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПлатежаСБП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="97871d26-439a-4226-9c66-5a9143a5a41f">
+    <name>ДатаТранзакции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата транзакции</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="056310db-6733-4896-8131-1b401eafa500">
+    <name>ИдентификаторТранзакции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор транзакции</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>20</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="90dd1fb7-80bd-419c-ba9d-8ef365ca9305">
+    <name>Сообщение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сообщение</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>140</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="50d63d92-9ddb-4fce-b2d3-e2cda90118ac">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Заказ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
