@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="850e981d-a15f-4013-bb9b-5de3073acec5">
+  <name>скан_ExchangeMA</name>
+  <synonym>
+    <key>ru</key>
+    <value>(скан) Exchange MA</value>
+  </synonym>
+  <rootURL>ExchangeMA</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="5e659310-e515-4a7e-8d33-760560dd7857">
+    <name>MA</name>
+    <synonym>
+      <key>ru</key>
+      <value>MA</value>
+    </synonym>
+    <template>/V1/{ИмяМетода}</template>
+    <methods uuid="0b42735c-3681-4d73-8cf4-e090d1a86f0a">
+      <name>Post</name>
+      <synonym>
+        <key>ru</key>
+        <value>Post</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>MAPost</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
