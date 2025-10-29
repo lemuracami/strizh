@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="653428e5-9c65-413e-8d86-2360a3a7bad7">
+  <producedTypes>
+    <selectionType typeId="9bd96851-61b3-4f10-8650-e51e619603a1" valueTypeId="ea6192bf-5211-4b82-967d-ef956cf81747"/>
+    <listType typeId="eeb8d754-51c4-4cfd-9a79-771e636cb855" valueTypeId="0c3e9cc1-bbf1-40da-b3c7-6fb54bb26183"/>
+    <managerType typeId="8527eee6-e29e-4672-a4de-a82577da3991" valueTypeId="4b09941a-bac2-45fc-acff-d3ff7658423b"/>
+    <recordSetType typeId="138ad714-b254-40d2-92d5-0cdeed60a26c" valueTypeId="0e2bd157-b839-4826-8e8b-09d24d9d99a5"/>
+    <recordKeyType typeId="b8cec681-dec3-48ee-8877-61c6eee9fddb" valueTypeId="9fd779d9-30ee-4219-9e90-943bf4834ad7"/>
+    <recordType typeId="ebe67af2-009a-4110-848f-bab36e069321" valueTypeId="a37dcb55-3b7a-4c85-a0c1-e4d36c0b6948"/>
+    <recordManagerType typeId="0295f767-b87d-4d3a-802d-5a493f98e713" valueTypeId="bc752183-5eee-4889-9ebd-fb2333419c5a"/>
+  </producedTypes>
+  <name>ксЛогПробитияЧеков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лог пробития чеков</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ксЛогПробитияЧеков.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="0faff03d-9f5f-478c-b0b1-4df2e2ea43f0">
+    <name>КодОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код ошибки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ea8909be-4440-47c2-9d45-28f20017d6a8">
+    <name>ОшибкаККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка ККМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ксКодыОшибокККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="eae4618a-e64a-44cf-a7a7-5899d237c3ce">
+    <name>КассаККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Касса ККМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ксКассыККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="01db81b7-5f0a-4cf2-8c21-aaeb16301d35">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="75e21818-2c3a-48e8-bc95-c31a66742128">
+    <name>ОписаниеОшибкиККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки ККМ</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="35979303-01f4-4b96-8137-a8d36749f622">
+    <name>ЧекККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чек ККМ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ксЧекККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="fab8437c-92bb-46b1-85b6-32b3f040331f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

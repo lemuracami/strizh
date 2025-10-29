@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8261a9df-efbd-46e6-92e6-ed2908ec3aab">
+  <name>ExchangeMA</name>
+  <synonym>
+    <key>ru</key>
+    <value>Exchange MA</value>
+  </synonym>
+  <namespace>http://www.strizh.org/exchange_ma</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Exchange_MA</value>
+  </xdtoPackages>
+  <xdtoPackages xsi:type="core:StringValue">
+    <value>http://v8.1c.ru/8.1/data/core</value>
+  </xdtoPackages>
+  <descriptorFileName>ExchangeMA.1cws</descriptorFileName>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="51f24f6f-a151-4527-a494-b9ee265b79b5">
+    <name>registerCheck</name>
+    <synonym>
+      <key>ru</key>
+      <value>Register check</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>registerCheckResponse</name>
+      <nsUri>http://www.strizh.org/exchange_ma</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>registerCheck</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="0a610105-850f-4eda-9bd4-8d60a7d0e3cc">
+      <name>check</name>
+      <synonym>
+        <key>ru</key>
+        <value>Check</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ValueStorage</name>
+        <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="7d416191-cf00-4e58-ae8e-c2b3a93a95bd">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="767bb0f6-b8b4-4c37-b9ac-b6c9ac4d9b53">
+    <name>getCheckParameters</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get check parameters</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ValueStorage</name>
+      <nsUri>http://v8.1c.ru/8.1/data/core</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>getCheckParameters</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="d6c05b91-c6e1-4523-a9cd-b6a861f0a6a0">
+      <name>idCheck</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id check</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+</mdclass:WebService>

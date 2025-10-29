@@ -1,0 +1,154 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh.org/exchange_utl">
+	<import namespace="http://v8.1c.ru/8.1/data/core"/>
+	<objectType name="good">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="id" type="d3p1:UUID"/>
+		<property name="code" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="fullName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="isCatalog" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="parentId" type="d3p1:UUID" lowerBound="0" nillable="true"/>
+		<property name="isDeleting" type="xs:boolean"/>
+	</objectType>
+	<objectType name="arrayOfGood">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="good" type="d3p1:good" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="arrayOfUUID">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="data" type="d3p1:UUID" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="organization">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="id" type="d3p1:UUID"/>
+		<property name="code" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="fullName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="isDeleting" type="xs:boolean"/>
+		<property name="codeINN" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="codeIMNS" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="codeOKATO" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="codeOKPO" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="codeKPP" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="codeOGRN" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="informationAddressForChecks" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfOrganization">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="organization" type="d3p1:organization" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="cashbox">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="id" type="d3p1:UUID"/>
+		<property name="code" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="ownerId" type="d3p1:UUID" lowerBound="0" nillable="true"/>
+		<property name="isDeleting" type="xs:boolean"/>
+		<property name="formNonFiscalChecks" type="xs:boolean"/>
+		<property name="rollWidth" type="xs:integer"/>
+		<property name="manualFormationMode" type="xs:boolean"/>
+		<property name="model" type="xs:string"/>
+		<property name="applicationProgram" type="xs:string"/>
+		<property name="manufacturerNumber" type="xs:string"/>
+		<property name="nameOfCompany" type="xs:string"/>
+		<property name="addressOrganizations" type="xs:string"/>
+		<property name="INNOrganization" type="xs:string"/>
+		<property name="onlineCashbox" type="xs:boolean"/>
+		<property name="addressCashbox" type="xs:string"/>
+		<property name="kktFactoryNumber" type="xs:string"/>
+		<property name="kktRegNumber" type="xs:string"/>
+		<property name="notPrintCheckOnKKT" type="xs:boolean"/>
+		<property name="versionFFD" type="xs:string"/>
+	</objectType>
+	<objectType name="arrayOfCashbox">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="cashbox" type="d3p1:cashbox" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="check">
+		<property name="orderId" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="cashboxId" type="d3p1:UUID"/>
+		<property name="payType" type="xs:byte"/>
+		<property name="deliveryPrice" type="xs:double"/>
+		<property name="deliveryNDS" type="xs:byte"/>
+		<property name="informAddress" type="xs:string"/>
+		<property name="typeCheck" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="sumCheck" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="numberOperationShift" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="numberCheck" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="time" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="fpd" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="fd" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="goodsRows" type="d3p1:checkRows"/>
+		<property name="isDeleting" type="xs:boolean"/>
+		<property name="isCarriedOut" type="xs:boolean"/>
+		<property name="isPrinting" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="idDocument" type="d3p1:UUID"/>
+		<property name="numberCheckForPrint" type="xs:string"/>
+		<property name="numberDocument" type="xs:string"/>
+		<property name="MA" type="xs:string"/>
+		<property name="dateDocument" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="checkNumberDocument" type="xs:string"/>
+		<property name="fn" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="checkType" type="xs:byte"/>
+		<property name="idCheckForReturn" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="tripId" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="prepaymentAmount" type="xs:double" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="checkRow">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="goodId" type="d3p1:UUID"/>
+		<property name="goodCode" type="xs:string"/>
+		<property name="count" type="xs:integer"/>
+		<property name="price" type="xs:double"/>
+		<property name="NDS" type="xs:byte"/>
+		<property name="markingCode" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="goodsSellerId" type="d3p1:UUID" lowerBound="0" nillable="true"/>
+		<property name="signSubjectCalc" type="xs:integer" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="checkRows">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="checkRow" type="d3p1:checkRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="arrayOfChecks">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="check" type="d3p1:check" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="responseSetStatusCashbox">
+		<property name="result" type="xs:boolean"/>
+		<property name="status" type="xs:string"/>
+	</objectType>
+	<objectType name="cashier">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="id" type="d3p1:UUID"/>
+		<property name="code" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="isDeleting" type="xs:boolean"/>
+	</objectType>
+	<objectType name="arrayOfCashier">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="cashier" type="d3p1:cashier" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="responseOpenShift">
+		<property name="result" type="xs:boolean"/>
+		<property name="status" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="UUIDdoc" type="d3p1:UUID" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="responseCloseShift">
+		<property name="result" type="xs:boolean"/>
+		<property name="status" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="UUIDdoc" type="d3p1:UUID" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="shiftDoc">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="cashboxId" type="d3p1:UUID"/>
+		<property name="isDeleting" type="xs:boolean"/>
+		<property name="isCarriedOut" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="idDocument" type="d3p1:UUID"/>
+		<property name="numberDocument" type="xs:string"/>
+		<property name="dateDocument" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="typeDoc" type="xs:byte"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="cashierId" type="d3p1:UUID" lowerBound="0" nillable="true"/>
+		<property name="fromWeb" type="xs:boolean"/>
+	</objectType>
+	<objectType name="arrayOfShiftDoc">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="shiftDoc" type="d3p1:shiftDoc" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="goodsSeller">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="id" type="d3p1:UUID"/>
+		<property name="code" type="xs:string"/>
+		<property name="name" type="xs:string"/>
+		<property name="inn" type="xs:string"/>
+		<property name="phoneNumber" type="xs:string"/>
+		<property name="isDeleting" type="xs:boolean"/>
+	</objectType>
+	<objectType name="arrayOfGoodsSellers">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_utl" name="goodsSeller" type="d3p1:goodsSeller" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c4018188-4be6-44a5-9814-9a7952720fcd">
+  <producedTypes>
+    <selectionType typeId="89d4fd1e-3ea9-462d-a76f-4fd85f3e1bee" valueTypeId="d077044b-beb8-44bf-80dd-471131204046"/>
+    <listType typeId="d920ee26-5bfd-44df-aa21-35d9e59f6155" valueTypeId="31a66233-9b61-4957-90d6-e351d909be8b"/>
+    <managerType typeId="b8ee20ca-0fe4-4b4e-b6e6-2338aff59eca" valueTypeId="391e0711-71e2-4d61-ad5e-1fbbfecfe54e"/>
+    <recordSetType typeId="eb223aab-d776-4df3-98e4-ecb847d0654a" valueTypeId="266269bc-cb79-4b5e-bd6c-e83ea97f50f9"/>
+    <recordKeyType typeId="4db13e01-b89a-4114-a6e0-2de5799df581" valueTypeId="dc46c08e-f9c1-4b90-acd9-79ae32770b04"/>
+    <recordType typeId="c4a09afb-d170-4f4f-909a-2639e5f58205" valueTypeId="dc62e4db-78b7-457a-a8cd-c3fc31b5d4f9"/>
+    <recordManagerType typeId="d2aa661f-89ed-411f-95d8-cd49e1133c3d" valueTypeId="b9c4db76-2a6e-442c-a1bc-d2a0f78d922b"/>
+  </producedTypes>
+  <name>ксРезультатыПроверкиКМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>(кс) Результаты проверки КМ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3f40e032-8c19-408f-854c-0510060479b7">
+    <name>КодРезультатаПроверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код результата проверки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="880e111d-a866-492f-97d3-e83575607ac7">
+    <name>ККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>ККМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ксКассыККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c543baac-720b-49b6-a3eb-d3c00e26e76f">
+    <name>ЧекККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чек ККМ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ксЧекККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="949f0ec9-9d96-4c2e-8ea5-0dde6105369a">
+    <name>Товар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товар</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ксНоменклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

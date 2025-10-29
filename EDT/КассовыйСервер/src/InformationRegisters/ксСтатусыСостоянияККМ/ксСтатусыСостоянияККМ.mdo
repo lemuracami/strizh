@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0f2b3b45-b98c-42c4-912a-a3ccc634c901">
+  <producedTypes>
+    <selectionType typeId="c853aebe-91b8-4e58-b449-efd9b728b55d" valueTypeId="1b231464-f474-4a83-aac7-2f9d65e5ace7"/>
+    <listType typeId="0a137c06-ef35-4e2d-8610-676e44944249" valueTypeId="3dcf7d17-9045-48fb-901a-e7b5debf03b3"/>
+    <managerType typeId="b8f7e342-f4dc-443e-9420-f55c45dcbf3a" valueTypeId="a2ae6667-d7d0-481f-8c69-345820614b82"/>
+    <recordSetType typeId="8db6cbf9-5f50-4d09-899b-850d8b2cb1e7" valueTypeId="83acb30b-92b4-4fbd-98bf-3e5ed230f40d"/>
+    <recordKeyType typeId="2e041d2d-e689-4537-9b3b-f95406bcdc8c" valueTypeId="9e683dfe-97da-4702-b4d6-f947c454f6ca"/>
+    <recordType typeId="1b46b0dd-767b-4b1f-87ca-50dd4fa410e1" valueTypeId="7508b84e-e17f-48e2-b8e3-227f38c7dff8"/>
+    <recordManagerType typeId="983fad52-41d1-48d2-b519-f0a6f944abf4" valueTypeId="f48f132e-ce45-45fb-81d8-29392e05adc3"/>
+  </producedTypes>
+  <name>ксСтатусыСостоянияККМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы состояния ККМ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="bbfd7cd5-24fc-40fd-8402-fbd492f623c0">
+    <name>СостояниеККМОчередьПечатиЧеков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние ККМ в очереди печати чеков</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ксСостоянияККМОчередиПечатиЧеков</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5ea5418e-e468-4b6b-b8ac-4d4f58d32275">
+    <name>ОшибкиПечатиККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибки печати ККМ</value>
+    </synonym>
+    <comment>КоличествоОшибок</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e234f57a-9e5a-49fb-a4aa-8245572dcfb8">
+    <name>СтатусУстановленWEBСервисом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус установлен WEB сервисом</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="54a7315f-223c-4d33-b37d-0d77b861bfcc">
+    <name>ККМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>ККМ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ксКассыККМ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

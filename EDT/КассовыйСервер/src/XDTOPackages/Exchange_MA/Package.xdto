@@ -1,0 +1,62 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.strizh.org/exchange_ma">
+	<import namespace="http://v8.1c.ru/8.1/data/core"/>
+	<objectType name="checkForOrder">
+		<property name="order" type="xs:string"/>
+		<property name="payType" type="xs:byte"/>
+		<property name="deliveryPrice" type="xs:double"/>
+		<property name="deliveryNDS" type="xs:byte"/>
+		<property name="informAddress" type="xs:string"/>
+		<property xmlns:d3p1="http://www.strizh.org/exchange_ma" name="orderRows" type="d3p1:orderRows" lowerBound="0" nillable="false"/>
+		<property name="organizationCode" type="xs:string"/>
+		<property name="checkType" type="xs:byte"/>
+		<property name="idCheckForReturn" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="tripId" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="orderIdImport" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="INNDeliverySeller" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="prepaymentAmount" type="xs:double" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="orderRows">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_ma" name="orderRow" type="d3p1:orderRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="orderRow">
+		<property name="goodCode" type="xs:string"/>
+		<property name="count" type="xs:integer"/>
+		<property name="price" type="xs:double"/>
+		<property name="NDS" type="xs:byte"/>
+		<property name="markingCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="goodsSellerCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="goodsSellerINN" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="signSubjectCalc" type="xs:integer" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="registerCheckResponse">
+		<property name="isError" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="error" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="idCheck" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="getCheckParameters">
+		<property name="barcode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="typeCheck" type="xs:byte" lowerBound="0" nillable="true"/>
+		<property name="rn_kkt" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="fn" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="fpd" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="fd" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="time" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="fn_kkt" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="numberCheck" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="numberOperationShift" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="isDone" type="xs:boolean"/>
+		<property name="status" type="xs:string"/>
+		<property name="sumCheck" type="xs:double" lowerBound="0" nillable="true"/>
+		<property name="organisation" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="kassir" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="innOrganisation" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.strizh.org/exchange_ma" name="taxes" type="d3p1:arrayOfTaxes" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="tax">
+		<property name="idTax" type="xs:int"/>
+		<property name="sumTax" type="xs:double"/>
+	</objectType>
+	<objectType name="arrayOfTaxes">
+		<property xmlns:d3p1="http://www.strizh.org/exchange_ma" name="tax" type="d3p1:tax" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>
