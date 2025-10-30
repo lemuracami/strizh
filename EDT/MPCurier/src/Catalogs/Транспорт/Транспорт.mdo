@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8638448b-b2d7-460d-b35f-1812f2e6e766">
+  <producedTypes>
+    <objectType typeId="38485b9d-3b66-4a5c-aa85-cb821b93bffc" valueTypeId="5141dc68-cfa0-433c-aff8-0692b0918fa4"/>
+    <refType typeId="6457ef45-478d-4b9d-8b87-fe3d22cb004f" valueTypeId="7c25fb0b-647a-47e3-852e-963758ea9611"/>
+    <selectionType typeId="860060f5-32c3-4b00-b855-1830ce8e9b4d" valueTypeId="c0e0e718-79b1-45f3-ae01-bcb9e28b14a3"/>
+    <listType typeId="26d781bd-c515-4223-8878-e88ddd283f53" valueTypeId="bc256aa7-75f0-46af-a9b6-855e59279418"/>
+    <managerType typeId="bb53b05f-5d1b-4c0d-9131-d6b98a87b7a8" valueTypeId="7431ac19-8c6b-443f-a839-de5d19b6b9b6"/>
+  </producedTypes>
+  <name>Транспорт</name>
+  <synonym>
+    <key>ru</key>
+    <value>Транспорт</value>
+  </synonym>
+  <inputByString>Catalog.Транспорт.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.Транспорт.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>70</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="35ce3940-79f3-474a-baba-b4134620d2d7">
+      <name>ПустойТранспорт</name>
+      <description>Пустой транспорт</description>
+      <code xsi:type="core:StringValue">
+        <value>SSSSSSSSS</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.Транспорт.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.Транспорт.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.Транспорт.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="6486e7f1-06ec-4ce8-ad1c-4c5cad1a00f1">
+    <name>ГосНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Гос номер</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="071acc83-dec7-4cf3-8b12-38c6e635fce2">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегиональныеТерминалы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="7e037ca4-ea87-4d08-8aa2-827ef6eafd3d">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="39e68610-2670-479a-93a6-e95d32fa0a47">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="95e9255e-ef3b-4c24-9e90-58b43adcd1e7">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>
