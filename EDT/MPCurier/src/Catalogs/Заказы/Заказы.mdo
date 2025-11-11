@@ -7,13 +7,13 @@
     <listType typeId="c43e660f-67df-4d4c-a8ef-7f6246fa4419" valueTypeId="7114f1c9-d41a-4bf9-88b8-0f92178543af"/>
     <managerType typeId="7f3efc34-4037-44e3-bcb5-7a89233bcefb" valueTypeId="463908c0-cdb2-4332-b9d5-aa6e55aef9d7"/>
   </producedTypes>
-  <name>Заказ</name>
+  <name>Заказы</name>
   <synonym>
     <key>ru</key>
-    <value>Заказ</value>
+    <value>Заказы</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
-  <inputByString>Catalog.Заказ.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Заказы.StandardAttribute.Code</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <createOnInput>DontUse</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
@@ -30,7 +30,7 @@
   <autonumbering>true</autonumbering>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
-  <defaultListForm>Catalog.Заказ.Form.ФормаСписка</defaultListForm>
+  <defaultListForm>Catalog.Заказы.Form.ФормаСписка</defaultListForm>
   <attributes uuid="3360f02c-e649-42e9-b180-503297431f72">
     <name>НомерЗаказаИМ</name>
     <synonym>
@@ -285,6 +285,117 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="d0b74a02-97d6-4fac-a0e1-353ce4ae5332">
+    <name>ДатаЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата заказа</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d5b3ed78-d8eb-4f46-bb03-da22a099db64">
+    <name>ТребуетсяОплатаСтоимостиДоставкиПриОтменеЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется оплата стоимости доставки при отмене заказа</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3b36caad-c8aa-470b-917f-ef32379c3ab6">
+    <name>КалендарьДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Календарь доставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КалендариДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2af7505f-0bda-48b9-9784-354186269a77">
+    <name>ДатаВремяПоследнейМаршрутизацииВМП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата время последней маршрутизации ВМП</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="493cf5bd-fd27-4a63-b1ac-44fb06b6ab8c">
+    <producedTypes>
+      <objectType typeId="271a5df6-4e22-4053-86fe-10f0cdcd247a" valueTypeId="54d122ac-b2cd-4e58-8d8c-e05130077485"/>
+      <rowType typeId="8e26f69c-eb28-4b96-bc28-ab5692da9adf" valueTypeId="a2f585b6-ea93-4b29-bc47-83a40babc2a1"/>
+    </producedTypes>
+    <name>РасчетСтоимостиДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет стоимости доставки</value>
+    </synonym>
+    <attributes uuid="e350d580-0988-44c8-af20-cd2d6b4b1260">
+      <name>СуммаВыкупа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма выкупа</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="59183b15-3d10-43da-a46f-cbd2f58cf20a">
+      <name>СтоимостьДоставки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость доставки</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
   <forms uuid="12c5a8ca-c0b0-4dea-bf65-d790adf56b18">
     <name>ФормаСписка</name>
     <synonym>
@@ -302,7 +413,7 @@
     </synonym>
     <group>FormNavigationPanelImportant</group>
     <commandParameterType>
-      <types>CatalogRef.Заказ</types>
+      <types>CatalogRef.Заказы</types>
     </commandParameterType>
     <modifiesData>true</modifiesData>
     <representation>Auto</representation>

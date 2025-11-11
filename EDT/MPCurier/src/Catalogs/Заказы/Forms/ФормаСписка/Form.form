@@ -4,7 +4,7 @@
     <name>ГруппаРейс</name>
     <id>51</id>
     <items xsi:type="form:FormField">
-      <name>Рейс</name>
+      <name>ВыбранныйРейс</name>
       <id>56</id>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -19,7 +19,7 @@
         <name>РейсПриИзменении</name>
       </handlers>
       <extendedTooltip>
-        <name>РейсРасширеннаяПодсказка</name>
+        <name>ВыбранныйРейсРасширеннаяПодсказка</name>
         <id>58</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
@@ -29,7 +29,7 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>РейсКонтекстноеМеню</name>
+        <name>ВыбранныйРейсКонтекстноеМеню</name>
         <id>57</id>
         <autoFill>true</autoFill>
       </contextMenu>
@@ -42,6 +42,7 @@
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
+        <listChoiceMode>true</listChoiceMode>
         <chooseType>true</chooseType>
         <typeDomainEnabled>true</typeDomainEnabled>
         <textEdit>true</textEdit>
@@ -571,7 +572,7 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Catalog.Заказ.Command.УстановитьРезультатДоставки</commandName>
+            <commandName>Catalog.Заказы.Command.УстановитьРезультатДоставки</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1019,6 +1020,10 @@
     <horizontalAlign>Left</horizontalAlign>
   </autoCommandBar>
   <handlers>
+    <event>OnOpen</event>
+    <name>ПриОткрытии</name>
+  </handlers>
+  <handlers>
     <event>OnCreateAtServer</event>
     <name>ПриСозданииНаСервере</name>
   </handlers>
@@ -1065,9 +1070,9 @@
 	СтатусыЗаказовСрезПоследних.РезультатДоставки
 ИЗ
 	РегистрСведений.СтатусыЗаказов.СрезПоследних(, Рейс = &amp;ВыбранныйРейс) КАК СтатусыЗаказовСрезПоследних
-		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Заказ КАК ЗаказСправочник
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Заказы КАК ЗаказСправочник
 		ПО СтатусыЗаказовСрезПоследних.Заказ = ЗаказСправочник.Ссылка</queryText>
-      <mainTable>Catalog.Заказ</mainTable>
+      <mainTable>Catalog.Заказы</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
