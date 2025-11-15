@@ -244,7 +244,7 @@
           <name>КонтактныеДанные</name>
           <id>39</id>
           <items xsi:type="form:FormField">
-            <name>Клиент</name>
+            <name>Получатель</name>
             <id>22</id>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -252,10 +252,10 @@
               <common>true</common>
             </userVisible>
             <dataPath xsi:type="form:DataPath">
-              <segments>Список.Клиент</segments>
+              <segments>Список.ИмяПолучателя</segments>
             </dataPath>
             <extendedTooltip>
-              <name>КлиентРасширеннаяПодсказка</name>
+              <name>ПолучательРасширеннаяПодсказка</name>
               <id>24</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
@@ -265,7 +265,7 @@
               </extInfo>
             </extendedTooltip>
             <contextMenu>
-              <name>КлиентКонтекстноеМеню</name>
+              <name>ПолучательКонтекстноеМеню</name>
               <id>23</id>
               <autoFill>true</autoFill>
             </contextMenu>
@@ -1053,21 +1053,19 @@
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
-	ЗаказСправочник.Ссылка,
-	ЗаказСправочник.ПометкаУдаления,
-	ЗаказСправочник.Код,
-	ЗаказСправочник.НомерЗаказаИМ,
-	ЗаказСправочник.Клиент,
-	ЗаказСправочник.ВремяДоставки,
-	ЗаказСправочник.ИнтернетМагазин,
-	ЗаказСправочник.Адрес,
-	ЗаказСправочник.Телефон,
-	ЗаказСправочник.ТипОплаты,
-	ЗаказСправочник.СуммаНал,
-	ЗаказСправочник.ВыбиратьТипОплаты,
-	ЗаказСправочник.Предопределенный,
-	ЗаказСправочник.ИмяПредопределенныхДанных,
-	СтатусыЗаказовСрезПоследних.РезультатДоставки
+	ЗаказСправочник.Ссылка КАК Ссылка,
+	ЗаказСправочник.ПометкаУдаления КАК ПометкаУдаления,
+	ЗаказСправочник.Код КАК Код,
+	ЗаказСправочник.НомерЗаказаИМ КАК НомерЗаказаИМ,
+	ЗаказСправочник.ИмяПолучателя КАК ИмяПолучателя,
+	ЗаказСправочник.ИнтернетМагазин КАК ИнтернетМагазин,
+	ЗаказСправочник.Адрес КАК Адрес,
+	ЗаказСправочник.Телефон КАК Телефон,
+	ЗаказСправочник.ТипОплаты КАК ТипОплаты,
+	ЗаказСправочник.ЗапретСменыТипаОплаты КАК ЗапретСменыТипаОплаты,
+	ЗаказСправочник.Предопределенный КАК Предопределенный,
+	ЗаказСправочник.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	СтатусыЗаказовСрезПоследних.РезультатДоставки КАК РезультатДоставки
 ИЗ
 	РегистрСведений.СтатусыЗаказов.СрезПоследних(, Рейс = &amp;ВыбранныйРейс) КАК СтатусыЗаказовСрезПоследних
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Заказы КАК ЗаказСправочник
@@ -1102,14 +1100,6 @@
         <field>НомерЗаказаИМ</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>Клиент</dataPath>
-        <field>Клиент</field>
-      </fields>
-      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>ВремяДоставки</dataPath>
-        <field>ВремяДоставки</field>
-      </fields>
-      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
         <dataPath>ИнтернетМагазин</dataPath>
         <field>ИнтернетМагазин</field>
       </fields>
@@ -1126,14 +1116,6 @@
         <field>ТипОплаты</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>СуммаНал</dataPath>
-        <field>СуммаНал</field>
-      </fields>
-      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>ВыбиратьТипОплаты</dataPath>
-        <field>ВыбиратьТипОплаты</field>
-      </fields>
-      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
         <dataPath>РезультатДоставки</dataPath>
         <field>РезультатДоставки</field>
       </fields>
@@ -1146,20 +1128,156 @@
         <field>Рейс</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>Широта</dataPath>
-        <field>Широта</field>
+        <dataPath>ИмяПолучателя</dataPath>
+        <field>ИмяПолучателя</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ЗапретСменыТипаОплаты</dataPath>
+        <field>ЗапретСменыТипаОплаты</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ДатаВремяПоследнейМаршрутизацииВМП</dataPath>
+        <field>ДатаВремяПоследнейМаршрутизацииВМП</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ДатаДоставкиЗаказа</dataPath>
+        <field>ДатаДоставкиЗаказа</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
         <dataPath>Долгота</dataPath>
         <field>Долгота</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>СуммаДоставка</dataPath>
-        <field>СуммаДоставка</field>
+        <dataPath>ЗапрашиватьКИК</dataPath>
+        <field>ЗапрашиватьКИК</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>СуммаИтого</dataPath>
-        <field>СуммаИтого</field>
+        <dataPath>ЗапретЧастичногоВыкупа</dataPath>
+        <field>ЗапретЧастичногоВыкупа</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ИнтервалДоставкиПо</dataPath>
+        <field>ИнтервалДоставкиПо</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ИнтервалДоставкиС</dataPath>
+        <field>ИнтервалДоставкиС</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>КалендарьДоставки</dataPath>
+        <field>КалендарьДоставки</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>КодИдентификацииКлиента</dataPath>
+        <field>КодИдентификацииКлиента</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>КодОрганизацияОплатаБСП</dataPath>
+        <field>КодОрганизацияОплатаБСП</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>КодОрганизацияОплатаНаличные</dataPath>
+        <field>КодОрганизацияОплатаНаличные</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>КодОрганизацияОплатаТерминал</dataPath>
+        <field>КодОрганизацияОплатаТерминал</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>КоличествоМест</dataPath>
+        <field>КоличествоМест</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>МетодОплатыПодъема</dataPath>
+        <field>МетодОплатыПодъема</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ОтправлятьЧекНаEMAILПолучателя</dataPath>
+        <field>ОтправлятьЧекНаEMAILПолучателя</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ПечататьЧек</dataPath>
+        <field>ПечататьЧек</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ПодъемОплачен</dataPath>
+        <field>ПодъемОплачен</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ПолучательEMAIL</dataPath>
+        <field>ПолучательEMAIL</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>СтавкаНДССуммаДоставки</dataPath>
+        <field>СтавкаНДССуммаДоставки</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>СтатусИМ</dataPath>
+        <field>СтатусИМ</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>СтоимостьДоставки</dataPath>
+        <field>СтоимостьДоставки</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>СуммаЗаказаИтого</dataPath>
+        <field>СуммаЗаказаИтого</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>СуммаИтогоУчитывается</dataPath>
+        <field>СуммаИтогоУчитывается</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>СуммаПредоплаты</dataPath>
+        <field>СуммаПредоплаты</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ТарифицируемыйВес</dataPath>
+        <field>ТарифицируемыйВес</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ТипЗаказа</dataPath>
+        <field>ТипЗаказа</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ТребуетсяОплатаСтоимостиДоставкиПриОтменеЗаказа</dataPath>
+        <field>ТребуетсяОплатаСтоимостиДоставкиПриОтменеЗаказа</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>УслугаПримерки</dataPath>
+        <field>УслугаПримерки</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Широта</dataPath>
+        <field>Широта</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ПорядокСортировки</dataPath>
+        <field>ПорядокСортировки</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Партнер</dataPath>
+        <field>Партнер</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ЗапрашиватьДанныеПодъема</dataPath>
+        <field>ЗапрашиватьДанныеПодъема</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>КодЗоныТарификации</dataPath>
+        <field>КодЗоныТарификации</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ПодписаниеИВозвратСопрДокументов</dataPath>
+        <field>ПодписаниеИВозвратСопрДокументов</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>РасчетСтоимостиДоставки</dataPath>
+        <field>РасчетСтоимостиДоставки</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Товары</dataPath>
+        <field>Товары</field>
       </fields>
       <parameters>
         <name>Период</name>
@@ -1212,7 +1330,7 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	СтатусыЗаказовСрезПоследних.РезультатДоставки КАК РезультатДоставки,
-	СУММА(СтатусыЗаказовСрезПоследних.Заказ.СуммаИтого) КАК Сумма,
+	СУММА(СтатусыЗаказовСрезПоследних.Заказ.СуммаЗаказаИтого) КАК Сумма,
 	СтатусыЗаказовСрезПоследних.Заказ.ТипОплаты Как ТипОплаты
 ИЗ
 	РегистрСведений.СтатусыЗаказов.СрезПоследних(, Рейс = &amp;ВыбранныйРейс) КАК СтатусыЗаказовСрезПоследних
