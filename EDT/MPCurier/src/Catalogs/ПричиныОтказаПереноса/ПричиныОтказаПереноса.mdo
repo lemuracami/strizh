@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="866934f0-93bc-4df4-b776-f01e3f6fbcb2">
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dcd30471-8436-47db-9ed6-85a229cb8e25">
   <producedTypes>
-    <objectType typeId="550e21db-dec5-4abb-bec7-0ee84e65de06" valueTypeId="0b2acb1e-08e7-4588-b25c-2aa58d81800e"/>
-    <refType typeId="e828b3fe-03e1-4782-8272-c29ba8afedff" valueTypeId="14cd98b6-1f37-4738-a264-88acd76bbe4e"/>
-    <selectionType typeId="3bdbf6ee-2662-40a1-b9a6-5e4e9300c4b9" valueTypeId="0ff3831b-58ab-4263-9348-278f1b36c354"/>
-    <listType typeId="dc2b0752-4605-4e8d-a5c4-c9931d7e7a6f" valueTypeId="4b025a91-6df2-458b-b9eb-fa31e0f92956"/>
-    <managerType typeId="853180d1-31ba-410f-971b-0337bd71a537" valueTypeId="c940ab4b-2c44-4d5e-9a0e-52865ecc083d"/>
+    <objectType typeId="03289d79-453c-470b-ba02-410d1c7c1686" valueTypeId="d939c376-a73f-48d9-8e3d-f5e41698eb87"/>
+    <refType typeId="a30feed9-6199-45a6-a9fd-4d7e83eb2eb1" valueTypeId="01dff4ef-e40b-4efd-a460-5c68426140e5"/>
+    <selectionType typeId="37bd61ca-d596-40ab-a1ea-f1514ce507e7" valueTypeId="ec8f35a5-b5c4-49f6-a9d4-6a3d6dbaaa6f"/>
+    <listType typeId="7c33f533-ba05-4afc-ab3e-d1d38aae8c96" valueTypeId="45ee3828-1876-461c-ad9e-9c5304fead46"/>
+    <managerType typeId="16513b11-ef27-4d7b-965b-d0f995b80192" valueTypeId="972ec9b3-e73b-45aa-865a-d53157a19817"/>
   </producedTypes>
-  <name>РезультатыДоставки</name>
+  <name>ПричиныОтказаПереноса</name>
   <synonym>
     <key>ru</key>
-    <value>Результаты доставки</value>
+    <value>Причины отказа переноса</value>
   </synonym>
-  <inputByString>Catalog.РезультатыДоставки.StandardAttribute.Description</inputByString>
-  <inputByString>Catalog.РезультатыДоставки.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ПричиныОтказаПереноса.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ПричиныОтказаПереноса.StandardAttribute.Code</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <standardAttributes>
     <dataHistory>Use</dataHistory>
@@ -91,12 +91,12 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
   </standardAttributes>
-  <createOnInput>DontUse</createOnInput>
+  <createOnInput>Use</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
   <fullTextSearch>Use</fullTextSearch>
   <levelCount>2</levelCount>
   <foldersOnTop>true</foldersOnTop>
-  <codeLength>9</codeLength>
+  <codeLength>11</codeLength>
   <descriptionLength>50</descriptionLength>
   <codeType>String</codeType>
   <codeAllowedLength>Variable</codeAllowedLength>
@@ -104,109 +104,67 @@
   <autonumbering>true</autonumbering>
   <defaultPresentation>AsDescription</defaultPresentation>
   <predefined>
-    <items id="e5266fb1-b16c-4847-b5a6-d51fcc9d6a18">
-      <name>Доставлен</name>
-      <description>Доставлен</description>
+    <items id="86ec647f-821e-4249-99ff-1625ce59367a">
+      <name>Брак</name>
+      <description>Брак</description>
       <code xsi:type="core:StringValue">
-        <value>100000002</value>
+        <value>00000000007</value>
       </code>
     </items>
-    <items id="6419731a-729f-48c5-b162-0d1b7c50de4a">
-      <name>КДоставке</name>
-      <description>К доставке</description>
+    <items id="e4855f58-0374-4cd2-b412-e532f04f0bd7">
+      <name>КлиентаНетНаМесте</name>
+      <description>Клиента нет на месте</description>
       <code xsi:type="core:StringValue">
-        <value>100000001</value>
+        <value>00000000003</value>
       </code>
     </items>
-    <items id="bf29ebdc-e923-4344-b6d9-afa5c0b2b743">
-      <name>СнятьСДоставки</name>
-      <description>Снять с доставки</description>
+    <items id="9d7d124b-ed44-4a47-a84f-a04e55ae27ef">
+      <name>НеДозвонилисьДоКлиента</name>
+      <description>Не дозвонились до клиента</description>
       <code xsi:type="core:StringValue">
-        <value>100000003</value>
+        <value>00000000001</value>
+      </code>
+    </items>
+    <items id="710503ed-7e37-480e-8393-57f2ed810727">
+      <name>НеТотТовар</name>
+      <description>Не тот товар</description>
+      <code xsi:type="core:StringValue">
+        <value>00000000008</value>
+      </code>
+    </items>
+    <items id="89b25be9-c5b2-4046-8f38-c4ea7f6aa1a3">
+      <name>НеУспелиПоВремени</name>
+      <description>Не успели по времени</description>
+      <code xsi:type="core:StringValue">
+        <value>00000000005</value>
+      </code>
+    </items>
+    <items id="02531d19-7f80-4405-a844-aef4ba7b26dc">
+      <name>ОтказКлиента</name>
+      <description>Отказ клиента</description>
+      <code xsi:type="core:StringValue">
+        <value>00000000006</value>
+      </code>
+    </items>
+    <items id="a715418b-3b1a-40ad-9cfd-47602fc38e67">
+      <name>ПоПисьмуМагазина</name>
+      <description>По письму магазина</description>
+      <code xsi:type="core:StringValue">
+        <value>00000000004</value>
+      </code>
+    </items>
+    <items id="12120ead-4650-4f08-9937-5a57bf29f870">
+      <name>ПоПросьбеКлиента</name>
+      <description>По просьбе клиента</description>
+      <code xsi:type="core:StringValue">
+        <value>00000000002</value>
       </code>
     </items>
   </predefined>
   <editType>InDialog</editType>
-  <quickChoice>true</quickChoice>
-  <choiceMode>QuickChoice</choiceMode>
-  <defaultObjectForm>Catalog.РезультатыДоставки.Form.ФормаЭлемента</defaultObjectForm>
-  <attributes uuid="24c8a341-8276-460f-b1d6-c1ff53caf1e8">
-    <name>ЭтоПеренос</name>
-    <synonym>
-      <key>ru</key>
-      <value>Это перенос</value>
-    </synonym>
-    <type>
-      <types>Boolean</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="e6ca4825-42ae-4d7c-9b61-29f457e7fed8">
-    <name>ЭтоДоставка</name>
-    <synonym>
-      <key>ru</key>
-      <value>Это доставка</value>
-    </synonym>
-    <type>
-      <types>Boolean</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="c640a207-de60-4f11-8d61-c32050595750">
-    <name>ЭтоЗаезд</name>
-    <synonym>
-      <key>ru</key>
-      <value>Это заезд</value>
-    </synonym>
-    <type>
-      <types>Boolean</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <indexing>Index</indexing>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="908c90fc-e1f2-4796-9c25-65f93a7fab5c">
-    <name>ЭтоОтмена</name>
-    <synonym>
-      <key>ru</key>
-      <value>Это отмена</value>
-    </synonym>
-    <type>
-      <types>Boolean</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="1f28e3e7-44fc-4fa5-bec8-d2565f624b81">
-    <name>Забор</name>
-    <synonym>
-      <key>ru</key>
-      <value>Забор</value>
-    </synonym>
-    <type>
-      <types>Boolean</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="2ff3db85-1522-44fa-b076-3968ff0d080c">
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ПричиныОтказаПереноса.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="48da3ccd-5d9b-46e8-8a44-62579bc5795c">
     <name>ЗапретВыбора</name>
     <synonym>
       <key>ru</key>
@@ -221,7 +179,22 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <forms uuid="173723f4-3408-495a-97db-1c7bde50c4d0">
+  <attributes uuid="4e19771f-aa3f-4014-86fd-165375d269c6">
+    <name>Забор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Забор</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="86f17c96-2ebe-461f-a457-65b65eed3019">
     <name>ФормаЭлемента</name>
     <synonym>
       <key>ru</key>
