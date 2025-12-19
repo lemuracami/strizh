@@ -48,6 +48,38 @@
         <textEdit>true</textEdit>
       </extInfo>
     </items>
+    <items xsi:type="form:Button">
+      <name>СправочникЗаказыКомандаЗапускМаршрутизации</name>
+      <id>147</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>ВыбранныйРейс</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СправочникЗаказыКомандаЗапускМаршрутизацииРасширеннаяПодсказка</name>
+        <id>148</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>UsualButton</type>
+      <commandName>Catalog.Заказы.Command.ЗапускМаршрутизации</commandName>
+      <representation>Picture</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <picture xsi:type="core:PictureRef">
+        <picture>StdPicture.FormattedString</picture>
+      </picture>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -1340,6 +1372,7 @@
 	ЗаказСправочник.Адрес КАК Адрес,
 	ЗаказСправочник.Телефон КАК Телефон,
 	ЗаказСправочник.ТипОплаты КАК ТипОплаты,
+	ЗаказСправочник.ТипЗаказа КАК ТипЗаказа,
 	ЗаказСправочник.ЗапретСменыТипаОплаты КАК ЗапретСменыТипаОплаты,
 	ЗаказСправочник.Предопределенный КАК Предопределенный,
 	ЗаказСправочник.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
@@ -1450,6 +1483,10 @@
         <field>Заказ</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ТипЗаказа</dataPath>
+        <field>ТипЗаказа</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
         <dataPath>ДатаВремяПоследнейМаршрутизацииВМП</dataPath>
         <field>ДатаВремяПоследнейМаршрутизацииВМП</field>
       </fields>
@@ -1546,10 +1583,6 @@
         <field>ТарифицируемыйВес</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
-        <dataPath>ТипЗаказа</dataPath>
-        <field>ТипЗаказа</field>
-      </fields>
-      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
         <dataPath>ТребуетсяОплатаСтоимостиДоставкиПриОтменеЗаказа</dataPath>
         <field>ТребуетсяОплатаСтоимостиДоставкиПриОтменеЗаказа</field>
       </fields>
@@ -1580,6 +1613,14 @@
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
         <dataPath>ПодписаниеИВозвратСопрДокументов</dataPath>
         <field>ПодписаниеИВозвратСопрДокументов</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ОбъемЗабора</dataPath>
+        <field>ОбъемЗабора</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ТарифнаяСетка</dataPath>
+        <field>ТарифнаяСетка</field>
       </fields>
       <fields xsi:type="schema:DataCompositionSchemaDataSetField">
         <dataPath>РасчетСтоимостиДоставки</dataPath>

@@ -336,10 +336,7 @@
       <value>Метод оплаты подъема</value>
     </synonym>
     <type>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>1</precision>
-      </numberQualifiers>
+      <types>EnumRef.МетодыОплатыПодъемаЗаказа</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -775,6 +772,40 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="8ab5d6a9-62c8-4b99-9e9c-c00c0d4e7f80">
+    <name>ОбъемЗабора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объем забора</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6939302f-3f24-435a-b874-0592066b1af5">
+    <name>ТарифнаяСетка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тарифная сетка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТарифныеСетки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <tabularSections uuid="493cf5bd-fd27-4a63-b1ac-44fb06b6ab8c">
     <producedTypes>
       <objectType typeId="271a5df6-4e22-4053-86fe-10f0cdcd247a" valueTypeId="54d122ac-b2cd-4e58-8d8c-e05130077485"/>
@@ -999,5 +1030,17 @@
     <picture xsi:type="core:PictureRef">
       <picture>StdPicture.GotoExternalURL</picture>
     </picture>
+  </commands>
+  <commands uuid="938410e1-ac80-4e37-80dd-6981b2372671">
+    <name>ЗапускМаршрутизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запуск маршрутизации</value>
+    </synonym>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.Рейсы</types>
+    </commandParameterType>
+    <representation>Auto</representation>
   </commands>
 </mdclass:Catalog>
